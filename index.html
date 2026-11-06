@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MAßNAHME LEARN – Bildung für alle">
+  <title>MAßNAHME LEARN | التعليم للجميع</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="MAßNAHME LEARN">
+        <span class="brand-mark">M</span>
+        <span><strong>MAßNAHME</strong><small>LEARN · التعليم للجميع</small></span>
+      </a>
+      <div class="sidebar-label">القائمة الرئيسية</div>
+      <nav class="main-nav">
+        <button class="nav-link active" data-view="dashboard"><span>⌂</span> لوحة الطالب</button>
+        <button class="nav-link" data-view="library"><span>▤</span> مكتبة المواد</button>
+        <button class="nav-link" data-view="schedule"><span>▦</span> جدول الحصص</button>
+        <button class="nav-link" data-view="assignments"><span>✓</span> الواجبات</button>
+        <button class="nav-link" data-view="exams"><span>✎</span> الاختبارات</button>
+        <button class="nav-link" data-view="phrases"><span>🔊</span> مختبر اللغات</button>
+        <button class="nav-link" data-view="language-de"><span>🇩🇪</span> الألمانية: كلمات واستماع</button>
+        <button class="nav-link" data-view="language-en"><span>🇬🇧</span> الإنجليزية: كلمات واستماع</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="target-card">
+          <span class="target-icon">✦</span>
+          <strong>هدفك الدراسي</strong>
+          <p>Erster Schulabschluss (ESA)</p>
+          <small>خطوة كل يوم تقرّبك من النجاح.</small>
+        </div>
+        <div class="sidebar-foot">Bildung für alle</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
+        <div class="breadcrumb"><span>MAßNAHME LEARN</span><b>/</b><strong id="pageTitle">لوحة الطالب</strong></div>
+        <div class="top-actions"><span class="status-dot"></span><span>مساحة تعلمك</span><span class="avatar">ط</span></div>
+      </header>
+      <div class="content" id="appContent">
+        <section class="welcome-banner">
+          <div>
+            <span class="eyebrow">WILLKOMMEN · أهلاً بك</span>
+            <h1>كل خطوة تعلم، <em>تقربك من هدفك.</em></h1>
+            <p>منصتك المجانية للتحضير للشهادة المدرسية الأولى في ألمانيا.</p>
+            <button class="primary-btn" data-action="open-library">ابدأ التعلّم <span>←</span></button>
+          </div>
+          <div class="banner-seal"><div class="seal-ring">ESA<span>2026</span></div></div>
+        </section>
+
+        <section class="stats-grid" id="statsGrid">
+          <article class="stat-card"><span class="stat-icon gold">▤</span><div><small>المواد الدراسية</small><strong id="statSubjects">—</strong></div></article>
+          <article class="stat-card"><span class="stat-icon blue">▣</span><div><small>الدروس المتاحة</small><strong id="statLessons">—</strong></div></article>
+          <article class="stat-card"><span class="stat-icon green">✓</span><div><small>الدروس المكتملة</small><strong id="statCompleted">0</strong></div></article>
+          <article class="stat-card"><span class="stat-icon purple">◷</span><div><small>نسبة الإنجاز</small><strong id="statProgress">0%</strong></div></article>
+        </section>
+
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">DEIN LERNWEG</span><h2>تابع رحلتك التعليمية</h2></div><button class="text-btn" data-action="open-library">عرض كل المواد ←</button></div>
+          <div class="subject-grid" id="dashboardSubjects"></div>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel"><div class="panel-heading"><h3>آخر ما أضفته إلى خطتك</h3><span class="subtle-tag">ابدأ الآن</span></div><div id="continueLearning" class="continue-list"></div></article>
+          <article class="panel quote-panel"><span class="quote-mark">“</span><h3>Bildung für alle</h3><p>التعليم حق وفرصة. تعلم اليوم شيئاً جديداً، ولو كان صغيراً.</p><span class="quote-line"></span></article>
+        </section>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
