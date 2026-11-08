@@ -1675,6 +1675,402 @@
           "a": "إجابة نموذجية: اكتب موضوعاً قصيراً ثم استخدم قائمة مراجعة من خمس نقاط.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
         }
       ]
+    },
+    {
+      "id": "de-b1-01",
+      "title": "التواصل اليومي في العمل والسكن والدوائر",
+      "germanTitle": "Im Alltag kommunizieren: Arbeit, Wohnen und Behörden",
+      "level": "B1",
+      "duration": "50–60 دقيقة",
+      "unit": "Deutsch B1 · Alltag",
+      "unitArabic": "الألمانية B1: مواقف الحياة اليومية",
+      "objectives": [
+        "شرح مشكلة أو طلب بوضوح وبجمل مترابطة.",
+        "استخدام مفردات العمل والسكن والمواعيد والدوائر.",
+        "صياغة طلب مهذب وذكر السبب والنتيجة."
+      ],
+      "intro": "تدرّب على مواقف حقيقية: الاتصال بصاحب العمل، الاستفسار عن عقد الإيجار، وتحديد موعد في دائرة رسمية.",
+      "german": "Im Alltag muss man häufig Informationen einholen, Termine vereinbaren oder ein Problem erklären. Dabei ist es wichtig, höflich und präzise zu sprechen. Wenn Sie beispielsweise einen Termin verschieben möchten, sollten Sie den Grund nennen und direkt einen passenden Alternativtermin vorschlagen. Bei offiziellen Gesprächen helfen vollständige Sätze und klare Angaben. Falls Sie etwas nicht verstehen, können Sie höflich nachfragen: Könnten Sie das bitte genauer erklären?",
+      "lessonText": "في الحياة اليومية نحتاج كثيراً إلى طلب معلومات أو تحديد مواعيد أو شرح مشكلة. من المهم أن نتحدث بأدب ووضوح. عند طلب تأجيل موعد، اذكر السبب واقترح موعداً بديلاً. وفي المحادثات الرسمية استخدم جملاً كاملة ومعلومات دقيقة. إذا لم تفهم، اسأل بأدب واطلب توضيحاً.",
+      "explanation": "استخدم weil وda لذكر السبب، deshalb وdaher لذكر النتيجة، وobwohl لعرض التناقض. بعد weil يأتي الفعل المصرف في نهاية الجملة التابعة: Ich kann nicht kommen, weil ich arbeiten muss.",
+      "vocab": [
+        [
+          "die Auskunft",
+          "المعلومة / الاستعلام"
+        ],
+        [
+          "die Zuständigkeit",
+          "الاختصاص / الجهة المسؤولة"
+        ],
+        [
+          "die Unterlagen",
+          "المستندات"
+        ],
+        [
+          "verschieben",
+          "يؤجل"
+        ],
+        [
+          "sich erkundigen",
+          "يستفسر"
+        ],
+        [
+          "die Bestätigung",
+          "التأكيد"
+        ]
+      ],
+      "example": "Ich kann den Termin nicht wahrnehmen, weil ich arbeiten muss. Könnten wir einen neuen Termin vereinbaren?",
+      "worked": [
+        {
+          "title": "طلب تأجيل موعد",
+          "prompt": "Du kannst am Donnerstag nicht zum Termin kommen. Schreibe eine höfliche Nachricht.",
+          "steps": [
+            "ابدأ بسبب واضح: Leider kann ich den Termin nicht wahrnehmen.",
+            "استخدم weil لشرح السبب.",
+            "اطلب موعداً بديلاً بصيغة مهذبة.",
+            "اختم بالشكر."
+          ],
+          "answer": "Leider kann ich den Termin am Donnerstag nicht wahrnehmen, weil ich kurzfristig arbeiten muss. Könnten wir bitte einen neuen Termin für nächste Woche vereinbaren? Vielen Dank für Ihr Verständnis."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: Ich kann heute nicht kommen, weil ich länger arbeiten ___.",
+          "hint": "بعد weil يأتي الفعل المصرف في نهاية الجملة.",
+          "a": "muss"
+        },
+        {
+          "q": "حوّل الطلب إلى صيغة أكثر تهذيباً: Schicken Sie mir die Bestätigung.",
+          "hint": "استخدم Könnten Sie bitte …?",
+          "a": "Könnten Sie mir bitte die Bestätigung schicken?"
+        }
+      ],
+      "questions": [
+        {
+          "q": "أي جملة صحيحة؟",
+          "options": [
+            "Ich bleibe zu Hause, weil ich bin krank.",
+            "Ich bleibe zu Hause, weil ich krank bin.",
+            "Ich weil krank bin zu Hause."
+          ],
+          "correct": 1,
+          "why": "بعد weil يأتي الفعل المصرف في نهاية الجملة التابعة."
+        },
+        {
+          "q": "ما العبارة الأكثر تهذيباً لطلب مستند؟",
+          "options": [
+            "Gib mir das Dokument!",
+            "Du musst das Dokument schicken.",
+            "Könnten Sie mir das Dokument bitte zusenden?"
+          ],
+          "correct": 2,
+          "why": "Könnten Sie bitte صيغة طلب رسمية ومهذبة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب رسالة من 6 إلى 8 جمل تطلب فيها تغيير موعد رسمي، واشرح السبب واقترح موعداً بديلاً.",
+          "hint": "استخدم leider, weil, deshalb, wäre es möglich und vielen Dank.",
+          "a": "Sehr geehrte Damen und Herren, leider kann ich den vereinbarten Termin am Mittwoch nicht wahrnehmen, weil ich an diesem Tag arbeiten muss. Deshalb möchte ich Sie bitten, einen neuen Termin zu vereinbaren. Wäre ein Termin am Freitagvormittag möglich? Vielen Dank für Ihr Verständnis. Mit freundlichen Grüßen"
+        }
+      ]
+    },
+    {
+      "id": "de-b1-02",
+      "title": "كتابة بريد رسمي وشرح مشكلة",
+      "germanTitle": "Eine formelle E-Mail schreiben und ein Problem schildern",
+      "level": "B1",
+      "duration": "50–60 دقيقة",
+      "unit": "Deutsch B1 · Schreiben",
+      "unitArabic": "الألمانية B1: الكتابة الرسمية",
+      "objectives": [
+        "تنظيم البريد إلى مقدمة وسبب وتفاصيل وطلب وخاتمة.",
+        "شرح مشكلة مع ذكر التاريخ والنتيجة.",
+        "استخدام روابط الجمل وصيغ الطلب الرسمية."
+      ],
+      "intro": "ستتعلم كتابة بريد إلى شركة أو صاحب منزل أو مؤسسة، مع شرح المشكلة بطريقة واضحة ومحترمة.",
+      "german": "Eine gute formelle E-Mail hat einen aussagekräftigen Betreff und eine passende Anrede. Im ersten Absatz erklären Sie den Anlass Ihrer Nachricht. Danach schildern Sie das Problem möglichst genau und nennen wichtige Daten oder Belege. Formulieren Sie anschließend, welche Lösung Sie erwarten. Vermeiden Sie umgangssprachliche Ausdrücke und bleiben Sie auch dann sachlich, wenn Sie unzufrieden sind. Zum Schluss bedanken Sie sich und verwenden eine angemessene Grußformel.",
+      "lessonText": "يتضمن البريد الرسمي عنواناً واضحاً وتحية مناسبة. في الفقرة الأولى اشرح سبب الرسالة، ثم صف المشكلة بدقة واذكر التواريخ أو الإثباتات المهمة. بعد ذلك وضّح الحل الذي تتوقعه. تجنب العامية وحافظ على أسلوب موضوعي حتى لو كنت غير راضٍ. اختم بالشكر والتحية المناسبة.",
+      "explanation": "لشرح المشكلة استخدم: Seit dem … funktioniert … nicht mehr. Trotz meiner Nachricht vom … habe ich bisher keine Rückmeldung erhalten. Ich bitte Sie daher um … . للطلب المهذب: Ich wäre Ihnen dankbar, wenn Sie … könnten.",
+      "vocab": [
+        [
+          "der Betreff",
+          "موضوع الرسالة"
+        ],
+        [
+          "der Mangel",
+          "الخلل / العيب"
+        ],
+        [
+          "die Rückmeldung",
+          "الرد"
+        ],
+        [
+          "die Frist",
+          "المهلة"
+        ],
+        [
+          "die Erstattung",
+          "استرداد المبلغ"
+        ],
+        [
+          "sich beziehen auf",
+          "يشير إلى / يتعلق بـ"
+        ]
+      ],
+      "example": "Ich wäre Ihnen dankbar, wenn Sie den Vorgang überprüfen könnten.",
+      "worked": [
+        {
+          "title": "شكوى بخصوص منتج معطّل",
+          "prompt": "Ein online gekauftes Gerät funktioniert nicht. Bitte um Austausch.",
+          "steps": [
+            "اكتب Betreff واضحاً.",
+            "اشرح متى اشتريت المنتج وما المشكلة.",
+            "اذكر ما جربته لحل المشكلة.",
+            "اطلب استبدالاً أو استرداداً."
+          ],
+          "answer": "Betreff: Bitte um Austausch eines defekten Geräts\\nSehr geehrte Damen und Herren,\\nvor einer Woche habe ich bei Ihnen einen Wasserkocher bestellt. Leider funktioniert das Gerät trotz mehrerer Versuche nicht. Ich bitte Sie daher um einen Austausch oder um die Rückerstattung des Kaufpreises. Die Bestellnummer finden Sie im Anhang. Vielen Dank im Voraus.\\nMit freundlichen Grüßen"
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: Ich wäre Ihnen dankbar, wenn Sie mir die Unterlagen ___ könnten.",
+          "hint": "الفعل schicken يأتي في نهاية الجملة التابعة بصيغة المصدر.",
+          "a": "schicken"
+        },
+        {
+          "q": "ما الأفضل في شكوى رسمية؟",
+          "hint": "اختر الأسلوب الهادئ والمحدد.",
+          "a": "Beschreiben Sie den Sachverhalt sachlich und nennen Sie konkrete Daten."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما وظيفة Betreff؟",
+          "options": [
+            "تحديد موضوع البريد",
+            "كتابة التوقيع",
+            "ذكر عنوان المرسل فقط"
+          ],
+          "correct": 0,
+          "why": "Betreff يوضح موضوع الرسالة للمستلم."
+        },
+        {
+          "q": "أي خاتمة رسمية صحيحة؟",
+          "options": [
+            "Bis dann!",
+            "Mit freundlichen Grüßen",
+            "Mach's gut!"
+          ],
+          "correct": 1,
+          "why": "Mit freundlichen Grüßen خاتمة رسمية."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب بريداً من 8 إلى 10 جمل إلى شركة تشرح فيه أن طلبك وصل ناقصاً وتطلب إرسال القطعة الناقصة خلال مهلة مناسبة.",
+          "hint": "استخدم außerdem, deshalb, bisher, ich bitte Sie darum, könnten Sie …",
+          "a": "Betreff: Unvollständige Lieferung\nSehr geehrte Damen und Herren,\nheute habe ich meine Bestellung erhalten. Leider fehlt ein Teil des bestellten Produkts. Ich habe den Inhalt sofort überprüft und festgestellt, dass die Lieferung unvollständig ist. Deshalb bitte ich Sie, mir das fehlende Teil möglichst bald nachzusenden. Könnten Sie mir bitte kurz bestätigen, wann ich mit der Lieferung rechnen kann? Vielen Dank im Voraus.\nMit freundlichen Grüßen"
+        }
+      ]
+    },
+    {
+      "id": "de-b2-01",
+      "title": "إبداء الرأي والحجج والمقارنة",
+      "germanTitle": "Die eigene Meinung begründen und Argumente abwägen",
+      "level": "B2",
+      "duration": "60 دقيقة",
+      "unit": "Deutsch B2 · Argumentation",
+      "unitArabic": "الألمانية B2: النقاش والتعبير عن الرأي",
+      "objectives": [
+        "عرض موقف شخصي بطريقة منظمة ومقنعة.",
+        "مقارنة المزايا والعيوب وتقديم أمثلة.",
+        "استخدام روابط متقدمة وتراكيب لغوية متنوعة."
+      ],
+      "intro": "هذا الدرس يدرّبك على نقاش موضوعات الحياة والعمل والتعليم، كما في المحادثات والاختبارات بمستوى B2.",
+      "german": "Bei einer Diskussion reicht es nicht aus, lediglich die eigene Meinung zu nennen. Man sollte den Standpunkt begründen, passende Beispiele anführen und auch andere Perspektiven berücksichtigen. Eine ausgewogene Argumentation zeigt, dass man Vor- und Nachteile abwägen kann. Formulierungen wie einerseits … andererseits, darüber hinaus, dennoch und aus diesem Grund helfen dabei, Gedanken logisch miteinander zu verbinden. Am Ende sollte man zu einer nachvollziehbaren Schlussfolgerung kommen.",
+      "lessonText": "في النقاش لا يكفي ذكر الرأي الشخصي فقط؛ بل يجب تبريره وتقديم أمثلة ومراعاة وجهات النظر الأخرى. تُظهر الحجة المتوازنة قدرتك على مقارنة الإيجابيات والسلبيات. تساعد أدوات مثل من ناحية/من ناحية أخرى، إضافة إلى ذلك، رغم ذلك، ولهذا السبب على ربط الأفكار منطقياً. وفي النهاية ينبغي الوصول إلى خلاصة واضحة.",
+      "explanation": "قالب مفيد: Meiner Ansicht nach … . Dafür spricht, dass … . Ein weiterer Vorteil besteht darin, dass … . Allerdings darf man nicht außer Acht lassen, dass … . Zusammenfassend lässt sich sagen, dass … . انتبه إلى أن dass وobwohl وwährend تجعل الفعل في نهاية الجملة التابعة.",
+      "vocab": [
+        [
+          "der Standpunkt",
+          "وجهة النظر"
+        ],
+        [
+          "die Abwägung",
+          "الموازنة"
+        ],
+        [
+          "das Argument",
+          "الحجة"
+        ],
+        [
+          "die Schlussfolgerung",
+          "الاستنتاج"
+        ],
+        [
+          "berücksichtigen",
+          "يراعي / يأخذ بعين الاعتبار"
+        ],
+        [
+          "etwas außer Acht lassen",
+          "يغفل عن أمر"
+        ]
+      ],
+      "example": "Einerseits ist die Lösung kostengünstig, andererseits ist sie nicht besonders flexibel.",
+      "worked": [
+        {
+          "title": "موضوع: العمل من المنزل",
+          "prompt": "Nennen Sie Vorteile und Nachteile von Homeoffice und formulieren Sie Ihre Meinung.",
+          "steps": [
+            "مقدمة قصيرة تعرض الموضوع.",
+            "اذكر ميزتين مع شرح أو مثال.",
+            "اذكر عيباً واحداً على الأقل.",
+            "اعرض رأيك وخلاصة متوازنة."
+          ],
+          "answer": "Das Arbeiten im Homeoffice bietet mehrere Vorteile. Einerseits spart man Zeit, weil der tägliche Arbeitsweg entfällt. Andererseits kann die Kommunikation im Team schwieriger werden. Außerdem fällt es manchen Menschen schwer, Beruf und Privatleben klar zu trennen. Meiner Ansicht nach ist Homeoffice besonders dann sinnvoll, wenn klare Absprachen bestehen und regelmäßiger Austausch möglich ist."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل بأداة ربط مناسبة: ___ Homeoffice Zeit spart, kann es die Zusammenarbeit erschweren.",
+          "hint": "المعنى: على الرغم من أن العمل من المنزل يوفر الوقت.",
+          "a": "Obwohl"
+        },
+        {
+          "q": "ما وظيفة عبارة Zusammenfassend lässt sich sagen, dass …؟",
+          "hint": "تأتي غالباً في نهاية النص.",
+          "a": "تقديم خلاصة أو استنتاج نهائي."
+        }
+      ],
+      "questions": [
+        {
+          "q": "أي عبارة تقدم حجة إضافية؟",
+          "options": [
+            "Darüber hinaus",
+            "Auf Wiedersehen",
+            "Guten Appetit"
+          ],
+          "correct": 0,
+          "why": "Darüber hinaus تعني بالإضافة إلى ذلك وتضيف حجة."
+        },
+        {
+          "q": "أين يأتي الفعل بعد obwohl؟",
+          "options": [
+            "في بداية الجملة",
+            "في نهاية الجملة التابعة",
+            "دائماً في الموقع الثاني"
+          ],
+          "correct": 1,
+          "why": "obwohl أداة ربط لجملة تابعة، والفعل يأتي في النهاية."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب نصاً من 180 إلى 220 كلمة حول السؤال: Sollten öffentliche Verkehrsmittel günstiger sein? اعرض حجتين ومثالاً ورأياً مخالفاً وخلاصة.",
+          "hint": "استخدم einerseits/andererseits, außerdem, allerdings, deshalb, meiner Meinung nach.",
+          "a": "اكتب نصاً منظماً بمقدمة وفقرتين للحجج وفقرة للخلاصة. يجب أن تشرح كل حجة بمثال واقعي، وأن تذكر رأياً مخالفاً قبل الاستنتاج."
+        }
+      ]
+    },
+    {
+      "id": "de-b2-02",
+      "title": "فهم النصوص الطويلة والتلخيص والاستنتاج",
+      "germanTitle": "Längere Texte verstehen, zusammenfassen und Schlussfolgerungen ziehen",
+      "level": "B2",
+      "duration": "60 دقيقة",
+      "unit": "Deutsch B2 · Lesen und Schreiben",
+      "unitArabic": "الألمانية B2: القراءة والتحليل",
+      "objectives": [
+        "تمييز الفكرة الرئيسية عن التفاصيل والأمثلة.",
+        "تلخيص نص دون نسخ الجمل الأصلية.",
+        "استخلاص موقف الكاتب والنتائج الضمنية."
+      ],
+      "intro": "تدرّب على قراءة نصوص أطول من الحياة اليومية والإعلام والعمل، ثم تلخيصها بلغة ألمانية دقيقة.",
+      "german": "Beim Lesen längerer Texte sollte man zunächst die Überschrift und den gesamten Text erfassen, ohne jedes unbekannte Wort nachzuschlagen. Anschließend unterscheidet man zwischen Hauptaussagen, Beispielen und zusätzlichen Informationen. Achten Sie besonders auf Konnektoren, denn sie zeigen Gegensätze, Ursachen und Folgen. Eine gute Zusammenfassung gibt die zentralen Inhalte sachlich und in eigenen Worten wieder. Persönliche Bewertungen gehören nur dann hinein, wenn die Aufgabe ausdrücklich danach fragt.",
+      "lessonText": "عند قراءة النصوص الطويلة، ابدأ بالعنوان واقرأ النص كاملاً دون البحث عن معنى كل كلمة مجهولة. بعد ذلك ميّز الأفكار الرئيسية عن الأمثلة والمعلومات الإضافية. انتبه إلى أدوات الربط لأنها توضّح التناقض والأسباب والنتائج. التلخيص الجيد يعرض الأفكار الأساسية بموضوعية وبكلماتك الخاصة، ولا يتضمن رأيك إلا إذا طلب السؤال ذلك.",
+      "explanation": "ابحث عن الجملة التي تلخص كل فقرة، ثم اكتب الفكرة بكلماتك. لا تنقل أمثلة الكاتب كلها. استخدم: Der Text beschäftigt sich mit …, Der Autor weist darauf hin, dass …, Daraus lässt sich schließen, dass … .",
+      "vocab": [
+        [
+          "die Kernaussage",
+          "الفكرة الأساسية"
+        ],
+        [
+          "der Zusammenhang",
+          "العلاقة / الترابط"
+        ],
+        [
+          "die Schlussfolgerung",
+          "الاستنتاج"
+        ],
+        [
+          "der Hinweis",
+          "الإشارة / التنبيه"
+        ],
+        [
+          "die Entwicklung",
+          "التطور"
+        ],
+        [
+          "darauf hinweisen",
+          "يشير إلى"
+        ]
+      ],
+      "example": "Der Verfasser macht deutlich, dass eine gute Planung entscheidend ist.",
+      "worked": [
+        {
+          "title": "تلخيص فقرة",
+          "prompt": "Viele Unternehmen bieten flexible Arbeitszeiten an. Dadurch können Beschäftigte Beruf und Familie besser vereinbaren. Gleichzeitig müssen Teams ihre Aufgaben genauer abstimmen, damit wichtige Informationen nicht verloren gehen.",
+          "steps": [
+            "حدد الموضوع: flexible Arbeitszeiten.",
+            "استخرج الفائدة: bessere Vereinbarkeit von Beruf und Familie.",
+            "استخرج التحدي: genauere Abstimmung im Team.",
+            "اكتب خلاصة قصيرة بكلماتك."
+          ],
+          "answer": "Flexible Arbeitszeiten erleichtern die Vereinbarkeit von Beruf und Familie, erfordern jedoch eine gute Kommunikation und Organisation im Team."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما الذي يجب تجنبه في التلخيص؟",
+          "hint": "التلخيص ليس نسخاً حرفياً.",
+          "a": "نسخ الجمل الأصلية أو إدخال الرأي الشخصي دون أن يطلب السؤال ذلك."
+        },
+        {
+          "q": "ما معنى Daraus lässt sich schließen, dass …؟",
+          "hint": "تُستخدم قبل ذكر نتيجة مستنتجة.",
+          "a": "يمكن الاستنتاج من ذلك أن …"
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما وظيفة außerdem؟",
+          "options": [
+            "إضافة معلومة",
+            "التعبير عن التناقض",
+            "إنهاء الرسالة"
+          ],
+          "correct": 0,
+          "why": "außerdem تستخدم لإضافة معلومة أخرى."
+        },
+        {
+          "q": "ما معنى Kernaussage؟",
+          "options": [
+            "التفصيل الثانوي",
+            "الفكرة الأساسية",
+            "عنوان الكاتب"
+          ],
+          "correct": 1,
+          "why": "Kernaussage هي الفكرة المحورية للنص."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب تلخيصاً من 80 إلى 100 كلمة للنص التالي، دون نسخ الجمل: Digitale Medien erleichtern den Zugang zu Informationen. Gleichzeitig muss man lernen, zuverlässige Quellen zu erkennen. Nicht jede Nachricht im Internet ist korrekt. Wer Informationen vergleicht und ihre Herkunft überprüft, kann sich eine fundierte Meinung bilden.",
+          "hint": "اذكر الفائدة والتحدي والحل في صياغتك الخاصة.",
+          "a": "Digitale Medien ermöglichen einen schnellen Zugang zu Informationen. Allerdings ist es wichtig, die Qualität und Herkunft der Quellen zu prüfen. Durch den Vergleich verschiedener Informationen kann man Fehler erkennen und sich eine gut begründete Meinung bilden."
+        }
+      ]
     }
   ],
   "bookTitle": "Deutsch – Lesen, Schreiben und Grammatik",
