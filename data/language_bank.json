@@ -661,6 +661,256 @@
       [
         "das Angebot",
         "العرض"
+      ],
+      [
+        "die Herausforderung",
+        "التحدّي",
+        "B1"
+      ],
+      [
+        "die Rückmeldung",
+        "الرد / التغذية الراجعة",
+        "B1"
+      ],
+      [
+        "die Vereinbarung",
+        "الاتفاق",
+        "B1"
+      ],
+      [
+        "die Bescheinigung",
+        "الإفادة / الشهادة",
+        "B1"
+      ],
+      [
+        "der Nachweis",
+        "الإثبات / المستند",
+        "B1"
+      ],
+      [
+        "die Unterlagen",
+        "الأوراق / المستندات",
+        "B1"
+      ],
+      [
+        "die Kündigungsfrist",
+        "مهلة إنهاء العقد",
+        "B2"
+      ],
+      [
+        "die Nebenkosten",
+        "التكاليف الإضافية للسكن",
+        "B1"
+      ],
+      [
+        "die Kaution",
+        "تأمين السكن",
+        "B1"
+      ],
+      [
+        "der Mietvertrag",
+        "عقد الإيجار",
+        "B1"
+      ],
+      [
+        "die Hausordnung",
+        "نظام البناء",
+        "B1"
+      ],
+      [
+        "der Mangel",
+        "العيب / الخلل",
+        "B2"
+      ],
+      [
+        "die Erstattung",
+        "استرداد المبلغ",
+        "B2"
+      ],
+      [
+        "der Anspruch",
+        "الحق / الاستحقاق",
+        "B2"
+      ],
+      [
+        "die Arbeitsbedingungen",
+        "ظروف العمل",
+        "B1"
+      ],
+      [
+        "die Schicht",
+        "وردية العمل",
+        "B1"
+      ],
+      [
+        "die Überstunden",
+        "ساعات العمل الإضافية",
+        "B1"
+      ],
+      [
+        "die Gehaltsabrechnung",
+        "كشف الراتب",
+        "B1"
+      ],
+      [
+        "die Qualifikation",
+        "المؤهل",
+        "B1"
+      ],
+      [
+        "die Weiterbildung",
+        "التدريب الإضافي",
+        "B1"
+      ],
+      [
+        "die Krankmeldung",
+        "إبلاغ المرض",
+        "B1"
+      ],
+      [
+        "die Krankschreibung",
+        "إجازة مرضية",
+        "B1"
+      ],
+      [
+        "die Nebenwirkung",
+        "الأثر الجانبي",
+        "B2"
+      ],
+      [
+        "die Überweisung",
+        "الإحالة الطبية / الحوالة",
+        "B1"
+      ],
+      [
+        "die Untersuchung",
+        "الفحص",
+        "B1"
+      ],
+      [
+        "das Missverständnis",
+        "سوء الفهم",
+        "B1"
+      ],
+      [
+        "die Zustimmung",
+        "الموافقة",
+        "B2"
+      ],
+      [
+        "die Ablehnung",
+        "الرفض",
+        "B2"
+      ],
+      [
+        "die Nachfrage",
+        "الاستفسار",
+        "B1"
+      ],
+      [
+        "die Lieferung",
+        "التوصيل",
+        "B1"
+      ],
+      [
+        "der Umtausch",
+        "استبدال السلعة",
+        "B1"
+      ],
+      [
+        "der Beleg",
+        "الإيصال / الإثبات",
+        "B1"
+      ],
+      [
+        "die Abbuchung",
+        "الخصم من الحساب",
+        "B2"
+      ],
+      [
+        "der Kontostand",
+        "رصيد الحساب",
+        "B1"
+      ],
+      [
+        "die Gebühr",
+        "الرسم / العمولة",
+        "B1"
+      ],
+      [
+        "die Verbindung",
+        "خط المواصلات / الاتصال",
+        "B1"
+      ],
+      [
+        "verbindlich",
+        "ملزم / رسمي ونهائي",
+        "B2"
+      ],
+      [
+        "zuständig",
+        "مختص / مسؤول عن الأمر",
+        "B1"
+      ],
+      [
+        "rechtzeitig",
+        "في الوقت المناسب",
+        "B1"
+      ],
+      [
+        "voraussichtlich",
+        "على الأرجح / متوقعاً",
+        "B2"
+      ],
+      [
+        "allerdings",
+        "لكن / مع ذلك",
+        "B1"
+      ],
+      [
+        "inzwischen",
+        "في هذه الأثناء / الآن",
+        "B1"
+      ],
+      [
+        "sich erkundigen nach",
+        "يستفسر عن",
+        "B1"
+      ],
+      [
+        "sich beschweren über",
+        "يشتكي من",
+        "B1"
+      ],
+      [
+        "zur Verfügung stehen",
+        "يكون متاحاً",
+        "B2"
+      ],
+      [
+        "Rücksicht nehmen auf",
+        "يراعي / يأخذ بعين الاعتبار",
+        "B2"
+      ],
+      [
+        "einen Antrag stellen",
+        "يقدّم طلباً",
+        "B1"
+      ],
+      [
+        "einen Termin wahrnehmen",
+        "يحضر الموعد",
+        "B2"
+      ],
+      [
+        "Bescheid geben",
+        "يُعلم / يخبر",
+        "B1"
+      ],
+      [
+        "in Betracht ziehen",
+        "يضع في الحسبان",
+        "B2"
       ]
     ],
     "sentences": [
@@ -1015,6 +1265,136 @@
       [
         "Bitte schicken Sie mir die Rechnung per E-Mail.",
         "أرسل لي الفاتورة عبر البريد الإلكتروني من فضلك."
+      ],
+      [
+        "Ich würde gerne einen Termin vereinbaren, da ich einige Fragen zu meinem Antrag habe.",
+        "أود تحديد موعد لأن لدي بعض الأسئلة حول طلبي.",
+        "B1"
+      ],
+      [
+        "Könnten Sie mir bitte mitteilen, welche Unterlagen ich dafür benötige?",
+        "هل يمكنكم إخباري ما المستندات التي أحتاج إليها؟",
+        "B1"
+      ],
+      [
+        "Leider habe ich Ihre Nachricht erst heute gelesen und konnte deshalb nicht früher antworten.",
+        "للأسف لم أقرأ رسالتكم إلا اليوم، لذلك لم أتمكن من الرد سابقاً.",
+        "B1"
+      ],
+      [
+        "Obwohl ich pünktlich losgefahren bin, hatte mein Zug eine erhebliche Verspätung.",
+        "على الرغم من انطلاقي في الموعد، تأخر قطاري كثيراً.",
+        "B1"
+      ],
+      [
+        "Falls der vorgeschlagene Termin nicht passt, können wir gerne einen anderen vereinbaren.",
+        "إذا لم يناسبكم الموعد المقترح، يمكننا تحديد موعد آخر.",
+        "B1"
+      ],
+      [
+        "Ich wollte mich erkundigen, ob meine Bewerbung bereits bearbeitet wurde.",
+        "أردت الاستفسار عمّا إذا تمت معالجة طلب التوظيف الخاص بي.",
+        "B1"
+      ],
+      [
+        "Da ich krank bin, muss ich meinen heutigen Termin leider absagen.",
+        "بما أنني مريض، أضطر للأسف إلى إلغاء موعد اليوم.",
+        "B1"
+      ],
+      [
+        "Wäre es möglich, mir die Informationen zusätzlich per E-Mail zu schicken?",
+        "هل يمكن إرسال المعلومات إليّ أيضاً عبر البريد الإلكتروني؟",
+        "B1"
+      ],
+      [
+        "Ich bin mit dem Produkt nicht zufrieden, weil es nicht der Beschreibung entspricht.",
+        "أنا غير راضٍ عن المنتج لأنه لا يطابق الوصف.",
+        "B1"
+      ],
+      [
+        "Bevor ich den Mietvertrag unterschreibe, möchte ich die Nebenkosten genau verstehen.",
+        "قبل توقيع عقد الإيجار، أريد فهم التكاليف الإضافية بدقة.",
+        "B1"
+      ],
+      [
+        "Einerseits ist die Stelle gut bezahlt, andererseits sind die Arbeitszeiten ziemlich unregelmäßig.",
+        "من ناحية الوظيفة جيدة الأجر، ومن ناحية أخرى أوقات العمل غير منتظمة.",
+        "B2"
+      ],
+      [
+        "Meiner Ansicht nach sollte man öffentliche Verkehrsmittel stärker fördern, um die Umwelt zu entlasten.",
+        "من وجهة نظري ينبغي دعم النقل العام أكثر لتخفيف العبء عن البيئة.",
+        "B2"
+      ],
+      [
+        "Ich wäre Ihnen dankbar, wenn Sie mir den Eingang meiner Unterlagen kurz bestätigen könnten.",
+        "سأكون ممتناً إذا أمكنكم تأكيد استلام مستنداتي.",
+        "B2"
+      ],
+      [
+        "Der Grund für meine Anfrage ist, dass ich bisher keine schriftliche Bestätigung erhalten habe.",
+        "سبب استفساري أنني لم أتلقَّ حتى الآن تأكيداً خطياً.",
+        "B2"
+      ],
+      [
+        "Sollte sich etwas ändern, werde ich Sie selbstverständlich rechtzeitig informieren.",
+        "إذا طرأ أي تغيير، فسأبلغكم بالطبع في الوقت المناسب.",
+        "B2"
+      ],
+      [
+        "Es kommt darauf an, welche Voraussetzungen erfüllt werden müssen und wie lange die Bearbeitung dauert.",
+        "يتوقف الأمر على الشروط المطلوب استيفاؤها ومدة المعالجة.",
+        "B2"
+      ],
+      [
+        "Ich habe die Erfahrung gemacht, dass klare Absprachen viele Missverständnisse vermeiden können.",
+        "وجدت من خلال التجربة أن الاتفاقات الواضحة تمنع كثيراً من حالات سوء الفهم.",
+        "B2"
+      ],
+      [
+        "Trotz der schwierigen Umstände habe ich versucht, eine zuverlässige und langfristige Lösung zu finden.",
+        "على الرغم من الظروف الصعبة، حاولت إيجاد حل موثوق وطويل الأمد.",
+        "B2"
+      ],
+      [
+        "Die Entscheidung sollte nicht nur von den Kosten, sondern auch von der Qualität abhängen.",
+        "ينبغي ألا يعتمد القرار على التكلفة فقط، بل على الجودة أيضاً.",
+        "B2"
+      ],
+      [
+        "Damit wir Missverständnisse vermeiden, sollten wir die wichtigsten Punkte schriftlich festhalten.",
+        "لكي نتجنب سوء الفهم، ينبغي تدوين النقاط المهمة كتابةً.",
+        "B2"
+      ],
+      [
+        "Ich kann nachvollziehen, dass die Situation unangenehm ist; trotzdem bitte ich um eine zeitnahe Rückmeldung.",
+        "أتفهم أن الوضع مزعج، ومع ذلك أرجو رداً قريباً.",
+        "B2"
+      ],
+      [
+        "Im Vergleich zur vorherigen Lösung ist diese Möglichkeit sowohl günstiger als auch zuverlässiger.",
+        "بالمقارنة مع الحل السابق، هذا الخيار أقل تكلفة وأكثر موثوقية.",
+        "B2"
+      ],
+      [
+        "Sollten Sie weitere Nachweise benötigen, lasse ich Ihnen diese gerne zukommen.",
+        "إذا احتجتم إلى إثباتات إضافية، فسأرسلها إليكم بكل سرور.",
+        "B2"
+      ],
+      [
+        "Ich halte es für sinnvoll, verschiedene Angebote zu vergleichen, bevor man eine endgültige Entscheidung trifft.",
+        "أرى أنه من المنطقي مقارنة العروض قبل اتخاذ قرار نهائي.",
+        "B2"
+      ],
+      [
+        "Während des Gesprächs wurde deutlich, dass beide Seiten unterschiedliche Erwartungen hatten.",
+        "اتضح خلال الحديث أن لدى الطرفين توقعات مختلفة.",
+        "B2"
+      ],
+      [
+        "Wenn man regelmäßig übt, fällt es leichter, komplexe Sätze zu verstehen und selbst zu formulieren.",
+        "عندما يتدرب المرء بانتظام، يصبح فهم الجمل المعقدة وصياغتها أسهل.",
+        "B1"
       ]
     ],
     "texts": [
@@ -1094,6 +1474,62 @@
         "title": "Eine eigene Meinung ausdrücken",
         "text": "In einer Diskussion ist es wichtig, ruhig zu bleiben. Man kann sagen: Ich bin dafür, weil ... oder Ich bin dagegen, denn ... Eine gute Begründung enthält ein klares Argument und ein Beispiel. Man hört anderen zu und unterbricht sie nicht.",
         "translation": "من المهم في النقاش أن يبقى الشخص هادئاً. يمكن أن يقول: أنا أؤيد لأن... أو أنا أعارض لأن... يحتوي التعليل الجيد على حجة واضحة ومثال. نستمع للآخرين ولا نقاطعهم."
+      },
+      {
+        "lang": "de",
+        "level": "B1",
+        "title": "B1 · Einen neuen Arbeitsplatz beginnen",
+        "text": "Am kommenden Montag beginnt Samir eine neue Stelle in einem Lager. Am ersten Arbeitstag soll er sich um halb acht bei seiner Vorgesetzten melden. Sie erklärt ihm die Arbeitszeiten, die Sicherheitsregeln und seine Aufgaben. Samir ist etwas nervös, weil er die Kollegen noch nicht kennt. Trotzdem freut er sich auf die neue Erfahrung. In den ersten Wochen möchte er aufmerksam zuhören und bei Unklarheiten sofort nachfragen. Er weiß, dass Pünktlichkeit und Zuverlässigkeit im Berufsleben sehr wichtig sind.",
+        "translation": "يبدأ سمير يوم الاثنين القادم عملاً جديداً في مستودع. في أول يوم عليه مراجعة مسؤولته الساعة السابعة والنصف. تشرح له أوقات العمل وقواعد السلامة ومهامه. يشعر ببعض التوتر لأنه لا يعرف زملاءه بعد، لكنه سعيد بالتجربة. في الأسابيع الأولى يريد الإصغاء بانتباه وطرح الأسئلة عند عدم الفهم. فهو يعرف أن الالتزام بالمواعيد والموثوقية مهمان جداً في الحياة المهنية."
+      },
+      {
+        "lang": "de",
+        "level": "B1",
+        "title": "B1 · Eine Wohnung suchen und besichtigen",
+        "text": "Nadia sucht seit mehreren Wochen eine bezahlbare Wohnung. Im Internet hat sie eine Anzeige gefunden, die interessant klingt. Die Wohnung liegt in der Nähe einer Bushaltestelle und hat zwei Zimmer. Bevor sie einen Besichtigungstermin vereinbart, fragt sie nach der Kaltmiete, den Nebenkosten und der Höhe der Kaution. Bei der Besichtigung achtet sie darauf, ob die Fenster dicht sind und die Heizung funktioniert. Außerdem möchte sie wissen, ob Haustiere erlaubt sind und wie lange der Mietvertrag läuft.",
+        "translation": "تبحث ناديا منذ أسابيع عن شقة بسعر مناسب. وجدت إعلاناً مثيراً للاهتمام على الإنترنت. تقع الشقة قرب موقف حافلات وتتكون من غرفتين. قبل تحديد موعد المعاينة تسأل عن الإيجار الأساسي والتكاليف الإضافية وقيمة التأمين. أثناء المعاينة تنتبه إلى إحكام النوافذ وعمل التدفئة، وتسأل إن كانت الحيوانات الأليفة مسموحة وعن مدة العقد."
+      },
+      {
+        "lang": "de",
+        "level": "B1",
+        "title": "B1 · Beim Arzt die Beschwerden erklären",
+        "text": "Seit drei Tagen hat Herr Yilmaz starke Kopfschmerzen und fühlt sich ungewöhnlich müde. Deshalb vereinbart er einen Termin in einer Hausarztpraxis. Während des Gesprächs beschreibt er genau, wann die Schmerzen begonnen haben und ob weitere Beschwerden aufgetreten sind. Die Ärztin fragt ihn nach Medikamenten und Vorerkrankungen. Anschließend untersucht sie ihn und erklärt, welche Behandlung sinnvoll ist. Herr Yilmaz fragt nach möglichen Nebenwirkungen und danach, wann er wieder arbeiten darf.",
+        "translation": "يعاني السيد يلماز منذ ثلاثة أيام من صداع شديد وتعب غير معتاد. لذلك يحدد موعداً لدى طبيب الأسرة. يشرح بدقة متى بدأ الألم وما إذا ظهرت أعراض أخرى. تسأله الطبيبة عن الأدوية والأمراض السابقة، ثم تفحصه وتشرح العلاج المناسب. ويسأل عن الآثار الجانبية ومتى يمكنه العودة إلى العمل."
+      },
+      {
+        "lang": "de",
+        "level": "B1",
+        "title": "B1 · Eine höfliche Beschwerde schreiben",
+        "text": "Vor einer Woche hat Lina online einen Wasserkocher bestellt. Das Paket ist pünktlich angekommen, aber das Gerät funktioniert nicht richtig. Sie hat die Bedienungsanleitung gelesen und verschiedene Steckdosen ausprobiert. Das Problem besteht weiterhin. Deshalb schreibt sie dem Kundenservice eine E-Mail. Sie beschreibt den Mangel sachlich, fügt die Bestellnummer hinzu und bittet um einen Austausch oder eine Rückerstattung. Außerdem hängt sie eine Kopie der Rechnung an.",
+        "translation": "طلبت لينا قبل أسبوع غلاية ماء عبر الإنترنت. وصل الطرد في الموعد، لكن الجهاز لا يعمل جيداً. قرأت دليل الاستخدام وجربت مقابس مختلفة، لكن المشكلة مستمرة. لذلك تكتب لخدمة العملاء رسالة تصف فيها العيب بموضوعية، وتضيف رقم الطلب وتطلب الاستبدال أو استرداد المبلغ، وترفق نسخة من الفاتورة."
+      },
+      {
+        "lang": "de",
+        "level": "B2",
+        "title": "B2 · Berufliche Weiterbildung und neue Chancen",
+        "text": "Der Arbeitsmarkt verändert sich ständig, weshalb berufliche Weiterbildung immer wichtiger wird. Wer seine Kenntnisse regelmäßig erweitert, kann flexibler auf neue Anforderungen reagieren und seine Chancen auf eine bessere Position erhöhen. Allerdings ist es nicht immer einfach, Arbeit, Familie und Lernen miteinander zu vereinbaren. Aus diesem Grund bieten viele Bildungseinrichtungen Abendkurse oder Online-Unterricht an. Entscheidend ist, ein realistisches Ziel zu formulieren und einen Lernplan zu entwickeln, der langfristig zum eigenen Alltag passt.",
+        "translation": "يتغير سوق العمل باستمرار، ولذلك تزداد أهمية التدريب المهني. من يطوّر معارفه بانتظام يستطيع الاستجابة بمرونة للمتطلبات الجديدة وزيادة فرصه في وظيفة أفضل. لكن ليس من السهل دائماً التوفيق بين العمل والعائلة والتعلم. لذلك تقدم مؤسسات تعليمية كثيرة دورات مسائية أو عبر الإنترنت. والأهم وضع هدف واقعي وخطة تعلم تناسب الحياة اليومية على المدى الطويل."
+      },
+      {
+        "lang": "de",
+        "level": "B2",
+        "title": "B2 · Ein Problem mit dem Mietvertrag klären",
+        "text": "Nach dem Einzug stellt ein Mieter fest, dass mehrere Mängel in der Wohnung vorhanden sind. Obwohl er den Vermieter bereits telefonisch informiert hat, wurde bisher nichts unternommen. Deshalb dokumentiert er die Schäden mit Fotos und beschreibt schriftlich, wann er sie entdeckt hat. In seiner Nachricht bittet er um eine zeitnahe Reparatur und setzt eine angemessene Frist. Gleichzeitig bleibt er sachlich und höflich, damit die Kommunikation nicht unnötig eskaliert. Falls keine Reaktion erfolgt, möchte er sich beraten lassen.",
+        "translation": "بعد الانتقال إلى الشقة يكتشف المستأجر عدة عيوب. وعلى الرغم من إبلاغ المالك هاتفياً، لم يُتخذ أي إجراء. لذلك يوثق الأضرار بالصور ويشرح كتابةً متى اكتشفها. يطلب إصلاحاً قريباً ويحدد مهلة مناسبة، مع الحفاظ على أسلوب موضوعي ومهذب حتى لا يتصاعد الخلاف. وإذا لم يتلقَّ رداً، ينوي طلب استشارة."
+      },
+      {
+        "lang": "de",
+        "level": "B2",
+        "title": "B2 · Eine Entscheidung begründen",
+        "text": "Viele Menschen stehen irgendwann vor der Frage, ob sie eine sichere, aber wenig interessante Arbeit behalten oder eine neue berufliche Möglichkeit nutzen sollen. Eine solche Entscheidung hängt von verschiedenen Faktoren ab: finanzielle Sicherheit, persönliche Interessen, familiäre Verpflichtungen und langfristige Ziele. Meiner Ansicht nach sollte man zunächst alle Vor- und Nachteile sorgfältig abwägen. Außerdem ist es hilfreich, mit Menschen zu sprechen, die bereits ähnliche Erfahrungen gemacht haben. Eine gut begründete Entscheidung bedeutet nicht, dass jedes Risiko ausgeschlossen werden kann.",
+        "translation": "يواجه كثير من الناس سؤالاً: هل يحتفظون بعمل آمن لكنه غير ممتع، أم يستفيدون من فرصة مهنية جديدة؟ يعتمد القرار على عوامل منها الأمان المالي والاهتمامات والالتزامات العائلية والأهداف طويلة الأمد. من وجهة نظري ينبغي دراسة الإيجابيات والسلبيات بعناية والتحدث مع أصحاب التجارب المشابهة. فالقرار المبرر جيداً لا يعني استبعاد كل المخاطر."
+      },
+      {
+        "lang": "de",
+        "level": "B2",
+        "title": "B2 · Digitale Kommunikation und Missverständnisse",
+        "text": "Digitale Kommunikation erleichtert den Austausch von Informationen, kann jedoch auch zu Missverständnissen führen. In kurzen Nachrichten fehlen häufig Tonfall, Mimik und weitere Hinweise, die in einem persönlichen Gespräch selbstverständlich sind. Deshalb kann eine sachlich gemeinte Aussage schnell unhöflich wirken. Besonders bei beruflichen oder offiziellen Kontakten sollte man Nachrichten klar formulieren und vor dem Absenden noch einmal lesen. Wenn ein Thema kompliziert oder besonders wichtig ist, ist ein persönliches Gespräch oft die bessere Lösung.",
+        "translation": "يسهّل التواصل الرقمي تبادل المعلومات، لكنه قد يؤدي إلى سوء الفهم. فالرسائل القصيرة تفتقر غالباً إلى نبرة الصوت وتعابير الوجه والإشارات الواضحة في الحديث المباشر. لذلك قد تبدو عبارة محايدة وكأنها وقاحة. في التواصل المهني والرسمي ينبغي صياغة الرسائل بوضوح ومراجعتها قبل الإرسال. وإذا كان الموضوع معقداً أو مهماً، فغالباً يكون الحديث المباشر أفضل."
       }
     ],
     "topics": [
@@ -1131,6 +1567,36 @@
           "Pluralformen: -e, -er, -(e)n, -s und ohne Endung",
           "Artikel im Plural: die",
           "Unregelmäßige Pluralformen und Beispiele"
+        ]
+      },
+      {
+        "title": "B1 · Alltag, Wohnen und Behörden",
+        "description": "Kommunikation in typischen Alltagssituationen in Deutschland",
+        "items": [
+          "Wohnungssuche und Mietvertrag",
+          "Termine vereinbaren und verschieben",
+          "Anträge, Nachweise und Bescheinigungen",
+          "Beschwerden höflich formulieren"
+        ]
+      },
+      {
+        "title": "B1 · Arbeit und Gesundheit",
+        "description": "Sprache für Beruf, Arztbesuch und persönliche Organisation",
+        "items": [
+          "Arbeitsbeginn und Arbeitszeiten",
+          "Bewerbung und Vorstellungsgespräch",
+          "Beschwerden beim Arzt erklären",
+          "Krankmeldung und Behandlung"
+        ]
+      },
+      {
+        "title": "B2 · Argumentieren und differenziert sprechen",
+        "description": "Komplexere Aussagen verstehen, begründen und höflich formulieren",
+        "items": [
+          "Vor- und Nachteile abwägen",
+          "Meinungen begründen und Beispiele nennen",
+          "Ursachen und Auswirkungen erklären",
+          "Formelle Beschwerden und Anfragen schreiben"
         ]
       }
     ]
