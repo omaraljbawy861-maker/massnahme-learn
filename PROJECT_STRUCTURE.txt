@@ -1,0 +1,9 @@
+index.html          الصفحة الرئيسية
+css/style.css       التصميم والألوان والتجاوب مع الجوال
+js/app.js           التنقل وعرض الدروس والاختبارات
+js/data.js          تحميل بيانات المواد
+js/progress.js      حفظ التقدم محلياً
+data/deutsch.json   محتوى اللغة الألمانية
+data/mathematik.json محتوى الرياضيات
+data/english.json   محتوى اللغة الإنجليزية
+assets/             مكان الصور والملفات الثابتة

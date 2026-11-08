@@ -1,0 +1,1699 @@
+{
+  "id": "english",
+  "name": "اللغة الإنجليزية",
+  "german": "Englisch",
+  "code": "EN",
+  "icon": "A",
+  "description": "Reading · Writing · Vocabulary",
+  "lessons": [
+    {
+      "id": "en-01",
+      "title": "التعريف عن النفس",
+      "germanTitle": "Introducing yourself",
+      "level": "Beginner",
+      "duration": "25 دقيقة",
+      "objectives": [
+        "تقديم الاسم والعمر ومكان السكن.",
+        "استخدام فعل be بصورة صحيحة.",
+        "كتابة فقرة قصيرة عن النفس."
+      ],
+      "intro": "التعريف عن النفس من أكثر المواضيع شيوعاً في المحادثة والامتحانات. تعلم نموذجاً بسيطاً ثم غيّر المعلومات لتناسبك.",
+      "german": "You can introduce yourself with simple sentences. Use am with I, is with he/she/it, and are with you/we/they. Write complete sentences and use a capital letter at the beginning.",
+      "explanation": "احفظ تركيب الجملة وليس النص فقط. استخدم I am للعمر أو الصفة، وI live in لمكان السكن، وI speak للغات التي تتحدثها.",
+      "vocab": [
+        [
+          "My name is",
+          "اسمي هو"
+        ],
+        [
+          "I live in",
+          "أنا أعيش في"
+        ],
+        [
+          "years old",
+          "من العمر"
+        ],
+        [
+          "I speak",
+          "أتحدث"
+        ],
+        [
+          "because",
+          "لأن"
+        ]
+      ],
+      "example": "Hello! My name is Sara. I am 24 years old. I live in Germany. I speak Arabic and German. I am learning English because I need it for work.",
+      "questions": [
+        {
+          "q": "ما معنى I live in Berlin؟",
+          "options": [
+            "أعمل في برلين",
+            "أعيش في برلين",
+            "أدرس برلين"
+          ],
+          "correct": 1,
+          "why": "I live in تعني أنا أعيش في."
+        },
+        {
+          "q": "أكمل: My name ___ Omar.",
+          "options": [
+            "are",
+            "is",
+            "am"
+          ],
+          "correct": 1,
+          "why": "نستخدم is مع My name."
+        },
+        {
+          "q": "اختر: I ___ a student.",
+          "options": [
+            "is",
+            "am",
+            "are"
+          ],
+          "correct": 1,
+          "why": "I am."
+        },
+        {
+          "q": "ما معنى „I speak Arabic“؟",
+          "options": [
+            "أقرأ العربية",
+            "أتحدث العربية",
+            "أكتب العربية"
+          ],
+          "correct": 1,
+          "why": "speak تعني أتحدث."
+        },
+        {
+          "q": "اختر: He ___ in Berlin.",
+          "options": [
+            "live",
+            "lives",
+            "living"
+          ],
+          "correct": 1,
+          "why": "مع he نضيف s."
+        }
+      ],
+      "unit": "Personal information",
+      "lessonText": "ابدأ بجمل قصيرة وواضحة: My name is… / I am … years old. / I live in… / I speak… / I am learning English because… انتبه إلى فعل be: I am, he/she is, you/we/they are.",
+      "worked": [
+        {
+          "title": "نموذج تعارف",
+          "prompt": "اكتب تعريفاً قصيراً لطالب اسمه Samir يعيش في Dortmund ويتحدث العربية والألمانية.",
+          "steps": [
+            "ابدأ بالتحية: Hello.",
+            "اذكر الاسم: My name is Samir.",
+            "المكان: I live in Dortmund.",
+            "اللغات: I speak Arabic and German."
+          ],
+          "answer": "Hello! My name is Samir. I live in Dortmund. I speak Arabic and German. I am learning English."
+        }
+      ],
+      "practice": [
+        {
+          "q": "اختر: She ___ 20 years old.",
+          "a": "is",
+          "hint": "مع she نستخدم is."
+        },
+        {
+          "q": "أكمل: They ___ in Germany.",
+          "a": "are",
+          "hint": "مع they نستخدم are."
+        },
+        {
+          "q": "ترجم: أنا أعيش في Essen.",
+          "a": "I live in Essen.",
+          "hint": "I live in."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب فقرة من 5 جمل تقدم فيها نفسك، واذكر الاسم والمدينة واللغات والهواية وسبب تعلم الإنجليزية.",
+          "solution": "Hello! My name is … I live in … I speak … My hobby is … I am learning English because …"
+        }
+      ],
+      "unitArabic": "الوحدة الأولى: المعلومات الشخصية",
+      "chapterNumber": 1
+    },
+    {
+      "id": "en-02",
+      "title": "المضارع البسيط",
+      "germanTitle": "Simple Present",
+      "level": "Beginner",
+      "duration": "35 دقيقة",
+      "objectives": [
+        "استخدام المضارع البسيط للعادات والحقائق.",
+        "إضافة s أو es مع he/she/it.",
+        "تكوين النفي والسؤال باستخدام do/does."
+      ],
+      "intro": "نستخدم Simple Present للتحدث عن العادات والحقائق والأشياء التي تتكرر.",
+      "german": "Use the Simple Present for routines and facts. With I/you/we/they use the base form. With he/she/it add -s or -es. For negatives use do not / does not. After does, use the base verb: He does not play.",
+      "explanation": "مع I/You/We/They نقول work. مع He/She/It نقول works. في النفي نستخدم don't أو doesn't، وبعد doesn't يعود الفعل إلى شكله الأساسي.",
+      "vocab": [
+        [
+          "usually",
+          "عادةً"
+        ],
+        [
+          "every day",
+          "كل يوم"
+        ],
+        [
+          "to work",
+          "يعمل"
+        ],
+        [
+          "to study",
+          "يدرس"
+        ],
+        [
+          "sometimes",
+          "أحياناً"
+        ]
+      ],
+      "example": "I study English every day.\nHe works in a shop.\nShe doesn't work on Sunday.",
+      "questions": [
+        {
+          "q": "اختر الصحيح: She ___ English.",
+          "options": [
+            "study",
+            "studies",
+            "studying"
+          ],
+          "correct": 1,
+          "why": "مع She نضيف غالباً s، وهنا تتحول y إلى ies."
+        },
+        {
+          "q": "ما أداة النفي مع He؟",
+          "options": [
+            "don't",
+            "doesn't",
+            "isn't"
+          ],
+          "correct": 1,
+          "why": "نستخدم doesn't مع he/she/it."
+        },
+        {
+          "q": "اختر: They ___ every day.",
+          "options": [
+            "works",
+            "work",
+            "working"
+          ],
+          "correct": 1,
+          "why": "مع they نستخدم المصدر."
+        },
+        {
+          "q": "النفي الصحيح مع she؟",
+          "options": [
+            "She do not work",
+            "She does not work",
+            "She not works"
+          ],
+          "correct": 1,
+          "why": "does not + المصدر."
+        },
+        {
+          "q": "أكمل: He ___ TV.",
+          "options": [
+            "watch",
+            "watches",
+            "watching"
+          ],
+          "correct": 1,
+          "why": "watch تصبح watches."
+        }
+      ],
+      "unit": "Present simple",
+      "lessonText": "نستخدم Present Simple للعادات والحقائق. مع I/you/we/they نستخدم الفعل الأساسي: I work. مع he/she/it نضيف غالباً s: She works. في النفي نستخدم do not أو does not، وبعد does يعود الفعل إلى المصدر: She does not work.",
+      "worked": [
+        {
+          "title": "إثبات ونفي",
+          "prompt": "حوّل: He (play) football. ثم اجعلها منفية.",
+          "steps": [
+            "He من المجموعة he/she/it.",
+            "نضيف s إلى play: plays.",
+            "في النفي نستخدم does not ثم المصدر play."
+          ],
+          "answer": "He plays football. / He does not play football."
+        }
+      ],
+      "practice": [
+        {
+          "q": "اختر: My brother ___ in a shop.",
+          "a": "works",
+          "hint": "مع my brother نستخدم s."
+        },
+        {
+          "q": "اختر النفي الصحيح: She ___ like coffee.",
+          "a": "does not",
+          "hint": "She + does not + المصدر."
+        },
+        {
+          "q": "حوّل إلى سؤال: You speak English.",
+          "a": "Do you speak English?",
+          "hint": "ابدأ بـ Do مع you."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب 4 جمل عن روتينك اليومي، ثم حوّل جملتين إلى النفي.",
+          "solution": "I get up at seven. I go to work. I study English. I cook dinner. I do not get up at six. I do not work on Sunday."
+        }
+      ],
+      "unitArabic": "الوحدة الثانية: المضارع البسيط",
+      "chapterNumber": 2
+    },
+    {
+      "id": "en03",
+      "title": "أدوات السؤال",
+      "germanTitle": "Question words",
+      "level": "Beginner",
+      "duration": "35–40 دقيقة",
+      "objectives": [
+        "استخدام what, where, when, who, why, how.",
+        "ترتيب سؤال بسيط باستخدام do/does أو be.",
+        "اختيار أداة السؤال المناسبة للمعلومة المطلوبة."
+      ],
+      "intro": "في هذا الدرس سنتعلم أدوات السؤال. اقرأ الشرح ثم راجع المثال وحل الأسئلة.",
+      "german": "Question words ask for specific information: what (thing), where (place), when (time), who (person), why (reason), how (manner or condition). In the Simple Present use do/does before the subject, except with the verb be.",
+      "explanation": "What ماذا، Where أين، When متى، Who من، Why لماذا، How كيف. نستخدمها للحصول على معلومات محددة.",
+      "vocab": [
+        [
+          "the verb",
+          "الفعل / المصطلح"
+        ],
+        [
+          "the example",
+          "المثال"
+        ],
+        [
+          "the rule",
+          "القاعدة"
+        ]
+      ],
+      "example": "Where do you live? I live in Glasgow.",
+      "questions": [
+        {
+          "q": "أي أداة نسأل بها عن المكان؟",
+          "options": [
+            "Where",
+            "When",
+            "Who"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: Where."
+        },
+        {
+          "q": "أي أداة نسأل بها عن الوقت؟",
+          "options": [
+            "When",
+            "Where",
+            "Why"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: When."
+        },
+        {
+          "q": "أكمل: ___ is your name?",
+          "options": [
+            "What",
+            "Who",
+            "Where"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: What."
+        },
+        {
+          "q": "أكمل: ___ are you late?",
+          "options": [
+            "Why",
+            "Who",
+            "How"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: Why."
+        },
+        {
+          "q": "أي سؤال يسأل عن الشخص؟",
+          "options": [
+            "Who is your teacher?",
+            "Where is your teacher?",
+            "When is your teacher?"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: Who is your teacher?."
+        }
+      ],
+      "unit": "Question words",
+      "lessonText": "أدوات السؤال الأساسية: What للسؤال عن الشيء، Where للمكان، When للوقت، Who للشخص، Why للسبب، How للطريقة أو الحال. في أسئلة المضارع البسيط نستخدم غالباً Do/Does + الفاعل + الفعل الأساسي. مع be نبدأ بأداة السؤال ثم am/is/are.",
+      "worked": [
+        {
+          "title": "بناء سؤال",
+          "prompt": "الجواب: I live in Bonn. اسأل عن المكان.",
+          "steps": [
+            "المعلومة المطلوبة مكان، إذن نستخدم Where.",
+            "الفعل live في المضارع البسيط.",
+            "مع I نستخدم do.",
+            "الترتيب: Where + do + you + live?"
+          ],
+          "answer": "Where do you live?"
+        }
+      ],
+      "practice": [
+        {
+          "q": "أي أداة تسأل عن السبب؟",
+          "a": "Why",
+          "hint": "تبدأ بها أسئلة because."
+        },
+        {
+          "q": "أكمل: ___ do you get up? – At 7 o’clock.",
+          "a": "When",
+          "hint": "الجواب وقت."
+        },
+        {
+          "q": "كوّن سؤالاً: She works in a hospital. (المكان)",
+          "a": "Where does she work?",
+          "hint": "does مع she، ثم الفعل work."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ستة أسئلة باستخدام What, Where, When, Who, Why, How. أجب عن ثلاثة منها.",
+          "solution": "What is your name? Where do you live? When do you study? Who is your teacher? Why do you learn English? How do you go to school?"
+        }
+      ],
+      "unitArabic": "الوحدة الثالثة: أدوات السؤال",
+      "chapterNumber": 3
+    },
+    {
+      "id": "en04",
+      "title": "الماضي البسيط",
+      "germanTitle": "Past Simple",
+      "level": "Beginner",
+      "duration": "35–40 دقيقة",
+      "objectives": [
+        "استخدام الماضي البسيط للأحداث المنتهية.",
+        "تمييز الأفعال المنتظمة وغير المنتظمة.",
+        "تكوين النفي والسؤال باستخدام did."
+      ],
+      "intro": "في هذا الدرس سنتعلم الماضي البسيط. اقرأ الشرح ثم راجع المثال وحل الأسئلة.",
+      "german": "Use the Past Simple for finished actions in the past. Regular verbs often end in -ed. Irregular verbs have a special form. In questions and negatives use did + base verb: Did you go? I did not go.",
+      "explanation": "نستخدم الماضي البسيط لحدث انتهى. الأفعال المنتظمة غالباً نضيف لها ed، وهناك أفعال شاذة مثل go → went.",
+      "vocab": [
+        [
+          "the verb",
+          "الفعل / المصطلح"
+        ],
+        [
+          "the example",
+          "المثال"
+        ],
+        [
+          "the rule",
+          "القاعدة"
+        ]
+      ],
+      "example": "I visited my friend yesterday. / She went to school last Monday.",
+      "questions": [
+        {
+          "q": "ما الماضي من go؟",
+          "options": [
+            "goed",
+            "went",
+            "goes"
+          ],
+          "correct": 1,
+          "why": "الإجابة الصحيحة: went."
+        },
+        {
+          "q": "أكمل: I ___ a film yesterday.",
+          "options": [
+            "watched",
+            "watch",
+            "watching"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: watched."
+        },
+        {
+          "q": "ما معنى yesterday؟",
+          "options": [
+            "أمس",
+            "غداً",
+            "اليوم"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: أمس."
+        },
+        {
+          "q": "اختر الصحيح: He ___ to Berlin last week.",
+          "options": [
+            "go",
+            "went",
+            "going"
+          ],
+          "correct": 1,
+          "why": "الإجابة الصحيحة: went."
+        },
+        {
+          "q": "ما الماضي من play؟",
+          "options": [
+            "played",
+            "plays",
+            "playing"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: played."
+        }
+      ],
+      "unit": "Past simple",
+      "lessonText": "نستخدم Past Simple لحدث انتهى في الماضي، غالباً مع yesterday أو last week. الأفعال المنتظمة تأخذ -ed مثل work → worked. بعض الأفعال غير منتظمة مثل go → went. في النفي والسؤال نستخدم did، ويعود الفعل إلى المصدر: Did you go? / I did not go.",
+      "worked": [
+        {
+          "title": "تحويل إلى الماضي",
+          "prompt": "I visit my friend. (yesterday)",
+          "steps": [
+            "وجود yesterday يدل على الماضي.",
+            "visit فعل منتظم، نضيف ed: visited.",
+            "نضع yesterday في نهاية الجملة."
+          ],
+          "answer": "I visited my friend yesterday."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما الماضي من go؟",
+          "a": "went",
+          "hint": "فعل غير منتظم."
+        },
+        {
+          "q": "أكمل: We ___ TV last night. (watch)",
+          "a": "watched",
+          "hint": "watch فعل منتظم."
+        },
+        {
+          "q": "اختر السؤال الصحيح: ___ she call you?",
+          "a": "Did",
+          "hint": "في السؤال نستخدم Did + المصدر."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب 5 جمل عن أمس مستخدماً ثلاثة أفعال منتظمة وفعلين غير منتظمين.",
+          "solution": "Yesterday I worked. I cleaned my room. I watched TV. I went shopping. I ate dinner with my family."
+        }
+      ],
+      "unitArabic": "الوحدة الرابعة: الماضي البسيط",
+      "chapterNumber": 4
+    },
+    {
+      "id": "en05",
+      "title": "حروف الجر للمكان والزمان",
+      "germanTitle": "Prepositions",
+      "level": "Beginner",
+      "duration": "35–40 دقيقة",
+      "objectives": [
+        "استخدام in, on, at للمكان والزمان.",
+        "التمييز بين in the morning وon Monday وat 8 o’clock.",
+        "وصف مكان الأشياء بجمل بسيطة."
+      ],
+      "intro": "في هذا الدرس سنتعلم حروف الجر للمكان والزمان. اقرأ الشرح ثم راجع المثال وحل الأسئلة.",
+      "german": "Use in for enclosed spaces, cities, countries, months and years. Use on for surfaces, days and dates. Use at for specific places or clock times. Examples: in Germany, on Monday, at 8 o’clock, on the table.",
+      "explanation": "نستخدم in مع الأشهر والسنوات والأماكن الداخلية، وon مع أيام الأسبوع والأسطح، وat مع الساعة المحددة.",
+      "vocab": [
+        [
+          "the verb",
+          "الفعل / المصطلح"
+        ],
+        [
+          "the example",
+          "المثال"
+        ],
+        [
+          "the rule",
+          "القاعدة"
+        ]
+      ],
+      "example": "I was born in 2002. / The meeting is on Monday at 9 o’clock.",
+      "questions": [
+        {
+          "q": "أكمل: ___ Monday.",
+          "options": [
+            "in",
+            "on",
+            "at"
+          ],
+          "correct": 1,
+          "why": "الإجابة الصحيحة: on."
+        },
+        {
+          "q": "أكمل: ___ 8 o’clock.",
+          "options": [
+            "in",
+            "on",
+            "at"
+          ],
+          "correct": 2,
+          "why": "الإجابة الصحيحة: at."
+        },
+        {
+          "q": "أكمل: ___ July.",
+          "options": [
+            "in",
+            "on",
+            "at"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: in."
+        },
+        {
+          "q": "The book is ___ the table.",
+          "options": [
+            "in",
+            "on",
+            "at"
+          ],
+          "correct": 1,
+          "why": "الإجابة الصحيحة: on."
+        },
+        {
+          "q": "I live ___ Germany.",
+          "options": [
+            "in",
+            "on",
+            "at"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: in."
+        }
+      ],
+      "unit": "Prepositions",
+      "lessonText": "للمكان: in تعني داخل مساحة أو مدينة/دولة، on تعني على سطح، at تعني عند نقطة أو عنوان محدد. للزمان: in مع الأشهر والسنوات وأجزاء اليوم، on مع الأيام والتواريخ، at مع الساعة وأوقات محددة مثل night. توجد استثناءات وتراكيب ثابتة يجب حفظها.",
+      "worked": [
+        {
+          "title": "اختيار حرف الجر",
+          "prompt": "The lesson starts ___ 9 o’clock ___ Monday.",
+          "steps": [
+            "9 o’clock وقت محدد بالساعة، نستخدم at.",
+            "Monday يوم من أيام الأسبوع، نستخدم on."
+          ],
+          "answer": "The lesson starts at 9 o’clock on Monday."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: I live ___ Germany.",
+          "a": "in",
+          "hint": "الدولة."
+        },
+        {
+          "q": "أكمل: The book is ___ the table.",
+          "a": "on",
+          "hint": "سطح الطاولة."
+        },
+        {
+          "q": "أكمل: We meet ___ 6 pm.",
+          "a": "at",
+          "hint": "ساعة محددة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب 6 جمل: ثلاث عن الوقت وثلاث عن المكان، مستخدماً in/on/at.",
+          "solution": "I was born in 2002. I study in the morning. I live in Germany. My class is on Monday. The keys are on the table. We meet at 8 o’clock."
+        }
+      ],
+      "unitArabic": "الوحدة الخامسة: حروف الجر",
+      "chapterNumber": 5
+    },
+    {
+      "id": "english-book-01",
+      "title": "Present Simple",
+      "germanTitle": "Present Simple",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 3",
+      "unitArabic": "الوحدة 3: Present Simple",
+      "chapterNumber": 6,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع Present Simple.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Englisch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "Use the Present Simple for routines and facts. Add -s or -es with he, she and it. Questions use do or does.",
+      "lessonText": "نستخدم المضارع البسيط للعادات والحقائق. مع he/she/it نضيف غالباً s للفعل. في السؤال نستخدم do أو does، وبعد does يعود الفعل إلى شكله الأساسي.",
+      "explanation": "نستخدم المضارع البسيط للعادات والحقائق. مع he/she/it نضيف غالباً s للفعل. في السؤال نستخدم do أو does، وبعد does يعود الفعل إلى شكله الأساسي.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "She works every day. / Does she work every day?",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "She works every day. / Does she work every day?",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "lives"
+        }
+      ],
+      "practice": [
+        {
+          "q": "Choose: He (live/lives) in Berlin.",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "lives"
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Present Simple.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "Use the Present Simple for routines and facts."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Choose: He (live/lives) in Berlin.",
+          "options": [
+            "lives",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع Present Simple؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن Present Simple، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: Use the Present Simple for routines and facts. Add -s or -es with he, she and it. Questions use do or does."
+        },
+        {
+          "q": "Choose: He (live/lives) in Berlin.",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "lives"
+        }
+      ]
+    },
+    {
+      "id": "english-book-02",
+      "title": "Past Simple",
+      "germanTitle": "Past Simple",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 4",
+      "unitArabic": "الوحدة 4: Past Simple",
+      "chapterNumber": 7,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع Past Simple.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Englisch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "Use the Past Simple for completed actions in the past. Regular verbs take -ed. Irregular verbs have a special past form. Questions use did + base verb.",
+      "lessonText": "نستخدم الماضي البسيط لحدث انتهى في الماضي. الأفعال المنتظمة تأخذ ed، وغير المنتظمة لها شكل خاص. في السؤال نستخدم did ثم الفعل الأساسي.",
+      "explanation": "نستخدم الماضي البسيط لحدث انتهى في الماضي. الأفعال المنتظمة تأخذ ed، وغير المنتظمة لها شكل خاص. في السؤال نستخدم did ثم الفعل الأساسي.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "I visited my friend. / Did you go to school?",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "I visited my friend. / Did you go to school?",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "She did not watch TV."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Make negative: She watched TV.",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "She did not watch TV."
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Past Simple.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "Use the Past Simple for completed actions in the past."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Make negative: She watched TV.",
+          "options": [
+            "She did not watch TV.",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع Past Simple؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن Past Simple، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: Use the Past Simple for completed actions in the past. Regular verbs take -ed. Irregular verbs have a special past form. Questions use did + base verb."
+        },
+        {
+          "q": "Make negative: She watched TV.",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "She did not watch TV."
+        }
+      ]
+    },
+    {
+      "id": "english-book-03",
+      "title": "قراءة إعلان ورسالة",
+      "germanTitle": "Reading adverts and messages",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 4",
+      "unitArabic": "الوحدة 4: قراءة إعلان ورسالة",
+      "chapterNumber": 8,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع قراءة إعلان ورسالة.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Englisch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "Read the heading first. Look for dates, prices, places and contact details. Do not translate every word; use the context and key information.",
+      "lessonText": "ابدأ بعنوان الإعلان ثم ابحث عن التاريخ والسعر والمكان وطريقة التواصل. لا تترجم كل كلمة؛ استخرج المعلومات المطلوبة مباشرة.",
+      "explanation": "ابدأ بعنوان الإعلان ثم ابحث عن التاريخ والسعر والمكان وطريقة التواصل. لا تترجم كل كلمة؛ استخرج المعلومات المطلوبة مباشرة.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "SALE: Shoes €25. Open Monday–Saturday, 9 am–6 pm.",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "SALE: Shoes €25. Open Monday–Saturday, 9 am–6 pm.",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "Monday to Saturday, 9 am to 6 pm."
+        }
+      ],
+      "practice": [
+        {
+          "q": "When is the shop open?",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "Monday to Saturday, 9 am to 6 pm."
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Reading adverts and messages.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "Read the heading first."
+        }
+      ],
+      "questions": [
+        {
+          "q": "When is the shop open?",
+          "options": [
+            "Monday to Saturday, 9 am to 6 pm.",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع قراءة إعلان ورسالة؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن قراءة إعلان ورسالة، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: Read the heading first. Look for dates, prices, places and contact details. Do not translate every word; use the context and key information."
+        },
+        {
+          "q": "When is the shop open?",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "Monday to Saturday, 9 am to 6 pm."
+        }
+      ]
+    },
+    {
+      "id": "english-book-04",
+      "title": "كتابة بريد إلكتروني",
+      "germanTitle": "Writing an email",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 5",
+      "unitArabic": "الوحدة 5: كتابة بريد إلكتروني",
+      "chapterNumber": 9,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع كتابة بريد إلكتروني.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Englisch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "A clear email has a subject, greeting, reason for writing, important details and a polite ending. Use short paragraphs.",
+      "lessonText": "البريد الجيد له موضوع وتحّية وسبب واضح للكتابة وتفاصيل وخاتمة مهذبة. استخدم جملاً قصيرة وتأكد من صحة الأسماء والتواريخ.",
+      "explanation": "البريد الجيد له موضوع وتحّية وسبب واضح للكتابة وتفاصيل وخاتمة مهذبة. استخدم جملاً قصيرة وتأكد من صحة الأسماء والتواريخ.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "Subject: Appointment. Dear Mr Smith, I am writing to ask for an appointment. Kind regards, Ali.",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "Subject: Appointment. Dear Mr Smith, I am writing to ask for an appointment. Kind regards, Ali.",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "Could you please send me more information?"
+        }
+      ],
+      "practice": [
+        {
+          "q": "Write one polite sentence to ask for information.",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "Could you please send me more information?"
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Writing an email.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "A clear email has a subject, greeting, reason for writing, important details and a polite ending."
+        }
+      ],
+      "questions": [
+        {
+          "q": "Write one polite sentence to ask for information.",
+          "options": [
+            "Could you please send me more information?",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع كتابة بريد إلكتروني؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن كتابة بريد إلكتروني، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: A clear email has a subject, greeting, reason for writing, important details and a polite ending. Use short paragraphs."
+        },
+        {
+          "q": "Write one polite sentence to ask for information.",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "Could you please send me more information?"
+        }
+      ]
+    },
+    {
+      "id": "english-book-2-1",
+      "title": "المضارع البسيط",
+      "germanTitle": "Present Simple",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Sentences and Tenses",
+      "unitArabic": "الوحدة 2: بناء الجملة والأزمنة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Present Simple.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم المضارع البسيط. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Use the present simple for routines and facts. Add -s or -es with he, she and it. Questions use do/does; negatives use do not/does not + base verb.",
+      "lessonText": "نستخدم المضارع البسيط للعادات والحقائق. نضيف s أو es مع he وshe وit. في السؤال والنفي نستخدم do أو does ثم الفعل بصيغته الأساسية.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "usually",
+          "عادةً"
+        ],
+        [
+          "every day",
+          "كل يوم"
+        ],
+        [
+          "to practise",
+          "يتدرّب"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "She works in a shop. / Does she work here? / She does not work on Sunday.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "plays"
+        }
+      ],
+      "practice": [
+        {
+          "q": "Choose: He (play / plays) football every week.",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "plays"
+        }
+      ],
+      "example": "She works in a shop. / Does she work here? / She does not work on Sunday.",
+      "questions": [
+        {
+          "q": "Choose: He (play / plays) football every week.",
+          "options": [
+            "plays",
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 0,
+          "why": "plays"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب أربع جمل عن روتينك اليومي بالمضارع البسيط.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب أربع جمل عن روتينك اليومي بالمضارع البسيط.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-2-2",
+      "title": "الماضي البسيط",
+      "germanTitle": "Past Simple",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Sentences and Tenses",
+      "unitArabic": "الوحدة 2: بناء الجملة والأزمنة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Past Simple.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم الماضي البسيط. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Use the past simple for finished actions in the past. Regular verbs usually take -ed; irregular verbs have special forms. Questions and negatives use did + base verb.",
+      "lessonText": "نستخدم الماضي البسيط لحدث انتهى في الماضي. الأفعال المنتظمة تأخذ غالباً ed، وغير المنتظمة لها أشكال خاصة. في السؤال والنفي نستخدم did مع الفعل الأساسي.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "yesterday",
+          "أمس"
+        ],
+        [
+          "last week",
+          "الأسبوع الماضي"
+        ],
+        [
+          "irregular verb",
+          "فعل شاذ"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "I visited my friend yesterday. / Did you go? / I did not go.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "watched"
+        }
+      ],
+      "practice": [
+        {
+          "q": "Complete: They ___ (watch) a film last night.",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "watched"
+        }
+      ],
+      "example": "I visited my friend yesterday. / Did you go? / I did not go.",
+      "questions": [
+        {
+          "q": "Complete: They ___ (watch) a film last night.",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "watched",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 1,
+          "why": "watched"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب خمس جمل عن عطلة نهاية الأسبوع الماضية.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب خمس جمل عن عطلة نهاية الأسبوع الماضية.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-2-3",
+      "title": "المستقبل والخطط",
+      "germanTitle": "Future with going to and will",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Sentences and Tenses",
+      "unitArabic": "الوحدة 2: بناء الجملة والأزمنة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Future with going to and will.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم المستقبل والخطط. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Use going to for plans and intentions. Use will for spontaneous decisions, promises and predictions. Time expressions help make the meaning clear.",
+      "lessonText": "نستخدم going to للخطط والنوايا، وwill للقرارات السريعة والوعود والتوقعات. تساعد كلمات الزمن على فهم المعنى.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "plan",
+          "خطة"
+        ],
+        [
+          "tomorrow",
+          "غداً"
+        ],
+        [
+          "promise",
+          "وعد"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "I am going to study tonight. / I will help you.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "am going to"
+        }
+      ],
+      "practice": [
+        {
+          "q": "اختر للخطة المسبقة: I ___ visit my aunt next Saturday.",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "am going to"
+        }
+      ],
+      "example": "I am going to study tonight. / I will help you.",
+      "questions": [
+        {
+          "q": "اختر للخطة المسبقة: I ___ visit my aunt next Saturday.",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته.",
+            "am going to"
+          ],
+          "correct": 2,
+          "why": "am going to"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب جملتين عن خططك للأسبوع القادم.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب جملتين عن خططك للأسبوع القادم.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-3-1",
+      "title": "فهم الإيميلات والرسائل",
+      "germanTitle": "Understanding Emails and Messages",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Reading and Communication",
+      "unitArabic": "الوحدة 3: القراءة والتواصل",
+      "objectives": [
+        "شرح المفهوم الأساسي: Understanding Emails and Messages.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم فهم الإيميلات والرسائل. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Identify who writes, why they write, what information is requested and any deadline. Notice formal or informal language. Reply to every question clearly.",
+      "lessonText": "حدد من كتب الرسالة ولماذا، وما المعلومات المطلوبة والموعد النهائي. انتبه إلى اللغة الرسمية أو غير الرسمية، وأجب عن كل سؤال بوضوح.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "subject",
+          "الموضوع"
+        ],
+        [
+          "deadline",
+          "الموعد النهائي"
+        ],
+        [
+          "reply",
+          "يرد"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Subject: Meeting on Friday. Please confirm by Wednesday.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "تأكيد الحضور أو الموافقة."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What does “Please confirm” ask you to do?",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "تأكيد الحضور أو الموافقة."
+        }
+      ],
+      "example": "Subject: Meeting on Friday. Please confirm by Wednesday.",
+      "questions": [
+        {
+          "q": "What does “Please confirm” ask you to do?",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "تأكيد الحضور أو الموافقة.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 1,
+          "why": "تأكيد الحضور أو الموافقة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اقرأ رسالة قصيرة من صاحب عمل وحدد الموعد والمطلوب وطريقة الرد.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اقرأ رسالة قصيرة من صاحب عمل وحدد الموعد والمطلوب وطريقة الرد.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-3-2",
+      "title": "طرح الأسئلة بأدب",
+      "germanTitle": "Making Polite Requests",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Reading and Communication",
+      "unitArabic": "الوحدة 3: القراءة والتواصل",
+      "objectives": [
+        "شرح المفهوم الأساسي: Making Polite Requests.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم طرح الأسئلة بأدب. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Use Could you…? and Would you mind…? for polite requests. Use Can I…? to ask permission. Please and thank you make requests more courteous.",
+      "lessonText": "للطلب المهذب نستخدم Could you…? أو Would you mind…? ولطلب الإذن نستخدم Can I…? وتزيد كلمتا please وthank you من لطف العبارة.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "Could you…?",
+          "هل يمكنك…؟"
+        ],
+        [
+          "permission",
+          "إذن"
+        ],
+        [
+          "polite",
+          "مهذب"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Could you repeat that, please? / Can I use your phone?",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "Could you help me, please?"
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which is more polite: “Give me help” or “Could you help me, please?”",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "Could you help me, please?"
+        }
+      ],
+      "example": "Could you repeat that, please? / Can I use your phone?",
+      "questions": [
+        {
+          "q": "Which is more polite: “Give me help” or “Could you help me, please?”",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته.",
+            "Could you help me, please?"
+          ],
+          "correct": 2,
+          "why": "Could you help me, please?"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ثلاثة طلبات مهذبة تستخدمها في المدرسة أو العمل.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب ثلاثة طلبات مهذبة تستخدمها في المدرسة أو العمل.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-3-3",
+      "title": "وصف مكان واتجاهات",
+      "germanTitle": "Describing Places and Directions",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Reading and Communication",
+      "unitArabic": "الوحدة 3: القراءة والتواصل",
+      "objectives": [
+        "شرح المفهوم الأساسي: Describing Places and Directions.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم وصف مكان واتجاهات. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Use there is/there are to describe what exists. Give directions with turn left, turn right, go straight ahead and next to. Use prepositions accurately.",
+      "lessonText": "نستخدم there is للمفرد وthere are للجمع لوصف ما يوجد في المكان. للاتجاهات نقول انعطف يساراً أو يميناً، تابع بشكل مستقيم، وبجانب.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "opposite",
+          "مقابل"
+        ],
+        [
+          "next to",
+          "بجانب"
+        ],
+        [
+          "straight ahead",
+          "إلى الأمام مباشرة"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "There is a pharmacy next to the station. Go straight ahead and turn left.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "انعطف يميناً."
+        }
+      ],
+      "practice": [
+        {
+          "q": "What does “turn right” mean?",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "انعطف يميناً."
+        }
+      ],
+      "example": "There is a pharmacy next to the station. Go straight ahead and turn left.",
+      "questions": [
+        {
+          "q": "What does “turn right” mean?",
+          "options": [
+            "انعطف يميناً.",
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 0,
+          "why": "انعطف يميناً."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب وصفاً من 4 جمل للطريق من منزلك إلى متجر قريب.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب وصفاً من 4 جمل للطريق من منزلك إلى متجر قريب.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-4-1",
+      "title": "كتابة فقرة مترابطة",
+      "germanTitle": "Writing a Connected Paragraph",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Writing and Practical English",
+      "unitArabic": "الوحدة 4: الكتابة واللغة العملية",
+      "objectives": [
+        "شرح المفهوم الأساسي: Writing a Connected Paragraph.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم كتابة فقرة مترابطة. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "A paragraph has one main idea. Start with a topic sentence, add supporting details and use linking words such as because, but, also and finally.",
+      "lessonText": "تتناول الفقرة فكرة رئيسية واحدة. ابدأ بجملة الموضوع، ثم أضف تفاصيل داعمة واستخدم روابط مثل because وbut وalso وfinally.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "paragraph",
+          "فقرة"
+        ],
+        [
+          "topic sentence",
+          "جملة الموضوع"
+        ],
+        [
+          "linking word",
+          "أداة ربط"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "I like my town because it is quiet. It also has a good library.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "because"
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which word gives a reason: but / because / and?",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "because"
+        }
+      ],
+      "example": "I like my town because it is quiet. It also has a good library.",
+      "questions": [
+        {
+          "q": "Which word gives a reason: but / because / and?",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته.",
+            "because"
+          ],
+          "correct": 2,
+          "why": "because"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب فقرة من 70 كلمة عن مكان تحب زيارته.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب فقرة من 70 كلمة عن مكان تحب زيارته.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-4-2",
+      "title": "السيرة الذاتية البسيطة",
+      "germanTitle": "A Simple CV",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Writing and Practical English",
+      "unitArabic": "الوحدة 4: الكتابة واللغة العملية",
+      "objectives": [
+        "شرح المفهوم الأساسي: A Simple CV.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم السيرة الذاتية البسيطة. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "A basic CV includes contact details, a short profile, education, work experience, skills and languages. Use clear headings, reverse chronological order and truthful information.",
+      "lessonText": "تتضمن السيرة الذاتية بيانات التواصل، نبذة قصيرة، التعليم، الخبرة، المهارات واللغات. استخدم عناوين واضحة ورتب الخبرات من الأحدث إلى الأقدم واكتب معلومات صحيحة.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "experience",
+          "خبرة"
+        ],
+        [
+          "qualification",
+          "مؤهل"
+        ],
+        [
+          "skill",
+          "مهارة"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Profile: Reliable and motivated learner. Skills: teamwork, communication, basic computer skills.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "Languages / اللغات"
+        }
+      ],
+      "practice": [
+        {
+          "q": "Which section lists language abilities?",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "Languages / اللغات"
+        }
+      ],
+      "example": "Profile: Reliable and motivated learner. Skills: teamwork, communication, basic computer skills.",
+      "questions": [
+        {
+          "q": "Which section lists language abilities?",
+          "options": [
+            "Languages / اللغات",
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 0,
+          "why": "Languages / اللغات"
+        }
+      ],
+      "homework": [
+        {
+          "q": "جهز سيرة ذاتية من صفحة واحدة بمعلومات افتراضية للتدريب.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: جهز سيرة ذاتية من صفحة واحدة بمعلومات افتراضية للتدريب.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "english-book-4-3",
+      "title": "مراجعة مهارات الامتحان",
+      "germanTitle": "Exam Skills: Reading and Writing",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Writing and Practical English",
+      "unitArabic": "الوحدة 4: الكتابة واللغة العملية",
+      "objectives": [
+        "شرح المفهوم الأساسي: Exam Skills: Reading and Writing.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب English ستتعلم مراجعة مهارات الامتحان. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Read instructions twice. Manage time: answer easier questions first, return to difficult ones and leave time to check. In writing, answer the exact task and check tense, spelling and punctuation.",
+      "lessonText": "اقرأ التعليمات مرتين. وزع الوقت: أجب عن الأسئلة الأسهل أولاً ثم عد إلى الصعب واترك وقتاً للمراجعة. في الكتابة أجب عن المطلوب تحديداً وراجع الزمن والإملاء والترقيم.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "instruction",
+          "تعليمات"
+        ],
+        [
+          "to check",
+          "يراجع"
+        ],
+        [
+          "time management",
+          "إدارة الوقت"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Checklist: task answered ✓ paragraphs ✓ tense ✓ spelling ✓ punctuation ✓",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "لمراجعة الإجابات وتصحيح الأخطاء."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Why should you leave time at the end?",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "لمراجعة الإجابات وتصحيح الأخطاء."
+        }
+      ],
+      "example": "Checklist: task answered ✓ paragraphs ✓ tense ✓ spelling ✓ punctuation ✓",
+      "questions": [
+        {
+          "q": "Why should you leave time at the end?",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "لمراجعة الإجابات وتصحيح الأخطاء.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 1,
+          "why": "لمراجعة الإجابات وتصحيح الأخطاء."
+        }
+      ],
+      "homework": [
+        {
+          "q": "حل تدريب قراءة قصير خلال 15 دقيقة ثم راجع إجاباتك.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: حل تدريب قراءة قصير خلال 15 دقيقة ثم راجع إجاباتك.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    }
+  ],
+  "bookTitle": "English – Communication and Grammar",
+  "bookSubtitle": "Lehr- und Arbeitsbuch · ESA Vorbereitung",
+  "bookDescription": "كتاب تدريبي لتأسيس التواصل باللغة الإنجليزية وفهم القواعد الأساسية واستخدامها. | Erweiterte Lernmodule mit Erklärungen, Beispielen, Übungen und Hausaufgaben.",
+  "learningGoals": [
+    "تقديم النفس والمعلومات الشخصية",
+    "استخدام المضارع البسيط بصورة صحيحة",
+    "تكوين الأسئلة والإجابة عنها",
+    "التحدث عن أحداث ماضية",
+    "استخدام حروف الجر الشائعة"
+  ],
+  "bookLevel": "ESA · Klasse 9 · NRW (Lernmaterial zur Vorbereitung)",
+  "bookUnits": [
+    {
+      "title": "الوحدة 2: بناء الجملة والأزمنة",
+      "germanTitle": "Sentences and Tenses",
+      "chapters": 3
+    },
+    {
+      "title": "الوحدة 3: القراءة والتواصل",
+      "germanTitle": "Reading and Communication",
+      "chapters": 3
+    },
+    {
+      "title": "الوحدة 4: الكتابة واللغة العملية",
+      "germanTitle": "Writing and Practical English",
+      "chapters": 3
+    }
+  ]
+}

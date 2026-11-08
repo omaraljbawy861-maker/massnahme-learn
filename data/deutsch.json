@@ -1,0 +1,1706 @@
+{
+  "id": "deutsch",
+  "name": "اللغة الألمانية",
+  "german": "Deutsch",
+  "code": "DE",
+  "icon": "文",
+  "description": "Lesen · Schreiben · Grammatik",
+  "lessons": [
+    {
+      "id": "de-01",
+      "title": "فهم النصوص القصيرة",
+      "germanTitle": "Kurze Texte verstehen",
+      "level": "A2–B1",
+      "duration": "35 دقيقة",
+      "objectives": [
+        "تحديد موضوع النص والفكرة الرئيسية.",
+        "استخراج الاسم والوقت والمكان والسبب من إعلان أو رسالة.",
+        "الإجابة بجملة ألمانية قصيرة مع الاستناد إلى النص."
+      ],
+      "intro": "في هذا الدرس سنتعلم كيف نقرأ إعلاناً أو رسالة قصيرة ونفهم المعلومات الأساسية دون ترجمة كل كلمة.",
+      "german": "Lies den Text zuerst vollständig. Achte danach auf Schlüsselwörter, Namen, Zahlen und Zeitangaben. Die W-Fragen helfen dir: Wer? Was? Wann? Wo? Warum? Markiere die Textstelle, die deine Antwort belegt.",
+      "explanation": "ابدأ بعنوان النص، ثم اقرأه مرة كاملة. في القراءة الثانية ابحث عن أسماء الأشخاص والأماكن والتواريخ والأرقام. ضع خطاً تحت الكلمات التي تتكرر؛ غالباً تساعدك على معرفة الموضوع.",
+      "vocab": [
+        [
+          "die Überschrift",
+          "العنوان"
+        ],
+        [
+          "die Information",
+          "المعلومة"
+        ],
+        [
+          "der Termin",
+          "الموعد"
+        ],
+        [
+          "die Nachricht",
+          "الرسالة / الخبر"
+        ],
+        [
+          "verstehen",
+          "يفهم"
+        ]
+      ],
+      "example": "النص: „Der Deutschkurs beginnt am Montag um 9 Uhr in Raum 12.“\nالسؤال: Wann beginnt der Deutschkurs?\nالإجابة: Am Montag um 9 Uhr.",
+      "questions": [
+        {
+          "q": "ما السؤال الذي نسأله لمعرفة المكان؟",
+          "options": [
+            "Wann?",
+            "Wo?",
+            "Warum?"
+          ],
+          "correct": 1,
+          "why": "Wo? تعني أين؟ وتُستخدم للسؤال عن المكان."
+        },
+        {
+          "q": "„Der Termin ist am Freitag.“ متى الموعد؟",
+          "options": [
+            "يوم الجمعة",
+            "يوم الاثنين",
+            "يوم الأحد"
+          ],
+          "correct": 0,
+          "why": "am Freitag تعني يوم الجمعة."
+        },
+        {
+          "q": "ما السؤال المناسب للسؤال عن الوقت؟",
+          "options": [
+            "Wo?",
+            "Wann?",
+            "Wer?"
+          ],
+          "correct": 1,
+          "why": "Wann? تسأل عن الوقت."
+        },
+        {
+          "q": "ما معنى „die Anmeldung“؟",
+          "options": [
+            "التسجيل",
+            "الامتحان",
+            "الاستراحة"
+          ],
+          "correct": 0,
+          "why": "Anmeldung تعني التسجيل."
+        },
+        {
+          "q": "إذا وجدت „Raum 12“ فهذا يدل على:",
+          "options": [
+            "الوقت",
+            "المكان",
+            "السعر"
+          ],
+          "correct": 1,
+          "why": "Raum تعني غرفة أو قاعة."
+        }
+      ],
+      "unit": "Lesen und Verstehen",
+      "lessonText": "اقرأ النص أولاً كاملاً لتعرف موضوعه. في القراءة الثانية ضع دائرة حول الأسماء والتواريخ والأرقام، وخطاً تحت الكلمات التي تجيب عن أسئلة W-Fragen: Wer? Was? Wann? Wo? Warum? لا تتوقف عند كل كلمة جديدة؛ حاول فهم المعنى من السياق.",
+      "worked": [
+        {
+          "title": "Beispiel: Kursanzeige",
+          "prompt": "Der Integrationskurs beginnt am 12. Mai um 8:30 Uhr. Der Unterricht findet im Raum 204 statt. Anmeldungen sind bis zum 5. Mai möglich.",
+          "steps": [
+            "Thema erkennen: Es geht um einen Integrationskurs.",
+            "Wann beginnt der Kurs? Suche nach „beginnt“: am 12. Mai um 8:30 Uhr.",
+            "Wo findet der Unterricht statt? Im Raum 204.",
+            "Bis wann kann man sich anmelden? Bis zum 5. Mai."
+          ],
+          "answer": "Der Kurs beginnt am 12. Mai um 8:30 Uhr. Er findet in Raum 204 statt."
+        }
+      ],
+      "practice": [
+        {
+          "q": "Wann beginnt der Kurs?",
+          "a": "Am 12. Mai um 8:30 Uhr.",
+          "hint": "ابحث عن كلمة beginnt."
+        },
+        {
+          "q": "Wo findet der Unterricht statt?",
+          "a": "Im Raum 204.",
+          "hint": "ابحث عن findet statt."
+        },
+        {
+          "q": "Bis wann ist die Anmeldung möglich?",
+          "a": "Bis zum 5. Mai.",
+          "hint": "انتبه إلى كلمة bis."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ثلاث معلومات تستخرجها من إعلان دورة لغة: الموعد، المكان، وآخر موعد للتسجيل.",
+          "solution": "مثال: Der Kurs beginnt am 3. Juni. Er findet in Raum 12 statt. Die Anmeldung ist bis zum 28. Mai möglich."
+        },
+        {
+          "q": "اكتب سؤالاً ألمانياً مناسباً لكل جواب: Am Dienstag / In Raum 5 / Um 10 Uhr.",
+          "solution": "Wann? – Am Dienstag. Wo? – In Raum 5. Um wie viel Uhr? – Um 10 Uhr."
+        }
+      ],
+      "unitArabic": "الوحدة الأولى: القراءة والفهم",
+      "chapterNumber": 1
+    },
+    {
+      "id": "de-02",
+      "title": "كتابة رسالة رسمية",
+      "germanTitle": "Eine formelle E-Mail schreiben",
+      "level": "A2–B1",
+      "duration": "40 دقيقة",
+      "objectives": [
+        "تمييز عناصر البريد الرسمي.",
+        "صياغة سبب الرسالة والطلب بوضوح.",
+        "استخدام التحية والخاتمة الرسمية."
+      ],
+      "intro": "تحتاج في الحياة اليومية إلى كتابة رسالة للمدرسة أو الدائرة أو مكان التدريب. الرسالة الرسمية تكون واضحة ومهذبة.",
+      "german": "Eine formelle E-Mail besteht aus Betreff, Anrede, Einleitung, Hauptteil und Grußformel. Schreibe höflich und klar. Nützliche Formulierungen: Ich schreibe Ihnen, weil … / Könnten Sie mir bitte …? / Vielen Dank im Voraus.",
+      "explanation": "رتّب الرسالة بهذا الشكل: الموضوع، التحية، سبب الكتابة، التفاصيل أو الطلب، الشكر، ثم الاسم. استخدم جُملاً قصيرة وتجنب العامية.",
+      "vocab": [
+        [
+          "der Betreff",
+          "الموضوع"
+        ],
+        [
+          "die Anrede",
+          "التحية"
+        ],
+        [
+          "die Bitte",
+          "الطلب"
+        ],
+        [
+          "im Voraus",
+          "مسبقاً"
+        ],
+        [
+          "Mit freundlichen Grüßen",
+          "مع أطيب التحيات"
+        ]
+      ],
+      "example": "Betreff: Termin\nSehr geehrte Damen und Herren,\nich kann am Montag leider nicht kommen. Können wir bitte einen neuen Termin vereinbaren?\nVielen Dank im Voraus.\nMit freundlichen Grüßen\nAli",
+      "questions": [
+        {
+          "q": "ما التحية الرسمية المناسبة؟",
+          "options": [
+            "Hallo Leute",
+            "Sehr geehrte Damen und Herren",
+            "Tschüss"
+          ],
+          "correct": 1,
+          "why": "هذه صيغة رسمية مناسبة عند عدم معرفة اسم المستلم."
+        },
+        {
+          "q": "أين نكتب موضوع الرسالة؟",
+          "options": [
+            "في خانة Betreff",
+            "بعد التوقيع",
+            "في منتصف النص"
+          ],
+          "correct": 0,
+          "why": "Betreff هو موضوع الرسالة."
+        },
+        {
+          "q": "ما معنى „Könnten Sie bitte…?“؟",
+          "options": [
+            "طلب مهذب",
+            "أمر مباشر",
+            "تحية"
+          ],
+          "correct": 0,
+          "why": "صيغة طلب مهذبة."
+        },
+        {
+          "q": "أي عنصر يوضح موضوع البريد؟",
+          "options": [
+            "Grußformel",
+            "Betreff",
+            "Anrede"
+          ],
+          "correct": 1,
+          "why": "Betreff هو الموضوع."
+        },
+        {
+          "q": "اختر الخاتمة الرسمية.",
+          "options": [
+            "Bis bald",
+            "Mit freundlichen Grüßen",
+            "Hallo"
+          ],
+          "correct": 1,
+          "why": "هذه خاتمة رسمية."
+        }
+      ],
+      "unit": "Schreiben im Alltag",
+      "lessonText": "البريد الرسمي يتكون من Betreff (الموضوع)، Anrede (التحية)، Einleitung (سبب الكتابة)، Hauptteil (التفاصيل والطلب)، Schluss (الشكر أو التطلع للرد)، Grußformel (الخاتمة). اجعل كل فقرة قصيرة، واذكر ما تريده بوضوح.",
+      "worked": [
+        {
+          "title": "طلب موعد جديد",
+          "prompt": "Du kannst einen Termin am Mittwoch nicht wahrnehmen. Bitte um einen neuen Termin.",
+          "steps": [
+            "Betreff: Bitte um einen neuen Termin.",
+            "Anrede: Sehr geehrte Damen und Herren,",
+            "سبب الكتابة: Leider kann ich den Termin am Mittwoch nicht wahrnehmen.",
+            "الطلب: Könnten Sie mir bitte einen neuen Termin anbieten?",
+            "الخاتمة: Vielen Dank im Voraus. Mit freundlichen Grüßen …"
+          ],
+          "answer": "Betreff: Bitte um einen neuen Termin\nSehr geehrte Damen und Herren,\nleider kann ich den Termin am Mittwoch nicht wahrnehmen. Könnten Sie mir bitte einen neuen Termin anbieten?\nVielen Dank im Voraus.\nMit freundlichen Grüßen\n…"
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما وظيفة Betreff؟",
+          "a": "يذكر موضوع الرسالة باختصار.",
+          "hint": "يظهر أعلى البريد."
+        },
+        {
+          "q": "حوّل العبارة إلى طلب مهذب: Schicken Sie mir die Unterlagen.",
+          "a": "Könnten Sie mir bitte die Unterlagen schicken?",
+          "hint": "ابدأ بـ Könnten Sie …?"
+        },
+        {
+          "q": "اختر خاتمة رسمية مناسبة.",
+          "a": "Mit freundlichen Grüßen",
+          "hint": "ليست Tschüss."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب بريداً من 5 إلى 7 جمل إلى المدرسة تشرح فيه غيابك عن موعد وتطلب موعداً جديداً.",
+          "solution": "Betreff: Neuer Termin\nSehr geehrte Damen und Herren,\nleider kann ich morgen nicht zum Termin kommen, weil ich krank bin. Könnten Sie mir bitte einen neuen Termin geben? Vielen Dank für Ihr Verständnis.\nMit freundlichen Grüßen\n[Name]"
+        }
+      ],
+      "unitArabic": "الوحدة الثانية: الكتابة في الحياة اليومية",
+      "chapterNumber": 2
+    },
+    {
+      "id": "de03",
+      "title": "ترتيب الجملة الألمانية",
+      "germanTitle": "Wortstellung",
+      "level": "A2–B1",
+      "duration": "35–40 دقيقة",
+      "objectives": [
+        "وضع الفعل المصرف في الموقع الثاني في الجملة الرئيسية.",
+        "تغيير ترتيب الفاعل عند بدء الجملة بظرف.",
+        "تكوين سؤال نعم/لا وسؤال بأداة استفهام."
+      ],
+      "intro": "في هذا الدرس سنتعلم ترتيب الجملة الألمانية. اقرأ الشرح ثم راجع المثال وحل الأسئلة.",
+      "german": "Im Aussagesatz steht das finite Verb auf Position 2. Das erste Satzglied kann das Subjekt oder eine Zeit-/Ortsangabe sein: Ich lerne heute. Heute lerne ich. Bei Ja/Nein-Fragen steht das Verb auf Position 1: Lernst du heute?",
+      "explanation": "الفعل المصرف يأتي غالباً في الموقع الثاني في الجملة الرئيسية. إذا بدأت الجملة بظرف زمان، يأتي الفاعل بعد الفعل: Heute lerne ich Deutsch.",
+      "vocab": [
+        [
+          "das Verb",
+          "الفعل / المصطلح"
+        ],
+        [
+          "the example",
+          "المثال"
+        ],
+        [
+          "the rule",
+          "القاعدة"
+        ]
+      ],
+      "example": "Morgen fahre ich zur Schule. / Ich fahre morgen zur Schule.",
+      "questions": [
+        {
+          "q": "أكمل: Morgen ___ ich Deutsch.",
+          "options": [
+            "lerne",
+            "ich lerne",
+            "lerne ich"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: lerne."
+        },
+        {
+          "q": "أين يأتي الفعل المصرف؟",
+          "options": [
+            "في الموقع الثاني غالباً",
+            "في آخر الجملة دائماً",
+            "في أول الجملة دائماً"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: في الموقع الثاني غالباً."
+        },
+        {
+          "q": "اختر الجملة الصحيحة.",
+          "options": [
+            "Heute arbeite ich.",
+            "Heute ich arbeite.",
+            "Heute arbeite."
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: Heute arbeite ich.."
+        },
+        {
+          "q": "أكمل: Am Montag ___ wir einen Test.",
+          "options": [
+            "schreiben",
+            "schreibt",
+            "schreibst"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: schreiben."
+        },
+        {
+          "q": "رتّب الكلمات: heute / ich / arbeite",
+          "options": [
+            "Heute arbeite ich.",
+            "Heute ich arbeite.",
+            "Arbeite ich heute."
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: Heute arbeite ich.."
+        }
+      ],
+      "unit": "Grammatik: Satzbau",
+      "lessonText": "في الجملة الرئيسية الألمانية يأتي الفعل المصرف عادة في الموقع الثاني، وليس بالضرورة الكلمة الثانية. إذا بدأت بظرف زمان أو مكان، يأتي الفعل بعده مباشرة ثم الفاعل: Ich lerne heute Deutsch. / Heute lerne ich Deutsch. في سؤال نعم/لا يأتي الفعل أولاً: Lernst du Deutsch?",
+      "worked": [
+        {
+          "title": "تغيير بداية الجملة",
+          "prompt": "Ich fahre morgen nach Köln.",
+          "steps": [
+            "حدد الفعل المصرف: fahre.",
+            "ضع الظرف morgen في بداية الجملة.",
+            "يجب أن يبقى الفعل في الموقع الثاني.",
+            "يأتي الفاعل ich بعد الفعل."
+          ],
+          "answer": "Morgen fahre ich nach Köln."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أعد ترتيب: Am Samstag / wir / Fußball / spielen.",
+          "a": "Am Samstag spielen wir Fußball.",
+          "hint": "الفعل spielen في الموقع الثاني."
+        },
+        {
+          "q": "حوّل إلى سؤال نعم/لا: Du lernst Deutsch.",
+          "a": "Lernst du Deutsch?",
+          "hint": "ضع الفعل أولاً."
+        },
+        {
+          "q": "صحح: Heute ich gehe zur Schule.",
+          "a": "Heute gehe ich zur Schule.",
+          "hint": "الفعل المصرف في الموقع الثاني."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب 4 جمل ألمانية: جملة تبدأ بالفاعل، جملة تبدأ بالوقت، جملة تبدأ بالمكان، وسؤال نعم/لا.",
+          "solution": "Ich lerne Deutsch. Morgen fahre ich nach Essen. Zu Hause mache ich meine Hausaufgaben. Lernst du Englisch?"
+        }
+      ],
+      "unitArabic": "الوحدة الثالثة: بناء الجملة",
+      "chapterNumber": 3
+    },
+    {
+      "id": "de04",
+      "title": "الأفعال المنفصلة",
+      "germanTitle": "Trennbare Verben",
+      "level": "A2–B1",
+      "duration": "35–40 دقيقة",
+      "objectives": [
+        "التعرف إلى الأفعال ذات البادئة المنفصلة.",
+        "تصريف الفعل ووضع البادئة في نهاية الجملة الرئيسية.",
+        "استخدام الأفعال المنفصلة في جمل يومية."
+      ],
+      "intro": "في هذا الدرس سنتعلم الأفعال المنفصلة. اقرأ الشرح ثم راجع المثال وحل الأسئلة.",
+      "german": "Bei trennbaren Verben steht die Vorsilbe im Hauptsatz oft am Satzende: Ich stehe früh auf. Im Infinitiv bleibt das Verb zusammen: Ich möchte früh aufstehen. Beispiele: einkaufen, anrufen, aufräumen.",
+      "explanation": "بعض الأفعال تتكون من بادئة وفعل. في الجملة الرئيسية تنفصل البادئة وتأتي في نهاية الجملة: Ich stehe um 7 Uhr auf.",
+      "vocab": [
+        [
+          "das Verb",
+          "الفعل / المصطلح"
+        ],
+        [
+          "the example",
+          "المثال"
+        ],
+        [
+          "the rule",
+          "القاعدة"
+        ]
+      ],
+      "example": "Ich rufe meine Mutter heute Abend an.",
+      "questions": [
+        {
+          "q": "ما معنى aufstehen؟",
+          "options": [
+            "ينهض",
+            "ينام",
+            "يأكل"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: ينهض."
+        },
+        {
+          "q": "أكمل: Ich ___ um sechs Uhr auf.",
+          "options": [
+            "stehe",
+            "aufstehe",
+            "stehen"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: stehe."
+        },
+        {
+          "q": "أين تذهب البادئة؟",
+          "options": [
+            "نهاية الجملة",
+            "قبل الفاعل",
+            "تحذف"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: نهاية الجملة."
+        },
+        {
+          "q": "اختر الجملة الصحيحة.",
+          "options": [
+            "Ich rufe dich an.",
+            "Ich anrufe dich.",
+            "Ich rufe an dich."
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: Ich rufe dich an.."
+        },
+        {
+          "q": "أي فعل يعني يتسوق؟",
+          "options": [
+            "einkaufen",
+            "anrufen",
+            "aufstehen"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: einkaufen."
+        }
+      ],
+      "unit": "Grammatik: Trennbare Verben",
+      "lessonText": "بعض الأفعال الألمانية تتكون من بادئة وفعل، مثل aufstehen وeinkaufen وanrufen. في الجملة الرئيسية المنفصلة، نصرف الفعل ونضع البادئة في نهاية الجملة: Ich stehe um 7 Uhr auf. في المصدر تبقى الكلمة متصلة: Ich möchte früh aufstehen.",
+      "worked": [
+        {
+          "title": "الفعل aufstehen",
+          "prompt": "aufstehen – ich – um 6 Uhr",
+          "steps": [
+            "الفعل المصرف مع ich هو stehe.",
+            "ضع stehe في الموقع الثاني.",
+            "ضع الوقت um 6 Uhr بعد الفاعل.",
+            "ضع البادئة auf في نهاية الجملة."
+          ],
+          "answer": "Ich stehe um 6 Uhr auf."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: Er ___ seine Mutter ___. (anrufen)",
+          "a": "Er ruft seine Mutter an.",
+          "hint": "مع er يصبح rufen → ruft."
+        },
+        {
+          "q": "رتب: kaufe / heute / ich / ein.",
+          "a": "Ich kaufe heute ein.",
+          "hint": "ضع ein في النهاية."
+        },
+        {
+          "q": "اكتب المصدر بعد möchte: Ich möchte früh ___. (aufstehen)",
+          "a": "Ich möchte früh aufstehen.",
+          "hint": "بعد möchte نستخدم المصدر."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب 5 جمل تستخدم فيها: aufstehen, einkaufen, anrufen, aufräumen, mitkommen.",
+          "solution": "Ich stehe um sieben Uhr auf. Wir kaufen am Samstag ein. Ich rufe meinen Bruder an. Sie räumt ihr Zimmer auf. Kommst du mit?"
+        }
+      ],
+      "unitArabic": "الوحدة الرابعة: الأفعال القابلة للانفصال",
+      "chapterNumber": 4
+    },
+    {
+      "id": "de05",
+      "title": "الماضي Perfekt",
+      "germanTitle": "Perfekt",
+      "level": "A2–B1",
+      "duration": "35–40 دقيقة",
+      "objectives": [
+        "تكوين الماضي Perfekt باستخدام haben أو sein.",
+        "تصريف الفعل المساعد في الحاضر.",
+        "تكوين Partizip II للأفعال الشائعة."
+      ],
+      "intro": "في هذا الدرس سنتعلم الماضي Perfekt. اقرأ الشرح ثم راجع المثال وحل الأسئلة.",
+      "german": "Das Perfekt besteht aus haben oder sein und dem Partizip II. Das Hilfsverb steht auf Position 2, das Partizip II am Satzende: Ich habe gelernt. Sie ist nach Hause gegangen. Viele Verben bilden das Partizip II mit ge-…-t; unregelmäßige Verben muss man lernen.",
+      "explanation": "يتكون الماضي Perfekt من haben أو sein مع اسم المفعول. نستخدم sein غالباً مع الحركة أو تغير الحالة، وhaben مع معظم الأفعال الأخرى.",
+      "vocab": [
+        [
+          "das Verb",
+          "الفعل / المصطلح"
+        ],
+        [
+          "the example",
+          "المثال"
+        ],
+        [
+          "the rule",
+          "القاعدة"
+        ]
+      ],
+      "example": "Ich habe gestern gelernt. / Wir sind nach Köln gefahren.",
+      "questions": [
+        {
+          "q": "اختر المساعد: Ich ___ gelernt.",
+          "options": [
+            "habe",
+            "bin",
+            "ist"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: habe."
+        },
+        {
+          "q": "ما التصريف الثالث من fahren؟",
+          "options": [
+            "gefahrt",
+            "gefahren",
+            "fahrte"
+          ],
+          "correct": 1,
+          "why": "الإجابة الصحيحة: gefahren."
+        },
+        {
+          "q": "أي جملة صحيحة؟",
+          "options": [
+            "Wir sind nach Bonn gefahren.",
+            "Wir haben nach Bonn gefahren.",
+            "Wir nach Bonn gefahren sind."
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: Wir sind nach Bonn gefahren.."
+        },
+        {
+          "q": "متى نستخدم sein غالباً؟",
+          "options": [
+            "مع الحركة أو تغير الحالة",
+            "مع كل الأفعال",
+            "مع الأسماء فقط"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: مع الحركة أو تغير الحالة."
+        },
+        {
+          "q": "أكمل: Sie hat Hausaufgaben ___.",
+          "options": [
+            "gemacht",
+            "machen",
+            "gemachtet"
+          ],
+          "correct": 0,
+          "why": "الإجابة الصحيحة: gemacht."
+        }
+      ],
+      "unit": "Grammatik: Perfekt",
+      "lessonText": "يستخدم Perfekt كثيراً في الحديث اليومي عن الماضي. يتكون من haben أو sein مصرّفاً في الموقع الثاني، وPartizip II غالباً في نهاية الجملة: Ich habe gelernt. Ich bin nach Berlin gefahren. تستخدم sein غالباً مع الانتقال من مكان إلى آخر أو تغير الحالة، وتستخدم haben مع معظم الأفعال الأخرى.",
+      "worked": [
+        {
+          "title": "من الحاضر إلى Perfekt",
+          "prompt": "Ich lerne Deutsch.",
+          "steps": [
+            "اختر haben لأن lernen لا يدل على انتقال مكان.",
+            "صرّف haben مع ich: habe.",
+            "كوّن Partizip II: gelernt.",
+            "ضع Partizip II في نهاية الجملة."
+          ],
+          "answer": "Ich habe Deutsch gelernt."
+        }
+      ],
+      "practice": [
+        {
+          "q": "حوّل إلى Perfekt: Wir machen die Aufgabe.",
+          "a": "Wir haben die Aufgabe gemacht.",
+          "hint": "machen → gemacht."
+        },
+        {
+          "q": "اختر المساعد: Er ___ nach Hause gegangen.",
+          "a": "ist",
+          "hint": "gehen يدل على انتقال."
+        },
+        {
+          "q": "حوّل: Sie kauft Brot.",
+          "a": "Sie hat Brot gekauft.",
+          "hint": "kaufen → gekauft."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب 6 جمل في Perfekt عن يوم أمس، واستخدم haben وsein على الأقل مرتين.",
+          "solution": "Gestern habe ich gearbeitet. Ich habe Deutsch gelernt. Am Abend habe ich gekocht. Danach bin ich nach Hause gegangen. Ich bin früh aufgestanden. Ich habe einen Film gesehen."
+        }
+      ],
+      "unitArabic": "الوحدة الخامسة: زمن الماضي Perfekt",
+      "chapterNumber": 5
+    },
+    {
+      "id": "deutsch-book-01",
+      "title": "القواعد وبناء الجملة",
+      "germanTitle": "Grammatik und Satzbau",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 3",
+      "unitArabic": "الوحدة 3: القواعد وبناء الجملة",
+      "chapterNumber": 6,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع القواعد وبناء الجملة.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Deutsch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "Ein deutscher Hauptsatz hat meistens die Reihenfolge: Subjekt – Verb – Ergänzung. Das konjugierte Verb steht im Aussagesatz gewöhnlich an Position 2. Bei Ja/Nein-Fragen steht das Verb an Position 1.",
+      "lessonText": "في الجملة الخبرية الألمانية يأتي الفعل المصرف غالباً في الموقع الثاني. نحدد الفاعل أولاً ثم الفعل ثم بقية المعلومات. في سؤال نعم/لا ينتقل الفعل إلى البداية.",
+      "explanation": "في الجملة الخبرية الألمانية يأتي الفعل المصرف غالباً في الموقع الثاني. نحدد الفاعل أولاً ثم الفعل ثم بقية المعلومات. في سؤال نعم/لا ينتقل الفعل إلى البداية.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "Ich lerne heute Deutsch. / Lernst du heute Deutsch?",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "Ich lerne heute Deutsch. / Lernst du heute Deutsch?",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "Ich arbeite heute."
+        }
+      ],
+      "practice": [
+        {
+          "q": "رتّب الكلمات: heute / ich / arbeite.",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "Ich arbeite heute."
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Grammatik und Satzbau.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "Ein deutscher Hauptsatz hat meistens die Reihenfolge: Subjekt – Verb – Ergänzung."
+        }
+      ],
+      "questions": [
+        {
+          "q": "رتّب الكلمات: heute / ich / arbeite.",
+          "options": [
+            "Ich arbeite heute.",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع القواعد وبناء الجملة؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن القواعد وبناء الجملة، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: Ein deutscher Hauptsatz hat meistens die Reihenfolge: Subjekt – Verb – Ergänzung. Das konjugierte Verb steht im Aussagesatz gewöhnlich an Position 2. Bei Ja/Nein-Fragen steht das Verb an Position 1."
+        },
+        {
+          "q": "رتّب الكلمات: heute / ich / arbeite.",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "Ich arbeite heute."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-02",
+      "title": "الأزمنة: الحاضر والماضي",
+      "germanTitle": "Präsens und Perfekt",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 4",
+      "unitArabic": "الوحدة 4: الأزمنة: الحاضر والماضي",
+      "chapterNumber": 7,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع الأزمنة: الحاضر والماضي.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Deutsch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "Das Präsens beschreibt Gegenwart und regelmäßige Handlungen. Das Perfekt benutzt haben oder sein und ein Partizip II. Viele Bewegungsverben bilden das Perfekt mit sein.",
+      "lessonText": "نستخدم Präsens لما يحدث الآن أو يتكرر. أما Perfekt فيستخدم كثيراً في الحديث عن الماضي: haben/sein + Partizip II. أفعال الانتقال من مكان إلى آخر تأخذ غالباً sein.",
+      "explanation": "نستخدم Präsens لما يحدث الآن أو يتكرر. أما Perfekt فيستخدم كثيراً في الحديث عن الماضي: haben/sein + Partizip II. أفعال الانتقال من مكان إلى آخر تأخذ غالباً sein.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "Heute lerne ich. Gestern habe ich gelernt. / Ich bin nach Hause gegangen.",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "Heute lerne ich. Gestern habe ich gelernt. / Ich bin nach Hause gegangen.",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "Ich habe die Hausaufgabe gemacht."
+        }
+      ],
+      "practice": [
+        {
+          "q": "حوّل إلى Perfekt: Ich mache die Hausaufgabe.",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "Ich habe die Hausaufgabe gemacht."
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Präsens und Perfekt.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "Das Präsens beschreibt Gegenwart und regelmäßige Handlungen."
+        }
+      ],
+      "questions": [
+        {
+          "q": "حوّل إلى Perfekt: Ich mache die Hausaufgabe.",
+          "options": [
+            "Ich habe die Hausaufgabe gemacht.",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع الأزمنة: الحاضر والماضي؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن الأزمنة: الحاضر والماضي، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: Das Präsens beschreibt Gegenwart und regelmäßige Handlungen. Das Perfekt benutzt haben oder sein und ein Partizip II. Viele Bewegungsverben bilden das Perfekt mit sein."
+        },
+        {
+          "q": "حوّل إلى Perfekt: Ich mache die Hausaufgabe.",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "Ich habe die Hausaufgabe gemacht."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-03",
+      "title": "كتابة رسالة رسمية",
+      "germanTitle": "Einen formellen Brief schreiben",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 4",
+      "unitArabic": "الوحدة 4: كتابة رسالة رسمية",
+      "chapterNumber": 8,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع كتابة رسالة رسمية.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Deutsch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "Ein formeller Brief enthält Absender, Empfänger, Datum, Betreff, Anrede, einen klaren Text und eine Grußformel. Schreibe höflich und nenne dein Anliegen direkt.",
+      "lessonText": "الرسالة الرسمية تبدأ ببيانات المرسل والمستلم والتاريخ، ثم الموضوع والتحية. اشرح سبب الكتابة بوضوح، واذكر ما تطلبه، واختم بتحية رسمية.",
+      "explanation": "الرسالة الرسمية تبدأ ببيانات المرسل والمستلم والتاريخ، ثم الموضوع والتحية. اشرح سبب الكتابة بوضوح، واذكر ما تطلبه، واختم بتحية رسمية.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "Sehr geehrte Damen und Herren, ich möchte einen Termin vereinbaren. Mit freundlichen Grüßen",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "Sehr geehrte Damen und Herren, ich möchte einen Termin vereinbaren. Mit freundlichen Grüßen",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "Ich möchte bitte einen Termin vereinbaren."
+        }
+      ],
+      "practice": [
+        {
+          "q": "اكتب جملة مهذبة لطلب موعد.",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "Ich möchte bitte einen Termin vereinbaren."
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Einen formellen Brief schreiben.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "Ein formeller Brief enthält Absender, Empfänger, Datum, Betreff, Anrede, einen klaren Text und eine Grußformel."
+        }
+      ],
+      "questions": [
+        {
+          "q": "اكتب جملة مهذبة لطلب موعد.",
+          "options": [
+            "Ich möchte bitte einen Termin vereinbaren.",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع كتابة رسالة رسمية؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن كتابة رسالة رسمية، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: Ein formeller Brief enthält Absender, Empfänger, Datum, Betreff, Anrede, einen klaren Text und eine Grußformel. Schreibe höflich und nenne dein Anliegen direkt."
+        },
+        {
+          "q": "اكتب جملة مهذبة لطلب موعد.",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "Ich möchte bitte einen Termin vereinbaren."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-04",
+      "title": "تحليل نص وإبداء الرأي",
+      "germanTitle": "Texte untersuchen und Meinung begründen",
+      "level": "ESA · Klasse 9",
+      "duration": "45–60 دقيقة",
+      "unit": "Einheit 5",
+      "unitArabic": "الوحدة 5: تحليل نص وإبداء الرأي",
+      "chapterNumber": 9,
+      "objectives": [
+        "فهم المفاهيم الأساسية في موضوع تحليل نص وإبداء الرأي.",
+        "استخدام المصطلحات الألمانية المرتبطة بالموضوع.",
+        "تطبيق المعرفة على مثال وتمرين جديد."
+      ],
+      "intro": "هذا فصل من كتاب Deutsch. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي للتأكد من فهم الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل.",
+      "german": "Beim Lesen unterscheidest du Thema, Hauptaussage und Einzelinformationen. Eine Meinung wird mit Gründen und Beispielen gestützt: Ich bin der Meinung, dass …, weil …",
+      "lessonText": "لا تكتفِ بنقل جملة من النص. حدد الموضوع والفكرة الرئيسية، ثم ميّز بين الحقيقة والرأي. عند التعبير عن رأيك اذكر سبباً ومثالاً.",
+      "explanation": "لا تكتفِ بنقل جملة من النص. حدد الموضوع والفكرة الرئيسية، ثم ميّز بين الحقيقة والرأي. عند التعبير عن رأيك اذكر سبباً ومثالاً.",
+      "vocab": [
+        [
+          "das Thema",
+          "الموضوع"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ],
+        [
+          "die Lösung",
+          "الحل"
+        ],
+        [
+          "erklären",
+          "يشرح"
+        ],
+        [
+          "anwenden",
+          "يطبق"
+        ]
+      ],
+      "example": "Ich finde Lesen wichtig, weil man dadurch neue Wörter lernt.",
+      "worked": [
+        {
+          "title": "مثال محلول",
+          "prompt": "Ich finde Lesen wichtig, weil man dadurch neue Wörter lernt.",
+          "steps": [
+            "حدد المفهوم أو المطلوب في المثال.",
+            "اختر القاعدة أو المعلومة المناسبة من الشرح.",
+            "طبّق القاعدة واكتب النتيجة مع الوحدة أو التفسير عند الحاجة."
+          ],
+          "answer": "مثال: … weil Sport gesund ist und den Körper stärkt."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: Ich bin der Meinung, dass Sport wichtig ist, weil …",
+          "hint": "ارجع إلى الفقرة الألمانية وحدد الكلمة أو القاعدة الأساسية.",
+          "a": "مثال: … weil Sport gesund ist und den Körper stärkt."
+        },
+        {
+          "q": "اكتب جملة أو تفسيراً قصيراً بالألمانية عن: Texte untersuchen und Meinung begründen.",
+          "hint": "استخدم مصطلحين من الدرس.",
+          "a": "Beim Lesen unterscheidest du Thema, Hauptaussage und Einzelinformationen."
+        }
+      ],
+      "questions": [
+        {
+          "q": "أكمل: Ich bin der Meinung, dass Sport wichtig ist, weil …",
+          "options": [
+            "مثال: … weil Sport gesund ist und den Körper stärkt.",
+            "لا يمكن تحديد الإجابة من الدرس",
+            "الإجابة عكس ذلك"
+          ],
+          "correct": 0,
+          "why": "الإجابة مستندة مباشرة إلى القاعدة والمثال في هذا الفصل."
+        },
+        {
+          "q": "ما أفضل طريقة للتعامل مع موضوع تحليل نص وإبداء الرأي؟",
+          "options": [
+            "فهم الفكرة ثم تطبيقها على مثال",
+            "حفظ العنوان فقط",
+            "تجاهل المصطلحات"
+          ],
+          "correct": 0,
+          "why": "الفهم والتطبيق يساعدان على نقل المعرفة إلى أسئلة جديدة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 4 إلى 6 جمل عن تحليل نص وإبداء الرأي، واستخدم ثلاثة مصطلحات ألمانية.",
+          "hint": "ابدأ بالتعريف ثم اذكر مثالاً أو تطبيقاً.",
+          "solution": "يجب أن يتضمن الملخص الفكرة الأساسية، ومعلومتين صحيحتين، ومثالاً مناسباً. نموذج: Beim Lesen unterscheidest du Thema, Hauptaussage und Einzelinformationen. Eine Meinung wird mit Gründen und Beispielen gestützt: Ich bin der Meinung, dass …, weil …"
+        },
+        {
+          "q": "أكمل: Ich bin der Meinung, dass Sport wichtig ist, weil …",
+          "hint": "حل السؤال دون الرجوع إلى المثال أولاً.",
+          "solution": "مثال: … weil Sport gesund ist und den Körper stärkt."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-2-1",
+      "title": "ترتيب الكلمات في الجملة الرئيسية",
+      "germanTitle": "Wortstellung im Hauptsatz",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Grammatik und Satzbau",
+      "unitArabic": "الوحدة 2: القواعد وبناء الجملة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Wortstellung im Hauptsatz.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم ترتيب الكلمات في الجملة الرئيسية. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Im deutschen Hauptsatz steht das finite Verb normalerweise auf Position 2. Ein Satzglied kann am Anfang stehen; das Verb bleibt an zweiter Stelle. Das Subjekt steht dann häufig hinter dem Verb.",
+      "lessonText": "في الجملة الألمانية الرئيسية يأتي الفعل المصرف عادة في الموقع الثاني، وليس بالضرورة الكلمة الثانية. إذا بدأنا بظرف زمان أو مكان، يأتي الفاعل بعد الفعل: Heute lerne ich Deutsch.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "der Hauptsatz",
+          "الجملة الرئيسية"
+        ],
+        [
+          "das Verb",
+          "الفعل"
+        ],
+        [
+          "die Position",
+          "الموقع"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Heute / ich / lerne / Deutsch.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "Morgen fährt der Bus um acht Uhr."
+        }
+      ],
+      "practice": [
+        {
+          "q": "رتّب الكلمات: Morgen / fährt / der Bus / um acht Uhr.",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "Morgen fährt der Bus um acht Uhr."
+        }
+      ],
+      "example": "Heute / ich / lerne / Deutsch.",
+      "questions": [
+        {
+          "q": "رتّب الكلمات: Morgen / fährt / der Bus / um acht Uhr.",
+          "options": [
+            "Morgen fährt der Bus um acht Uhr.",
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 0,
+          "why": "Morgen fährt der Bus um acht Uhr."
+        }
+      ],
+      "homework": [
+        {
+          "q": "أعد كتابة الجملة مع البدء بعبارة „Am Wochenende“: Ich besuche meine Familie.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: أعد كتابة الجملة مع البدء بعبارة „Am Wochenende“: Ich besuche meine Familie.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-2-2",
+      "title": "الأفعال المنفصلة وغير المنفصلة",
+      "germanTitle": "Trennbare und untrennbare Verben",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Grammatik und Satzbau",
+      "unitArabic": "الوحدة 2: القواعد وبناء الجملة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Trennbare und untrennbare Verben.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم الأفعال المنفصلة وغير المنفصلة. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Bei trennbaren Verben steht die Vorsilbe im Hauptsatz oft am Satzende: Ich stehe um sieben Uhr auf. Untrennbare Vorsilben wie be-, ge-, er-, ver- bleiben beim Verb: Ich besuche meine Tante.",
+      "lessonText": "بعض الأفعال تنفصل بادئتها في الجملة الرئيسية مثل aufstehen، فتصبح: Ich stehe auf. وهناك بادئات لا تنفصل مثل besuchen وverstehen.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "aufstehen",
+          "ينهض"
+        ],
+        [
+          "besuchen",
+          "يزور"
+        ],
+        [
+          "die Vorsilbe",
+          "بادئة الفعل"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "aufstehen: Ich stehe früh auf. / besuchen: Ich besuche den Kurs.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "stehe … auf"
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: Ich ___ um 6 Uhr ___. (aufstehen)",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "stehe … auf"
+        }
+      ],
+      "example": "aufstehen: Ich stehe früh auf. / besuchen: Ich besuche den Kurs.",
+      "questions": [
+        {
+          "q": "أكمل: Ich ___ um 6 Uhr ___. (aufstehen)",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "stehe … auf",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 1,
+          "why": "stehe … auf"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب جملتين: واحدة بالفعل einkaufen وأخرى بالفعل verstehen.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب جملتين: واحدة بالفعل einkaufen وأخرى بالفعل verstehen.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-2-3",
+      "title": "الماضي Perfekt في الحياة اليومية",
+      "germanTitle": "Perfekt im Alltag",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Grammatik und Satzbau",
+      "unitArabic": "الوحدة 2: القواعد وبناء الجملة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Perfekt im Alltag.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم الماضي Perfekt في الحياة اليومية. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "The Perfekt is common in spoken German. It is formed with haben or sein plus Partizip II. Many movement or change-of-state verbs use sein: Ich bin nach Hause gegangen. Most other verbs use haben: Ich habe gelernt.",
+      "lessonText": "يُستخدم الماضي Perfekt كثيراً في الحديث. يتكون من haben أو sein مع اسم المفعول Partizip II. أفعال الحركة وتغير الحالة تستخدم غالباً sein، بينما تستخدم أفعال كثيرة haben.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "das Perfekt",
+          "الماضي المحكي"
+        ],
+        [
+          "das Partizip II",
+          "اسم المفعول"
+        ],
+        [
+          "gestern",
+          "أمس"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Ich habe gearbeitet. / Ich bin nach Hause gefahren.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "haben"
+        }
+      ],
+      "practice": [
+        {
+          "q": "اختر: Wir ___ einen Film gesehen. (haben / sind)",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "haben"
+        }
+      ],
+      "example": "Ich habe gearbeitet. / Ich bin nach Hause gefahren.",
+      "questions": [
+        {
+          "q": "اختر: Wir ___ einen Film gesehen. (haben / sind)",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته.",
+            "haben"
+          ],
+          "correct": 2,
+          "why": "haben"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ثلاث جمل عن يوم أمس مستخدماً Perfekt.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب ثلاث جمل عن يوم أمس مستخدماً Perfekt.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-3-1",
+      "title": "فهم الإعلانات والرسائل الرسمية",
+      "germanTitle": "Anzeigen und formelle Nachrichten verstehen",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Lesen und Schreiben",
+      "unitArabic": "الوحدة 3: القراءة والكتابة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Anzeigen und formelle Nachrichten verstehen.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم فهم الإعلانات والرسائل الرسمية. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Read the heading first, then identify sender, purpose, date, place and requested action. In a formal message, use a clear subject line and polite forms such as Sehr geehrte Damen und Herren and Mit freundlichen Grüßen.",
+      "lessonText": "عند قراءة إعلان أو رسالة، ابدأ بالعنوان ثم استخرج المرسل والهدف والتاريخ والمكان وما المطلوب منك. في الرسائل الرسمية استخدم التحية المناسبة وعبارات الاحترام.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "die Anzeige",
+          "إعلان"
+        ],
+        [
+          "der Absender",
+          "المرسل"
+        ],
+        [
+          "die Betreffzeile",
+          "عنوان الرسالة"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Betreff: Termin am 12. Mai\nSehr geehrte Frau Keller, …\nMit freundlichen Grüßen",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "الجهة، الهدف، الموعد، المكان، طريقة التسجيل."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما المعلومات الخمس التي تبحث عنها في إعلان دورة؟",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "الجهة، الهدف، الموعد، المكان، طريقة التسجيل."
+        }
+      ],
+      "example": "Betreff: Termin am 12. Mai\nSehr geehrte Frau Keller, …\nMit freundlichen Grüßen",
+      "questions": [
+        {
+          "q": "ما المعلومات الخمس التي تبحث عنها في إعلان دورة؟",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "الجهة، الهدف، الموعد، المكان، طريقة التسجيل.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 1,
+          "why": "الجهة، الهدف، الموعد، المكان، طريقة التسجيل."
+        }
+      ],
+      "homework": [
+        {
+          "q": "ابحث في إعلان خيالي عن دورة لغة واكتب المعلومات الأساسية في نقاط.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: ابحث في إعلان خيالي عن دورة لغة واكتب المعلومات الأساسية في نقاط.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-3-2",
+      "title": "كتابة رسالة طلب موعد",
+      "germanTitle": "Eine Terminanfrage schreiben",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Lesen und Schreiben",
+      "unitArabic": "الوحدة 3: القراءة والكتابة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Eine Terminanfrage schreiben.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم كتابة رسالة طلب موعد. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "A useful request has a greeting, a short reason, a clear question about possible dates, contact details and a polite closing. Keep sentences short and check verb position and capitalization.",
+      "lessonText": "رسالة طلب الموعد تتضمن تحية، سبباً مختصراً، سؤالاً واضحاً عن المواعيد المتاحة، معلومات التواصل، وخاتمة مهذبة. راجع ترتيب الفعل والحروف الكبيرة للأسماء.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "die Anfrage",
+          "طلب / استفسار"
+        ],
+        [
+          "der Termin",
+          "الموعد"
+        ],
+        [
+          "verfügbar",
+          "متاح"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Sehr geehrte Damen und Herren,\nich möchte einen Beratungstermin vereinbaren. Haben Sie nächste Woche Zeit?\nMit freundlichen Grüßen",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "Haben Sie nächste Woche einen freien Termin?"
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما العبارة المناسبة للسؤال عن موعد متاح؟",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "Haben Sie nächste Woche einen freien Termin?"
+        }
+      ],
+      "example": "Sehr geehrte Damen und Herren,\nich möchte einen Beratungstermin vereinbaren. Haben Sie nächste Woche Zeit?\nMit freundlichen Grüßen",
+      "questions": [
+        {
+          "q": "ما العبارة المناسبة للسؤال عن موعد متاح؟",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته.",
+            "Haben Sie nächste Woche einen freien Termin?"
+          ],
+          "correct": 2,
+          "why": "Haben Sie nächste Woche einen freien Termin?"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب رسالة من 5 إلى 7 جمل تطلب فيها موعداً لدى مكتب استشاري.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب رسالة من 5 إلى 7 جمل تطلب فيها موعداً لدى مكتب استشاري.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-3-3",
+      "title": "تلخيص نص واستخراج الفكرة الرئيسية",
+      "germanTitle": "Einen Text zusammenfassen",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Lesen und Schreiben",
+      "unitArabic": "الوحدة 3: القراءة والكتابة",
+      "objectives": [
+        "شرح المفهوم الأساسي: Einen Text zusammenfassen.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم تلخيص نص واستخراج الفكرة الرئيسية. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "A summary presents the central information in your own words. Do not copy every detail. Identify the topic, the main statement and two important supporting facts. Use the present tense unless the task requires otherwise.",
+      "lessonText": "التلخيص يعرض الفكرة الأساسية بكلماتك، وليس نسخ النص. حدد الموضوع والفكرة الرئيسية وحقيقتين داعمتين، واحذف التفاصيل غير الضرورية.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "die Zusammenfassung",
+          "التلخيص"
+        ],
+        [
+          "die Hauptaussage",
+          "الفكرة الأساسية"
+        ],
+        [
+          "das Detail",
+          "التفصيل"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Der Text handelt von …\nDie wichtigste Aussage ist …\nAußerdem wird erklärt, dass …",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "لا، نعيد صياغة الأفكار الأساسية بكلماتنا."
+        }
+      ],
+      "practice": [
+        {
+          "q": "هل يجب نقل كل جمل النص حرفياً في التلخيص؟",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "لا، نعيد صياغة الأفكار الأساسية بكلماتنا."
+        }
+      ],
+      "example": "Der Text handelt von …\nDie wichtigste Aussage ist …\nAußerdem wird erklärt, dass …",
+      "questions": [
+        {
+          "q": "هل يجب نقل كل جمل النص حرفياً في التلخيص؟",
+          "options": [
+            "لا، نعيد صياغة الأفكار الأساسية بكلماتنا.",
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 0,
+          "why": "لا، نعيد صياغة الأفكار الأساسية بكلماتنا."
+        }
+      ],
+      "homework": [
+        {
+          "q": "لخّص نصاً من 100 كلمة في 3 إلى 4 جمل.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: لخّص نصاً من 100 كلمة في 3 إلى 4 جمل.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-4-1",
+      "title": "علامات الترقيم والحروف الكبيرة",
+      "germanTitle": "Rechtschreibung und Zeichensetzung",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Sprache untersuchen und argumentieren",
+      "unitArabic": "الوحدة 4: التعبير والتحليل",
+      "objectives": [
+        "شرح المفهوم الأساسي: Rechtschreibung und Zeichensetzung.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم علامات الترقيم والحروف الكبيرة. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "German nouns are capitalized. A full stop ends a statement; a question mark ends a direct question. Commas separate subordinate clauses: Ich lerne, weil ich die Prüfung bestehen möchte.",
+      "lessonText": "تكتب الأسماء في الألمانية بحرف كبير. تنتهي الجملة الخبرية بنقطة والسؤال المباشر بعلامة استفهام. تفصل الفاصلة الجملة التابعة عن الرئيسية في أمثلة كثيرة.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "die Rechtschreibung",
+          "الإملاء"
+        ],
+        [
+          "das Komma",
+          "الفاصلة"
+        ],
+        [
+          "der Nebensatz",
+          "الجملة التابعة"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Ich bleibe zu Hause, weil ich krank bin.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "Morgen gehe ich zur Schule."
+        }
+      ],
+      "practice": [
+        {
+          "q": "صحح: morgen gehe ich zur schule.",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "Morgen gehe ich zur Schule."
+        }
+      ],
+      "example": "Ich bleibe zu Hause, weil ich krank bin.",
+      "questions": [
+        {
+          "q": "صحح: morgen gehe ich zur schule.",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته.",
+            "Morgen gehe ich zur Schule."
+          ],
+          "correct": 2,
+          "why": "Morgen gehe ich zur Schule."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب خمس جمل وراجع الحروف الكبيرة وعلامات الترقيم.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب خمس جمل وراجع الحروف الكبيرة وعلامات الترقيم.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-4-2",
+      "title": "إبداء الرأي مع التعليل",
+      "germanTitle": "Die eigene Meinung begründen",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Sprache untersuchen und argumentieren",
+      "unitArabic": "الوحدة 4: التعبير والتحليل",
+      "objectives": [
+        "شرح المفهوم الأساسي: Die eigene Meinung begründen.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم إبداء الرأي مع التعليل. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "A clear opinion text contains a position, reasons and an example. Useful connectors include erstens, außerdem, zum Beispiel, deshalb and meiner Meinung nach. Consider a counterargument respectfully.",
+      "lessonText": "النص الحجاجي الجيد يعرض رأياً واضحاً وأسباباً وأمثلة. استخدم روابط مثل أولاً، بالإضافة إلى ذلك، على سبيل المثال، لذلك، وبرأيي. ويمكن ذكر رأي مخالف والرد عليه باحترام.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "die Meinung",
+          "الرأي"
+        ],
+        [
+          "das Argument",
+          "الحجة"
+        ],
+        [
+          "das Beispiel",
+          "المثال"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Meiner Meinung nach ist Lesen wichtig, weil es den Wortschatz erweitert. Zum Beispiel …",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "außerdem / weil / deshalb (بحسب السياق)"
+        }
+      ],
+      "practice": [
+        {
+          "q": "اذكر رابطاً لغوياً يضيف سبباً أو حجة.",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "außerdem / weil / deshalb (بحسب السياق)"
+        }
+      ],
+      "example": "Meiner Meinung nach ist Lesen wichtig, weil es den Wortschatz erweitert. Zum Beispiel …",
+      "questions": [
+        {
+          "q": "اذكر رابطاً لغوياً يضيف سبباً أو حجة.",
+          "options": [
+            "außerdem / weil / deshalb (بحسب السياق)",
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 0,
+          "why": "außerdem / weil / deshalb (بحسب السياق)"
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب فقرة من 80 كلمة: هل يجب أن تكون الواجبات المنزلية يومية؟ علّل رأيك.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب فقرة من 80 كلمة: هل يجب أن تكون الواجبات المنزلية يومية؟ علّل رأيك.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    },
+    {
+      "id": "deutsch-book-4-3",
+      "title": "التحضير لمهمة الكتابة في الامتحان",
+      "germanTitle": "Schreibaufgaben planen und prüfen",
+      "level": "ESA · Klasse 9 · Lernmodul",
+      "duration": "45–60 دقيقة",
+      "unit": "Sprache untersuchen und argumentieren",
+      "unitArabic": "الوحدة 4: التعبير والتحليل",
+      "objectives": [
+        "شرح المفهوم الأساسي: Schreibaufgaben planen und prüfen.",
+        "استخدام ثلاثة مصطلحات تخصصية في سياق صحيح.",
+        "تطبيق المعرفة في مثال وحل تدريب مستقل."
+      ],
+      "intro": "في هذا الفصل من كتاب Deutsch ستتعلم التحضير لمهمة الكتابة في الامتحان. اقرأ الشرح الألماني، ثم استخدم التوضيح العربي لتثبيت الفكرة، وبعدها حل التدريب والواجب دون النظر إلى الحل أولاً.",
+      "german": "Before writing, underline the task verbs and note the required audience, text type and length. Make a short plan. After writing, check content, structure, grammar, spelling and whether every part of the task is answered.",
+      "lessonText": "قبل الكتابة ضع خطاً تحت أفعال المطلوب، وحدد القارئ ونوع النص والطول. ضع مخططاً قصيراً، ثم راجع المحتوى والترتيب والقواعد والإملاء وتأكد من الإجابة عن كل أجزاء السؤال.",
+      "explanation": "تذكّر المصطلحات الألمانية الواردة في الجدول. حاول أن تشرح الفكرة بصوتك، ثم قارن شرحك بالنص. عند حل المسألة اكتب خطواتك ولا تكتفِ بالنتيجة.",
+      "vocab": [
+        [
+          "die Aufgabenstellung",
+          "تعليمات السؤال"
+        ],
+        [
+          "der Entwurf",
+          "المسودة"
+        ],
+        [
+          "überarbeiten",
+          "يراجع وينقح"
+        ]
+      ],
+      "worked": [
+        {
+          "title": "Beispiel / مثال محلول",
+          "prompt": "Plan: Einleitung → Hauptteil mit 2 Argumenten → Schluss.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو المعطيات المهمة.",
+            "اختر القاعدة أو الفكرة المناسبة من الشرح.",
+            "طبّق القاعدة خطوة بخطوة وتحقق من النتيجة."
+          ],
+          "answer": "فهم تعليمات السؤال وتحديد المطلوب ونوع النص."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما أول خطوة قبل كتابة موضوع التعبير؟",
+          "hint": "استعن بالمثال المحلول، ثم حاول الإجابة من دون النظر إلى الحل.",
+          "a": "فهم تعليمات السؤال وتحديد المطلوب ونوع النص."
+        }
+      ],
+      "example": "Plan: Einleitung → Hauptteil mit 2 Argumenten → Schluss.",
+      "questions": [
+        {
+          "q": "ما أول خطوة قبل كتابة موضوع التعبير؟",
+          "options": [
+            "راجع تعريف المصطلح الأساسي في الشرح.",
+            "فهم تعليمات السؤال وتحديد المطلوب ونوع النص.",
+            "انتبه إلى المثال المحلول وخطواته."
+          ],
+          "correct": 1,
+          "why": "فهم تعليمات السؤال وتحديد المطلوب ونوع النص."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب موضوعاً قصيراً ثم استخدم قائمة مراجعة من خمس نقاط.",
+          "hint": "اكتب إجابتك كاملة مع خطوات الحل أو التعليل.",
+          "a": "إجابة نموذجية: اكتب موضوعاً قصيراً ثم استخدم قائمة مراجعة من خمس نقاط.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
+        }
+      ]
+    }
+  ],
+  "bookTitle": "Deutsch – Lesen, Schreiben und Grammatik",
+  "bookSubtitle": "Lehr- und Arbeitsbuch · ESA Vorbereitung",
+  "bookDescription": "كتاب تدريبي لتطوير القراءة والكتابة والقواعد والتواصل اليومي باللغة الألمانية. | Erweiterte Lernmodule mit Erklärungen, Beispielen, Übungen und Hausaufgaben.",
+  "learningGoals": [
+    "فهم الإعلانات والرسائل والنصوص القصيرة",
+    "كتابة رسائل يومية ورسمية واضحة",
+    "استخدام قواعد الجملة والأفعال والأزمنة الأساسية"
+  ],
+  "bookLevel": "ESA · Klasse 9 · NRW (Lernmaterial zur Vorbereitung)",
+  "bookUnits": [
+    {
+      "title": "الوحدة 2: القواعد وبناء الجملة",
+      "germanTitle": "Grammatik und Satzbau",
+      "chapters": 3
+    },
+    {
+      "title": "الوحدة 3: القراءة والكتابة",
+      "germanTitle": "Lesen und Schreiben",
+      "chapters": 3
+    },
+    {
+      "title": "الوحدة 4: التعبير والتحليل",
+      "germanTitle": "Sprache untersuchen und argumentieren",
+      "chapters": 3
+    }
+  ]
+}

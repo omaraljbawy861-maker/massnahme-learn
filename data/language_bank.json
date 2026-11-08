@@ -1,0 +1,2299 @@
+{
+  "de": {
+    "name": "الألمانية",
+    "vocabulary": [
+      [
+        "der Mensch",
+        "الإنسان"
+      ],
+      [
+        "die Familie",
+        "العائلة"
+      ],
+      [
+        "die Eltern",
+        "الوالدان"
+      ],
+      [
+        "das Kind",
+        "الطفل"
+      ],
+      [
+        "der Freund",
+        "الصديق"
+      ],
+      [
+        "die Freundin",
+        "الصديقة"
+      ],
+      [
+        "die Schule",
+        "المدرسة"
+      ],
+      [
+        "der Unterricht",
+        "الدرس"
+      ],
+      [
+        "das Fach",
+        "المادة"
+      ],
+      [
+        "das Buch",
+        "الكتاب"
+      ],
+      [
+        "das Heft",
+        "الدفتر"
+      ],
+      [
+        "der Stift",
+        "القلم"
+      ],
+      [
+        "die Aufgabe",
+        "المهمة"
+      ],
+      [
+        "die Prüfung",
+        "الامتحان"
+      ],
+      [
+        "die Note",
+        "العلامة"
+      ],
+      [
+        "lernen",
+        "يتعلم"
+      ],
+      [
+        "üben",
+        "يتدرب"
+      ],
+      [
+        "lesen",
+        "يقرأ"
+      ],
+      [
+        "schreiben",
+        "يكتب"
+      ],
+      [
+        "sprechen",
+        "يتحدث"
+      ],
+      [
+        "hören",
+        "يستمع"
+      ],
+      [
+        "verstehen",
+        "يفهم"
+      ],
+      [
+        "erklären",
+        "يشرح"
+      ],
+      [
+        "fragen",
+        "يسأل"
+      ],
+      [
+        "antworten",
+        "يجيب"
+      ],
+      [
+        "wiederholen",
+        "يعيد"
+      ],
+      [
+        "die Sprache",
+        "اللغة"
+      ],
+      [
+        "das Wort",
+        "الكلمة"
+      ],
+      [
+        "der Satz",
+        "الجملة"
+      ],
+      [
+        "die Bedeutung",
+        "المعنى"
+      ],
+      [
+        "die Grammatik",
+        "القواعد"
+      ],
+      [
+        "die Aussprache",
+        "اللفظ"
+      ],
+      [
+        "die Zahl",
+        "الرقم"
+      ],
+      [
+        "rechnen",
+        "يحسب"
+      ],
+      [
+        "die Rechnung",
+        "الحساب"
+      ],
+      [
+        "die Lösung",
+        "الحل"
+      ],
+      [
+        "das Ergebnis",
+        "النتيجة"
+      ],
+      [
+        "die Hälfte",
+        "النصف"
+      ],
+      [
+        "das Viertel",
+        "الربع"
+      ],
+      [
+        "der Bruch",
+        "الكسر"
+      ],
+      [
+        "die Prozentzahl",
+        "النسبة المئوية"
+      ],
+      [
+        "die Länge",
+        "الطول"
+      ],
+      [
+        "die Fläche",
+        "المساحة"
+      ],
+      [
+        "das Volumen",
+        "الحجم"
+      ],
+      [
+        "das Gewicht",
+        "الوزن"
+      ],
+      [
+        "die Zeit",
+        "الوقت"
+      ],
+      [
+        "die Stunde",
+        "الساعة"
+      ],
+      [
+        "die Minute",
+        "الدقيقة"
+      ],
+      [
+        "der Tag",
+        "اليوم"
+      ],
+      [
+        "die Woche",
+        "الأسبوع"
+      ],
+      [
+        "der Monat",
+        "الشهر"
+      ],
+      [
+        "das Jahr",
+        "السنة"
+      ],
+      [
+        "heute",
+        "اليوم"
+      ],
+      [
+        "morgen",
+        "غداً"
+      ],
+      [
+        "gestern",
+        "أمس"
+      ],
+      [
+        "früh",
+        "مبكراً"
+      ],
+      [
+        "spät",
+        "متأخراً"
+      ],
+      [
+        "pünktlich",
+        "في الموعد"
+      ],
+      [
+        "die Arbeit",
+        "العمل"
+      ],
+      [
+        "der Beruf",
+        "المهنة"
+      ],
+      [
+        "die Ausbildung",
+        "التدريب المهني"
+      ],
+      [
+        "die Bewerbung",
+        "طلب التوظيف"
+      ],
+      [
+        "der Lebenslauf",
+        "السيرة الذاتية"
+      ],
+      [
+        "das Gespräch",
+        "المقابلة/الحديث"
+      ],
+      [
+        "der Arbeitgeber",
+        "صاحب العمل"
+      ],
+      [
+        "der Arbeitnehmer",
+        "العامل"
+      ],
+      [
+        "der Vertrag",
+        "العقد"
+      ],
+      [
+        "das Gehalt",
+        "الراتب"
+      ],
+      [
+        "die Pause",
+        "الاستراحة"
+      ],
+      [
+        "die Erfahrung",
+        "الخبرة"
+      ],
+      [
+        "die Gesundheit",
+        "الصحة"
+      ],
+      [
+        "der Körper",
+        "الجسم"
+      ],
+      [
+        "der Kopf",
+        "الرأس"
+      ],
+      [
+        "das Herz",
+        "القلب"
+      ],
+      [
+        "die Lunge",
+        "الرئة"
+      ],
+      [
+        "das Blut",
+        "الدم"
+      ],
+      [
+        "die Bewegung",
+        "الحركة"
+      ],
+      [
+        "die Ernährung",
+        "التغذية"
+      ],
+      [
+        "das Gemüse",
+        "الخضار"
+      ],
+      [
+        "das Obst",
+        "الفاكهة"
+      ],
+      [
+        "das Wasser",
+        "الماء"
+      ],
+      [
+        "die Umwelt",
+        "البيئة"
+      ],
+      [
+        "die Natur",
+        "الطبيعة"
+      ],
+      [
+        "das Wetter",
+        "الطقس"
+      ],
+      [
+        "das Klima",
+        "المناخ"
+      ],
+      [
+        "die Temperatur",
+        "درجة الحرارة"
+      ],
+      [
+        "der Regen",
+        "المطر"
+      ],
+      [
+        "der Wind",
+        "الريح"
+      ],
+      [
+        "die Sonne",
+        "الشمس"
+      ],
+      [
+        "die Energie",
+        "الطاقة"
+      ],
+      [
+        "die Kraft",
+        "القوة"
+      ],
+      [
+        "die Bewegung",
+        "الحركة"
+      ],
+      [
+        "die Geschwindigkeit",
+        "السرعة"
+      ],
+      [
+        "die Strecke",
+        "المسافة"
+      ],
+      [
+        "die Zeitspanne",
+        "الفترة الزمنية"
+      ],
+      [
+        "der Strom",
+        "التيار الكهربائي"
+      ],
+      [
+        "die Spannung",
+        "الجهد"
+      ],
+      [
+        "der Stromkreis",
+        "الدائرة الكهربائية"
+      ],
+      [
+        "der Stoff",
+        "المادة"
+      ],
+      [
+        "das Gemisch",
+        "المخلوط"
+      ],
+      [
+        "die Zelle",
+        "الخلية"
+      ],
+      [
+        "das Organ",
+        "العضو"
+      ],
+      [
+        "das Lebewesen",
+        "الكائن الحي"
+      ],
+      [
+        "die Nahrungskette",
+        "السلسلة الغذائية"
+      ],
+      [
+        "die Geschichte",
+        "التاريخ"
+      ],
+      [
+        "die Vergangenheit",
+        "الماضي"
+      ],
+      [
+        "die Quelle",
+        "المصدر"
+      ],
+      [
+        "das Ereignis",
+        "الحدث"
+      ],
+      [
+        "die Demokratie",
+        "الديمقراطية"
+      ],
+      [
+        "die Wahl",
+        "الانتخابات"
+      ],
+      [
+        "das Grundrecht",
+        "الحق الأساسي"
+      ],
+      [
+        "das Gesetz",
+        "القانون"
+      ],
+      [
+        "die Regierung",
+        "الحكومة"
+      ],
+      [
+        "die Stadt",
+        "المدينة"
+      ],
+      [
+        "das Dorf",
+        "القرية"
+      ],
+      [
+        "die Karte",
+        "الخريطة"
+      ],
+      [
+        "der Maßstab",
+        "المقياس"
+      ],
+      [
+        "die Bevölkerung",
+        "السكان"
+      ],
+      [
+        "die Ressource",
+        "المورد"
+      ],
+      [
+        "das Geld",
+        "المال"
+      ],
+      [
+        "die Ausbildung",
+        "التدريب المهني"
+      ],
+      [
+        "der Lebenslauf",
+        "السيرة الذاتية"
+      ],
+      [
+        "die Bewerbung",
+        "طلب التوظيف"
+      ],
+      [
+        "die Erfahrung",
+        "الخبرة"
+      ],
+      [
+        "die Fähigkeit",
+        "المهارة"
+      ],
+      [
+        "die Gesundheit",
+        "الصحة"
+      ],
+      [
+        "die Umwelt",
+        "البيئة"
+      ],
+      [
+        "die Entscheidung",
+        "القرار"
+      ],
+      [
+        "die Verantwortung",
+        "المسؤولية"
+      ],
+      [
+        "die Möglichkeit",
+        "الإمكانية"
+      ],
+      [
+        "zuverlässig",
+        "موثوق"
+      ],
+      [
+        "pünktlich",
+        "ملتزم بالوقت"
+      ],
+      [
+        "selbstständig",
+        "مستقل"
+      ],
+      [
+        "gemeinsam",
+        "معاً"
+      ],
+      [
+        "verbessern",
+        "يحسّن"
+      ],
+      [
+        "vergleichen",
+        "يقارن"
+      ],
+      [
+        "beantragen",
+        "يقدم طلباً"
+      ],
+      [
+        "vereinbaren",
+        "يتفق / يحجز"
+      ],
+      [
+        "teilnehmen",
+        "يشارك"
+      ],
+      [
+        "die Voraussetzung",
+        "الشرط المسبق"
+      ],
+      [
+        "der Alltag",
+        "الحياة اليومية"
+      ],
+      [
+        "das Vorstellungsgespräch",
+        "مقابلة العمل"
+      ],
+      [
+        "zuverlässig",
+        "يمكن الاعتماد عليه"
+      ],
+      [
+        "der Müll",
+        "النفايات"
+      ],
+      [
+        "die Mülltrennung",
+        "فرز النفايات"
+      ],
+      [
+        "die Verkehrsmittel",
+        "وسائل النقل"
+      ],
+      [
+        "die Fahrkarte",
+        "تذكرة السفر"
+      ],
+      [
+        "die Verspätung",
+        "التأخير"
+      ],
+      [
+        "die Nachricht",
+        "الرسالة أو الخبر"
+      ],
+      [
+        "die Meinung",
+        "الرأي"
+      ],
+      [
+        "zustimmen",
+        "يوافق"
+      ],
+      [
+        "ablehnen",
+        "يرفض"
+      ],
+      [
+        "begründen",
+        "يعلل"
+      ],
+      [
+        "die Zukunft",
+        "المستقبل"
+      ],
+      [
+        "das Ziel",
+        "الهدف"
+      ],
+      [
+        "der Termin",
+        "الموعد"
+      ],
+      [
+        "vereinbaren",
+        "يتفق على موعد"
+      ],
+      [
+        "absagen",
+        "يلغي"
+      ],
+      [
+        "verschieben",
+        "يؤجل"
+      ],
+      [
+        "die Rechnung",
+        "الفاتورة"
+      ],
+      [
+        "der Preis",
+        "السعر"
+      ],
+      [
+        "günstig",
+        "رخيص/مناسب السعر"
+      ],
+      [
+        "teuer",
+        "غالي"
+      ],
+      [
+        "die Menge",
+        "الكمية"
+      ],
+      [
+        "das Angebot",
+        "العرض"
+      ]
+    ],
+    "sentences": [
+      [
+        "Ich lerne jeden Tag Deutsch.",
+        "أتعلم الألمانية كل يوم."
+      ],
+      [
+        "Können Sie das bitte wiederholen?",
+        "هل يمكنك إعادة ذلك من فضلك؟"
+      ],
+      [
+        "Könnten Sie bitte langsamer sprechen?",
+        "هل يمكنك التحدث ببطء أكثر؟"
+      ],
+      [
+        "Ich habe eine Frage zur Aufgabe.",
+        "لدي سؤال حول التمرين."
+      ],
+      [
+        "Wie schreibt man dieses Wort?",
+        "كيف تُكتب هذه الكلمة؟"
+      ],
+      [
+        "Was bedeutet dieser Satz?",
+        "ماذا تعني هذه الجملة؟"
+      ],
+      [
+        "Ich verstehe den Text nicht vollständig.",
+        "لا أفهم النص بالكامل."
+      ],
+      [
+        "Können Sie mir ein Beispiel geben?",
+        "هل يمكنك إعطائي مثالاً؟"
+      ],
+      [
+        "Ich möchte mich für den Kurs anmelden.",
+        "أريد التسجيل في الدورة."
+      ],
+      [
+        "Wann beginnt der Unterricht?",
+        "متى يبدأ الدرس؟"
+      ],
+      [
+        "Der Unterricht endet um zwölf Uhr.",
+        "ينتهي الدرس الساعة الثانية عشرة."
+      ],
+      [
+        "Ich muss für die Prüfung lernen.",
+        "يجب أن أدرس للامتحان."
+      ],
+      [
+        "Können wir die Aufgabe zusammen lösen?",
+        "هل يمكننا حل المهمة معاً؟"
+      ],
+      [
+        "Ich habe meine Hausaufgaben gemacht.",
+        "أنجزت واجباتي المنزلية."
+      ],
+      [
+        "Bitte öffnen Sie das Buch auf Seite zehn.",
+        "افتح الكتاب على الصفحة العاشرة من فضلك."
+      ],
+      [
+        "Ich bin heute etwas krank.",
+        "أنا مريض قليلاً اليوم."
+      ],
+      [
+        "Ich brauche einen Termin beim Arzt.",
+        "أحتاج إلى موعد عند الطبيب."
+      ],
+      [
+        "Wo befindet sich die nächste Haltestelle?",
+        "أين تقع أقرب محطة؟"
+      ],
+      [
+        "Wie komme ich zum Bahnhof?",
+        "كيف أصل إلى محطة القطار؟"
+      ],
+      [
+        "Ich möchte ein Ticket nach Berlin kaufen.",
+        "أريد شراء تذكرة إلى برلين."
+      ],
+      [
+        "Wie viel kostet das zusammen?",
+        "كم يبلغ السعر الإجمالي؟"
+      ],
+      [
+        "Kann ich mit Karte bezahlen?",
+        "هل يمكنني الدفع بالبطاقة؟"
+      ],
+      [
+        "Ich suche eine Wohnung in der Nähe.",
+        "أبحث عن شقة بالقرب من هنا."
+      ],
+      [
+        "Die Miete ist im Vertrag angegeben.",
+        "الإيجار مذكور في العقد."
+      ],
+      [
+        "Ich habe morgen einen wichtigen Termin.",
+        "لدي موعد مهم غداً."
+      ],
+      [
+        "Bitte schicken Sie mir eine E-Mail.",
+        "أرسل لي بريداً إلكترونياً من فضلك."
+      ],
+      [
+        "Ich interessiere mich für diese Ausbildung.",
+        "أنا مهتم بهذا التدريب المهني."
+      ],
+      [
+        "Anbei sende ich meinen Lebenslauf.",
+        "أرفق سيرتي الذاتية."
+      ],
+      [
+        "Ich kann ab sofort anfangen.",
+        "يمكنني البدء فوراً."
+      ],
+      [
+        "Vielen Dank für Ihre Rückmeldung.",
+        "شكراً جزيلاً على ردكم."
+      ],
+      [
+        "Ich bin mit dem Ergebnis zufrieden.",
+        "أنا راضٍ عن النتيجة."
+      ],
+      [
+        "Wir müssen die Kosten vergleichen.",
+        "علينا مقارنة التكاليف."
+      ],
+      [
+        "Die Umwelt braucht unseren Schutz.",
+        "البيئة تحتاج إلى حمايتنا."
+      ],
+      [
+        "Pflanzen brauchen Wasser und Licht.",
+        "النباتات تحتاج إلى الماء والضوء."
+      ],
+      [
+        "Der Stromkreis ist geschlossen.",
+        "الدائرة الكهربائية مغلقة."
+      ],
+      [
+        "Die Geschwindigkeit hängt von Strecke und Zeit ab.",
+        "تعتمد السرعة على المسافة والزمن."
+      ],
+      [
+        "Die Prüfung findet nächste Woche statt.",
+        "سيُجرى الامتحان الأسبوع القادم."
+      ],
+      [
+        "Ich möchte meine Aussprache verbessern.",
+        "أريد تحسين لفظي."
+      ],
+      [
+        "Können Sie meinen Text korrigieren?",
+        "هل يمكنك تصحيح نصي؟"
+      ],
+      [
+        "Ich habe die wichtigste Information gefunden.",
+        "وجدت المعلومة الأهم."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Schule.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Arbeit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Gesundheit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Umwelt.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Verkehr.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Schule.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Arbeit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Gesundheit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Umwelt.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Verkehr.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Schule.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Arbeit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Gesundheit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Umwelt.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Verkehr.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Schule.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Arbeit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Gesundheit.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Umwelt.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Heute übe ich wichtige Wörter zum Thema Verkehr.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "Ich interessiere mich für eine Ausbildung im technischen Bereich.",
+        "أنا مهتم بتدريب مهني في المجال التقني."
+      ],
+      [
+        "Könnten Sie mir bitte weitere Informationen schicken?",
+        "هل يمكنكم إرسال معلومات إضافية لي؟"
+      ],
+      [
+        "Ich habe bereits praktische Erfahrungen gesammelt.",
+        "لقد اكتسبت خبرات عملية بالفعل."
+      ],
+      [
+        "Welche Unterlagen muss ich mitbringen?",
+        "ما الوثائق التي يجب أن أحضرها؟"
+      ],
+      [
+        "Ich möchte einen Termin vereinbaren.",
+        "أود تحديد موعد."
+      ],
+      [
+        "Vielen Dank im Voraus für Ihre Rückmeldung.",
+        "شكراً لكم مسبقاً على ردكم."
+      ],
+      [
+        "Meiner Meinung nach ist diese Lösung sinnvoll.",
+        "برأيي هذا الحل منطقي."
+      ],
+      [
+        "Zuerst sammeln wir Informationen, danach vergleichen wir die Möglichkeiten.",
+        "أولاً نجمع المعلومات، وبعد ذلك نقارن الإمكانيات."
+      ],
+      [
+        "Ich stehe normalerweise um sieben Uhr auf.",
+        "أستيقظ عادةً الساعة السابعة."
+      ],
+      [
+        "Danach frühstücke ich und fahre zur Schule.",
+        "بعد ذلك أتناول الفطور وأذهب إلى المدرسة."
+      ],
+      [
+        "Ich suche eine Ausbildung im technischen Bereich.",
+        "أبحث عن تدريب مهني في المجال التقني."
+      ],
+      [
+        "Ich bin zuverlässig und arbeite gern im Team.",
+        "أنا شخص يعتمد عليه وأحب العمل ضمن فريق."
+      ],
+      [
+        "Könnten Sie mir bitte den Weg erklären?",
+        "هل يمكن أن تشرح لي الطريق من فضلك؟"
+      ],
+      [
+        "Der Bus hat heute zehn Minuten Verspätung.",
+        "الحافلة متأخرة اليوم عشر دقائق."
+      ],
+      [
+        "Ich möchte einen Termin für nächste Woche vereinbaren.",
+        "أريد تحديد موعد للأسبوع القادم."
+      ],
+      [
+        "Leider kann ich den Termin nicht wahrnehmen.",
+        "للأسف لا أستطيع الحضور إلى الموعد."
+      ],
+      [
+        "Meiner Meinung nach ist Bewegung sehr wichtig.",
+        "برأيي الحركة مهمة جداً."
+      ],
+      [
+        "Wir sollten weniger Plastik benutzen.",
+        "ينبغي أن نستخدم كمية أقل من البلاستيك."
+      ],
+      [
+        "Ich trenne Papier, Glas und Bioabfall.",
+        "أفرز الورق والزجاج والنفايات العضوية."
+      ],
+      [
+        "Können Sie das bitte langsamer wiederholen?",
+        "هل يمكنك إعادة ذلك ببطء أكثر؟"
+      ],
+      [
+        "Ich stimme deinem Vorschlag zu.",
+        "أنا أوافق على اقتراحك."
+      ],
+      [
+        "Ich bin anderer Meinung, weil ...",
+        "لدي رأي مختلف لأن..."
+      ],
+      [
+        "Zuerst lesen wir den Text, danach beantworten wir die Fragen.",
+        "أولاً نقرأ النص، ثم نجيب عن الأسئلة."
+      ],
+      [
+        "Die Aufgabe ist schwierig, aber ich versuche sie zu lösen.",
+        "المهمة صعبة، لكنني أحاول حلها."
+      ],
+      [
+        "Wie viele Personen nehmen an dem Kurs teil?",
+        "كم شخصاً يشارك في الدورة؟"
+      ],
+      [
+        "Im vergangenen Jahr habe ich viel gelernt.",
+        "في السنة الماضية تعلمت كثيراً."
+      ],
+      [
+        "In Zukunft möchte ich eine Ausbildung machen.",
+        "في المستقبل أريد أن أقوم بتدريب مهني."
+      ],
+      [
+        "Bitte schicken Sie mir die Rechnung per E-Mail.",
+        "أرسل لي الفاتورة عبر البريد الإلكتروني من فضلك."
+      ]
+    ],
+    "texts": [
+      {
+        "lang": "de",
+        "title": "Ein Tag in der Schule",
+        "text": "Mira steht um sieben Uhr auf. Sie frühstückt und fährt mit dem Bus zur Schule. Der Unterricht beginnt um acht Uhr. Heute hat sie Deutsch, Mathematik und Biologie. In der Pause spricht sie mit ihrer Freundin. Um dreizehn Uhr fährt sie nach Hause. Am Nachmittag macht sie ihre Hausaufgaben.",
+        "translation": "تستيقظ ميرا الساعة السابعة. تتناول الفطور وتذهب إلى المدرسة بالحافلة. يبدأ الدرس الساعة الثامنة. لديها اليوم ألماني ورياضيات وأحياء. في الاستراحة تتحدث مع صديقتها. تعود إلى المنزل الساعة الواحدة. وبعد الظهر تنجز واجباتها."
+      },
+      {
+        "lang": "de",
+        "title": "Ein Termin beim Arzt",
+        "text": "Herr Becker fühlt sich seit gestern krank. Er ruft in einer Arztpraxis an und bittet um einen Termin. Die Mitarbeiterin fragt nach seinem Namen und seiner Krankenkasse. Er bekommt einen Termin für Dienstag um zehn Uhr. Er soll seine Versicherungskarte mitbringen.",
+        "translation": "يشعر السيد بيكر بالمرض منذ أمس. يتصل بعيادة ويطلب موعداً. تسأله الموظفة عن اسمه وتأمينه الصحي. يحصل على موعد يوم الثلاثاء الساعة العاشرة. ويجب أن يحضر بطاقة التأمين."
+      },
+      {
+        "lang": "de",
+        "title": "Einkaufen und Preise",
+        "text": "Samira geht am Samstag in den Supermarkt. Sie braucht Brot, Milch, Eier und Äpfel. Sie vergleicht die Preise und achtet auf Angebote. An der Kasse bezahlt sie mit ihrer Bankkarte. Zu Hause räumt sie die Lebensmittel in den Kühlschrank.",
+        "translation": "تذهب سميرة يوم السبت إلى السوبرماركت. تحتاج إلى خبز وحليب وبيض وتفاح. تقارن الأسعار وتنتبه إلى العروض. عند الصندوق تدفع ببطاقتها البنكية. وفي المنزل تضع الطعام في البراد."
+      },
+      {
+        "lang": "de",
+        "title": "Eine Bewerbung schreiben",
+        "text": "Ali sucht eine Ausbildungsstelle als Elektriker. Zuerst liest er die Stellenanzeige genau. Dann schreibt er ein Anschreiben und aktualisiert seinen Lebenslauf. Er fügt seine Zeugnisse hinzu und kontrolliert alle Unterlagen. Danach sendet er die Bewerbung per E-Mail.",
+        "translation": "يبحث علي عن مكان تدريب مهني ككهربائي. يقرأ إعلان الوظيفة جيداً، ثم يكتب رسالة تقديم ويحدّث سيرته الذاتية. يضيف شهاداته ويدقق جميع الأوراق. بعد ذلك يرسل الطلب بالبريد الإلكتروني."
+      },
+      {
+        "lang": "de",
+        "title": "Umwelt und Recycling",
+        "text": "In einer Stadt gibt es verschiedene Mülltonnen. Papier kommt in die blaue Tonne. Verpackungen aus Kunststoff gehören in die gelbe Tonne. Bioabfälle werden getrennt gesammelt. Durch Recycling können Rohstoffe wiederverwendet werden. Jeder Haushalt kann dadurch die Umwelt schützen.",
+        "translation": "في المدينة حاويات نفايات مختلفة. يوضع الورق في الحاوية الزرقاء، والعبوات البلاستيكية في الصفراء. تُجمع النفايات العضوية بشكل منفصل. تساعد إعادة التدوير على استخدام المواد الخام مجدداً. ويمكن لكل منزل حماية البيئة."
+      },
+      {
+        "title": "Eine Ausbildungsstelle suchen",
+        "text": "Mira beendet bald die Schule. Sie interessiert sich für eine Ausbildung als Fachkraft. Zuerst informiert sie sich über verschiedene Berufe. Danach schreibt sie einen Lebenslauf und eine Bewerbung. Vor dem Gespräch übt sie, ihre Stärken und Erfahrungen zu erklären.",
+        "translation": "ميرا ستنهي المدرسة قريباً. تهتم بتدريب مهني. تبحث أولاً عن مهن مختلفة، ثم تكتب سيرتها الذاتية وطلب التوظيف. وقبل المقابلة تتدرب على شرح نقاط قوتها وخبراتها.",
+        "questions": [
+          {
+            "q": "Was schreibt Mira?",
+            "a": "Einen Lebenslauf und eine Bewerbung."
+          }
+        ]
+      },
+      {
+        "title": "Ein Termin beim Bürgerbüro",
+        "text": "Herr Ali braucht eine neue Bescheinigung. Er prüft zuerst, welche Unterlagen notwendig sind. Auf der Internetseite findet er freie Termine. Er wählt einen Termin am Dienstag und erhält eine Bestätigung per E-Mail.",
+        "translation": "يحتاج السيد علي إلى وثيقة جديدة. يتحقق أولاً من الوثائق المطلوبة. يجد مواعيد متاحة على الموقع، ويختار موعداً يوم الثلاثاء، ثم يتلقى تأكيداً بالبريد الإلكتروني.",
+        "questions": [
+          {
+            "q": "Wie erhält er die Bestätigung?",
+            "a": "Per E-Mail."
+          }
+        ]
+      },
+      {
+        "title": "Eine Bewerbung",
+        "text": "Ali sucht einen Ausbildungsplatz. Er schreibt einen Lebenslauf und ein Bewerbungsschreiben. In seinem Brief erklärt er, warum ihn der Beruf interessiert. Er nennt seine Stärken: Er ist pünktlich, freundlich und zuverlässig. Vor dem Gespräch übt er, deutlich und ruhig zu sprechen.",
+        "translation": "يبحث علي عن مكان تدريب مهني. يكتب سيرة ذاتية ورسالة تقديم. يشرح في رسالته لماذا تهمه المهنة. ويذكر نقاط قوته: ملتزم بالوقت وودود ويمكن الاعتماد عليه. قبل المقابلة يتدرب على التحدث بوضوح وهدوء."
+      },
+      {
+        "title": "Gesund leben",
+        "text": "Ein gesunder Alltag besteht aus mehreren Gewohnheiten. Man sollte abwechslungsreich essen, ausreichend Wasser trinken und sich regelmäßig bewegen. Auch Schlaf ist wichtig. Kleine Veränderungen helfen: eine Haltestelle früher aussteigen oder öfter zu Fuß gehen.",
+        "translation": "تتكون الحياة الصحية من عادات متعددة. ينبغي تناول طعام متنوع وشرب كمية كافية من الماء والحركة بانتظام. النوم مهم أيضاً. تساعد التغييرات الصغيرة، مثل النزول قبل محطة واحدة أو المشي أكثر."
+      },
+      {
+        "title": "Umwelt und Mülltrennung",
+        "text": "In vielen Städten gibt es verschiedene Mülltonnen. Papier kommt in die blaue Tonne, Verpackungen gehören in die gelbe Tonne und Bioabfälle in die Biotonne. Glas wird häufig in öffentlichen Containern gesammelt. Mülltrennung spart Rohstoffe und schützt die Umwelt.",
+        "translation": "توجد في مدن كثيرة حاويات مختلفة للنفايات. يوضع الورق في الحاوية الزرقاء، والتغليف في الصفراء، والنفايات العضوية في حاوية العضويات. غالباً ما يُجمع الزجاج في حاويات عامة. يوفر فرز النفايات المواد الخام ويحمي البيئة."
+      },
+      {
+        "title": "Unterwegs mit Bus und Bahn",
+        "text": "Nora fährt jeden Morgen mit dem Zug zur Arbeit. Heute prüft sie die Anzeige am Bahnhof. Ihr Zug hat Verspätung. Sie informiert ihren Arbeitgeber und sucht eine andere Verbindung. Eine Fahrkarte kann man am Automaten oder online kaufen.",
+        "translation": "تذهب نورا كل صباح بالقطار إلى العمل. اليوم تتحقق من لوحة المواعيد في المحطة. قطارها متأخر. تخبر صاحب العمل وتبحث عن رحلة بديلة. يمكن شراء التذكرة من الجهاز أو عبر الإنترنت."
+      },
+      {
+        "title": "Eine eigene Meinung ausdrücken",
+        "text": "In einer Diskussion ist es wichtig, ruhig zu bleiben. Man kann sagen: Ich bin dafür, weil ... oder Ich bin dagegen, denn ... Eine gute Begründung enthält ein klares Argument und ein Beispiel. Man hört anderen zu und unterbricht sie nicht.",
+        "translation": "من المهم في النقاش أن يبقى الشخص هادئاً. يمكن أن يقول: أنا أؤيد لأن... أو أنا أعارض لأن... يحتوي التعليل الجيد على حجة واضحة ومثال. نستمع للآخرين ولا نقاطعهم."
+      }
+    ],
+    "topics": [
+      {
+        "title": "Alltag und Schule",
+        "description": "Tagesablauf, Schule, Lernen und Zeitangaben",
+        "items": [
+          "Tagesablauf beschreiben",
+          "Uhrzeiten und Termine",
+          "Lernstrategien und Hausaufgaben"
+        ]
+      },
+      {
+        "title": "Arbeit und Beruf",
+        "description": "Berufe, Bewerbung und Kommunikation am Arbeitsplatz",
+        "items": [
+          "Berufe und Tätigkeiten",
+          "Lebenslauf und Bewerbung",
+          "Vorstellungsgespräch"
+        ]
+      },
+      {
+        "title": "Gesundheit und Umwelt",
+        "description": "Gesunde Gewohnheiten und Umweltschutz",
+        "items": [
+          "Körper und Gesundheit",
+          "Ernährung und Bewegung",
+          "Mülltrennung und Recycling"
+        ]
+      },
+      {
+        "title": "Grammatik: Plural",
+        "description": "تكوين جمع الأسماء في اللغة الألمانية",
+        "items": [
+          "Pluralformen: -e, -er, -(e)n, -s und ohne Endung",
+          "Artikel im Plural: die",
+          "Unregelmäßige Pluralformen und Beispiele"
+        ]
+      }
+    ]
+  },
+  "en": {
+    "name": "الإنجليزية",
+    "vocabulary": [
+      [
+        "person",
+        "شخص"
+      ],
+      [
+        "family",
+        "عائلة"
+      ],
+      [
+        "parents",
+        "الوالدان"
+      ],
+      [
+        "child",
+        "طفل"
+      ],
+      [
+        "friend",
+        "صديق"
+      ],
+      [
+        "school",
+        "مدرسة"
+      ],
+      [
+        "lesson",
+        "درس"
+      ],
+      [
+        "subject",
+        "مادة دراسية"
+      ],
+      [
+        "book",
+        "كتاب"
+      ],
+      [
+        "notebook",
+        "دفتر"
+      ],
+      [
+        "pen",
+        "قلم"
+      ],
+      [
+        "task",
+        "مهمة"
+      ],
+      [
+        "exam",
+        "امتحان"
+      ],
+      [
+        "grade",
+        "علامة"
+      ],
+      [
+        "learn",
+        "يتعلم"
+      ],
+      [
+        "practise",
+        "يتدرب"
+      ],
+      [
+        "read",
+        "يقرأ"
+      ],
+      [
+        "write",
+        "يكتب"
+      ],
+      [
+        "speak",
+        "يتحدث"
+      ],
+      [
+        "listen",
+        "يستمع"
+      ],
+      [
+        "understand",
+        "يفهم"
+      ],
+      [
+        "explain",
+        "يشرح"
+      ],
+      [
+        "ask",
+        "يسأل"
+      ],
+      [
+        "answer",
+        "يجيب"
+      ],
+      [
+        "repeat",
+        "يكرر"
+      ],
+      [
+        "language",
+        "لغة"
+      ],
+      [
+        "word",
+        "كلمة"
+      ],
+      [
+        "sentence",
+        "جملة"
+      ],
+      [
+        "meaning",
+        "معنى"
+      ],
+      [
+        "grammar",
+        "قواعد"
+      ],
+      [
+        "pronunciation",
+        "لفظ"
+      ],
+      [
+        "number",
+        "رقم"
+      ],
+      [
+        "calculate",
+        "يحسب"
+      ],
+      [
+        "calculation",
+        "عملية حسابية"
+      ],
+      [
+        "solution",
+        "حل"
+      ],
+      [
+        "result",
+        "نتيجة"
+      ],
+      [
+        "half",
+        "نصف"
+      ],
+      [
+        "quarter",
+        "ربع"
+      ],
+      [
+        "fraction",
+        "كسر"
+      ],
+      [
+        "percentage",
+        "نسبة مئوية"
+      ],
+      [
+        "length",
+        "طول"
+      ],
+      [
+        "area",
+        "مساحة"
+      ],
+      [
+        "volume",
+        "حجم"
+      ],
+      [
+        "weight",
+        "وزن"
+      ],
+      [
+        "time",
+        "وقت"
+      ],
+      [
+        "hour",
+        "ساعة"
+      ],
+      [
+        "minute",
+        "دقيقة"
+      ],
+      [
+        "day",
+        "يوم"
+      ],
+      [
+        "week",
+        "أسبوع"
+      ],
+      [
+        "month",
+        "شهر"
+      ],
+      [
+        "year",
+        "سنة"
+      ],
+      [
+        "today",
+        "اليوم"
+      ],
+      [
+        "tomorrow",
+        "غداً"
+      ],
+      [
+        "yesterday",
+        "أمس"
+      ],
+      [
+        "early",
+        "مبكر"
+      ],
+      [
+        "late",
+        "متأخر"
+      ],
+      [
+        "on time",
+        "في الموعد"
+      ],
+      [
+        "work",
+        "عمل"
+      ],
+      [
+        "job",
+        "وظيفة"
+      ],
+      [
+        "profession",
+        "مهنة"
+      ],
+      [
+        "training",
+        "تدريب"
+      ],
+      [
+        "application",
+        "طلب توظيف"
+      ],
+      [
+        "CV",
+        "سيرة ذاتية"
+      ],
+      [
+        "interview",
+        "مقابلة"
+      ],
+      [
+        "employer",
+        "صاحب العمل"
+      ],
+      [
+        "employee",
+        "موظف"
+      ],
+      [
+        "contract",
+        "عقد"
+      ],
+      [
+        "salary",
+        "راتب"
+      ],
+      [
+        "break",
+        "استراحة"
+      ],
+      [
+        "experience",
+        "خبرة"
+      ],
+      [
+        "health",
+        "صحة"
+      ],
+      [
+        "body",
+        "جسم"
+      ],
+      [
+        "head",
+        "رأس"
+      ],
+      [
+        "heart",
+        "قلب"
+      ],
+      [
+        "lung",
+        "رئة"
+      ],
+      [
+        "blood",
+        "دم"
+      ],
+      [
+        "movement",
+        "حركة"
+      ],
+      [
+        "nutrition",
+        "تغذية"
+      ],
+      [
+        "vegetables",
+        "خضار"
+      ],
+      [
+        "fruit",
+        "فاكهة"
+      ],
+      [
+        "water",
+        "ماء"
+      ],
+      [
+        "environment",
+        "بيئة"
+      ],
+      [
+        "nature",
+        "طبيعة"
+      ],
+      [
+        "weather",
+        "طقس"
+      ],
+      [
+        "climate",
+        "مناخ"
+      ],
+      [
+        "temperature",
+        "درجة حرارة"
+      ],
+      [
+        "rain",
+        "مطر"
+      ],
+      [
+        "wind",
+        "رياح"
+      ],
+      [
+        "sun",
+        "شمس"
+      ],
+      [
+        "energy",
+        "طاقة"
+      ],
+      [
+        "force",
+        "قوة"
+      ],
+      [
+        "speed",
+        "سرعة"
+      ],
+      [
+        "distance",
+        "مسافة"
+      ],
+      [
+        "electric current",
+        "تيار كهربائي"
+      ],
+      [
+        "voltage",
+        "جهد كهربائي"
+      ],
+      [
+        "circuit",
+        "دائرة كهربائية"
+      ],
+      [
+        "material",
+        "مادة"
+      ],
+      [
+        "mixture",
+        "مخلوط"
+      ],
+      [
+        "cell",
+        "خلية"
+      ],
+      [
+        "organ",
+        "عضو"
+      ],
+      [
+        "living thing",
+        "كائن حي"
+      ],
+      [
+        "food chain",
+        "سلسلة غذائية"
+      ],
+      [
+        "history",
+        "تاريخ"
+      ],
+      [
+        "past",
+        "الماضي"
+      ],
+      [
+        "source",
+        "مصدر"
+      ],
+      [
+        "event",
+        "حدث"
+      ],
+      [
+        "democracy",
+        "ديمقراطية"
+      ],
+      [
+        "election",
+        "انتخابات"
+      ],
+      [
+        "fundamental right",
+        "حق أساسي"
+      ],
+      [
+        "law",
+        "قانون"
+      ],
+      [
+        "government",
+        "حكومة"
+      ],
+      [
+        "city",
+        "مدينة"
+      ],
+      [
+        "village",
+        "قرية"
+      ],
+      [
+        "map",
+        "خريطة"
+      ],
+      [
+        "scale",
+        "مقياس"
+      ],
+      [
+        "population",
+        "سكان"
+      ],
+      [
+        "resource",
+        "مورد"
+      ],
+      [
+        "money",
+        "مال"
+      ],
+      [
+        "income",
+        "دخل"
+      ],
+      [
+        "expenses",
+        "مصروفات"
+      ],
+      [
+        "training course",
+        "دورة تدريبية"
+      ],
+      [
+        "application",
+        "طلب توظيف"
+      ],
+      [
+        "experience",
+        "خبرة"
+      ],
+      [
+        "qualification",
+        "مؤهل"
+      ],
+      [
+        "reliable",
+        "موثوق"
+      ],
+      [
+        "appointment",
+        "موعد"
+      ],
+      [
+        "environment",
+        "البيئة"
+      ],
+      [
+        "health",
+        "الصحة"
+      ],
+      [
+        "decision",
+        "قرار"
+      ],
+      [
+        "responsibility",
+        "مسؤولية"
+      ],
+      [
+        "improve",
+        "يحسّن"
+      ],
+      [
+        "compare",
+        "يقارن"
+      ],
+      [
+        "apply for",
+        "يتقدم إلى"
+      ],
+      [
+        "take part",
+        "يشارك"
+      ],
+      [
+        "available",
+        "متاح"
+      ],
+      [
+        "deadline",
+        "موعد نهائي"
+      ],
+      [
+        "skills",
+        "مهارات"
+      ],
+      [
+        "workplace",
+        "مكان العمل"
+      ],
+      [
+        "safety",
+        "السلامة"
+      ],
+      [
+        "budget",
+        "ميزانية"
+      ],
+      [
+        "daily routine",
+        "الروتين اليومي"
+      ],
+      [
+        "occupation",
+        "مهنة"
+      ],
+      [
+        "skill",
+        "مهارة"
+      ],
+      [
+        "reliable",
+        "يمكن الاعتماد عليه"
+      ],
+      [
+        "punctual",
+        "ملتزم بالوقت"
+      ],
+      [
+        "healthy",
+        "صحي"
+      ],
+      [
+        "nutrition",
+        "التغذية"
+      ],
+      [
+        "exercise",
+        "تمرين/رياضة"
+      ],
+      [
+        "recycling",
+        "إعادة التدوير"
+      ],
+      [
+        "waste",
+        "نفايات"
+      ],
+      [
+        "public transport",
+        "النقل العام"
+      ],
+      [
+        "ticket",
+        "تذكرة"
+      ],
+      [
+        "delay",
+        "تأخير"
+      ],
+      [
+        "opinion",
+        "رأي"
+      ],
+      [
+        "agree",
+        "يوافق"
+      ],
+      [
+        "disagree",
+        "يعارض"
+      ],
+      [
+        "reason",
+        "سبب"
+      ],
+      [
+        "goal",
+        "هدف"
+      ],
+      [
+        "future",
+        "المستقبل"
+      ],
+      [
+        "cancel",
+        "يلغي"
+      ],
+      [
+        "reschedule",
+        "يغير الموعد"
+      ],
+      [
+        "price",
+        "السعر"
+      ],
+      [
+        "quantity",
+        "الكمية"
+      ],
+      [
+        "cheap",
+        "رخيص"
+      ],
+      [
+        "expensive",
+        "غالي"
+      ],
+      [
+        "receipt",
+        "إيصال"
+      ],
+      [
+        "neighbourhood",
+        "حيّ"
+      ],
+      [
+        "journey",
+        "رحلة"
+      ],
+      [
+        "practice",
+        "يتدرّب"
+      ],
+      [
+        "carefully",
+        "بعناية"
+      ]
+    ],
+    "sentences": [
+      [
+        "I study English every day.",
+        "أدرس الإنجليزية كل يوم."
+      ],
+      [
+        "Could you repeat that, please?",
+        "هل يمكنك إعادة ذلك من فضلك؟"
+      ],
+      [
+        "Could you speak more slowly, please?",
+        "هل يمكنك التحدث ببطء أكثر؟"
+      ],
+      [
+        "I have a question about the task.",
+        "لدي سؤال حول المهمة."
+      ],
+      [
+        "How do you spell this word?",
+        "كيف تتهجى هذه الكلمة؟"
+      ],
+      [
+        "What does this sentence mean?",
+        "ماذا تعني هذه الجملة؟"
+      ],
+      [
+        "I do not understand the whole text.",
+        "لا أفهم النص كاملاً."
+      ],
+      [
+        "Could you give me an example?",
+        "هل يمكنك إعطائي مثالاً؟"
+      ],
+      [
+        "I would like to register for the course.",
+        "أود التسجيل في الدورة."
+      ],
+      [
+        "What time does the lesson start?",
+        "في أي وقت يبدأ الدرس؟"
+      ],
+      [
+        "The lesson finishes at twelve o’clock.",
+        "ينتهي الدرس الساعة الثانية عشرة."
+      ],
+      [
+        "I need to study for the exam.",
+        "أحتاج إلى الدراسة للامتحان."
+      ],
+      [
+        "Can we solve the task together?",
+        "هل يمكننا حل المهمة معاً؟"
+      ],
+      [
+        "I have finished my homework.",
+        "أنهيت واجبي المنزلي."
+      ],
+      [
+        "Please open your book on page ten.",
+        "افتح كتابك على الصفحة العاشرة من فضلك."
+      ],
+      [
+        "I am feeling a little unwell today.",
+        "لا أشعر أنني بخير تماماً اليوم."
+      ],
+      [
+        "I need an appointment with a doctor.",
+        "أحتاج إلى موعد مع طبيب."
+      ],
+      [
+        "Where is the nearest bus stop?",
+        "أين أقرب موقف للحافلة؟"
+      ],
+      [
+        "How can I get to the station?",
+        "كيف أصل إلى المحطة؟"
+      ],
+      [
+        "I would like a ticket to London.",
+        "أريد تذكرة إلى لندن."
+      ],
+      [
+        "How much does it cost altogether?",
+        "كم تبلغ التكلفة الإجمالية؟"
+      ],
+      [
+        "Can I pay by card?",
+        "هل يمكنني الدفع بالبطاقة؟"
+      ],
+      [
+        "I am looking for a flat nearby.",
+        "أبحث عن شقة قريبة."
+      ],
+      [
+        "The rent is written in the contract.",
+        "الإيجار مكتوب في العقد."
+      ],
+      [
+        "I have an important appointment tomorrow.",
+        "لدي موعد مهم غداً."
+      ],
+      [
+        "Please send me an email.",
+        "أرسل لي بريداً إلكترونياً من فضلك."
+      ],
+      [
+        "I am interested in this training programme.",
+        "أنا مهتم بهذا البرنامج التدريبي."
+      ],
+      [
+        "I have attached my CV.",
+        "أرفقت سيرتي الذاتية."
+      ],
+      [
+        "I can start immediately.",
+        "يمكنني البدء فوراً."
+      ],
+      [
+        "Thank you for your reply.",
+        "شكراً على ردك."
+      ],
+      [
+        "I am happy with the result.",
+        "أنا سعيد بالنتيجة."
+      ],
+      [
+        "We need to compare the costs.",
+        "علينا مقارنة التكاليف."
+      ],
+      [
+        "The environment needs our protection.",
+        "البيئة تحتاج إلى حمايتنا."
+      ],
+      [
+        "Plants need water and light.",
+        "النباتات تحتاج إلى الماء والضوء."
+      ],
+      [
+        "The electric circuit is closed.",
+        "الدائرة الكهربائية مغلقة."
+      ],
+      [
+        "Speed depends on distance and time.",
+        "تعتمد السرعة على المسافة والزمن."
+      ],
+      [
+        "The exam takes place next week.",
+        "سيُعقد الامتحان الأسبوع القادم."
+      ],
+      [
+        "I want to improve my pronunciation.",
+        "أريد تحسين لفظي."
+      ],
+      [
+        "Could you correct my text?",
+        "هل يمكنك تصحيح نصي؟"
+      ],
+      [
+        "I found the most important information.",
+        "وجدت أهم معلومة."
+      ],
+      [
+        "Today I practise important words about school.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Today I practise important words about work.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Today I practise important words about health.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Today I practise important words about the environment.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Today I practise important words about transport.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "Today I practise important words about school.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Today I practise important words about work.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Today I practise important words about health.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Today I practise important words about the environment.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Today I practise important words about transport.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "Today I practise important words about school.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Today I practise important words about work.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Today I practise important words about health.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Today I practise important words about the environment.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Today I practise important words about transport.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "Today I practise important words about school.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المدرسة."
+      ],
+      [
+        "Today I practise important words about work.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع العمل."
+      ],
+      [
+        "Today I practise important words about health.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع الصحة."
+      ],
+      [
+        "Today I practise important words about the environment.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع البيئة."
+      ],
+      [
+        "Today I practise important words about transport.",
+        "أتدرب اليوم على كلمات مهمة حول موضوع المواصلات."
+      ],
+      [
+        "I am interested in this training course.",
+        "أنا مهتم بهذه الدورة التدريبية."
+      ],
+      [
+        "Could you send me more information, please?",
+        "هل يمكنك إرسال مزيد من المعلومات؟"
+      ],
+      [
+        "I have some practical experience.",
+        "لدي بعض الخبرة العملية."
+      ],
+      [
+        "Which documents do I need to bring?",
+        "ما الوثائق التي أحتاج إلى إحضارها؟"
+      ],
+      [
+        "I would like to make an appointment.",
+        "أود تحديد موعد."
+      ],
+      [
+        "Thank you for your reply.",
+        "شكراً على ردك."
+      ],
+      [
+        "In my opinion, this is a useful solution.",
+        "برأيي هذا حل مفيد."
+      ],
+      [
+        "First, we collect information. Then we compare the options.",
+        "أولاً نجمع المعلومات، ثم نقارن الخيارات."
+      ],
+      [
+        "I usually get up at seven o'clock.",
+        "أستيقظ عادةً الساعة السابعة."
+      ],
+      [
+        "After breakfast, I take the bus to school.",
+        "بعد الفطور أستقل الحافلة إلى المدرسة."
+      ],
+      [
+        "I am looking for an apprenticeship.",
+        "أبحث عن تدريب مهني."
+      ],
+      [
+        "I am reliable and I enjoy working in a team.",
+        "أنا شخص يمكن الاعتماد عليه وأستمتع بالعمل ضمن فريق."
+      ],
+      [
+        "Could you explain the way to the station, please?",
+        "هل يمكنك شرح الطريق إلى المحطة من فضلك؟"
+      ],
+      [
+        "The bus is ten minutes late today.",
+        "الحافلة متأخرة عشر دقائق اليوم."
+      ],
+      [
+        "I would like to make an appointment for next week.",
+        "أود تحديد موعد للأسبوع القادم."
+      ],
+      [
+        "I am sorry, but I cannot attend the appointment.",
+        "آسف، لكن لا أستطيع الحضور إلى الموعد."
+      ],
+      [
+        "In my opinion, exercise is very important.",
+        "برأيي، الرياضة مهمة جداً."
+      ],
+      [
+        "We should use less plastic.",
+        "ينبغي أن نستخدم كمية أقل من البلاستيك."
+      ],
+      [
+        "I separate paper, glass and food waste.",
+        "أفرز الورق والزجاج والنفايات الغذائية."
+      ],
+      [
+        "Could you say that again more slowly, please?",
+        "هل يمكنك قول ذلك مرة أخرى ببطء أكثر؟"
+      ],
+      [
+        "I agree with your idea.",
+        "أوافق على فكرتك."
+      ],
+      [
+        "I disagree because I have another reason.",
+        "أعارض لأن لدي سبباً آخر."
+      ],
+      [
+        "First, read the text. Then answer the questions.",
+        "أولاً اقرأ النص، ثم أجب عن الأسئلة."
+      ],
+      [
+        "The task is difficult, but I will try to solve it.",
+        "المهمة صعبة، لكنني سأحاول حلها."
+      ],
+      [
+        "How many people are taking part in the course?",
+        "كم شخصاً يشارك في الدورة؟"
+      ],
+      [
+        "Last year, I learned many new things.",
+        "في السنة الماضية تعلمت أشياء جديدة كثيرة."
+      ],
+      [
+        "In the future, I would like to start an apprenticeship.",
+        "في المستقبل أود أن أبدأ تدريباً مهنياً."
+      ],
+      [
+        "Please send me the receipt by email.",
+        "أرسل لي الإيصال عبر البريد الإلكتروني من فضلك."
+      ]
+    ],
+    "texts": [
+      {
+        "lang": "en",
+        "title": "A school day",
+        "text": "Mia gets up at seven o’clock. She has breakfast and takes the bus to school. Her lessons start at eight. Today she has English, mathematics and science. During the break, she talks to her friend. She goes home at one o’clock and does her homework in the afternoon.",
+        "translation": "تستيقظ ميا الساعة السابعة. تتناول الفطور وتذهب إلى المدرسة بالحافلة. تبدأ دروسها الساعة الثامنة. لديها اليوم الإنجليزية والرياضيات والعلوم. تتحدث مع صديقتها أثناء الاستراحة. تعود الساعة الواحدة وتنجز واجباتها بعد الظهر."
+      },
+      {
+        "lang": "en",
+        "title": "At the doctor",
+        "text": "Mr Brown has felt ill since yesterday. He calls the medical centre and asks for an appointment. The receptionist asks for his name and date of birth. He gets an appointment for Tuesday at ten o’clock. He should bring his health insurance card.",
+        "translation": "يشعر السيد براون بالمرض منذ أمس. يتصل بالمركز الطبي ويطلب موعداً. تسأله موظفة الاستقبال عن اسمه وتاريخ ميلاده. يحصل على موعد الثلاثاء الساعة العاشرة. وعليه إحضار بطاقة التأمين الصحي."
+      },
+      {
+        "lang": "en",
+        "title": "Shopping at the supermarket",
+        "text": "Sara goes to the supermarket on Saturday. She needs bread, milk, eggs and apples. She compares prices and looks for special offers. At the checkout, she pays by bank card. At home, she puts the food in the fridge.",
+        "translation": "تذهب سارة إلى السوبرماركت يوم السبت. تحتاج إلى خبز وحليب وبيض وتفاح. تقارن الأسعار وتبحث عن العروض. عند المحاسبة تدفع بالبطاقة البنكية. وفي المنزل تضع الطعام في البراد."
+      },
+      {
+        "lang": "en",
+        "title": "Applying for a job",
+        "text": "Adam is looking for an apprenticeship as an electrician. First, he reads the job advertisement carefully. Then he writes a cover letter and updates his CV. He adds his certificates and checks all documents. Finally, he sends the application by email.",
+        "translation": "يبحث آدم عن تدريب مهني ككهربائي. يقرأ إعلان الوظيفة بعناية، ثم يكتب رسالة تقديم ويحدث سيرته الذاتية. يضيف شهاداته ويفحص الأوراق. أخيراً يرسل الطلب بالبريد الإلكتروني."
+      },
+      {
+        "lang": "en",
+        "title": "Protecting the environment",
+        "text": "A town has different recycling bins. Paper goes into the blue bin. Plastic packaging belongs in the yellow bin. Food waste is collected separately. Recycling allows people to use materials again. Every household can help protect the environment.",
+        "translation": "في البلدة حاويات مختلفة لإعادة التدوير. يوضع الورق في الحاوية الزرقاء، والعبوات البلاستيكية في الصفراء. تجمع بقايا الطعام بشكل منفصل. تسمح إعادة التدوير باستخدام المواد مرة أخرى. ويمكن لكل منزل المساعدة في حماية البيئة."
+      },
+      {
+        "title": "Looking for an apprenticeship",
+        "text": "Mira is going to finish school soon. She is interested in an apprenticeship. First, she learns about different jobs. Then she prepares a CV and an application. Before the interview, she practises explaining her strengths and experience.",
+        "translation": "ميرا ستنهي المدرسة قريباً. تهتم بتدريب مهني. تتعرف أولاً على مهن مختلفة، ثم تجهز سيرة ذاتية وطلباً. وقبل المقابلة تتدرب على شرح نقاط قوتها وخبرتها.",
+        "questions": [
+          {
+            "q": "What does Mira prepare?",
+            "a": "A CV and an application."
+          }
+        ]
+      },
+      {
+        "title": "An appointment at the local office",
+        "text": "Mr Ali needs a new certificate. First, he checks which documents are necessary. He finds available appointments on the website. He chooses Tuesday and receives a confirmation by email.",
+        "translation": "يحتاج السيد علي إلى وثيقة جديدة. يتحقق أولاً من الوثائق الضرورية. يجد مواعيد متاحة على الموقع ويختار الثلاثاء، ثم يتلقى تأكيداً عبر البريد الإلكتروني.",
+        "questions": [
+          {
+            "q": "How does he receive confirmation?",
+            "a": "By email."
+          }
+        ]
+      },
+      {
+        "title": "A Day at School",
+        "text": "Mariam attends a preparation course. She gets up early and takes the bus to class. She studies German, mathematics and English. Reading is especially important to her. At home, she reviews new words and does her homework.",
+        "translation": "تحضر مريم دورة تحضيرية. تستيقظ باكراً وتستقل الحافلة إلى الصف. تدرس الألمانية والرياضيات والإنجليزية. القراءة مهمة لها بشكل خاص. في المنزل تراجع الكلمات الجديدة وتنجز واجباتها."
+      },
+      {
+        "title": "Applying for a Job",
+        "text": "Ali is looking for an apprenticeship. He writes a CV and an application letter. In the letter, he explains why he is interested in the job. He describes his strengths: he is punctual, friendly and reliable. Before the interview, he practises speaking clearly and calmly.",
+        "translation": "يبحث علي عن تدريب مهني. يكتب سيرة ذاتية ورسالة تقديم. يشرح في الرسالة سبب اهتمامه بالعمل. يصف نقاط قوته: ملتزم بالوقت وودود ويمكن الاعتماد عليه. قبل المقابلة يتدرب على التحدث بوضوح وهدوء."
+      },
+      {
+        "title": "Healthy Living",
+        "text": "A healthy daily routine includes several habits. People should eat different kinds of food, drink enough water and exercise regularly. Sleep is important too. Small changes can help, such as walking one extra bus stop or taking the stairs.",
+        "translation": "يتضمن الروتين الصحي عدة عادات. ينبغي تناول أنواع مختلفة من الطعام وشرب كمية كافية من الماء وممارسة الرياضة بانتظام. النوم مهم أيضاً. يمكن للتغييرات الصغيرة أن تساعد، مثل المشي محطة إضافية أو استخدام الدرج."
+      },
+      {
+        "title": "The Environment",
+        "text": "Many towns provide different bins for recycling. Paper goes into the paper bin. Plastic packaging goes into the packaging bin. Food waste can be collected separately. Recycling saves resources and helps protect the environment.",
+        "translation": "توفر مدن كثيرة حاويات مختلفة لإعادة التدوير. يوضع الورق في حاوية الورق، والتغليف البلاستيكي في حاوية التغليف. يمكن جمع بقايا الطعام بشكل منفصل. توفر إعادة التدوير الموارد وتساعد في حماية البيئة."
+      },
+      {
+        "title": "Travelling by Bus and Train",
+        "text": "Nora takes the train to work every morning. Today, she checks the departure board at the station. Her train is delayed. She informs her manager and looks for another connection. You can buy a ticket at a machine or online.",
+        "translation": "تستقل نورا القطار إلى العمل كل صباح. اليوم تتحقق من لوحة المغادرة في المحطة. قطارها متأخر. تخبر مديرها وتبحث عن رحلة أخرى. يمكنك شراء تذكرة من جهاز أو عبر الإنترنت."
+      },
+      {
+        "title": "Giving an Opinion",
+        "text": "It is important to stay calm during a discussion. You can say: I agree because ... or I disagree because ... A good reason includes a clear point and an example. Listen to other people and do not interrupt them.",
+        "translation": "من المهم الحفاظ على الهدوء أثناء النقاش. يمكنك أن تقول: أوافق لأن... أو أعارض لأن... يتضمن السبب الجيد نقطة واضحة ومثالاً. استمع إلى الآخرين ولا تقاطعهم."
+      }
+    ],
+    "topics": [
+      {
+        "title": "Daily Life and Education",
+        "description": "Daily routines, school, learning and time",
+        "items": [
+          "Describing a daily routine",
+          "Telling the time and making appointments",
+          "Study skills and homework"
+        ]
+      },
+      {
+        "title": "Jobs and Careers",
+        "description": "Occupations, applications and workplace communication",
+        "items": [
+          "Jobs and duties",
+          "CVs and application letters",
+          "Job interviews"
+        ]
+      },
+      {
+        "title": "Health and Environment",
+        "description": "Healthy habits and protecting the environment",
+        "items": [
+          "The human body and health",
+          "Food and exercise",
+          "Recycling and waste"
+        ]
+      },
+      {
+        "title": "Grammar: Plurals",
+        "description": "تكوين جمع الأسماء في اللغة الإنجليزية",
+        "items": [
+          "Regular plurals: -s and -es",
+          "Words ending in consonant + y and -f/-fe",
+          "Irregular plurals and uncountable nouns"
+        ]
+      }
+    ]
+  }
+}
