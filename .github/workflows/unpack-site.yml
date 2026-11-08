@@ -18,6 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
       - name: Unpack website files into repository root
         run: |
           set -euo pipefail
@@ -34,5 +35,6 @@ jobs:
           git add -A
           if ! git diff --cached --quiet; then
             git commit -m "Unpack complete MAßNAHME LEARN website"
+            git pull --rebase origin main
             git push
           fi
