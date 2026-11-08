@@ -1,0 +1,38 @@
+name: Unpack MAßNAHME LEARN site
+on:
+  push:
+    paths:
+      - 'MASSNAHME_LEARN_NETLIFY_DEPLOY.zip'
+      - '.github/workflows/unpack-site.yml'
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Unpack website files into repository root
+        run: |
+          set -euo pipefail
+          mkdir -p .unpack
+          unzip -oq MASSNAHME_LEARN_NETLIFY_DEPLOY.zip -d .unpack
+          site_dir="$(find .unpack -mindepth 1 -maxdepth 1 -type d | head -n 1)"
+          test -n "$site_dir"
+          cp -a "$site_dir"/. .
+          rm -rf .unpack
+      - name: Commit unpacked website
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Unpack complete MAßNAHME LEARN website"
+            git push
+          fi
