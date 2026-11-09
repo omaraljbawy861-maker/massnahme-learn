@@ -1878,6 +1878,222 @@
       ],
       "unitArabic": "اكتب فقرة من 80 كلمة عن يومك، ثم استخرج منها خمس معلومات يمكن تحويلها إلى أسئلة.",
       "chapterNumber": 102
+    },
+    {
+      "id": "en-extra-03",
+      "title": "كتابة بريد إلكتروني ورسالة رسمية",
+      "germanTitle": "Formal Emails and Letters",
+      "level": "A2–B1",
+      "duration": "45 دقيقة",
+      "unit": "Writing",
+      "objectives": [
+        "كتابة بريد واضح بهدف محدد.",
+        "استخدام التحية والخاتمة الرسمية.",
+        "طلب معلومات أو الاعتذار أو تغيير موعد."
+      ],
+      "intro": "تتعلم كتابة بريد إلكتروني عملي للمدرسة أو العمل أو موعد طبي أو استفسار عن خدمة.",
+      "german": "A formal email should have a clear subject, a polite greeting, a short explanation and a specific request. Use phrases such as: I am writing to ask about... Could you please...? Thank you for your help. Kind regards.",
+      "explanation": "ابدأ بعنوان يوضح الموضوع، ثم تحية رسمية. اشرح سبب الكتابة بجمل قصيرة، وحدد طلبك بوضوح، واختم بالشكر والتحية. تجنب الاختصارات العامية.",
+      "vocab": [
+        [
+          "subject",
+          "موضوع الرسالة"
+        ],
+        [
+          "Dear Sir or Madam",
+          "السادة المحترمون"
+        ],
+        [
+          "I am writing to",
+          "أكتب إليكم من أجل"
+        ],
+        [
+          "request",
+          "طلب"
+        ],
+        [
+          "appointment",
+          "موعد"
+        ],
+        [
+          "Kind regards",
+          "مع التحية"
+        ]
+      ],
+      "example": "Subject: Request for an appointment\n\nDear Sir or Madam,\nI am writing to ask for an appointment next week. Could you please let me know which days are available?\nThank you for your help.\nKind regards,\n...",
+      "worked": [
+        {
+          "title": "صياغة طلب مهذب",
+          "prompt": "Tell me the available dates.",
+          "steps": [
+            "نحوّل الأمر المباشر إلى سؤال مهذب.",
+            "نستخدم Could you please.",
+            "نضيف سبباً أو سياقاً عند الحاجة."
+          ],
+          "answer": "Could you please tell me which dates are available?"
+        }
+      ],
+      "practice": [
+        {
+          "q": "اكتب عنواناً لبريد تسأل فيه عن وظيفة.",
+          "hint": "استخدم Job Application أو Job Enquiry.",
+          "a": "Subject: Job Enquiry"
+        },
+        {
+          "q": "حوّل إلى طلب مهذب: Send me the information.",
+          "hint": "ابدأ بـ Could you please...?",
+          "a": "Could you please send me the information?"
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما التحية الرسمية المناسبة؟",
+          "options": [
+            "Dear Sir or Madam,",
+            "Hey mate,",
+            "What's up?"
+          ],
+          "correct": 0,
+          "why": "صيغة رسمية عند عدم معرفة الاسم."
+        },
+        {
+          "q": "ما وظيفة Subject؟",
+          "options": [
+            "توضيح موضوع البريد",
+            "كتابة العنوان البريدي فقط",
+            "توقيع الرسالة"
+          ],
+          "correct": 0,
+          "why": "يساعد القارئ على معرفة هدف الرسالة."
+        },
+        {
+          "q": "أي خاتمة رسمية مناسبة؟",
+          "options": [
+            "Kind regards",
+            "See ya",
+            "Later"
+          ],
+          "correct": 0,
+          "why": "تستخدم في البريد الرسمي."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب بريداً من 80–100 كلمة إلى مدرسة تسأل فيه عن موعد التسجيل والوثائق المطلوبة.",
+          "hint": "Subject، Greeting، سبب الرسالة، سؤالان، Closing.",
+          "a": "ينبغي أن يكون البريد منظماً ومهذباً ويحتوي طلباً واضحاً."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Writing"
+    },
+    {
+      "id": "en-extra-04",
+      "title": "المقارنة والوصف وإبداء الرأي",
+      "germanTitle": "Comparisons and Giving Opinions",
+      "level": "A2–B1",
+      "duration": "40 دقيقة",
+      "unit": "Speaking and Writing",
+      "objectives": [
+        "استخدام صيغ المقارنة والتفضيل.",
+        "وصف شخص أو مكان أو منتج.",
+        "إبداء الرأي مع ذكر السبب."
+      ],
+      "intro": "تدريب على وصف الأشياء ومقارنتها والتعبير عن رأيك بجمل كاملة.",
+      "german": "For short adjectives, use -er for the comparative and the -est for the superlative: small, smaller, the smallest. Some forms are irregular: good, better, the best. To give an opinion, use I think..., In my opinion..., because...",
+      "explanation": "نضيف غالباً er للمقارنة بين شيئين، وest للتفضيل بين أكثر من شيئين. توجد كلمات شاذة مثل good-better-best. لإبداء الرأي استخدم I think أو In my opinion، ثم اذكر السبب باستخدام because.",
+      "vocab": [
+        [
+          "comparative",
+          "صيغة المقارنة"
+        ],
+        [
+          "superlative",
+          "صيغة التفضيل"
+        ],
+        [
+          "in my opinion",
+          "برأيي"
+        ],
+        [
+          "because",
+          "لأن"
+        ],
+        [
+          "comfortable",
+          "مريح"
+        ],
+        [
+          "expensive",
+          "غالي"
+        ]
+      ],
+      "example": "This phone is cheaper than that one.\nIt is the most comfortable chair.\nIn my opinion, learning English is important because it helps at work.",
+      "worked": [
+        {
+          "title": "مقارنة شيئين",
+          "prompt": "Compare a bus and a train.",
+          "steps": [
+            "اختر صفة مثل fast أو cheap.",
+            "استخدم than للمقارنة.",
+            "اذكر رأيك وسببه."
+          ],
+          "answer": "The train is usually faster than the bus. In my opinion, it is more comfortable for long journeys."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: good – better – ___.",
+          "hint": "صيغة التفضيل الشاذة.",
+          "a": "the best"
+        },
+        {
+          "q": "اكتب جملة تقارن فيها بين مدينتين.",
+          "hint": "استخدم bigger than أو quieter than.",
+          "a": "مثال: London is bigger than Glasgow."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما صيغة المقارنة من small؟",
+          "options": [
+            "smaller",
+            "smallest",
+            "more small"
+          ],
+          "correct": 0,
+          "why": "نضيف er للصفة القصيرة."
+        },
+        {
+          "q": "ما صيغة التفضيل من good؟",
+          "options": [
+            "the best",
+            "goodest",
+            "better"
+          ],
+          "correct": 0,
+          "why": "good صفة شاذة."
+        },
+        {
+          "q": "أي عبارة تقدم رأياً؟",
+          "options": [
+            "In my opinion",
+            "Yesterday",
+            "At seven"
+          ],
+          "correct": 0,
+          "why": "تعني برأيي."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب فقرة من 100 كلمة تقارن بين مكانين أو منتجين، وتذكر رأيك وثلاثة أسباب.",
+          "hint": "استخدم comparative وsuperlative وbecause.",
+          "a": "ينبغي أن تحتوي الفقرة على مقارنات صحيحة ورأي مدعوم بأسباب."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Speaking and Writing"
     }
   ],
   "bookTitle": "English – Communication and Grammar",
