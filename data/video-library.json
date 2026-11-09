@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "items": [
     {
       "id": "de-cases",
@@ -858,6 +858,127 @@
       "type": "external",
       "url": "https://www.ardmediathek.de/video/alpha-lernen-oder-biologie/blutgefaesse/ard-alpha/Y3JpZDovL2JyLmRlL3ZpZGVvLzljOWZjNDNhLTM3YTktNDIyMS1iNGM0LTgwMjliMmE1NDg5Mg",
       "description": "أنواع الأوعية الدموية ووظيفتها."
+    },
+    {
+      "id": "de-grips-5-interview",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Bewerbungsgespräch – مقابلة العمل",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-5-36-bewerbungsgespraech/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA0MjkyQTA",
+      "description": "الاستعداد لمقابلة العمل والتعريف بالنفس وإبراز نقاط القوة."
+    },
+    {
+      "id": "de-grips-4-bodylanguage",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Körpersprache – لغة الجسد",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-4-36-koerpersprache/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAzNTc2QTA",
+      "description": "فهم تعابير الوجه والإيماءات ولغة الجسد في الحياة والعمل."
+    },
+    {
+      "id": "de-grips-3-discussion",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Diskutieren – فن النقاش",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-3-36-diskutieren/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAzNTc1QTA",
+      "description": "قواعد النقاش وبناء الحجج وتقديم الرأي."
+    },
+    {
+      "id": "de-grips-2-presentation",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Referat – تقديم عرض شفهي",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-2-36-referat/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAzMzQyQTA",
+      "description": "التحضير لعرض شفهي وتقديمه بثقة وتنظيم."
+    },
+    {
+      "id": "de-grips-36-exam",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Quali-Prüfung – Textarbeit",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-36-36-quali-pruefung-textarbeit/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAyNzg5QTA",
+      "description": "محاكاة جزء فهم النصوص في امتحان Quali والتدرب على طريقة الأسئلة."
+    },
+    {
+      "id": "math-grips-interest",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Zinsen – حساب الفوائد",
+      "provider": "ARD alpha · GRIPS Mathe",
+      "level": "ESA · Sekundarstufe I",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-mathe/folge-13-42-zinsen/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAxMzA1QTA",
+      "description": "فهم الفائدة وحسابها في مسائل الحياة اليومية."
+    },
+    {
+      "id": "math-grips-decimals",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Dezimalbrüche addieren und subtrahieren",
+      "provider": "ARD alpha · GRIPS Mathe",
+      "level": "ESA · Sekundarstufe I",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-mathe/folgen-7-und-8-42-dezimalbrueche-addieren-und-subtrahieren/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAwODkwQTA",
+      "description": "جمع وطرح الأعداد العشرية مع أمثلة تطبيقية."
+    },
+    {
+      "id": "worklife-entrepreneur",
+      "subject": "worklife",
+      "subjectName": "العمل والحياة المهنية",
+      "title": "Erste Schritte als Unternehmer",
+      "provider": "ARD alpha · Wirtschaft und Arbeit",
+      "level": "Berufsorientierung",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/alpha-lernen-oder-wirtschaft-und-arbeit/erste-schritte-als-unternehmer/ard-alpha/Y3JpZDovL2JyLmRlL3ZpZGVvL2VlZmZhN2Y4LTc4MTMtNDVmNS1hNjcyLTY0YzVkMzBkZDRlMw",
+      "description": "الخطوات الأولى لتأسيس مشروع وخوض تجربة العمل الحر."
+    },
+    {
+      "id": "worklife-why-work",
+      "subject": "worklife",
+      "subjectName": "العمل والحياة المهنية",
+      "title": "Warum arbeiten wir?",
+      "provider": "ARD alpha · Wirtschaft und Arbeit",
+      "level": "Berufsorientierung",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/alpha-lernen-oder-wirtschaft-und-arbeit/warum-arbeiten-wir/ard-alpha/Y3JpZDovL2JyLmRlL3ZpZGVvLzY2ZDE1N2M2LTY0MWMtNDg5Ny1hZTY1LTZjMTI3ZmRkYjRmNQ",
+      "description": "مفهوم العمل وأسباب عمل الإنسان ودور العمل في المجتمع."
+    },
+    {
+      "id": "worklife-business-idea",
+      "subject": "worklife",
+      "subjectName": "العمل والحياة المهنية",
+      "title": "Von der Idee zum Unternehmen",
+      "provider": "ARD alpha · Wirtschaft und Arbeit",
+      "level": "Berufsorientierung",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/alpha-lernen-oder-wirtschaft-und-arbeit/von-der-idee-zum-unternehmen/ard-alpha/Y3JpZDovL2JyLmRlL3ZpZGVvL2QwMTkyZDhlLTZkZjAtNDQ1NC1hOTBiLWYwYjBjZTRmNmY3ZA",
+      "description": "تحويل فكرة إلى مشروع وخطة عمل والتسويق والتمويل."
+    },
+    {
+      "id": "worklife-landscaping",
+      "subject": "worklife",
+      "subjectName": "العمل والحياة المهنية",
+      "title": "Karriere im Landschaftsbau",
+      "provider": "ARD alpha · Wirtschaft und Arbeit",
+      "level": "Berufsorientierung",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/alpha-lernen-oder-wirtschaft-und-arbeit/karriere-im-landschaftsbau/ard-alpha/Y3JpZDovL2JyLmRlL3ZpZGVvLzYwOGJiYjYwLWJhZjktNDVhMC1iMTg0LTFjYzFiNDUwNDhlMg",
+      "description": "التعرف على مهن البناء وتنسيق الحدائق والمسارات المهنية والتدريب."
     }
   ]
 }
