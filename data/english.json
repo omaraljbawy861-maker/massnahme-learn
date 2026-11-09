@@ -2094,6 +2094,336 @@
       ],
       "chapterNumber": 103,
       "unitArabic": "Speaking and Writing"
+    },
+    {
+      "id": "en-deep-01",
+      "title": "الأزمنة الأساسية في اللغة الإنجليزية",
+      "germanTitle": "Present, Past and Future Tenses",
+      "level": "ESA · Klasse 9 · NRW",
+      "duration": "45–60 دقيقة",
+      "unit": "Vertiefung",
+      "unitArabic": "وحدة التوسع والتطبيق",
+      "chapterNumber": 30,
+      "objectives": [
+        "فهم المفاهيم والمصطلحات الأساسية للموضوع.",
+        "شرح الفكرة وتطبيقها على مثال عملي جديد.",
+        "حل أسئلة تدريبية والاستعداد لنمط امتحان ESA."
+      ],
+      "intro": "درس موسع للتحضير لشهادة ESA في NRW. اقرأ الشرح الألماني والتوضيح العربي، ثم راجع المثال والمفردات وحل التدريبات والواجب.",
+      "german": "Lies die Erklärung aufmerksam. Achte auf die Fachbegriffe und Beispiele. Bearbeite danach die Aufgaben selbstständig und kontrolliere deine Antworten.",
+      "lessonText": "يُستخدم Present Simple للعادات والحقائق، وPresent Continuous لما يحدث الآن، وPast Simple لحدث انتهى، وwill أو going to للمستقبل. انتبه إلى الفعل المساعد في السؤال والنفي.",
+      "explanation": "يُستخدم Present Simple للعادات والحقائق، وPresent Continuous لما يحدث الآن، وPast Simple لحدث انتهى، وwill أو going to للمستقبل. انتبه إلى الفعل المساعد في السؤال والنفي.",
+      "vocab": [
+        [
+          "usually",
+          "عادةً"
+        ],
+        [
+          "at the moment",
+          "في هذه اللحظة"
+        ],
+        [
+          "yesterday",
+          "أمس"
+        ],
+        [
+          "tomorrow",
+          "غداً"
+        ],
+        [
+          "future",
+          "المستقبل"
+        ]
+      ],
+      "example": "She works every day. She is working now. She visited London yesterday. I will study tomorrow.",
+      "worked": [
+        {
+          "title": "مثال محلول وتطبيق",
+          "prompt": "She works every day. She is working now. She visited London yesterday. I will study tomorrow.",
+          "steps": [
+            "حدد الفكرة أو المعطيات الأساسية.",
+            "اربط المثال بالقاعدة أو المفهوم الوارد في الشرح.",
+            "اكتب النتيجة بوضوح وراجع المصطلحات."
+          ],
+          "answer": "يُستخدم Present Simple للعادات والحقائق، وPresent Continuous لما يحدث الآن، وPast Simple لحدث انتهى، وwill أو going to للمستقبل. انتبه إلى الفعل المساعد في السؤال والنفي."
+        }
+      ],
+      "practice": [
+        {
+          "q": "لخص موضوع «الأزمنة الأساسية في اللغة الإنجليزية» في 3 إلى 5 جمل.",
+          "hint": "ابدأ بالتعريف ثم اذكر أهم النقاط.",
+          "a": "يُستخدم Present Simple للعادات والحقائق، وPresent Continuous لما يحدث الآن، وPast Simple لحدث انتهى، وwill أو going to للمستقبل. انتبه إلى الفعل المساعد في السؤال والنفي."
+        },
+        {
+          "q": "استخدم ثلاثة مصطلحات من الدرس في جمل أو أمثلة.",
+          "hint": "راجع جدول المفردات.",
+          "a": "تُقبل الجمل الصحيحة التي تستخدم المصطلحات في سياق مناسب."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما الفكرة الأساسية في درس «الأزمنة الأساسية في اللغة الإنجليزية»؟",
+          "options": [
+            "يُستخدم Present Simple للعادات والحقائق، وPresent Continuous لما يحدث الآن، وPast Simple ل",
+            "حفظ العنوان فقط",
+            "تجاهل الأمثلة"
+          ],
+          "correct": 0,
+          "why": "الخيار الأول يلخص الفكرة الأساسية."
+        },
+        {
+          "q": "ما فائدة المصطلحات الصحيحة؟",
+          "options": [
+            "توضيح المعنى بدقة",
+            "جعل الإجابة غامضة",
+            "استبدال الفهم"
+          ],
+          "correct": 0,
+          "why": "المصطلحات الدقيقة تساعد على شرح الفكرة."
+        },
+        {
+          "q": "كيف تتأكد من فهم الموضوع؟",
+          "options": [
+            "تطبيقه على مثال جديد",
+            "قراءة العنوان فقط",
+            "ترك التدريب"
+          ],
+          "correct": 0,
+          "why": "تطبيق المعرفة على مثال جديد يثبت الفهم."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 6 إلى 8 جمل عن «الأزمنة الأساسية في اللغة الإنجليزية» مع مثال من عندك.",
+          "hint": "استخدم المفردات الجديدة واشرح الفكرة بترتيب.",
+          "a": "يُستخدم Present Simple للعادات والحقائق، وPresent Continuous لما يحدث الآن، وPast Simple لحدث انتهى، وwill أو going to للمستقبل. انتبه إلى الفعل المساعد في السؤال والنفي."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من الدرس ومعنى كل منها.",
+          "hint": "استخدم جدول المفردات.",
+          "a": "usually = عادةً؛ at the moment = في هذه اللحظة؛ yesterday = أمس؛ tomorrow = غداً؛ future = المستقبل"
+        }
+      ]
+    },
+    {
+      "id": "en-deep-02",
+      "title": "الأفعال الناقصة والطلب المهذب",
+      "germanTitle": "Modal Verbs and Polite Requests",
+      "level": "ESA · Klasse 9 · NRW",
+      "duration": "45–60 دقيقة",
+      "unit": "Vertiefung",
+      "unitArabic": "وحدة التوسع والتطبيق",
+      "chapterNumber": 31,
+      "objectives": [
+        "فهم المفاهيم والمصطلحات الأساسية للموضوع.",
+        "شرح الفكرة وتطبيقها على مثال عملي جديد.",
+        "حل أسئلة تدريبية والاستعداد لنمط امتحان ESA."
+      ],
+      "intro": "درس موسع للتحضير لشهادة ESA في NRW. اقرأ الشرح الألماني والتوضيح العربي، ثم راجع المثال والمفردات وحل التدريبات والواجب.",
+      "german": "Lies die Erklärung aufmerksam. Achte auf die Fachbegriffe und Beispiele. Bearbeite danach die Aufgaben selbstständig und kontrolliere deine Antworten.",
+      "lessonText": "تأتي can وmust وshould وcould قبل الفعل بصيغته الأساسية. استخدم should للنصيحة وmust للضرورة وcould لطلب مهذب. لا تضف s أو to بعد هذه الأفعال الناقصة في القاعدة الأساسية.",
+      "explanation": "تأتي can وmust وshould وcould قبل الفعل بصيغته الأساسية. استخدم should للنصيحة وmust للضرورة وcould لطلب مهذب. لا تضف s أو to بعد هذه الأفعال الناقصة في القاعدة الأساسية.",
+      "vocab": [
+        [
+          "ability",
+          "القدرة"
+        ],
+        [
+          "obligation",
+          "الإلزام"
+        ],
+        [
+          "advice",
+          "النصيحة"
+        ],
+        [
+          "permission",
+          "الإذن"
+        ],
+        [
+          "polite",
+          "مهذب"
+        ]
+      ],
+      "example": "You should revise. I must finish my homework. Could you help me, please?",
+      "worked": [
+        {
+          "title": "مثال محلول وتطبيق",
+          "prompt": "You should revise. I must finish my homework. Could you help me, please?",
+          "steps": [
+            "حدد الفكرة أو المعطيات الأساسية.",
+            "اربط المثال بالقاعدة أو المفهوم الوارد في الشرح.",
+            "اكتب النتيجة بوضوح وراجع المصطلحات."
+          ],
+          "answer": "تأتي can وmust وshould وcould قبل الفعل بصيغته الأساسية. استخدم should للنصيحة وmust للضرورة وcould لطلب مهذب. لا تضف s أو to بعد هذه الأفعال الناقصة في القاعدة الأساسية."
+        }
+      ],
+      "practice": [
+        {
+          "q": "لخص موضوع «الأفعال الناقصة والطلب المهذب» في 3 إلى 5 جمل.",
+          "hint": "ابدأ بالتعريف ثم اذكر أهم النقاط.",
+          "a": "تأتي can وmust وshould وcould قبل الفعل بصيغته الأساسية. استخدم should للنصيحة وmust للضرورة وcould لطلب مهذب. لا تضف s أو to بعد هذه الأفعال الناقصة في القاعدة الأساسية."
+        },
+        {
+          "q": "استخدم ثلاثة مصطلحات من الدرس في جمل أو أمثلة.",
+          "hint": "راجع جدول المفردات.",
+          "a": "تُقبل الجمل الصحيحة التي تستخدم المصطلحات في سياق مناسب."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما الفكرة الأساسية في درس «الأفعال الناقصة والطلب المهذب»؟",
+          "options": [
+            "تأتي can وmust وshould وcould قبل الفعل بصيغته الأساسية. استخدم should للنصيحة وmust للضرو",
+            "حفظ العنوان فقط",
+            "تجاهل الأمثلة"
+          ],
+          "correct": 0,
+          "why": "الخيار الأول يلخص الفكرة الأساسية."
+        },
+        {
+          "q": "ما فائدة المصطلحات الصحيحة؟",
+          "options": [
+            "توضيح المعنى بدقة",
+            "جعل الإجابة غامضة",
+            "استبدال الفهم"
+          ],
+          "correct": 0,
+          "why": "المصطلحات الدقيقة تساعد على شرح الفكرة."
+        },
+        {
+          "q": "كيف تتأكد من فهم الموضوع؟",
+          "options": [
+            "تطبيقه على مثال جديد",
+            "قراءة العنوان فقط",
+            "ترك التدريب"
+          ],
+          "correct": 0,
+          "why": "تطبيق المعرفة على مثال جديد يثبت الفهم."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 6 إلى 8 جمل عن «الأفعال الناقصة والطلب المهذب» مع مثال من عندك.",
+          "hint": "استخدم المفردات الجديدة واشرح الفكرة بترتيب.",
+          "a": "تأتي can وmust وshould وcould قبل الفعل بصيغته الأساسية. استخدم should للنصيحة وmust للضرورة وcould لطلب مهذب. لا تضف s أو to بعد هذه الأفعال الناقصة في القاعدة الأساسية."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من الدرس ومعنى كل منها.",
+          "hint": "استخدم جدول المفردات.",
+          "a": "ability = القدرة؛ obligation = الإلزام؛ advice = النصيحة؛ permission = الإذن؛ polite = مهذب"
+        }
+      ]
+    },
+    {
+      "id": "en-deep-03",
+      "title": "الشرط والسبب والنتيجة",
+      "germanTitle": "Conditionals, Cause and Effect",
+      "level": "ESA · Klasse 9 · NRW",
+      "duration": "45–60 دقيقة",
+      "unit": "Vertiefung",
+      "unitArabic": "وحدة التوسع والتطبيق",
+      "chapterNumber": 32,
+      "objectives": [
+        "فهم المفاهيم والمصطلحات الأساسية للموضوع.",
+        "شرح الفكرة وتطبيقها على مثال عملي جديد.",
+        "حل أسئلة تدريبية والاستعداد لنمط امتحان ESA."
+      ],
+      "intro": "درس موسع للتحضير لشهادة ESA في NRW. اقرأ الشرح الألماني والتوضيح العربي، ثم راجع المثال والمفردات وحل التدريبات والواجب.",
+      "german": "Lies die Erklärung aufmerksam. Achte auf die Fachbegriffe und Beispiele. Bearbeite danach die Aufgaben selbstständig und kontrolliere deine Antworten.",
+      "lessonText": "في الشرط الحقيقي نستخدم غالباً If + Present Simple ثم will + الفعل الأساسي. استخدم because لذكر السبب وso أو therefore لذكر النتيجة.",
+      "explanation": "في الشرط الحقيقي نستخدم غالباً If + Present Simple ثم will + الفعل الأساسي. استخدم because لذكر السبب وso أو therefore لذكر النتيجة.",
+      "vocab": [
+        [
+          "condition",
+          "شرط"
+        ],
+        [
+          "result",
+          "نتيجة"
+        ],
+        [
+          "cause",
+          "سبب"
+        ],
+        [
+          "because",
+          "لأن"
+        ],
+        [
+          "therefore",
+          "لذلك"
+        ]
+      ],
+      "example": "If I study, I will pass the exam. I was ill, so I stayed at home.",
+      "worked": [
+        {
+          "title": "مثال محلول وتطبيق",
+          "prompt": "If I study, I will pass the exam. I was ill, so I stayed at home.",
+          "steps": [
+            "حدد الفكرة أو المعطيات الأساسية.",
+            "اربط المثال بالقاعدة أو المفهوم الوارد في الشرح.",
+            "اكتب النتيجة بوضوح وراجع المصطلحات."
+          ],
+          "answer": "في الشرط الحقيقي نستخدم غالباً If + Present Simple ثم will + الفعل الأساسي. استخدم because لذكر السبب وso أو therefore لذكر النتيجة."
+        }
+      ],
+      "practice": [
+        {
+          "q": "لخص موضوع «الشرط والسبب والنتيجة» في 3 إلى 5 جمل.",
+          "hint": "ابدأ بالتعريف ثم اذكر أهم النقاط.",
+          "a": "في الشرط الحقيقي نستخدم غالباً If + Present Simple ثم will + الفعل الأساسي. استخدم because لذكر السبب وso أو therefore لذكر النتيجة."
+        },
+        {
+          "q": "استخدم ثلاثة مصطلحات من الدرس في جمل أو أمثلة.",
+          "hint": "راجع جدول المفردات.",
+          "a": "تُقبل الجمل الصحيحة التي تستخدم المصطلحات في سياق مناسب."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما الفكرة الأساسية في درس «الشرط والسبب والنتيجة»؟",
+          "options": [
+            "في الشرط الحقيقي نستخدم غالباً If + Present Simple ثم will + الفعل الأساسي. استخدم because",
+            "حفظ العنوان فقط",
+            "تجاهل الأمثلة"
+          ],
+          "correct": 0,
+          "why": "الخيار الأول يلخص الفكرة الأساسية."
+        },
+        {
+          "q": "ما فائدة المصطلحات الصحيحة؟",
+          "options": [
+            "توضيح المعنى بدقة",
+            "جعل الإجابة غامضة",
+            "استبدال الفهم"
+          ],
+          "correct": 0,
+          "why": "المصطلحات الدقيقة تساعد على شرح الفكرة."
+        },
+        {
+          "q": "كيف تتأكد من فهم الموضوع؟",
+          "options": [
+            "تطبيقه على مثال جديد",
+            "قراءة العنوان فقط",
+            "ترك التدريب"
+          ],
+          "correct": 0,
+          "why": "تطبيق المعرفة على مثال جديد يثبت الفهم."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 6 إلى 8 جمل عن «الشرط والسبب والنتيجة» مع مثال من عندك.",
+          "hint": "استخدم المفردات الجديدة واشرح الفكرة بترتيب.",
+          "a": "في الشرط الحقيقي نستخدم غالباً If + Present Simple ثم will + الفعل الأساسي. استخدم because لذكر السبب وso أو therefore لذكر النتيجة."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من الدرس ومعنى كل منها.",
+          "hint": "استخدم جدول المفردات.",
+          "a": "condition = شرط؛ result = نتيجة؛ cause = سبب؛ because = لأن؛ therefore = لذلك"
+        }
+      ]
     }
   ],
   "bookTitle": "English – Communication and Grammar",
