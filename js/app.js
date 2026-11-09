@@ -530,7 +530,7 @@ function startStudyTimer(){
   document.getElementById("studyTimerStatus").textContent="أحسنت! ركّز على دراستك، المؤقّت يعمل الآن.";
   studyTimerInterval=setInterval(()=>{
     studyTimerRemaining=Math.max(0,studyTimerRemaining-1);renderStudyTimer();
-    if(studyTimerRemaining===0){pauseStudyTimer();document.getElementById("studyTimerStatus").textContent="انتهت الجلسة! خذ استراحة قصيرة ثم تابع.";notify("انتهى وقت جلسة الدراسة");if("speechSynthesis" in window)speakText("انتهى وقت الدراسة. أحسنت!","ar-SA");}
+    if(studyTimerRemaining===0){pauseStudyTimer();const status=document.getElementById("studyTimerStatus");if(status)status.textContent="انتهت الجلسة! خذ استراحة قصيرة ثم تابع.";notify("انتهى وقت جلسة الدراسة");if("speechSynthesis" in window)speakText("انتهى وقت الدراسة. أحسنت!","ar-SA");}
   },1000);
 }
 function pauseStudyTimer(){
