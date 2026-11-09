@@ -1666,6 +1666,218 @@
           "a": "إجابة نموذجية: حل تدريب قراءة قصير خلال 15 دقيقة ثم راجع إجاباتك.\nتختلف الإجابة بحسب المثال الذي تختاره، بشرط صحة المفهوم وتوضيح السبب أو الخطوات."
         }
       ]
+    },
+    {
+      "id": "en-extra-01",
+      "title": "الأزمنة الأساسية في الحياة اليومية",
+      "germanTitle": "Present, Past and Future",
+      "level": "ESA · Klasse 9",
+      "duration": "40–50 دقيقة",
+      "unit": "حوّل الجملة I visit my friend إلى الماضي والمستقبل، ثم اكتب مثالين من حياتك لكل زمن.",
+      "objectives": [
+        "التمييز بين المضارع البسيط والماضي البسيط والمستقبل، واختيار الزمن المناسب في الجملة.",
+        "استخدام المفردات الألمانية الأساسية في الموضوع.",
+        "تطبيق المعرفة في تمرين واختبار قصير."
+      ],
+      "intro": "التمييز بين المضارع البسيط والماضي البسيط والمستقبل، واختيار الزمن المناسب في الجملة. يتضمن هذا الفصل شرحاً بالألمانية والعربية ومفردات وتطبيقات واختباراً وواجباً منزلياً.",
+      "german": "The Present Simple describes routines: I work every day. The Past Simple describes finished actions: I worked yesterday. The Future with will describes predictions or decisions: I will call you tomorrow. Time expressions help you choose the tense.",
+      "lessonText": "نستخدم المضارع البسيط للعادات والحقائق، والماضي البسيط لحدث انتهى، والمستقبل مع will للتوقع أو القرار. انتبه للكلمات الدالة مثل every day وyesterday وtomorrow.",
+      "explanation": "نستخدم المضارع البسيط للعادات والحقائق، والماضي البسيط لحدث انتهى، والمستقبل مع will للتوقع أو القرار. انتبه للكلمات الدالة مثل every day وyesterday وtomorrow.",
+      "vocab": [
+        [
+          "routine",
+          "روتين"
+        ],
+        [
+          "usually",
+          "عادةً"
+        ],
+        [
+          "yesterday",
+          "أمس"
+        ],
+        [
+          "tomorrow",
+          "غداً"
+        ],
+        [
+          "finished action",
+          "حدث منتهٍ"
+        ]
+      ],
+      "example": "Every day, she goes to work.\nYesterday, she went to work.\nTomorrow, she will go to work.",
+      "worked": [
+        {
+          "title": "مثال محلول خطوة بخطوة",
+          "prompt": "Every day, she goes to work.\nYesterday, she went to work.\nTomorrow, she will go to work.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو القانون المناسب.",
+            "استخرج المعطيات والكلمات المفتاحية.",
+            "طبق القاعدة خطوة بخطوة.",
+            "راجع النتيجة وتأكد من أنها تجيب عن السؤال."
+          ],
+          "answer": "نستخدم المضارع البسيط للعادات والحقائق، والماضي البسيط لحدث انتهى، والمستقبل مع will للتوقع أو القرار."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ابحث عن كلمة الزمن أولاً، ثم اختر صيغة الفعل المناسبة.",
+          "hint": "استخدم قاعدة الدرس واكتب خطوات الحل أو سبب اختيارك.",
+          "a": "تُقبل الإجابة التي توضح الخطوات الصحيحة وتستخدم مفاهيم الدرس."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من المفردات الألمانية مع ترجمتها العربية.",
+          "hint": "راجع جدول المفردات.",
+          "a": "routine = روتين، usually = عادةً، yesterday = أمس، tomorrow = غداً، finished action = حدث منتهٍ"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Which sentence is in the past?",
+          "options": [
+            "I work today.",
+            "I worked yesterday.",
+            "I will work tomorrow."
+          ],
+          "correct": 0,
+          "why": "راجع الشرح والمثال؛ الإجابة الصحيحة هي الخيار الأول."
+        },
+        {
+          "q": "Choose the correct form: He ___ football every Sunday.",
+          "options": [
+            "play",
+            "plays",
+            "played"
+          ],
+          "correct": 0,
+          "why": "راجع الشرح والمثال؛ الإجابة الصحيحة هي الخيار الأول."
+        },
+        {
+          "q": "Complete: We ___ visit Berlin tomorrow.",
+          "options": [
+            "will",
+            "did",
+            "are"
+          ],
+          "correct": 0,
+          "why": "راجع الشرح والمثال؛ الإجابة الصحيحة هي الخيار الأول."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب 3 جمل عن روتينك، و3 عن أمس، و3 عما ستفعله غداً.",
+          "hint": "اكتب إجابتك بأسلوبك مع الاستعانة بالمثال.",
+          "a": "تُقيّم الإجابة بحسب صحة المعلومات وترتيب الخطوات ووضوح الشرح."
+        }
+      ],
+      "unitArabic": "حوّل الجملة I visit my friend إلى الماضي والمستقبل، ثم اكتب مثالين من حياتك لكل زمن.",
+      "chapterNumber": 101
+    },
+    {
+      "id": "en-extra-02",
+      "title": "فهم النصوص واستخراج المعلومات",
+      "germanTitle": "Reading Comprehension",
+      "level": "ESA · Klasse 9",
+      "duration": "40–50 دقيقة",
+      "unit": "اكتب فقرة من 80 كلمة عن يومك، ثم استخرج منها خمس معلومات يمكن تحويلها إلى أسئلة.",
+      "objectives": [
+        "استخدام العنوان والكلمات المفتاحية لفهم نص قصير، وتحديد الفكرة الرئيسية والتفاصيل.",
+        "استخدام المفردات الألمانية الأساسية في الموضوع.",
+        "تطبيق المعرفة في تمرين واختبار قصير."
+      ],
+      "intro": "استخدام العنوان والكلمات المفتاحية لفهم نص قصير، وتحديد الفكرة الرئيسية والتفاصيل. يتضمن هذا الفصل شرحاً بالألمانية والعربية ومفردات وتطبيقات واختباراً وواجباً منزلياً.",
+      "german": "Before reading, look at the title and predict the topic. Read once for the main idea. Read again and underline names, dates, places and reasons. Do not translate every word; use the context to understand unfamiliar vocabulary.",
+      "lessonText": "لفهم النص لا تترجم كل كلمة. اقرأ العنوان وتوقع الموضوع، ثم اقرأ مرة للفكرة العامة ومرة ثانية للبحث عن الأسماء والتواريخ والأماكن والأسباب. حاول فهم الكلمة الجديدة من سياقها.",
+      "explanation": "لفهم النص لا تترجم كل كلمة. اقرأ العنوان وتوقع الموضوع، ثم اقرأ مرة للفكرة العامة ومرة ثانية للبحث عن الأسماء والتواريخ والأماكن والأسباب. حاول فهم الكلمة الجديدة من سياقها.",
+      "vocab": [
+        [
+          "headline",
+          "عنوان"
+        ],
+        [
+          "main idea",
+          "الفكرة الرئيسية"
+        ],
+        [
+          "detail",
+          "تفصيل"
+        ],
+        [
+          "reason",
+          "سبب"
+        ],
+        [
+          "context",
+          "سياق"
+        ]
+      ],
+      "example": "Text: Sara moved to Cologne last year. She takes the bus to school because the journey is only fifteen minutes. In the afternoon, she studies English.\nMain idea: Sara's daily life in Cologne.",
+      "worked": [
+        {
+          "title": "مثال محلول خطوة بخطوة",
+          "prompt": "Text: Sara moved to Cologne last year. She takes the bus to school because the journey is only fifteen minutes. In the afternoon, she studies English.\nMain idea: Sara's daily life in Cologne.",
+          "steps": [
+            "اقرأ المطلوب وحدد المفهوم أو القانون المناسب.",
+            "استخرج المعطيات والكلمات المفتاحية.",
+            "طبق القاعدة خطوة بخطوة.",
+            "راجع النتيجة وتأكد من أنها تجيب عن السؤال."
+          ],
+          "answer": "لفهم النص لا تترجم كل كلمة."
+        }
+      ],
+      "practice": [
+        {
+          "q": "حدد من؟ أين؟ متى؟ لماذا؟ قبل محاولة الإجابة.",
+          "hint": "استخدم قاعدة الدرس واكتب خطوات الحل أو سبب اختيارك.",
+          "a": "تُقبل الإجابة التي توضح الخطوات الصحيحة وتستخدم مفاهيم الدرس."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من المفردات الألمانية مع ترجمتها العربية.",
+          "hint": "راجع جدول المفردات.",
+          "a": "headline = عنوان، main idea = الفكرة الرئيسية، detail = تفصيل، reason = سبب، context = سياق"
+        }
+      ],
+      "questions": [
+        {
+          "q": "Where does Sara live?",
+          "options": [
+            "Bonn",
+            "Cologne",
+            "Berlin"
+          ],
+          "correct": 0,
+          "why": "راجع الشرح والمثال؛ الإجابة الصحيحة هي الخيار الأول."
+        },
+        {
+          "q": "Why does she take the bus?",
+          "options": [
+            "It is cheap",
+            "The journey is short",
+            "She has no bicycle"
+          ],
+          "correct": 0,
+          "why": "راجع الشرح والمثال؛ الإجابة الصحيحة هي الخيار الأول."
+        },
+        {
+          "q": "What does she study in the afternoon?",
+          "options": [
+            "English",
+            "Maths",
+            "German"
+          ],
+          "correct": 0,
+          "why": "راجع الشرح والمثال؛ الإجابة الصحيحة هي الخيار الأول."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اقرأ فقرة ألمانية أو إنجليزية قصيرة، واكتب فكرتها الرئيسية وثلاث معلومات دقيقة.",
+          "hint": "اكتب إجابتك بأسلوبك مع الاستعانة بالمثال.",
+          "a": "تُقيّم الإجابة بحسب صحة المعلومات وترتيب الخطوات ووضوح الشرح."
+        }
+      ],
+      "unitArabic": "اكتب فقرة من 80 كلمة عن يومك، ثم استخرج منها خمس معلومات يمكن تحويلها إلى أسئلة.",
+      "chapterNumber": 102
     }
   ],
   "bookTitle": "English – Communication and Grammar",
