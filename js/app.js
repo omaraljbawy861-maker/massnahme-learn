@@ -9,7 +9,7 @@ let currentCourse = null;
 let currentLesson = null;
 let languageBank = null;
 
-const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان" };
+const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -253,7 +253,62 @@ async function renderZfaPreparation() {
   }
 }
 
-function renderSchedule() {
+
+function zfaField(id,label,placeholder="") {
+ return '<label class="zfa-form-field">'+label+'<input id="'+id+'" type="text" placeholder="'+placeholder+'"></label>';
+}
+function renderZfaApplication() {
+ setActive("zfa-application");
+ const questions=[
+ ["Warum möchten Sie eine Ausbildung zur ZFA machen?","Ich interessiere mich für Zahnmedizin und arbeite gern mit Menschen. Ich möchte einen medizinischen Beruf erlernen und mich fachlich weiterentwickeln.","لماذا تريدين تدريب ZFA؟"],
+ ["Was sind Ihre Stärken?","Ich bin freundlich, zuverlässig und lernbereit. Außerdem arbeite ich sorgfältig und gern im Team.","ما نقاط قوتك؟"],
+ ["Wie reagieren Sie, wenn Sie etwas nicht verstehen?","Ich frage höflich nach und lasse mir die Aufgabe erklären. Mir ist wichtig, korrekt und sicher zu arbeiten.","ماذا تفعلين إذا لم تفهمي شيئاً؟"],
+ ["Wie gehen Sie mit nervösen Patientinnen und Patienten um?","Ich bleibe ruhig, höre aufmerksam zu und spreche freundlich. Medizinische Fragen leite ich an die zuständige Fachperson weiter.","كيف تتعاملين مع مريض متوتر؟"],
+ ["Warum sollten wir Sie auswählen?","Ich bin motiviert, pünktlich und bereit, Neues zu lernen. Ich möchte mich engagiert in Ihr Praxisteam einbringen.","لماذا نختارك؟"],
+ ["Was bedeutet Teamarbeit für Sie?","Teamarbeit bedeutet für mich, respektvoll zu kommunizieren, Verantwortung zu übernehmen und Kolleginnen und Kollegen zu unterstützen.","ماذا يعني لك العمل الجماعي؟"],
+ ["Wie gut sind Ihre Deutschkenntnisse?","Meine Deutschkenntnisse liegen derzeit bei [Niveau]. Ich lerne regelmäßig weiter und übe besonders die Kommunikation im beruflichen Alltag.","ما مستوى الألمانية لديك؟"],
+ ["Haben Sie schon praktische Erfahrungen?","[Hier eigene Erfahrungen ehrlich beschreiben. Wenn keine vorhanden sind: Ich habe noch keine Praxiserfahrung, bin aber sehr motiviert, alles Schritt für Schritt zu lernen.]","هل لديك خبرة عملية؟"]
+ ];
+ content.innerHTML=`
+ <div class="page-intro"><span class="eyebrow">BEWERBUNG & VORSTELLUNGSGESPRÄCH</span><h1>ملف التقديم والمقابلة – ZFA</h1><p>جهّزي بياناتك، أنشئي مسودة رسالة التقديم والسيرة الذاتية، وتدرّبي على أسئلة المقابلة.</p></div>
+ <div class="zfa-notice">مهم: هذه نماذج أولية. املئي البيانات الحقيقية فقط، ولا تضيفي خبرة أو مستوى لغة أو شهادة غير موجودة لديك. راجعي كل شيء قبل إرساله إلى العيادة.</div>
+ <div class="zfa-application-grid">
+  <section class="zfa-content-card"><h2>1. بياناتك الشخصية</h2><p class="zfa-help">املئي الحقول لتظهر بياناتك داخل النماذج مباشرة.</p>
+   ${zfaField("zfa-name","الاسم الكامل","Vorname Nachname")}
+   ${zfaField("zfa-address","العنوان","Straße, PLZ, Ort")}
+   ${zfaField("zfa-phone","رقم الهاتف","+49 …")}
+   ${zfaField("zfa-email","البريد الإلكتروني","name@email.de")}
+   ${zfaField("zfa-clinic","اسم العيادة","Zahnarztpraxis …")}
+   ${zfaField("zfa-city","المدينة والتاريخ","Oberhausen, 09.11.2026")}
+   ${zfaField("zfa-school","الشهادة المدرسية","Schulabschluss / voraussichtlicher Abschluss")}
+   ${zfaField("zfa-language","مستوى الألمانية","B1 / B2 – ehrlich angeben")}
+   ${zfaField("zfa-experience","الخبرة أو التدريب العملي","Praktikum / Erfahrung / noch keine")}
+   ${zfaField("zfa-strengths","نقاط قوتك","freundlich, zuverlässig, sorgfältig")}
+   <label class="zfa-form-field">لماذا اخترتِ هذه المهنة؟<textarea id="zfa-motivation" rows="3" placeholder="اكتبي السبب الحقيقي باختصار"></textarea></label>
+   <button class="primary-btn" data-action="zfa-refresh-draft">تحديث النماذج</button>
+  </section>
+  <section class="zfa-content-card"><h2>2. Anschreiben · رسالة التقديم</h2><pre class="zfa-draft" id="zfa-cover-preview"></pre><button class="primary-btn" data-action="zfa-copy-cover">نسخ رسالة التقديم</button>
+   <div class="zfa-divider"></div><h2>3. Lebenslauf · السيرة الذاتية</h2><pre class="zfa-draft" id="zfa-cv-preview"></pre><button class="primary-btn" data-action="zfa-copy-cv">نسخ السيرة الذاتية</button>
+  </section>
+ </div>
+ <section class="zfa-content-card zfa-interview"><span class="eyebrow">VORSTELLUNGSGESPRÄCH</span><h2>4. أسئلة مقابلة العمل مع إجابات نموذجية</h2><p class="zfa-help">اقرئي السؤال، حاولي الإجابة بصوتك، ثم قارني إجابتك بالنموذج. عدّلي الإجابة لتناسب تجربتك الحقيقية.</p>
+  ${questions.map((q,i)=>`<details class="zfa-interview-q"><summary><span>${i+1}. ${escapeHtml(q[0])}</span><small>${escapeHtml(q[2])}</small></summary><p lang="de">${escapeHtml(q[1])}</p><button class="listen-btn" data-speak="${escapeHtml(q[1])}" data-lang="de-DE">🔊 استمعي للإجابة</button></details>`).join("")}
+ </section>
+ <section class="zfa-content-card zfa-checklist"><h2>5. قائمة تجهيز ملف التقديم</h2>
+  ${["سيرة ذاتية ألمانية محدثة","رسالة تقديم مخصصة للعيادة","آخر شهادة مدرسية أو إثبات دراسي","شهادات اللغة إن توفرت","شهادات التدريب أو الخبرة إن وجدت","مراجعة البريد الإلكتروني ورقم الهاتف","التأكد من اسم العيادة والشخص المسؤول","حفظ نسخة PDF من المستندات"].map((x,i)=>`<label><input type="checkbox"> ${x}</label>`).join("")}
+ </section>`;
+ const update=()=>{
+  const val=id=>document.getElementById(id)?.value.trim()||"";
+  const name=val("zfa-name")||"[Vorname Nachname]",address=val("zfa-address")||"[Adresse]",phone=val("zfa-phone")||"[Telefon]",email=val("zfa-email")||"[E-Mail]",clinic=val("zfa-clinic")||"[Name der Zahnarztpraxis]",city=val("zfa-city")||"[Ort, Datum]",school=val("zfa-school")||"[Schulabschluss]",language=val("zfa-language")||"[Deutschkenntnisse]",experience=val("zfa-experience")||"[Praktische Erfahrung]",strengths=val("zfa-strengths")||"[Persönliche Stärken]",motivation=val("zfa-motivation")||"Ich interessiere mich für Zahnmedizin und möchte einen medizinischen Beruf erlernen.";
+  const cover=name+"\\n"+address+"\\n"+phone+" · "+email+"\\n\\n"+clinic+"\\n\\n"+city+"\\n\\nBewerbung um einen Ausbildungsplatz als Zahnmedizinische Fachangestellte (ZFA)\\n\\nSehr geehrte Damen und Herren,\\n\\nhiermit bewerbe ich mich um einen Ausbildungsplatz als Zahnmedizinische Fachangestellte in Ihrer Praxis. "+motivation+"\\n\\nIch bin "+strengths+" und möchte meine Deutschkenntnisse ("+language+") weiter verbessern. Mein bisheriger schulischer Abschluss: "+school+". Praktische Erfahrungen: "+experience+".\\n\\nÜber die Möglichkeit, mich persönlich vorzustellen oder ein Praktikum zum gegenseitigen Kennenlernen zu absolvieren, würde ich mich sehr freuen.\\n\\nMit freundlichen Grüßen\\n"+name;
+  const cv="LEBENSLAUF\\n\\nPersönliche Daten\\nName: "+name+"\\nAdresse: "+address+"\\nTelefon: "+phone+"\\nE-Mail: "+email+"\\n\\nSchulbildung\\n"+school+"\\n\\nSprachkenntnisse\\nDeutsch: "+language+"\\n\\nPraktische Erfahrungen\\n"+experience+"\\n\\nPersönliche Stärken\\n"+strengths+"\\n\\nBerufliches Ziel\\nAusbildung zur Zahnmedizinischen Fachangestellten (ZFA)";
+  document.getElementById("zfa-cover-preview").textContent=cover;
+  document.getElementById("zfa-cv-preview").textContent=cv;
+ };
+ content.querySelectorAll("input[type=text],textarea").forEach(el=>el.addEventListener("input",update));
+ update();
+}
+\nfunction renderSchedule() {
  content.innerHTML=`<div class="page-intro"><span class="eyebrow">WOCHENPLAN</span><h1>جدول الحصص الأسبوعي</h1><p>جدول مقترح قابل للتعديل لاحقاً حسب برنامج Maßnahme الخاص بك.</p></div><table class="schedule-table"><thead><tr><th>اليوم</th><th>الحصة الأولى</th><th>الحصة الثانية</th><th>الحصة الثالثة</th></tr></thead><tbody>${[["الاثنين","Deutsch","Mathematik","مراجعة"],["الثلاثاء","Mathematik","English","تدريبات"],["الأربعاء","Deutsch","English","قراءة"],["الخميس","Mathematik","تطبيقات","اختبار قصير"],["الجمعة","مراجعة عامة","حل الواجبات","تقييم أسبوعي"]].map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 }
 function renderAssignments() {
@@ -268,7 +323,7 @@ function renderExams() {
 function navigate(view) {
  if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
- if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
+ if(view==="zfa-preparation"){ renderZfaPreparation(); return; }\n if(view==="zfa-application"){ renderZfaApplication(); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
@@ -284,6 +339,8 @@ document.addEventListener("click",e=>{
  const speakButton=e.target.closest("[data-speak]");
  if(speakButton){speakText(speakButton.dataset.speak,speakButton.dataset.lang||"de-DE");return;}
  const action=e.target.closest("[data-action]")?.dataset.action;
+ if(action==="zfa-refresh-draft"){notify("تم تحديث مسودات التقديم");}
+ if(action==="zfa-copy-cover"||action==="zfa-copy-cv"){const id=action==="zfa-copy-cover"?"zfa-cover-preview":"zfa-cv-preview";const textToCopy=document.getElementById(id)?.textContent||"";if(navigator.clipboard?.writeText){navigator.clipboard.writeText(textToCopy).then(()=>notify("تم نسخ النص")).catch(()=>notify("تعذر النسخ؛ حددي النص وانسخيه"));}else{notify("حددي النص وانسخيه يدوياً");}}
  if(action==="zfa-open"){document.getElementById("zfa-unit-"+e.target.closest("[data-unit]").dataset.unit)?.scrollIntoView({behavior:"smooth"});}
  if(action==="zfa-translation"){const i=e.target.closest("[data-unit]").dataset.unit;const el=document.getElementById("zfa-translation-"+i);if(el)el.hidden=!el.hidden;}
  if(action==="zfa-check"){const i=e.target.closest("[data-unit]").dataset.unit;const panel=document.getElementById("zfa-quiz-"+i);let score=0;panel.querySelectorAll(".zfa-question").forEach(q=>{const selected=q.querySelector("input:checked");const feedback=q.querySelector(".zfa-feedback");feedback.hidden=false;if(selected&&Number(selected.value)===Number(q.dataset.correct)){score++;feedback.textContent="إجابة صحيحة ✓";feedback.classList.add("correct");}else{feedback.classList.remove("correct");feedback.textContent="راجعي الإجابة الصحيحة ثم أعيدي المحاولة. "+feedback.textContent;}});document.getElementById("zfa-score-"+i).textContent="النتيجة: "+score+" / "+panel.querySelectorAll(".zfa-question").length;}
