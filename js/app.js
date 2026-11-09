@@ -12,7 +12,7 @@ let zfaSimulationIndex = 0;
 let zfaSimulationScore = 0;
 let zfaSimulationAnswered = false;
 
-const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان" };
+const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "cloud-demo":"تجربة حفظ التقدم" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -56,6 +56,15 @@ function subjectCard(c, cls="subject-card") {
     <h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.german)} · ${c.lessons.length} دروس</p>
     <div class="progress-meta"><span>التقدم</span><strong>${pct}%</strong></div><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
   </article>`;
+}
+function renderCloudDemo() {
+ const KEY="massnahme-demo-profile-v1";
+ let profile={}; try{profile=JSON.parse(localStorage.getItem(KEY)||"{}")}catch{}
+ const p=getProgress();
+ content.innerHTML=`<div class="page-intro"><span class="eyebrow">SAVE & CONTINUE · تجربة الحفظ</span><h1>جرّب حفظ تقدمك الدراسي</h1><p>هذه نسخة اختبارية لتجربة شكل الحساب واسترجاع التقدم. الحفظ هنا على نفس المتصفح فقط، وليس تخزيناً سحابياً حقيقياً بعد.</p></div>
+ <div class="panel" style="padding:24px;margin-bottom:18px"><h3>ملف الطالب التجريبي</h3><p style="color:var(--muted)">اكتب اسماً وبريداً تجريبياً، ثم احفظ الملف. لا تستخدم كلمة مرورك الحقيقية.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0"><label>اسم الطالب<input id="demo-name" class="form-control" placeholder="اسم تجريبي" value="${escapeHtml(profile.name||"")}" /></label><label>البريد الإلكتروني<input id="demo-email" type="email" class="form-control" placeholder="student@example.com" value="${escapeHtml(profile.email||"")}" /></label></div><button class="primary-btn" data-action="demo-save">حفظ الملف التجريبي</button> <button class="text-btn" data-action="demo-restore">استرجاع البيانات المحفوظة</button><div id="demo-status" class="feedback" style="margin-top:14px">${profile.name?"آخر ملف محفوظ: "+escapeHtml(profile.name):"لم تحفظ ملفاً تجريبياً بعد."}</div></div>
+ <div class="stats-grid"><article class="stat-card"><div><small>الدروس المكتملة</small><strong>${p.completed.length}</strong></div></article><article class="stat-card"><div><small>الاختبارات المحفوظة</small><strong>${Object.keys(p.scores||{}).length}</strong></div></article></div>
+ <div class="panel" style="padding:22px;margin-top:18px"><h3>اختبار الاستمرار</h3><ol style="line-height:2.2"><li>احفظ الملف التجريبي أعلاه.</li><li>افتح أي مادة وأكمل درساً أو اختباراً.</li><li>أغلق الصفحة ثم افتح الموقع مرة ثانية من نفس الجهاز والمتصفح.</li><li>ارجع إلى هذه الصفحة واضغط «استرجاع البيانات المحفوظة»؛ ستجد تقدمك ما زال موجوداً.</li></ol><p style="color:var(--muted);font-size:13px">ملاحظة: هذه التجربة تثبت الحفظ المحلي فقط. حتى يظهر تقدمك على هاتف أو كمبيوتر آخر، نحتاج ربط قاعدة بيانات سحابية وتسجيل دخول فعلي.</p></div>`;
 }
 function renderDashboard() {
   content.innerHTML = `
@@ -345,7 +354,7 @@ function navigate(view) {
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
  if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
  if(view==="zfa-application"){ renderZfaApplication(); return; }
- if(view==="zfa-simulation"){ zfaSimulationIndex=0; zfaSimulationScore=0; zfaSimulationAnswered=false; renderZfaSimulation(); return; }
+ if(view==="zfa-simulation"){ zfaSimulationIndex=0; zfaSimulationScore=0; zfaSimulationAnswered=false; renderZfaSimulation(); return; }\n if(view==="cloud-demo"){ setActive(view); renderCloudDemo(); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
@@ -362,7 +371,7 @@ document.addEventListener("click",e=>{
  if(speakButton){speakText(speakButton.dataset.speak,speakButton.dataset.lang||"de-DE");return;}
  const simChoice=e.target.closest("[data-sim-choice]");
  if(simChoice&&!zfaSimulationAnswered){const answers=[0,1,2,0,1,0,2,1];const explanations=["راجعي جدول المواعيد وجهزي مكان العمل وفق تعليمات الفريق.","التحية المهذبة والسؤال عن الموعد أسلوب استقبال مهني.","استمعي للمريض وانقلي المعلومات للطبيب ولا تشخّصي الحالة.","السؤال عند عدم التأكد يحافظ على سلامة العمل.","التعاطف والهدوء يساعدان المريض.","تحققي من البيانات وفق إجراءات العيادة.","معلومات المرضى سرية.","التوثيق والتسليم وترتيب المكان جزء من العمل المسؤول."];const choice=Number(simChoice.dataset.simChoice),correct=answers[zfaSimulationIndex],ok=choice===correct;if(ok)zfaSimulationScore++;zfaSimulationAnswered=true;document.querySelectorAll("[data-sim-choice]").forEach((b,i)=>{b.disabled=true;b.classList.toggle("selected-correct",i===correct);b.classList.toggle("selected-wrong",i===choice&&!ok);});const f=document.getElementById("zfa-sim-feedback");f.hidden=false;f.className="zfa-sim-feedback "+(ok?"correct":"incorrect");f.textContent=(ok?"إجابة صحيحة ✓ ":"ليست الإجابة الأفضل. ")+explanations[zfaSimulationIndex];document.querySelector('[data-action="zfa-sim-next"]').disabled=false;return;}
- const action=e.target.closest("[data-action]")?.dataset.action;
+ const action=e.target.closest("[data-action]")?.dataset.action;\n if(action==="demo-save"){const profile={name:document.getElementById("demo-name")?.value.trim()||"",email:document.getElementById("demo-email")?.value.trim()||"",savedAt:new Date().toISOString()};if(!profile.name||!profile.email){notify("أدخل الاسم والبريد التجريبي أولاً");return;}localStorage.setItem("massnahme-demo-profile-v1",JSON.stringify(profile));document.getElementById("demo-status").textContent="تم حفظ الملف على هذا المتصفح ✓";notify("تم الحفظ التجريبي");return;}\n if(action==="demo-restore"){const saved=JSON.parse(localStorage.getItem("massnahme-demo-profile-v1")||"{}");const progress=getProgress();document.getElementById("demo-status").textContent=(saved.name?"أهلاً بعودتك "+saved.name+" — ":"لا يوجد ملف محفوظ — ")+"الدروس المكتملة: "+progress.completed.length+" | الاختبارات المحفوظة: "+Object.keys(progress.scores||{}).length;return;}
  if(action==="zfa-sim-next"){zfaSimulationIndex++;zfaSimulationAnswered=false;renderZfaSimulation();return;}
  if(action==="zfa-sim-restart"){zfaSimulationIndex=0;zfaSimulationScore=0;zfaSimulationAnswered=false;renderZfaSimulation();return;}
  if(action==="zfa-refresh-draft"){notify("تم تحديث مسودات التقديم");}
