@@ -94,3 +94,5 @@
 .plural-table th,.plural-table td{padding:11px;border-bottom:1px solid #e8ebf0;text-align:start}
 .plural-table th{color:#8a6a32;background:#f8f6f1}
 @media(max-width:700px){.language-panels{grid-template-columns:1fr}.language-toolbar span{margin-inline-start:0;width:100%}.language-section{padding:15px}}
+
+.developer-credit{display:block;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12);font-family:'Cairo',sans-serif;font-size:11px;line-height:1.8;letter-spacing:0;color:#c4ccda}.developer-credit strong{display:block;color:#d9bd82;font-size:13px;font-weight:800}
