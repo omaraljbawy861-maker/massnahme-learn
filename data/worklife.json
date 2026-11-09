@@ -1516,6 +1516,223 @@
       ],
       "unitArabic": "ضع ميزانية شهرية افتراضية تتضمن الإيجار والطعام والمواصلات والاتصالات والادخار، وتأكد أن مجموعها لا يتجاوز الدخل.",
       "chapterNumber": 102
+    },
+    {
+      "id": "wl-extra-03",
+      "title": "حقوق العامل والسلامة في العمل",
+      "germanTitle": "Arbeitsschutz und Arbeitnehmerrechte",
+      "level": "ESA · Beruf",
+      "duration": "45 دقيقة",
+      "unit": "Arbeitswelt",
+      "objectives": [
+        "التعرف إلى قواعد السلامة المهنية.",
+        "فهم أهمية فترات الراحة ومعدات الوقاية.",
+        "معرفة كيفية الإبلاغ عن الخطر."
+      ],
+      "intro": "مبادئ مهمة لكل شخص يعمل في ورشة أو موقع بناء أو متجر أو مكتب.",
+      "german": "Arbeitsschutz soll Unfälle und gesundheitliche Schäden verhindern. Beschäftigte müssen Sicherheitsanweisungen beachten und geeignete Schutzausrüstung tragen. Gefahren und Unfälle sollen sofort gemeldet werden. Pausen und Arbeitszeiten sind ebenfalls wichtige Bestandteile des Arbeitsschutzes.",
+      "explanation": "تهدف السلامة المهنية إلى منع الحوادث والأضرار الصحية. يجب اتباع تعليمات السلامة وارتداء معدات الوقاية المناسبة والإبلاغ فوراً عن الخطر أو الحادث. كما أن تنظيم ساعات العمل وفترات الراحة جزء من حماية العامل.",
+      "vocab": [
+        [
+          "der Arbeitsschutz",
+          "السلامة المهنية"
+        ],
+        [
+          "die Schutzausrüstung",
+          "معدات الوقاية"
+        ],
+        [
+          "der Unfall",
+          "حادث"
+        ],
+        [
+          "die Gefahr",
+          "خطر"
+        ],
+        [
+          "die Pause",
+          "استراحة"
+        ],
+        [
+          "melden",
+          "يبلّغ"
+        ]
+      ],
+      "example": "Gefahr erkennen → Arbeit sicher unterbrechen → Vorgesetzte informieren → Anweisungen befolgen.",
+      "worked": [
+        {
+          "title": "التعامل مع خطر في موقع العمل",
+          "prompt": "لاحظت سلكاً كهربائياً مكشوفاً في مكان العمل.",
+          "steps": [
+            "لا تلمس السلك ولا تحاول إصلاحه دون تأهيل.",
+            "حذّر الآخرين وأبعدهم عن المنطقة.",
+            "أبلغ المسؤول فوراً واتبع إجراءات السلامة."
+          ],
+          "answer": "إيقاف الاقتراب من المنطقة، تحذير الآخرين، وإبلاغ المسؤول المختص."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ماذا تفعل عند اكتشاف خطر؟",
+          "hint": "السلامة أولاً ثم الإبلاغ.",
+          "a": "أبتعد عن الخطر، أحذر الآخرين، وأبلغ المسؤول."
+        },
+        {
+          "q": "اذكر ثلاث معدات حماية شخصية.",
+          "hint": "الرأس والعينان واليدان والقدمان.",
+          "a": "خوذة، نظارات واقية، قفازات، وحذاء سلامة."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما الهدف الأساسي من Arbeitsschutz؟",
+          "options": [
+            "منع الحوادث والأضرار الصحية",
+            "زيادة المخاطر",
+            "إلغاء التدريب"
+          ],
+          "correct": 0,
+          "why": "يحمي العامل من المخاطر."
+        },
+        {
+          "q": "ماذا تفعل عند رؤية خطر؟",
+          "options": [
+            "تبلغ المسؤول وتتبع إجراءات السلامة",
+            "تتجاهله",
+            "تخفيه"
+          ],
+          "correct": 0,
+          "why": "الإبلاغ المبكر يمنع الحوادث."
+        },
+        {
+          "q": "لماذا نرتدي معدات الوقاية؟",
+          "options": [
+            "لتقليل التعرض للإصابة",
+            "لزيادة سرعة الآلات",
+            "لإلغاء القواعد"
+          ],
+          "correct": 0,
+          "why": "معدات الوقاية تقلل المخاطر."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب قائمة فحص سلامة من 8 نقاط لمكان عمل، مع توضيح الإجراء عند وجود خطر.",
+          "hint": "افحص الأرضية والكهرباء والآلات ومخارج الطوارئ ومعدات الوقاية.",
+          "a": "تتضمن القائمة ملاحظات عملية وإجراء واضحاً للإبلاغ والمعالجة."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Arbeitswelt"
+    },
+    {
+      "id": "wl-extra-04",
+      "title": "التواصل وحل الخلافات في مكان العمل",
+      "germanTitle": "Kommunikation und Konfliktlösung",
+      "level": "ESA · Beruf",
+      "duration": "40 دقيقة",
+      "unit": "Zusammenarbeit",
+      "objectives": [
+        "استخدام لغة مهنية ومحترمة.",
+        "التمييز بين النقد البنّاء والاتهام.",
+        "اقتراح خطوات عملية لحل الخلاف."
+      ],
+      "intro": "نتعلم كيف نتعامل مع سوء الفهم والخلافات مع الزملاء أو المسؤولين بطريقة هادئة ومهنية.",
+      "german": "Gute Kommunikation bedeutet zuhören, nachfragen und klar sprechen. Bei Konflikten sollte man sachlich bleiben, das Problem beschreiben und gemeinsam nach einer Lösung suchen. Ich-Botschaften helfen, Vorwürfe zu vermeiden: Ich habe den Eindruck, dass ...",
+      "explanation": "التواصل الجيد يعني الاستماع وعدم المقاطعة وطرح الأسئلة عند عدم الفهم. عند الخلاف اشرح المشكلة بهدوء، وتحدث عن أثرها واقترح حلاً. تجنب الاتهام الشخصي واستخدم عبارات تبدأ بـ أنا ألاحظ أو أحتاج.",
+      "vocab": [
+        [
+          "die Kommunikation",
+          "التواصل"
+        ],
+        [
+          "der Konflikt",
+          "خلاف"
+        ],
+        [
+          "das Missverständnis",
+          "سوء فهم"
+        ],
+        [
+          "zuhören",
+          "يستمع"
+        ],
+        [
+          "die Lösung",
+          "حل"
+        ],
+        [
+          "sachlich",
+          "موضوعي وهادئ"
+        ]
+      ],
+      "example": "Ich habe die Aufgabe anders verstanden. Können wir die Schritte gemeinsam klären?\nIch möchte eine Lösung finden, die für alle passt.",
+      "worked": [
+        {
+          "title": "حل سوء فهم",
+          "prompt": "زميلك يعتقد أنك لم تنفذ المهمة كما طُلبت.",
+          "steps": [
+            "استمع إلى وجهة نظره دون مقاطعة.",
+            "اشرح ما فهمته من التعليمات.",
+            "اطلب توضيح النقاط المختلفة.",
+            "اتفقا على الخطوة التالية."
+          ],
+          "answer": "دعونا نراجع التعليمات معاً ونتفق على المطلوب والموعد."
+        }
+      ],
+      "practice": [
+        {
+          "q": "اكتب عبارة ألمانية تطلب فيها توضيح التعليمات.",
+          "hint": "Könnten Sie bitte ...?",
+          "a": "Könnten Sie die Anweisung bitte genauer erklären?"
+        },
+        {
+          "q": "ما التصرف الأفضل عند الخلاف؟",
+          "hint": "الاستماع والحديث عن المشكلة لا عن الشخص.",
+          "a": "الاستماع بهدوء، شرح المشكلة بموضوعية، والبحث عن حل مشترك."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما معنى zuhören؟",
+          "options": [
+            "يستمع",
+            "يصرخ",
+            "يغادر"
+          ],
+          "correct": 0,
+          "why": "zuhören تعني الاستماع بانتباه."
+        },
+        {
+          "q": "أي عبارة أكثر مهنية؟",
+          "options": [
+            "Können wir das gemeinsam klären?",
+            "Du bist immer schuld!",
+            "Das ist mir egal."
+          ],
+          "correct": 0,
+          "why": "تدعو إلى حل المشكلة معاً."
+        },
+        {
+          "q": "ما المقصود بالنقد البنّاء؟",
+          "options": [
+            "ملاحظة محددة تساعد على التحسين",
+            "إهانة الشخص",
+            "نشر الإشاعات"
+          ],
+          "correct": 0,
+          "why": "يركز على السلوك أو العمل ويقترح تحسيناً."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب حواراً من 8 أسطر بالألمانية بين زميلين يحلان سوء فهم حول مهمة عمل، ثم ترجم الحوار للعربية.",
+          "hint": "استخدم bitte وIch denke وKönnen wir...?",
+          "a": "الحوار الجيد يحافظ على الاحترام ويصل إلى اتفاق عملي."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Zusammenarbeit"
     }
   ],
   "bookSubtitle": "Lehr- und Arbeitsbuch · ESA Vorbereitung",
