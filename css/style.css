@@ -96,3 +96,42 @@
 @media(max-width:700px){.language-panels{grid-template-columns:1fr}.language-toolbar span{margin-inline-start:0;width:100%}.language-section{padding:15px}}
 
 .developer-credit{display:block;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.12);font-family:'Cairo',sans-serif;font-size:11px;line-height:1.8;letter-spacing:0;color:#c4ccda}.developer-credit strong{display:block;color:#d9bd82;font-size:13px;font-weight:800}
+
+
+/* Mobile sidebar: responsive drawer sized to the phone viewport */
+@media(max-width:760px){
+  .sidebar{
+    position:fixed;
+    z-index:20;
+    top:0;
+    right:0;
+    bottom:0;
+    width:min(84vw,300px);
+    max-width:100%;
+    height:100vh;
+    height:100dvh;
+    min-height:0;
+    padding:calc(18px + env(safe-area-inset-top)) 15px calc(14px + env(safe-area-inset-bottom));
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    transform:translateX(105%);
+    transition:transform .25s ease;
+  }
+  .sidebar.open{
+    right:0;
+    transform:translateX(0);
+    box-shadow:0 0 0 100vmax rgba(8,18,34,.42);
+  }
+  .brand{padding:0 7px 22px}
+  .main-nav{gap:5px}
+  .nav-link{min-height:44px;padding:10px 12px;font-size:13px}
+  .sidebar-bottom{margin-top:24px}
+  .target-card{padding:13px}
+  .sidebar-foot{margin-top:14px;padding-bottom:3px}
+}
+@media(max-width:380px){
+  .sidebar{width:min(88vw,280px);padding-left:12px;padding-right:12px}
+  .brand-mark{width:38px;height:38px}
+  .nav-link{gap:9px;padding-inline:10px}
+}
