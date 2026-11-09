@@ -282,6 +282,12 @@ async function renderZfaPreparation() {
       window.zfaLernfeld1=await lfResponse.json();
     }
     const lf1=window.zfaLernfeld1;
+    if(!window.zfaLernfelderRest) {
+      const restResponse=await fetch("./data/zfa_lernfelder_02_13.json?v=20261109-1");
+      if(!restResponse.ok) throw new Error("Lernfelder 2–13 HTTP "+restResponse.status);
+      window.zfaLernfelderRest=await restResponse.json();
+    }
+    const restFields=window.zfaLernfelderRest.fields;
     const units=course.units;
     const words=units.reduce((n,u)=>n+u.vocab.length,0);
     content.innerHTML=`
@@ -334,6 +340,37 @@ async function renderZfaPreparation() {
               </div>
             </details>
           `).join('')}
+        </div>
+      </section>
+      <section class="zfa-course-module panel">
+        <div class="zfa-official-heading"><div><span class="eyebrow">VOLLSTÄNDIGER LERNPFAD · LERNFELDER 02–13</span><h2>بقية مجالات المنهاج – دروس تفصيلية</h2><p>12 مجالاً تعليمياً إضافياً، 15 درساً في كل مجال، بالألمانية والعربية.</p></div><div class="zfa-official-total"><strong>${restFields.reduce((n,f)=>n+f.lessons.length,0)}</strong><span>دروس أصلية</span></div></div>
+        <p class="zfa-official-note">${escapeHtml(window.zfaLernfelderRest.sourceNote)}</p>
+        <div class="zfa-internal-lessons">
+          ${restFields.map(f=>`
+            <details class="zfa-internal-lesson zfa-field-group">
+              <summary><span class="zfa-official-number">${String(f.field).padStart(2,"0")}</span><span class="zfa-official-title"><b>${escapeHtml(f.titleAr)}</b><small lang="de">${escapeHtml(f.title)}</small></span><span class="zfa-official-meta">${f.hours} Std. · ${f.lessons.length} درساً</span></summary>
+              <div class="zfa-official-body">
+                <p><b>الكفاءة المهنية:</b> ${escapeHtml(f.competence)}</p>
+                <div class="zfa-internal-lessons">
+                  ${f.lessons.map(l=>`
+                    <details class="zfa-internal-lesson">
+                      <summary><span class="zfa-official-number">${String(l.number).padStart(2,"0")}</span><span class="zfa-official-title"><b>${escapeHtml(l.titleAr)}</b><small lang="de">${escapeHtml(l.title)}</small></span><span class="zfa-official-meta">درس ${l.number}</span></summary>
+                      <div class="zfa-official-body">
+                        <h4>Deutsch · الشرح بالألمانية</h4><p class="zfa-german-text" lang="de">${escapeHtml(l.german)}</p>
+                        <div class="action-row"><button class="listen-btn" data-speak="${escapeHtml(l.german)}" data-lang="de-DE">🔊 استمع للشرح</button></div>
+                        <h4>الشرح بالعربية</h4><p>${escapeHtml(l.arabic)}</p>
+                        <h4>Wortschatz · مفردات الدرس</h4><div class="zfa-vocab-grid">${l.vocabulary.map((w,j)=>`<article class="zfa-vocab"><small>${j+1}</small><strong lang="de">${escapeHtml(w[0])}</strong><span>${escapeHtml(w[1])}</span><button data-speak="${escapeHtml(w[0])}" data-lang="de-DE" aria-label="استمع للكلمة">🔊</button></article>`).join("")}</div>
+                        <h4>Praxisaufgabe · تطبيق عملي</h4><p>${escapeHtml(l.practice)}</p>
+                        <div class="zfa-question"><strong>${escapeHtml(l.question)}</strong>${l.options.map((o,k)=>`<label><input type="radio" name="${l.id}" value="${k}"> ${escapeHtml(o)}</label>`).join("")}
+                          <details class="zfa-answer"><summary>إظهار الإجابة والتفسير</summary><p><b>${escapeHtml(l.options[l.correct])}</b></p><p>${escapeHtml(l.explanation)}</p></details>
+                        </div>
+                      </div>
+                    </details>
+                  `).join("")}
+                </div>
+              </div>
+            </details>
+          `).join("")}
         </div>
       </section>
       <section class="stats-grid">
