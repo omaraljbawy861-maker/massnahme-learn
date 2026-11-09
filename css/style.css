@@ -280,3 +280,35 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 .zfa-answer summary{cursor:pointer;font-weight:700;color:var(--navy)}
 .zfa-official-sources span{display:inline-block;margin:5px 12px 5px 0;color:var(--muted);font-size:13px}
 @media(max-width:640px){.zfa-course-module{padding:14px}.zfa-internal-lesson>summary{gap:8px;padding:12px}.zfa-internal-lesson .zfa-official-meta{display:none}}
+
+
+/* Interactive study companion */
+.study-tools-grid{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.5fr);gap:18px;align-items:start;margin:20px 0}
+.study-timer-card,.study-chat-card{padding:22px;border:1px solid var(--border);border-radius:18px;background:var(--surface,#fff);box-shadow:0 8px 28px rgba(20,35,55,.05)}
+.study-card-heading{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.study-card-heading h2{font-size:19px;margin:0 0 3px}
+.study-card-heading p{font-size:12px;color:var(--muted);margin:0}
+.study-tool-icon{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#f4eddf;color:#98743a;font-size:25px}
+.study-timer-display{font-size:clamp(48px,8vw,68px);font-weight:800;letter-spacing:2px;text-align:center;color:var(--navy);padding:18px 0;font-variant-numeric:tabular-nums}
+.study-timer-label,.study-chat-card>label{display:block;font-size:13px;font-weight:700;margin:8px 0}
+.study-timer-card input,.study-chat-card select{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:var(--surface,#fff);color:inherit;font:inherit}
+.study-timer-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.study-timer-actions button{flex:1;min-width:90px}
+.study-timer-actions button:disabled{opacity:.45;cursor:not-allowed}
+.study-timer-status{min-height:40px;color:var(--muted);font-size:12px;line-height:1.7;margin:12px 0 0}
+.study-chat-messages{height:330px;overflow:auto;display:flex;flex-direction:column;gap:10px;padding:12px;margin:15px 0;background:var(--surface-2, #f6f7f9);border:1px solid var(--border);border-radius:13px}
+.study-message{max-width:90%;padding:11px 13px;border-radius:13px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}
+.study-message b{font-size:12px;display:block;margin-bottom:3px}
+.study-message p{font-size:13px;margin:0}
+.study-message.assistant{align-self:flex-start;background:var(--surface,#fff);border:1px solid var(--border)}
+.study-message.user{align-self:flex-end;background:#e9eff6;color:#1d3048}
+.study-chat-form textarea{width:100%;resize:vertical;min-height:68px;padding:12px;border:1px solid var(--border);border-radius:11px;background:var(--surface,#fff);color:inherit;font:inherit;line-height:1.7}
+.study-chat-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:9px}
+.study-chat-controls .primary-btn{margin-inline-start:auto}
+.study-voice-toggle{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.study-tutor-note{font-size:12px;color:var(--muted);line-height:1.8;margin:12px 0 0}
+.study-tips{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:15px;border:1px solid var(--border);border-radius:14px}
+.study-tips b{width:100%;font-size:13px}
+.study-tips span{padding:7px 10px;border-radius:20px;background:var(--surface-2,#f4f5f7);font-size:12px;color:var(--muted)}
+@media(max-width:850px){.study-tools-grid{grid-template-columns:1fr}.study-chat-messages{height:280px}}
+@media(max-width:520px){.study-timer-card,.study-chat-card{padding:15px}.study-chat-controls .primary-btn{width:100%;margin:0}.study-chat-controls>*{flex:1}.study-message{max-width:96%}}
