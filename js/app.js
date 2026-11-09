@@ -96,14 +96,16 @@ function filterVideos(){
 function playVideo(id){
  const v=videoLibrary.find(x=>x.id===id);if(!v)return;
  const panel=document.querySelector("#videoPlayerPanel");
- const player=v.type==="mp4"
- ? `<video controls playsinline preload="metadata" src="${escapeHtml(v.src)}"></video>`
- : v.type==="external"
- ? `<div class="external-video-launch"><span>▶</span><h3>هذا الدرس متاح عبر مشغّل ARD الرسمي</h3><p>اضغط الزر لفتح الفيديو مباشرة مع الترجمة الألمانية إن توفرت.</p><a class="primary-btn" href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer">تشغيل الدرس على ARD ↗</a></div>`
- : `<iframe src="${v.type==="vimeo"?`https://player.vimeo.com/video/${encodeURIComponent(v.videoId)}`:`https://www.youtube.com/embed/${encodeURIComponent(v.videoId)}?rel=0`}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
- panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">NOW LEARNING</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.provider)} · ${escapeHtml(v.level)}</p></div>
- <div class="embedded-video-frame">${player}</div>
- <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p><a class="video-open-source" href="${v.type==="mp4"?escapeHtml(v.src):v.type==="external"?escapeHtml(v.url):v.type==="vimeo"?`https://vimeo.com/${encodeURIComponent(v.videoId)}`:`https://www.youtube.com/watch?v=${encodeURIComponent(v.videoId)}`}" target="_blank" rel="noopener noreferrer">إذا لم يعمل التشغيل داخل المنصة، افتح الفيديو مباشرة ↗</a></div>`;
+ let player="";
+ if(v.type==="mp4" && v.src && !/^https?:\/\//i.test(v.src)){
+   player=`<video controls playsinline preload="metadata" src="${escapeHtml(v.src)}"></video>`;
+ }else if(v.type==="youtube"||v.type==="vimeo"){
+   const src=v.type==="vimeo"?`https://player.vimeo.com/video/${encodeURIComponent(v.videoId)}`:`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.videoId)}?rel=0`;
+   player=`<iframe src="${src}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+ }else{
+   player=`<div class="video-player-empty"><span>◷</span><h3>هذا المحتوى لم يُجهّز بعد للتشغيل داخل المنصة</h3><p>لن ننقلك إلى موقع آخر. سنضيف نسخة داخلية عندما يتوفر ملف فيديو قابل للاستضافة وحقوق استخدامه.</p></div>`;
+ }
+ panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">MAßNAHME · INTERNAL PLAYER</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.subjectName)} · ${escapeHtml(v.level)}</p></div><div class="embedded-video-frame">${player}</div><div class="video-player-description"><h3>عن الدرس</h3><p>${escapeHtml(v.description)}</p><p class="video-note">المشاهدة تبقى ضمن صفحة MAßNAHME LEARN. بعض المقاطع تُبث من مزوّد الفيديو داخل المشغّل المدمج، ولا نفتح صفحة خارجية.</p></div>`;
  panel.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
