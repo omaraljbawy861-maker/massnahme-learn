@@ -979,6 +979,215 @@
       "type": "external",
       "url": "https://www.ardmediathek.de/video/alpha-lernen-oder-wirtschaft-und-arbeit/karriere-im-landschaftsbau/ard-alpha/Y3JpZDovL2JyLmRlL3ZpZGVvLzYwOGJiYjYwLWJhZjktNDVhMC1iMTg0LTFjYzFiNDUwNDhlMg",
       "description": "التعرف على مهن البناء وتنسيق الحدائق والمسارات المهنية والتدريب."
+    },
+    {
+      "id": "politics-democracy",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Demokratie einfach erklärt – الديمقراطية ببساطة",
+      "provider": "explainity",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "59gAft8LwU4",
+      "description": "شرح معنى الديمقراطية، مشاركة المواطنين، والتمثيل السياسي."
+    },
+    {
+      "id": "politics-separation",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Gewaltenteilung einfach erklärt – فصل السلطات",
+      "provider": "explainity",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "ZHj10P8X7OA",
+      "description": "شرح السلطات التشريعية والتنفيذية والقضائية ولماذا يتم الفصل بينها."
+    },
+    {
+      "id": "politics-government",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Regierungsbildung einfach erklärt – تشكيل الحكومة",
+      "provider": "explainity",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "P1dgMhAT16M",
+      "description": "كيف تتشكل الحكومة بعد الانتخابات وما معنى الأغلبية والائتلاف."
+    },
+    {
+      "id": "politics-legislation",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Gesetzgebung einfach erklärt – كيف يُسنّ القانون",
+      "provider": "explainity",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "svM8Vaj170Q",
+      "description": "مراحل اقتراح القانون ومناقشته وإقراره."
+    },
+    {
+      "id": "politics-bundesrat",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Bundesrat einfach erklärt – مجلس الولايات",
+      "provider": "explainity",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "y4nO9r2ApuI",
+      "description": "دور الولايات الألمانية ومجلس الولايات في التشريع."
+    },
+    {
+      "id": "politics-president",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Bundespräsident – رئيس الجمهورية الاتحادية",
+      "provider": "Explainity / Kurz erklärt",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "CXNfunv-OVs",
+      "description": "مهام رئيس الجمهورية الاتحادية وصلاحياته الدستورية."
+    },
+    {
+      "id": "politics-court",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Das Bundesverfassungsgericht – المحكمة الدستورية الاتحادية",
+      "provider": "Bildungsvideo",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "Fk1u8VKrJGA",
+      "description": "التعرف إلى المحكمة الدستورية ودورها في حماية الدستور."
+    },
+    {
+      "id": "politics-systems",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Politische Systeme im Vergleich – مقارنة الأنظمة السياسية",
+      "provider": "Bildungsvideo",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "8Dvefe1RPEg",
+      "description": "مقارنة تعليمية بين النظامين السياسيين في ألمانيا والولايات المتحدة."
+    },
+    {
+      "id": "politics-party",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "poliWHAT?! Parteien – الأحزاب السياسية",
+      "provider": "poliWHAT?! / edeos",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "mRk0XD4Kras",
+      "description": "ما الأحزاب السياسية؟ وكيف تشارك في الحياة الديمقراطية؟"
+    },
+    {
+      "id": "politics-elections",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "poliWHAT?! Wahlen – الانتخابات",
+      "provider": "poliWHAT?! / edeos",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "pizlxDGEp5A",
+      "description": "شرح الانتخابات وأهميتها في اختيار الممثلين السياسيين."
+    },
+    {
+      "id": "politics-vote16",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "poliWHAT?! Wählen ab 16 – التصويت من عمر 16",
+      "provider": "poliWHAT?! / edeos",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "qFRG0rn4DCw",
+      "description": "مناقشة فكرة التصويت ابتداءً من عمر 16 سنة ضمن النظام الانتخابي."
+    },
+    {
+      "id": "politics-laws",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "poliWHAT?! Gesetze – القوانين",
+      "provider": "poliWHAT?! / edeos",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "yz6fQg_rZIY",
+      "description": "كيف تظهر القوانين ولماذا تحتاج المجتمعات إلى قواعد مشتركة."
+    },
+    {
+      "id": "politics-basiclaw",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Einfach erklärt: Was ist das Grundgesetz? – ما هو القانون الأساسي؟",
+      "provider": "Deutscher Bundestag",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "E9kXaSeqCv4",
+      "description": "شرح مبسط للدستور الألماني وأهميته في تنظيم الدولة وحماية الحقوق."
+    },
+    {
+      "id": "politics-rights",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Abdelkratie – Menschenrechte – حقوق الإنسان",
+      "provider": "Bundeszentrale für politische Bildung",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "HyO-WDhn7UU",
+      "description": "مقدمة تعليمية عن حقوق الإنسان ومبادئ حمايتها."
+    },
+    {
+      "id": "politics-dignity",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Abdelkratie – Menschenwürde – كرامة الإنسان",
+      "provider": "Bundeszentrale für politische Bildung",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "rfO9e0HbDvU",
+      "description": "شرح مبدأ كرامة الإنسان ومكانته في الحقوق الأساسية."
+    },
+    {
+      "id": "politics-equality",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Abdelkratie – Gleichheit und Gerechtigkeit – المساواة والعدالة",
+      "provider": "Bundeszentrale für politische Bildung",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "Wq-O5BwJyU4",
+      "description": "التعرف إلى مفهومي المساواة والعدالة في المجتمع."
+    },
+    {
+      "id": "politics-free-speech",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Wo endet die Meinungsfreiheit? – حدود حرية التعبير",
+      "provider": "ZDF heuteplus",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "VxU9r_saMh8",
+      "description": "شرح حرية التعبير وحدودها القانونية في ألمانيا."
+    },
+    {
+      "id": "politics-constitution",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Das Grundgesetz erklärt – شرح الدستور الألماني",
+      "provider": "MrWissen2go",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "PmDVudkhk7Y",
+      "description": "شرح بنية القانون الأساسي والحقوق والمبادئ الدستورية."
+    },
+    {
+      "id": "politics-representative",
+      "subject": "politics",
+      "subjectName": "Politik · السياسة",
+      "title": "Was ist repräsentative Demokratie? – الديمقراطية التمثيلية",
+      "provider": "Schoolseasy",
+      "level": "Sekundarstufe I · الصف التاسع",
+      "type": "youtube",
+      "videoId": "InVFXZxCmK8",
+      "description": "كيف يشارك المواطنون في الحكم عبر انتخاب ممثلين عنهم."
     }
   ]
 }
