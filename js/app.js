@@ -1,4 +1,5 @@
 import { loadCourses } from "./data.js?v=20261109-5";
+import { supabase } from "./supabase.js";
 import { requireStudentSession } from "./auth.js?v=20261109-2";
 import { initializeStudentProgress, getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js?v=20261109-3";
 
@@ -13,8 +14,12 @@ let videoLibrary = [];
 let zfaSimulationIndex = 0;
 let zfaSimulationScore = 0;
 let zfaSimulationAnswered = false;
+let studyTimerInterval = null;
+let studyTimerRemaining = 25 * 60;
+let studyTimerRunning = false;
+let studyChatMessages = [];
 
-const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان" };
+const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "study-assistant":"المساعد الدراسي الذكي" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -478,7 +483,111 @@ function renderExams() {
  content.innerHTML=`<div class="page-intro"><span class="eyebrow">PRÜFUNGSTRAINING</span><h1>اختبار مراجعة سريع</h1><p>أسئلة مختارة من الدروس المتاحة. هذا تدريب تعليمي وليس امتحان ESA رسمياً.</p></div><div class="lesson-main"><form id="examForm">${qs.map((q,i)=>`<div class="question"><p>${i+1}. ${escapeHtml(q.q)} <small style="color:#9aa3b1">(${escapeHtml(q.lesson)})</small></p>${q.options.map((o,j)=>`<label class="answer-option"><input type="radio" name="exam${i}" value="${j}"> ${escapeHtml(o)}</label>`).join("")}</div>`).join("")}<button class="primary-btn" type="submit">إنهاء الاختبار</button><div id="examResult" class="feedback"></div></form></div>`;
  document.querySelector("#examForm").addEventListener("submit",e=>{e.preventDefault();let score=0;qs.forEach((q,i)=>{const v=document.querySelector(`input[name="exam${i}"]:checked`);if(v&&Number(v.value)===q.correct)score++;});document.querySelector("#examResult").textContent=`نتيجتك: ${score} من ${qs.length} (${Math.round(score/qs.length*100)}%)`;});
 }
+
+function renderStudyAssistant(){
+  if(studyTimerInterval){clearInterval(studyTimerInterval);studyTimerInterval=null;}
+  studyTimerRunning=false;
+  content.innerHTML=`<div class="page-intro"><span class="eyebrow">YOUR STUDY COMPANION · رفيق دراستك</span><h1>المساعد الدراسي التفاعلي</h1><p>نظّم وقتك، اكتب سؤالك أو تحدث عبر الميكروفون، وناقش الدرس خطوة بخطوة.</p></div>
+  <section class="study-tools-grid">
+    <article class="study-timer-card">
+      <div class="study-card-heading"><span class="study-tool-icon">◷</span><div><h2>مؤقّت الدراسة</h2><p>جلسة تركيز بدون تشتيت</p></div></div>
+      <div class="study-timer-display" id="studyTimerDisplay">25:00</div>
+      <label class="study-timer-label" for="studyTimerMinutes">مدة الجلسة بالدقائق</label>
+      <input id="studyTimerMinutes" type="number" min="1" max="180" value="25">
+      <div class="study-timer-actions"><button class="primary-btn" id="studyTimerStart">ابدأ</button><button class="secondary-btn" id="studyTimerPause" disabled>إيقاف مؤقت</button><button class="secondary-btn" id="studyTimerReset">إعادة</button></div>
+      <p class="study-timer-status" id="studyTimerStatus" aria-live="polite">جاهز لجلسة دراسة جديدة</p>
+    </article>
+    <article class="study-chat-card">
+      <div class="study-card-heading"><span class="study-tool-icon">✦</span><div><h2>اسأل وناقش</h2><p>مساعد يشرح ويصحح ويعطيك أمثلة</p></div></div>
+      <label for="studySubject">المادة أو الموضوع</label>
+      <select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select>
+      <div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
+      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><label class="study-voice-toggle"><input type="checkbox" id="studyVoiceReply"> اقرأ الرد بصوت</label><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
+      <p class="study-tutor-note" id="studyTutorStatus">المحادثة الذكية تحتاج تفعيل خدمة المساعد على الخادم أولاً.</p>
+    </article>
+  </section>
+  <div class="study-tips"><b>أمثلة لما يمكنك سؤاله:</b><span>اشرح لي الكسور بطريقة سهلة.</span><span>صحّح هذه الجملة الألمانية وناقشني بالسبب.</span><span>اختبرني بخمسة أسئلة عن الخلية.</span></div>`;
+  document.getElementById("studyTimerStart").addEventListener("click",startStudyTimer);
+  document.getElementById("studyTimerPause").addEventListener("click",pauseStudyTimer);
+  document.getElementById("studyTimerReset").addEventListener("click",resetStudyTimer);
+  document.getElementById("studyTimerMinutes").addEventListener("change",resetStudyTimer);
+  document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
+  document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
+  renderStudyTimer();
+}
+function renderStudyTimer(){
+  const display=document.getElementById("studyTimerDisplay");if(!display)return;
+  const m=Math.floor(studyTimerRemaining/60),s=studyTimerRemaining%60;
+  display.textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+  document.getElementById("studyTimerStart").disabled=studyTimerRunning;
+  document.getElementById("studyTimerPause").disabled=!studyTimerRunning;
+}
+function startStudyTimer(){
+  if(studyTimerRunning)return;
+  const input=document.getElementById("studyTimerMinutes");
+  if(studyTimerRemaining<=0)studyTimerRemaining=Math.max(1,Math.min(180,Number(input?.value)||25))*60;
+  studyTimerRunning=true;renderStudyTimer();
+  document.getElementById("studyTimerStatus").textContent="أحسنت! ركّز على دراستك، المؤقّت يعمل الآن.";
+  studyTimerInterval=setInterval(()=>{
+    studyTimerRemaining=Math.max(0,studyTimerRemaining-1);renderStudyTimer();
+    if(studyTimerRemaining===0){pauseStudyTimer();document.getElementById("studyTimerStatus").textContent="انتهت الجلسة! خذ استراحة قصيرة ثم تابع.";notify("انتهى وقت جلسة الدراسة");if("speechSynthesis" in window)speakText("انتهى وقت الدراسة. أحسنت!","ar-SA");}
+  },1000);
+}
+function pauseStudyTimer(){
+  if(studyTimerInterval)clearInterval(studyTimerInterval);
+  studyTimerInterval=null;studyTimerRunning=false;renderStudyTimer();
+  const status=document.getElementById("studyTimerStatus");if(status)status.textContent="تم إيقاف المؤقّت مؤقتاً.";
+}
+function resetStudyTimer(){
+  pauseStudyTimer();
+  const minutes=Math.max(1,Math.min(180,Number(document.getElementById("studyTimerMinutes")?.value)||25));
+  studyTimerRemaining=minutes*60;renderStudyTimer();
+  const status=document.getElementById("studyTimerStatus");if(status)status.textContent="تم ضبط جلسة جديدة لمدة "+minutes+" دقيقة.";
+}
+function appendStudyMessage(role,text){
+  const box=document.getElementById("studyChatMessages");if(!box)return;
+  const item=document.createElement("div");item.className="study-message "+role;
+  const heading=document.createElement("b");heading.textContent=role==="user"?"أنت":"المساعد الدراسي";
+  const paragraph=document.createElement("p");paragraph.textContent=text;
+  item.append(heading,paragraph);box.append(item);box.scrollTop=box.scrollHeight;
+}
+async function sendStudyMessage(event){
+  event.preventDefault();
+  const input=document.getElementById("studyChatInput"),button=document.getElementById("studySendButton");
+  const message=input.value.trim();if(!message)return;
+  const status=document.getElementById("studyTutorStatus");
+  appendStudyMessage("user",message);studyChatMessages.push({role:"user",content:message});input.value="";
+  button.disabled=true;button.textContent="يفكر...";
+  if(status)status.textContent="جارٍ تجهيز الإجابة...";
+  try{
+    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages,subject:document.getElementById("studySubject").value}});
+    if(error)throw error;
+    if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
+    appendStudyMessage("assistant",data.reply);studyChatMessages.push({role:"assistant",content:data.reply});
+    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply,"ar-SA");
+    if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
+  }catch(error){
+    const reason=String(error?.message||"");
+    const friendly= /Failed to fetch|FunctionsFetchError|404|not found/i.test(reason)
+      ?"خدمة المساعد لم تُفعّل بعد على Supabase. يلزم نشر study-tutor وإضافة OPENAI_API_KEY كسرّ للخدمة."
+      :"تعذر الاتصال بالمساعد حالياً. تأكد من إعداد الخدمة ثم حاول مرة أخرى.";
+    appendStudyMessage("assistant",friendly);
+    if(status)status.textContent=friendly;
+  }finally{button.disabled=false;button.textContent="إرسال السؤال ←";}
+}
+function startStudyDictation(){
+  const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!Recognition){notify("الإملاء الصوتي غير مدعوم في هذا المتصفح. استخدم الكتابة.");return;}
+  const recognition=new Recognition();recognition.lang="ar-SA";recognition.interimResults=false;recognition.maxAlternatives=1;
+  const button=document.getElementById("studyMicButton");button.disabled=true;button.textContent="🎙️ أستمع...";
+  recognition.onresult=event=>{const value=event.results?.[0]?.[0]?.transcript||"";const input=document.getElementById("studyChatInput");if(input)input.value=(input.value+" "+value).trim();};
+  recognition.onerror=()=>notify("لم أتمكن من التقاط الصوت. تحقق من إذن الميكروفون.");
+  recognition.onend=()=>{button.disabled=false;button.textContent="🎙️ تحدث";};
+  try{recognition.start();}catch{button.disabled=false;button.textContent="🎙️ تحدث";notify("تعذر تشغيل الميكروفون");}
+}
+
 function navigate(view) {
+ if(view==="study-assistant"){setActive(view);renderStudyAssistant();window.scrollTo({top:0,behavior:"smooth"});return;}
  if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
  if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
