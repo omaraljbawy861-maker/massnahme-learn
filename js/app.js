@@ -73,7 +73,7 @@ function renderCloudDemo() {
 
 async function renderVideoLibrary(){
   if(!videoLibrary.length){
-    const response=await fetch("./data/video-library.json?v=6",{cache:"no-store"});
+    const response=await fetch("./data/video-library.json?v=7",{cache:"no-store"});
     if(!response.ok)throw new Error("تعذر تحميل مكتبة الفيديوهات");
     const data=await response.json();videoLibrary=data.items||[];
   }
@@ -98,10 +98,12 @@ function playVideo(id){
  const panel=document.querySelector("#videoPlayerPanel");
  const player=v.type==="mp4"
  ? `<video controls playsinline preload="metadata" src="${escapeHtml(v.src)}"></video>`
+ : v.type==="external"
+ ? `<div class="external-video-launch"><span>▶</span><h3>هذا الدرس متاح عبر مشغّل ARD الرسمي</h3><p>اضغط الزر لفتح الفيديو مباشرة مع الترجمة الألمانية إن توفرت.</p><a class="primary-btn" href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer">تشغيل الدرس على ARD ↗</a></div>`
  : `<iframe src="${v.type==="vimeo"?`https://player.vimeo.com/video/${encodeURIComponent(v.videoId)}`:`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.videoId)}?rel=0`}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
  panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">NOW LEARNING</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.provider)} · ${escapeHtml(v.level)}</p></div>
  <div class="embedded-video-frame">${player}</div>
- <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p><a class="video-open-source" href="${v.type==="mp4"?escapeHtml(v.src):v.type==="vimeo"?`https://vimeo.com/${encodeURIComponent(v.videoId)}`:`https://www.youtube.com/watch?v=${encodeURIComponent(v.videoId)}`}" target="_blank" rel="noopener noreferrer">إذا لم يعمل التشغيل داخل المنصة، افتح الفيديو مباشرة ↗</a></div>`;
+ <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p><a class="video-open-source" href="${v.type==="mp4"?escapeHtml(v.src):v.type==="external"?escapeHtml(v.url):v.type==="vimeo"?`https://vimeo.com/${encodeURIComponent(v.videoId)}`:`https://www.youtube.com/watch?v=${encodeURIComponent(v.videoId)}`}" target="_blank" rel="noopener noreferrer">إذا لم يعمل التشغيل داخل المنصة، افتح الفيديو مباشرة ↗</a></div>`;
  panel.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
