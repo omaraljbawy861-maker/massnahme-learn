@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "items": [
     {
       "id": "de-cases",
@@ -275,6 +275,17 @@
       "type": "youtube",
       "videoId": "bCffZc1w8kM",
       "description": "ضرب الأعداد النسبية — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-percent-dreisatz",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Dreisatz – Prozentsatz berechnen",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "xooEyNT3OQc",
+      "description": "حساب النسبة المئوية باستخدام التناسب الثلاثي (Dreisatz)، مع شرح خطوات الحل وثلاثة أمثلة."
     }
   ]
 }
