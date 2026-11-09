@@ -45,13 +45,15 @@ Deutsch, Mathematik, English, Biologie, Physik, Chemie, Geschichte, Erdkunde, Po
 - أضيف قسم "المساعد الدراسي الذكي" إلى القائمة الرئيسية.
 - يحتوي على مؤقّت دراسة قابل لضبط المدة، بدء، إيقاف مؤقت وإعادة ضبط.
 - يدعم كتابة الأسئلة، وإملاء السؤال عبر الميكروفون في المتصفحات الداعمة، وقراءة الرد بصوت الجهاز اختيارياً.
-- واجهة المحادثة تستدعي Supabase Edge Function باسم study-tutor. وجود الواجهة وحده لا يعني أن المجيب الذكي أصبح مفعلاً؛ يجب نشر الخدمة وإعداد مفتاح OpenAI سرياً على Supabase.
-- لا تضع OPENAI_API_KEY في ملفات JavaScript أو HTML أو مستودع GitHub.
+- واجهة المحادثة تستدعي Supabase Edge Function باسم study-tutor.
+- تم إعداد الدالة لاستخدام Gemini 3.8 Flash عبر Google Gemini API، بدلاً من OpenAI.
+- استخدام Gemini يتوفر ضمن خطة مجانية بحدود استخدام؛ عند بلوغ الحصة المجانية قد تتوقف الإجابات مؤقتاً حتى تجدد الحصة.
+- لا تضع GEMINI_API_KEY في ملفات JavaScript أو HTML أو مستودع GitHub.
 
 تفعيل المجيب الذكي (مرة واحدة من جهاز عليه Supabase CLI):
 1) ثبّت Supabase CLI وسجّل الدخول: supabase login
 2) اربط المشروع: supabase link --project-ref edzuhinhxhoxxocfjvbu
-3) أضف مفتاح OpenAI كسرّ للخدمة: supabase secrets set OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+3) أضف مفتاح Gemini كسرّ للخدمة: supabase secrets set GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 4) انشر الدالة: supabase functions deploy study-tutor
 5) افتح المنصة وسجّل الدخول بحساب طالب، ثم جرّب سؤالاً نصياً. امنح المتصفح إذن الميكروفون لاستخدام الإملاء الصوتي.
-ملاحظة: استدعاء الدالة يتطلب جلسة طالب مسجّلة الدخول. تكلفة استخدام OpenAI تعتمد على الاستهلاك وحساب المزود.
+ملاحظة: استدعاء الدالة يتطلب جلسة طالب مسجّلة الدخول. حدود الخطة المجانية تختلف حسب النموذج والمشروع ويمكن مراجعتها من Google AI Studio.
