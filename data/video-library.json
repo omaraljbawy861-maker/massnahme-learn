@@ -1,5 +1,5 @@
 {
-  "version": 14,
+  "version": 15,
   "items": [
     {
       "id": "de-cases",
@@ -1166,28 +1166,6 @@
       "type": "youtube",
       "videoId": "InVFXZxCmK8",
       "description": "كيف يشارك المواطنون في الحكم عبر انتخاب ممثلين عنهم."
-    },
-    {
-      "id": "zfa-image",
-      "subject": "zfa",
-      "subjectName": "طب الأسنان ZFA",
-      "title": "Sei wie wir – werde ZFA",
-      "provider": "Landeszahnärztekammer Baden-Württemberg",
-      "level": "ZFA Ausbildung",
-      "type": "youtube",
-      "videoId": "_rSVBTbsP9I",
-      "description": "فيلم رسمي يعرّف بمهنة ZFA، العمل المهني داخل عيادة الأسنان، قواعد النظافة والتعامل مع الأدوات."
-    },
-    {
-      "id": "zfa-workday",
-      "subject": "zfa",
-      "subjectName": "طب الأسنان ZFA",
-      "title": "ZFA – Ohne mich läuft hier nichts!",
-      "provider": "Bayerische Landeszahnärztekammer",
-      "level": "ZFA Ausbildung",
-      "type": "mp4",
-      "src": "https://content.jwplatform.com/videos/mUH6ZqMl-TLV6fume.mp4",
-      "description": "فيلم تعليمي رسمي برسوم متحركة يشرح يوم العمل داخل عيادة الأسنان والمهام اليومية لمساعدة طبيب الأسنان."
     }
   ]
 }
