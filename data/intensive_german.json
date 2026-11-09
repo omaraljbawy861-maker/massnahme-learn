@@ -1,0 +1,762 @@
+{
+  "B1": [
+    {
+      "title": "العمل والتقديم على وظيفة",
+      "de": "Arbeit und Bewerbung",
+      "text": "Eine erfolgreiche Bewerbung beginnt mit einer passenden Stellensuche. Lesen Sie die Stellenanzeige genau und vergleichen Sie die Anforderungen mit Ihren Fähigkeiten. Im Vorstellungsgespräch sollten Sie konkrete Beispiele nennen. Wenn Sie eine Frage nicht verstehen, können Sie höflich um eine Wiederholung bitten.",
+      "translation": "يبدأ التقديم الناجح بالبحث عن وظيفة مناسبة. اقرأ إعلان العمل وقارن المتطلبات بمهاراتك. في مقابلة العمل قدم أمثلة واضحة، وإذا لم تفهم سؤالاً فاطلب إعادته بأدب.",
+      "v": [
+        [
+          "die Stellenanzeige",
+          "إعلان الوظيفة"
+        ],
+        [
+          "die Bewerbung",
+          "طلب التوظيف"
+        ],
+        [
+          "die Erfahrung",
+          "الخبرة"
+        ],
+        [
+          "die Voraussetzung",
+          "الشرط"
+        ],
+        [
+          "zuverlässig",
+          "موثوق"
+        ],
+        [
+          "die Fähigkeit",
+          "المهارة"
+        ],
+        [
+          "das Vorstellungsgespräch",
+          "مقابلة العمل"
+        ],
+        [
+          "der Lebenslauf",
+          "السيرة الذاتية"
+        ],
+        [
+          "die Ausbildung",
+          "التدريب المهني"
+        ],
+        [
+          "sich bewerben",
+          "يتقدم لوظيفة"
+        ]
+      ],
+      "s": [
+        [
+          "Ich interessiere mich für diese Stelle.",
+          "أنا مهتم بهذه الوظيفة."
+        ],
+        [
+          "Ich habe bereits Erfahrung im Verkauf.",
+          "لدي خبرة سابقة في المبيعات."
+        ],
+        [
+          "Könnten Sie die Frage bitte wiederholen?",
+          "هل يمكنك إعادة السؤال من فضلك؟"
+        ]
+      ],
+      "g": "weil / dass: يأتي الفعل المصرف في نهاية الجملة التابعة. مثال: Ich glaube, dass Teamarbeit wichtig ist."
+    },
+    {
+      "title": "السكن والجيران",
+      "de": "Wohnen und Nachbarschaft",
+      "text": "In einem Mehrfamilienhaus leben Menschen mit unterschiedlichen Gewohnheiten. Rücksicht und klare Absprachen sind deshalb wichtig. Wenn die Heizung ausfällt oder ein Schaden entsteht, sollte man den Vermieter informieren und das Problem genau beschreiben. Bei einer Beschwerde bleibt man am besten höflich und sachlich.",
+      "translation": "في المبنى السكني يعيش أشخاص بعادات مختلفة، لذلك من المهم احترام الآخرين والاتفاق بوضوح. إذا تعطلت التدفئة أو حدث ضرر، يجب إبلاغ المالك ووصف المشكلة بدقة. وعند تقديم شكوى من الأفضل أن تبقى مهذباً وموضوعياً.",
+      "v": [
+        [
+          "die Miete",
+          "الإيجار"
+        ],
+        [
+          "der Vermieter",
+          "مالك العقار"
+        ],
+        [
+          "die Nebenkosten",
+          "التكاليف الإضافية"
+        ],
+        [
+          "die Hausordnung",
+          "نظام المبنى"
+        ],
+        [
+          "die Heizung",
+          "التدفئة"
+        ],
+        [
+          "der Schaden",
+          "الضرر"
+        ],
+        [
+          "die Beschwerde",
+          "الشكوى"
+        ],
+        [
+          "die Rücksicht",
+          "مراعاة الآخرين"
+        ],
+        [
+          "vereinbaren",
+          "يتفق"
+        ],
+        [
+          "die Kündigung",
+          "إنهاء العقد"
+        ]
+      ],
+      "s": [
+        [
+          "Die Heizung funktioniert seit gestern nicht.",
+          "التدفئة لا تعمل منذ أمس."
+        ],
+        [
+          "Ich möchte den Schaden melden.",
+          "أريد الإبلاغ عن الضرر."
+        ],
+        [
+          "Könnten Sie bitte einen Handwerker schicken?",
+          "هل يمكنكم إرسال فني من فضلكم؟"
+        ]
+      ],
+      "g": "Wechselpräpositionen: Wo? + Dativ (Ich bin in der Wohnung). Wohin? + Akkusativ (Ich gehe in die Wohnung)."
+    },
+    {
+      "title": "الصحة والمواعيد الطبية",
+      "de": "Gesundheit und Arzttermine",
+      "text": "Wer einen Arzttermin benötigt, sollte seine Beschwerden möglichst genau beschreiben. Seit wann bestehen die Symptome? Werden sie stärker? Welche Medikamente nimmt man bereits? Bei einem wichtigen Termin ist es sinnvoll, Fragen vorher zu notieren und die Versicherungskarte mitzunehmen.",
+      "translation": "من يحتاج إلى موعد طبيب عليه وصف الأعراض بدقة. منذ متى بدأت؟ هل تزداد؟ ما الأدوية التي يتناولها؟ من المفيد كتابة الأسئلة مسبقاً وأخذ بطاقة التأمين.",
+      "v": [
+        [
+          "die Beschwerden",
+          "الأعراض"
+        ],
+        [
+          "die Untersuchung",
+          "الفحص"
+        ],
+        [
+          "das Rezept",
+          "الوصفة الطبية"
+        ],
+        [
+          "die Behandlung",
+          "العلاج"
+        ],
+        [
+          "die Versicherung",
+          "التأمين"
+        ],
+        [
+          "die Symptome",
+          "الأعراض"
+        ],
+        [
+          "verschieben",
+          "يؤجل"
+        ],
+        [
+          "die Praxis",
+          "العيادة"
+        ],
+        [
+          "die Überweisung",
+          "الإحالة الطبية"
+        ],
+        [
+          "die Nebenwirkung",
+          "الأثر الجانبي"
+        ]
+      ],
+      "s": [
+        [
+          "Ich möchte einen Termin vereinbaren.",
+          "أريد تحديد موعد."
+        ],
+        [
+          "Seit drei Tagen habe ich starke Schmerzen.",
+          "أعاني من ألم شديد منذ ثلاثة أيام."
+        ],
+        [
+          "Könnten Sie mir das bitte erklären?",
+          "هل يمكنك شرح ذلك لي؟"
+        ]
+      ],
+      "g": "seit + Dativ: تُستخدم للمدة المستمرة حتى الآن. مثال: Ich wohne seit zwei Jahren hier."
+    },
+    {
+      "title": "التعليم والتدريب المهني",
+      "de": "Bildung und Ausbildung",
+      "text": "Eine Ausbildung verbindet praktische Arbeit mit theoretischem Unterricht. Wer sich dafür interessiert, sollte sich über Dauer, Voraussetzungen und Bewerbungsfristen informieren. Auch ein Praktikum kann helfen, einen Beruf kennenzulernen und die eigenen Interessen besser einzuschätzen.",
+      "translation": "يجمع التدريب المهني بين العمل العملي والدراسة النظرية. على المهتم أن يعرف المدة والشروط ومواعيد التقديم. كما تساعد فترة التدريب العملي على التعرف إلى المهنة وتقييم الاهتمامات.",
+      "v": [
+        [
+          "die Weiterbildung",
+          "التعليم المستمر"
+        ],
+        [
+          "die Ausbildung",
+          "التدريب المهني"
+        ],
+        [
+          "der Abschluss",
+          "الشهادة"
+        ],
+        [
+          "der Stundenplan",
+          "جدول الحصص"
+        ],
+        [
+          "die Wiederholung",
+          "المراجعة"
+        ],
+        [
+          "das Lernziel",
+          "الهدف التعليمي"
+        ],
+        [
+          "die Teilnahme",
+          "المشاركة"
+        ],
+        [
+          "die Voraussetzung",
+          "الشرط"
+        ],
+        [
+          "das Praktikum",
+          "التدريب العملي"
+        ],
+        [
+          "die Bewerbungsfrist",
+          "مهلة التقديم"
+        ]
+      ],
+      "s": [
+        [
+          "Ich möchte eine Ausbildung beginnen.",
+          "أريد البدء بتدريب مهني."
+        ],
+        [
+          "Welche Voraussetzungen muss ich erfüllen?",
+          "ما الشروط التي يجب أن أحققها؟"
+        ],
+        [
+          "Wann endet die Bewerbungsfrist?",
+          "متى تنتهي مهلة التقديم؟"
+        ]
+      ],
+      "g": "um … zu: للتعبير عن الهدف. مثال: Ich lerne Deutsch, um eine Ausbildung zu finden."
+    },
+    {
+      "title": "البيئة والحياة اليومية",
+      "de": "Umwelt und Alltag",
+      "text": "Im Alltag können wir Ressourcen sparen, indem wir öffentliche Verkehrsmittel benutzen und weniger Lebensmittel wegwerfen. Mülltrennung und Recycling helfen ebenfalls. Kleine Veränderungen wirken besonders dann, wenn viele Menschen mitmachen und langfristig Verantwortung übernehmen.",
+      "translation": "يمكننا توفير الموارد باستخدام النقل العام وتقليل رمي الطعام. كما يساعد فرز النفايات وإعادة التدوير. وتكون التغييرات الصغيرة مؤثرة عندما يشارك كثير من الناس ويتحملون المسؤولية على المدى الطويل.",
+      "v": [
+        [
+          "die Umwelt",
+          "البيئة"
+        ],
+        [
+          "der Müll",
+          "القمامة"
+        ],
+        [
+          "die Verpackung",
+          "التغليف"
+        ],
+        [
+          "vermeiden",
+          "يتجنب"
+        ],
+        [
+          "trennen",
+          "يفرز"
+        ],
+        [
+          "die Energie",
+          "الطاقة"
+        ],
+        [
+          "die Ressource",
+          "المورد"
+        ],
+        [
+          "nachhaltig",
+          "مستدام"
+        ],
+        [
+          "der Verbrauch",
+          "الاستهلاك"
+        ],
+        [
+          "die Verantwortung",
+          "المسؤولية"
+        ]
+      ],
+      "s": [
+        [
+          "Wir sollten weniger Plastik benutzen.",
+          "ينبغي أن نستخدم بلاستيكاً أقل."
+        ],
+        [
+          "Öffentliche Verkehrsmittel sind oft umweltfreundlicher.",
+          "وسائل النقل العام غالباً أكثر صداقة للبيئة."
+        ],
+        [
+          "Man kann viele Dinge wiederverwenden.",
+          "يمكن إعادة استخدام أشياء كثيرة."
+        ]
+      ],
+      "g": "Konjunktiv II: sollte للتوصية وkönnte للاحتمال أو الاقتراح المهذب."
+    },
+    {
+      "title": "الرسائل الرسمية وحل المشكلات",
+      "de": "Formelle E-Mails und Problemlösung",
+      "text": "Eine formelle E-Mail sollte einen klaren Betreff, eine höfliche Anrede und eine verständliche Beschreibung des Anliegens enthalten. Nennen Sie wichtige Daten und formulieren Sie eine konkrete Bitte. Beenden Sie die Nachricht mit einem passenden Gruß und kontrollieren Sie die Rechtschreibung.",
+      "translation": "يجب أن يحتوي البريد الرسمي على موضوع واضح وتحـية مهذبة ووصف مفهوم للطلب. اذكر التواريخ المهمة وصغ طلباً محدداً، ثم اختم بتحية مناسبة وراجع الإملاء.",
+      "v": [
+        [
+          "der Betreff",
+          "موضوع الرسالة"
+        ],
+        [
+          "die Anrede",
+          "التحية"
+        ],
+        [
+          "die Rückmeldung",
+          "الرد"
+        ],
+        [
+          "der Ersatztermin",
+          "موعد بديل"
+        ],
+        [
+          "die Unterlagen",
+          "المستندات"
+        ],
+        [
+          "die Frist",
+          "المهلة"
+        ],
+        [
+          "beantragen",
+          "يطلب رسمياً"
+        ],
+        [
+          "bestätigen",
+          "يؤكد"
+        ],
+        [
+          "die Mitteilung",
+          "الإشعار"
+        ],
+        [
+          "die Angelegenheit",
+          "المسألة"
+        ]
+      ],
+      "s": [
+        [
+          "Ich schreibe Ihnen bezüglich meines Termins.",
+          "أكتب إليكم بخصوص موعدي."
+        ],
+        [
+          "Könnten Sie mir bitte weiterhelfen?",
+          "هل يمكنكم مساعدتي؟"
+        ],
+        [
+          "Vielen Dank für Ihre Rückmeldung.",
+          "شكراً على ردكم."
+        ]
+      ],
+      "g": "Konjunktiv II للطلب المهذب: Könnten Sie …? / Ich würde gern …"
+    }
+  ],
+  "B2": [
+    {
+      "title": "الحجج والمناقشات",
+      "de": "Argumentation und Diskussion",
+      "text": "Die Frage, ob digitale Medien den Unterricht verbessern, lässt sich nicht pauschal beantworten. Einerseits ermöglichen sie einen schnellen Zugang zu Informationen. Andererseits können sie ablenken und die Konzentration beeinträchtigen. Entscheidend ist daher, wie sinnvoll sie eingesetzt werden. Eine überzeugende Argumentation berücksichtigt auch Gegenpositionen.",
+      "translation": "لا يمكن الإجابة بشكل مطلق عن سؤال تحسين الوسائط الرقمية للتعليم. فهي تتيح الوصول السريع للمعلومات، لكنها قد تشتت الانتباه وتؤثر في التركيز. المهم كيفية استخدامها. والحجة المقنعة تأخذ الآراء المخالفة أيضاً بالحسبان.",
+      "v": [
+        [
+          "einerseits",
+          "من جهة"
+        ],
+        [
+          "andererseits",
+          "من جهة أخرى"
+        ],
+        [
+          "allerdings",
+          "مع ذلك"
+        ],
+        [
+          "die Behauptung",
+          "الادعاء"
+        ],
+        [
+          "das Gegenargument",
+          "الحجة المضادة"
+        ],
+        [
+          "die Schlussfolgerung",
+          "الاستنتاج"
+        ],
+        [
+          "nachvollziehbar",
+          "مفهوم منطقياً"
+        ],
+        [
+          "überzeugen",
+          "يقنع"
+        ],
+        [
+          "abwägen",
+          "يوازن"
+        ],
+        [
+          "die Stellungnahme",
+          "إبداء الرأي"
+        ]
+      ],
+      "s": [
+        [
+          "Meines Erachtens überwiegen die Vorteile.",
+          "برأيي تفوق الإيجابيات."
+        ],
+        [
+          "Dem Argument kann ich teilweise zustimmen.",
+          "يمكنني الموافقة على هذه الحجة جزئياً."
+        ],
+        [
+          "Dabei darf man jedoch nicht vergessen, dass …",
+          "لكن يجب ألا ننسى أن…"
+        ]
+      ],
+      "g": "Konnektoren: obwohl + Nebensatz, dennoch + Hauptsatz, während للمقارنة."
+    },
+    {
+      "title": "سوق العمل والتغير التقني",
+      "de": "Arbeitswelt im Wandel",
+      "text": "Automatisierung verändert zahlreiche Berufsfelder, ohne dass dadurch jede menschliche Tätigkeit überflüssig wird. Während Routineaufgaben zunehmend von Maschinen übernommen werden, gewinnen soziale Kompetenzen und lebenslanges Lernen an Bedeutung. Beschäftigte müssen sich daher weiterbilden und flexibel auf neue Anforderungen reagieren.",
+      "translation": "تغير الأتمتة مجالات مهنية كثيرة، لكنها لا تجعل كل نشاط بشري غير ضروري. فبينما تتولى الآلات المهام المتكررة، تزداد أهمية المهارات الاجتماعية والتعلم مدى الحياة. لذلك يحتاج العاملون إلى تطوير مهاراتهم والتكيف مع المتطلبات الجديدة.",
+      "v": [
+        [
+          "die Automatisierung",
+          "الأتمتة"
+        ],
+        [
+          "die Tätigkeit",
+          "النشاط المهني"
+        ],
+        [
+          "überflüssig",
+          "غير ضروري"
+        ],
+        [
+          "zunehmend",
+          "بشكل متزايد"
+        ],
+        [
+          "die Kompetenz",
+          "الكفاءة"
+        ],
+        [
+          "die Qualifikation",
+          "المؤهل"
+        ],
+        [
+          "der Fachkräftemangel",
+          "نقص العمالة الماهرة"
+        ],
+        [
+          "die Anpassung",
+          "التكيف"
+        ],
+        [
+          "die Herausforderung",
+          "التحدي"
+        ],
+        [
+          "lebenslang",
+          "مدى الحياة"
+        ]
+      ],
+      "s": [
+        [
+          "Die Anforderungen verändern sich ständig.",
+          "المتطلبات تتغير باستمرار."
+        ],
+        [
+          "Weiterbildung erhöht die beruflichen Chancen.",
+          "التعليم المستمر يزيد الفرص المهنية."
+        ],
+        [
+          "Man muss flexibel auf Veränderungen reagieren.",
+          "يجب الاستجابة للتغيرات بمرونة."
+        ]
+      ],
+      "g": "Nominalisierung: aus Verben und Adjektiven werden Nomen, z.B. entscheiden → die Entscheidung."
+    },
+    {
+      "title": "الإعلام وتقييم المصادر",
+      "de": "Medienkompetenz und Quellenkritik",
+      "text": "Nicht jede häufig geteilte Nachricht ist zuverlässig. Um die Glaubwürdigkeit einer Behauptung zu beurteilen, sollte man den Ursprung, das Veröffentlichungsdatum und die zugrunde liegenden Belege prüfen. Besonders wichtig ist die Unterscheidung zwischen einer persönlichen Meinung und einer überprüfbaren Tatsache.",
+      "translation": "ليس كل خبر كثير التداول موثوقاً. للتحقق من مصداقية ادعاء يجب فحص المصدر وتاريخ النشر والأدلة. ومن المهم التمييز بين الرأي الشخصي والحقيقة القابلة للتحقق.",
+      "v": [
+        [
+          "die Glaubwürdigkeit",
+          "المصداقية"
+        ],
+        [
+          "die Behauptung",
+          "الادعاء"
+        ],
+        [
+          "der Beleg",
+          "الدليل"
+        ],
+        [
+          "die Tatsache",
+          "الحقيقة"
+        ],
+        [
+          "die Veröffentlichung",
+          "النشر"
+        ],
+        [
+          "die Verzerrung",
+          "التحريف"
+        ],
+        [
+          "die Quelle",
+          "المصدر"
+        ],
+        [
+          "überprüfbar",
+          "قابل للتحقق"
+        ],
+        [
+          "die Einordnung",
+          "وضع في سياق"
+        ],
+        [
+          "die Berichterstattung",
+          "التغطية الإعلامية"
+        ]
+      ],
+      "s": [
+        [
+          "Die Quelle lässt sich nicht eindeutig überprüfen.",
+          "لا يمكن التحقق من المصدر بشكل قاطع."
+        ],
+        [
+          "Die Aussage muss kritisch eingeordnet werden.",
+          "يجب تقييم التصريح بشكل نقدي."
+        ],
+        [
+          "Es fehlen unabhängige Belege.",
+          "تنقصه أدلة مستقلة."
+        ]
+      ],
+      "g": "Indirekte Rede: Er behauptet, die Zahlen seien korrekt. (Konjunktiv I)"
+    },
+    {
+      "title": "الاستدامة والسياسات البيئية",
+      "de": "Nachhaltigkeit und Klimaschutz",
+      "text": "Klimaschutz erfordert Maßnahmen auf mehreren Ebenen. Unternehmen können ihre Produktionsprozesse umstellen, während Verbraucher durch Kaufentscheidungen die Nachfrage beeinflussen. Politische Regelungen müssen wirksam sein und zugleich soziale Unterschiede berücksichtigen. Langfristige Lösungen setzen voraus, dass Wirtschaft, Politik und Gesellschaft zusammenarbeiten.",
+      "translation": "تتطلب حماية المناخ إجراءات على مستويات متعددة. تستطيع الشركات تغيير عمليات الإنتاج، بينما يؤثر المستهلكون في الطلب من خلال قرارات الشراء. ويجب أن تكون القوانين فعالة ومراعية للفوارق الاجتماعية. والحلول طويلة الأمد تتطلب تعاون الاقتصاد والسياسة والمجتمع.",
+      "v": [
+        [
+          "der Klimaschutz",
+          "حماية المناخ"
+        ],
+        [
+          "die Emission",
+          "الانبعاث"
+        ],
+        [
+          "die Nachfrage",
+          "الطلب"
+        ],
+        [
+          "die Produktion",
+          "الإنتاج"
+        ],
+        [
+          "die Umstellung",
+          "التحول"
+        ],
+        [
+          "wirksam",
+          "فعال"
+        ],
+        [
+          "ausgewogen",
+          "متوازن"
+        ],
+        [
+          "die Förderung",
+          "الدعم"
+        ],
+        [
+          "die Nachhaltigkeit",
+          "الاستدامة"
+        ],
+        [
+          "die Maßnahme",
+          "الإجراء"
+        ]
+      ],
+      "s": [
+        [
+          "Langfristig müssen alle Beteiligten Verantwortung übernehmen.",
+          "على المدى الطويل يجب أن يتحمل جميع الأطراف المسؤولية."
+        ],
+        [
+          "Die Maßnahme ist wirtschaftlich sinnvoll.",
+          "الإجراء منطقي اقتصادياً."
+        ],
+        [
+          "Es kommt darauf an, soziale Folgen zu berücksichtigen.",
+          "الأمر يعتمد على مراعاة النتائج الاجتماعية."
+        ]
+      ],
+      "g": "Passiv: Maßnahmen müssen umgesetzt werden. التركيز على الفعل وليس الفاعل."
+    },
+    {
+      "title": "التواصل المهني وحل النزاعات",
+      "de": "Kommunikation und Konfliktlösung",
+      "text": "Konflikte am Arbeitsplatz entstehen häufig durch unklare Erwartungen oder mangelnde Kommunikation. Statt persönliche Vorwürfe zu formulieren, ist es hilfreicher, konkrete Beobachtungen zu beschreiben und gemeinsam nach Lösungen zu suchen. Eine sachliche Rückmeldung kann Missverständnisse vermeiden und das gegenseitige Vertrauen stärken.",
+      "translation": "تنشأ النزاعات في العمل غالباً بسبب توقعات غير واضحة أو ضعف التواصل. بدلاً من الاتهامات الشخصية، من الأفضل وصف الملاحظات المحددة والبحث عن حلول مشتركة. تساعد الملاحظات الموضوعية على تجنب سوء الفهم وتعزيز الثقة.",
+      "v": [
+        [
+          "der Konflikt",
+          "النزاع"
+        ],
+        [
+          "die Erwartung",
+          "التوقع"
+        ],
+        [
+          "der Vorwurf",
+          "الاتهام"
+        ],
+        [
+          "die Beobachtung",
+          "الملاحظة"
+        ],
+        [
+          "sachlich",
+          "موضوعي"
+        ],
+        [
+          "die Vereinbarung",
+          "الاتفاق"
+        ],
+        [
+          "das Vertrauen",
+          "الثقة"
+        ],
+        [
+          "die Rückmeldung",
+          "التغذية الراجعة"
+        ],
+        [
+          "vermitteln",
+          "يتوسط"
+        ],
+        [
+          "die Zusammenarbeit",
+          "التعاون"
+        ]
+      ],
+      "s": [
+        [
+          "Ich möchte einen konstruktiven Vorschlag machen.",
+          "أود تقديم اقتراح بنّاء."
+        ],
+        [
+          "Lassen Sie uns gemeinsam eine Lösung finden.",
+          "دعونا نجد حلاً معاً."
+        ],
+        [
+          "Das Missverständnis lässt sich klären.",
+          "يمكن توضيح سوء الفهم."
+        ]
+      ],
+      "g": "Partizipialattribute: die vereinbarte Lösung / die zu erledigende Aufgabe."
+    },
+    {
+      "title": "تلخيص النصوص وكتابة التقارير",
+      "de": "Zusammenfassung und Bericht",
+      "text": "Eine gute Zusammenfassung gibt die Kernaussagen eines Textes sachlich und in eigenen Worten wieder. Unwichtige Beispiele werden weggelassen, während zentrale Zusammenhänge erhalten bleiben. Ein strukturierter Bericht ordnet Ereignisse zeitlich und logisch und unterscheidet klar zwischen Beobachtung, Bewertung und Schlussfolgerung.",
+      "translation": "يعرض الملخص الجيد الأفكار الأساسية للنص بموضوعية وبكلماتك. تُحذف الأمثلة غير المهمة مع الحفاظ على الروابط الرئيسية. أما التقرير المنظم فيرتب الأحداث زمنياً ومنطقياً ويميز بين الملاحظة والتقييم والاستنتاج.",
+      "v": [
+        [
+          "die Kernaussage",
+          "الفكرة الأساسية"
+        ],
+        [
+          "der Zusammenhang",
+          "الترابط"
+        ],
+        [
+          "wiedergeben",
+          "يعيد الصياغة"
+        ],
+        [
+          "weglassen",
+          "يحذف"
+        ],
+        [
+          "die Gliederung",
+          "الهيكل"
+        ],
+        [
+          "die Einleitung",
+          "المقدمة"
+        ],
+        [
+          "der Hauptteil",
+          "المتن"
+        ],
+        [
+          "das Fazit",
+          "الخلاصة"
+        ],
+        [
+          "präzise",
+          "دقيق"
+        ],
+        [
+          "die Schlussfolgerung",
+          "الاستنتاج"
+        ]
+      ],
+      "s": [
+        [
+          "Im Mittelpunkt des Textes steht die Frage, ob …",
+          "يتمحور النص حول سؤال ما إذا…"
+        ],
+        [
+          "Zusammenfassend lässt sich feststellen, dass …",
+          "يمكن الاستنتاج باختصار أن…"
+        ],
+        [
+          "Der Verfasser vertritt die Auffassung, dass …",
+          "يتبنى الكاتب وجهة النظر القائلة إن…"
+        ]
+      ],
+      "g": "Indirekte Rede und Konjunktiv I: Der Autor erklärt, die Entwicklung sei problematisch."
+    }
+  ]
+}
