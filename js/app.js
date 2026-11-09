@@ -73,7 +73,7 @@ function renderCloudDemo() {
 
 async function renderVideoLibrary(){
   if(!videoLibrary.length){
-    const response=await fetch("./data/video-library.json?v=9",{cache:"no-store"});
+    const response=await fetch("./data/video-library.json?v=11",{cache:"no-store"});
     if(!response.ok)throw new Error("تعذر تحميل مكتبة الفيديوهات");
     const data=await response.json();videoLibrary=data.items||[];
   }
