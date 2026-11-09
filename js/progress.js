@@ -1,9 +1,9 @@
 import { supabase } from "./supabase.js";
-const KEY = "massnahme-learn-progress-v1";
 let studentId = null;
+const storageKey = () => `massnahme-learn-progress-v1:${studentId || "guest"}`;
 let saveTimer = null;
-function read() { try { return JSON.parse(localStorage.getItem(KEY)) || {completed:[],scores:{}}; } catch { return {completed:[],scores:{}}; } }
-function writeLocal(data){localStorage.setItem(KEY,JSON.stringify(data));}
+function read() { try { return JSON.parse(localStorage.getItem(storageKey())) || {completed:[],scores:{}}; } catch { return {completed:[],scores:{}}; } }
+function writeLocal(data){localStorage.setItem(storageKey(),JSON.stringify(data));}
 async function writeCloud(data){
  if(!studentId)return;
  const {error}=await supabase.from("student_progress").upsert({student_id:studentId,progress:data,updated_at:new Date().toISOString()},{onConflict:"student_id"});
