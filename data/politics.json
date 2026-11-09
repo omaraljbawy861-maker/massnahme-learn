@@ -1516,6 +1516,222 @@
       ],
       "unitArabic": "اشرح بمثال كيف يمكن ممارسة حرية الرأي مع احترام حقوق الآخرين.",
       "chapterNumber": 102
+    },
+    {
+      "id": "pol-extra-03",
+      "title": "البرلمان والحكومة والقانون",
+      "germanTitle": "Parlament, Regierung und Gesetzgebung",
+      "level": "ESA · Gesellschaft",
+      "duration": "45 دقيقة",
+      "unit": "Politik in Deutschland",
+      "objectives": [
+        "التمييز بين البرلمان والحكومة.",
+        "فهم الخطوات العامة لصنع القوانين.",
+        "شرح أهمية الرقابة وفصل السلطات."
+      ],
+      "intro": "نتعرف إلى مؤسسات الدولة الديمقراطية وكيف تُناقش القوانين وتُتخذ القرارات العامة.",
+      "german": "Der Bundestag wird vom Volk gewählt und beschließt Bundesgesetze. Die Bundesregierung besteht aus dem Bundeskanzler oder der Bundeskanzlerin und den Bundesministerinnen und Bundesministern. Das Parlament kontrolliert die Regierung. Gewaltenteilung verteilt staatliche Macht auf verschiedene Bereiche.",
+      "explanation": "ينتخب الشعب أعضاء البوندستاغ، وهو البرلمان الاتحادي الذي يناقش القوانين ويصوت عليها. تتولى الحكومة إدارة شؤون الدولة وتنفيذ السياسات. يراقب البرلمان عمل الحكومة، ويساعد فصل السلطات على منع تركيز القوة بيد جهة واحدة.",
+      "vocab": [
+        [
+          "der Bundestag",
+          "البرلمان الاتحادي"
+        ],
+        [
+          "die Bundesregierung",
+          "الحكومة الاتحادية"
+        ],
+        [
+          "das Gesetz",
+          "قانون"
+        ],
+        [
+          "die Gewaltenteilung",
+          "فصل السلطات"
+        ],
+        [
+          "die Kontrolle",
+          "رقابة"
+        ],
+        [
+          "die Abstimmung",
+          "تصويت"
+        ]
+      ],
+      "example": "Bürgerinnen und Bürger wählen den Bundestag.\nDer Bundestag berät und beschließt Gesetze.\nDie Regierung setzt politische Entscheidungen um.\nDas Parlament kontrolliert die Regierung.",
+      "worked": [
+        {
+          "title": "من يراقب الحكومة؟",
+          "prompt": "ما دور البرلمان تجاه الحكومة؟",
+          "steps": [
+            "حدد الجهة التي تمثل السلطة التشريعية.",
+            "اذكر أن الحكومة تنفذ السياسات.",
+            "اشرح أن البرلمان يراقب عملها ويسائلها."
+          ],
+          "answer": "يراقب البرلمان الحكومة، ويناقش قراراتها ويمكنه مساءلة أعضائها."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما وظيفة البرلمان الأساسية؟",
+          "hint": "التشريع والرقابة.",
+          "a": "مناقشة القوانين وإقرارها ومراقبة الحكومة."
+        },
+        {
+          "q": "لماذا يعد فصل السلطات مهماً؟",
+          "hint": "فكر بمنع احتكار القوة.",
+          "a": "لمنع تركيز السلطة وضمان الرقابة والتوازن بين المؤسسات."
+        }
+      ],
+      "questions": [
+        {
+          "q": "من ينتخب أعضاء البوندستاغ؟",
+          "options": [
+            "الناخبون",
+            "المحكمة فقط",
+            "الشركات"
+          ],
+          "correct": 0,
+          "why": "ينتخب المواطنون ممثليهم في الانتخابات."
+        },
+        {
+          "q": "ما وظيفة الحكومة؟",
+          "options": [
+            "إدارة شؤون الدولة وتنفيذ السياسات",
+            "كتابة الصحف فقط",
+            "إدارة المدارس وحدها"
+          ],
+          "correct": 0,
+          "why": "الحكومة تقود الإدارة والسياسة التنفيذية."
+        },
+        {
+          "q": "ما معنى فصل السلطات؟",
+          "options": [
+            "توزيع السلطة بين مؤسسات مختلفة",
+            "جمع كل السلطة في شخص واحد",
+            "إلغاء البرلمان"
+          ],
+          "correct": 0,
+          "why": "يمنع تركيز القوة ويعزز الرقابة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "ارسم مخططاً يوضح دور الشعب والبرلمان والحكومة، واكتب وظيفة كل جهة بجملتين.",
+          "hint": "استخدم الأسهم لتوضيح العلاقة.",
+          "a": "المخطط الصحيح يوضح انتخاب البرلمان من الشعب، وتشكيل الحكومة، ورقابة البرلمان عليها."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Politik in Deutschland"
+    },
+    {
+      "id": "pol-extra-04",
+      "title": "العمل والتدريب المهني في ألمانيا",
+      "germanTitle": "Arbeit und Ausbildung in Deutschland",
+      "level": "ESA · Alltag",
+      "duration": "45 دقيقة",
+      "unit": "Beruf und Gesellschaft",
+      "objectives": [
+        "التمييز بين Ausbildung والعمل بدوام كامل وجزئي.",
+        "فهم عقد العمل وبعض الحقوق الأساسية.",
+        "معرفة أهمية التدريب المهني والتأهيل."
+      ],
+      "intro": "درس عملي يساعدك على فهم عالم العمل والتدريب المهني في ألمانيا، والمصطلحات التي تظهر في الإعلانات والعقود.",
+      "german": "Eine duale Ausbildung verbindet praktische Arbeit im Betrieb mit Unterricht in der Berufsschule. Ein Arbeitsvertrag regelt unter anderem Tätigkeit, Arbeitszeit, Vergütung und Urlaub. Beschäftigte haben Rechte und Pflichten. Vor der Unterschrift sollte man den Vertrag sorgfältig lesen.",
+      "explanation": "يجمع التدريب المهني المزدوج بين العمل العملي في الشركة والدراسة في المدرسة المهنية. يوضح عقد العمل طبيعة الوظيفة وساعات العمل والأجر والإجازة. يجب قراءة العقد جيداً وفهم الحقوق والواجبات قبل التوقيع.",
+      "vocab": [
+        [
+          "die Ausbildung",
+          "تدريب مهني"
+        ],
+        [
+          "der Arbeitsvertrag",
+          "عقد عمل"
+        ],
+        [
+          "die Arbeitszeit",
+          "ساعات العمل"
+        ],
+        [
+          "die Vergütung",
+          "الأجر"
+        ],
+        [
+          "der Urlaub",
+          "إجازة"
+        ],
+        [
+          "die Berufsschule",
+          "مدرسة مهنية"
+        ]
+      ],
+      "example": "Ausbildung = Betrieb + Berufsschule.\nDer Arbeitsvertrag enthält Arbeitszeit und Vergütung.\nVor der Unterschrift: Vertrag lesen und Fragen stellen.",
+      "worked": [
+        {
+          "title": "قراءة عرض عمل",
+          "prompt": "وجدت في العقد Arbeitszeit وVergütung وUrlaub. ماذا تعني؟",
+          "steps": [
+            "Arbeitszeit تحدد وقت العمل.",
+            "Vergütung تحدد الأجر.",
+            "Urlaub يحدد الإجازة السنوية."
+          ],
+          "answer": "ساعات العمل، الأجر، والإجازة."
+        }
+      ],
+      "practice": [
+        {
+          "q": "ما المقصود بالتدريب المهني المزدوج؟",
+          "hint": "مكان عمل ومدرسة مهنية.",
+          "a": "التعلم العملي في الشركة مع الدراسة النظرية في Berufsschule."
+        },
+        {
+          "q": "اذكر ثلاثة أمور يجب مراجعتها في عقد العمل.",
+          "hint": "الوقت والأجر والإجازة.",
+          "a": "طبيعة العمل، ساعات العمل، الأجر، الإجازة، وفترة التجربة."
+        }
+      ],
+      "questions": [
+        {
+          "q": "أين يجري الجزء العملي من Ausbildung؟",
+          "options": [
+            "في الشركة أو مكان التدريب",
+            "في المنزل فقط",
+            "في البرلمان"
+          ],
+          "correct": 0,
+          "why": "يتعلم المتدرب عملياً في Betrieb."
+        },
+        {
+          "q": "ماذا تعني Vergütung؟",
+          "options": [
+            "الأجر",
+            "الإجازة",
+            "مكان العمل"
+          ],
+          "correct": 0,
+          "why": "تعني المقابل المالي للعمل أو التدريب."
+        },
+        {
+          "q": "ماذا تفعل قبل توقيع عقد؟",
+          "options": [
+            "تقرأ الشروط وتتأكد من فهمها",
+            "توقع دون قراءة",
+            "ترسل كلمة المرور"
+          ],
+          "correct": 0,
+          "why": "يجب فهم الالتزامات والحقوق قبل التوقيع."
+        }
+      ],
+      "homework": [
+        {
+          "q": "ابحث في إعلان وظيفة افتراضي واستخرج المسمى الوظيفي وساعات العمل والمتطلبات، ثم اكتب خمسة أسئلة تسألها قبل توقيع العقد.",
+          "hint": "استخدم مفردات الدرس بالألمانية.",
+          "a": "الإجابة الجيدة تستخرج المعلومات الأساسية وتطرح أسئلة واضحة عن الشروط."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Beruf und Gesellschaft"
     }
   ],
   "bookSubtitle": "Lehr- und Arbeitsbuch · ESA Vorbereitung",
