@@ -1,5 +1,5 @@
 {
-  "version": 11,
+  "version": 12,
   "items": [
     {
       "id": "de-cases",
@@ -1188,6 +1188,50 @@
       "type": "mp4",
       "src": "https://content.jwplatform.com/videos/mUH6ZqMl-TLV6fume.mp4",
       "description": "فيلم تعليمي رسمي برسوم متحركة يشرح يوم العمل داخل عيادة الأسنان والمهام اليومية لمساعدة طبيب الأسنان."
+    },
+    {
+      "id": "zfa-hecht-trainee",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "Hecht Auszubildende ZFA – يوميات متدربة ZFA",
+      "provider": "Zahnarztpraxis Hecht · Vimeo",
+      "level": "ZFA Ausbildung",
+      "type": "vimeo",
+      "videoId": "819022991",
+      "description": "فيديو من عيادة أسنان ألمانية عن متدربة ZFA والتعرف إلى التدريب والعمل داخل العيادة."
+    },
+    {
+      "id": "zfa-profession-intro",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "ZFA – التعرف إلى مهنة مساعدة طبيب الأسنان",
+      "provider": "Informationszentrum Zahn- und Mundgesundheit · Vimeo",
+      "level": "ZFA Ausbildung",
+      "type": "vimeo",
+      "videoId": "576752666",
+      "description": "فيديو تعريفي مرتبط بمهنة ZFA ومجال صحة الفم والأسنان."
+    },
+    {
+      "id": "zfa-dentalassistant-practice",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "Dentalassistentin – التحضير والتعقيم ومساعدة الطبيب",
+      "provider": "Lehrberufe Live! · Vimeo · Switzerland",
+      "level": "Dental assistant training · Inhalte ergänzend zur ZFA",
+      "type": "vimeo",
+      "videoId": "1092711423",
+      "description": "عرض عملي لتدريب مساعدة طبيب الأسنان: تجهيز غرفة العلاج، تعقيم الأدوات، استقبال المرضى، المساعدة في الحشوات وتنظيف الأسنان، والأشعة."
+    },
+    {
+      "id": "zfa-dentalassistant-radiology",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "Dentalassistentin – الأشعة وسير العمل في العيادة",
+      "provider": "Lehrberufe Live! · Vimeo · Switzerland",
+      "level": "Dental assistant training · Inhalte ergänzend zur ZFA",
+      "type": "vimeo",
+      "videoId": "1092373389",
+      "description": "فيديو عملي عن يوم عمل مساعدة طبيب الأسنان وفق تدريب SSO السويسري، ويشمل تجهيز العيادة والتعقيم والمساعدة في العلاج وصور الأشعة."
     }
   ]
 }
