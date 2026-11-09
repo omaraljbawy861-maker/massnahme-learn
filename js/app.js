@@ -46,14 +46,6 @@ function courseProgress(course) {
   const done = course.lessons.filter(l=>isCompleted(l.id)).length;
   return Math.round(done/course.lessons.length*100);
 }
-function updateStats() {
-  const lessons = allLessons();
-  const done = completionCount();
-  document.querySelector("#statSubjects").textContent = courses.length;
-  document.querySelector("#statLessons").textContent = lessons.length;
-  document.querySelector("#statCompleted").textContent = done;
-  document.querySelector("#statProgress").textContent = `${lessons.length ? Math.round(done/lessons.length*100):0}%`;
-}
 function subjectCard(c, cls="subject-card") {
   const pct = courseProgress(c);
   return `<article class="${cls}" data-course="${c.id}">
