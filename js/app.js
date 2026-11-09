@@ -354,7 +354,8 @@ function navigate(view) {
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
  if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
  if(view==="zfa-application"){ renderZfaApplication(); return; }
- if(view==="zfa-simulation"){ zfaSimulationIndex=0; zfaSimulationScore=0; zfaSimulationAnswered=false; renderZfaSimulation(); return; }\n if(view==="cloud-demo"){ setActive(view); renderCloudDemo(); return; }
+ if(view==="zfa-simulation"){ zfaSimulationIndex=0; zfaSimulationScore=0; zfaSimulationAnswered=false; renderZfaSimulation(); return; }
+ if(view==="cloud-demo"){ setActive(view); renderCloudDemo(); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
