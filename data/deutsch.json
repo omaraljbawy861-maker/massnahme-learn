@@ -2493,6 +2493,336 @@
       ],
       "chapterNumber": 103,
       "unitArabic": "Sprechen: Beruf"
+    },
+    {
+      "id": "de-deep-01",
+      "title": "الأزمنة الأساسية في الألمانية",
+      "germanTitle": "Zeitformen: Präsens, Perfekt und Präteritum",
+      "level": "ESA · Klasse 9 · NRW",
+      "duration": "45–60 دقيقة",
+      "unit": "Vertiefung",
+      "unitArabic": "وحدة التوسع والتطبيق",
+      "chapterNumber": 30,
+      "objectives": [
+        "فهم المفاهيم والمصطلحات الأساسية للموضوع.",
+        "شرح الفكرة وتطبيقها على مثال عملي جديد.",
+        "حل أسئلة تدريبية والاستعداد لنمط امتحان ESA."
+      ],
+      "intro": "درس موسع للتحضير لشهادة ESA في NRW. اقرأ الشرح الألماني والتوضيح العربي، ثم راجع المثال والمفردات وحل التدريبات والواجب.",
+      "german": "Lies die Erklärung aufmerksam. Achte auf die Fachbegriffe und Beispiele. Bearbeite danach die Aufgaben selbstständig und kontrolliere deine Antworten.",
+      "lessonText": "يُستخدم Präsens للحاضر والعادات، وPerfekt للأحداث الماضية في الحديث اليومي، وPräteritum كثيراً في القصص والكتابة. يتكون Perfekt من haben أو sein مع Partizip II.",
+      "explanation": "يُستخدم Präsens للحاضر والعادات، وPerfekt للأحداث الماضية في الحديث اليومي، وPräteritum كثيراً في القصص والكتابة. يتكون Perfekt من haben أو sein مع Partizip II.",
+      "vocab": [
+        [
+          "das Präsens",
+          "المضارع"
+        ],
+        [
+          "das Perfekt",
+          "الماضي المحكي"
+        ],
+        [
+          "das Präteritum",
+          "الماضي البسيط"
+        ],
+        [
+          "das Hilfsverb",
+          "الفعل المساعد"
+        ],
+        [
+          "Partizip II",
+          "التصريف الثالث"
+        ]
+      ],
+      "example": "Ich lerne Deutsch. / Ich habe Deutsch gelernt. / Ich war gestern krank.",
+      "worked": [
+        {
+          "title": "مثال محلول وتطبيق",
+          "prompt": "Ich lerne Deutsch. / Ich habe Deutsch gelernt. / Ich war gestern krank.",
+          "steps": [
+            "حدد الفكرة أو المعطيات الأساسية.",
+            "اربط المثال بالقاعدة أو المفهوم الوارد في الشرح.",
+            "اكتب النتيجة بوضوح وراجع المصطلحات."
+          ],
+          "answer": "يُستخدم Präsens للحاضر والعادات، وPerfekt للأحداث الماضية في الحديث اليومي، وPräteritum كثيراً في القصص والكتابة. يتكون Perfekt من haben أو sein مع Partizip II."
+        }
+      ],
+      "practice": [
+        {
+          "q": "لخص موضوع «الأزمنة الأساسية في الألمانية» في 3 إلى 5 جمل.",
+          "hint": "ابدأ بالتعريف ثم اذكر أهم النقاط.",
+          "a": "يُستخدم Präsens للحاضر والعادات، وPerfekt للأحداث الماضية في الحديث اليومي، وPräteritum كثيراً في القصص والكتابة. يتكون Perfekt من haben أو sein مع Partizip II."
+        },
+        {
+          "q": "استخدم ثلاثة مصطلحات من الدرس في جمل أو أمثلة.",
+          "hint": "راجع جدول المفردات.",
+          "a": "تُقبل الجمل الصحيحة التي تستخدم المصطلحات في سياق مناسب."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما الفكرة الأساسية في درس «الأزمنة الأساسية في الألمانية»؟",
+          "options": [
+            "يُستخدم Präsens للحاضر والعادات، وPerfekt للأحداث الماضية في الحديث اليومي، وPräteritum كث",
+            "حفظ العنوان فقط",
+            "تجاهل الأمثلة"
+          ],
+          "correct": 0,
+          "why": "الخيار الأول يلخص الفكرة الأساسية."
+        },
+        {
+          "q": "ما فائدة المصطلحات الصحيحة؟",
+          "options": [
+            "توضيح المعنى بدقة",
+            "جعل الإجابة غامضة",
+            "استبدال الفهم"
+          ],
+          "correct": 0,
+          "why": "المصطلحات الدقيقة تساعد على شرح الفكرة."
+        },
+        {
+          "q": "كيف تتأكد من فهم الموضوع؟",
+          "options": [
+            "تطبيقه على مثال جديد",
+            "قراءة العنوان فقط",
+            "ترك التدريب"
+          ],
+          "correct": 0,
+          "why": "تطبيق المعرفة على مثال جديد يثبت الفهم."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 6 إلى 8 جمل عن «الأزمنة الأساسية في الألمانية» مع مثال من عندك.",
+          "hint": "استخدم المفردات الجديدة واشرح الفكرة بترتيب.",
+          "a": "يُستخدم Präsens للحاضر والعادات، وPerfekt للأحداث الماضية في الحديث اليومي، وPräteritum كثيراً في القصص والكتابة. يتكون Perfekt من haben أو sein مع Partizip II."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من الدرس ومعنى كل منها.",
+          "hint": "استخدم جدول المفردات.",
+          "a": "das Präsens = المضارع؛ das Perfekt = الماضي المحكي؛ das Präteritum = الماضي البسيط؛ das Hilfsverb = الفعل المساعد؛ Partizip II = التصريف الثالث"
+        }
+      ]
+    },
+    {
+      "id": "de-deep-02",
+      "title": "حروف الجر وحالات الاسم",
+      "germanTitle": "Präpositionen und Kasus",
+      "level": "ESA · Klasse 9 · NRW",
+      "duration": "45–60 دقيقة",
+      "unit": "Vertiefung",
+      "unitArabic": "وحدة التوسع والتطبيق",
+      "chapterNumber": 31,
+      "objectives": [
+        "فهم المفاهيم والمصطلحات الأساسية للموضوع.",
+        "شرح الفكرة وتطبيقها على مثال عملي جديد.",
+        "حل أسئلة تدريبية والاستعداد لنمط امتحان ESA."
+      ],
+      "intro": "درس موسع للتحضير لشهادة ESA في NRW. اقرأ الشرح الألماني والتوضيح العربي، ثم راجع المثال والمفردات وحل التدريبات والواجب.",
+      "german": "Lies die Erklärung aufmerksam. Achte auf die Fachbegriffe und Beispiele. Bearbeite danach die Aufgaben selbstständig und kontrolliere deine Antworten.",
+      "lessonText": "تأخذ mit وbei وvon حالة Dativ، بينما für وohne وgegen تأخذ Akkusativ. بعض حروف المكان تتغير حسب الحركة أو الثبات: Ich bin in der Schule، لكن Ich gehe in die Schule.",
+      "explanation": "تأخذ mit وbei وvon حالة Dativ، بينما für وohne وgegen تأخذ Akkusativ. بعض حروف المكان تتغير حسب الحركة أو الثبات: Ich bin in der Schule، لكن Ich gehe in die Schule.",
+      "vocab": [
+        [
+          "die Präposition",
+          "حرف الجر"
+        ],
+        [
+          "der Dativ",
+          "حالة الداتيف"
+        ],
+        [
+          "der Akkusativ",
+          "حالة الأكوزاتيف"
+        ],
+        [
+          "mit",
+          "مع"
+        ],
+        [
+          "für",
+          "من أجل"
+        ]
+      ],
+      "example": "Ich fahre mit dem Bus. Das Geschenk ist für meinen Bruder. Ich gehe in die Schule.",
+      "worked": [
+        {
+          "title": "مثال محلول وتطبيق",
+          "prompt": "Ich fahre mit dem Bus. Das Geschenk ist für meinen Bruder. Ich gehe in die Schule.",
+          "steps": [
+            "حدد الفكرة أو المعطيات الأساسية.",
+            "اربط المثال بالقاعدة أو المفهوم الوارد في الشرح.",
+            "اكتب النتيجة بوضوح وراجع المصطلحات."
+          ],
+          "answer": "تأخذ mit وbei وvon حالة Dativ، بينما für وohne وgegen تأخذ Akkusativ. بعض حروف المكان تتغير حسب الحركة أو الثبات: Ich bin in der Schule، لكن Ich gehe in die Schule."
+        }
+      ],
+      "practice": [
+        {
+          "q": "لخص موضوع «حروف الجر وحالات الاسم» في 3 إلى 5 جمل.",
+          "hint": "ابدأ بالتعريف ثم اذكر أهم النقاط.",
+          "a": "تأخذ mit وbei وvon حالة Dativ، بينما für وohne وgegen تأخذ Akkusativ. بعض حروف المكان تتغير حسب الحركة أو الثبات: Ich bin in der Schule، لكن Ich gehe in die Schule."
+        },
+        {
+          "q": "استخدم ثلاثة مصطلحات من الدرس في جمل أو أمثلة.",
+          "hint": "راجع جدول المفردات.",
+          "a": "تُقبل الجمل الصحيحة التي تستخدم المصطلحات في سياق مناسب."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما الفكرة الأساسية في درس «حروف الجر وحالات الاسم»؟",
+          "options": [
+            "تأخذ mit وbei وvon حالة Dativ، بينما für وohne وgegen تأخذ Akkusativ. بعض حروف المكان تتغي",
+            "حفظ العنوان فقط",
+            "تجاهل الأمثلة"
+          ],
+          "correct": 0,
+          "why": "الخيار الأول يلخص الفكرة الأساسية."
+        },
+        {
+          "q": "ما فائدة المصطلحات الصحيحة؟",
+          "options": [
+            "توضيح المعنى بدقة",
+            "جعل الإجابة غامضة",
+            "استبدال الفهم"
+          ],
+          "correct": 0,
+          "why": "المصطلحات الدقيقة تساعد على شرح الفكرة."
+        },
+        {
+          "q": "كيف تتأكد من فهم الموضوع؟",
+          "options": [
+            "تطبيقه على مثال جديد",
+            "قراءة العنوان فقط",
+            "ترك التدريب"
+          ],
+          "correct": 0,
+          "why": "تطبيق المعرفة على مثال جديد يثبت الفهم."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 6 إلى 8 جمل عن «حروف الجر وحالات الاسم» مع مثال من عندك.",
+          "hint": "استخدم المفردات الجديدة واشرح الفكرة بترتيب.",
+          "a": "تأخذ mit وbei وvon حالة Dativ، بينما für وohne وgegen تأخذ Akkusativ. بعض حروف المكان تتغير حسب الحركة أو الثبات: Ich bin in der Schule، لكن Ich gehe in die Schule."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من الدرس ومعنى كل منها.",
+          "hint": "استخدم جدول المفردات.",
+          "a": "die Präposition = حرف الجر؛ der Dativ = حالة الداتيف؛ der Akkusativ = حالة الأكوزاتيف؛ mit = مع؛ für = من أجل"
+        }
+      ]
+    },
+    {
+      "id": "de-deep-03",
+      "title": "التعبير عن الرأي وكتابة الحجج",
+      "germanTitle": "Meinung ausdrücken und argumentieren",
+      "level": "ESA · Klasse 9 · NRW",
+      "duration": "45–60 دقيقة",
+      "unit": "Vertiefung",
+      "unitArabic": "وحدة التوسع والتطبيق",
+      "chapterNumber": 32,
+      "objectives": [
+        "فهم المفاهيم والمصطلحات الأساسية للموضوع.",
+        "شرح الفكرة وتطبيقها على مثال عملي جديد.",
+        "حل أسئلة تدريبية والاستعداد لنمط امتحان ESA."
+      ],
+      "intro": "درس موسع للتحضير لشهادة ESA في NRW. اقرأ الشرح الألماني والتوضيح العربي، ثم راجع المثال والمفردات وحل التدريبات والواجب.",
+      "german": "Lies die Erklärung aufmerksam. Achte auf die Fachbegriffe und Beispiele. Bearbeite danach die Aufgaben selbstständig und kontrolliere deine Antworten.",
+      "lessonText": "في سؤال الرأي اذكر موقفك بوضوح، ثم قدم سببين ومثالاً. استخدم أدوات الربط مثل weil وdeshalb وaußerdem، ويمكنك ذكر رأي مخالف والرد عليه باحترام.",
+      "explanation": "في سؤال الرأي اذكر موقفك بوضوح، ثم قدم سببين ومثالاً. استخدم أدوات الربط مثل weil وdeshalb وaußerdem، ويمكنك ذكر رأي مخالف والرد عليه باحترام.",
+      "vocab": [
+        [
+          "die Meinung",
+          "الرأي"
+        ],
+        [
+          "das Argument",
+          "الحجة"
+        ],
+        [
+          "der Vorteil",
+          "الميزة"
+        ],
+        [
+          "der Nachteil",
+          "العيب"
+        ],
+        [
+          "außerdem",
+          "بالإضافة إلى ذلك"
+        ]
+      ],
+      "example": "Meiner Meinung nach ist Sport wichtig, weil er gesund ist. Außerdem kann man Stress abbauen.",
+      "worked": [
+        {
+          "title": "مثال محلول وتطبيق",
+          "prompt": "Meiner Meinung nach ist Sport wichtig, weil er gesund ist. Außerdem kann man Stress abbauen.",
+          "steps": [
+            "حدد الفكرة أو المعطيات الأساسية.",
+            "اربط المثال بالقاعدة أو المفهوم الوارد في الشرح.",
+            "اكتب النتيجة بوضوح وراجع المصطلحات."
+          ],
+          "answer": "في سؤال الرأي اذكر موقفك بوضوح، ثم قدم سببين ومثالاً. استخدم أدوات الربط مثل weil وdeshalb وaußerdem، ويمكنك ذكر رأي مخالف والرد عليه باحترام."
+        }
+      ],
+      "practice": [
+        {
+          "q": "لخص موضوع «التعبير عن الرأي وكتابة الحجج» في 3 إلى 5 جمل.",
+          "hint": "ابدأ بالتعريف ثم اذكر أهم النقاط.",
+          "a": "في سؤال الرأي اذكر موقفك بوضوح، ثم قدم سببين ومثالاً. استخدم أدوات الربط مثل weil وdeshalb وaußerdem، ويمكنك ذكر رأي مخالف والرد عليه باحترام."
+        },
+        {
+          "q": "استخدم ثلاثة مصطلحات من الدرس في جمل أو أمثلة.",
+          "hint": "راجع جدول المفردات.",
+          "a": "تُقبل الجمل الصحيحة التي تستخدم المصطلحات في سياق مناسب."
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما الفكرة الأساسية في درس «التعبير عن الرأي وكتابة الحجج»؟",
+          "options": [
+            "في سؤال الرأي اذكر موقفك بوضوح، ثم قدم سببين ومثالاً. استخدم أدوات الربط مثل weil وdeshalb",
+            "حفظ العنوان فقط",
+            "تجاهل الأمثلة"
+          ],
+          "correct": 0,
+          "why": "الخيار الأول يلخص الفكرة الأساسية."
+        },
+        {
+          "q": "ما فائدة المصطلحات الصحيحة؟",
+          "options": [
+            "توضيح المعنى بدقة",
+            "جعل الإجابة غامضة",
+            "استبدال الفهم"
+          ],
+          "correct": 0,
+          "why": "المصطلحات الدقيقة تساعد على شرح الفكرة."
+        },
+        {
+          "q": "كيف تتأكد من فهم الموضوع؟",
+          "options": [
+            "تطبيقه على مثال جديد",
+            "قراءة العنوان فقط",
+            "ترك التدريب"
+          ],
+          "correct": 0,
+          "why": "تطبيق المعرفة على مثال جديد يثبت الفهم."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب ملخصاً من 6 إلى 8 جمل عن «التعبير عن الرأي وكتابة الحجج» مع مثال من عندك.",
+          "hint": "استخدم المفردات الجديدة واشرح الفكرة بترتيب.",
+          "a": "في سؤال الرأي اذكر موقفك بوضوح، ثم قدم سببين ومثالاً. استخدم أدوات الربط مثل weil وdeshalb وaußerdem، ويمكنك ذكر رأي مخالف والرد عليه باحترام."
+        },
+        {
+          "q": "اكتب خمسة مصطلحات من الدرس ومعنى كل منها.",
+          "hint": "استخدم جدول المفردات.",
+          "a": "die Meinung = الرأي؛ das Argument = الحجة؛ der Vorteil = الميزة؛ der Nachteil = العيب؛ außerdem = بالإضافة إلى ذلك"
+        }
+      ]
     }
   ],
   "bookTitle": "Deutsch – Lesen, Schreiben und Grammatik",
