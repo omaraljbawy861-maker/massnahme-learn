@@ -87,7 +87,7 @@ async function renderVideoLibrary(){
 }
 function videoCard(v){
  return `<article class="video-resource-card" data-video-card="${v.id}" data-subject="${v.subject}" data-search="${escapeHtml((v.title+" "+v.provider+" "+v.subjectName+" "+v.description).toLowerCase())}">
- <div class="video-card-art"><span>▶</span><small>MAßNAHME VIDEO CAMPUS</small></div><div class="video-card-body"><span class="video-chip">${escapeHtml(v.subjectName)}</span><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.description)}</p><div class="video-card-meta"><span>${escapeHtml(v.provider)}</span><small>${escapeHtml(v.level)}</small></div><button class="primary-btn" data-play-video="${v.id}">▶ تشغيل الدرس هنا</button></div></article>`;
+ <div class="video-card-art"><span>▶</span><small>MAßNAHME VIDEO CAMPUS</small></div><div class="video-card-body"><span class="video-chip">${escapeHtml(v.subjectName)}</span><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.description)}</p><div class="video-card-meta"><span>${escapeHtml(v.provider)}</span><small>${escapeHtml(v.level)}</small></div><button class="primary-btn" data-play-video="${v.id}">${v.type==="external"?"↗ مشاهدة من المصدر الرسمي":"▶ تشغيل الدرس هنا"}</button></div></article>`;
 }
 function filterVideos(){
  const q=document.querySelector("#videoSearch").value.trim().toLowerCase(),subject=document.querySelector("#videoSubjectFilter").value;
@@ -102,8 +102,10 @@ function playVideo(id){
  }else if(v.type==="youtube"||v.type==="vimeo"){
    const src=v.type==="vimeo"?`https://player.vimeo.com/video/${encodeURIComponent(v.videoId)}`:`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.videoId)}?rel=0`;
    player=`<iframe src="${src}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+ }else if(v.type==="external" && v.url){
+   player=`<div class="video-player-empty"><span>▶</span><h3>الفيديو متاح من المصدر الرسمي</h3><p>هذا المصدر لا يوفّر تضميناً مؤكداً داخل المنصة. افتح المشاهدة الرسمية من الزر أدناه.</p><a class="primary-btn" href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer">▶ مشاهدة الفيديو من المصدر الرسمي</a></div>`;
  }else{
-   player=`<div class="video-player-empty"><span>◷</span><h3>هذا المحتوى لم يُجهّز بعد للتشغيل داخل المنصة</h3><p>لن ننقلك إلى موقع آخر. سنضيف نسخة داخلية عندما يتوفر ملف فيديو قابل للاستضافة وحقوق استخدامه.</p></div>`;
+   player=`<div class="video-player-empty"><span>!</span><h3>رابط الفيديو غير مكتمل</h3><p>هذا العنصر لا يحتوي على ملف أو رابط تشغيل صالح حتى الآن.</p></div>`;
  }
  panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">MAßNAHME · INTERNAL PLAYER</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.subjectName)} · ${escapeHtml(v.level)}</p></div><div class="embedded-video-frame">${player}</div><div class="video-player-description"><h3>عن الدرس</h3><p>${escapeHtml(v.description)}</p><p class="video-note">المشاهدة تبقى ضمن صفحة MAßNAHME LEARN. بعض المقاطع تُبث من مزوّد الفيديو داخل المشغّل المدمج، ولا نفتح صفحة خارجية.</p></div>`;
  panel.scrollIntoView({behavior:"smooth",block:"start"});
