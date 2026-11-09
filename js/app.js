@@ -283,7 +283,7 @@ async function renderZfaPreparation() {
     }
     const lf1=window.zfaLernfeld1;
     if(!window.zfaLernfelderRest) {
-      const restResponse=await fetch("./data/zfa_lernfelder_02_13.json?v=20261109-1");
+      const restResponse=await fetch("./data/zfa_lernfelder_02_13.json?v=20261109-2");
       if(!restResponse.ok) throw new Error("Lernfelder 2–13 HTTP "+restResponse.status);
       window.zfaLernfelderRest=await restResponse.json();
     }
