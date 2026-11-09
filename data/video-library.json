@@ -1,5 +1,5 @@
 {
-  "version": 16,
+  "version": 17,
   "items": [
     {
       "id": "de-cases",
@@ -1168,15 +1168,15 @@
       "description": "كيف يشارك المواطنون في الحكم عبر انتخاب ممثلين عنهم."
     },
     {
-      "id": "zfa-bundesagentur-berufsbild",
+      "id": "zfa-lzk-bw-berufsinformationsfilm",
       "subject": "zfa",
       "subjectName": "Zahnmedizinische Fachangestellte (ZFA)",
-      "title": "Zahnmedizinische/r Fachangestellte/r – Berufsbild und Aufgaben",
-      "provider": "Bundesagentur für Arbeit · HubbS Mediathek",
+      "title": "Berufsinformationsfilm – Zahnmedizinische Fachangestellte",
+      "provider": "Landeszahnärztekammer Baden-Württemberg",
       "level": "ZFA Ausbildung · Deutsch",
-      "type": "mp4",
-      "src": "https://hubbs.schule/sodix/proxy-file/4039/0",
-      "description": "Deutsches Berufsinformationsvideo der Bundesagentur für Arbeit. Zeigt Aufgaben der ZFA: Praxisorganisation, Assistenz bei Untersuchungen und Behandlungen, Prophylaxe, Abformungen, Röntgen, Dokumentation und Patientenbetreuung."
+      "type": "youtube",
+      "videoId": "Jc_Km-08RvU",
+      "description": "Offizieller, etwa vierminütiger Berufsinformationsfilm der Landeszahnärztekammer Baden-Württemberg. Zeigt die duale ZFA-Ausbildung, Einblicke in den Praxisalltag, Aufgabenbereiche und Entwicklungsmöglichkeiten. Ein Einführungsfilm, keine ausführliche Fachlektion."
     }
   ]
 }
