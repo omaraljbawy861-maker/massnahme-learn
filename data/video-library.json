@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "items": [
     {
       "id": "math-fractions-01",
@@ -110,6 +110,61 @@
       "type": "mp4",
       "src": "https://content.jwplatform.com/videos/mUH6ZqMl-TLV6fume.mp4",
       "description": "فيلم رسوم متحركة عن يوم العمل ومهام مساعدة طبيب الأسنان."
+    },
+    {
+      "id": "math-fractions-add",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche addieren – جمع الكسور",
+      "provider": "Lehrerschmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "nrzpRozQnM4",
+      "description": "شرح جمع الكسور وتوحيد المقامات."
+    },
+    {
+      "id": "math-fractions-sub",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche subtrahieren – طرح الكسور",
+      "provider": "Lehrerschmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "uv0LSF8Ke90",
+      "description": "شرح طرح الكسور مع أمثلة."
+    },
+    {
+      "id": "math-fractions-mult",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche multiplizieren – ضرب الكسور",
+      "provider": "Lehrerschmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "sRxSrGXgoF8",
+      "description": "شرح ضرب الكسور وتبسيط الناتج."
+    },
+    {
+      "id": "math-fractions-part",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Bruchteile berechnen – حساب أجزاء الكسور",
+      "provider": "Lehrerschmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "-48NU9ifMOQ",
+      "description": "حساب جزء من عدد صحيح أو جزء من كسر."
+    },
+    {
+      "id": "math-common-denom",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Gemeinsamen Nenner finden – إيجاد المقام المشترك",
+      "provider": "Landesbildungsserver Baden-Württemberg",
+      "level": "Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "4ImDIHkH5Ss",
+      "description": "شرح إيجاد المقام المشترك وتوحيد مقامات الكسور."
     }
   ]
 }
