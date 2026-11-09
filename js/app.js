@@ -268,6 +268,12 @@ async function renderZfaPreparation() {
       window.zfaCourse=await response.json();
     }
     const course=window.zfaCourse;
+    if(!window.zfaOfficialCurriculum) {
+      const officialResponse=await fetch("./data/zfa_official_curriculum.json?v=20261109-1");
+      if(!officialResponse.ok) throw new Error("Official curriculum HTTP "+officialResponse.status);
+      window.zfaOfficialCurriculum=await officialResponse.json();
+    }
+    const official=window.zfaOfficialCurriculum;
     const units=course.units;
     const words=units.reduce((n,u)=>n+u.vocab.length,0);
     content.innerHTML=`
@@ -276,26 +282,35 @@ async function renderZfaPreparation() {
         <div class="zfa-tooth">✚<small>ZFA</small></div>
       </section>
       <div class="zfa-notice">ⓘ ${escapeHtml(course.disclaimer)}</div>
-      <section class="zfa-cornelsen panel">
-        <div class="zfa-cornelsen-heading">
-          <div><span class="eyebrow">OFFIZIELLER LEHRPLAN · AUSGABE 2023</span><h2>منهاج ZFA المعتمد من Cornelsen</h2><p>مسار الدراسة مقسّم حسب سنوات التدريب الثلاث، وفق Lernfelder 1–13 في إصدار 2023.</p></div>
-          <span class="zfa-cornelsen-mark">C</span>
+      <section class="zfa-official panel">
+        <div class="zfa-official-heading">
+          <div><span class="eyebrow">STAATLICHER KMK-RAHMENLEHRPLAN · ZFA</span><h2>المنهاج الألماني الرسمي – 13 Lernfelder</h2>
+          <p>القرار الرسمي KMK بتاريخ 17.12.2021، ومتوافق مع لائحة التدريب الاتحادية ZahnmedAusbV لعام 2022.</p></div>
+          <div class="zfa-official-total"><strong>840</strong><span>Unterrichtsstunden</span></div>
         </div>
-        <div class="zfa-cornelsen-years">
-          <article class="zfa-cornelsen-card"><span>01 · 1. Ausbildungsjahr</span><h3>السنة التدريبية الأولى</h3><strong>Lernfelder 1–4</strong><p>ابدأ بالأساسيات المهنية ومهام العيادة ومبادئ العمل في فريق طب الأسنان.</p><a href="https://www.cornelsen.de/produkte/zahnmedizinische-fachangestellte-fachkunde-1-ausbildungsjahr-9783064523906" target="_blank" rel="noopener noreferrer">صفحة كتاب السنة الأولى ↗</a></article>
-          <article class="zfa-cornelsen-card"><span>02 · 2. Ausbildungsjahr</span><h3>السنة التدريبية الثانية</h3><strong>Lernfelder 5–9</strong><p>تابع وحدات السنة الثانية، وراجع موضوعات المساعدة العلاجية والتنظيم والتوثيق بحسب ترتيب المنهاج.</p><a href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017" target="_blank" rel="noopener noreferrer">تفاصيل إصدار 2023 ↗</a></article>
-          <article class="zfa-cornelsen-card"><span>03 · 3. Ausbildungsjahr</span><h3>السنة التدريبية الثالثة</h3><strong>Lernfelder 10–13</strong><p>استكمل وحدات السنة الثالثة واستعد للانتقال إلى مراجعة الامتحان النهائي.</p><a href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017" target="_blank" rel="noopener noreferrer">تفاصيل إصدار 2023 ↗</a></article>
+        <div class="zfa-official-years">
+          <div><b>1. Ausbildungsjahr</b><strong>280 ساعة</strong><small>Lernfelder 1–4</small></div>
+          <div><b>2. Ausbildungsjahr</b><strong>280 ساعة</strong><small>Lernfelder 5–9</small></div>
+          <div><b>3. Ausbildungsjahr</b><strong>280 ساعة</strong><small>Lernfelder 10–13</small></div>
         </div>
-        <h3 class="zfa-cornelsen-subtitle">المراجع الأساسية ضمن السلسلة</h3>
-        <div class="zfa-cornelsen-resources">
-          <div><b>Behandlungsassistenz</b><small>المساعدة أثناء العلاج ورعاية المرضى</small></div>
-          <div><b>Organisation & Verwaltung</b><small>تنظيم العيادة والإدارة</small></div>
-          <div><b>Leistungsabrechnung</b><small>الفوترة: BEMA وGOZ وGOÄ</small></div>
-          <div><b>Fachwörterbuch</b><small>قاموس المصطلحات الطبية الألمانية</small></div>
-          <div><b>Prüfungsvorbereitung Teil 1</b><small>التحضير للجزء الأول من الامتحان</small></div>
-          <div><b>Prüfungsvorbereitung Teil 2</b><small>التحضير للجزء الثاني من الامتحان</small></div>
+        <p class="zfa-official-note">كل مجال يتضمن الكفاءة المطلوبة، المحاور الدراسية، مهام تطبيقية، وتقييماً تدريبياً. الشروحات العربية والتمارين من إعداد المنصة وليست نسخاً من كتب تجارية.</p>
+        <div class="zfa-official-list">
+          ${official.fields.map(f=>`<details class="zfa-official-field">
+            <summary><span class="zfa-official-number">${String(f.n).padStart(2,"0")}</span><span class="zfa-official-title"><b>${escapeHtml(f.title)}</b><small>${escapeHtml(f.ar)}</small></span><span class="zfa-official-meta">${f.year}. Ausbildungsjahr · ${f.hours} Std.</span></summary>
+            <div class="zfa-official-body">
+              <h4>Kompetenzziel · الكفاءة المطلوبة</h4><p>${escapeHtml(f.competence)}</p>
+              <h4>Inhalte · المحاور الدراسية</h4><ul>${f.topics.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
+              <h4>Lernsituationen · تطبيقات عملية</h4><ul>${f.tasks.map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul>
+              <div class="zfa-official-assessment"><b>Leistungsnachweis / Prüfung:</b> ${escapeHtml(f.assessment)}</div>
+            </div>
+          </details>`).join("")}
         </div>
-        <div class="zfa-cornelsen-footer"><p>تتضمن السلسلة كتباً ودفاتر عمل وفيديوهات تعليمية. فيديوهات Cornelsen الأصلية تُفتح من تطبيق Cornelsen Lernen أو الكتاب الإلكتروني عند توفر صلاحية الوصول؛ لا ننسخ محتوى الكتب المحمي داخل المنصة.</p><div><a class="primary-btn" href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017" target="_blank" rel="noopener noreferrer">عرض كتب Cornelsen الرسمية ↗</a> <a class="secondary-btn" href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017/konzept" target="_blank" rel="noopener noreferrer">شرح المنهاج ↗</a></div></div>
+        <div class="zfa-official-sources">
+          <b>المراجع الرسمية:</b>
+          <a href="https://www.kmk.org/service/servicebereich-berufliche-schulen/downloadbereich-rahmenlehrplaene.html" target="_blank" rel="noopener noreferrer">KMK – Rahmenlehrplan ZFA ↗</a>
+          <a href="https://www.gesetze-im-internet.de/zahnmedausbv_2022/" target="_blank" rel="noopener noreferrer">Gesetze im Internet – ZahnmedAusbV ↗</a>
+          <a href="https://www.bzaek.de/praxisteam/zahnmedizinische-fachangestellte/ausbildung-und-ausbildungsrahmenplan.html" target="_blank" rel="noopener noreferrer">Bundeszahnärztekammer – Ausbildungsrahmenplan ↗</a>
+        </div>
       </section>
       <section class="stats-grid">
         <article class="stat-card"><span class="stat-icon gold">▤</span><div><small>الوحدات التعليمية</small><strong>${units.length}</strong></div></article>
