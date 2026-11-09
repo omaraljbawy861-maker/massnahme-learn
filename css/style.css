@@ -145,3 +145,18 @@
 /* ZFA application builder and interview practice */
 .zfa-application-grid{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr);gap:14px;align-items:start}.zfa-content-card h2{font-size:16px;margin:0 0 9px}.zfa-help{font-size:11px;color:var(--muted);line-height:1.8;margin:0 0 14px}.zfa-form-field{display:block;font-size:11px;font-weight:700;color:#56647a;margin:11px 0}.zfa-form-field input,.zfa-form-field textarea{display:block;width:100%;margin-top:5px;border:1px solid #e4e9ef;border-radius:8px;background:#fcfdff;padding:10px 11px;font:12px 'Cairo',sans-serif;color:#27364d;outline:none}.zfa-form-field input:focus,.zfa-form-field textarea:focus{border-color:#c9a45c;box-shadow:0 0 0 3px rgba(201,164,92,.12)}.zfa-draft{white-space:pre-wrap;overflow-wrap:anywhere;direction:ltr;text-align:left;background:#f5f7fa;border:1px solid #e8edf3;border-radius:9px;padding:14px;font:12px/1.9 Inter,sans-serif;color:#33445c;min-height:220px}.zfa-divider{height:1px;background:var(--line);margin:20px 0}.zfa-interview,.zfa-checklist{margin-top:15px}.zfa-interview-q{border:1px solid #e9edf3;border-radius:9px;padding:12px;margin:8px 0}.zfa-interview-q summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;font-weight:700}.zfa-interview-q summary small{color:#9b845b;font-weight:400;white-space:nowrap}.zfa-interview-q p{direction:ltr;text-align:left;font:12px/1.9 Inter,sans-serif;color:#40516a;background:#f5f7fa;border-radius:8px;padding:11px}.zfa-checklist label{display:block;padding:9px 4px;border-bottom:1px solid #edf0f4;font-size:12px;color:#58667b}.zfa-checklist input{margin-left:8px;accent-color:#a98a4d}
 @media(max-width:850px){.zfa-application-grid{grid-template-columns:1fr}}
+
+/* ZFA clinic-day interactive simulation */
+.zfa-sim-progress{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 17px;margin:14px 0}
+.zfa-sim-progress>div:first-child{display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#68758a;margin-bottom:10px}
+.zfa-sim-progress strong{color:#263850}.zfa-scene{margin:15px 0}.zfa-scene h2{font-size:21px;margin:7px 0 14px;color:#1d304c}
+.zfa-sim-ar{font-size:13px;color:#65738a;line-height:1.9}.zfa-sim-choices{display:grid;gap:9px;margin:14px 0}
+.zfa-sim-choice{width:100%;text-align:left;direction:ltr;border:1px solid #e3e8ef;background:#fff;border-radius:10px;padding:13px 15px;font:12px/1.8 Inter,sans-serif;color:#34445d;cursor:pointer}
+.zfa-sim-choice:not(:disabled):hover{border-color:#c7a15b;background:#fffcf5}.zfa-sim-choice:disabled{cursor:default;opacity:1}
+.zfa-sim-choice.selected-correct{border-color:#4b9c79;background:#f0f8f3}.zfa-sim-choice.selected-wrong{border-color:#c97b6c;background:#fff5f2}
+.zfa-sim-feedback{padding:12px 14px;border-radius:9px;font-size:12px;line-height:1.9;margin:12px 0}
+.zfa-sim-feedback.correct{background:#eff8f2;color:#28734f}.zfa-sim-feedback.incorrect{background:#fff5ed;color:#945b37}
+.zfa-sim-phrase{display:flex;align-items:center;justify-content:space-between;gap:12px;background:#f8f4ea;border:1px solid #eee3ca;border-radius:10px;padding:13px;margin:16px 0}
+.zfa-sim-phrase div{display:grid;gap:5px;min-width:0}.zfa-sim-phrase small{font-size:10px;color:#9b7a43}
+.zfa-sim-phrase strong{font:600 13px/1.7 Inter,sans-serif;direction:ltr;text-align:left;color:#2d405b}.zfa-sim-phrase span{font-size:11px;color:#68758a}
+@media(max-width:600px){.zfa-sim-phrase{align-items:flex-start;flex-direction:column}.zfa-sim-choice{font-size:11px;padding:11px}.zfa-scene h2{font-size:18px}}
