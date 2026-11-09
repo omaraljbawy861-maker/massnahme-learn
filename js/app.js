@@ -73,7 +73,7 @@ function renderCloudDemo() {
 
 async function renderVideoLibrary(){
   if(!videoLibrary.length){
-    const response=await fetch("./data/video-library.json?v=3",{cache:"no-store"});
+    const response=await fetch("./data/video-library.json?v=4",{cache:"no-store"});
     if(!response.ok)throw new Error("تعذر تحميل مكتبة الفيديوهات");
     const data=await response.json();videoLibrary=data.items||[];
   }
@@ -96,9 +96,12 @@ function filterVideos(){
 function playVideo(id){
  const v=videoLibrary.find(x=>x.id===id);if(!v)return;
  const panel=document.querySelector("#videoPlayerPanel");
+ const player=v.type==="mp4"
+ ? `<video controls playsinline preload="metadata" src="${escapeHtml(v.src)}"></video>`
+ : `<iframe src="${v.type==="vimeo"?`https://player.vimeo.com/video/${encodeURIComponent(v.videoId)}`:`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.videoId)}?rel=0`}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
  panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">NOW LEARNING</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.provider)} · ${escapeHtml(v.level)}</p></div>
- <div class="embedded-video-frame"><iframe src="${escapeHtml(v.embed)}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
- <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p><small>إذا لم يسمح الموقع الأصلي بالتضمين، فهذا قيد من مالك المحتوى.</small></div>`;
+ <div class="embedded-video-frame">${player}</div>
+ <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p></div>`;
  panel.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
