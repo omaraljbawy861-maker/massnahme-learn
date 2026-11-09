@@ -274,6 +274,12 @@ async function renderZfaPreparation() {
       window.zfaOfficialCurriculum=await officialResponse.json();
     }
     const official=window.zfaOfficialCurriculum;
+    if(!window.zfaLernfeld1) {
+      const lfResponse=await fetch("./data/zfa_lernfeld1_lessons.json?v=20261109-1");
+      if(!lfResponse.ok) throw new Error("Lernfeld 1 lessons HTTP "+lfResponse.status);
+      window.zfaLernfeld1=await lfResponse.json();
+    }
+    const lf1=window.zfaLernfeld1;
     const units=course.units;
     const words=units.reduce((n,u)=>n+u.vocab.length,0);
     content.innerHTML=`
@@ -305,11 +311,27 @@ async function renderZfaPreparation() {
             </div>
           </details>`).join("")}
         </div>
-        <div class="zfa-official-sources">
-          <b>المراجع الرسمية:</b>
-          <a href="https://www.kmk.org/service/servicebereich-berufliche-schulen/downloadbereich-rahmenlehrplaene.html" target="_blank" rel="noopener noreferrer">KMK – Rahmenlehrplan ZFA ↗</a>
-          <a href="https://www.gesetze-im-internet.de/zahnmedausbv_2022/" target="_blank" rel="noopener noreferrer">Gesetze im Internet – ZahnmedAusbV ↗</a>
-          <a href="https://www.bzaek.de/praxisteam/zahnmedizinische-fachangestellte/ausbildung-und-ausbildungsrahmenplan.html" target="_blank" rel="noopener noreferrer">Bundeszahnärztekammer – Ausbildungsrahmenplan ↗</a>
+        <div class="zfa-official-sources"><b>المراجع المعتمدة في بناء الهيكل:</b><span>KMK – Rahmenlehrplan ZFA (17.12.2021)</span><span>ZahnmedAusbV – Ausbildungsordnung (2022)</span><span>Bundeszahnärztekammer – Ausbildungsrahmenplan</span></div>
+      </section>
+      <section class="zfa-course-module panel">
+        <div class="zfa-official-heading"><div><span class="eyebrow">MAßNAHME ORIGINALKURS · LERNFELD 01</span><h2>${escapeHtml(lf1.titleAr)}</h2><p>${escapeHtml(lf1.title)} · 15 درساً أصلياً بالألمانية والعربية</p></div><div class="zfa-official-total"><strong>${lf1.lessons.length}</strong><span>دروس داخل الموقع</span></div></div>
+        <p class="zfa-official-note">${escapeHtml(lf1.sourceNote)}</p>
+        <div class="zfa-internal-lessons">
+          ${lf1.lessons.map((l,i)=>`
+            <details class="zfa-internal-lesson">
+              <summary><span class="zfa-official-number">${String(l.number).padStart(2,'0')}</span><span class="zfa-official-title"><b>${escapeHtml(l.titleAr)}</b><small lang="de">${escapeHtml(l.title)}</small></span><span class="zfa-official-meta">درس ${l.number}</span></summary>
+              <div class="zfa-official-body">
+                <h4>Deutsch · الشرح بالألمانية</h4><p class="zfa-german-text" lang="de">${escapeHtml(l.german)}</p>
+                <div class="action-row"><button class="listen-btn" data-speak="${escapeHtml(l.german)}" data-lang="de-DE">🔊 استمع للشرح الألماني</button></div>
+                <h4>الشرح بالعربية</h4><p>${escapeHtml(l.arabic)}</p>
+                <h4>Wortschatz · مفردات الدرس</h4><div class="zfa-vocab-grid">${l.vocabulary.map((w,j)=>`<article class="zfa-vocab"><small>${j+1}</small><strong lang="de">${escapeHtml(w[0])}</strong><span>${escapeHtml(w[1])}</span><button data-speak="${escapeHtml(w[0])}" data-lang="de-DE" aria-label="استمع للكلمة">🔊</button></article>`).join('')}</div>
+                <h4>Praxisaufgabe · تطبيق عملي</h4><p>${escapeHtml(l.practice)}</p>
+                <div class="zfa-question"><strong>${escapeHtml(l.question)}</strong>${l.options.map((o,k)=>`<label><input type="radio" name="${l.id}" value="${k}"> ${escapeHtml(o)}</label>`).join('')}
+                  <details class="zfa-answer"><summary>إظهار الإجابة والتفسير</summary><p><b>${escapeHtml(l.options[l.correct])}</b></p><p>${escapeHtml(l.explanation)}</p></details>
+                </div>
+              </div>
+            </details>
+          `).join('')}
         </div>
       </section>
       <section class="stats-grid">
