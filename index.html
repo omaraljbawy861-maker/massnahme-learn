@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261109-4">
+  <link rel="stylesheet" href="css/style.css?v=20261109-5">
+  <script>try{if(window.Capacitor?.isNativePlatform?.())document.documentElement.classList.add("native-app")}catch(e){}</script>
 </head>
 <body>
   <div class="app-shell">
@@ -83,7 +84,14 @@
       </div>
     </main>
   </div>
+  <nav class="app-bottom-nav" id="appBottomNav" aria-label="التنقل الرئيسي">
+    <button class="bottom-nav-item active" data-view="dashboard"><span class="bottom-nav-icon">⌂</span><small>الرئيسية</small></button>
+    <button class="bottom-nav-item" data-view="library"><span class="bottom-nav-icon">▤</span><small>المواد</small></button>
+    <button class="bottom-nav-item" data-view="exams"><span class="bottom-nav-icon">✎</span><small>الاختبارات</small></button>
+    <button class="bottom-nav-item" data-view="phrases"><span class="bottom-nav-icon">🔊</span><small>اللغات</small></button>
+    <button class="bottom-nav-item" id="bottomMore"><span class="bottom-nav-icon">☰</span><small>المزيد</small></button>
+  </nav>
   <div class="toast" id="toast" role="status"></div>
-  <script type="module" src="js/app.js?v=20261109-17"></script>
+  <script type="module" src="js/app.js?v=20261109-18"></script>
 </body>
 </html>
