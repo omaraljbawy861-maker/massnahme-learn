@@ -8,8 +8,11 @@ let courses = [];
 let currentCourse = null;
 let currentLesson = null;
 let languageBank = null;
+let zfaSimulationIndex = 0;
+let zfaSimulationScore = 0;
+let zfaSimulationAnswered = false;
 
-const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA" };
+const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -308,7 +311,24 @@ function renderZfaApplication() {
  content.querySelectorAll("input[type=text],textarea").forEach(el=>el.addEventListener("input",update));
  update();
 }
-\nfunction renderSchedule() {
+
+function renderZfaSimulation() {
+ setActive("zfa-simulation");
+ const scenes=[
+ ["الوصول إلى العيادة","08:00 · Vorbereitung","Du kommst morgens in der Zahnarztpraxis an. Was machst du zuerst?","وصلتِ إلى العيادة صباحاً. ما أول خطوة مناسبة؟",["Ich überprüfe den Tagesplan und bereite meinen Arbeitsplatz nach Anweisung vor.","Ich beginne sofort allein mit einer Behandlung.","Ich öffne die Patientenakten für Freunde."],0,"راجعي جدول المواعيد وجهزي مكان العمل وفق تعليمات الفريق، مع احترام الخصوصية.","Guten Morgen! Was steht heute im Terminplan?","صباح الخير! ما الموجود في جدول المواعيد اليوم؟"],
+ ["استقبال المريض","08:30 · Empfang","Ein Patient kommt zur Anmeldung. Wie begrüßt du ihn professionell?","دخل مريض إلى الاستقبال. كيف ترحب به بطريقة مهنية؟",["Was willst du?","Guten Morgen. Herzlich willkommen. Haben Sie einen Termin?","Warten Sie draußen."],1,"التحية المهذبة والسؤال عن الموعد أسلوب استقبال مهني.","Haben Sie bitte Ihre Versichertenkarte dabei?","هل بطاقة التأمين معك من فضلك؟"],
+ ["ألم الأسنان","09:00 · Patientengespräch","Eine Patientin sagt: Ich habe starke Zahnschmerzen. Was ist deine passende Reaktion?","مريضة تقول إن لديها ألماً شديداً في الأسنان. كيف تتصرفين؟",["Ich sage ihr, welche Krankheit sie hat.","Ich verspreche, dass nichts Schlimmes ist.","Ich höre aufmerksam zu und informiere die Zahnärztin."],2,"استمعي للمريض وانقلي المعلومات للطبيب/الطبيبة. لا تشخّصي الحالة ولا تقدمي وعوداً طبية.","Seit wann haben Sie die Schmerzen?","منذ متى تشعرين بالألم؟"],
+ ["العمل مع الفريق","09:30 · Teamarbeit","Du bist bei einer Aufgabe unsicher. Was machst du?","لست متأكدة من طريقة تنفيذ مهمة. ماذا تفعلين؟",["Ich frage eine erfahrene Kollegin und lasse es mir zeigen.","Ich rate und mache einfach weiter.","Ich verschweige das Problem."],0,"السؤال عند عدم التأكد يحافظ على سلامة العمل ويساعدك على التعلم.","Könnten Sie mir das bitte noch einmal zeigen?","هل يمكنك أن تريني ذلك مرة أخرى من فضلك؟"],
+ ["مريض متوتر","10:15 · Einfühlsamkeit","Ein Patient hat Angst vor der Behandlung. Wie reagierst du?","مريض خائف من العلاج. كيف تتعاملين معه؟",["Ich lache über seine Angst.","Ich bleibe ruhig, höre zu und informiere das Behandlungsteam.","Ich sage ihm, dass er sich nicht so anstellen soll."],1,"التعاطف والهدوء والاستماع، ثم إبلاغ الفريق، تساعد المريض على الشعور بالأمان.","Ich verstehe, dass Sie nervös sind. Wir sind für Sie da.","أتفهم أنك متوتر. نحن هنا لمساعدتك."],
+ ["مكالمة هاتفية","11:00 · Telefon","Eine Patientin möchte ihren Termin verschieben. Was sagst du?","مريضة تريد تغيير موعدها عبر الهاتف. ما العبارة المناسبة؟",["Nennen Sie mir bitte Ihren Namen und den gewünschten Termin.","Das geht nicht. Auf Wiederhören.","Schicken Sie irgendjemanden."],0,"تحققي من بيانات المريضة وفق إجراءات العيادة، ثم راجعي المواعيد المتاحة.","Gern. Welcher Tag würde Ihnen passen?","بكل سرور. أي يوم يناسبك؟"],
+ ["حماية البيانات","12:00 · Datenschutz","Eine Person fragt dich nach den Daten eines anderen Patienten. Was machst du?","شخص يسألك عن معلومات مريض آخر. ما التصرف الصحيح؟",["Ich gebe die Informationen weiter.","Ich zeige kurz den Bildschirm.","Ich gebe keine Auskunft und beachte die Datenschutzregeln."],2,"معلومات المرضى سرية. لا تكشفيها إلا وفق الصلاحيات والإجراءات المعتمدة.","Aus Datenschutzgründen darf ich dazu keine Auskunft geben.","لأسباب تتعلق بحماية البيانات لا يمكنني إعطاء معلومات بهذا الشأن."],
+ ["نهاية الدوام","16:00 · Tagesabschluss","Der Arbeitstag ist fast vorbei. Was gehört zu einem verantwortungsvollen Abschluss?","انتهى يوم العمل تقريباً. ما الذي يجب فعله؟",["أترك كل شيء دون إبلاغ أحد.","أوثق المهام حسب التعليمات، وأسلم الملاحظات للفريق وأرتب المكان.","أصور ملفات المرضى بهاتفي."],1,"التوثيق والتسليم وفق تعليمات العيادة وترتيب المكان جزء من العمل المسؤول.","Ich habe die Aufgaben dokumentiert und alles übergeben.","وثّقت المهام وسلمت كل شيء."]
+ ];
+ if(zfaSimulationIndex>=scenes.length){content.innerHTML='<section class="zfa-hero"><div><span class="eyebrow">SIMULATION · AUSWERTUNG</span><h1>أحسنتِ! أنهيتِ يوم التدريب.</h1><p>نتيجتك '+zfaSimulationScore+' من '+scenes.length+'. '+(zfaSimulationScore>=7?"ممتاز! لديك فهم جيد للمواقف الأساسية.":"تابعي التدريب وراجعي المواقف التي أخطأتِ فيها.")+'</p><button class="primary-btn" data-action="zfa-sim-restart">إعادة المحاكاة</button></div><div class="zfa-tooth">✓</div></section>';return;}
+ const s=scenes[zfaSimulationIndex];
+ content.innerHTML='<section class="zfa-hero"><div><span class="eyebrow">PRAXISSIMULATION · ZFA</span><h1>يوم عملي داخل عيادة الأسنان</h1><p>تدرّبي على 8 مواقف واقعية باللغة الألمانية مع شرح عربي وتصحيح فوري.</p><div class="zfa-hero-tags"><span>8 مواقف</span><span>اختيارات تفاعلية</span><span>مفردات ونطق</span></div></div><div class="zfa-tooth">🦷</div></section><div class="zfa-sim-progress"><div><strong>الموقف '+(zfaSimulationIndex+1)+' من '+scenes.length+'</strong><span>النتيجة الحالية: '+zfaSimulationScore+'</span></div><div class="progress-track"><div class="progress-fill" style="width:'+(zfaSimulationIndex/scenes.length*100)+'%"></div></div></div><section class="zfa-content-card zfa-scene"><span class="eyebrow">'+s[1]+'</span><h2>'+s[0]+'</h2><p class="zfa-german-text">'+s[2]+'</p><p class="zfa-sim-ar">'+s[3]+'</p><h3>Wie reagierst du?</h3><div class="zfa-sim-choices">'+s[4].map((x,i)=>'<button class="zfa-sim-choice" data-sim-choice="'+i+'">'+String.fromCharCode(65+i)+'. '+escapeHtml(x)+'</button>').join("")+'</div><div id="zfa-sim-feedback" class="zfa-sim-feedback" hidden></div><div class="zfa-sim-phrase"><div><small>عبارة مفيدة في هذا الموقف</small><strong>'+escapeHtml(s[6])+'</strong><span>'+escapeHtml(s[7])+'</span></div><button class="listen-btn" data-speak="'+escapeHtml(s[6])+'" data-lang="de-DE">🔊 استمع</button></div><div class="action-row"><button class="secondary-btn" data-action="zfa-sim-restart">إعادة من البداية</button><button class="primary-btn" data-action="zfa-sim-next" disabled>'+(zfaSimulationIndex===scenes.length-1?"عرض النتيجة":"الموقف التالي ←")+'</button></div></section>';
+}
+function renderSchedule() {
  content.innerHTML=`<div class="page-intro"><span class="eyebrow">WOCHENPLAN</span><h1>جدول الحصص الأسبوعي</h1><p>جدول مقترح قابل للتعديل لاحقاً حسب برنامج Maßnahme الخاص بك.</p></div><table class="schedule-table"><thead><tr><th>اليوم</th><th>الحصة الأولى</th><th>الحصة الثانية</th><th>الحصة الثالثة</th></tr></thead><tbody>${[["الاثنين","Deutsch","Mathematik","مراجعة"],["الثلاثاء","Mathematik","English","تدريبات"],["الأربعاء","Deutsch","English","قراءة"],["الخميس","Mathematik","تطبيقات","اختبار قصير"],["الجمعة","مراجعة عامة","حل الواجبات","تقييم أسبوعي"]].map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 }
 function renderAssignments() {
@@ -325,6 +345,7 @@ function navigate(view) {
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
  if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
  if(view==="zfa-application"){ renderZfaApplication(); return; }
+ if(view==="zfa-simulation"){ zfaSimulationIndex=0; zfaSimulationScore=0; zfaSimulationAnswered=false; renderZfaSimulation(); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
@@ -339,7 +360,11 @@ document.addEventListener("click",e=>{
  const lesson=e.target.closest("[data-lesson]"); if(lesson){const l=allLessons().find(x=>x.id===lesson.dataset.lesson);if(l){currentCourse=courses.find(c=>c.id===l.courseId);setActive("library");openLesson(l.id);}return;}
  const speakButton=e.target.closest("[data-speak]");
  if(speakButton){speakText(speakButton.dataset.speak,speakButton.dataset.lang||"de-DE");return;}
+ const simChoice=e.target.closest("[data-sim-choice]");
+ if(simChoice&&!zfaSimulationAnswered){const answers=[0,1,2,0,1,0,2,1];const explanations=["راجعي جدول المواعيد وجهزي مكان العمل وفق تعليمات الفريق.","التحية المهذبة والسؤال عن الموعد أسلوب استقبال مهني.","استمعي للمريض وانقلي المعلومات للطبيب ولا تشخّصي الحالة.","السؤال عند عدم التأكد يحافظ على سلامة العمل.","التعاطف والهدوء يساعدان المريض.","تحققي من البيانات وفق إجراءات العيادة.","معلومات المرضى سرية.","التوثيق والتسليم وترتيب المكان جزء من العمل المسؤول."];const choice=Number(simChoice.dataset.simChoice),correct=answers[zfaSimulationIndex],ok=choice===correct;if(ok)zfaSimulationScore++;zfaSimulationAnswered=true;document.querySelectorAll("[data-sim-choice]").forEach((b,i)=>{b.disabled=true;b.classList.toggle("selected-correct",i===correct);b.classList.toggle("selected-wrong",i===choice&&!ok);});const f=document.getElementById("zfa-sim-feedback");f.hidden=false;f.className="zfa-sim-feedback "+(ok?"correct":"incorrect");f.textContent=(ok?"إجابة صحيحة ✓ ":"ليست الإجابة الأفضل. ")+explanations[zfaSimulationIndex];document.querySelector('[data-action="zfa-sim-next"]').disabled=false;return;}
  const action=e.target.closest("[data-action]")?.dataset.action;
+ if(action==="zfa-sim-next"){zfaSimulationIndex++;zfaSimulationAnswered=false;renderZfaSimulation();return;}
+ if(action==="zfa-sim-restart"){zfaSimulationIndex=0;zfaSimulationScore=0;zfaSimulationAnswered=false;renderZfaSimulation();return;}
  if(action==="zfa-refresh-draft"){notify("تم تحديث مسودات التقديم");}
  if(action==="zfa-copy-cover"||action==="zfa-copy-cv"){const id=action==="zfa-copy-cover"?"zfa-cover-preview":"zfa-cv-preview";const textToCopy=document.getElementById(id)?.textContent||"";if(navigator.clipboard?.writeText){navigator.clipboard.writeText(textToCopy).then(()=>notify("تم نسخ النص")).catch(()=>notify("تعذر النسخ؛ حددي النص وانسخيه"));}else{notify("حددي النص وانسخيه يدوياً");}}
  if(action==="zfa-open"){document.getElementById("zfa-unit-"+e.target.closest("[data-unit]").dataset.unit)?.scrollIntoView({behavior:"smooth"});}
