@@ -1,0 +1,278 @@
+{
+  "meta": {
+    "title": "Offizieller KMK-Rahmenlehrplan ZFA",
+    "decision": "KMK-Beschluss 17.12.2021",
+    "regulation": "ZahnmedAusbV vom 16.03.2022, in Kraft seit 01.08.2022",
+    "totalHours": 840,
+    "yearHours": [
+      280,
+      280,
+      280
+    ],
+    "note": "Die 13 Lernfelder und Zeitrichtwerte folgen dem KMK-Rahmenlehrplan. Die arabischen Erläuterungen, Lernaufgaben und Prüfungsfälle sind eigenständig erstellte Lernhilfen. Sie ersetzen weder Berufsschulunterricht noch betriebliche Unterweisung."
+  },
+  "fields": [
+    {
+      "n": 1,
+      "year": 1,
+      "hours": 80,
+      "title": "Die eigene Rolle im Ausbildungsbetrieb mitgestalten",
+      "ar": "تكوين الدور المهني داخل مكان التدريب",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "الدور المهني",
+        "نظام الرعاية الصحية",
+        "عقد التدريب BBiG",
+        "قانون العمل والأجور والتأمينات",
+        "السلامة المهنية",
+        "الصحة والراحة الجسدية",
+        "العمل الجماعي والتواصل والبيئة."
+      ],
+      "tasks": [
+        "تحليل عقد تدريب وكشف راتب، تحديد مخاطر مكان العمل، حل موقف تواصل داخل الفريق."
+      ],
+      "assessment": "Fallaufgabe: Ausbildungsvertrag, Arbeitsschutz und Kommunikation."
+    },
+    {
+      "n": 2,
+      "year": 1,
+      "hours": 60,
+      "title": "Patienten empfangen und begleiten",
+      "ar": "استقبال المرضى ومرافقتهم",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "استقبال المرضى",
+        "التواصل مع فئات مختلفة",
+        "الشكاوى والقلق",
+        "عقد العلاج والتفويض",
+        "السرية وحماية البيانات",
+        "أخذ التاريخ المرضي Anamnese",
+        "مخطط الأسنان ومصطلحاتها."
+      ],
+      "tasks": [
+        "محاكاة استقبال مريض، تجهيز استمارة Anamnese، معالجة بيانات حساسة، قراءة مخطط الأسنان."
+      ],
+      "assessment": "Fallaufgabe: Empfang, Anamnese, Datenschutz und Dokumentation."
+    },
+    {
+      "n": 3,
+      "year": 1,
+      "hours": 80,
+      "title": "Hygienemaßnahmen organisieren und Medizinprodukte aufbereiten",
+      "ar": "تنظيم النظافة وتجهيز الأدوات الطبية",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "طرق انتقال العدوى",
+        "نظافة اليدين ووسائل الوقاية",
+        "خطة النظافة",
+        "السلامة والمواد الخطرة",
+        "تصنيف الأدوات حسب الخطورة",
+        "التنظيف والتطهير والتجفيف والفحص والتغليف والتعقيم والتوثيق والإفراج والتخزين."
+      ],
+      "tasks": [
+        "رسم سلسلة النظافة، تصنيف الأدوات، فحص سجل التعقيم، اكتشاف أخطاء المعالجة."
+      ],
+      "assessment": "Teil 1 GAP: Hygiene und Aufbereitung von Medizinprodukten."
+    },
+    {
+      "n": 4,
+      "year": 1,
+      "hours": 60,
+      "title": "Patienten bei der Kariestherapie begleiten",
+      "ar": "مرافقة المرضى في علاج التسوس",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "تشريح السن: Schmelz وDentin وPulpa",
+        "نشوء التسوس ومراحله وتشخيصه",
+        "علاج الحشوات",
+        "الأدوات الدوارة واليدوية",
+        "العزل والمواد المؤقتة والدائمة",
+        "التحضير والمساعدة والتوثيق والفوترة."
+      ],
+      "tasks": [
+        "اختيار أدوات الحشوة، تجهيز كرسي العلاج، شرح خطوات العلاج للمريض، إعداد توثيق الحالة."
+      ],
+      "assessment": "Praxisfall: Kariestherapie, Instrumente und Dokumentation."
+    },
+    {
+      "n": 5,
+      "year": 2,
+      "hours": 60,
+      "title": "Patienten bei endodontischen Behandlungen begleiten",
+      "ar": "مرافقة المرضى في علاج جذور الأسنان",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "التهاب لب السن والأنسجة",
+        "تشريح الجذر والقنوات",
+        "التشخيص والعلاج اللبي",
+        "التخدير",
+        "الأدوات ومحاليل الإرواء والمواد",
+        "التحضير والمساعدة والنظافة والتوثيق والفوترة."
+      ],
+      "tasks": [
+        "ترتيب أدوات علاج الجذور، تجهيز غرفة العلاج، شرح الإجراء، استكمال ملف الحالة."
+      ],
+      "assessment": "Praxisfall: Endodontie und Assistenz."
+    },
+    {
+      "n": 6,
+      "year": 2,
+      "hours": 60,
+      "title": "Patienten bei chirurgischen Behandlungen begleiten",
+      "ar": "مرافقة المرضى في المعالجات الجراحية",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "القلع وOsteotomie واستئصال ذروة الجذر والزرع",
+        "التشريح والمخاطر",
+        "المساعدة المعقمة وغير المعقمة",
+        "الأدوات والخيوط وإيقاف النزف",
+        "مجموعات الأدوية",
+        "تعليمات ما بعد الجراحة والتوثيق والفوترة."
+      ],
+      "tasks": [
+        "تمييز مجموعات الأدوات، تنظيم الحقل المعقم، إعداد إرشادات ما بعد الجراحة، توثيق العملية."
+      ],
+      "assessment": "Praxisfall: Chirurgie, Sterilität und Nachsorge."
+    },
+    {
+      "n": 7,
+      "year": 2,
+      "hours": 40,
+      "title": "Medizinische Notfälle begleiten",
+      "ar": "التعامل مع الحالات الطبية الطارئة",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "إدارة الطوارئ وتوزيع الأدوار",
+        "فحص الوعي والتنفس والدورة الدموية",
+        "الإغماء والحساسية الشديدة والربو وهبوط السكر والاختلاجات والجلطة",
+        "تجهيزات الطوارئ والحماية الذاتية والإبلاغ والتوثيق."
+      ],
+      "tasks": [
+        "محاكاة مكالمة الطوارئ، توزيع أدوار الفريق، التعرف على علامات الخطر، فحص حقيبة الطوارئ."
+      ],
+      "assessment": "Notfallsimulation und schriftliche Fallanalyse."
+    },
+    {
+      "n": 8,
+      "year": 2,
+      "hours": 40,
+      "title": "Patienten bei parodontologischen Behandlungen begleiten",
+      "ar": "مرافقة المرضى في علاج أمراض دواعم السن",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "تشريح دواعم السن",
+        "Gingivitis وParodontitis",
+        "عوامل الخطورة وتأثير الأمراض العامة والتدخين والنظافة",
+        "الفحص اللثوي",
+        "أدوات العلاج",
+        "تحفيز المريض وتعليمه العناية الفموية والتوثيق."
+      ],
+      "tasks": [
+        "مقارنة اللثة السليمة والمريضة، تحليل عوامل الخطر، إعداد إرشاد نظافة فموية، مطابقة الأدوات للعلاج."
+      ],
+      "assessment": "Praxisfall: Parodontitis und Patienteninstruktion."
+    },
+    {
+      "n": 9,
+      "year": 2,
+      "hours": 80,
+      "title": "Praxisbedarf beschaffen und verwalten",
+      "ar": "شراء احتياجات العيادة وإدارة المخزون",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "إدارة المخزون وشروط التخزين",
+        "تحديد الاحتياج والحد الأدنى",
+        "مقارنة عروض الأسعار والطلب والاستلام",
+        "الفواتير والتسليم والشكاوى",
+        "الكلفة والاستدامة",
+        "الأنظمة الرقمية وتواريخ الصلاحية."
+      ],
+      "tasks": [
+        "فحص قائمة المخزون، مقارنة ثلاثة عروض، إعداد طلبية، فحص البضاعة وتواريخ الصلاحية."
+      ],
+      "assessment": "Beschaffungsfall: Angebote, Bestellung und Wareneingang."
+    },
+    {
+      "n": 10,
+      "year": 3,
+      "hours": 80,
+      "title": "Patienten bei prophylaktischen und kieferorthopädischen Behandlungen begleiten",
+      "ar": "مرافقة المرضى في الوقاية وتقويم الأسنان",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "الوقاية الفردية والجماعية",
+        "اللويحة والوقاية من التسوس واللثة",
+        "الاستشارة وأدوات التنظيف والتحفيز",
+        "الفلورايد",
+        "أساسيات تقويم الأسنان وأجهزة ثابتة ومتحركة",
+        "المساعدة والتوثيق والفوترة."
+      ],
+      "tasks": [
+        "إعداد استشارة نظافة فموية، اختيار أدوات الوقاية، شرح العناية بجهاز التقويم، توثيق المواعيد."
+      ],
+      "assessment": "Beratungsfall: Prophylaxe oder Kieferorthopädie."
+    },
+    {
+      "n": 11,
+      "year": 3,
+      "hours": 80,
+      "title": "Patienten bei prothetischen Behandlungen begleiten",
+      "ar": "مرافقة المرضى في التعويضات السنية",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "أنواع التعويضات الثابتة والمتحركة والمركبة",
+        "خطوات العلاج والأدوات والمواد",
+        "الطبعات والمؤقتات والتجربة والتركيب",
+        "التعاون مع مختبر الأسنان",
+        "Heil- und Kostenplan",
+        "الرعاية اللاحقة والتوثيق والفوترة."
+      ],
+      "tasks": [
+        "تمييز أنواع التعويض، إعداد طلب المختبر، شرح خطة التكاليف، إرشاد المريض للعناية بالتعويض."
+      ],
+      "assessment": "Praxisfall: Zahnersatz, Laborauftrag und Heil- und Kostenplan."
+    },
+    {
+      "n": 12,
+      "year": 3,
+      "hours": 40,
+      "title": "Bildgebende Verfahren und Strahlenschutzmaßnahmen anwenden",
+      "ar": "التصوير الطبي والوقاية من الإشعاع",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "أساسيات الأشعة المؤينة",
+        "قانون ولوائح الوقاية من الإشعاع",
+        "أجهزة الأشعة والصور داخل وخارج الفم",
+        "الاستطباب والتموضع والحماية",
+        "جودة الصورة والأخطاء",
+        "التوثيق ومتطلبات إثبات المعرفة."
+      ],
+      "tasks": [
+        "تحديد وسائل الحماية، اكتشاف أخطاء التموضع بصور تدريبية، تقليل إعادة التصوير، تجهيز التوثيق."
+      ],
+      "assessment": "Lernaufgabe: Bildgebung und Strahlenschutz; nur unter den gesetzlichen Voraussetzungen und fachkundiger Aufsicht."
+    },
+    {
+      "n": 13,
+      "year": 3,
+      "hours": 80,
+      "title": "Arbeitsprozesse organisieren und optimieren",
+      "ar": "تنظيم عمليات العمل وتحسينها",
+      "competence": "Die berufliche Handlung selbstständig, patientenorientiert, sicher und im Team planen, durchführen, dokumentieren und reflektieren.",
+      "topics": [
+        "تنظيم العيادة والعمليات",
+        "إدارة الجودة وقوائم الفحص",
+        "إدارة الفريق والتواصل",
+        "جداول الدوام والإجازات",
+        "التوثيق والبيانات والرقمنة",
+        "العقود والتطوير المهني",
+        "الفواتير والتحصيل والإنذارات المالية",
+        "التحسين المستمر والاستدامة."
+      ],
+      "tasks": [
+        "رسم سير العمل وتحديد الخلل، إنشاء قائمة جودة، إعداد جدول دوام، مراجعة التحصيل ومحاكاة تذكير مالي."
+      ],
+      "assessment": "Prüfungsfall: Praxisorganisation, Qualitätsmanagement und Verwaltung."
+    }
+  ]
+}
