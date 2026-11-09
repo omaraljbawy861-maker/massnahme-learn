@@ -1,28 +1,6 @@
 {
-  "version": 4,
+  "version": 5,
   "items": [
-    {
-      "id": "math-fractions-01",
-      "subject": "mathematics",
-      "subjectName": "الرياضيات",
-      "title": "Brüche erweitern und kürzen – توسيع الكسور واختصارها",
-      "provider": "Lehrerschmidt",
-      "level": "ESA · Sekundarstufe I",
-      "type": "youtube",
-      "videoId": "GpTK8NbM_m0",
-      "description": "شرح توسيع الكسور واختصارها مع أمثلة واضحة."
-    },
-    {
-      "id": "math-fractions-02",
-      "subject": "mathematics",
-      "subjectName": "الرياضيات",
-      "title": "Brüche dividieren – قسمة الكسور",
-      "provider": "Lehrerschmidt",
-      "level": "ESA · Sekundarstufe I",
-      "type": "youtube",
-      "videoId": "Z_voa7rnihA",
-      "description": "شرح قسمة الكسور خطوة بخطوة."
-    },
     {
       "id": "de-cases",
       "subject": "german",
@@ -112,59 +90,191 @@
       "description": "فيلم رسوم متحركة عن يوم العمل ومهام مساعدة طبيب الأسنان."
     },
     {
-      "id": "math-fractions-add",
+      "id": "math-frac-intro",
       "subject": "mathematics",
       "subjectName": "الرياضيات",
-      "title": "Brüche addieren – جمع الكسور",
-      "provider": "Lehrerschmidt",
+      "title": "Bruchrechnung – Einführung",
+      "provider": "Lehrerschmidt · Kai Schmidt",
       "level": "ESA · Sekundarstufe I",
       "type": "youtube",
-      "videoId": "nrzpRozQnM4",
-      "description": "شرح جمع الكسور وتوحيد المقامات."
+      "videoId": "2MvyITxrU-g",
+      "description": "مقدمة في الكسور — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
     },
     {
-      "id": "math-fractions-sub",
+      "id": "math-numberline",
       "subject": "mathematics",
       "subjectName": "الرياضيات",
-      "title": "Brüche subtrahieren – طرح الكسور",
-      "provider": "Lehrerschmidt",
+      "title": "Bruch am Zahlenstrahl",
+      "provider": "Lehrerschmidt · Kai Schmidt",
       "level": "ESA · Sekundarstufe I",
       "type": "youtube",
-      "videoId": "uv0LSF8Ke90",
-      "description": "شرح طرح الكسور مع أمثلة."
+      "videoId": "A-beDBN-jCg",
+      "description": "تمثيل الكسر على خط الأعداد — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
     },
     {
-      "id": "math-fractions-mult",
+      "id": "math-decimal",
       "subject": "mathematics",
       "subjectName": "الرياضيات",
-      "title": "Brüche multiplizieren – ضرب الكسور",
-      "provider": "Lehrerschmidt",
+      "title": "Bruch in Kommazahl umwandeln",
+      "provider": "Lehrerschmidt · Kai Schmidt",
       "level": "ESA · Sekundarstufe I",
       "type": "youtube",
-      "videoId": "sRxSrGXgoF8",
-      "description": "شرح ضرب الكسور وتبسيط الناتج."
+      "videoId": "jimlv04pCPg",
+      "description": "تحويل الكسر إلى عدد عشري — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
     },
     {
-      "id": "math-fractions-part",
+      "id": "math-improper",
       "subject": "mathematics",
       "subjectName": "الرياضيات",
-      "title": "Bruchteile berechnen – حساب أجزاء الكسور",
-      "provider": "Lehrerschmidt",
+      "title": "Echter und unechter Bruch",
+      "provider": "Lehrerschmidt · Kai Schmidt",
       "level": "ESA · Sekundarstufe I",
       "type": "youtube",
-      "videoId": "-48NU9ifMOQ",
-      "description": "حساب جزء من عدد صحيح أو جزء من كسر."
+      "videoId": "ly-BeWi5Hp4",
+      "description": "الكسور الاعتيادية وغير الاعتيادية — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
     },
     {
-      "id": "math-common-denom",
+      "id": "math-mixed",
       "subject": "mathematics",
       "subjectName": "الرياضيات",
-      "title": "Gemeinsamen Nenner finden – إيجاد المقام المشترك",
-      "provider": "Landesbildungsserver Baden-Württemberg",
-      "level": "Sekundarstufe I",
+      "title": "Gemischte Zahl und unechter Bruch",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
       "type": "youtube",
-      "videoId": "4ImDIHkH5Ss",
-      "description": "شرح إيجاد المقام المشترك وتوحيد مقامات الكسور."
+      "videoId": "Jhw3ClZkEDk",
+      "description": "العدد الكسري وتحويله — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-simplify",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche kürzen und erweitern",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "j0nGj6N2bxk",
+      "description": "اختصار الكسور وتوسيعها — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-add",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche addieren – ausführlich",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "qH8gLQuOG_k",
+      "description": "جمع الكسور بالتفصيل — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-subtract",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche subtrahieren – ausführlich",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "1Q8lMtJt5EA",
+      "description": "طرح الكسور بالتفصيل — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-multiply",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche multiplizieren",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "T4qe84fHbX0",
+      "description": "ضرب الكسور — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-multiply-mixed",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche mit gemischten Zahlen multiplizieren",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "FYAB-IVdJxc",
+      "description": "ضرب الكسور مع الأعداد الكسرية — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-divide",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche dividieren",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "TbPB1Z428vU",
+      "description": "قسمة الكسور — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-compare",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Brüche vergleichen",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "o1B1gO3b8AI",
+      "description": "مقارنة الكسور — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-prime",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Primfaktorzerlegung",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "dcnkwELyugg",
+      "description": "التحليل إلى العوامل الأولية — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-negative",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Natürliche und negative Zahlen",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "44ANi3KvL7I",
+      "description": "الأعداد الطبيعية والسالبة — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-rational-add",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Rationale Zahlen addieren",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "8e4tovD_Hb0",
+      "description": "جمع الأعداد النسبية — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-rational-sub",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Rationale Zahlen subtrahieren",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "6OAbTKruL84",
+      "description": "طرح الأعداد النسبية — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
+    },
+    {
+      "id": "math-rational-mul",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات",
+      "title": "Rationale Zahlen multiplizieren",
+      "provider": "Lehrerschmidt · Kai Schmidt",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "bCffZc1w8kM",
+      "description": "ضرب الأعداد النسبية — شرح ألماني مرئي من مدرس متخصص مع أمثلة تطبيقية."
     }
   ]
 }
