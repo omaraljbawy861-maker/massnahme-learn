@@ -1,4 +1,6 @@
 import { loadCourses } from "./data.js?v=20261109-5";
+import { requireStudentSession } from "./auth.js";
+import { initializeStudentProgress } from "./progress.js";
 import { getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js";
 
 const content = document.querySelector("#appContent");
@@ -402,5 +404,10 @@ document.addEventListener("click",e=>{
 });
 document.querySelectorAll(".nav-link").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
 document.querySelector("#menuToggle").addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
-try { courses=await loadCourses(); renderDashboard(); }
-catch(error){content.innerHTML=`<div class="empty-state"><h2>تعذر تحميل بيانات المواد</h2><p>افتح المشروع باستخدام Live Server في Visual Studio Code، ولا تفتح index.html مباشرة.</p><small>${escapeHtml(error.message)}</small></div>`;}
+try {
+  const student = await requireStudentSession(content);
+  if (!student) throw new Error("يلزم تسجيل الدخول للمتابعة");
+  await initializeStudentProgress(student.id);
+  courses=await loadCourses();
+  renderDashboard();
+} catch(error){content.innerHTML=`<div class="empty-state"><h2>تعذر تحميل المنصة</h2><p>تحقق من اتصال الإنترنت وإعدادات تسجيل الدخول، ثم أعد تحميل الصفحة.</p><small>${escapeHtml(error.message)}</small></div>`;}
