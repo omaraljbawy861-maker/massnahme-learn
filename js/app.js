@@ -77,7 +77,7 @@ async function renderVideoLibrary(){
     if(!response.ok)throw new Error("تعذر تحميل مكتبة الفيديوهات");
     const data=await response.json();videoLibrary=data.items||[];
   }
-  const subjects=[...new Set(videoLibrary.map(v=>v.subject))].map(id=>({id,label:({mathematics:"الرياضيات",german:"الألمانية",english:"الإنجليزية",biology:"الأحياء",politics:"السياسة",history:"التاريخ",zfa:"طب الأسنان ZFA",all:"مواد متعددة"})[id]||id}));
+  const subjects=[...new Set(videoLibrary.map(v=>v.subject))].map(id=>({id,label:({mathematics:"الرياضيات",german:"الألمانية",english:"الإنجليزية",biology:"الأحياء",politics:"السياسة",history:"التاريخ",zfa:"طب الأسنان ZFA",worklife:"العمل والحياة المهنية", "german-b1":"الألمانية B1", "german-b2":"الألمانية B2",all:"مواد متعددة"})[id]||id}));
   content.innerHTML=`<div class="page-intro"><span class="eyebrow">VIDEO CAMPUS · مكتبة المشاهدة</span><h1>مكتبة الفيديوهات التعليمية</h1><p>محتوى تعليمي مرئي منتقى من جهات تعليمية ألمانية، مع مساحة مشاهدة داخل المنصة.</p></div>
   <div class="video-library-toolbar"><input id="videoSearch" class="language-search" placeholder="ابحث عن مادة أو موضوع أو جهة تعليمية..."><select id="videoSubjectFilter"><option value="all">كل المواد</option>${subjects.map(x=>`<option value="${x.id}">${x.label}</option>`).join("")}</select></div>
   <div class="video-campus-layout"><section><div class="video-grid" id="videoGrid">${videoLibrary.map(videoCard).join("")}</div></section><aside class="video-player-panel" id="videoPlayerPanel"><div class="video-player-empty"><span>▶</span><h3>مساحة مشاهدة الدروس</h3><p>اختر محتوى من المكتبة لعرضه هنا دون مغادرة MAßNAHME LEARN.</p></div></aside></div>
