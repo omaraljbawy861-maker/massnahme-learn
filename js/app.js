@@ -9,7 +9,7 @@ let currentCourse = null;
 let currentLesson = null;
 let languageBank = null;
 
-const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية" };
+const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -155,6 +155,55 @@ async function renderLanguage(lang){
  const search=document.querySelector('#vocabSearch');search.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();document.querySelectorAll('.vocab-card').forEach(card=>card.hidden=!card.dataset.search.includes(q));});
 }
 
+
+let intensiveGermanCache = null;
+async function renderIntensiveLevel(level) {
+  setActive("intensive-" + level.toLowerCase());
+  pageTitle.textContent = "الألمانية المكثفة " + level;
+  content.innerHTML = '<div class="empty-state"><h2>جارٍ تحميل دروس ' + level + '</h2><p>نجهز النصوص والمفردات والتدريبات...</p></div>';
+  try {
+    if (!intensiveGermanCache) {
+      const response = await fetch("./data/intensive_german.json?v=20261109-1");
+      if (!response.ok) throw new Error("HTTP " + response.status);
+      intensiveGermanCache = await response.json();
+    }
+    const units = intensiveGermanCache[level] || [];
+    const wordCount = units.reduce((n,u)=>n+u.v.length,0);
+    const sentenceCount = units.reduce((n,u)=>n+u.s.length,0);
+    content.innerHTML = `
+      <div class="page-intro"><span class="eyebrow">DEUTSCH INTENSIV · ${level}</span><h1>الألمانية المكثفة ${level}</h1><p>مسار مستقل ومتدرج لتطوير القراءة والاستماع والمفردات والقواعد والكتابة والمحادثة.</p></div>
+      <section class="stats-grid">
+        <article class="stat-card"><span class="stat-icon gold">▤</span><div><small>الوحدات المكثفة</small><strong>${units.length}</strong></div></article>
+        <article class="stat-card"><span class="stat-icon blue">A</span><div><small>المفردات</small><strong>${wordCount}</strong></div></article>
+        <article class="stat-card"><span class="stat-icon green">“</span><div><small>الجمل العملية</small><strong>${sentenceCount}</strong></div></article>
+        <article class="stat-card"><span class="stat-icon purple">▶</span><div><small>نصوص القراءة</small><strong>${units.length}</strong></div></article>
+      </section>
+      <div class="language-toolbar"><button class="secondary-btn" data-action="intensive-switch" data-level="${level==="B1"?"B2":"B1"}">الانتقال إلى مستوى ${level==="B1"?"B2":"B1"} ←</button><button class="secondary-btn" data-action="stop-audio">■ إيقاف الاستماع</button></div>
+      <div class="topic-grid">${units.map((u,i)=>`<article class="topic-card"><small>${level} · EINHEIT ${String(i+1).padStart(2,"0")}</small><h3>${escapeHtml(u.title)}</h3><p>${escapeHtml(u.de)}</p><button class="mini-btn" data-action="intensive-open" data-unit="${i}">افتح الوحدة ↓</button></article>`).join("")}</div>
+      ${units.map((u,i)=>`
+        <section class="language-section" id="intensive-unit-${i}">
+          <div class="section-heading"><div><span class="eyebrow">${level} · LEKTION ${i+1}</span><h2>${escapeHtml(u.title)}</h2><p>${escapeHtml(u.de)}</p></div></div>
+          <article class="panel" style="padding:20px">
+            <h3>Lesetext · نص القراءة</h3>
+            <p lang="de" style="direction:ltr;text-align:left;line-height:2;font-size:1.05rem">${escapeHtml(u.text)}</p>
+            <div class="action-row"><button class="listen-btn" data-speak="${escapeHtml(u.text)}" data-lang="de-DE">▶ استمع إلى النص الألماني</button><button class="secondary-btn" data-action="intensive-translation" data-unit="${i}">إظهار الترجمة العربية</button></div>
+            <p id="intensive-translation-${i}" class="translation" hidden>${escapeHtml(u.translation)}</p>
+            <h3>Grammatik · قاعدة لغوية</h3><p>${escapeHtml(u.g)}</p>
+            <h3>Wortschatz · مفردات الوحدة (${u.v.length})</h3>
+            <div class="vocab-grid">${u.v.map((w,j)=>`<article class="vocab-card"><small>${String(j+1).padStart(2,"0")}</small><strong lang="de">${escapeHtml(w[0])}</strong><span>${escapeHtml(w[1])}</span><button class="listen-small" data-speak="${escapeHtml(w[0])}" data-lang="de-DE">🔊</button></article>`).join("")}</div>
+            <h3>Praktische Sätze · جمل عملية</h3>
+            <div class="sentence-grid">${u.s.map(s=>`<article class="sentence-card"><p lang="de" style="direction:ltr;text-align:left">${escapeHtml(s[0])}</p><span>${escapeHtml(s[1])}</span><button class="listen-btn" data-speak="${escapeHtml(s[0])}" data-lang="de-DE">🔊 استمع للجملة</button></article>`).join("")}</div>
+            <h3>Intensivtraining · تدريب مكثف</h3>
+            <ol><li>لخّص النص بالألمانية في 4 إلى 6 جمل.</li><li>اكتب خمس جمل جديدة باستخدام مفردات الوحدة.</li><li>تحدث لمدة دقيقة إلى دقيقتين عن الموضوع وسجّل صوتك للمراجعة.</li><li>اكتب رسالة أو فقرة قصيرة مرتبطة بموضوع الوحدة.</li></ol>
+            <details><summary>نموذج بداية للإجابة الكتابية</summary><p lang="de" style="direction:ltr;text-align:left">Meiner Meinung nach ist dieses Thema wichtig. Ein Grund dafür ist, dass ... Außerdem sollte man berücksichtigen, dass ... Zusammenfassend lässt sich sagen, dass ...</p></details>
+          </article>
+        </section>`).join("")}
+      <div class="panel" style="padding:20px"><h3>خطة مذاكرة مقترحة للمستوى ${level}</h3><p>كل يوم: اقرأ نصاً بصوت مرتفع، احفظ 10 مفردات، كرر الجمل مع الاستماع، واكتب فقرة قصيرة. في نهاية الأسبوع أعد تلخيص الوحدات دون النظر إلى النصوص.</p></div>`;
+  } catch (error) {
+    content.innerHTML = '<div class="empty-state"><h2>تعذر تحميل المنهاج المكثف</h2><p>' + escapeHtml(error.message) + '</p></div>';
+  }
+}
+
 function renderSchedule() {
  content.innerHTML=`<div class="page-intro"><span class="eyebrow">WOCHENPLAN</span><h1>جدول الحصص الأسبوعي</h1><p>جدول مقترح قابل للتعديل لاحقاً حسب برنامج Maßnahme الخاص بك.</p></div><table class="schedule-table"><thead><tr><th>اليوم</th><th>الحصة الأولى</th><th>الحصة الثانية</th><th>الحصة الثالثة</th></tr></thead><tbody>${[["الاثنين","Deutsch","Mathematik","مراجعة"],["الثلاثاء","Mathematik","English","تدريبات"],["الأربعاء","Deutsch","English","قراءة"],["الخميس","Mathematik","تطبيقات","اختبار قصير"],["الجمعة","مراجعة عامة","حل الواجبات","تقييم أسبوعي"]].map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 }
@@ -168,6 +217,8 @@ function renderExams() {
  document.querySelector("#examForm").addEventListener("submit",e=>{e.preventDefault();let score=0;qs.forEach((q,i)=>{const v=document.querySelector(`input[name="exam${i}"]:checked`);if(v&&Number(v.value)===q.correct)score++;});document.querySelector("#examResult").textContent=`نتيجتك: ${score} من ${qs.length} (${Math.round(score/qs.length*100)}%)`;});
 }
 function navigate(view) {
+ if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
+ if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
@@ -183,6 +234,9 @@ document.addEventListener("click",e=>{
  const speakButton=e.target.closest("[data-speak]");
  if(speakButton){speakText(speakButton.dataset.speak,speakButton.dataset.lang||"de-DE");return;}
  const action=e.target.closest("[data-action]")?.dataset.action;
+ if(action==="intensive-switch")navigate("intensive-"+e.target.closest("[data-level]").dataset.level.toLowerCase());
+ if(action==="intensive-open"){document.getElementById("intensive-unit-"+e.target.closest("[data-unit]").dataset.unit)?.scrollIntoView({behavior:"smooth"});}
+ if(action==="intensive-translation"){const i=e.target.closest("[data-unit]").dataset.unit;const el=document.getElementById("intensive-translation-"+i);if(el)el.hidden=!el.hidden;}
  if(action==="open-library")navigate("library");
  if(action==="phrases")navigate("phrases");
  if(action==="language-de")navigate("language-de");
