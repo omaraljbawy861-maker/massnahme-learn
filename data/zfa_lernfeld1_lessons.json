@@ -1,0 +1,535 @@
+{
+  "version": 1,
+  "course": "ZFA",
+  "field": 1,
+  "title": "Die eigene Rolle im Ausbildungsbetrieb mitgestalten",
+  "titleAr": "المشاركة في تنظيم الدور المهني داخل مكان التدريب",
+  "sourceNote": "مواد تعليمية أصلية من إعداد MAßNAHME LEARN، مبنية على إطار KMK الرسمي؛ ليست نصاً حكومياً أو بديلاً عن تعليمات العيادة والمدرسة.",
+  "lessons": [
+    {
+      "id": "zfa-lf1-01",
+      "number": 1,
+      "title": "Die Zahnarztpraxis kennenlernen",
+      "titleAr": "التعرّف إلى عيادة الأسنان",
+      "german": "Eine Zahnarztpraxis ist ein medizinischer Arbeitsplatz. Hier arbeiten Zahnärztinnen, Zahnärzte und Zahnmedizinische Fachangestellte zusammen. Das Team untersucht und behandelt Patientinnen und Patienten. Jede Person hat klare Aufgaben und Verantwortlichkeiten.",
+      "arabic": "عيادة الأسنان مكان عمل طبي. يعمل فيها أطباء الأسنان ومساعدو/مساعدات طب الأسنان ضمن فريق واحد. يستقبل الفريق المرضى ويفحصهم ويعالجهم. لكل شخص مهام ومسؤوليات محددة.",
+      "vocabulary": [
+        [
+          "die Zahnarztpraxis",
+          "عيادة الأسنان"
+        ],
+        [
+          "das Team",
+          "الفريق"
+        ],
+        [
+          "die Behandlung",
+          "العلاج"
+        ],
+        [
+          "die Aufgabe",
+          "المهمة"
+        ]
+      ],
+      "practice": "اكتب ثلاثة أشخاص أو أدوار يمكن أن تعمل في العيادة، وحدد مهمة واحدة لكل دور.",
+      "question": "Wer gehört zum Praxisteam?",
+      "options": [
+        "Nur die Zahnärztin",
+        "Zahnärztinnen, ZFA und weitere Mitarbeitende",
+        "Nur die Patienten"
+      ],
+      "correct": 1,
+      "explanation": "يعمل في العيادة فريق متعدد الأدوار."
+    },
+    {
+      "id": "zfa-lf1-02",
+      "number": 2,
+      "title": "Aufgaben einer ZFA",
+      "titleAr": "مهام مساعدة طبيب الأسنان",
+      "german": "ZFA unterstützen die Behandlungen, bereiten den Behandlungsplatz vor, betreuen Patientinnen und Patienten und dokumentieren wichtige Informationen. Sie arbeiten nach Anweisung und innerhalb ihrer beruflichen Kompetenz. Medizinische Diagnosen und Behandlungsentscheidungen trifft die Zahnärztin oder der Zahnarzt.",
+      "arabic": "تساعد ZFA في العلاج، وتجهز مكان العمل، وتهتم بالمرضى، وتوثق المعلومات المهمة. تعمل وفق التعليمات وضمن حدود اختصاصها. التشخيص والقرارات العلاجية من مسؤولية طبيب الأسنان.",
+      "vocabulary": [
+        [
+          "vorbereiten",
+          "يحضّر"
+        ],
+        [
+          "betreuen",
+          "يعتني"
+        ],
+        [
+          "dokumentieren",
+          "يوثّق"
+        ],
+        [
+          "die Kompetenz",
+          "الكفاءة"
+        ]
+      ],
+      "practice": "اذكر مهمتين يمكن لمساعدة الأسنان القيام بهما، ومهمة ليست من صلاحيتها.",
+      "question": "Wer stellt die Diagnose?",
+      "options": [
+        "Die ZFA allein",
+        "Die Zahnärztin oder der Zahnarzt",
+        "Der Empfang"
+      ],
+      "correct": 1,
+      "explanation": "التشخيص الطبي مسؤولية طبيب الأسنان."
+    },
+    {
+      "id": "zfa-lf1-03",
+      "number": 3,
+      "title": "Räume und Bereiche der Praxis",
+      "titleAr": "غرف وأقسام العيادة",
+      "german": "Eine Praxis hat verschiedene Bereiche: Empfang, Wartezimmer, Behandlungszimmer, Aufbereitungsbereich und Büro. Jeder Bereich hat eine bestimmte Funktion. Saubere und unreine Arbeitsabläufe müssen nach dem Hygieneplan getrennt werden.",
+      "arabic": "تضم العيادة أقساماً مختلفة: الاستقبال، غرفة الانتظار، غرفة العلاج، منطقة إعادة معالجة الأدوات، والمكتب. لكل قسم وظيفة. يجب فصل مسارات العمل النظيف والملوث وفق خطة النظافة.",
+      "vocabulary": [
+        [
+          "der Empfang",
+          "الاستقبال"
+        ],
+        [
+          "das Wartezimmer",
+          "غرفة الانتظار"
+        ],
+        [
+          "das Behandlungszimmer",
+          "غرفة العلاج"
+        ],
+        [
+          "der Aufbereitungsbereich",
+          "منطقة معالجة الأدوات"
+        ]
+      ],
+      "practice": "ارسم مخططاً بسيطاً للعيادة وحدد وظيفة كل غرفة.",
+      "question": "Wo wartet ein Patient vor der Behandlung?",
+      "options": [
+        "Im Wartezimmer",
+        "Im Sterilisatorraum",
+        "Im Büro"
+      ],
+      "correct": 0,
+      "explanation": "ينتظر المريض عادة في غرفة الانتظار."
+    },
+    {
+      "id": "zfa-lf1-04",
+      "number": 4,
+      "title": "Der erste Kontakt am Empfang",
+      "titleAr": "أول تواصل عند الاستقبال",
+      "german": "Am Empfang begrüßt die ZFA die Patientinnen und Patienten freundlich. Sie fragt nach dem Namen und dem Termin und prüft die Angaben nach den Praxisregeln. Persönliche Informationen dürfen nicht laut oder für andere hörbar besprochen werden.",
+      "arabic": "ترحب المساعدة بالمرضى بلطف عند الاستقبال. تسأل عن الاسم والموعد وتتحقق من البيانات وفق قواعد العيادة. لا يجوز مناقشة المعلومات الشخصية بصوت يسمعه الآخرون.",
+      "vocabulary": [
+        [
+          "begrüßen",
+          "يرحّب"
+        ],
+        [
+          "der Termin",
+          "الموعد"
+        ],
+        [
+          "die Angabe",
+          "المعلومة"
+        ],
+        [
+          "vertraulich",
+          "سري"
+        ]
+      ],
+      "practice": "تدرّب على استقبال مريض بجملتين بالألمانية.",
+      "question": "Wie begrüßt man einen Patienten professionell?",
+      "options": [
+        "Guten Morgen, wie kann ich Ihnen helfen?",
+        "Was wollen Sie?",
+        "Warten Sie einfach."
+      ],
+      "correct": 0,
+      "explanation": "التحية المهذبة والسؤال الودود أسلوب مهني."
+    },
+    {
+      "id": "zfa-lf1-05",
+      "number": 5,
+      "title": "Termine verstehen und prüfen",
+      "titleAr": "فهم المواعيد والتحقق منها",
+      "german": "Bei der Terminprüfung achtet die ZFA auf Datum, Uhrzeit, Name und gegebenenfalls den Behandlungsgrund. Bei Unklarheiten fragt sie nach oder bittet eine zuständige Person um Hilfe. Änderungen werden nach dem Praxisverfahren eingetragen.",
+      "arabic": "عند التحقق من الموعد تنتبه المساعدة إلى التاريخ والساعة والاسم وسبب الزيارة عند الحاجة. إذا لم تكن المعلومات واضحة تسأل أو تطلب مساعدة الشخص المسؤول. تسجل التعديلات وفق نظام العيادة.",
+      "vocabulary": [
+        [
+          "der Kalender",
+          "التقويم"
+        ],
+        [
+          "die Uhrzeit",
+          "الساعة"
+        ],
+        [
+          "prüfen",
+          "يتحقق"
+        ],
+        [
+          "verschieben",
+          "يؤجل"
+        ]
+      ],
+      "practice": "مريض يقول إن موعده الساعة العاشرة بينما يظهر في النظام الساعة العاشرة والنصف. ماذا تفعل؟",
+      "question": "Was ist bei einem Termin wichtig?",
+      "options": [
+        "Nur der Vorname",
+        "Datum, Uhrzeit und Identität prüfen",
+        "Den Termin ignorieren"
+      ],
+      "correct": 1,
+      "explanation": "يجب التحقق من البيانات وعدم التخمين."
+    },
+    {
+      "id": "zfa-lf1-06",
+      "number": 6,
+      "title": "Patientendaten sorgfältig aufnehmen",
+      "titleAr": "تسجيل بيانات المريض بدقة",
+      "german": "Patientendaten müssen korrekt und vollständig aufgenommen werden. Die ZFA prüft Schreibweise, Geburtsdatum und Kontaktdaten nach den geltenden Abläufen. Fehler können zu Verwechslungen führen. Änderungen werden nachvollziehbar dokumentiert.",
+      "arabic": "يجب تسجيل بيانات المريض بدقة واكتمال. تتحقق المساعدة من كتابة الاسم وتاريخ الميلاد وبيانات التواصل وفق الإجراءات. قد تسبب الأخطاء التباساً بين المرضى، لذلك توثق التعديلات بوضوح.",
+      "vocabulary": [
+        [
+          "das Geburtsdatum",
+          "تاريخ الميلاد"
+        ],
+        [
+          "die Kontaktdaten",
+          "بيانات التواصل"
+        ],
+        [
+          "vollständig",
+          "كامل"
+        ],
+        [
+          "die Verwechslung",
+          "الخلط"
+        ]
+      ],
+      "practice": "لماذا يجب التأكد من هوية المريض قبل فتح ملفه؟",
+      "question": "Warum prüft man Patientendaten?",
+      "options": [
+        "Damit keine Verwechslung entsteht",
+        "Aus Neugier",
+        "Damit die Behandlung länger dauert"
+      ],
+      "correct": 0,
+      "explanation": "التحقق يمنع خلط الملفات والمعلومات."
+    },
+    {
+      "id": "zfa-lf1-07",
+      "number": 7,
+      "title": "Datenschutz und Schweigepflicht",
+      "titleAr": "حماية البيانات والسرية المهنية",
+      "german": "Gesundheitsdaten sind besonders vertraulich. Mitarbeitende sprechen nur mit berechtigten Personen über Patientendaten und schützen Bildschirme und Unterlagen vor fremden Blicken. Die Schweigepflicht gilt auch außerhalb der Praxis.",
+      "arabic": "البيانات الصحية سرية بشكل خاص. لا يتحدث العاملون عن بيانات المريض إلا مع الأشخاص المخولين، ويحافظون على الشاشات والأوراق بعيداً عن أعين الآخرين. يستمر واجب السرية حتى خارج العيادة.",
+      "vocabulary": [
+        [
+          "der Datenschutz",
+          "حماية البيانات"
+        ],
+        [
+          "die Schweigepflicht",
+          "السرية المهنية"
+        ],
+        [
+          "berechtigt",
+          "مخوّل"
+        ],
+        [
+          "vertraulich",
+          "سري"
+        ]
+      ],
+      "practice": "زميل يسألك في مكان عام عن مرض أحد المرضى. كيف تتصرف؟",
+      "question": "Darf man Patientendaten öffentlich erzählen?",
+      "options": [
+        "Ja, wenn man den Namen kennt",
+        "Nein, Gesundheitsdaten sind vertraulich",
+        "Nur am Wochenende"
+      ],
+      "correct": 1,
+      "explanation": "لا يجوز كشف بيانات المريض في الأماكن العامة."
+    },
+    {
+      "id": "zfa-lf1-08",
+      "number": 8,
+      "title": "Kommunikation im Praxisteam",
+      "titleAr": "التواصل ضمن فريق العيادة",
+      "german": "Gute Teamkommunikation ist klar, respektvoll und rechtzeitig. Wichtige Informationen werden an die zuständige Person weitergegeben. Bei Unsicherheit fragt die ZFA nach, statt eine Aufgabe zu erraten.",
+      "arabic": "التواصل الجيد داخل الفريق واضح ومحترم وفي الوقت المناسب. تنقل المعلومات المهمة إلى الشخص المسؤول. وعند عدم التأكد تسأل المساعدة بدلاً من التخمين.",
+      "vocabulary": [
+        [
+          "weitergeben",
+          "ينقل"
+        ],
+        [
+          "zuständig",
+          "مسؤول"
+        ],
+        [
+          "die Rückfrage",
+          "استفسار"
+        ],
+        [
+          "respektvoll",
+          "باحترام"
+        ]
+      ],
+      "practice": "مثّل موقفاً تطلب فيه من زميلة إعادة شرح مهمة.",
+      "question": "Was macht man bei Unsicherheit?",
+      "options": [
+        "Raten",
+        "Nachfragen",
+        "Das Problem verstecken"
+      ],
+      "correct": 1,
+      "explanation": "السؤال أفضل من تنفيذ مهمة بطريقة غير صحيحة."
+    },
+    {
+      "id": "zfa-lf1-09",
+      "number": 9,
+      "title": "Telefonate professionell führen",
+      "titleAr": "إجراء المكالمات الهاتفية بمهنية",
+      "german": "Am Telefon nennt die ZFA den Praxisnamen und begrüßt freundlich. Sie hört aufmerksam zu, notiert wichtige Angaben und leitet medizinische Fragen an die zuständige Fachperson weiter. Sie gibt keine Diagnose am Telefon.",
+      "arabic": "تذكر المساعدة اسم العيادة وتحيي المتصل بلطف. تستمع جيداً وتدوّن المعلومات المهمة وتحيل الأسئلة الطبية إلى المختص. لا تقدم تشخيصاً عبر الهاتف.",
+      "vocabulary": [
+        [
+          "der Anruf",
+          "المكالمة"
+        ],
+        [
+          "der Rückruf",
+          "إعادة الاتصال"
+        ],
+        [
+          "notieren",
+          "يدوّن"
+        ],
+        [
+          "weiterleiten",
+          "يحوّل"
+        ]
+      ],
+      "practice": "اكتب افتتاحية مكالمة هاتفية مناسبة بالألمانية.",
+      "question": "Was tut die ZFA bei einer medizinischen Frage?",
+      "options": [
+        "Eine Diagnose stellen",
+        "An die zuständige Fachperson weiterleiten",
+        "Ein Medikament versprechen"
+      ],
+      "correct": 1,
+      "explanation": "تحيل السؤال الطبي إلى المختص ولا تشخص."
+    },
+    {
+      "id": "zfa-lf1-10",
+      "number": 10,
+      "title": "Umgang mit ängstlichen Patienten",
+      "titleAr": "التعامل مع المرضى الخائفين",
+      "german": "Manche Menschen haben Angst vor einer Zahnbehandlung. Die ZFA bleibt ruhig, hört zu und nimmt die Gefühle ernst. Sie erklärt organisatorische Abläufe in verständlicher Sprache und informiert das Behandlungsteam über wichtige Beobachtungen.",
+      "arabic": "قد يخاف بعض الأشخاص من علاج الأسنان. تبقى المساعدة هادئة وتستمع وتحترم مشاعر المريض. تشرح الإجراءات التنظيمية بلغة مفهومة وتخبر فريق العلاج بالملاحظات المهمة.",
+      "vocabulary": [
+        [
+          "ängstlich",
+          "خائف"
+        ],
+        [
+          "beruhigen",
+          "يهدّئ"
+        ],
+        [
+          "zuhören",
+          "يستمع"
+        ],
+        [
+          "die Beobachtung",
+          "ملاحظة"
+        ]
+      ],
+      "practice": "اكتب جملة ألمانية مطمئنة دون أن تعد المريض بنتيجة طبية.",
+      "question": "Wie reagiert man auf Angst?",
+      "options": [
+        "Ungeduldig werden",
+        "Ruhig zuhören und informieren",
+        "Die Angst auslachen"
+      ],
+      "correct": 1,
+      "explanation": "الهدوء والاستماع والتواصل المحترم."
+    },
+    {
+      "id": "zfa-lf1-11",
+      "number": 11,
+      "title": "Arbeitsplatz vorbereiten",
+      "titleAr": "تجهيز مكان العمل",
+      "german": "Vor einer Behandlung wird der Arbeitsplatz entsprechend dem Behandlungsplan und den Hygienevorgaben vorbereitet. Benötigte Materialien werden kontrolliert und bereitgelegt. Die ZFA prüft, ob der Platz sauber und funktionsbereit ist.",
+      "arabic": "قبل العلاج يجهز مكان العمل حسب خطة العلاج وتعليمات النظافة. تفحص المساعدة المواد المطلوبة وتضعها في المكان المناسب وتتأكد من نظافة المكان وجاهزيته.",
+      "vocabulary": [
+        [
+          "der Arbeitsplatz",
+          "مكان العمل"
+        ],
+        [
+          "das Material",
+          "المواد"
+        ],
+        [
+          "bereitstellen",
+          "يجهز"
+        ],
+        [
+          "funktionsbereit",
+          "جاهز للعمل"
+        ]
+      ],
+      "practice": "أنشئ قائمة من خمس نقاط لفحص مكان العمل قبل استقبال المريض.",
+      "question": "Was ist vor der Behandlung wichtig?",
+      "options": [
+        "Arbeitsplatz nach Hygieneplan vorbereiten",
+        "Material zufällig auswählen",
+        "Kontrollen auslassen"
+      ],
+      "correct": 0,
+      "explanation": "التحضير يتم وفق خطة العلاج والنظافة."
+    },
+    {
+      "id": "zfa-lf1-12",
+      "number": 12,
+      "title": "Arbeitsabläufe und Checklisten",
+      "titleAr": "سير العمل وقوائم التحقق",
+      "german": "Checklisten helfen, wiederkehrende Aufgaben zuverlässig auszuführen. Die ZFA arbeitet die Schritte in sinnvoller Reihenfolge ab und dokumentiert Besonderheiten. Eine Checkliste ersetzt keine fachliche Anweisung, sondern unterstützt die sichere Durchführung.",
+      "arabic": "تساعد قوائم التحقق على تنفيذ المهام المتكررة بشكل موثوق. تنفذ المساعدة الخطوات بالترتيب المناسب وتوثق الحالات الخاصة. القائمة لا تستبدل تعليمات المختص بل تدعم العمل الآمن.",
+      "vocabulary": [
+        [
+          "die Checkliste",
+          "قائمة تحقق"
+        ],
+        [
+          "der Ablauf",
+          "سير العمل"
+        ],
+        [
+          "zuverlässig",
+          "موثوق"
+        ],
+        [
+          "der Schritt",
+          "الخطوة"
+        ]
+      ],
+      "practice": "رتب خطوات استقبال المريض: التحية، التحقق من الموعد، توجيهه إلى الانتظار، إبلاغ الفريق.",
+      "question": "Wozu dient eine Checkliste?",
+      "options": [
+        "Zur Unterstützung sicherer Abläufe",
+        "Zum Ersetzen aller Regeln",
+        "Nur zur Dekoration"
+      ],
+      "correct": 0,
+      "explanation": "القائمة تذكّر بالخطوات وتقلل النسيان."
+    },
+    {
+      "id": "zfa-lf1-13",
+      "number": 13,
+      "title": "Dokumentation im Praxisalltag",
+      "titleAr": "التوثيق في الحياة اليومية للعيادة",
+      "german": "Dokumentation hält relevante Informationen sachlich, verständlich und zeitnah fest. Einträge müssen nachvollziehbar sein. Die ZFA dokumentiert nur im Rahmen ihrer Aufgaben und nach den Vorgaben der Praxis.",
+      "arabic": "يوثق العمل المعلومات المهمة بموضوعية ووضوح وفي وقت مناسب. يجب أن تكون الإدخالات قابلة للفهم والمراجعة. تسجل المساعدة ما يدخل ضمن مهامها ووفق تعليمات العيادة.",
+      "vocabulary": [
+        [
+          "die Dokumentation",
+          "التوثيق"
+        ],
+        [
+          "zeitnah",
+          "في الوقت المناسب"
+        ],
+        [
+          "nachvollziehbar",
+          "قابل للتتبع"
+        ],
+        [
+          "sachlich",
+          "موضوعي"
+        ]
+      ],
+      "practice": "ما صفات التوثيق الجيد؟ اذكر ثلاث صفات.",
+      "question": "Wie soll eine Dokumentation sein?",
+      "options": [
+        "Unklar und verspätet",
+        "Sachlich, verständlich und zeitnah",
+        "Mit persönlichen Vermutungen"
+      ],
+      "correct": 1,
+      "explanation": "التوثيق يجب أن يكون موضوعياً ومفهوماً وفي وقته."
+    },
+    {
+      "id": "zfa-lf1-14",
+      "number": 14,
+      "title": "Konflikte und Beschwerden",
+      "titleAr": "الخلافات والشكاوى",
+      "german": "Bei einer Beschwerde hört die ZFA ruhig zu und unterbricht nicht. Sie bleibt höflich, fasst das Anliegen zusammen und informiert die zuständige Person. Sie verspricht keine Lösung, die sie nicht selbst entscheiden darf.",
+      "arabic": "عند الشكوى تستمع المساعدة بهدوء دون مقاطعة. تبقى مهذبة وتلخص المشكلة وتبلغ الشخص المسؤول. لا تعد بحل لا تملك صلاحية اتخاذه.",
+      "vocabulary": [
+        [
+          "die Beschwerde",
+          "الشكوى"
+        ],
+        [
+          "das Anliegen",
+          "المطلب"
+        ],
+        [
+          "zusammenfassen",
+          "يلخّص"
+        ],
+        [
+          "höflich",
+          "مهذب"
+        ]
+      ],
+      "practice": "اكتب ثلاث خطوات للتعامل مع شكوى مريض.",
+      "question": "Was ist bei einer Beschwerde sinnvoll?",
+      "options": [
+        "Zuhören und zuständige Person informieren",
+        "Mit dem Patienten streiten",
+        "Die Beschwerde ignorieren"
+      ],
+      "correct": 0,
+      "explanation": "الاستماع والتلخيص والتصعيد للمسؤول."
+    },
+    {
+      "id": "zfa-lf1-15",
+      "number": 15,
+      "title": "Lernkontrolle: Praxisorganisation",
+      "titleAr": "مراجعة: تنظيم العمل في العيادة",
+      "german": "Eine gut organisierte Praxis verbindet freundlichen Empfang, korrekte Daten, Datenschutz, Teamkommunikation und vorbereitete Arbeitsplätze. Die ZFA handelt sorgfältig, kennt ihre Zuständigkeiten und fragt bei Unsicherheit nach.",
+      "arabic": "تجمع العيادة المنظمة بين الاستقبال اللطيف والبيانات الصحيحة وحماية الخصوصية والتواصل داخل الفريق وتجهيز أماكن العمل. تعمل المساعدة بدقة وتعرف حدود مسؤوليتها وتسأل عند عدم التأكد.",
+      "vocabulary": [
+        [
+          "die Zuständigkeit",
+          "حدود المسؤولية"
+        ],
+        [
+          "die Sorgfalt",
+          "الدقة"
+        ],
+        [
+          "die Wiederholung",
+          "المراجعة"
+        ],
+        [
+          "die Lernkontrolle",
+          "اختبار المراجعة"
+        ]
+      ],
+      "practice": "لخص في فقرة قصيرة كيف تساهم ZFA في تنظيم يوم العيادة.",
+      "question": "Was kennzeichnet professionelles Arbeiten?",
+      "options": [
+        "Sorgfalt, Datenschutz und Teamarbeit",
+        "Alle Aufgaben allein entscheiden",
+        "Ohne Dokumentation arbeiten"
+      ],
+      "correct": 0,
+      "explanation": "العمل المهني يعتمد على الدقة والسرية والعمل الجماعي."
+    }
+  ]
+}
