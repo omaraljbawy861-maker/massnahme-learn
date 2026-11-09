@@ -300,8 +300,8 @@ function renderZfaApplication() {
  const update=()=>{
   const val=id=>document.getElementById(id)?.value.trim()||"";
   const name=val("zfa-name")||"[Vorname Nachname]",address=val("zfa-address")||"[Adresse]",phone=val("zfa-phone")||"[Telefon]",email=val("zfa-email")||"[E-Mail]",clinic=val("zfa-clinic")||"[Name der Zahnarztpraxis]",city=val("zfa-city")||"[Ort, Datum]",school=val("zfa-school")||"[Schulabschluss]",language=val("zfa-language")||"[Deutschkenntnisse]",experience=val("zfa-experience")||"[Praktische Erfahrung]",strengths=val("zfa-strengths")||"[Persönliche Stärken]",motivation=val("zfa-motivation")||"Ich interessiere mich für Zahnmedizin und möchte einen medizinischen Beruf erlernen.";
-  const cover=name+"\\n"+address+"\\n"+phone+" · "+email+"\\n\\n"+clinic+"\\n\\n"+city+"\\n\\nBewerbung um einen Ausbildungsplatz als Zahnmedizinische Fachangestellte (ZFA)\\n\\nSehr geehrte Damen und Herren,\\n\\nhiermit bewerbe ich mich um einen Ausbildungsplatz als Zahnmedizinische Fachangestellte in Ihrer Praxis. "+motivation+"\\n\\nIch bin "+strengths+" und möchte meine Deutschkenntnisse ("+language+") weiter verbessern. Mein bisheriger schulischer Abschluss: "+school+". Praktische Erfahrungen: "+experience+".\\n\\nÜber die Möglichkeit, mich persönlich vorzustellen oder ein Praktikum zum gegenseitigen Kennenlernen zu absolvieren, würde ich mich sehr freuen.\\n\\nMit freundlichen Grüßen\\n"+name;
-  const cv="LEBENSLAUF\\n\\nPersönliche Daten\\nName: "+name+"\\nAdresse: "+address+"\\nTelefon: "+phone+"\\nE-Mail: "+email+"\\n\\nSchulbildung\\n"+school+"\\n\\nSprachkenntnisse\\nDeutsch: "+language+"\\n\\nPraktische Erfahrungen\\n"+experience+"\\n\\nPersönliche Stärken\\n"+strengths+"\\n\\nBerufliches Ziel\\nAusbildung zur Zahnmedizinischen Fachangestellten (ZFA)";
+  const cover=name+"\n"+address+"\n"+phone+" · "+email+"\n\n"+clinic+"\n\n"+city+"\n\nBewerbung um einen Ausbildungsplatz als Zahnmedizinische Fachangestellte (ZFA)\n\nSehr geehrte Damen und Herren,\n\nhiermit bewerbe ich mich um einen Ausbildungsplatz als Zahnmedizinische Fachangestellte in Ihrer Praxis. "+motivation+"\n\nIch bin "+strengths+" und möchte meine Deutschkenntnisse ("+language+") weiter verbessern. Mein bisheriger schulischer Abschluss: "+school+". Praktische Erfahrungen: "+experience+".\n\nÜber die Möglichkeit, mich persönlich vorzustellen oder ein Praktikum zum gegenseitigen Kennenlernen zu absolvieren, würde ich mich sehr freuen.\n\nMit freundlichen Grüßen\n"+name;
+  const cv="LEBENSLAUF\n\nPersönliche Daten\nName: "+name+"\nAdresse: "+address+"\nTelefon: "+phone+"\nE-Mail: "+email+"\n\nSchulbildung\n"+school+"\n\nSprachkenntnisse\nDeutsch: "+language+"\n\nPraktische Erfahrungen\n"+experience+"\n\nPersönliche Stärken\n"+strengths+"\n\nBerufliches Ziel\nAusbildung zur Zahnmedizinischen Fachangestellten (ZFA)";
   document.getElementById("zfa-cover-preview").textContent=cover;
   document.getElementById("zfa-cv-preview").textContent=cv;
  };
@@ -323,7 +323,8 @@ function renderExams() {
 function navigate(view) {
  if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
- if(view==="zfa-preparation"){ renderZfaPreparation(); return; }\n if(view==="zfa-application"){ renderZfaApplication(); return; }
+ if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
+ if(view==="zfa-application"){ renderZfaApplication(); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
