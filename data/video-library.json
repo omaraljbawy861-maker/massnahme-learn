@@ -1,25 +1,115 @@
 {
-  "version": 2,
+  "version": 3,
   "items": [
     {
       "id": "math-fractions-01",
       "subject": "mathematics",
       "subjectName": "الرياضيات",
       "title": "Brüche erweitern und kürzen – توسيع الكسور واختصارها",
-      "provider": "Lehrerschmidt · geprüfter YouTube-Kanal",
+      "provider": "Lehrerschmidt",
       "level": "ESA · Sekundarstufe I",
-      "embed": "https://www.youtube-nocookie.com/embed/GpTK8NbM_m0",
-      "description": "شرح مرئي مباشر للكسور: كيف نوسّع الكسر ونختصره، مع أمثلة خطوة بخطوة."
+      "type": "youtube",
+      "videoId": "GpTK8NbM_m0",
+      "description": "شرح توسيع الكسور واختصارها مع أمثلة واضحة."
     },
     {
       "id": "math-fractions-02",
       "subject": "mathematics",
       "subjectName": "الرياضيات",
       "title": "Brüche dividieren – قسمة الكسور",
-      "provider": "Lehrerschmidt · geprüfter YouTube-Kanal",
+      "provider": "Lehrerschmidt",
       "level": "ESA · Sekundarstufe I",
-      "embed": "https://www.youtube-nocookie.com/embed/Z_voa7rnihA",
-      "description": "شرح قسمة الكسور بطريقة مبسطة مع توضيح الخطوات والقواعد الأساسية."
+      "type": "youtube",
+      "videoId": "Z_voa7rnihA",
+      "description": "شرح قسمة الكسور خطوة بخطوة."
+    },
+    {
+      "id": "de-cases",
+      "subject": "german",
+      "subjectName": "Deutsch",
+      "title": "Die 4 Fälle – الحالات الإعرابية الأربع",
+      "provider": "BScE · Open Educational Resources",
+      "level": "Sekundarstufe I",
+      "type": "vimeo",
+      "videoId": "415443654",
+      "description": "شرح الحالات الأربع في اللغة الألمانية مع أمثلة وتدريب."
+    },
+    {
+      "id": "en-tenses",
+      "subject": "english",
+      "subjectName": "English",
+      "title": "Alle 12 englischen Zeitformen – الأزمنة الإنجليزية",
+      "provider": "English with Ty",
+      "level": "ESA · Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "P-fhoy_E9jg",
+      "description": "شرح مفصل للأزمنة الإنجليزية مع أمثلة واستخداماتها."
+    },
+    {
+      "id": "bio-cell",
+      "subject": "biology",
+      "subjectName": "Biologie",
+      "title": "Die Zelle – الخلية",
+      "provider": "Schulfilme",
+      "level": "Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "tP2c7MA31nk",
+      "description": "فيلم تعليمي عن تركيب الخلية والفرق بين الخلايا النباتية والحيوانية."
+    },
+    {
+      "id": "politics-system",
+      "subject": "politics",
+      "subjectName": "Politik",
+      "title": "Das politische System Deutschlands – النظام السياسي الألماني",
+      "provider": "MrWissen2go",
+      "level": "Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "jvJS8IyZvUc",
+      "description": "شرح البرلمان الألماني والبوندسرات والانتخابات والمؤسسات السياسية."
+    },
+    {
+      "id": "history-industrial-1",
+      "subject": "history",
+      "subjectName": "Geschichte",
+      "title": "Industrialisierung – الثورة الصناعية (1)",
+      "provider": "MrWissen2go",
+      "level": "Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "D-yeIB7kq84",
+      "description": "شرح بداية الثورة الصناعية وأسبابها وتطورها."
+    },
+    {
+      "id": "history-industrial-2",
+      "subject": "history",
+      "subjectName": "Geschichte",
+      "title": "Industrialisierung – الثورة الصناعية (2)",
+      "provider": "MrWissen2go",
+      "level": "Sekundarstufe I",
+      "type": "youtube",
+      "videoId": "BKeWVna-Bz8",
+      "description": "الآثار الاجتماعية للثورة الصناعية والمشكلات الاجتماعية."
+    },
+    {
+      "id": "zfa-image",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "Sei wie wir – werde ZFA",
+      "provider": "Landeszahnärztekammer Baden-Württemberg",
+      "level": "ZFA Ausbildung",
+      "type": "youtube",
+      "videoId": "_rSVBTbsP9I",
+      "description": "فيلم رسمي تعريفي عن مهنة ZFA ومهامها في عيادة الأسنان."
+    },
+    {
+      "id": "zfa-workday",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "ZFA – Ohne mich läuft hier nichts!",
+      "provider": "Bayerische Landeszahnärztekammer",
+      "level": "ZFA Ausbildung",
+      "type": "mp4",
+      "src": "https://content.jwplatform.com/videos/mUH6ZqMl-TLV6fume.mp4",
+      "description": "فيلم رسوم متحركة عن يوم العمل ومهام مساعدة طبيب الأسنان."
     }
   ]
 }
