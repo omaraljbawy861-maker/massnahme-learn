@@ -203,3 +203,28 @@ html.native-app .lesson-main{padding:14px}
 html.native-app .question,.html.native-app .task-card{padding:12px}
 html.native-app input,html.native-app textarea,html.native-app select{font-size:16px}
 @media(min-width:761px){html.native-app .content{padding:22px 24px 34px}html.native-app .subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}html.native-app .library-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+
+/* Cornelsen ZFA curriculum panel */
+.zfa-cornelsen{padding:22px;margin:22px 0;border:1px solid rgba(170,137,78,.25);background:linear-gradient(145deg,#fffdf8,#fff)}
+.zfa-cornelsen-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.zfa-cornelsen-heading h2{margin:7px 0;font-size:clamp(21px,3vw,29px)}
+.zfa-cornelsen-heading p{margin:0;color:var(--muted);line-height:1.8}
+.zfa-cornelsen-mark{display:grid;place-items:center;flex:0 0 54px;height:54px;border-radius:15px;background:#14243b;color:#d9b875;font-family:Georgia,serif;font-size:30px;font-weight:800}
+.zfa-cornelsen-years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.zfa-cornelsen-card{padding:17px;border:1px solid #e9e2d4;border-radius:14px;background:#fff;display:flex;flex-direction:column;align-items:flex-start;min-height:205px}
+.zfa-cornelsen-card>span{font-size:11px;font-weight:800;color:#9a783e}
+.zfa-cornelsen-card h3{margin:10px 0 5px;font-size:17px}
+.zfa-cornelsen-card strong{color:#9a783e;font-size:13px}
+.zfa-cornelsen-card p{color:var(--muted);font-size:13px;line-height:1.8;flex:1}
+.zfa-cornelsen-card a,.zfa-cornelsen-footer a:not(.primary-btn){color:#8b6b35;font-weight:700;text-decoration:none;font-size:13px}
+.zfa-cornelsen-subtitle{margin:23px 0 12px}
+.zfa-cornelsen-resources{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.zfa-cornelsen-resources>div{padding:13px;border-radius:11px;background:#f6f3ec;display:flex;flex-direction:column;gap:5px}
+.zfa-cornelsen-resources b{font-size:13px;color:#26364b}
+.zfa-cornelsen-resources small{font-size:12px;line-height:1.6;color:#697386}
+.zfa-cornelsen-footer{margin-top:18px;padding-top:15px;border-top:1px solid #eee5d5}
+.zfa-cornelsen-footer p{font-size:12px;line-height:1.9;color:var(--muted)}
+.zfa-cornelsen-footer>div{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+@media(max-width:800px){.zfa-cornelsen-years{grid-template-columns:1fr}.zfa-cornelsen-resources{grid-template-columns:repeat(2,minmax(0,1fr))}.zfa-cornelsen-card{min-height:0}}
+@media(max-width:420px){.zfa-cornelsen{padding:15px}.zfa-cornelsen-resources{grid-template-columns:1fr}.zfa-cornelsen-footer>div{align-items:stretch;flex-direction:column}.zfa-cornelsen-footer .primary-btn,.zfa-cornelsen-footer .secondary-btn{width:100%;text-align:center}}
