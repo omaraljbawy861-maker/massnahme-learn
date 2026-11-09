@@ -9,7 +9,7 @@ let currentCourse = null;
 let currentLesson = null;
 let languageBank = null;
 
-const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2" };
+const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -204,6 +204,55 @@ async function renderIntensiveLevel(level) {
   }
 }
 
+
+async function renderZfaPreparation() {
+  setActive("zfa-preparation");
+  content.innerHTML='<div class="empty-state">جارٍ تحميل مسار ZFA…</div>';
+  try {
+    if(!window.zfaCourse) {
+      const response=await fetch("./data/zfa_preparation.json?v=20261109-1");
+      if(!response.ok) throw new Error("HTTP "+response.status);
+      window.zfaCourse=await response.json();
+    }
+    const course=window.zfaCourse;
+    const units=course.units;
+    const words=units.reduce((n,u)=>n+u.vocab.length,0);
+    content.innerHTML=`
+      <section class="zfa-hero">
+        <div><span class="eyebrow">BERUFSVORBEREITUNG · ZFA</span><h1>ZFA – التحضير لتدريب مساعدة طبيب الأسنان</h1><p>${escapeHtml(course.subtitle)}</p><div class="zfa-hero-tags"><span>لغة ألمانية B1–B2</span><span>مصطلحات طبية</span><span>تقديم ومقابلات</span></div></div>
+        <div class="zfa-tooth">✚<small>ZFA</small></div>
+      </section>
+      <div class="zfa-notice">ⓘ ${escapeHtml(course.disclaimer)}</div>
+      <section class="stats-grid">
+        <article class="stat-card"><span class="stat-icon gold">▤</span><div><small>الوحدات التعليمية</small><strong>${units.length}</strong></div></article>
+        <article class="stat-card"><span class="stat-icon blue">Aa</span><div><small>المفردات الألمانية</small><strong>${words}</strong></div></article>
+        <article class="stat-card"><span class="stat-icon green">🔊</span><div><small>الجمل العملية</small><strong>${units.reduce((n,u)=>n+u.sentences.length,0)}</strong></div></article>
+        <article class="stat-card"><span class="stat-icon purple">✓</span><div><small>اختبارات قصيرة</small><strong>${units.reduce((n,u)=>n+u.quiz.length,0)}</strong></div></article>
+      </section>
+      <div class="page-intro"><span class="eyebrow">DEIN BERUFSWEG</span><h2>من اللغة إلى الاستعداد للمهنة</h2><p>ابدئي بالوحدة الأولى، واقرئي النص، استمعي للجمل، ثم اختبري فهمك.</p></div>
+      <div class="zfa-unit-grid">${units.map((u,i)=>`<button class="zfa-unit-link" data-action="zfa-open" data-unit="${i}"><span class="zfa-unit-number">${String(i+1).padStart(2,"0")}</span><span><small>${escapeHtml(u.de)} · ${u.level}</small><strong>${escapeHtml(u.title)}</strong></span><b>←</b></button>`).join("")}</div>
+      ${units.map((u,i)=>`
+        <section class="zfa-unit" id="zfa-unit-${i}">
+          <div class="zfa-unit-head"><span class="zfa-unit-number">${String(i+1).padStart(2,"0")}</span><div><span class="eyebrow">EINHEIT ${i+1} · ${u.level}</span><h2>${escapeHtml(u.title)}</h2><p>${escapeHtml(u.goal)}</p></div></div>
+          <div class="zfa-content-card">
+            <h3>📖 Lesetext · نص القراءة</h3><p class="zfa-german-text" lang="de">${escapeHtml(u.text)}</p>
+            <div class="action-row"><button class="listen-btn" data-speak="${escapeHtml(u.text)}" data-lang="de-DE">▶ استمعي للنص</button><button class="secondary-btn" data-action="zfa-translation" data-unit="${i}">إظهار الترجمة</button></div>
+            <p class="zfa-translation" id="zfa-translation-${i}" hidden>${escapeHtml(u.translation)}</p>
+            <h3>🧠 Wortschatz · مفردات الوحدة (${u.vocab.length})</h3>
+            <div class="zfa-vocab-grid">${u.vocab.map((w,j)=>`<article class="zfa-vocab"><small>${j+1}</small><strong lang="de">${escapeHtml(w[0])}</strong><span>${escapeHtml(w[1])}</span><button data-speak="${escapeHtml(w[0])}" data-lang="de-DE" aria-label="استمع للكلمة">🔊</button></article>`).join("")}</div>
+            <h3>💬 Sätze im Praxisalltag · جمل من الحياة العملية</h3>
+            <div class="zfa-sentences">${u.sentences.map(s=>`<article><p lang="de">${escapeHtml(s[0])}</p><span>${escapeHtml(s[1])}</span><button class="listen-btn" data-speak="${escapeHtml(s[0])}" data-lang="de-DE">🔊 استمعي للجملة</button></article>`).join("")}</div>
+            <h3>✍️ Grammatik · القاعدة اللغوية</h3><p>${escapeHtml(u.grammar)}</p>
+            <h3>📝 Wissenstest · اختبري فهمك</h3>
+            <div class="zfa-quiz" id="zfa-quiz-${i}">${u.quiz.map((q,j)=>`<div class="zfa-question" data-correct="${q.correct}"><strong>${j+1}. ${escapeHtml(q.q)}</strong>${q.options.map((o,k)=>`<label><input type="radio" name="zfaq-${i}-${j}" value="${k}"> ${escapeHtml(o)}</label>`).join("")}<p class="zfa-feedback" hidden>${escapeHtml(q.why)}</p></div>`).join("")}<button class="primary-btn" data-action="zfa-check" data-unit="${i}">تصحيح الإجابات</button><strong class="zfa-score" id="zfa-score-${i}"></strong></div>
+          </div>
+        </section>`).join("")}
+      <section class="panel zfa-next-step"><h3>🎯 هدفك بعد إنهاء المسار</h3><p>تكونين قد تعرّفتِ إلى مفردات العيادة الأساسية، وتدرّبتِ على محادثات الاستقبال، وفهمتِ طبيعة المهنة، وأصبحتِ أقدر على التحضير لطلب Ausbildung ومقابلة العيادة.</p></section>`;
+  } catch(error) {
+    content.innerHTML='<div class="empty-state"><h2>تعذر تحميل مسار ZFA</h2><p>'+escapeHtml(error.message)+'</p></div>';
+  }
+}
+
 function renderSchedule() {
  content.innerHTML=`<div class="page-intro"><span class="eyebrow">WOCHENPLAN</span><h1>جدول الحصص الأسبوعي</h1><p>جدول مقترح قابل للتعديل لاحقاً حسب برنامج Maßnahme الخاص بك.</p></div><table class="schedule-table"><thead><tr><th>اليوم</th><th>الحصة الأولى</th><th>الحصة الثانية</th><th>الحصة الثالثة</th></tr></thead><tbody>${[["الاثنين","Deutsch","Mathematik","مراجعة"],["الثلاثاء","Mathematik","English","تدريبات"],["الأربعاء","Deutsch","English","قراءة"],["الخميس","Mathematik","تطبيقات","اختبار قصير"],["الجمعة","مراجعة عامة","حل الواجبات","تقييم أسبوعي"]].map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 }
@@ -219,6 +268,7 @@ function renderExams() {
 function navigate(view) {
  if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
+ if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
@@ -234,6 +284,9 @@ document.addEventListener("click",e=>{
  const speakButton=e.target.closest("[data-speak]");
  if(speakButton){speakText(speakButton.dataset.speak,speakButton.dataset.lang||"de-DE");return;}
  const action=e.target.closest("[data-action]")?.dataset.action;
+ if(action==="zfa-open"){document.getElementById("zfa-unit-"+e.target.closest("[data-unit]").dataset.unit)?.scrollIntoView({behavior:"smooth"});}
+ if(action==="zfa-translation"){const i=e.target.closest("[data-unit]").dataset.unit;const el=document.getElementById("zfa-translation-"+i);if(el)el.hidden=!el.hidden;}
+ if(action==="zfa-check"){const i=e.target.closest("[data-unit]").dataset.unit;const panel=document.getElementById("zfa-quiz-"+i);let score=0;panel.querySelectorAll(".zfa-question").forEach(q=>{const selected=q.querySelector("input:checked");const feedback=q.querySelector(".zfa-feedback");feedback.hidden=false;if(selected&&Number(selected.value)===Number(q.dataset.correct)){score++;feedback.textContent="إجابة صحيحة ✓";feedback.classList.add("correct");}else{feedback.classList.remove("correct");feedback.textContent="راجعي الإجابة الصحيحة ثم أعيدي المحاولة. "+feedback.textContent;}});document.getElementById("zfa-score-"+i).textContent="النتيجة: "+score+" / "+panel.querySelectorAll(".zfa-question").length;}
  if(action==="intensive-switch")navigate("intensive-"+e.target.closest("[data-level]").dataset.level.toLowerCase());
  if(action==="intensive-open"){document.getElementById("intensive-unit-"+e.target.closest("[data-unit]").dataset.unit)?.scrollIntoView({behavior:"smooth"});}
  if(action==="intensive-translation"){const i=e.target.closest("[data-unit]").dataset.unit;const el=document.getElementById("intensive-translation-"+i);if(el)el.hidden=!el.hidden;}
