@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "planet-school-science",
+      "subject": "mathematics",
+      "subjectName": "الرياضيات والعلوم",
+      "title": "شروحات الرياضيات والعلوم",
+      "provider": "Planet Schule · SWR / WDR",
+      "level": "Sekundarstufe I",
+      "embed": "https://www.planet-schule.de/sammlung/erklaervideos-naturwissenschaften-102.html",
+      "description": "مجموعة فيديوهات تفسيرية لمفاهيم الرياضيات والأحياء والعلوم."
+    },
+    {
+      "id": "bildungsserver-school",
+      "subject": "all",
+      "subjectName": "مواد مدرسية متعددة",
+      "title": "أفلام تعليمية حسب المادة",
+      "provider": "Deutscher Bildungsserver",
+      "level": "Sekundarstufe I",
+      "embed": "https://www.bildungsserver.de/schule/lernen-mit-unterrichtsfilmen-12765-de.html",
+      "description": "فهرس ألماني يوجّه إلى فيديوهات تعليمية في الألماني والإنكليزي والرياضيات ومواد أخرى."
+    },
+    {
+      "id": "ard-school",
+      "subject": "all",
+      "subjectName": "مواد مدرسية متعددة",
+      "title": "مكتبة ARD alpha التعليمية",
+      "provider": "ARD alpha · Schule daheim",
+      "level": "Schule",
+      "embed": "https://www.ardalpha.de/",
+      "description": "محتوى تعليمي مرئي في الألماني والإنكليزي والأحياء والرياضيات والعلوم."
+    },
+    {
+      "id": "zfa-blzk",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "أفلام مهنة ZFA والتدريب المهني",
+      "provider": "Bayerische Landeszahnärztekammer",
+      "level": "ZFA Ausbildung",
+      "embed": "https://www.blzk.de/zahnaerztliches-personal/ausbildung-zfa/filme-zum-beruf-zfa",
+      "description": "أفلام رسمية عن العمل في عيادة الأسنان، والمدرسة المهنية، والمهام اليومية لمساعدة طبيب الأسنان."
+    },
+    {
+      "id": "zfa-vmf",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "فيديوهات ومراجعات امتحان ZFA",
+      "provider": "Verband medizinischer Fachberufe e.V.",
+      "level": "ZFA Prüfungsvorbereitung",
+      "embed": "https://www.vmf-online.de/zfa/ausbildung-im-verband-zfa/pruefungsvorbereitung-zfa",
+      "description": "مواد تحضير ومقاطع قصيرة في حالات الطوارئ والمحاسبة ونصائح الامتحان العملي."
+    },
+    {
+      "id": "zfa-lzk",
+      "subject": "zfa",
+      "subjectName": "طب الأسنان ZFA",
+      "title": "فيلم تعريفي بتدريب ZFA",
+      "provider": "Landeszahnärztekammer Baden-Württemberg",
+      "level": "ZFA Ausbildung",
+      "embed": "https://lzk-bw.de/informationsfilm",
+      "description": "فيلم عن التدريب المزدوج ومجالات العمل اليومية وفرص التطور المهني في ZFA."
+    }
+  ]
+}
