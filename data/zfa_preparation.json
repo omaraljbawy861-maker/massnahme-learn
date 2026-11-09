@@ -698,6 +698,354 @@
           "why": "الالتزام بالمواعيد صفة مهنية جيدة."
         }
       ]
+    },
+    {
+      "title": "سير العمل داخل العيادة",
+      "de": "Der Ablauf in der Zahnarztpraxis",
+      "level": "B1-B2",
+      "goal": "فهم تنظيم يوم العمل والتعاون مع الفريق",
+      "text": "Ein Arbeitstag in der Zahnarztpraxis beginnt häufig mit der Vorbereitung der Räume und der Kontrolle des Terminplans. Das Team bespricht wichtige Aufgaben und achtet auf eine gute Zusammenarbeit. Zwischen den Terminen werden die vorgesehenen Hygieneschritte durchgeführt und die Arbeitsplätze vorbereitet. Bei Fragen oder Unsicherheiten wendet man sich an die zuständige Kollegin oder den zuständigen Kollegen.",
+      "translation": "يبدأ يوم العمل في عيادة الأسنان غالباً بتحضير الغرف ومراجعة جدول المواعيد. يناقش الفريق المهام المهمة ويهتم بالتعاون الجيد. وبين المواعيد تُنفذ خطوات النظافة المحددة وتُجهز أماكن العمل. وعند وجود أسئلة أو عدم تأكد، يتم الرجوع إلى الزميل أو الزميلة المسؤولين.",
+      "vocab": [
+        [
+          "der Arbeitstag",
+          "يوم العمل"
+        ],
+        [
+          "der Terminplan",
+          "جدول المواعيد"
+        ],
+        [
+          "die Vorbereitung",
+          "التحضير"
+        ],
+        [
+          "die Kontrolle",
+          "الفحص / المراجعة"
+        ],
+        [
+          "die Absprache",
+          "التنسيق"
+        ],
+        [
+          "die Zuständigkeit",
+          "المسؤولية / الاختصاص"
+        ],
+        [
+          "die Kollegin",
+          "الزميلة"
+        ],
+        [
+          "die Übergabe",
+          "تسليم المهام"
+        ],
+        [
+          "der Arbeitsplatz",
+          "مكان العمل"
+        ],
+        [
+          "die Unterbrechung",
+          "الاستراحة / المقاطعة"
+        ]
+      ],
+      "sentences": [
+        [
+          "Ich kontrolliere zuerst den Terminplan.",
+          "أراجع جدول المواعيد أولاً."
+        ],
+        [
+          "Wer ist heute dafür zuständig?",
+          "من المسؤول عن ذلك اليوم؟"
+        ],
+        [
+          "Können wir die Aufgaben kurz besprechen?",
+          "هل يمكننا مناقشة المهام بسرعة؟"
+        ]
+      ],
+      "grammar": "تعبيرات الترتيب: zuerst، danach، anschließend، zum Schluss. مثال: Zuerst prüfe ich den Plan, danach bereite ich den Raum vor.",
+      "quiz": [
+        {
+          "q": "Was macht das Team zu Beginn häufig?",
+          "options": [
+            "Den Terminplan kontrollieren",
+            "Die Praxis schließen",
+            "Patientendaten veröffentlichen"
+          ],
+          "correct": 0,
+          "why": "تتم مراجعة جدول المواعيد والتحضير لليوم."
+        },
+        {
+          "q": "Wohin wendet man sich bei Unsicherheit?",
+          "options": [
+            "An die zuständige Fachkraft",
+            "An unbekannte Personen",
+            "An niemanden"
+          ],
+          "correct": 0,
+          "why": "يجب سؤال الزميل أو المختص المسؤول."
+        }
+      ]
+    },
+    {
+      "title": "التواصل المهني والعمل ضمن فريق",
+      "de": "Kommunikation und Teamarbeit",
+      "level": "B1-B2",
+      "goal": "استخدام عبارات واضحة ومحترمة مع الزملاء",
+      "text": "Eine gute Zusammenarbeit braucht klare und respektvolle Kommunikation. Wenn eine Aufgabe unklar ist, sollte man freundlich nachfragen. Bei einer Übergabe werden wichtige Informationen vollständig und sachlich weitergegeben. Kritik sollte konkret und höflich formuliert werden. Ein Team arbeitet besser, wenn alle zuhören, Verantwortung übernehmen und rechtzeitig um Unterstützung bitten.",
+      "translation": "يحتاج التعاون الجيد إلى تواصل واضح ومحترم. إذا كانت المهمة غير واضحة، ينبغي السؤال بلطف. عند تسليم المهام تُنقل المعلومات المهمة كاملة وبموضوعية. ويجب صياغة النقد بشكل محدد ومهذب. يعمل الفريق بصورة أفضل عندما يستمع الجميع ويتحملون المسؤولية ويطلبون المساعدة في الوقت المناسب.",
+      "vocab": [
+        [
+          "die Zusammenarbeit",
+          "التعاون"
+        ],
+        [
+          "die Kommunikation",
+          "التواصل"
+        ],
+        [
+          "nachfragen",
+          "يستفسر"
+        ],
+        [
+          "die Übergabe",
+          "تسليم المهام"
+        ],
+        [
+          "vollständig",
+          "كامل"
+        ],
+        [
+          "sachlich",
+          "موضوعي"
+        ],
+        [
+          "die Unterstützung",
+          "الدعم"
+        ],
+        [
+          "die Verantwortung",
+          "المسؤولية"
+        ],
+        [
+          "das Missverständnis",
+          "سوء الفهم"
+        ],
+        [
+          "respektvoll",
+          "باحترام"
+        ]
+      ],
+      "sentences": [
+        [
+          "Könnten Sie mir diese Aufgabe bitte erklären?",
+          "هل يمكنكم شرح هذه المهمة لي؟"
+        ],
+        [
+          "Ich bin mir nicht sicher und frage lieber nach.",
+          "لست متأكدة، ومن الأفضل أن أستفسر."
+        ],
+        [
+          "Vielen Dank für Ihre Unterstützung.",
+          "شكراً جزيلاً على دعمكم."
+        ]
+      ],
+      "grammar": "Konjunktiv II للطلب المهذب: Könnten Sie…? / Würden Sie bitte…? / Ich hätte eine Frage.",
+      "quiz": [
+        {
+          "q": "Wie fragt man höflich nach?",
+          "options": [
+            "Was soll das?",
+            "Könnten Sie das bitte erklären?",
+            "Das ist mir egal."
+          ],
+          "correct": 1,
+          "why": "هذه صيغة مهذبة وواضحة لطلب التوضيح."
+        },
+        {
+          "q": "Was gehört zu einer guten Übergabe?",
+          "options": [
+            "Wichtige Informationen vollständig weitergeben",
+            "Informationen weglassen",
+            "Unklare Gerüchte erzählen"
+          ],
+          "correct": 0,
+          "why": "يجب نقل المعلومات المهمة كاملة وبدقة."
+        }
+      ]
+    },
+    {
+      "title": "التثقيف الصحي والعناية الوقائية",
+      "de": "Mundgesundheit und Vorsorge",
+      "level": "B1-B2",
+      "goal": "شرح مفردات العناية الوقائية دون تقديم تشخيص",
+      "text": "Regelmäßige Kontrolltermine helfen dabei, Veränderungen im Mund frühzeitig zu erkennen. Eine sorgfältige Mundpflege umfasst das regelmäßige Zähneputzen und die Reinigung der Zahnzwischenräume. In der Praxis können Patientinnen und Patienten Informationen zur Vorsorge erhalten. Medizinische Empfehlungen und individuelle Behandlungsentscheidungen erklärt die zuständige Zahnärztin oder der zuständige Zahnarzt.",
+      "translation": "تساعد مواعيد الفحص المنتظمة على اكتشاف التغيرات في الفم مبكراً. وتشمل العناية الدقيقة بالفم تنظيف الأسنان بانتظام وتنظيف المسافات بينها. ويمكن للمرضى الحصول على معلومات عن الوقاية في العيادة. أما التوصيات الطبية وقرارات العلاج الفردية فيشرحها طبيب أو طبيبة الأسنان المسؤولان.",
+      "vocab": [
+        [
+          "die Vorsorge",
+          "الوقاية"
+        ],
+        [
+          "die Kontrolluntersuchung",
+          "الفحص الدوري"
+        ],
+        [
+          "die Mundgesundheit",
+          "صحة الفم"
+        ],
+        [
+          "das Zähneputzen",
+          "تنظيف الأسنان"
+        ],
+        [
+          "der Zahnzwischenraum",
+          "المسافة بين الأسنان"
+        ],
+        [
+          "die Zahnbürste",
+          "فرشاة الأسنان"
+        ],
+        [
+          "die Zahnpasta",
+          "معجون الأسنان"
+        ],
+        [
+          "die Veränderung",
+          "التغير"
+        ],
+        [
+          "regelmäßig",
+          "بانتظام"
+        ],
+        [
+          "die Empfehlung",
+          "التوصية"
+        ]
+      ],
+      "sentences": [
+        [
+          "Haben Sie schon einen Kontrolltermin?",
+          "هل لديكم موعد فحص دوري؟"
+        ],
+        [
+          "Die Zahnärztin erklärt Ihnen die Empfehlungen.",
+          "ستشرح لكم طبيبة الأسنان التوصيات."
+        ],
+        [
+          "Regelmäßige Kontrollen sind wichtig.",
+          "الفحوصات المنتظمة مهمة."
+        ]
+      ],
+      "grammar": "الصفات والظروف: regelmäßig = منتظم/بانتظام، sorgfältig = بعناية، frühzeitig = مبكراً. مثال: Bitte putzen Sie Ihre Zähne regelmäßig.",
+      "quiz": [
+        {
+          "q": "Was bedeutet Vorsorge?",
+          "options": [
+            "الوقاية",
+            "الفاتورة",
+            "الأداة"
+          ],
+          "correct": 0,
+          "why": "Vorsorge تعني الوقاية."
+        },
+        {
+          "q": "Wer erklärt individuelle Behandlungsentscheidungen?",
+          "options": [
+            "Die zuständige Zahnärztin oder der Zahnarzt",
+            "Die Warteliste",
+            "Ein beliebiger Besucher"
+          ],
+          "correct": 0,
+          "why": "القرار الطبي من اختصاص طبيب الأسنان المسؤول."
+        }
+      ]
+    },
+    {
+      "title": "الفواتير والمصطلحات الإدارية الأساسية",
+      "de": "Abrechnung und Verwaltung – Grundlagen",
+      "level": "B1-B2",
+      "goal": "فهم كلمات إدارية شائعة في العيادة",
+      "text": "Neben der Behandlung gehören auch organisatorische Aufgaben zum Alltag einer Zahnarztpraxis. Dazu zählen die Verwaltung von Terminen, das Prüfen von Unterlagen und die Vorbereitung von Abrechnungsinformationen. Die genauen Abrechnungsregeln sind komplex und werden im Rahmen der Ausbildung Schritt für Schritt gelernt. Bei Unklarheiten fragt man die zuständige Person und gibt keine ungeprüften Auskünfte.",
+      "translation": "إلى جانب العلاج، تشمل الحياة اليومية في عيادة الأسنان مهام تنظيمية أيضاً، مثل إدارة المواعيد ومراجعة المستندات وتجهيز معلومات الفواتير. قواعد الفوترة الدقيقة معقدة ويتم تعلمها تدريجياً خلال التدريب المهني. وعند عدم الوضوح يجب سؤال الشخص المسؤول وعدم إعطاء معلومات غير متحقق منها.",
+      "vocab": [
+        [
+          "die Verwaltung",
+          "الإدارة"
+        ],
+        [
+          "die Abrechnung",
+          "الفوترة / المحاسبة"
+        ],
+        [
+          "die Rechnung",
+          "الفاتورة"
+        ],
+        [
+          "die Unterlagen",
+          "المستندات"
+        ],
+        [
+          "die Leistung",
+          "الخدمة"
+        ],
+        [
+          "die Kosten",
+          "التكاليف"
+        ],
+        [
+          "die Krankenkasse",
+          "شركة التأمين الصحي"
+        ],
+        [
+          "die Kostenübernahme",
+          "تحمل التكاليف"
+        ],
+        [
+          "prüfen",
+          "يراجع / يتحقق"
+        ],
+        [
+          "die Auskunft",
+          "المعلومة / الإفادة"
+        ]
+      ],
+      "sentences": [
+        [
+          "Ich prüfe zuerst die Unterlagen.",
+          "سأراجع المستندات أولاً."
+        ],
+        [
+          "Dazu kann ich Ihnen noch keine Auskunft geben.",
+          "لا أستطيع إعطاءكم معلومة مؤكدة عن ذلك بعد."
+        ],
+        [
+          "Ich frage die zuständige Kollegin.",
+          "سأسأل الزميلة المسؤولة."
+        ]
+      ],
+      "grammar": "أفعال مع حروف جر: sich kümmern um + Akkusativ، fragen nach + Dativ، sprechen mit + Dativ. مثال: Ich frage nach den Unterlagen.",
+      "quiz": [
+        {
+          "q": "Was bedeutet die Rechnung?",
+          "options": [
+            "الفاتورة",
+            "الموعد",
+            "اللثة"
+          ],
+          "correct": 0,
+          "why": "Rechnung تعني الفاتورة."
+        },
+        {
+          "q": "Was macht man bei unklaren Abrechnungsfragen?",
+          "options": [
+            "Raten",
+            "Die zuständige Person fragen",
+            "Eine Zahl erfinden"
+          ],
+          "correct": 1,
+          "why": "لا نخمن؛ نسأل الشخص المختص."
+        }
+      ]
     }
   ]
 }
