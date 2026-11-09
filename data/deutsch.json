@@ -2285,6 +2285,214 @@
           "a": "ينبغي أن تكون الرسالة منظمة ومهذبة وتتضمن سؤالاً واضحاً."
         }
       ]
+    },
+    {
+      "id": "de-extra-03",
+      "title": "الجمل الموصولة وربط الأفكار",
+      "germanTitle": "Relativsätze und Satzverbindungen",
+      "level": "B1 · Grammatik",
+      "duration": "45 دقيقة",
+      "unit": "Grammatik: Satzbau",
+      "objectives": [
+        "تكوين جمل موصولة باستخدام der وdie وdas.",
+        "ربط الجمل باستخدام weil وobwohl وdeshalb.",
+        "الانتباه إلى موقع الفعل في الجملة الفرعية."
+      ],
+      "intro": "هذا الدرس يساعدك على كتابة جمل أطول وأكثر طبيعية في المدرسة والعمل والحياة اليومية.",
+      "german": "Relativsätze geben zusätzliche Informationen über eine Person oder Sache. Das Relativpronomen richtet sich nach dem Bezugswort. In Nebensätzen steht das konjugierte Verb am Ende. Beispiel: Das ist der Mann, der neben mir wohnt.",
+      "explanation": "نستخدم الجملة الموصولة لإضافة معلومة عن شخص أو شيء. نختار der أو die أو das حسب الاسم، وفي نهاية الجملة الفرعية يأتي الفعل المصرف. مع weil وobwohl وdass نضع الفعل أيضاً في آخر الجملة التابعة.",
+      "vocab": [
+        [
+          "der Relativsatz",
+          "جملة موصولة"
+        ],
+        [
+          "das Bezugswort",
+          "الاسم المرجعي"
+        ],
+        [
+          "obwohl",
+          "على الرغم من أن"
+        ],
+        [
+          "deshalb",
+          "لذلك"
+        ],
+        [
+          "die Verbindung",
+          "ربط"
+        ]
+      ],
+      "example": "Das ist die Frau, die hier arbeitet.\nIch lerne Deutsch, weil ich eine Prüfung habe.\nObwohl es regnet, gehe ich zur Schule.",
+      "worked": [
+        {
+          "title": "بناء جملة موصولة",
+          "prompt": "Der Mann ist mein Lehrer. Er wohnt in Bonn.",
+          "steps": [
+            "نحدد الاسم المشترك: Der Mann.",
+            "نستبدل الضمير المتكرر بـ der.",
+            "نضع الفعل في نهاية الجملة الموصولة."
+          ],
+          "answer": "Der Mann, der in Bonn wohnt, ist mein Lehrer."
+        }
+      ],
+      "practice": [
+        {
+          "q": "اربط: Das ist das Buch. Es liegt auf dem Tisch.",
+          "hint": "Buch محايد، استخدم das.",
+          "a": "Das ist das Buch, das auf dem Tisch liegt."
+        },
+        {
+          "q": "أكمل: Ich bleibe zu Hause, weil ich krank ___.",
+          "hint": "الفعل في نهاية الجملة التابعة.",
+          "a": "bin"
+        }
+      ],
+      "questions": [
+        {
+          "q": "أين يأتي الفعل المصرف في الجملة التابعة؟",
+          "options": [
+            "في النهاية",
+            "في البداية",
+            "بعد الفاعل مباشرة دائماً"
+          ],
+          "correct": 0,
+          "why": "في Nebensatz يأتي الفعل المصرف في النهاية."
+        },
+        {
+          "q": "ما الضمير الموصول المناسب لكلمة die Frau؟",
+          "options": [
+            "die",
+            "der",
+            "das"
+          ],
+          "correct": 0,
+          "why": "Frau مؤنث، لذلك die."
+        },
+        {
+          "q": "أي أداة تعني «على الرغم من أن»؟",
+          "options": [
+            "obwohl",
+            "deshalb",
+            "damit"
+          ],
+          "correct": 0,
+          "why": "obwohl تعني على الرغم من أن."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب خمس جمل موصولة، وثلاث جمل باستخدام weil أو obwohl أو dass.",
+          "hint": "انتبه لموقع الفعل في نهاية الجملة التابعة.",
+          "a": "راجع ترتيب الفعل، واستخدم أداة الوصل المناسبة للاسم أو المعنى."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Grammatik: Satzbau"
+    },
+    {
+      "id": "de-extra-04",
+      "title": "الاستعداد لمقابلة العمل",
+      "germanTitle": "Vorstellungsgespräch",
+      "level": "B1 · Beruf",
+      "duration": "50 دقيقة",
+      "unit": "Sprechen: Beruf",
+      "objectives": [
+        "التعريف بالنفس والخبرة والمهارات.",
+        "الإجابة عن أسئلة مقابلة العمل الشائعة.",
+        "طرح سؤال مهذب على صاحب العمل."
+      ],
+      "intro": "تدريب على مقابلة عمل واقعية باللغة الألمانية، مع إجابات نموذجية يمكنك تعديلها حسب خبرتك.",
+      "german": "In einem Vorstellungsgespräch stellt man sich kurz vor, beschreibt Erfahrungen und erklärt die Motivation. Antworten sollen klar und ehrlich sein. Typische Fragen sind: Warum möchten Sie bei uns arbeiten? Was sind Ihre Stärken? Wann können Sie anfangen?",
+      "explanation": "ابدأ بتعريف مختصر عن نفسك، ثم اذكر خبرتك ومهاراتك وسبب رغبتك بالعمل. لا تحفظ إجابة طويلة حرفياً؛ حضّر أفكاراً واضحة وأمثلة حقيقية. إذا لم تفهم السؤال، يمكنك طلب إعادته بأدب.",
+      "vocab": [
+        [
+          "die Stärke",
+          "نقطة قوة"
+        ],
+        [
+          "die Schwäche",
+          "نقطة ضعف"
+        ],
+        [
+          "die Erfahrung",
+          "خبرة"
+        ],
+        [
+          "zuverlässig",
+          "يمكن الاعتماد عليه"
+        ],
+        [
+          "teamfähig",
+          "يجيد العمل ضمن فريق"
+        ]
+      ],
+      "example": "Guten Tag, mein Name ist ...\nIch habe Erfahrung im Bereich ...\nIch bin zuverlässig und arbeite gern im Team.\nIch kann ab sofort anfangen.",
+      "worked": [
+        {
+          "title": "إجابة عن الخبرة",
+          "prompt": "Haben Sie Berufserfahrung?",
+          "steps": [
+            "ابدأ بإجابة مباشرة.",
+            "اذكر المجال أو نوع العمل.",
+            "أضف مثالاً على مهمة قمت بها."
+          ],
+          "answer": "Ja, ich habe Erfahrung im Bau und kann verschiedene praktische Aufgaben übernehmen."
+        }
+      ],
+      "practice": [
+        {
+          "q": "اكتب تعريفاً بنفسك من أربع جمل بالألمانية.",
+          "hint": "الاسم، الخبرة، المهارات، سبب التقديم.",
+          "a": "Guten Tag, mein Name ist ... Ich habe Erfahrung als ... Ich bin zuverlässig und motiviert. Ich möchte gern in Ihrem Unternehmen arbeiten."
+        },
+        {
+          "q": "كيف تطلب إعادة السؤال بأدب؟",
+          "hint": "Könnten Sie ...?",
+          "a": "Könnten Sie die Frage bitte wiederholen?"
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما العبارة المناسبة لبدء المقابلة؟",
+          "options": [
+            "Guten Tag, vielen Dank für die Einladung.",
+            "Was willst du?",
+            "Keine Ahnung."
+          ],
+          "correct": 0,
+          "why": "تحية مهذبة ومناسبة للمقابلة."
+        },
+        {
+          "q": "ماذا تعني zuverlässig؟",
+          "options": [
+            "يمكن الاعتماد عليه",
+            "متأخر دائماً",
+            "غير مهتم"
+          ],
+          "correct": 0,
+          "why": "تعني شخصاً موثوقاً."
+        },
+        {
+          "q": "ما السؤال المهذب لطلب إعادة السؤال؟",
+          "options": [
+            "Könnten Sie das bitte wiederholen?",
+            "Was?",
+            "Sprechen Sie nicht."
+          ],
+          "correct": 0,
+          "why": "صيغة مهذبة وواضحة."
+        }
+      ],
+      "homework": [
+        {
+          "q": "سجّل أو اكتب إجاباتك عن خمسة أسئلة مقابلة عمل، واجعل كل إجابة من جملتين إلى ثلاث.",
+          "hint": "استخدم خبرتك الحقيقية ولا تبالغ.",
+          "a": "تكون الإجابات الجيدة واضحة وصادقة وتحتوي على مثال عملي."
+        }
+      ],
+      "chapterNumber": 103,
+      "unitArabic": "Sprechen: Beruf"
     }
   ],
   "bookTitle": "Deutsch – Lesen, Schreiben und Grammatik",
