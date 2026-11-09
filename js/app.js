@@ -1,7 +1,6 @@
 import { loadCourses } from "./data.js?v=20261109-5";
-import { requireStudentSession } from "./auth.js?v=20261109-1";
-import { initializeStudentProgress } from "./progress.js?v=20261109-2";
-import { getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js";
+import { requireStudentSession } from "./auth.js?v=20261109-2";
+import { initializeStudentProgress, getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js?v=20261109-3";
 
 const content = document.querySelector("#appContent");
 const pageTitle = document.querySelector("#pageTitle");
