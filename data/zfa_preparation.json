@@ -1,0 +1,703 @@
+{
+  "title": "ZFA Ausbildung Vorbereitung",
+  "subtitle": "Deutsch und Grundlagen für die Ausbildung zur Zahnmedizinischen Fachangestellten",
+  "disclaimer": "هذا مسار تمهيدي تعليمي لمساعدتها على فهم المهنة واللغة. لا يحل محل التدريب العملي أو تعليمات الطبيب أو قواعد النظافة الرسمية في العيادة.",
+  "units": [
+    {
+      "title": "التعرّف إلى مهنة ZFA",
+      "de": "Der Beruf der Zahnmedizinischen Fachangestellten",
+      "level": "B1",
+      "goal": "فهم مهام مساعدة طبيب الأسنان ومكان العمل",
+      "text": "Eine Zahnmedizinische Fachangestellte arbeitet in einer Zahnarztpraxis. Sie empfängt Patientinnen und Patienten, vereinbart Termine und bereitet den Behandlungsraum vor. Während einer Behandlung reicht sie dem Zahnarzt die benötigten Instrumente. Außerdem dokumentiert sie wichtige Informationen und achtet auf Hygiene. Für diesen Beruf sind Freundlichkeit, Genauigkeit und Teamarbeit sehr wichtig.",
+      "translation": "تعمل مساعدة طبيب الأسنان في عيادة أسنان. تستقبل المريضات والمرضى، وتنظم المواعيد، وتحضّر غرفة العلاج. أثناء العلاج تناوِل الطبيب الأدوات التي يحتاج إليها. كما توثّق المعلومات المهمة وتهتم بالنظافة. ومن الصفات المهمة لهذه المهنة اللطف والدقة والعمل الجماعي.",
+      "vocab": [
+        [
+          "die Zahnarztpraxis",
+          "عيادة طبيب الأسنان"
+        ],
+        [
+          "die Zahnmedizinische Fachangestellte",
+          "مساعدة طبيب الأسنان"
+        ],
+        [
+          "der Behandlungsraum",
+          "غرفة العلاج"
+        ],
+        [
+          "der Patient / die Patientin",
+          "المريض / المريضة"
+        ],
+        [
+          "der Termin",
+          "الموعد"
+        ],
+        [
+          "das Instrument",
+          "الأداة الطبية"
+        ],
+        [
+          "die Behandlung",
+          "العلاج"
+        ],
+        [
+          "die Dokumentation",
+          "التوثيق"
+        ],
+        [
+          "die Hygiene",
+          "النظافة الطبية"
+        ],
+        [
+          "die Teamarbeit",
+          "العمل الجماعي"
+        ]
+      ],
+      "sentences": [
+        [
+          "Ich interessiere mich für eine Ausbildung zur ZFA.",
+          "أنا مهتمة بتدريب مهني كمساعدة طبيب أسنان."
+        ],
+        [
+          "Ich arbeite gern mit Menschen.",
+          "أحب العمل مع الناس."
+        ],
+        [
+          "Welche Aufgaben hat eine ZFA?",
+          "ما المهام التي تقوم بها مساعدة طبيب الأسنان؟"
+        ]
+      ],
+      "grammar": "الأفعال المنفصلة: vorbereiten = يحضّر، annehmen = يستقبل/يرد. مثال: Ich bereite den Behandlungsraum vor.",
+      "quiz": [
+        {
+          "q": "Wo arbeitet eine ZFA?",
+          "options": [
+            "In einer Zahnarztpraxis",
+            "In einer Bäckerei",
+            "In einer Bank"
+          ],
+          "correct": 0,
+          "why": "تعمل ZFA عادةً في عيادة أسنان."
+        },
+        {
+          "q": "Was ist bei diesem Beruf wichtig?",
+          "options": [
+            "Unpünktlichkeit",
+            "Teamarbeit und Genauigkeit",
+            "Keine Kommunikation"
+          ],
+          "correct": 1,
+          "why": "العمل الجماعي والدقة والتواصل صفات مهمة."
+        }
+      ]
+    },
+    {
+      "title": "استقبال المرضى وتنظيم المواعيد",
+      "de": "Patientenempfang und Terminplanung",
+      "level": "B1",
+      "goal": "التحدث بأدب عند الاستقبال والهاتف",
+      "text": "Am Empfang begrüßt die ZFA die Patientinnen und Patienten freundlich. Sie fragt nach dem Namen und prüft, ob ein Termin vereinbart wurde. Am Telefon spricht sie deutlich und höflich. Wenn ein Patient keinen Termin hat, erklärt sie, welche Möglichkeiten es gibt. Bei dringenden Beschwerden informiert sie das Praxisteam.",
+      "translation": "في الاستقبال ترحّب مساعدة طبيب الأسنان بالمرضى بلطف. تسأل عن الاسم وتتحقق مما إذا كان هناك موعد محدد. وعلى الهاتف تتحدث بوضوح وأدب. إذا لم يكن لدى المريض موعد، تشرح له الخيارات المتاحة. وعند وجود شكوى عاجلة تُبلغ فريق العيادة.",
+      "vocab": [
+        [
+          "der Empfang",
+          "الاستقبال"
+        ],
+        [
+          "begrüßen",
+          "يرحّب"
+        ],
+        [
+          "vereinbaren",
+          "يحدد / يتفق على"
+        ],
+        [
+          "verschieben",
+          "يؤجل"
+        ],
+        [
+          "absagen",
+          "يلغي"
+        ],
+        [
+          "die Beschwerden",
+          "الشكاوى / الأعراض"
+        ],
+        [
+          "dringend",
+          "عاجل"
+        ],
+        [
+          "die Versichertenkarte",
+          "بطاقة التأمين"
+        ],
+        [
+          "die Wartezeit",
+          "مدة الانتظار"
+        ],
+        [
+          "die Sprechstunde",
+          "ساعات استقبال المرضى"
+        ]
+      ],
+      "sentences": [
+        [
+          "Guten Tag, wie kann ich Ihnen helfen?",
+          "مرحباً، كيف يمكنني مساعدتكم؟"
+        ],
+        [
+          "Haben Sie einen Termin vereinbart?",
+          "هل حددتم موعداً؟"
+        ],
+        [
+          "Einen Moment bitte, ich frage in der Praxis nach.",
+          "لحظة من فضلكم، سأستفسر من فريق العيادة."
+        ]
+      ],
+      "grammar": "الأسلوب الرسمي Sie: نستخدم Ihnen وIhr عند مخاطبة المريض باحترام. مثال: Wie kann ich Ihnen helfen?",
+      "quiz": [
+        {
+          "q": "كيف تخاطب المريض باحترام؟",
+          "options": [
+            "du",
+            "Sie",
+            "ihr"
+          ],
+          "correct": 1,
+          "why": "نستخدم Sie في التواصل الرسمي مع المرضى."
+        },
+        {
+          "q": "ماذا تفعل عند شكوى عاجلة؟",
+          "options": [
+            "تتجاهلها",
+            "تبلغ فريق العيادة",
+            "تلغي كل المواعيد"
+          ],
+          "correct": 1,
+          "why": "يجب إبلاغ الفريق المسؤول فوراً."
+        }
+      ]
+    },
+    {
+      "title": "الأسنان والفم",
+      "de": "Zähne und Mund",
+      "level": "B1",
+      "goal": "حفظ أسماء أجزاء الفم والأسنان",
+      "text": "Ein erwachsener Mensch hat normalerweise bis zu 32 Zähne. Dazu gehören Schneidezähne, Eckzähne und Backenzähne. Die Zähne helfen beim Abbeißen und Kauen. Das Zahnfleisch schützt den Zahnhals und hält den Zahn im Kiefer. Eine gute Mundpflege und regelmäßige Kontrolltermine helfen, Erkrankungen früh zu erkennen.",
+      "translation": "يمتلك الإنسان البالغ عادةً حتى 32 سناً. وتشمل الأسنان القواطع والأنياب والأضراس. تساعد الأسنان على قطع الطعام ومضغه. تحمي اللثة عنق السن وتثبته في الفك. وتساعد العناية الجيدة بالفم والفحوصات المنتظمة على اكتشاف الأمراض مبكراً.",
+      "vocab": [
+        [
+          "der Zahn",
+          "السن"
+        ],
+        [
+          "die Zähne",
+          "الأسنان"
+        ],
+        [
+          "der Schneidezahn",
+          "القاطع"
+        ],
+        [
+          "der Eckzahn",
+          "الناب"
+        ],
+        [
+          "der Backenzahn",
+          "الضرس"
+        ],
+        [
+          "das Zahnfleisch",
+          "اللثة"
+        ],
+        [
+          "der Kiefer",
+          "الفك"
+        ],
+        [
+          "die Zunge",
+          "اللسان"
+        ],
+        [
+          "der Gaumen",
+          "الحنك"
+        ],
+        [
+          "die Mundpflege",
+          "العناية بالفم"
+        ]
+      ],
+      "sentences": [
+        [
+          "Welcher Zahn tut Ihnen weh?",
+          "أي سن يؤلمكم؟"
+        ],
+        [
+          "Bitte öffnen Sie den Mund.",
+          "من فضلكم افتحوا الفم."
+        ],
+        [
+          "Das Zahnfleisch ist empfindlich.",
+          "اللثة حساسة."
+        ]
+      ],
+      "grammar": "المفرد والجمع: der Zahn → die Zähne، der Backenzahn → die Backenzähne. احفظ أداة الاسم مع جمعه.",
+      "quiz": [
+        {
+          "q": "ما معنى das Zahnfleisch؟",
+          "options": [
+            "اللثة",
+            "اللسان",
+            "الفك"
+          ],
+          "correct": 0,
+          "why": "das Zahnfleisch تعني اللثة."
+        },
+        {
+          "q": "أي الأسنان تستخدم غالباً للطحن والمضغ؟",
+          "options": [
+            "Schneidezähne",
+            "Backenzähne",
+            "Eckzähne"
+          ],
+          "correct": 1,
+          "why": "الأضراس Backenzähne تساعد على المضغ والطحن."
+        }
+      ]
+    },
+    {
+      "title": "الأدوات والأجهزة في العيادة",
+      "de": "Instrumente und Geräte",
+      "level": "B1",
+      "goal": "التعرف إلى أسماء الأدوات الشائعة",
+      "text": "In einer Zahnarztpraxis gibt es viele Instrumente und Geräte. Der Mundspiegel hilft, schwer sichtbare Bereiche zu betrachten. Mit einer Pinzette kann kleines Material gehalten werden. Der Speichelsauger entfernt Flüssigkeit aus dem Mund. Vor und nach der Behandlung müssen Instrumente nach den festgelegten Praxisabläufen aufbereitet werden.",
+      "translation": "يوجد في عيادة الأسنان الكثير من الأدوات والأجهزة. تساعد مرآة الفم على رؤية المناطق التي يصعب رؤيتها. ويمكن استخدام الملقط للإمساك بمواد صغيرة. ويزيل شفاط اللعاب السوائل من الفم. يجب تجهيز الأدوات ومعالجتها قبل العلاج وبعده وفق إجراءات العيادة المعتمدة.",
+      "vocab": [
+        [
+          "der Mundspiegel",
+          "مرآة الفم"
+        ],
+        [
+          "die Pinzette",
+          "الملقط"
+        ],
+        [
+          "der Speichelsauger",
+          "شفاط اللعاب"
+        ],
+        [
+          "die Sonde",
+          "المسبار"
+        ],
+        [
+          "der Bohrer",
+          "المثقاب"
+        ],
+        [
+          "die Absaugung",
+          "جهاز الشفط"
+        ],
+        [
+          "der Handschuh",
+          "القفاز"
+        ],
+        [
+          "die Schutzbrille",
+          "النظارات الواقية"
+        ],
+        [
+          "das Tray",
+          "صينية الأدوات"
+        ],
+        [
+          "das Gerät",
+          "الجهاز"
+        ]
+      ],
+      "sentences": [
+        [
+          "Bitte reichen Sie mir den Mundspiegel.",
+          "من فضلك ناولني مرآة الفم."
+        ],
+        [
+          "Der Speichelsauger liegt auf dem Tray.",
+          "شفاط اللعاب موجود على الصينية."
+        ],
+        [
+          "Ich bereite die Instrumente vor.",
+          "أنا أجهز الأدوات."
+        ]
+      ],
+      "grammar": "أفعال الطلب المهذب: Könnten Sie mir bitte … reichen? = هل يمكنكم من فضلكم مناولتي…؟",
+      "quiz": [
+        {
+          "q": "ما وظيفة Speichelsauger؟",
+          "options": [
+            "قياس الحرارة",
+            "شفط اللعاب والسوائل",
+            "تصوير الأسنان"
+          ],
+          "correct": 1,
+          "why": "هو أداة لشفط اللعاب والسوائل."
+        },
+        {
+          "q": "ما معنى die Pinzette؟",
+          "options": [
+            "ملقط",
+            "مرآة",
+            "قفاز"
+          ],
+          "correct": 0,
+          "why": "die Pinzette تعني الملقط."
+        }
+      ]
+    },
+    {
+      "title": "التواصل مع المريض ووصف الألم",
+      "de": "Patientengespräch und Schmerzen",
+      "level": "B1-B2",
+      "goal": "طرح أسئلة بسيطة وفهم وصف الألم",
+      "text": "Vor einer Behandlung fragt das Praxisteam nach den Beschwerden. Seit wann bestehen die Schmerzen? Ist der Schmerz dauerhaft oder tritt er nur beim Essen auf? Wo genau tut es weh? Die Patientin oder der Patient sollte die Fragen in Ruhe beantworten können. Bei Unsicherheit wird die Information an die zuständige Fachperson weitergegeben.",
+      "translation": "قبل العلاج يسأل فريق العيادة عن الأعراض. منذ متى يوجد الألم؟ هل الألم مستمر أم يظهر فقط عند تناول الطعام؟ أين يؤلم بالتحديد؟ ينبغي أن يتمكن المريض من الإجابة بهدوء. وعند عدم التأكد تُنقل المعلومة إلى المختص المسؤول.",
+      "vocab": [
+        [
+          "der Schmerz",
+          "الألم"
+        ],
+        [
+          "die Schmerzen",
+          "الآلام"
+        ],
+        [
+          "dauerhaft",
+          "مستمر"
+        ],
+        [
+          "stechend",
+          "حاد كالوخز"
+        ],
+        [
+          "empfindlich",
+          "حساس"
+        ],
+        [
+          "die Schwellung",
+          "التورم"
+        ],
+        [
+          "die Blutung",
+          "النزيف"
+        ],
+        [
+          "seit wann",
+          "منذ متى"
+        ],
+        [
+          "beim Kauen",
+          "عند المضغ"
+        ],
+        [
+          "die Betäubung",
+          "التخدير الموضعي"
+        ]
+      ],
+      "sentences": [
+        [
+          "Seit wann haben Sie diese Schmerzen?",
+          "منذ متى تعانون من هذا الألم؟"
+        ],
+        [
+          "Tut es beim Kauen weh?",
+          "هل يؤلمكم عند المضغ؟"
+        ],
+        [
+          "Ich gebe Ihre Information an den Zahnarzt weiter.",
+          "سأنقل معلوماتكم إلى طبيب الأسنان."
+        ]
+      ],
+      "grammar": "أسئلة W: Wo? Wann? Seit wann? Wie lange? Was? تساعد على جمع المعلومات دون تشخيص المريض.",
+      "quiz": [
+        {
+          "q": "Seit wann bedeutet:",
+          "options": [
+            "إلى أين",
+            "منذ متى",
+            "كم السعر"
+          ],
+          "correct": 1,
+          "why": "Seit wann تعني منذ متى."
+        },
+        {
+          "q": "من يقيّم الحالة الطبية؟",
+          "options": [
+            "المريضة وحدها دائماً",
+            "المختص الطبي المسؤول",
+            "موظف الاستقبال دون تدريب"
+          ],
+          "correct": 1,
+          "why": "التقييم الطبي من اختصاص الطبيب أو المختص المسؤول."
+        }
+      ]
+    },
+    {
+      "title": "النظافة والتعقيم والسلامة",
+      "de": "Hygiene, Aufbereitung und Arbeitsschutz",
+      "level": "B1-B2",
+      "goal": "فهم مفردات النظافة واتباع تعليمات العيادة",
+      "text": "Hygiene schützt Patientinnen, Patienten und das Praxisteam. Beschäftigte beachten den Hygieneplan und die Anweisungen der Praxis. Dazu gehören Händehygiene, geeignete Schutzkleidung und der sichere Umgang mit benutzten Instrumenten. Die Aufbereitung erfolgt nach den geltenden Vorschriften und den dokumentierten Abläufen. Bei Fragen muss eine zuständige Fachkraft gefragt werden.",
+      "translation": "تحمي النظافة المرضى وفريق العيادة. يلتزم العاملون بخطة النظافة وتعليمات العيادة. ويشمل ذلك نظافة اليدين وملابس الوقاية المناسبة والتعامل الآمن مع الأدوات المستعملة. تتم معالجة الأدوات وفق اللوائح المعمول بها والإجراءات الموثقة. وعند وجود أسئلة يجب سؤال شخص مختص مسؤول.",
+      "vocab": [
+        [
+          "der Hygieneplan",
+          "خطة النظافة"
+        ],
+        [
+          "die Händehygiene",
+          "نظافة اليدين"
+        ],
+        [
+          "die Schutzkleidung",
+          "ملابس الوقاية"
+        ],
+        [
+          "die Aufbereitung",
+          "معالجة وتجهيز الأدوات"
+        ],
+        [
+          "die Desinfektion",
+          "التطهير"
+        ],
+        [
+          "die Sterilisation",
+          "التعقيم"
+        ],
+        [
+          "die Vorschrift",
+          "اللائحة / التعليمات"
+        ],
+        [
+          "die Einmalhandschuhe",
+          "قفازات الاستخدام الواحد"
+        ],
+        [
+          "die Infektion",
+          "العدوى"
+        ],
+        [
+          "der Arbeitsschutz",
+          "السلامة المهنية"
+        ]
+      ],
+      "sentences": [
+        [
+          "Ich halte mich an den Hygieneplan.",
+          "ألتزم بخطة النظافة."
+        ],
+        [
+          "Wo finde ich die aktuellen Hygieneanweisungen?",
+          "أين أجد تعليمات النظافة الحالية؟"
+        ],
+        [
+          "Soll ich eine Schutzbrille tragen?",
+          "هل ينبغي أن أرتدي نظارات واقية؟"
+        ]
+      ],
+      "grammar": "Modalverben: müssen = يجب، dürfen = يُسمح، sollen = ينبغي. مثال: Instrumente müssen fachgerecht aufbereitet werden.",
+      "quiz": [
+        {
+          "q": "لماذا نتبع Hygieneplan؟",
+          "options": [
+            "لحماية المرضى والعاملين",
+            "لتوفير وقت الاستراحة",
+            "لترتيب المواعيد فقط"
+          ],
+          "correct": 0,
+          "why": "خطة النظافة تهدف إلى الوقاية والحماية."
+        },
+        {
+          "q": "ماذا تفعل إذا لم تفهم تعليمات التعقيم؟",
+          "options": [
+            "تجرب من نفسك",
+            "تسأل المختص المسؤول",
+            "تتجاهل التعليمات"
+          ],
+          "correct": 1,
+          "why": "يجب طلب التوضيح من شخص مؤهل وعدم التخمين."
+        }
+      ]
+    },
+    {
+      "title": "الملفات والتوثيق والتأمين",
+      "de": "Patientenakte, Dokumentation und Versicherung",
+      "level": "B1-B2",
+      "goal": "فهم المصطلحات الإدارية الأساسية",
+      "text": "In der Patientenakte werden wichtige Angaben und Behandlungen dokumentiert. Persönliche Daten müssen vertraulich behandelt werden. Die elektronische Gesundheitskarte enthält Versicherungsinformationen. Die ZFA unterstützt bei organisatorischen Aufgaben und achtet darauf, dass Angaben korrekt aufgenommen werden. Fragen zum Datenschutz werden mit dem Praxisteam geklärt.",
+      "translation": "يتم توثيق المعلومات والعلاجات المهمة في ملف المريض. يجب التعامل مع البيانات الشخصية بسرية. تحتوي بطاقة التأمين الصحي الإلكترونية على معلومات التأمين. تساعد ZFA في المهام التنظيمية وتهتم بتسجيل البيانات بشكل صحيح. وتُناقش أسئلة حماية البيانات مع فريق العيادة.",
+      "vocab": [
+        [
+          "die Patientenakte",
+          "ملف المريض"
+        ],
+        [
+          "die Dokumentation",
+          "التوثيق"
+        ],
+        [
+          "die Gesundheitskarte",
+          "بطاقة التأمين الصحي"
+        ],
+        [
+          "die Versicherung",
+          "التأمين"
+        ],
+        [
+          "die persönlichen Daten",
+          "البيانات الشخصية"
+        ],
+        [
+          "der Datenschutz",
+          "حماية البيانات"
+        ],
+        [
+          "vertraulich",
+          "سري"
+        ],
+        [
+          "die Einwilligung",
+          "الموافقة"
+        ],
+        [
+          "die Unterschrift",
+          "التوقيع"
+        ],
+        [
+          "die Angabe",
+          "المعلومة / البيان"
+        ]
+      ],
+      "sentences": [
+        [
+          "Darf ich Ihre Gesundheitskarte einlesen?",
+          "هل تسمحون لي بقراءة بطاقة التأمين الصحي؟"
+        ],
+        [
+          "Ihre Daten werden vertraulich behandelt.",
+          "سيتم التعامل مع بياناتكم بسرية."
+        ],
+        [
+          "Bitte unterschreiben Sie hier.",
+          "من فضلكم وقّعوا هنا."
+        ]
+      ],
+      "grammar": "المبني للمجهول Passiv: Die Daten werden gespeichert. التركيز على ما يحدث للبيانات لا على من يقوم بالفعل.",
+      "quiz": [
+        {
+          "q": "ما معنى der Datenschutz؟",
+          "options": [
+            "حماية البيانات",
+            "موعد العلاج",
+            "أداة طبية"
+          ],
+          "correct": 0,
+          "why": "Datenschutz هو حماية البيانات والخصوصية."
+        },
+        {
+          "q": "كيف يجب التعامل مع بيانات المريض؟",
+          "options": [
+            "نشرها",
+            "بسرية",
+            "إرسالها للأصدقاء"
+          ],
+          "correct": 1,
+          "why": "يجب الحفاظ على سرية المعلومات الشخصية."
+        }
+      ]
+    },
+    {
+      "title": "التقديم على Ausbildung والمقابلة",
+      "de": "Bewerbung und Vorstellungsgespräch",
+      "level": "B1-B2",
+      "goal": "التحضير لطلب التدريب والمقابلة الشخصية",
+      "text": "Für eine Ausbildung zur Zahnmedizinischen Fachangestellten braucht man eine überzeugende Bewerbung. Dazu gehören ein Lebenslauf und ein Anschreiben. Im Vorstellungsgespräch kann man erklären, warum man sich für Zahnmedizin interessiert und welche persönlichen Stärken man mitbringt. Pünktlichkeit, Lernbereitschaft und ein freundlicher Umgang mit Menschen sind gute Beispiele.",
+      "translation": "للتقديم على تدريب مساعدة طبيب الأسنان نحتاج إلى طلب تقديم مقنع، ويشمل السيرة الذاتية ورسالة التقديم. في المقابلة يمكن شرح سبب الاهتمام بطب الأسنان والصفات الشخصية التي تمتلكها المتقدمة. ومن الأمثلة الجيدة الالتزام بالمواعيد والاستعداد للتعلم والتعامل اللطيف مع الناس.",
+      "vocab": [
+        [
+          "die Ausbildung",
+          "التدريب المهني"
+        ],
+        [
+          "die Bewerbung",
+          "طلب التقديم"
+        ],
+        [
+          "das Anschreiben",
+          "رسالة التقديم"
+        ],
+        [
+          "der Lebenslauf",
+          "السيرة الذاتية"
+        ],
+        [
+          "das Vorstellungsgespräch",
+          "المقابلة الشخصية"
+        ],
+        [
+          "die Stärke",
+          "نقطة القوة"
+        ],
+        [
+          "die Lernbereitschaft",
+          "الاستعداد للتعلم"
+        ],
+        [
+          "zuverlässig",
+          "يمكن الاعتماد عليه"
+        ],
+        [
+          "pünktlich",
+          "ملتزم بالوقت"
+        ],
+        [
+          "die Schulbescheinigung",
+          "إثبات / شهادة مدرسية"
+        ]
+      ],
+      "sentences": [
+        [
+          "Warum möchten Sie ZFA werden?",
+          "لماذا تريدين أن تصبحي مساعدة طبيب أسنان؟"
+        ],
+        [
+          "Ich bin freundlich, zuverlässig und lernbereit.",
+          "أنا ودودة ويمكن الاعتماد عليّ ومستعدة للتعلم."
+        ],
+        [
+          "Ich möchte praktische Erfahrungen sammeln.",
+          "أريد اكتساب خبرة عملية."
+        ]
+      ],
+      "grammar": "weil + جملة فرعية والفعل في النهاية: Ich möchte ZFA werden, weil ich gern Menschen helfe.",
+      "quiz": [
+        {
+          "q": "ما معنى der Lebenslauf؟",
+          "options": [
+            "السيرة الذاتية",
+            "خطة النظافة",
+            "ملف المريض"
+          ],
+          "correct": 0,
+          "why": "Lebenslauf هو السيرة الذاتية."
+        },
+        {
+          "q": "أي صفة مناسبة للمقابلة؟",
+          "options": [
+            "unzuverlässig",
+            "pünktlich",
+            "unhöflich"
+          ],
+          "correct": 1,
+          "why": "الالتزام بالمواعيد صفة مهنية جيدة."
+        }
+      ]
+    }
+  ]
+}
