@@ -73,11 +73,11 @@ function renderCloudDemo() {
 
 async function renderVideoLibrary(){
   if(!videoLibrary.length){
-    const response=await fetch("./data/video-library.json?v=5",{cache:"no-store"});
+    const response=await fetch("./data/video-library.json?v=6",{cache:"no-store"});
     if(!response.ok)throw new Error("تعذر تحميل مكتبة الفيديوهات");
     const data=await response.json();videoLibrary=data.items||[];
   }
-  const subjects=[...new Set(videoLibrary.map(v=>v.subject))].map(id=>({id,label:({mathematics:"الرياضيات",all:"مواد متعددة",zfa:"طب الأسنان ZFA"})[id]||id}));
+  const subjects=[...new Set(videoLibrary.map(v=>v.subject))].map(id=>({id,label:({mathematics:"الرياضيات",german:"الألمانية",english:"الإنجليزية",biology:"الأحياء",politics:"السياسة",history:"التاريخ",zfa:"طب الأسنان ZFA",all:"مواد متعددة"})[id]||id}));
   content.innerHTML=`<div class="page-intro"><span class="eyebrow">VIDEO CAMPUS · مكتبة المشاهدة</span><h1>مكتبة الفيديوهات التعليمية</h1><p>محتوى تعليمي مرئي منتقى من جهات تعليمية ألمانية، مع مساحة مشاهدة داخل المنصة.</p></div>
   <div class="video-library-toolbar"><input id="videoSearch" class="language-search" placeholder="ابحث عن مادة أو موضوع أو جهة تعليمية..."><select id="videoSubjectFilter"><option value="all">كل المواد</option>${subjects.map(x=>`<option value="${x.id}">${x.label}</option>`).join("")}</select></div>
   <div class="video-campus-layout"><section><div class="video-grid" id="videoGrid">${videoLibrary.map(videoCard).join("")}</div></section><aside class="video-player-panel" id="videoPlayerPanel"><div class="video-player-empty"><span>▶</span><h3>مساحة مشاهدة الدروس</h3><p>اختر محتوى من المكتبة لعرضه هنا دون مغادرة MAßNAHME LEARN.</p></div></aside></div>
@@ -87,7 +87,7 @@ async function renderVideoLibrary(){
 }
 function videoCard(v){
  return `<article class="video-resource-card" data-video-card="${v.id}" data-subject="${v.subject}" data-search="${escapeHtml((v.title+" "+v.provider+" "+v.subjectName+" "+v.description).toLowerCase())}">
- <div class="video-card-art"><span>▶</span><small>MAßNAHME VIDEO CAMPUS</small></div><div class="video-card-body"><span class="video-chip">${escapeHtml(v.subjectName)}</span><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.description)}</p><div class="video-card-meta"><span>${escapeHtml(v.provider)}</span><small>${escapeHtml(v.level)}</small></div><button class="primary-btn" data-play-video="${v.id}">فتح في مساحة المشاهدة ←</button></div></article>`;
+ <div class="video-card-art"><span>▶</span><small>MAßNAHME VIDEO CAMPUS</small></div><div class="video-card-body"><span class="video-chip">${escapeHtml(v.subjectName)}</span><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.description)}</p><div class="video-card-meta"><span>${escapeHtml(v.provider)}</span><small>${escapeHtml(v.level)}</small></div><button class="primary-btn" data-play-video="${v.id}">▶ تشغيل الدرس هنا</button></div></article>`;
 }
 function filterVideos(){
  const q=document.querySelector("#videoSearch").value.trim().toLowerCase(),subject=document.querySelector("#videoSubjectFilter").value;
@@ -101,7 +101,7 @@ function playVideo(id){
  : `<iframe src="${v.type==="vimeo"?`https://player.vimeo.com/video/${encodeURIComponent(v.videoId)}`:`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.videoId)}?rel=0`}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
  panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">NOW LEARNING</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.provider)} · ${escapeHtml(v.level)}</p></div>
  <div class="embedded-video-frame">${player}</div>
- <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p></div>`;
+ <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p><a class="video-open-source" href="${v.type==="mp4"?escapeHtml(v.src):v.type==="vimeo"?`https://vimeo.com/${encodeURIComponent(v.videoId)}`:`https://www.youtube.com/watch?v=${encodeURIComponent(v.videoId)}`}" target="_blank" rel="noopener noreferrer">إذا لم يعمل التشغيل داخل المنصة، افتح الفيديو مباشرة ↗</a></div>`;
  panel.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
