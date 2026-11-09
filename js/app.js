@@ -276,6 +276,27 @@ async function renderZfaPreparation() {
         <div class="zfa-tooth">✚<small>ZFA</small></div>
       </section>
       <div class="zfa-notice">ⓘ ${escapeHtml(course.disclaimer)}</div>
+      <section class="zfa-cornelsen panel">
+        <div class="zfa-cornelsen-heading">
+          <div><span class="eyebrow">OFFIZIELLER LEHRPLAN · AUSGABE 2023</span><h2>منهاج ZFA المعتمد من Cornelsen</h2><p>مسار الدراسة مقسّم حسب سنوات التدريب الثلاث، وفق Lernfelder 1–13 في إصدار 2023.</p></div>
+          <span class="zfa-cornelsen-mark">C</span>
+        </div>
+        <div class="zfa-cornelsen-years">
+          <article class="zfa-cornelsen-card"><span>01 · 1. Ausbildungsjahr</span><h3>السنة التدريبية الأولى</h3><strong>Lernfelder 1–4</strong><p>ابدأ بالأساسيات المهنية ومهام العيادة ومبادئ العمل في فريق طب الأسنان.</p><a href="https://www.cornelsen.de/produkte/zahnmedizinische-fachangestellte-fachkunde-1-ausbildungsjahr-9783064523906" target="_blank" rel="noopener noreferrer">صفحة كتاب السنة الأولى ↗</a></article>
+          <article class="zfa-cornelsen-card"><span>02 · 2. Ausbildungsjahr</span><h3>السنة التدريبية الثانية</h3><strong>Lernfelder 5–9</strong><p>تابع وحدات السنة الثانية، وراجع موضوعات المساعدة العلاجية والتنظيم والتوثيق بحسب ترتيب المنهاج.</p><a href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017" target="_blank" rel="noopener noreferrer">تفاصيل إصدار 2023 ↗</a></article>
+          <article class="zfa-cornelsen-card"><span>03 · 3. Ausbildungsjahr</span><h3>السنة التدريبية الثالثة</h3><strong>Lernfelder 10–13</strong><p>استكمل وحدات السنة الثالثة واستعد للانتقال إلى مراجعة الامتحان النهائي.</p><a href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017" target="_blank" rel="noopener noreferrer">تفاصيل إصدار 2023 ↗</a></article>
+        </div>
+        <h3 class="zfa-cornelsen-subtitle">المراجع الأساسية ضمن السلسلة</h3>
+        <div class="zfa-cornelsen-resources">
+          <div><b>Behandlungsassistenz</b><small>المساعدة أثناء العلاج ورعاية المرضى</small></div>
+          <div><b>Organisation & Verwaltung</b><small>تنظيم العيادة والإدارة</small></div>
+          <div><b>Leistungsabrechnung</b><small>الفوترة: BEMA وGOZ وGOÄ</small></div>
+          <div><b>Fachwörterbuch</b><small>قاموس المصطلحات الطبية الألمانية</small></div>
+          <div><b>Prüfungsvorbereitung Teil 1</b><small>التحضير للجزء الأول من الامتحان</small></div>
+          <div><b>Prüfungsvorbereitung Teil 2</b><small>التحضير للجزء الثاني من الامتحان</small></div>
+        </div>
+        <div class="zfa-cornelsen-footer"><p>تتضمن السلسلة كتباً ودفاتر عمل وفيديوهات تعليمية. فيديوهات Cornelsen الأصلية تُفتح من تطبيق Cornelsen Lernen أو الكتاب الإلكتروني عند توفر صلاحية الوصول؛ لا ننسخ محتوى الكتب المحمي داخل المنصة.</p><div><a class="primary-btn" href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017" target="_blank" rel="noopener noreferrer">عرض كتب Cornelsen الرسمية ↗</a> <a class="secondary-btn" href="https://www.cornelsen.de/reihen/zahnmedizinische-fachangestellte-310001300000/ausgabe-2023-310001300017/konzept" target="_blank" rel="noopener noreferrer">شرح المنهاج ↗</a></div></div>
+      </section>
       <section class="stats-grid">
         <article class="stat-card"><span class="stat-icon gold">▤</span><div><small>الوحدات التعليمية</small><strong>${units.length}</strong></div></article>
         <article class="stat-card"><span class="stat-icon blue">Aa</span><div><small>المفردات الألمانية</small><strong>${words}</strong></div></article>
