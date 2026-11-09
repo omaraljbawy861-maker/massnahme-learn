@@ -15,7 +15,7 @@ let zfaSimulationIndex = 0;
 let zfaSimulationScore = 0;
 let zfaSimulationAnswered = false;
 
-const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "cloud-demo":"تجربة حفظ التقدم" };
+const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -61,16 +61,6 @@ function subjectCard(c, cls="subject-card") {
     <div class="progress-meta"><span>التقدم</span><strong>${pct}%</strong></div><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
   </article>`;
 }
-function renderCloudDemo() {
- const KEY="massnahme-demo-profile-v1";
- let profile={}; try{profile=JSON.parse(localStorage.getItem(KEY)||"{}")}catch{}
- const p=getProgress();
- content.innerHTML=`<div class="page-intro"><span class="eyebrow">SAVE & CONTINUE · تجربة الحفظ</span><h1>جرّب حفظ تقدمك الدراسي</h1><p>هذه نسخة اختبارية لتجربة شكل الحساب واسترجاع التقدم. الحفظ هنا على نفس المتصفح فقط، وليس تخزيناً سحابياً حقيقياً بعد.</p></div>
- <div class="panel" style="padding:24px;margin-bottom:18px"><h3>ملف الطالب التجريبي</h3><p style="color:var(--muted)">اكتب اسماً وبريداً تجريبياً، ثم احفظ الملف. لا تستخدم كلمة مرورك الحقيقية.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0"><label>اسم الطالب<input id="demo-name" class="form-control" placeholder="اسم تجريبي" value="${escapeHtml(profile.name||"")}" /></label><label>البريد الإلكتروني<input id="demo-email" type="email" class="form-control" placeholder="student@example.com" value="${escapeHtml(profile.email||"")}" /></label></div><button class="primary-btn" data-action="demo-save">حفظ الملف التجريبي</button> <button class="text-btn" data-action="demo-restore">استرجاع البيانات المحفوظة</button><div id="demo-status" class="feedback" style="margin-top:14px">${profile.name?"آخر ملف محفوظ: "+escapeHtml(profile.name):"لم تحفظ ملفاً تجريبياً بعد."}</div></div>
- <div class="stats-grid"><article class="stat-card"><div><small>الدروس المكتملة</small><strong>${p.completed.length}</strong></div></article><article class="stat-card"><div><small>الاختبارات المحفوظة</small><strong>${Object.keys(p.scores||{}).length}</strong></div></article></div>
- <div class="panel" style="padding:22px;margin-top:18px"><h3>اختبار الاستمرار</h3><ol style="line-height:2.2"><li>احفظ الملف التجريبي أعلاه.</li><li>افتح أي مادة وأكمل درساً أو اختباراً.</li><li>أغلق الصفحة ثم افتح الموقع مرة ثانية من نفس الجهاز والمتصفح.</li><li>ارجع إلى هذه الصفحة واضغط «استرجاع البيانات المحفوظة»؛ ستجد تقدمك ما زال موجوداً.</li></ol><p style="color:var(--muted);font-size:13px">ملاحظة: هذه التجربة تثبت الحفظ المحلي فقط. حتى يظهر تقدمك على هاتف أو كمبيوتر آخر، نحتاج ربط قاعدة بيانات سحابية وتسجيل دخول فعلي.</p></div>`;
-}
-
 async function renderVideoLibrary(){
   if(!videoLibrary.length){
     const response=await fetch("./data/video-library.json?v=19",{cache:"no-store"});
