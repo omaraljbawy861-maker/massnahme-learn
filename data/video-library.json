@@ -1,5 +1,5 @@
 {
-  "version": 6,
+  "version": 7,
   "items": [
     {
       "id": "de-cases",
@@ -286,6 +286,160 @@
       "type": "youtube",
       "videoId": "xooEyNT3OQc",
       "description": "حساب النسبة المئوية باستخدام التناسب الثلاثي (Dreisatz)، مع شرح خطوات الحل وثلاثة أمثلة."
+    },
+    {
+      "id": "de-grips-25",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Bildhafte Sprache – الصور البلاغية والتعابير",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-25-36-bildhafte-sprache/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAwOTEwQTA",
+      "description": "Metaphern und Gleichnisse verstehen und anwenden."
+    },
+    {
+      "id": "de-grips-24",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Bewerbungsschreiben – كتابة طلب التقديم",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-24-36-bewerbungsschreiben/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAwOTA5QTA",
+      "description": "كتابة طلب تدريب أو عمل بطريقة صحيحة."
+    },
+    {
+      "id": "de-grips-23",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Texte sinnvoll überarbeiten – مراجعة النصوص",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-23-36-texte-sinnvoll-ueberarbeiten/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAwNTk0QTA",
+      "description": "تحسين النصوص وتنظيم الأفكار وتصحيح الأخطاء."
+    },
+    {
+      "id": "de-grips-22",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Schriftlich kommunizieren – التواصل الكتابي",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-22-36-schriftlich-kommunizieren/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAwNTkzQTA",
+      "description": "كتابة الرسائل والبريد الإلكتروني والشكاوى."
+    },
+    {
+      "id": "de-grips-21",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Textzusammenfassung – تلخيص النصوص",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-21-36-textzusammenfassung/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA3MDc0QTA",
+      "description": "استخراج الأفكار الأساسية وكتابة ملخص."
+    },
+    {
+      "id": "de-grips-19",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Argumentieren und Erörtern – الحجاج ومناقشة الرأي",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-19-36-argumentieren-und-eroertern/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA2NjYxQTA",
+      "description": "بناء الحجة وتقديم الرأي والأدلة."
+    },
+    {
+      "id": "de-grips-18",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Bericht schreiben – كتابة التقرير",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-18-36-so-geht-ein-gelungener-bericht/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA2Mzc4QTA",
+      "description": "كتابة تقرير مرتب وواضح."
+    },
+    {
+      "id": "de-grips-17",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Praktikumsbericht – تقرير التدريب العملي",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-17-36-praktikumsbericht/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA2Mzc3QTA",
+      "description": "إعداد تقرير عن فترة التدريب."
+    },
+    {
+      "id": "de-grips-15",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Erzählen und Beschreiben – السرد والوصف",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-15-36-erzaehlen-und-beschreiben/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA2MDk5QTA",
+      "description": "تطوير مهارات السرد والوصف."
+    },
+    {
+      "id": "de-grips-14",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Der Schreibprozess – مراحل الكتابة",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-14-36-der-schreibprozess/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA1ODQ1QTA",
+      "description": "التخطيط للنص وكتابته ومراجعته."
+    },
+    {
+      "id": "de-grips-13",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Diktattraining – التدريب على الإملاء",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-13-36-diktattraining/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA1ODQ0QTA",
+      "description": "تدريب على الاستماع والكتابة الصحيحة."
+    },
+    {
+      "id": "de-grips-12",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Rechtschreibstrategien – استراتيجيات الإملاء",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-12-36-rechtschreibstrategien/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA1NjE4QTA",
+      "description": "قواعد واستراتيجيات تحسين الإملاء."
+    },
+    {
+      "id": "de-grips-11",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Getrennt- und Zusammenschreibung – فصل الكلمات ودمجها",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-11-36-getrennt-und-zusammenschreibung/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDA1NjE3QTA",
+      "description": "متى نكتب الكلمات منفصلة أو مركبة."
+    },
+    {
+      "id": "de-grips-10",
+      "subject": "german",
+      "subjectName": "Deutsch · الألمانية",
+      "title": "Zeichensetzung – علامات الترقيم",
+      "provider": "ARD alpha · GRIPS Deutsch",
+      "level": "Hauptschulabschluss / ESA",
+      "type": "external",
+      "url": "https://www.ardmediathek.de/video/grips-deutsch/folge-10-36-zeichensetzung/ard-alpha/Y3JpZDovL2JyLmRlL2Jyb2FkY2FzdC9GMjAxNldPMDAyNzg4QTA",
+      "description": "استخدام الفواصل والنقاط وعلامات الترقيم."
     }
   ]
 }
