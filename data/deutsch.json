@@ -2071,6 +2071,220 @@
           "a": "Digitale Medien ermöglichen einen schnellen Zugang zu Informationen. Allerdings ist es wichtig, die Qualität und Herkunft der Quellen zu prüfen. Durch den Vergleich verschiedener Informationen kann man Fehler erkennen und sich eine gut begründete Meinung bilden."
         }
       ]
+    },
+    {
+      "id": "de-extra-01",
+      "title": "حروف الجر والحالات الإعرابية",
+      "germanTitle": "Präpositionen und Kasus",
+      "level": "A2–B1 · ESA",
+      "duration": "45 دقيقة",
+      "unit": "Grammatik: Kasus",
+      "chapterNumber": 101,
+      "objectives": [
+        "التمييز بين Akkusativ وDativ في الجمل اليومية.",
+        "حفظ حروف الجر الشائعة وربطها بالحالة الصحيحة.",
+        "بناء جمل عن المكان والاتجاه."
+      ],
+      "intro": "نتعلم كيف تغيّر حروف الجر شكل أداة التعريف والاسم في الألمانية، مع أمثلة من الحياة اليومية.",
+      "german": "Präpositionen bestimmen oft den Kasus. Für Akkusativ: durch, für, gegen, ohne, um. Für Dativ: aus, bei, mit, nach, seit, von, zu. Wechselpräpositionen wie in, an, auf können Dativ (Wo?) oder Akkusativ (Wohin?) verlangen.",
+      "lessonText": "بعض حروف الجر تأخذ دائماً Akkusativ مثل für وohne، وبعضها يأخذ Dativ مثل mit وbei. وهناك حروف مثل in وauf تتغير: نسأل Wo? للمكان الثابت فتأخذ Dativ، وWohin? للاتجاه والحركة فتأخذ Akkusativ.",
+      "explanation": "احفظ حرف الجر مع الحالة وليس وحده. مثال: Ich fahre mit dem Bus (Dativ)، لكن Ich gehe in den Park (Akkusativ) لأن هناك حركة باتجاه المكان.",
+      "vocab": [
+        [
+          "die Präposition",
+          "حرف جر"
+        ],
+        [
+          "der Akkusativ",
+          "حالة النصب"
+        ],
+        [
+          "der Dativ",
+          "حالة المجرور"
+        ],
+        [
+          "der Standort",
+          "الموقع"
+        ],
+        [
+          "die Richtung",
+          "الاتجاه"
+        ]
+      ],
+      "example": "Ich bin in der Schule. (Wo? Dativ)\nIch gehe in die Schule. (Wohin? Akkusativ)\nIch fahre mit dem Zug.",
+      "worked": [
+        {
+          "title": "اختيار الحالة",
+          "prompt": "Ich gehe ___ den Supermarkt.",
+          "steps": [
+            "الفعل يدل على حركة باتجاه مكان.",
+            "نسأل Wohin?",
+            "مع in والاتجاه نستخدم Akkusativ."
+          ],
+          "answer": "Ich gehe in den Supermarkt."
+        }
+      ],
+      "practice": [
+        {
+          "q": "أكمل: Ich fahre mit ___ Bus.",
+          "hint": "mit تأخذ Dativ.",
+          "a": "dem"
+        },
+        {
+          "q": "أكمل: Ich gehe in ___ Park.",
+          "hint": "حركة باتجاه المكان: Akkusativ.",
+          "a": "den"
+        }
+      ],
+      "questions": [
+        {
+          "q": "أي حالة تأتي بعد mit؟",
+          "options": [
+            "Dativ",
+            "Akkusativ",
+            "Nominativ"
+          ],
+          "correct": 0,
+          "why": "mit دائماً مع Dativ."
+        },
+        {
+          "q": "أي جملة صحيحة للمكان الثابت؟",
+          "options": [
+            "Ich bin in der Schule.",
+            "Ich bin in die Schule.",
+            "Ich bin in den Schule."
+          ],
+          "correct": 0,
+          "why": "Wo? يتطلب Dativ."
+        },
+        {
+          "q": "أي حرف جر يأخذ Akkusativ؟",
+          "options": [
+            "für",
+            "mit",
+            "bei"
+          ],
+          "correct": 0,
+          "why": "für دائماً مع Akkusativ."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب خمس جمل: اثنتان مع Dativ، واثنتان مع Akkusativ، وواحدة مع in للمكان الثابت.",
+          "hint": "استخدم mit, bei, für, ohne, in.",
+          "a": "تأكد من اختيار أداة التعريف الصحيحة حسب الحالة."
+        }
+      ]
+    },
+    {
+      "id": "de-extra-02",
+      "title": "كتابة رسالة رسمية وطلب موعد",
+      "germanTitle": "Formelle E-Mail und Terminvereinbarung",
+      "level": "B1 · Alltag",
+      "duration": "45 دقيقة",
+      "unit": "Schreiben: Alltag",
+      "chapterNumber": 102,
+      "objectives": [
+        "تنظيم رسالة رسمية بمقدمة وسبب وطلب وخاتمة.",
+        "استخدام صيغ الاحترام المناسبة.",
+        "طلب موعد أو تغيير موعد بطريقة مهذبة."
+      ],
+      "intro": "تدريب عملي على كتابة رسالة إلى مدرسة أو دائرة حكومية أو صاحب عمل لطلب موعد أو الاستفسار عن موضوع.",
+      "german": "Eine formelle E-Mail hat einen Betreff, eine höfliche Anrede, eine klare Einleitung, den Grund der Nachricht und eine konkrete Bitte. Am Ende stehen ein höflicher Gruß und der Name. Verwende Formulierungen wie: Ich möchte einen Termin vereinbaren. Könnten Sie mir bitte mitteilen ...?",
+      "lessonText": "ابدأ بعنوان واضح للرسالة، ثم اكتب Sehr geehrte Damen und Herren، وبعدها عرّف بنفسك واشرح سبب الكتابة. اذكر طلبك بوضوح، مثل طلب موعد، واختم بـ Mit freundlichen Grüßen واسمك.",
+      "explanation": "تجنب الاختصارات واللغة العامية في الرسائل الرسمية. اجعل الرسالة قصيرة ومهذبة، واذكر رقم الملف أو التاريخ عند الحاجة دون إرسال معلومات غير مطلوبة.",
+      "vocab": [
+        [
+          "der Betreff",
+          "موضوع الرسالة"
+        ],
+        [
+          "die Anrede",
+          "التحية"
+        ],
+        [
+          "die Anfrage",
+          "استفسار"
+        ],
+        [
+          "der Termin",
+          "موعد"
+        ],
+        [
+          "die Rückmeldung",
+          "رد"
+        ],
+        [
+          "Mit freundlichen Grüßen",
+          "مع أطيب التحيات"
+        ]
+      ],
+      "example": "Betreff: Bitte um einen Termin\n\nSehr geehrte Damen und Herren,\n\nmein Name ist ... Ich möchte einen Termin vereinbaren, da ich eine Frage zu meinen Unterlagen habe. Könnten Sie mir bitte einen passenden Termin mitteilen?\n\nVielen Dank im Voraus.\n\nMit freundlichen Grüßen\n...",
+      "worked": [
+        {
+          "title": "ترتيب الرسالة",
+          "prompt": "طلب موعد من مكتب أو مؤسسة.",
+          "steps": [
+            "اكتب Betreff يوضح الهدف.",
+            "ابدأ بتحية رسمية.",
+            "اشرح سبب الرسالة بجملة أو جملتين.",
+            "اكتب طلباً محدداً ومهذباً.",
+            "اختم بالشكر والتحية والاسم."
+          ],
+          "answer": "رسالة قصيرة واضحة تتضمن سبب التواصل وطلب الموعد."
+        }
+      ],
+      "practice": [
+        {
+          "q": "اكتب عنواناً مناسباً لرسالة تطلب فيها تغيير موعد.",
+          "hint": "استخدم Terminverschiebung.",
+          "a": "Betreff: Bitte um Verschiebung meines Termins"
+        },
+        {
+          "q": "حوّل الطلب إلى صيغة مهذبة: Schicken Sie mir einen Termin.",
+          "hint": "ابدأ بـ Könnten Sie bitte ...?",
+          "a": "Könnten Sie mir bitte einen Termin mitteilen?"
+        }
+      ],
+      "questions": [
+        {
+          "q": "ما التحية الرسمية المناسبة عندما لا تعرف اسم المستلم؟",
+          "options": [
+            "Sehr geehrte Damen und Herren,",
+            "Hallo Leute,",
+            "Hey!"
+          ],
+          "correct": 0,
+          "why": "هذه صيغة رسمية عامة."
+        },
+        {
+          "q": "أين نكتب موضوع الرسالة؟",
+          "options": [
+            "في خانة Betreff",
+            "في التوقيع",
+            "بعد الاسم"
+          ],
+          "correct": 0,
+          "why": "Betreff هو موضوع البريد."
+        },
+        {
+          "q": "ما الخاتمة الرسمية الشائعة؟",
+          "options": [
+            "Mit freundlichen Grüßen",
+            "Tschüss Leute",
+            "Bis dann"
+          ],
+          "correct": 0,
+          "why": "تستخدم في الرسائل الرسمية."
+        }
+      ],
+      "homework": [
+        {
+          "q": "اكتب رسالة من 100 كلمة إلى مدرسة تطلب فيها معلومات عن موعد اختبار ESA.",
+          "hint": "استخدم Betreff والتحية والسبب والطلب والخاتمة.",
+          "a": "ينبغي أن تكون الرسالة منظمة ومهذبة وتتضمن سؤالاً واضحاً."
+        }
+      ]
     }
   ],
   "bookTitle": "Deutsch – Lesen, Schreiben und Grammatik",
