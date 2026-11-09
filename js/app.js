@@ -44,6 +44,7 @@ const escapeHtml = (s="") => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<
 function notify(message) { toast.textContent = message; toast.classList.add("show"); setTimeout(()=>toast.classList.remove("show"),2400); }
 function setActive(view) {
   document.querySelectorAll(".nav-link").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+  document.querySelectorAll(".bottom-nav-item[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
   pageTitle.textContent = labels[view] || "الدرس";
   document.querySelector("#sidebar").classList.remove("open");
 }
@@ -404,6 +405,7 @@ document.addEventListener("click",e=>{
 });
 document.querySelectorAll(".nav-link").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
 document.querySelector("#menuToggle").addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
+document.querySelector("#bottomMore")?.addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
 try {
   const student = await requireStudentSession(content);
   if (!student) throw new Error("يلزم تسجيل الدخول للمتابعة");
