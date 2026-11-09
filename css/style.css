@@ -260,3 +260,23 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 .zfa-official-sources{display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--border);padding-top:16px;margin-top:20px;font-size:.88rem}
 .zfa-official-sources a{color:var(--primary);text-decoration:underline}
 @media(max-width:700px){.zfa-official{padding:16px}.zfa-official-years{grid-template-columns:1fr}.zfa-official-field summary{gap:8px;padding:11px}.zfa-official-meta{font-size:.7rem;white-space:normal;text-align:end}.zfa-official-number{width:32px;height:32px;flex-basis:32px}}
+
+
+/* Internal bilingual ZFA course modules */
+.zfa-course-module{padding:24px;margin:24px 0;border:1px solid var(--line);border-radius:18px;background:var(--white)}
+.zfa-internal-lessons{display:grid;gap:10px;margin-top:18px}
+.zfa-internal-lesson{border:1px solid var(--line);border-radius:13px;background:#fff;overflow:hidden}
+.zfa-internal-lesson>summary{display:flex;align-items:center;gap:13px;padding:15px;cursor:pointer;list-style:none}
+.zfa-internal-lesson>summary::-webkit-details-marker{display:none}
+.zfa-internal-lesson>summary:after{content:"＋";margin-inline-start:auto;color:var(--gold);font-size:20px}
+.zfa-internal-lesson[open]>summary:after{content:"−"}
+.zfa-internal-lesson .zfa-official-body{padding:4px 18px 20px;border-top:1px solid var(--line)}
+.zfa-internal-lesson .zfa-official-body h4{margin:18px 0 8px;color:var(--navy)}
+.zfa-internal-lesson .zfa-official-body p{line-height:2}
+.zfa-internal-lesson .zfa-german-text{direction:ltr;text-align:left;background:#f5f7fa;padding:15px;border-radius:10px}
+.zfa-internal-lesson .zfa-question{padding:15px;margin-top:14px;background:#f8f9fb;border-radius:12px}
+.zfa-internal-lesson .zfa-question label{display:block;padding:8px 4px;cursor:pointer}
+.zfa-answer{margin-top:12px;padding:10px;border:1px dashed var(--gold);border-radius:9px}
+.zfa-answer summary{cursor:pointer;font-weight:700;color:var(--navy)}
+.zfa-official-sources span{display:inline-block;margin:5px 12px 5px 0;color:var(--muted);font-size:13px}
+@media(max-width:640px){.zfa-course-module{padding:14px}.zfa-internal-lesson>summary{gap:8px;padding:12px}.zfa-internal-lesson .zfa-official-meta{display:none}}
