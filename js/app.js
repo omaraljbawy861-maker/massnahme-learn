@@ -1,4 +1,4 @@
-import { loadCourses } from "./data.js";
+import { loadCourses } from "./data.js?v=20261109-5";
 import { getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js";
 
 const content = document.querySelector("#appContent");
