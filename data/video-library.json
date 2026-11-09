@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "items": [
     {
       "id": "de-cases",
@@ -1168,26 +1168,59 @@
       "description": "كيف يشارك المواطنون في الحكم عبر انتخاب ممثلين عنهم."
     },
     {
-      "id": "zfa-hubbs-berufsbild",
+      "id": "zfa-lzk-berufsbild",
       "subject": "zfa",
       "subjectName": "Zahnmedizinische Fachangestellte (ZFA)",
-      "title": "Zahnmedizinische/r Fachangestellte/r – Berufsbild und Aufgaben",
-      "provider": "Bundesagentur für Arbeit · HubbS Mediathek",
+      "title": "Der Ausbildungsberuf Zahnmedizinische Fachangestellte",
+      "provider": "Landeszahnärztekammer Baden-Württemberg",
       "level": "ZFA Ausbildung · Deutsch",
-      "type": "mp4",
-      "src": "https://hubbs.schule/sodix/proxy-file/4039/0",
-      "description": "Berufsinformationsvideo auf Deutsch über die duale Ausbildung und Aufgaben der ZFA: Praxisorganisation, Assistenz bei Untersuchungen und Behandlungen, Prophylaxe, Abformungen, Röntgen, Dokumentation und Patientenbetreuung."
+      "type": "youtube",
+      "videoId": "Jc_Km-08RvU",
+      "description": "Offizieller Berufsinformationsfilm mit Einblicken in die duale Ausbildung, den Praxisalltag, Aufgabenbereiche und Fortbildungsmöglichkeiten."
     },
     {
-      "id": "zfa-blzk-erklaerfilm",
+      "id": "zfa-lzk-instrument-reprocessing",
       "subject": "zfa",
       "subjectName": "Zahnmedizinische Fachangestellte (ZFA)",
-      "title": "ZFA – Ohne mich läuft hier nichts!",
-      "provider": "Bayerische Landeszahnärztekammer · JW Player",
+      "title": "Hygiene in der Zahnarztpraxis – Instrumentenaufbereitung",
+      "provider": "Landeszahnärztekammer Baden-Württemberg",
+      "level": "ZFA · Lernfeld 3 · Hygiene und Medizinprodukte",
+      "type": "youtube",
+      "videoId": "uFoMeBlOUl0",
+      "description": "Praxisnaher Lehrfilm zur Aufbereitung kontaminierter zahnmedizinischer Instrumente: Reinigung, Desinfektion, Transport, Lagerung und Vorbereitung zur Wiederverwendung."
+    },
+    {
+      "id": "zfa-duerr-instrument-disinfection",
+      "subject": "zfa",
+      "subjectName": "Zahnmedizinische Fachangestellte (ZFA)",
+      "title": "Instrumenten-Desinfektion – Hygiene in der Zahnarztpraxis",
+      "provider": "Dürr Dental SE",
+      "level": "ZFA · Lernfeld 3 · Hygiene und Medizinprodukte",
+      "type": "youtube",
+      "videoId": "pdbl5VPwnMs",
+      "description": "Praktische Demonstration der manuellen Reinigung und Desinfektion zahnmedizinischer Instrumente sowie der einzelnen Schritte des Aufbereitungsprozesses."
+    },
+    {
+      "id": "zfa-studyflix-training",
+      "subject": "zfa",
+      "subjectName": "Zahnmedizinische Fachangestellte (ZFA)",
+      "title": "Zahnmedizinische Fachangestellte – Ausbildung, Aufgaben und Gehalt",
+      "provider": "Studyflix",
       "level": "ZFA Ausbildung · Deutsch",
-      "type": "mp4",
-      "src": "https://content.jwplatform.com/videos/mUH6ZqMl-TLV6fume.mp4",
-      "description": "Offizieller 3D-Erklärfilm der Bayerischen Landeszahnärztekammer. Einblicke in den Arbeitstag, die Aufgaben und Entwicklungsmöglichkeiten einer ZFA in der Zahnarztpraxis. Kurzer Einführungsfilm, keine ausführliche Fachlektion."
+      "type": "youtube",
+      "videoId": "3CpRrZFP8Wc",
+      "description": "Deutschsprachiger Überblick über den dualen Ausbildungsberuf, Aufgaben am Empfang und Behandlungsstuhl, Praxisorganisation, Prophylaxe und Entwicklungsmöglichkeiten."
+    },
+    {
+      "id": "zfa-ausbildung-de-school",
+      "subject": "zfa",
+      "subjectName": "Zahnmedizinische Fachangestellte (ZFA)",
+      "title": "ZFA – Inhalte der Berufsschule und Tätigkeiten in der Ausbildung",
+      "provider": "Ausbildung.de",
+      "level": "ZFA Ausbildung · Berufsschule",
+      "type": "youtube",
+      "videoId": "vcCx3JsTk40",
+      "description": "Einblick in die Inhalte der Berufsschule und die praktischen Tätigkeiten während der dualen ZFA-Ausbildung: Assistenz, Hygiene, Röntgen, Prophylaxe und Praxisverwaltung."
     }
   ]
 }
