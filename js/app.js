@@ -10,11 +10,12 @@ let courses = [];
 let currentCourse = null;
 let currentLesson = null;
 let languageBank = null;
+let videoLibrary = [];
 let zfaSimulationIndex = 0;
 let zfaSimulationScore = 0;
 let zfaSimulationAnswered = false;
 
-const labels = { dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "cloud-demo":"تجربة حفظ التقدم" };
+const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "cloud-demo":"تجربة حفظ التقدم" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -69,6 +70,38 @@ function renderCloudDemo() {
  <div class="stats-grid"><article class="stat-card"><div><small>الدروس المكتملة</small><strong>${p.completed.length}</strong></div></article><article class="stat-card"><div><small>الاختبارات المحفوظة</small><strong>${Object.keys(p.scores||{}).length}</strong></div></article></div>
  <div class="panel" style="padding:22px;margin-top:18px"><h3>اختبار الاستمرار</h3><ol style="line-height:2.2"><li>احفظ الملف التجريبي أعلاه.</li><li>افتح أي مادة وأكمل درساً أو اختباراً.</li><li>أغلق الصفحة ثم افتح الموقع مرة ثانية من نفس الجهاز والمتصفح.</li><li>ارجع إلى هذه الصفحة واضغط «استرجاع البيانات المحفوظة»؛ ستجد تقدمك ما زال موجوداً.</li></ol><p style="color:var(--muted);font-size:13px">ملاحظة: هذه التجربة تثبت الحفظ المحلي فقط. حتى يظهر تقدمك على هاتف أو كمبيوتر آخر، نحتاج ربط قاعدة بيانات سحابية وتسجيل دخول فعلي.</p></div>`;
 }
+
+async function renderVideoLibrary(){
+  if(!videoLibrary.length){
+    const response=await fetch("./data/video-library.json");
+    if(!response.ok)throw new Error("تعذر تحميل مكتبة الفيديوهات");
+    const data=await response.json();videoLibrary=data.items||[];
+  }
+  const subjects=[...new Set(videoLibrary.map(v=>v.subject))].map(id=>({id,label:({mathematics:"الرياضيات",all:"مواد متعددة",zfa:"طب الأسنان ZFA"})[id]||id}));
+  content.innerHTML=`<div class="page-intro"><span class="eyebrow">VIDEO CAMPUS · مكتبة المشاهدة</span><h1>مكتبة الفيديوهات التعليمية</h1><p>محتوى تعليمي مرئي منتقى من جهات تعليمية ألمانية، مع مساحة مشاهدة داخل المنصة.</p></div>
+  <div class="video-library-toolbar"><input id="videoSearch" class="language-search" placeholder="ابحث عن مادة أو موضوع أو جهة تعليمية..."><select id="videoSubjectFilter"><option value="all">كل المواد</option>${subjects.map(x=>`<option value="${x.id}">${x.label}</option>`).join("")}</select></div>
+  <div class="video-campus-layout"><section><div class="video-grid" id="videoGrid">${videoLibrary.map(videoCard).join("")}</div></section><aside class="video-player-panel" id="videoPlayerPanel"><div class="video-player-empty"><span>▶</span><h3>مساحة مشاهدة الدروس</h3><p>اختر محتوى من المكتبة لعرضه هنا دون مغادرة MAßNAHME LEARN.</p></div></aside></div>
+  <p class="video-note">بعض الجهات تسمح بتضمين الفيديو، وبعضها تمنع عرض صفحاتها داخل مواقع أخرى. نضيف الفيديوهات الفردية إلى المكتبة بعد التحقق من رابط التضمين وحقوق عرضه.</p>`;
+  document.querySelector("#videoSearch").addEventListener("input",filterVideos);
+  document.querySelector("#videoSubjectFilter").addEventListener("change",filterVideos);
+}
+function videoCard(v){
+ return `<article class="video-resource-card" data-video-card="${v.id}" data-subject="${v.subject}" data-search="${escapeHtml((v.title+" "+v.provider+" "+v.subjectName+" "+v.description).toLowerCase())}">
+ <div class="video-card-art"><span>▶</span><small>MAßNAHME VIDEO CAMPUS</small></div><div class="video-card-body"><span class="video-chip">${escapeHtml(v.subjectName)}</span><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.description)}</p><div class="video-card-meta"><span>${escapeHtml(v.provider)}</span><small>${escapeHtml(v.level)}</small></div><button class="primary-btn" data-play-video="${v.id}">فتح في مساحة المشاهدة ←</button></div></article>`;
+}
+function filterVideos(){
+ const q=document.querySelector("#videoSearch").value.trim().toLowerCase(),subject=document.querySelector("#videoSubjectFilter").value;
+ document.querySelectorAll("[data-video-card]").forEach(card=>card.hidden=!(card.dataset.search.includes(q)&&(subject==="all"||card.dataset.subject===subject)));
+}
+function playVideo(id){
+ const v=videoLibrary.find(x=>x.id===id);if(!v)return;
+ const panel=document.querySelector("#videoPlayerPanel");
+ panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">NOW LEARNING</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.provider)} · ${escapeHtml(v.level)}</p></div>
+ <div class="embedded-video-frame"><iframe src="${escapeHtml(v.embed)}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+ <div class="video-player-description"><h3>عن المحتوى</h3><p>${escapeHtml(v.description)}</p><small>إذا لم يسمح الموقع الأصلي بالتضمين، فهذا قيد من مالك المحتوى.</small></div>`;
+ panel.scrollIntoView({behavior:"smooth",block:"start"});
+}
+
 function renderDashboard() {
   content.innerHTML = `
   <section class="welcome-banner"><div><span class="eyebrow">WILLKOMMEN · أهلاً بك</span><h1>كل خطوة تعلم، <em>تقربك من هدفك.</em></h1><p>منصتك المجانية للتحضير للشهادة المدرسية الأولى في ألمانيا.</p><button class="primary-btn" data-action="open-library">ابدأ التعلّم <span>←</span></button></div><div class="banner-seal"><div class="seal-ring">ESA<span>2026</span></div></div></section>
@@ -362,13 +395,14 @@ function navigate(view) {
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
  setActive(view);
- const pages={dashboard:renderDashboard,library:renderLibrary,schedule:renderSchedule,assignments:renderAssignments,exams:renderExams,phrases:renderPhrases};
+ const pages={dashboard:renderDashboard,videos:renderVideoLibrary,library:renderLibrary,schedule:renderSchedule,assignments:renderAssignments,exams:renderExams,phrases:renderPhrases};
  if(pages[view]) pages[view]();
  else { setActive("dashboard"); renderDashboard(); }
  window.scrollTo({top:0,behavior:"smooth"});
 }
 document.addEventListener("click",e=>{
  const nav=e.target.closest("[data-view]"); if(nav){navigate(nav.dataset.view);return;}
+ const play=e.target.closest("[data-play-video]"); if(play){playVideo(play.dataset.playVideo);return;}
  const course=e.target.closest("[data-course]"); if(course){openCourse(course.dataset.course);return;}
  const lesson=e.target.closest("[data-lesson]"); if(lesson){const l=allLessons().find(x=>x.id===lesson.dataset.lesson);if(l){currentCourse=courses.find(c=>c.id===l.courseId);setActive("library");openLesson(l.id);}return;}
  const speakButton=e.target.closest("[data-speak]");
