@@ -86,41 +86,74 @@ function findSpeechVoice(voices, languagePrefix) {
   return null;
 }
 
+let activeSpeechUtterance = null;
+let activeSpeechText = "";
+let activeSpeechLanguage = "auto";
+
+function getStudySpeechLanguage(text) {
+  const selected = document.getElementById("studySpeechLanguage")?.value || "auto";
+  return selected === "auto" ? detectSpeechLanguage(text) : selected;
+}
+
 async function speakText(text, lang) {
   if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
     notify("ميزة النطق غير مدعومة في هذا المتصفح.");
     return;
   }
-
+  const value = String(text || "").trim();
+  if (!value) return;
+  const languagePrefix = String(lang || getStudySpeechLanguage(value)).split("-")[0].toLowerCase();
   const synth = window.speechSynthesis;
-  const detected = String(lang || detectSpeechLanguage(text) || "ar").toLowerCase();
-  const languagePrefix = detected.split("-")[0];
-  const voices = await waitForSpeechVoices(5000);
+  activeSpeechText = value;
+  activeSpeechLanguage = languagePrefix;
+  const voices = synth.getVoices().length ? synth.getVoices() : await waitForSpeechVoices(3000);
   const voice = findSpeechVoice(voices, languagePrefix);
-
   if (!voice) {
     const languageName = languagePrefix === "ar" ? "العربية" : languagePrefix === "de" ? "الألمانية" : "الإنجليزية";
-    notify(`لم يتمكن المتصفح من إظهار صوت ${languageName}. افتح إعدادات الأصوات في النظام ثم أعد تحميل الصفحة.`);
+    notify("لا يوجد صوت " + languageName + " مثبت على الجهاز. أضف صوتاً لهذه اللغة من إعدادات النظام.");
     return;
   }
-
-  // Cancel any previous utterance only after voice discovery has completed.
   synth.cancel();
-  const utterance = new SpeechSynthesisUtterance(String(text));
+  activeSpeechUtterance = null;
+  const utterance = new SpeechSynthesisUtterance(value);
   utterance.voice = voice;
   utterance.lang = voice.lang || (languagePrefix === "ar" ? "ar-SA" : languagePrefix === "de" ? "de-DE" : "en-GB");
-  utterance.rate = languagePrefix === "ar" ? 0.9 : languagePrefix === "en" ? 0.9 : 0.88;
+  const rateControl = Number(document.getElementById("studyVoiceRate")?.value || 0.9);
+  utterance.rate = Math.max(0.75, Math.min(1.15, rateControl));
   utterance.pitch = 1;
-  utterance.onstart = () => {};
+  utterance.onstart = () => {
+    const status = document.getElementById("studySpeechStatus");
+    if (status) status.textContent = "يتم تشغيل الصوت…";
+  };
+  utterance.onend = () => {
+    if (activeSpeechUtterance === utterance) activeSpeechUtterance = null;
+    const status = document.getElementById("studySpeechStatus");
+    if (status) status.textContent = "انتهت القراءة.";
+  };
   utterance.onerror = event => {
+    if (activeSpeechUtterance === utterance) activeSpeechUtterance = null;
     if (event.error !== "canceled" && event.error !== "interrupted") {
-      notify("تعذر تشغيل الصوت. تأكد أن صوت الجهاز غير مكتوم ثم جرّب مجدداً.");
+      notify("تعذر تشغيل الصوت. جرّب اختيار صوت آخر أو أعد المحاولة.");
     }
   };
-
-  // A short delay helps Chromium restart speech reliably after cancel().
-  setTimeout(() => synth.speak(utterance), 100);
+  activeSpeechUtterance = utterance;
+  // Defer slightly after cancel; this helps Safari/Chromium restart speech reliably.
+  setTimeout(() => {
+    if (activeSpeechUtterance === utterance) synth.speak(utterance);
+  }, 180);
 }
+
+function stopStudySpeech() {
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.pause();
+    window.speechSynthesis.cancel();
+  }
+  activeSpeechUtterance = null;
+  const status = document.getElementById("studySpeechStatus");
+  if (status) status.textContent = "تم إيقاف الصوت. يمكنك تشغيله مجدداً.";
+}
+
 const allLessons = () => courses.flatMap(c => c.lessons.map(l => ({...l, courseId:c.id, courseName:c.name, courseGerman:c.german})));
 const escapeHtml = (s="") => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function notify(message) { toast.textContent = message; toast.classList.add("show"); setTimeout(()=>toast.classList.remove("show"),2400); }
@@ -579,7 +612,15 @@ function renderStudyAssistant(){
       <label for="studySubject">المادة أو الموضوع</label>
       <select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select>
       <div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
-      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><label class="study-voice-toggle"><input type="checkbox" id="studyVoiceReply"> اقرأ الرد بصوت</label><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
+      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><label class="study-voice-toggle"><input type="checkbox" id="studyVoiceReply"> اقرأ الرد بصوت</label>
+      <label class="study-voice-toggle">لغة الصوت
+        <select id="studySpeechLanguage"><option value="auto">تلقائي</option><option value="ar">العربية</option><option value="en">English</option><option value="de">Deutsch</option></select>
+      </label>
+      <label class="study-voice-toggle">السرعة
+        <select id="studyVoiceRate"><option value="0.8">بطيء وواضح</option><option value="0.9" selected>طبيعي</option><option value="1">أسرع قليلاً</option></select>
+      </label>
+      <button type="button" class="secondary-btn" id="studyStopVoice">■ إيقاف الصوت</button>
+      <span id="studySpeechStatus" aria-live="polite">الصوت جاهز</span><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
       <p class="study-tutor-note" id="studyTutorStatus">المحادثة الذكية تحتاج تفعيل خدمة المساعد على الخادم أولاً.</p>
     </article>
   </section>
@@ -590,6 +631,7 @@ function renderStudyAssistant(){
   document.getElementById("studyTimerMinutes").addEventListener("change",resetStudyTimer);
   document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
+  document.getElementById("studyStopVoice").addEventListener("click",stopStudySpeech);
   renderStudyTimer();
 }
 function renderStudyTimer(){
@@ -626,7 +668,14 @@ function appendStudyMessage(role,text){
   const item=document.createElement("div");item.className="study-message "+role;
   const heading=document.createElement("b");heading.textContent=role==="user"?"أنت":"المساعد الدراسي";
   const paragraph=document.createElement("p");paragraph.textContent=text;
-  item.append(heading,paragraph);box.append(item);box.scrollTop=box.scrollHeight;
+  item.append(heading,paragraph);
+  if(role==="assistant"){
+    const actions=document.createElement("div");actions.className="study-message-audio-actions";
+    const play=document.createElement("button");play.type="button";play.className="secondary-btn";play.textContent="▶ استمع مجدداً";play.dataset.studySpeak=text;
+    const stop=document.createElement("button");stop.type="button";stop.className="secondary-btn";stop.textContent="■ إيقاف";stop.dataset.studyStop="1";
+    actions.append(play,stop);item.append(actions);
+  }
+  box.append(item);box.scrollTop=box.scrollHeight;
 }
 async function sendStudyMessage(event){
   event.preventDefault();
@@ -641,7 +690,7 @@ async function sendStudyMessage(event){
     if(error)throw error;
     if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
     appendStudyMessage("assistant",data.reply);studyChatMessages.push({role:"assistant",content:data.reply});
-    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply);
+    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply,getStudySpeechLanguage(data.reply));
     if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
   }catch(error){
     const reason=String(error?.message||"");
@@ -703,7 +752,11 @@ document.addEventListener("click",e=>{
  if(action==="language-de")navigate("language-de");
  if(action==="language-en")navigate("language-en");
  if(action==="toggle-translation"){const el=document.getElementById(e.target.closest("[data-target]").dataset.target);if(el)el.hidden=!el.hidden;}
- if(action==="stop-audio"&&"speechSynthesis" in window)window.speechSynthesis.cancel();
+ if(action==="stop-audio")stopStudySpeech();
+ const studySpeak=e.target.closest("[data-study-speak]");
+ if(studySpeak){speakText(studySpeak.dataset.studySpeak,getStudySpeechLanguage(studySpeak.dataset.studySpeak));return;}
+ const studyStop=e.target.closest("[data-study-stop]");
+ if(studyStop){stopStudySpeech();return;}
  if(action==="complete-lesson"&&currentLesson){markCompleted(currentLesson.id);notify("تم تسجيل إكمال الدرس بنجاح");openLesson(currentLesson.id);}
  if(action==="back-course"&&currentCourse)renderCourseLessons();
  if((action==="previous-lesson"||action==="next-lesson")&&currentCourse&&currentLesson){
