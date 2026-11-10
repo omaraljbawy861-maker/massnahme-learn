@@ -312,3 +312,21 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 .study-tips span{padding:7px 10px;border-radius:20px;background:var(--surface-2,#f4f5f7);font-size:12px;color:var(--muted)}
 @media(max-width:850px){.study-tools-grid{grid-template-columns:1fr}.study-chat-messages{height:280px}}
 @media(max-width:520px){.study-timer-card,.study-chat-card{padding:15px}.study-chat-controls .primary-btn{width:100%;margin:0}.study-chat-controls>*{flex:1}.study-message{max-width:96%}}
+
+
+/* MAßNAHME LEARN — refined navigation structure */
+.sidebar{height:100vh;position:sticky;top:0;overflow:hidden}
+.main-nav{display:flex;flex-direction:column;gap:13px;overflow-y:auto;overscroll-behavior:contain;min-height:0;padding:2px 3px 18px;scrollbar-width:thin;scrollbar-color:rgba(226,199,134,.35) transparent}
+.nav-group{display:grid;gap:4px}
+.nav-group-title{padding:7px 13px 5px;color:#d7b978;font-size:10px;font-weight:800;letter-spacing:.35px}
+.nav-link{min-height:42px;padding:9px 13px;font-size:12px;line-height:1.65}
+.nav-link span{flex:0 0 22px}
+.nav-link-sub{margin-inline-start:24px;padding-block:7px;min-height:36px;font-size:11px;color:#aebbd0;border-right:1px solid rgba(226,199,134,.28);border-radius:7px}
+.nav-group-featured{padding-top:9px;border-top:1px solid rgba(255,255,255,.1)}
+.nav-group-featured .nav-link{background:rgba(201,164,92,.13);color:#fff;border:1px solid rgba(226,199,134,.2)}
+.sidebar-bottom{padding-top:12px;flex-shrink:0}
+@media(max-width:760px){
+  .sidebar{height:100dvh;position:fixed;overflow:hidden}
+  .main-nav{flex:1}
+  .sidebar-bottom{margin-top:8px}
+}
