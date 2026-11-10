@@ -440,3 +440,16 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 .timer-footer-note span{color:#bd9a58}
 @media(max-width:850px){.timer-ring{width:200px;height:200px}}
 @media(max-width:520px){.study-timer-pro{padding:16px}.timer-ring{width:190px;height:190px}.study-timer-display{font-size:38px}.study-timer-pro .study-timer-actions{grid-template-columns:1fr auto auto}}
+
+
+/* Simple, polished study assistant settings */
+.study-settings-simple{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;align-items:end;gap:12px;padding:13px;margin:14px 0;border:1px solid var(--border);border-radius:14px;background:var(--surface-2,#f6f7f9)}
+.study-setting-field{min-width:0}
+.study-setting-field label{display:block;margin:0 0 6px;font-size:11px;font-weight:800;color:var(--muted)}
+.study-settings-simple .study-setting-field select{min-height:42px;padding:9px 11px;border-radius:10px;background:var(--surface,#fff);font-size:13px}
+.study-audio-setting{display:flex;align-items:center;gap:8px;min-height:42px;padding:0 5px;cursor:pointer}
+.study-audio-setting input{width:17px;height:17px;accent-color:#a98545}
+.study-audio-setting span{display:grid;gap:2px}
+.study-audio-setting b{font-size:12px}
+.study-audio-setting small{font-size:10px;color:var(--muted)}
+@media(max-width:520px){.study-settings-simple{grid-template-columns:1fr 1fr;gap:10px}.study-audio-setting{grid-column:1/-1;padding:5px 2px}.study-chat-controls #studySpeechStatus{display:none}}
