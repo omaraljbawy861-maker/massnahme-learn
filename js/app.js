@@ -216,11 +216,63 @@ function playVideo(id){
 }
 
 function renderDashboard() {
+  const completed = completionCount();
+  const total = allLessons().length;
+  const progress = Math.round(completed / Math.max(1,total) * 100);
+  const quickLinks = [
+    {id:"library",icon:"▤",title:"المواد الدراسية",desc:"كتب ودروس منظمة لجميع المواد",meta: courses.length+" مواد"},
+    {id:"videos",icon:"▶",title:"مكتبة الفيديوهات",desc:"شروحات مرئية تساعدك على الفهم",meta:"شاهد وتعلّم"},
+    {id:"study-assistant",icon:"✦",title:"المساعد الذكي",desc:"اسأل، ناقش، واحصل على شرح مبسّط",meta:"مساعدك الدراسي"},
+    {id:"phrases",icon:"◉",title:"مختبر اللغات",desc:"تدرّب على الكلمات والاستماع والنطق",meta:"لغات ومحادثة"},
+    {id:"exams",icon:"✎",title:"الاختبارات",desc:"اختبر معلوماتك وتابع مستواك",meta:"تقييم ذاتي"},
+    {id:"zfa-preparation",icon:"＋",title:"المسار المهني ZFA",desc:"ابدأ التحضير لمجال مساعدة طبيب الأسنان",meta:"تطوير مهني"}
+  ];
+  const recommended = allLessons().slice(0,3);
   content.innerHTML = `
-  <section class="welcome-banner"><div><span class="eyebrow">WILLKOMMEN · أهلاً بك</span><h1>كل خطوة تعلم، <em>تقربك من هدفك.</em></h1><p>منصتك المجانية للتحضير للشهادة المدرسية الأولى في ألمانيا.</p><button class="primary-btn" data-action="open-library">ابدأ التعلّم <span>←</span></button></div><div class="banner-seal"><div class="seal-ring">ESA<span>2026</span></div></div></section>
-  <section class="stats-grid"><article class="stat-card"><span class="stat-icon gold">▤</span><div><small>المواد الدراسية</small><strong>${courses.length}</strong></div></article><article class="stat-card"><span class="stat-icon blue">▣</span><div><small>الدروس المتاحة</small><strong>${allLessons().length}</strong></div></article><article class="stat-card"><span class="stat-icon green">✓</span><div><small>الدروس المكتملة</small><strong>${completionCount()}</strong></div></article><article class="stat-card"><span class="stat-icon purple">◷</span><div><small>نسبة الإنجاز</small><strong>${Math.round(completionCount()/Math.max(1,allLessons().length)*100)}%</strong></div></article></section>
-  <section class="section-block"><div class="section-heading"><div><span class="eyebrow">DEIN LERNWEG</span><h2>المواد الدراسية</h2></div><button class="text-btn" data-action="open-library">عرض كل المواد ←</button></div><div class="subject-grid">${courses.map(c=>subjectCard(c)).join("")}</div></section>
-  <section class="bottom-grid"><article class="panel"><div class="panel-heading"><h3>ابدأ من هنا</h3><span class="subtle-tag">دروس مقترحة</span></div><div class="continue-list">${allLessons().slice(0,4).map(l=>`<div class="continue-item"><div><strong>${escapeHtml(l.title)}</strong><small>${escapeHtml(l.courseName)} · ${escapeHtml(l.duration)}</small></div><button class="mini-btn" data-lesson="${l.id}">فتح الدرس</button></div>`).join("")}</div></article><article class="panel quote-panel"><span class="quote-mark">“</span><h3>Bildung für alle</h3><p>التعليم حق وفرصة. تعلم اليوم شيئاً جديداً، ولو كان صغيراً.</p><span class="quote-line"></span></article></section>`;
+  <section class="home-hero">
+    <div class="home-hero-copy">
+      <span class="home-kicker"><i></i> MAßNAHME LEARN · BILDUNG FÜR ALLE</span>
+      <h1>كل خطوة تعليم، <em>تقربك من هدفك.</em></h1>
+      <p>مساحتك التعليمية المتكاملة للتعلّم، والتدريب، وتطوير مهاراتك خطوة بخطوة.</p>
+      <div class="home-hero-actions">
+        <button class="home-primary-action" data-action="open-library">ابدأ التعلّم <span>←</span></button>
+        <button class="home-secondary-action" data-view="study-assistant">اسأل المساعد الذكي <span>✦</span></button>
+      </div>
+    </div>
+    <div class="home-hero-art" aria-hidden="true">
+      <div class="home-orbit orbit-one"></div><div class="home-orbit orbit-two"></div>
+      <div class="home-emblem"><span>M</span><small>LEARN</small></div>
+      <div class="home-floating-tag tag-esa">ESA <b>2026</b></div>
+      <div class="home-floating-tag tag-cap">✦ <b>تعليم للجميع</b></div>
+    </div>
+    <div class="home-hero-foot"><span>تعلم على طريقتك</span><b>•</b><span>تقدّم في كل يوم</span><b>•</b><span>اصنع مستقبلك</span></div>
+  </section>
+
+  <section class="home-progress-row" aria-label="ملخص تقدمك">
+    <article class="home-stat-card"><span class="home-stat-icon stat-gold">▤</span><div><small>المواد الدراسية</small><strong>${courses.length}</strong><em>مسارات متاحة</em></div></article>
+    <article class="home-stat-card"><span class="home-stat-icon stat-blue">▣</span><div><small>الدروس المتاحة</small><strong>${total}</strong><em>محتوى تعليمي</em></div></article>
+    <article class="home-stat-card"><span class="home-stat-icon stat-green">✓</span><div><small>الدروس المكتملة</small><strong>${completed}</strong><em>إنجازاتك حتى الآن</em></div></article>
+    <article class="home-stat-card home-progress-stat"><span class="home-stat-icon stat-purple">◷</span><div class="home-progress-copy"><small>نسبة الإنجاز</small><strong>${progress}%</strong><div class="home-progress-track"><i style="width:${progress}%"></i></div></div></article>
+  </section>
+
+  <section class="home-section">
+    <div class="home-section-heading"><div><span class="home-section-kicker">EXPLORE YOUR LEARNING</span><h2>اكتشف أقسام المنصة</h2><p>كل ما تحتاجه للتعلّم والتدريب في مكان واحد.</p></div></div>
+    <div class="home-quick-grid">${quickLinks.map((item,index)=>`<button class="home-quick-card quick-${index+1}" data-view="${item.id}"><span class="home-quick-icon">${item.icon}</span><span class="home-quick-meta">${item.meta}</span><strong>${item.title}</strong><small>${item.desc}</small><span class="home-quick-arrow">←</span></button>`).join("")}</div>
+  </section>
+
+  <section class="home-lower-grid">
+    <div class="home-subject-panel">
+      <div class="home-section-heading compact"><div><span class="home-section-kicker">YOUR LEARNING PATH</span><h2>المواد الدراسية</h2></div><button class="home-text-link" data-action="open-library">عرض الكل ←</button></div>
+      <div class="subject-grid">${courses.slice(0,6).map(c=>subjectCard(c)).join("")}</div>
+    </div>
+    <aside class="home-start-panel">
+      <span class="home-start-symbol">✦</span><span class="home-section-kicker">KEEP MOVING FORWARD</span>
+      <h2>ابدأ بخطوتك القادمة</h2><p>اختر درساً وتابع رحلتك التعليمية اليوم.</p>
+      <div class="home-recommended-list">${recommended.map(l=>`<div class="home-recommended-item"><span>▹</span><div><strong>${escapeHtml(l.title)}</strong><small>${escapeHtml(l.courseName)} · ${escapeHtml(l.duration)}</small></div><button data-lesson="${l.id}" aria-label="فتح الدرس">←</button></div>`).join("")}</div>
+      <button class="home-start-link" data-view="schedule">عرض جدول الحصص <span>←</span></button>
+    </aside>
+  </section>
+  <footer class="home-footer"><strong>MAßNAHME LEARN</strong><span>Bildung für alle · التعليم للجميع</span><span>كل خطوة تعليم تقرّبك من مستقبل أفضل.</span></footer>`;
 }
 function renderLibrary() {
   content.innerHTML = `<div class="page-intro"><span class="eyebrow">SCHULBIBLIOTHEK · مكتبة المدرسة</span><h1>مكتبة الكتب الدراسية</h1><p>كل مادة أصبحت كتاباً منظماً بغلاف ووحدات وفصول وفهرس محتويات.</p></div><div class="library-grid">${courses.map(c=>`
