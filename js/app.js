@@ -32,17 +32,57 @@ const dailyPhrases = [
   ["Entschuldigung, ich habe eine Frage.","عذراً، لدي سؤال."],["Bis später!","أراك لاحقاً!"],["Auf Wiedersehen!","إلى اللقاء!"]
 ];
 
-function speakText(text, lang="de-DE") {
-  if (!("speechSynthesis" in window)) { notify("ميزة النطق غير مدعومة في هذا المتصفح"); return; }
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
-  utterance.rate = lang.toLowerCase().startsWith("en") ? 0.60 : 0.78;
+function detectSpeechLanguage(text) {
+  const value = String(text || "");
+  const arabicCount = (value.match(/[\\u0600-\\u06FF\\u0750-\\u077F]/g) || []).length;
+  const latinCount = (value.match(/[A-Za-zÄÖÜäöüß]/g) || []).length;
+  if (arabicCount > latinCount) return "ar";
+  if (/[ÄÖÜäöüß]/i.test(value) || /\\b(der|die|das|und|ist|nicht|ich|du|Sie|ein|eine|mit|auf|für|weil|haben|sein)\\b/i.test(value)) return "de";
+  return "en";
+}
+
+function waitForSpeechVoices() {
+  return new Promise(resolve => {
+    const synth = window.speechSynthesis;
+    let voices = synth.getVoices();
+    if (voices.length) return resolve(voices);
+    const done = () => {
+      voices = synth.getVoices();
+      resolve(voices);
+    };
+    synth.addEventListener("voiceschanged", done, { once: true });
+    setTimeout(done, 1200);
+  });
+}
+
+async function speakText(text, lang) {
+  if (!("speechSynthesis" in window)) {
+    notify("ميزة النطق غير مدعومة في هذا المتصفح.");
+    return;
+  }
+
+  const synth = window.speechSynthesis;
+  synth.cancel();
+
+  const detected = lang || detectSpeechLanguage(text);
+  const languagePrefix = detected.toLowerCase().split("-")[0];
+  const voices = await waitForSpeechVoices();
+  const matchingVoices = voices.filter(v => v.lang.toLowerCase().startsWith(languagePrefix));
+
+  if (!matchingVoices.length) {
+    const languageName = languagePrefix === "ar" ? "العربية" : languagePrefix === "de" ? "الألمانية" : "الإنجليزية";
+    notify(`لا يوجد صوت ${languageName} مثبت على الجهاز. أضف صوت هذه اللغة من إعدادات النظام.`);
+    return;
+  }
+
+  const preferred = matchingVoices.find(v => v.default) || matchingVoices[0];
+  const utterance = new SpeechSynthesisUtterance(String(text));
+  utterance.lang = preferred.lang;
+  utterance.voice = preferred;
+  utterance.rate = languagePrefix === "en" ? 0.88 : languagePrefix === "ar" ? 0.90 : 0.86;
   utterance.pitch = 1;
-  const voices = window.speechSynthesis.getVoices();
-  const preferred = voices.find(v => v.lang.toLowerCase().startsWith(lang.toLowerCase().split("-")[0]));
-  if (preferred) utterance.voice = preferred;
-  window.speechSynthesis.speak(utterance);
+  utterance.onerror = () => notify("تعذر تشغيل الصوت. تحقق من إعدادات الصوت في الجهاز.");
+  synth.speak(utterance);
 }
 const allLessons = () => courses.flatMap(c => c.lessons.map(l => ({...l, courseId:c.id, courseName:c.name, courseGerman:c.german})));
 const escapeHtml = (s="") => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -564,7 +604,7 @@ async function sendStudyMessage(event){
     if(error)throw error;
     if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
     appendStudyMessage("assistant",data.reply);studyChatMessages.push({role:"assistant",content:data.reply});
-    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply,"ar-SA");
+    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply);
     if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
   }catch(error){
     const reason=String(error?.message||"");
