@@ -764,7 +764,56 @@ function startStudyDictation(){
   try{recognition.start();}catch{button.disabled=false;button.textContent="🎙️ تحدث";notify("تعذر تشغيل الميكروفون");}
 }
 
+let restoringAppHistory = false;
+
+function getAppRoute() {
+  const lessonId = currentLesson?.id || null;
+  const courseId = currentCourse?.id || null;
+  const activeView = document.querySelector(".nav-link.active[data-view], .bottom-nav-item.active[data-view]")?.dataset.view || "dashboard";
+  return {view: activeView, courseId, lessonId, page: lessonId ? "lesson" : courseId ? "course" : "view"};
+}
+
+function saveAppHistory() {
+  if (restoringAppHistory) return;
+  const route = getAppRoute();
+  history.pushState({maqamLearnRoute: route}, "", location.href);
+}
+
+function restoreAppRoute(route) {
+  if (!route || !route.view) { navigate("dashboard"); return; }
+  restoringAppHistory = true;
+  try {
+    currentCourse = null;
+    currentLesson = null;
+    if (route.page === "lesson" && route.lessonId) {
+      if (route.courseId) {
+        currentCourse = courses.find(c => c.id === route.courseId) || null;
+        if (currentCourse) renderCourseLessons();
+      }
+      openLesson(route.lessonId);
+    } else if (route.page === "course" && route.courseId) {
+      openCourse(route.courseId);
+    } else {
+      navigate(route.view);
+    }
+  } finally {
+    restoringAppHistory = false;
+  }
+}
+
+function goAppBack() {
+  if (history.state?.maqamLearnRoute) history.back();
+  else navigate("dashboard");
+}
+
+window.addEventListener("popstate", event => {
+  const route = event.state?.maqamLearnRoute;
+  if (route) restoreAppRoute(route);
+  else navigate("dashboard");
+});
+
 function navigate(view) {
+ if(!restoringAppHistory) saveAppHistory();
  if(view==="study-assistant"){setActive(view);renderStudyAssistant();window.scrollTo({top:0,behavior:"smooth"});return;}
  if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
@@ -780,10 +829,12 @@ function navigate(view) {
  window.scrollTo({top:0,behavior:"smooth"});
 }
 document.addEventListener("click",e=>{
+ const back=e.target.closest("[data-app-back]");
+ if(back){goAppBack();return;}
  const nav=e.target.closest("[data-view]"); if(nav){navigate(nav.dataset.view);return;}
  const play=e.target.closest("[data-play-video]"); if(play){playVideo(play.dataset.playVideo);return;}
- const course=e.target.closest("[data-course]"); if(course){openCourse(course.dataset.course);return;}
- const lesson=e.target.closest("[data-lesson]"); if(lesson){const l=allLessons().find(x=>x.id===lesson.dataset.lesson);if(l){currentCourse=courses.find(c=>c.id===l.courseId);setActive("library");openLesson(l.id);}return;}
+ const course=e.target.closest("[data-course]"); if(course){saveAppHistory();openCourse(course.dataset.course);return;}
+ const lesson=e.target.closest("[data-lesson]"); if(lesson){const l=allLessons().find(x=>x.id===lesson.dataset.lesson);if(l){saveAppHistory();currentCourse=courses.find(c=>c.id===l.courseId);setActive("library");openLesson(l.id);}return;}
  const speakButton=e.target.closest("[data-speak]");
  if(speakButton){speakText(speakButton.dataset.speak,speakButton.dataset.lang||"de-DE");return;}
  const simChoice=e.target.closest("[data-sim-choice]");
@@ -821,6 +872,7 @@ document.addEventListener("click",e=>{
 document.querySelectorAll(".nav-link").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
 document.querySelector("#menuToggle").addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
 document.querySelector("#bottomMore")?.addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
+history.replaceState({maqamLearnRoute:{view:"dashboard",courseId:null,lessonId:null,page:"view"}}, "", location.href);
 try {
   const student = await requireStudentSession(content);
   if (!student) throw new Error("يلزم تسجيل الدخول للمتابعة");
