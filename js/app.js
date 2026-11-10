@@ -647,8 +647,6 @@ function renderExams() {
 }
 
 function renderStudyAssistant(){
-  if(studyTimerInterval){clearInterval(studyTimerInterval);studyTimerInterval=null;}
-  studyTimerRunning=false;
   content.innerHTML=`<div class="page-intro"><span class="eyebrow">YOUR STUDY COMPANION · رفيق دراستك</span><h1>المساعد الدراسي التفاعلي</h1><p>نظّم وقتك، اكتب سؤالك أو تحدث عبر الميكروفون، وناقش الدرس خطوة بخطوة.</p></div>
   <section class="study-tools-grid">
     <article class="study-timer-card study-timer-pro">
