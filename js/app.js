@@ -1,4 +1,4 @@
-import { loadCourses } from "./data.js?v=20261109-5";
+import { loadCourses } from "./data.js?v=20261110-1";
 import { supabase } from "./supabase.js";
 import { requireStudentSession } from "./auth.js?v=20261109-2";
 import { initializeStudentProgress, getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js?v=20261109-3";
