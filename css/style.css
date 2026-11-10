@@ -484,3 +484,11 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 @media(max-width:760px){.sidebar-backdrop{position:fixed;inset:0;z-index:19;display:block;border:0;padding:0;background:rgba(8,18,34,.48);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}.sidebar-backdrop.visible{opacity:1;visibility:visible;pointer-events:auto}.sidebar{z-index:20}.sidebar.open{box-shadow:-12px 0 32px rgba(8,18,34,.18)}}
 @media(min-width:761px){.sidebar-backdrop{display:none!important}}
 html.native-app .sidebar-backdrop{z-index:55}html.native-app .sidebar{z-index:60}
+
+
+/* Final accessibility and responsive polish */
+:focus-visible{outline:3px solid rgba(201,164,92,.72);outline-offset:3px}
+button:disabled,[aria-disabled="true"]{cursor:not-allowed;opacity:.58}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+@media(max-width:760px){.nav-link{min-height:46px}.topbar{padding-inline:14px}.content{min-width:0;overflow-wrap:anywhere}.page-intro p{line-height:1.9}}
+img,video,iframe{max-width:100%}
