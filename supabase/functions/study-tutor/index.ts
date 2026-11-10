@@ -83,34 +83,62 @@ serve(async (req) => {
 المادة أو السياق الحالي: ${subject}.`;
 
   try {
-    const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
-      {
-        method: "POST",
-        headers: {
-          "x-goog-api-key": apiKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [{ text: systemInstruction }],
-          },
-          contents,
-          generationConfig: {
-            temperature: 0.5,
-            maxOutputTokens: 1200,
-          },
-        }),
-        signal: AbortSignal.timeout(30000),
+    const requestBody = JSON.stringify({
+      systemInstruction: {
+        parts: [{ text: systemInstruction }],
       },
-    );
+      contents,
+      generationConfig: {
+        temperature: 0.5,
+        maxOutputTokens: 1200,
+      },
+    });
 
-    const rawResponse = await response.text();
-    let data: any;
+    // Try the main model first, then automatically fall back if Google reports temporary overload.
+    const models = ["gemini-3.8-flash", "gemini-3.5-flash-lite"];
+    let response: Response | null = null;
+    let rawResponse = "";
+    let data: any = null;
 
-    try {
-      data = JSON.parse(rawResponse);
-    } catch {
+    for (let index = 0; index < models.length; index++) {
+      const model = models[index];
+      response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        {
+          method: "POST",
+          headers: {
+            "x-goog-api-key": apiKey,
+            "Content-Type": "application/json",
+          },
+          body: requestBody,
+          signal: AbortSignal.timeout(30000),
+        },
+      );
+
+      rawResponse = await response.text();
+      try {
+        data = JSON.parse(rawResponse);
+      } catch {
+        data = null;
+      }
+
+      if (response.ok) break;
+
+      const apiMessage = String(data?.error?.message ?? "");
+      console.error(`Gemini model ${model} failed:`, response.status, apiMessage);
+
+      // Only switch models for temporary capacity/server errors.
+      if ((response.status === 503 || response.status >= 500) && index < models.length - 1) {
+        continue;
+      }
+      break;
+    }
+
+    if (!response) {
+      return jsonResponse({ error: "تعذر الاتصال بخدمة الذكاء الاصطناعي." }, 502);
+    }
+
+    if (!data) {
       console.error("Gemini returned a non-JSON response:", response.status);
       return jsonResponse(
         { error: "وصل رد غير مفهوم من خدمة الذكاء الاصطناعي. حاول مرة أخرى." },
@@ -120,7 +148,7 @@ serve(async (req) => {
 
     if (!response.ok) {
       const apiMessage = String(data?.error?.message ?? "");
-      console.error("Gemini API error:", response.status, apiMessage);
+      console.error("Gemini API final error:", response.status, apiMessage);
 
       if (response.status === 429) {
         return jsonResponse(
@@ -144,7 +172,7 @@ serve(async (req) => {
       }
 
       return jsonResponse(
-        { error: "خدمة المساعد غير متاحة حالياً. حاول مرة أخرى بعد قليل." },
+        { error: "خدمة المساعد غير متاحة حالياً حتى بعد تجربة النموذج الاحتياطي. حاول مرة أخرى بعد قليل." },
         502,
       );
     }
