@@ -686,6 +686,11 @@ function renderStudyAssistant(){
   document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
   document.getElementById("studyStopVoice").addEventListener("click",stopStudySpeech);
+  document.getElementById("studyVoiceReply").addEventListener("change",event=>{
+    if(!event.target.checked){stopStudySpeech();return;}
+    const status=document.getElementById("studySpeechStatus");
+    if(status)status.textContent="القراءة الصوتية مفعّلة للردود الجديدة.";
+  });
   renderStudyTimer();
 }
 function renderStudyTimer(){
