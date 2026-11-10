@@ -86,41 +86,10 @@ function findSpeechVoice(voices, languagePrefix) {
   return null;
 }
 
-async function speakText(text, lang) {
-  if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
-    notify("ميزة النطق غير مدعومة في هذا المتصفح.");
-    return;
-  }
-
-  const synth = window.speechSynthesis;
-  const detected = String(lang || detectSpeechLanguage(text) || "ar").toLowerCase();
-  const languagePrefix = detected.split("-")[0];
-  const voices = await waitForSpeechVoices(5000);
-  const voice = findSpeechVoice(voices, languagePrefix);
-
-  if (!voice) {
-    const languageName = languagePrefix === "ar" ? "العربية" : languagePrefix === "de" ? "الألمانية" : "الإنجليزية";
-    notify(`لم يتمكن المتصفح من إظهار صوت ${languageName}. افتح إعدادات الأصوات في النظام ثم أعد تحميل الصفحة.`);
-    return;
-  }
-
-  // Cancel any previous utterance only after voice discovery has completed.
-  synth.cancel();
-  const utterance = new SpeechSynthesisUtterance(String(text));
-  utterance.voice = voice;
-  utterance.lang = voice.lang || (languagePrefix === "ar" ? "ar-SA" : languagePrefix === "de" ? "de-DE" : "en-GB");
-  utterance.rate = languagePrefix === "ar" ? 0.9 : languagePrefix === "en" ? 0.9 : 0.88;
-  utterance.pitch = 1;
-  utterance.onstart = () => {};
-  utterance.onerror = event => {
-    if (event.error !== "canceled" && event.error !== "interrupted") {
-      notify("تعذر تشغيل الصوت. تأكد أن صوت الجهاز غير مكتوم ثم جرّب مجدداً.");
-    }
-  };
-
-  // A short delay helps Chromium restart speech reliably after cancel().
-  setTimeout(() => synth.speak(utterance), 100);
-}
+function getStudyVoiceSettings(){try{return{voiceURI:localStorage.getItem("studyVoiceURI")||"",rate:Number(localStorage.getItem("studyVoiceRate")||0.82)}}catch{return{voiceURI:"",rate:0.82}}}
+function populateStudyVoices(){const select=document.getElementById("studyVoiceSelect");if(!select||!("speechSynthesis"in window))return;const voices=window.speechSynthesis.getVoices()||[];const arabic=voices.filter(v=>/^ar([_-]|$)/i.test(v.lang||"")||/arabic|العربية|العربي/i.test(v.name||""));const saved=getStudyVoiceSettings().voiceURI;select.innerHTML="";if(!arabic.length){const o=document.createElement("option");o.value="";o.textContent="لا توجد أصوات عربية ظاهرة في المتصفح";select.append(o);return;}arabic.forEach(v=>{const o=document.createElement("option");o.value=v.voiceURI||v.name;o.textContent=v.name+" ("+v.lang+")"+(v.localService?" · مثبت":" · عبر النظام");select.append(o)});if(arabic.some(v=>(v.voiceURI||v.name)===saved))select.value=saved;else{const best=arabic.find(v=>/natural|neural|enhanced|premium|online/i.test(v.name))||arabic.find(v=>v.default)||arabic[0];select.value=best.voiceURI||best.name;try{localStorage.setItem("studyVoiceURI",select.value)}catch{}}}
+function speakText(text,lang){if(!("speechSynthesis"in window)||typeof SpeechSynthesisUtterance==="undefined"){notify("ميزة النطق غير مدعومة في هذا المتصفح.");return;}const synth=window.speechSynthesis;const prefix=String(lang||detectSpeechLanguage(text)||"ar").toLowerCase().split("-")[0];const voices=synth.getVoices()||[];const settings=getStudyVoiceSettings();const selected=voices.find(v=>(v.voiceURI||v.name)===settings.voiceURI);const voice=selected||findSpeechVoice(voices,prefix);const utterance=new SpeechSynthesisUtterance(String(text));if(voice)utterance.voice=voice;utterance.lang=voice?.lang||(prefix==="ar"?"ar-SA":prefix==="de"?"de-DE":"en-GB");utterance.rate=Math.max(0.65,Math.min(1.15,Number(document.getElementById("studyVoiceRate")?.value||settings.rate||0.82)));utterance.pitch=1;utterance.onerror=event=>{if(event.error!=="canceled"&&event.error!=="interrupted")notify("تعذر تشغيل الصوت. جرّب اختيار صوت آخر.")};synth.cancel();synth.speak(utterance)}
+function stopStudySpeech(){if("speechSynthesis"in window)window.speechSynthesis.cancel()}
 const allLessons = () => courses.flatMap(c => c.lessons.map(l => ({...l, courseId:c.id, courseName:c.name, courseGerman:c.german})));
 const escapeHtml = (s="") => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function notify(message) { toast.textContent = message; toast.classList.add("show"); setTimeout(()=>toast.classList.remove("show"),2400); }
@@ -578,8 +547,8 @@ function renderStudyAssistant(){
       <div class="study-card-heading"><span class="study-tool-icon">✦</span><div><h2>اسأل وناقش</h2><p>مساعد يشرح ويصحح ويعطيك أمثلة</p></div></div>
       <label for="studySubject">المادة أو الموضوع</label>
       <select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select>
-      <div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
-      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><label class="study-voice-toggle"><input type="checkbox" id="studyVoiceReply"> اقرأ الرد بصوت</label><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
+      <div class="study-audio-settings"><div class="study-audio-heading"><strong>التحكم بالصوت</strong><button type="button" class="secondary-btn" id="studyStopVoice">⏹ إيقاف الصوت</button></div><label class="study-voice-toggle"><input type="checkbox" id="studyVoiceReply"> تشغيل قراءة الإجابات تلقائياً</label><label for="studyVoiceSelect">اختيار الصوت العربي</label><select id="studyVoiceSelect"><option>جارٍ تحميل الأصوات...</option></select><label for="studyVoiceRate">سرعة الكلام: <span id="studyVoiceRateValue">0.82</span></label><input id="studyVoiceRate" type="range" min="0.65" max="1.15" step="0.05" value="0.82"><p class="study-tutor-note">اختيار الصوت والسرعة يُحفظان على هذا الجهاز. طبيعية الصوت تعتمد على الأصوات المتاحة في النظام.</p></div><div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
+      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
       <p class="study-tutor-note" id="studyTutorStatus">المحادثة الذكية تحتاج تفعيل خدمة المساعد على الخادم أولاً.</p>
     </article>
   </section>
@@ -590,7 +559,14 @@ function renderStudyAssistant(){
   document.getElementById("studyTimerMinutes").addEventListener("change",resetStudyTimer);
   document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
-  renderStudyTimer();
+  document.getElementById("studyStopVoice").addEventListener("click",stopStudySpeech);
+   const voiceSelect=document.getElementById("studyVoiceSelect");
+   voiceSelect.addEventListener("change",()=>{try{localStorage.setItem("studyVoiceURI",voiceSelect.value)}catch{}});
+   const rateInput=document.getElementById("studyVoiceRate");rateInput.value=String(getStudyVoiceSettings().rate);
+   document.getElementById("studyVoiceRateValue").textContent=rateInput.value;
+   rateInput.addEventListener("input",()=>{document.getElementById("studyVoiceRateValue").textContent=rateInput.value;try{localStorage.setItem("studyVoiceRate",rateInput.value)}catch{}});
+   populateStudyVoices();if("speechSynthesis"in window)window.speechSynthesis.addEventListener?.("voiceschanged",populateStudyVoices);
+   renderStudyTimer();
 }
 function renderStudyTimer(){
   const display=document.getElementById("studyTimerDisplay");if(!display)return;
