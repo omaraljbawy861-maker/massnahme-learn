@@ -948,11 +948,15 @@ menuToggle.addEventListener("click",event=>{
   sidebar.classList.toggle("open");
 });
 sidebar.addEventListener("click",event=>event.stopPropagation());
-document.addEventListener("click",event=>{
-  if(sidebar.classList.contains("open")&&!sidebar.contains(event.target)&&!menuToggle.contains(event.target)){
-    sidebar.classList.remove("open");
-  }
-});
+function closeSidebarOnOutside(event){
+  if(!sidebar.classList.contains("open")) return;
+  const target=event.target;
+  if(sidebar.contains(target)||menuToggle?.contains(target)) return;
+  sidebar.classList.remove("open");
+}
+document.addEventListener("pointerdown",closeSidebarOnOutside,true);
+document.addEventListener("touchstart",closeSidebarOnOutside,{capture:true,passive:true});
+document.addEventListener("click",closeSidebarOnOutside,true);
 document.addEventListener("keydown",event=>{
   if(event.key==="Escape")sidebar.classList.remove("open");
 });
