@@ -166,7 +166,7 @@
 
 /* Native Android app shell — only enabled inside Capacitor APK */
 html.native-app,html.native-app body{min-height:100%;overscroll-behavior-y:contain}
-html.native-app body{padding-bottom:calc(76px + env(safe-area-inset-bottom));background:#f4f6f9}
+html.native-app body{padding-bottom:env(safe-area-inset-bottom);background:#f4f6f9}
 html.native-app .app-shell{display:block;min-height:100dvh}
 html.native-app .sidebar{position:fixed;z-index:60;top:0;right:0;bottom:0;width:min(86vw,320px);height:100dvh;min-height:0;overflow-y:auto;transform:translateX(105%);transition:transform .22s ease;padding:calc(18px + env(safe-area-inset-top)) 15px calc(18px + env(safe-area-inset-bottom));box-shadow:none}
 html.native-app .sidebar.open{transform:translateX(0);box-shadow:0 0 0 100vmax rgba(8,18,34,.48)}
@@ -197,7 +197,7 @@ html.native-app .bottom-nav-icon{height:25px;font-size:21px;line-height:1.1}
 html.native-app .bottom-nav-item small{font-size:10px;font-weight:700;white-space:nowrap}
 html.native-app .bottom-nav-item.active{color:#9a783e}
 html.native-app .bottom-nav-item.active .bottom-nav-icon{color:#9a783e}
-html.native-app .toast{bottom:calc(86px + env(safe-area-inset-bottom))}
+html.native-app .toast{bottom:calc(16px + env(safe-area-inset-bottom))}
 html.native-app .sidebar .nav-link{min-height:46px}
 html.native-app .lesson-main{padding:14px}
 html.native-app .question,.html.native-app .task-card{padding:12px}
@@ -477,3 +477,10 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 .study-message-audio-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
 .study-message-audio-actions button{min-height:34px;padding:7px 11px;border-radius:9px;font-size:11px}
 @media(max-width:520px){.study-settings-simple{grid-template-columns:1fr 1fr}.study-audio-setting-wrap{grid-template-columns:1fr;gap:8px}.study-speech-language{display:grid;grid-template-columns:70px 1fr;align-items:center;gap:8px}.study-speech-language>span{margin:0}.study-chat-controls #studySpeechStatus{display:block;min-width:0;flex:1}.study-chat-controls .secondary-btn{flex:1}.study-chat-controls .primary-btn{flex-basis:100%}}
+
+
+/* Accessible mobile navigation drawer and backdrop */
+.sidebar-backdrop{display:none}
+@media(max-width:760px){.sidebar-backdrop{position:fixed;inset:0;z-index:19;display:block;border:0;padding:0;background:rgba(8,18,34,.48);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}.sidebar-backdrop.visible{opacity:1;visibility:visible;pointer-events:auto}.sidebar{z-index:20}.sidebar.open{box-shadow:-12px 0 32px rgba(8,18,34,.18)}}
+@media(min-width:761px){.sidebar-backdrop{display:none!important}}
+html.native-app .sidebar-backdrop{z-index:55}html.native-app .sidebar{z-index:60}
