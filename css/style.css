@@ -403,3 +403,10 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 @media(max-width:1050px){.home-hero-art{left:2%;opacity:.7}.home-hero-copy{max-width:68%}.home-progress-row{grid-template-columns:repeat(2,minmax(0,1fr))}.home-lower-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.home-hero{min-height:280px;padding:25px 20px 58px;border-radius:17px}.home-hero-copy{max-width:100%}.home-hero-art{left:-62px;top:80px;opacity:.2;transform:scale(.85)}.home-hero h1{font-size:24px;max-width:340px}.home-hero-copy>p{font-size:11px;max-width:310px}.home-hero-foot{right:20px;gap:7px;font-size:8px}.home-progress-row{gap:8px;margin:12px 0 25px}.home-stat-card{padding:11px;gap:8px}.home-stat-icon{width:34px;height:34px;flex-basis:34px}.home-stat-card strong{font-size:18px}.home-stat-card small,.home-stat-card em{font-size:8px}.home-quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.home-quick-card{min-height:150px;padding:13px}.home-quick-card strong{font-size:12px}.home-quick-card small{font-size:9px}.home-quick-meta{top:17px;left:11px;font-size:8px}.home-quick-arrow{bottom:12px;left:13px}.home-lower-grid{gap:12px}.home-subject-panel,.home-start-panel{padding:14px}.home-subject-panel .subject-grid{grid-template-columns:1fr}.home-footer{gap:7px;justify-content:center;text-align:center}}
 @media(max-width:390px){.home-hero h1{font-size:21px}.home-primary-action,.home-secondary-action{padding:10px 12px;font-size:10px}.home-hero-foot{font-size:7px}.home-quick-card{min-height:145px}}
+
+/* App-wide back navigation */
+.topbar{gap:14px}
+.app-back-button{display:inline-flex;align-items:center;gap:7px;flex:0 0 auto;padding:8px 13px;border:1px solid #e6dfd0;border-radius:10px;background:#fbf8f1;color:#8c6b35;font:700 11px Cairo,sans-serif;transition:.2s}
+.app-back-button:hover{background:#f3ead8;border-color:#d9c18f}
+.app-back-button:first-letter{font-size:17px}
+@media(max-width:760px){.topbar{gap:8px}.app-back-button{padding:7px 9px;font-size:10px}.app-back-button span{display:inline}}
