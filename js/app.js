@@ -90,6 +90,40 @@ function findSpeechVoice(voices, languagePrefix) {
 let activeSpeechUtterance = null;
 let activeSpeechText = "";
 let activeSpeechLanguage = "auto";
+let studySpeechPaused = false;
+
+function updateStudySpeechButton(label) {
+  const button = document.getElementById("studyStopVoice");
+  if (button) button.textContent = label || (studySpeechPaused ? "▶ تشغيل الصوت" : "■ إيقاف الصوت");
+}
+
+function toggleStudySpeech() {
+  if (!("speechSynthesis" in window)) return;
+  const synth = window.speechSynthesis;
+  if (synth.speaking && !synth.paused) {
+    synth.pause();
+    studySpeechPaused = true;
+    updateStudySpeechButton("▶ تشغيل الصوت");
+    const status = document.getElementById("studySpeechStatus");
+    if (status) status.textContent = "الصوت متوقف مؤقتاً. اضغط تشغيل للمتابعة.";
+    return;
+  }
+  if (synth.paused) {
+    synth.resume();
+    studySpeechPaused = false;
+    updateStudySpeechButton("■ إيقاف الصوت");
+    const status = document.getElementById("studySpeechStatus");
+    studySpeechPaused = false;
+    updateStudySpeechButton("■ إيقاف الصوت");
+    if (status) status.textContent = "يتم تشغيل الصوت…";
+    return;
+  }
+  if (activeSpeechText) speakText(activeSpeechText, activeSpeechLanguage);
+  else {
+    const status = document.getElementById("studySpeechStatus");
+    if (status) status.textContent = "لا يوجد صوت لتشغيله. شغّل قراءة أحد الردود أولاً.";
+  }
+}
 
 function getStudySpeechLanguage(text) {
   const selected = document.getElementById("studySpeechLanguage")?.value || "auto";
@@ -107,6 +141,8 @@ async function speakText(text, lang) {
   const synth = window.speechSynthesis;
   activeSpeechText = value;
   activeSpeechLanguage = languagePrefix;
+  studySpeechPaused = false;
+  updateStudySpeechButton("■ إيقاف الصوت");
   const voices = synth.getVoices().length ? synth.getVoices() : await waitForSpeechVoices(3000);
   const voice = findSpeechVoice(voices, languagePrefix);
   if (!voice) {
@@ -128,6 +164,8 @@ async function speakText(text, lang) {
   };
   utterance.onend = () => {
     if (activeSpeechUtterance === utterance) activeSpeechUtterance = null;
+    studySpeechPaused = false;
+    updateStudySpeechButton("■ إيقاف الصوت");
     const status = document.getElementById("studySpeechStatus");
     if (status) status.textContent = "انتهت القراءة.";
   };
@@ -151,8 +189,10 @@ function stopStudySpeech() {
     window.speechSynthesis.cancel();
   }
   activeSpeechUtterance = null;
+  studySpeechPaused = false;
+  updateStudySpeechButton("▶ تشغيل الصوت");
   const status = document.getElementById("studySpeechStatus");
-  if (status) status.textContent = "تم إيقاف الصوت. يمكنك تشغيله مجدداً.";
+  if (status) status.textContent = "تم إيقاف الصوت. اضغط تشغيل لاستئنافه من البداية.";
 }
 
 const allLessons = () => courses.flatMap(c => c.lessons.map(l => ({...l, courseId:c.id, courseName:c.name, courseGerman:c.german})));
@@ -685,7 +725,7 @@ function renderStudyAssistant(){
   }));
   document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
-  document.getElementById("studyStopVoice").addEventListener("click",stopStudySpeech);
+  document.getElementById("studyStopVoice").addEventListener("click",toggleStudySpeech);
   document.getElementById("studyVoiceReply").addEventListener("change",event=>{
     if(!event.target.checked){stopStudySpeech();return;}
     const status=document.getElementById("studySpeechStatus");
