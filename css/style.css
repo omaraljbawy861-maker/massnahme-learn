@@ -410,3 +410,33 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 .app-back-button:hover{background:#f3ead8;border-color:#d9c18f}
 .app-back-button:first-letter{font-size:17px}
 @media(max-width:760px){.topbar{gap:8px}.app-back-button{padding:7px 9px;font-size:10px}.app-back-button span{display:inline}}
+
+
+/* Premium focus timer */
+.study-timer-pro{position:relative;overflow:hidden;background:linear-gradient(155deg,#fff 0%,#fbfaf7 100%);border:1px solid #e8e1d3;box-shadow:0 12px 34px rgba(24,39,61,.07)}
+.study-timer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.study-timer-top .study-card-heading{margin-bottom:10px}
+.timer-live-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:20px;background:#eef6f0;color:#458363;font-size:9px;white-space:nowrap}
+.timer-live-pill i{width:6px;height:6px;border-radius:50%;background:#51a778}
+.timer-ring{width:218px;height:218px;margin:12px auto 18px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#c7a35f var(--timer-progress,100%),#ece8df 0);position:relative;box-shadow:0 8px 25px rgba(33,46,65,.06)}
+.timer-ring:before{content:"";position:absolute;inset:9px;border-radius:50%;background:#fff;border:1px solid #f0ece4}
+.timer-ring-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.timer-mode-label{font-size:11px;color:#9a7a43;font-weight:700}
+.study-timer-display{font:800 43px Inter,sans-serif;letter-spacing:1px;color:#1a2a43;padding:0;margin:0;line-height:1.2;font-variant-numeric:tabular-nums}
+.timer-ring-inner>small{font-size:10px;color:#929baa}
+.timer-presets{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:0 0 14px}
+.timer-presets button{padding:8px 4px;border:1px solid #e8e4dc;border-radius:9px;background:#fff;color:#788397;font:700 10px Cairo,sans-serif}
+.timer-presets button.active{border-color:#c8a35f;background:#f8f2e6;color:#8a6832}
+.timer-custom{margin-bottom:14px}
+.timer-custom>div{display:flex;align-items:center;gap:9px}
+.timer-custom input{max-width:110px!important;margin:0}
+.timer-custom span{font-size:10px;color:#8993a4}
+.study-timer-pro .study-timer-actions{display:grid;grid-template-columns:1fr auto auto;gap:8px}
+.study-timer-pro .timer-start-btn{background:linear-gradient(110deg,#b38d4e,#d4b778);border:0;color:#fff;min-height:42px}
+.study-timer-pro .study-timer-actions .secondary-btn{padding:9px 11px}
+.study-timer-pro .timer-reset-btn{font-size:17px}
+.study-timer-pro .study-timer-status{text-align:center;min-height:20px;margin:13px 0 5px;font-size:10px;color:#748094}
+.timer-footer-note{display:flex;justify-content:center;gap:7px;padding-top:12px;border-top:1px solid #eee9df;color:#9a8a6c;font-size:9px}
+.timer-footer-note span{color:#bd9a58}
+@media(max-width:850px){.timer-ring{width:200px;height:200px}}
+@media(max-width:520px){.study-timer-pro{padding:16px}.timer-ring{width:190px;height:190px}.study-timer-display{font-size:38px}.study-timer-pro .study-timer-actions{grid-template-columns:1fr auto auto}}
