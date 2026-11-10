@@ -86,32 +86,40 @@ function findSpeechVoice(voices, languagePrefix) {
   return null;
 }
 
-function speakText(text, lang) {
+async function speakText(text, lang) {
   if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
-    notify("ميزة النطق غير مدعومة في هذا المتصفح. جرّب فتح الموقع في Safari أو Chrome.");
+    notify("ميزة النطق غير مدعومة في هذا المتصفح.");
     return;
   }
 
   const synth = window.speechSynthesis;
   const detected = String(lang || detectSpeechLanguage(text) || "ar").toLowerCase();
   const languagePrefix = detected.split("-")[0];
-  // Read the voice list immediately: delaying with await/setTimeout can lose
-  // the user's tap permission on iPhone Safari.
-  const voices = synth.getVoices() || [];
+  const voices = await waitForSpeechVoices(5000);
   const voice = findSpeechVoice(voices, languagePrefix);
+
+  if (!voice) {
+    const languageName = languagePrefix === "ar" ? "العربية" : languagePrefix === "de" ? "الألمانية" : "الإنجليزية";
+    notify(`لم يتمكن المتصفح من إظهار صوت ${languageName}. افتح إعدادات الأصوات في النظام ثم أعد تحميل الصفحة.`);
+    return;
+  }
+
+  // Cancel any previous utterance only after voice discovery has completed.
+  synth.cancel();
   const utterance = new SpeechSynthesisUtterance(String(text));
-  if (voice) utterance.voice = voice;
-  utterance.lang = voice?.lang || (languagePrefix === "ar" ? "ar-SA" : languagePrefix === "de" ? "de-DE" : "en-GB");
+  utterance.voice = voice;
+  utterance.lang = voice.lang || (languagePrefix === "ar" ? "ar-SA" : languagePrefix === "de" ? "de-DE" : "en-GB");
   utterance.rate = languagePrefix === "ar" ? 0.9 : languagePrefix === "en" ? 0.9 : 0.88;
   utterance.pitch = 1;
+  utterance.onstart = () => {};
   utterance.onerror = event => {
     if (event.error !== "canceled" && event.error !== "interrupted") {
-      notify("تعذر تشغيل الصوت. اضغط زر تشغيل الصوت مرة أخرى وتأكد من مستوى صوت الجهاز.");
+      notify("تعذر تشغيل الصوت. تأكد أن صوت الجهاز غير مكتوم ثم جرّب مجدداً.");
     }
   };
-  synth.cancel();
-  // speak() is called synchronously in the tap handler for iOS compatibility.
-  synth.speak(utterance);
+
+  // A short delay helps Chromium restart speech reliably after cancel().
+  setTimeout(() => synth.speak(utterance), 100);
 }
 const allLessons = () => courses.flatMap(c => c.lessons.map(l => ({...l, courseId:c.id, courseName:c.name, courseGerman:c.german})));
 const escapeHtml = (s="") => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -618,16 +626,7 @@ function appendStudyMessage(role,text){
   const item=document.createElement("div");item.className="study-message "+role;
   const heading=document.createElement("b");heading.textContent=role==="user"?"أنت":"المساعد الدراسي";
   const paragraph=document.createElement("p");paragraph.textContent=text;
-  item.append(heading,paragraph);
-  if(role==="assistant"){
-    const speakButton=document.createElement("button");
-    speakButton.type="button";speakButton.className="secondary-btn study-message-speak";
-    speakButton.textContent="🔊 تشغيل صوت الإجابة";
-    speakButton.setAttribute("aria-label","تشغيل الإجابة بصوت");
-    speakButton.addEventListener("click",()=>speakText(text));
-    item.append(speakButton);
-  }
-  box.append(item);box.scrollTop=box.scrollHeight;
+  item.append(heading,paragraph);box.append(item);box.scrollTop=box.scrollHeight;
 }
 async function sendStudyMessage(event){
   event.preventDefault();
@@ -645,12 +644,10 @@ async function sendStudyMessage(event){
     if(document.getElementById("studyVoiceReply").checked)speakText(data.reply);
     if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
   }catch(error){
-    const reason=String(error?.message||error?.context?.message||error?.name||"خطأ غير معروف");
-    const friendly= /Failed to fetch|FunctionsFetchError|NetworkError|Load failed/i.test(reason)
-      ?"تعذر الوصول إلى خادم المساعد من هذا الجهاز. تحقق من اتصال الإنترنت وافتح الموقع في Safari أو Chrome مباشرة، وليس من داخل تطبيق آخر."
-      : /404|not found/i.test(reason)
-      ?"خدمة المساعد غير منشورة على الخادم حالياً."
-      : "تعذر إكمال الطلب: "+reason.slice(0,220);
+    const reason=String(error?.message||"");
+    const friendly= /Failed to fetch|FunctionsFetchError|404|not found/i.test(reason)
+      ?"خدمة المساعد لم تُفعّل بعد على Supabase. يلزم نشر study-tutor وإضافة GEMINI_API_KEY ضمن Secrets."
+      :"تعذر الاتصال بالمساعد حالياً. تأكد من إعداد الخدمة ثم حاول مرة أخرى.";
     appendStudyMessage("assistant",friendly);
     if(status)status.textContent=friendly;
   }finally{button.disabled=false;button.textContent="إرسال السؤال ←";}
