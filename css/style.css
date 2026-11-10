@@ -172,7 +172,7 @@ html.native-app .sidebar{position:fixed;z-index:60;top:0;right:0;bottom:0;width:
 html.native-app .sidebar.open{transform:translateX(0);box-shadow:0 0 0 100vmax rgba(8,18,34,.48)}
 html.native-app .main-area{width:100%;min-width:0;margin:0}
 html.native-app .topbar{position:sticky;top:0;z-index:30;min-height:58px;padding:calc(8px + env(safe-area-inset-top)) 15px 8px;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid #e9edf2}
-html.native-app .menu-toggle{display:none}
+html.native-app .menu-toggle{display:block}
 html.native-app .breadcrumb{font-size:11px}
 html.native-app .top-actions{font-size:10px}
 html.native-app .content{width:100%;max-width:900px;margin:0 auto;padding:16px 13px 28px}
