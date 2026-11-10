@@ -663,18 +663,13 @@ function renderStudyAssistant(){
     </article>
     <article class="study-chat-card">
       <div class="study-card-heading"><span class="study-tool-icon">✦</span><div><h2>اسأل وناقش</h2><p>مساعد يشرح ويصحح ويعطيك أمثلة</p></div></div>
-      <label for="studySubject">المادة أو الموضوع</label>
-      <select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select>
+      <div class="study-settings-simple">
+        <div class="study-setting-field"><label for="studySubject">المادة</label><select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select></div>
+        <div class="study-setting-field"><label for="studyAnswerStyle">طريقة الشرح</label><select id="studyAnswerStyle"><option value="simple">مبسّط وسهل</option><option value="balanced" selected>متوازن</option><option value="detailed">مفصّل خطوة بخطوة</option></select></div>
+        <label class="study-audio-setting"><input type="checkbox" id="studyVoiceReply"> <span><b>قراءة الرد بصوت</b><small>اختياري</small></span></label>
+      </div>
       <div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
-      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><label class="study-voice-toggle"><input type="checkbox" id="studyVoiceReply"> اقرأ الرد بصوت</label>
-      <label class="study-voice-toggle">لغة الصوت
-        <select id="studySpeechLanguage"><option value="auto">تلقائي</option><option value="ar">العربية</option><option value="en">English</option><option value="de">Deutsch</option></select>
-      </label>
-      <label class="study-voice-toggle">السرعة
-        <select id="studyVoiceRate"><option value="0.8">بطيء وواضح</option><option value="0.9" selected>طبيعي</option><option value="1">أسرع قليلاً</option></select>
-      </label>
-      <button type="button" class="secondary-btn" id="studyStopVoice">■ إيقاف الصوت</button>
-      <span id="studySpeechStatus" aria-live="polite">الصوت جاهز</span><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
+      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><button type="button" class="secondary-btn" id="studyStopVoice">■ إيقاف الصوت</button><span id="studySpeechStatus" aria-live="polite">الصوت جاهز</span><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
       <p class="study-tutor-note" id="studyTutorStatus">المحادثة الذكية تحتاج تفعيل خدمة المساعد على الخادم أولاً.</p>
     </article>
   </section>
@@ -769,7 +764,7 @@ async function sendStudyMessage(event){
   button.disabled=true;button.textContent="يفكر...";
   if(status)status.textContent="جارٍ تجهيز الإجابة...";
   try{
-    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages,subject:document.getElementById("studySubject").value}});
+    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages,subject:document.getElementById("studySubject").value,answerStyle:document.getElementById("studyAnswerStyle")?.value||"balanced"}});
     if(error)throw error;
     if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
     appendStudyMessage("assistant",data.reply);studyChatMessages.push({role:"assistant",content:data.reply});
