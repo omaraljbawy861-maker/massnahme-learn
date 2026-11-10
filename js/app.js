@@ -45,48 +45,81 @@ function detectSpeechLanguage(text) {
   return "ar";
 }
 
-function waitForSpeechVoices() {
+function waitForSpeechVoices(timeoutMs = 5000) {
   return new Promise(resolve => {
     const synth = window.speechSynthesis;
-    let voices = synth.getVoices();
-    if (voices.length) return resolve(voices);
-    const done = () => {
-      voices = synth.getVoices();
-      resolve(voices);
+    let finished = false;
+    const finish = () => {
+      if (finished) return;
+      const voices = synth.getVoices() || [];
+      if (voices.length || Date.now() >= deadline) {
+        finished = true;
+        clearInterval(poll);
+        clearTimeout(timeout);
+        synth.removeEventListener?.("voiceschanged", check);
+        resolve(voices);
+      }
     };
-    synth.addEventListener("voiceschanged", done, { once: true });
-    setTimeout(done, 1200);
+    const deadline = Date.now() + timeoutMs;
+    const check = () => finish();
+    const poll = setInterval(finish, 200);
+    const timeout = setTimeout(finish, timeoutMs + 50);
+    synth.addEventListener?.("voiceschanged", check);
+    finish();
   });
 }
 
+function findSpeechVoice(voices, languagePrefix) {
+  const matches = voices.filter(v => {
+    const lang = String(v.lang || "").toLowerCase().replace("_", "-");
+    return lang === languagePrefix || lang.startsWith(languagePrefix + "-");
+  });
+  if (matches.length) {
+    // Prefer the system's default voice for that language, then a local voice.
+    return matches.find(v => v.default) || matches.find(v => v.localService) || matches[0];
+  }
+  if (languagePrefix === "ar") {
+    // Some Windows/browser voice lists expose Arabic in the voice name
+    // even when the language tag is incomplete.
+    return voices.find(v => /arabic|العربية|العربي/i.test(v.name || ""));
+  }
+  return null;
+}
+
 async function speakText(text, lang) {
-  if (!("speechSynthesis" in window)) {
+  if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
     notify("ميزة النطق غير مدعومة في هذا المتصفح.");
     return;
   }
 
   const synth = window.speechSynthesis;
-  synth.cancel();
+  const detected = String(lang || detectSpeechLanguage(text) || "ar").toLowerCase();
+  const languagePrefix = detected.split("-")[0];
+  const voices = await waitForSpeechVoices(5000);
+  const voice = findSpeechVoice(voices, languagePrefix);
 
-  const detected = lang || detectSpeechLanguage(text);
-  const languagePrefix = detected.toLowerCase().split("-")[0];
-  const voices = await waitForSpeechVoices();
-  const matchingVoices = voices.filter(v => v.lang.toLowerCase().startsWith(languagePrefix));
-
-  if (!matchingVoices.length) {
+  if (!voice) {
     const languageName = languagePrefix === "ar" ? "العربية" : languagePrefix === "de" ? "الألمانية" : "الإنجليزية";
-    notify(`لا يوجد صوت ${languageName} مثبت على الجهاز. أضف صوت هذه اللغة من إعدادات النظام.`);
+    notify(`لم يتمكن المتصفح من إظهار صوت ${languageName}. افتح إعدادات الأصوات في النظام ثم أعد تحميل الصفحة.`);
     return;
   }
 
-  const preferred = matchingVoices.find(v => v.default) || matchingVoices[0];
+  // Cancel any previous utterance only after voice discovery has completed.
+  synth.cancel();
   const utterance = new SpeechSynthesisUtterance(String(text));
-  utterance.lang = preferred.lang;
-  utterance.voice = preferred;
-  utterance.rate = languagePrefix === "en" ? 0.88 : languagePrefix === "ar" ? 0.90 : 0.86;
+  utterance.voice = voice;
+  utterance.lang = voice.lang || (languagePrefix === "ar" ? "ar-SA" : languagePrefix === "de" ? "de-DE" : "en-GB");
+  utterance.rate = languagePrefix === "ar" ? 0.9 : languagePrefix === "en" ? 0.9 : 0.88;
   utterance.pitch = 1;
-  utterance.onerror = () => notify("تعذر تشغيل الصوت. تحقق من إعدادات الصوت في الجهاز.");
-  synth.speak(utterance);
+  utterance.onstart = () => {};
+  utterance.onerror = event => {
+    if (event.error !== "canceled" && event.error !== "interrupted") {
+      notify("تعذر تشغيل الصوت. تأكد أن صوت الجهاز غير مكتوم ثم جرّب مجدداً.");
+    }
+  };
+
+  // A short delay helps Chromium restart speech reliably after cancel().
+  setTimeout(() => synth.speak(utterance), 100);
 }
 const allLessons = () => courses.flatMap(c => c.lessons.map(l => ({...l, courseId:c.id, courseName:c.name, courseGerman:c.german})));
 const escapeHtml = (s="") => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
