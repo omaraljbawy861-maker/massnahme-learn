@@ -1,39 +1,88 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 
-const cors = {
+const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const json = (body: unknown, status = 200) =>
-  new Response(JSON.stringify(body), {
+function jsonResponse(body: unknown, status = 200) {
+  return new Response(JSON.stringify(body), {
     status,
-    headers: { ...cors, "Content-Type": "application/json" },
+    headers: { ...corsHeaders, "Content-Type": "application/json; charset=utf-8" },
   });
+}
+
+function normalizeMessages(input: unknown) {
+  if (!Array.isArray(input)) return null;
+
+  const normalized: Array<{ role: "user" | "model"; parts: Array<{ text: string }> }> = [];
+
+  for (const item of input.slice(-20)) {
+    if (!item || typeof item !== "object") continue;
+
+    const message = item as { role?: unknown; content?: unknown };
+    const role = message.role === "assistant" ? "model" : "user";
+    const text = String(message.content ?? "").trim().slice(0, 5000);
+    if (!text) continue;
+
+    const previous = normalized[normalized.length - 1];
+
+    // Gemini conversation contents must begin with a user message.
+    if (!previous && role === "model") continue;
+
+    // Merge adjacent messages with the same role into one content item.
+    if (previous?.role === role) {
+      previous.parts[0].text += "\n\n" + text;
+    } else {
+      normalized.push({ role, parts: [{ text }] });
+    }
+  }
+
+  return normalized.length > 0 ? normalized : null;
+}
 
 serve(async (req) => {
-  if (req.method === "OPTIONS") return new Response("ok", { headers: cors });
-  if (req.method !== "POST") return json({ error: "Method not allowed" }, 405);
+  if (req.method === "OPTIONS") {
+    return new Response("ok", { headers: corsHeaders });
+  }
+
+  if (req.method !== "POST") {
+    return jsonResponse({ error: "طريقة الطلب غير مدعومة." }, 405);
+  }
 
   const apiKey = Deno.env.get("GEMINI_API_KEY");
   if (!apiKey) {
-    return json({ error: "لم يتم إعداد مفتاح Gemini في الخادم بعد." }, 503);
+    return jsonResponse(
+      { error: "لم يتم إعداد مفتاح Gemini في إعدادات الخادم (GEMINI_API_KEY)." },
+      503,
+    );
   }
 
+  let body: { messages?: unknown; subject?: unknown };
+
   try {
-    const { messages = [], subject = "عام" } = await req.json();
-    if (!Array.isArray(messages) || messages.length === 0 || messages.length > 20) {
-      return json({ error: "صيغة المحادثة غير صالحة." }, 400);
-    }
+    body = await req.json();
+  } catch {
+    return jsonResponse({ error: "تعذر قراءة البيانات المرسلة." }, 400);
+  }
 
-    const contents = messages.slice(-12).map((m) => ({
-      role: m.role === "assistant" ? "model" : "user",
-      parts: [{ text: String(m.content || "").slice(0, 5000) }],
-    }));
+  const contents = normalizeMessages(body.messages);
+  if (!contents) {
+    return jsonResponse({ error: "اكتب سؤالك أولاً ثم أرسله للمساعد." }, 400);
+  }
 
-    const system = `أنت مساعد تعليمي ودود داخل منصة MAßNAHME LEARN. اشرح بالعربية الواضحة وبأسلوب مبسط، وادعم الطالب في مواد ESA الألمانية والرياضيات والعلوم واللغات وZFA. إذا كتب الطالب بالألمانية أو الإنجليزية، صحح الجملة بلطف واشرح الخطأ وقدّم الصيغة الصحيحة. لا تعطِ جواباً مقتضباً فقط؛ ناقش خطوة بخطوة، اسأل سؤال متابعة عند الحاجة، وقدّم مثالاً وتمريناً قصيراً. لا تخترع معلومات أو مصادر. المادة/السياق الحالي: ${String(subject).slice(0, 100)}. اجعل الإجابة منظمة ومناسبة للطالب.`;
+  const subject = String(body.subject ?? "عام").trim().slice(0, 100) || "عام";
+  const systemInstruction = `أنت مساعد تعليمي ودود داخل منصة MAßNAHME LEARN.
+اشرح بالعربية الواضحة وبأسلوب مبسط ومنظم، وراعِ مستوى طالب الصف التاسع ومواد ESA.
+ساعد في الرياضيات والعلوم واللغة الألمانية والإنجليزية ومواد ZFA.
+إذا كتب الطالب بالألمانية أو الإنجليزية، صحح الجملة بلطف واشرح الخطأ وقدّم الصيغة الصحيحة.
+اشرح المسائل خطوة بخطوة، ولا تكتفِ بإعطاء النتيجة النهائية.
+استخدم أمثلة واضحة وتمارين قصيرة عند الحاجة، ولا تخترع معلومات أو مصادر.
+إذا كان السؤال غير واضح، اسأل سؤالاً واحداً لتوضيحه.
+المادة أو السياق الحالي: ${subject}.`;
 
+  try {
     const response = await fetch(
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
       {
@@ -43,30 +92,91 @@ serve(async (req) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          systemInstruction: { parts: [{ text: system }] },
+          systemInstruction: {
+            parts: [{ text: systemInstruction }],
+          },
           contents,
-          generationConfig: { temperature: 0.5, maxOutputTokens: 900 },
+          generationConfig: {
+            temperature: 0.5,
+            maxOutputTokens: 1200,
+          },
         }),
+        signal: AbortSignal.timeout(30000),
       },
     );
 
-    const data = await response.json();
-    if (!response.ok) {
-      console.error("Gemini request failed", response.status, data?.error?.message);
-      if (response.status === 429) {
-        return json({ error: "وصلنا إلى حد الاستخدام المجاني مؤقتاً. انتظر قليلاً ثم حاول مجدداً." }, 429);
-      }
-      return json({ error: "تعذر الحصول على إجابة الآن. تحقق من إعداد مفتاح Gemini وحاول مرة أخرى." }, 502);
+    const rawResponse = await response.text();
+    let data: any;
+
+    try {
+      data = JSON.parse(rawResponse);
+    } catch {
+      console.error("Gemini returned a non-JSON response:", response.status);
+      return jsonResponse(
+        { error: "وصل رد غير مفهوم من خدمة الذكاء الاصطناعي. حاول مرة أخرى." },
+        502,
+      );
     }
 
-    const reply = data.candidates?.[0]?.content?.parts
-      ?.map((part: { text?: string }) => part.text || "")
+    if (!response.ok) {
+      const apiMessage = String(data?.error?.message ?? "");
+      console.error("Gemini API error:", response.status, apiMessage);
+
+      if (response.status === 429) {
+        return jsonResponse(
+          { error: "وصل المساعد إلى حد الاستخدام المجاني مؤقتاً. انتظر قليلاً ثم حاول مجدداً." },
+          429,
+        );
+      }
+
+      if (response.status === 400) {
+        return jsonResponse(
+          { error: "تعذر فهم الطلب المرسل. أعد صياغة السؤال وحاول مرة أخرى." },
+          400,
+        );
+      }
+
+      if (response.status === 401 || response.status === 403) {
+        return jsonResponse(
+          { error: "مفتاح Gemini غير صالح أو لا يملك صلاحية استخدام الخدمة. تحقق من GEMINI_API_KEY." },
+          502,
+        );
+      }
+
+      return jsonResponse(
+        { error: "خدمة المساعد غير متاحة حالياً. حاول مرة أخرى بعد قليل." },
+        502,
+      );
+    }
+
+    const candidate = data?.candidates?.[0];
+    const reply = candidate?.content?.parts
+      ?.map((part: { text?: string }) => part.text ?? "")
       .join("")
       .trim();
 
-    return json({ reply: reply || "لم أتمكن من صياغة إجابة. جرّب إعادة السؤال." });
+    if (!reply) {
+      console.error("Gemini returned no text. Finish reason:", candidate?.finishReason);
+      return jsonResponse(
+        { error: "لم يتمكن المساعد من إنشاء إجابة. جرّب كتابة السؤال بطريقة أخرى." },
+        502,
+      );
+    }
+
+    return jsonResponse({ reply });
   } catch (error) {
-    console.error("Tutor function error", error);
-    return json({ error: "حدث خطأ أثناء معالجة السؤال." }, 500);
+    console.error("Study tutor request failed:", error);
+
+    if (error instanceof DOMException && error.name === "TimeoutError") {
+      return jsonResponse(
+        { error: "تأخر رد المساعد أكثر من اللازم. تحقق من الإنترنت وحاول مجدداً." },
+        504,
+      );
+    }
+
+    return jsonResponse(
+      { error: "حدث خطأ أثناء الاتصال بالمساعد. حاول مرة أخرى." },
+      500,
+    );
   }
 });
