@@ -17,6 +17,7 @@ let zfaSimulationAnswered = false;
 let studyTimerInterval = null;
 let studyTimerRemaining = 25 * 60;
 let studyTimerRunning = false;
+let studyTimerEndsAt = null;
 let studyChatMessages = [];
 
 const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "study-assistant":"المساعد الدراسي الذكي" };
@@ -694,31 +695,48 @@ function renderStudyAssistant(){
 }
 function renderStudyTimer(){
   const display=document.getElementById("studyTimerDisplay");if(!display)return;
-  const m=Math.floor(studyTimerRemaining/60),s=studyTimerRemaining%60;
+  const remaining=Math.max(0,studyTimerRemaining);
+  const m=Math.floor(remaining/60),s=remaining%60;
   display.textContent=String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
   const total=Math.max(60,(Number(document.getElementById("studyTimerMinutes")?.value)||25)*60);
-  const ratio=Math.max(0,Math.min(1,studyTimerRemaining/total));
+  const ratio=Math.max(0,Math.min(1,remaining/total));
   const ring=document.getElementById("studyTimerRing");if(ring)ring.style.setProperty("--timer-progress",(ratio*100)+"%");
-  const sub=document.getElementById("studyTimerSub");if(sub)sub.textContent=studyTimerRunning?"أنت في وضع التركيز":studyTimerRemaining===0?"أحسنت! اكتملت الجلسة": "استعد وابدأ إنجازك";
+  const sub=document.getElementById("studyTimerSub");if(sub)sub.textContent=studyTimerRunning?"أنت في وضع التركيز":remaining===0?"أحسنت! اكتملت الجلسة":"استعد وابدأ إنجازك";
   const mode=document.getElementById("studyTimerMode");if(mode)mode.textContent=studyTimerRunning?"التركيز مستمر":"وقت الدراسة";
-  const start=document.getElementById("studyTimerStart");if(start)start.textContent=studyTimerRunning?"● يعمل الآن":"▶ ابدأ التركيز";
-  document.getElementById("studyTimerStart").disabled=studyTimerRunning;
-  document.getElementById("studyTimerPause").disabled=!studyTimerRunning;
+  const startButton=document.getElementById("studyTimerStart");if(startButton)startButton.textContent=studyTimerRunning?"● يعمل الآن":"▶ ابدأ التركيز";
+  if(startButton)startButton.disabled=studyTimerRunning;
+  const pauseButton=document.getElementById("studyTimerPause");if(pauseButton)pauseButton.disabled=!studyTimerRunning;
+}
+function finishStudyTimer(){
+  if(studyTimerInterval)clearInterval(studyTimerInterval);
+  studyTimerInterval=null;studyTimerEndsAt=null;studyTimerRemaining=0;studyTimerRunning=false;
+  renderStudyTimer();
+  const status=document.getElementById("studyTimerStatus");if(status)status.textContent="انتهت الجلسة! خذ استراحة قصيرة ثم تابع.";
+  notify("انتهى وقت جلسة الدراسة");
+  if("speechSynthesis" in window)speakText("انتهى وقت الدراسة. أحسنت!","ar-SA");
+}
+function updateStudyTimer(){
+  if(!studyTimerRunning||!studyTimerEndsAt)return;
+  studyTimerRemaining=Math.max(0,Math.ceil((studyTimerEndsAt-Date.now())/1000));
+  if(studyTimerRemaining===0){finishStudyTimer();return;}
+  renderStudyTimer();
 }
 function startStudyTimer(){
   if(studyTimerRunning)return;
   const input=document.getElementById("studyTimerMinutes");
   if(studyTimerRemaining<=0)studyTimerRemaining=Math.max(1,Math.min(180,Number(input?.value)||25))*60;
-  studyTimerRunning=true;renderStudyTimer();
-  document.getElementById("studyTimerStatus").textContent="أحسنت! ركّز على دراستك، المؤقّت يعمل الآن.";
-  studyTimerInterval=setInterval(()=>{
-    studyTimerRemaining=Math.max(0,studyTimerRemaining-1);renderStudyTimer();
-    if(studyTimerRemaining===0){pauseStudyTimer();const status=document.getElementById("studyTimerStatus");if(status)status.textContent="انتهت الجلسة! خذ استراحة قصيرة ثم تابع.";notify("انتهى وقت جلسة الدراسة");if("speechSynthesis" in window)speakText("انتهى وقت الدراسة. أحسنت!","ar-SA");}
-  },1000);
+  studyTimerRunning=true;studyTimerEndsAt=Date.now()+studyTimerRemaining*1000;
+  if(studyTimerInterval)clearInterval(studyTimerInterval);
+  renderStudyTimer();
+  const status=document.getElementById("studyTimerStatus");if(status)status.textContent="أحسنت! ركّز على دراستك، المؤقّت يعمل الآن.";
+  studyTimerInterval=setInterval(updateStudyTimer,250);
 }
 function pauseStudyTimer(){
+  if(studyTimerRunning&&studyTimerEndsAt){
+    studyTimerRemaining=Math.max(0,Math.ceil((studyTimerEndsAt-Date.now())/1000));
+  }
   if(studyTimerInterval)clearInterval(studyTimerInterval);
-  studyTimerInterval=null;studyTimerRunning=false;renderStudyTimer();
+  studyTimerInterval=null;studyTimerEndsAt=null;studyTimerRunning=false;renderStudyTimer();
   const status=document.getElementById("studyTimerStatus");if(status)status.textContent="تم إيقاف المؤقّت مؤقتاً.";
 }
 function resetStudyTimer(){
