@@ -569,7 +569,7 @@ async function sendStudyMessage(event){
   }catch(error){
     const reason=String(error?.message||"");
     const friendly= /Failed to fetch|FunctionsFetchError|404|not found/i.test(reason)
-      ?"خدمة المساعد لم تُفعّل بعد على Supabase. يلزم نشر study-tutor وإضافة OPENAI_API_KEY كسرّ للخدمة."
+      ?"خدمة المساعد لم تُفعّل بعد على Supabase. يلزم نشر study-tutor وإضافة GEMINI_API_KEY ضمن Secrets."
       :"تعذر الاتصال بالمساعد حالياً. تأكد من إعداد الخدمة ثم حاول مرة أخرى.";
     appendStudyMessage("assistant",friendly);
     if(status)status.textContent=friendly;
