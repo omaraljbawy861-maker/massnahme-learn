@@ -34,11 +34,15 @@ const dailyPhrases = [
 
 function detectSpeechLanguage(text) {
   const value = String(text || "");
-  const arabicCount = (value.match(/[\\u0600-\\u06FF\\u0750-\\u077F]/g) || []).length;
+  const arabicCount = (value.match(/[\u0600-\u06FF\u0750-\u077F]/g) || []).length;
   const latinCount = (value.match(/[A-Za-zÄÖÜäöüß]/g) || []).length;
+  const germanWords = (value.match(/\b(der|die|das|und|ist|nicht|ich|du|Sie|ein|eine|mit|auf|für|weil|haben|sein|wird|sind|kann|bitte|danke)\b/gi) || []).length;
+  const englishWords = (value.match(/\b(the|and|is|are|you|your|I|we|they|this|that|with|for|have|has|what|how|because|please|thank|hello|good|morning)\b/gi) || []).length;
+
   if (arabicCount > latinCount) return "ar";
-  if (/[ÄÖÜäöüß]/i.test(value) || /\\b(der|die|das|und|ist|nicht|ich|du|Sie|ein|eine|mit|auf|für|weil|haben|sein)\\b/i.test(value)) return "de";
-  return "en";
+  if (germanWords > englishWords || /[ÄÖÜäöüß]/.test(value)) return "de";
+  if (englishWords > 0 || latinCount > 0) return "en";
+  return "ar";
 }
 
 function waitForSpeechVoices() {
