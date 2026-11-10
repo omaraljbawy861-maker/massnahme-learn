@@ -202,7 +202,7 @@ function setActive(view) {
   document.querySelectorAll(".nav-link").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
   document.querySelectorAll(".bottom-nav-item[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
   pageTitle.textContent = labels[view] || "الدرس";
-  document.querySelector("#sidebar").classList.remove("open");
+  closeSidebar();
 }
 function courseProgress(course) {
   const done = course.lessons.filter(l=>isCompleted(l.id)).length;
@@ -943,24 +943,32 @@ document.addEventListener("click",e=>{
 document.querySelectorAll(".nav-link").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
 const sidebar=document.querySelector("#sidebar");
 const menuToggle=document.querySelector("#menuToggle");
-menuToggle.addEventListener("click",event=>{
-  event.stopPropagation();
-  sidebar.classList.toggle("open");
-});
-sidebar.addEventListener("click",event=>event.stopPropagation());
-function closeSidebarOnOutside(event){
-  if(!sidebar.classList.contains("open")) return;
-  const target=event.target;
-  if(sidebar.contains(target)||menuToggle?.contains(target)) return;
-  sidebar.classList.remove("open");
+const sidebarBackdrop=document.querySelector("#sidebarBackdrop");
+function openSidebar(){
+  sidebar.classList.add("open");
+  sidebarBackdrop?.classList.add("visible");
+  menuToggle?.setAttribute("aria-expanded","true");
+  document.body.classList.add("menu-open");
 }
-document.addEventListener("pointerdown",closeSidebarOnOutside,true);
-document.addEventListener("touchstart",closeSidebarOnOutside,{capture:true,passive:true});
-document.addEventListener("click",closeSidebarOnOutside,true);
-document.addEventListener("keydown",event=>{
-  if(event.key==="Escape")sidebar.classList.remove("open");
+function closeSidebar(){
+  sidebar.classList.remove("open");
+  sidebarBackdrop?.classList.remove("visible");
+  menuToggle?.setAttribute("aria-expanded","false");
+  document.body.classList.remove("menu-open");
+}
+function toggleSidebar(){
+  if(sidebar.classList.contains("open")) closeSidebar();
+  else openSidebar();
+}
+menuToggle?.addEventListener("click",event=>{
+  event.preventDefault();
+  event.stopPropagation();
+  toggleSidebar();
 });
-document.querySelector("#bottomMore")?.addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
+sidebarBackdrop?.addEventListener("click",closeSidebar);
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape") closeSidebar();
+});
 history.replaceState({maqamLearnRoute:{view:"dashboard",courseId:null,lessonId:null,page:"view"}}, "", location.href);
 try {
   const student = await requireStudentSession(content);
