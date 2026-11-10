@@ -941,7 +941,21 @@ document.addEventListener("click",e=>{
  if(action==="check-quiz"&&currentLesson){let score=0;currentLesson.questions.forEach((q,i)=>{const selected=document.querySelector(`input[name="q${i}"]:checked`);const feedback=document.querySelector(`#feedback-${i}`);if(selected&&Number(selected.value)===q.correct){score++;feedback.textContent="إجابة صحيحة ✓";feedback.style.color="#27835f";}else{feedback.textContent=`الإجابة الصحيحة: ${q.options[q.correct]} — ${q.why}`;feedback.style.color="#a45c45";}});saveScore(currentLesson.id,score);notify(`نتيجتك ${score} من ${currentLesson.questions.length}`);}
 });
 document.querySelectorAll(".nav-link").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
-document.querySelector("#menuToggle").addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
+const sidebar=document.querySelector("#sidebar");
+const menuToggle=document.querySelector("#menuToggle");
+menuToggle.addEventListener("click",event=>{
+  event.stopPropagation();
+  sidebar.classList.toggle("open");
+});
+sidebar.addEventListener("click",event=>event.stopPropagation());
+document.addEventListener("click",event=>{
+  if(sidebar.classList.contains("open")&&!sidebar.contains(event.target)&&!menuToggle.contains(event.target)){
+    sidebar.classList.remove("open");
+  }
+});
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape")sidebar.classList.remove("open");
+});
 document.querySelector("#bottomMore")?.addEventListener("click",()=>document.querySelector("#sidebar").classList.toggle("open"));
 history.replaceState({maqamLearnRoute:{view:"dashboard",courseId:null,lessonId:null,page:"view"}}, "", location.href);
 try {
