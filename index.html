@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261110-20">
+  <link rel="stylesheet" href="css/style.css?v=20261110-21">
   <link rel="stylesheet" href="css/videos.css?v=20261109-5">
   <style>
     /* Critical homepage layout: keep the new dashboard styled even while external CSS cache refreshes */
@@ -55,6 +55,9 @@
     @media(max-width:1050px){.home-hero-art{left:2%;opacity:.7}.home-hero-copy{max-width:68%}.home-progress-row{grid-template-columns:repeat(2,minmax(0,1fr))}.home-lower-grid{grid-template-columns:1fr}}
     @media(max-width:760px){.home-hero{min-height:280px;padding:25px 20px 58px;border-radius:17px}.home-hero-copy{max-width:100%}.home-hero-art{left:-62px;top:80px;opacity:.2;transform:scale(.85)}.home-hero h1{font-size:24px;max-width:340px}.home-hero-copy>p{font-size:11px;max-width:310px}.home-hero-foot{right:20px;gap:7px;font-size:8px}.home-progress-row{gap:8px;margin:12px 0 25px}.home-stat-card{padding:11px;gap:8px}.home-stat-icon{width:34px;height:34px;flex-basis:34px}.home-stat-card strong{font-size:18px}.home-stat-card small,.home-stat-card em{font-size:8px}.home-quick-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.home-quick-card{min-height:150px;padding:13px}.home-quick-card strong{font-size:12px}.home-quick-card small{font-size:9px}.home-quick-meta{top:17px;left:11px;font-size:8px}.home-quick-arrow{bottom:12px;left:13px}.home-lower-grid{gap:12px}.home-subject-panel,.home-start-panel{padding:14px}.home-subject-panel .subject-grid{grid-template-columns:1fr}.home-footer{gap:7px;justify-content:center;text-align:center}}
     @media(max-width:390px){.home-hero h1{font-size:21px}.home-primary-action,.home-secondary-action{padding:10px 12px;font-size:10px}.home-hero-foot{font-size:7px}.home-quick-card{min-height:145px}}
+  
+    /* Hide the mobile bottom navigation in every display mode */
+    #appBottomNav,.app-bottom-nav,.bottom-nav-item{display:none!important;visibility:hidden!important;pointer-events:none!important}
   </style>
   <script>try{if(window.Capacitor?.isNativePlatform?.())document.documentElement.classList.add("native-app")}catch(e){}</script>
 </head>
