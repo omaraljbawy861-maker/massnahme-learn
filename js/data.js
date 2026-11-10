@@ -1,7 +1,7 @@
 export const courseFiles = [
   "./data/deutsch.json", "./data/mathematik.json", "./data/english.json",
-  "./data/biology.json",
-  "./data/politics.json", "./data/worklife.json"
+  "./data/biology.json", "./data/chemistry.json", "./data/geography.json",
+  "./data/history.json", "./data/physics.json", "./data/politics.json", "./data/worklife.json"
 ];
 export async function loadCourses() {
  const results = await Promise.all(courseFiles.map(async path => {
