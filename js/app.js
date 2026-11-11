@@ -472,7 +472,7 @@ async function renderEnglishCourse(){
   let ss={};
   const schoolSync=await connectEnglishSchoolSync(currentStudentId,remote=>{ss=remote;const active=hub.querySelector("[data-st].active")?.dataset.st||"profile";renderSchool(active);notify("تمت مزامنة بياناتك من جهاز آخر.");});
   ss=schoolSync.state;
-  const saveSchool=()=>{localStorage.setItem("massnahme_english_school_v1",JSON.stringify(ss));schoolSync.save(ss).catch(error=>{console.error("English school sync failed:",error);notify("تعذر الحفظ السحابي. تحقق من الاتصال.");});};
+  const saveSchool=()=>{schoolSync.save(ss).catch(error=>{console.error("English school sync failed:",error);notify("تعذر الحفظ السحابي. تحقق من الاتصال.");});};
   window.addEventListener("english-school-sync-error",event=>notify("فشل الحفظ في قاعدة البيانات: "+event.detail));
   const hub=document.createElement("section");hub.className="english-school-hub";
   hub.innerHTML='<span class="english-kicker">ENGLISH SCHOOL · STUDENT SERVICES</span><h2>النظام المدرسي وإدارة الدراسة</h2><p>ملف الطالب والجدول والواجبات والامتحانات والعلامات والحضور والتقرير الدراسي.</p><nav class="english-school-tabs"><button data-st="profile">ملف الطالب</button><button data-st="timetable">الجدول</button><button data-st="tasks">الواجبات</button><button data-st="grades">العلامات</button><button data-st="attendance">الحضور</button><button data-st="report">التقرير</button></nav><div id="englishSchoolPanel"></div>';
