@@ -583,3 +583,23 @@ html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
   .content{padding-inline:14px!important}
   .topbar{padding-inline:12px!important}
 }
+
+
+/* Correct RTL mobile drawer anchoring: use physical right/left properties explicitly.
+   Logical inline-end combined with legacy right offsets caused a narrow clipped drawer. */
+@media screen and (max-width:1100px){
+  .sidebar{
+    position:fixed!important;
+    top:0!important;right:0!important;left:auto!important;bottom:0!important;
+    inset-inline-start:auto!important;inset-inline-end:auto!important;
+    width:min(320px,84vw)!important;max-width:84vw!important;
+    flex:none!important;flex-basis:auto!important;
+    transform:translate3d(110%,0,0)!important;
+    z-index:100!important;
+    overflow-y:auto!important;
+    transition:transform .25s ease!important;
+  }
+  .sidebar.open{right:0!important;left:auto!important;transform:translate3d(0,0,0)!important}
+  .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:99!important;display:none!important}
+  .sidebar-backdrop.visible{display:block!important}
+}
