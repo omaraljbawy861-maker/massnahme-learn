@@ -26,7 +26,7 @@ let studyChatTimer = null;
 let studyChatExpiresAt = null;
 let studyChatSecondsLeft = 0;
 
-const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "study-assistant":"المساعد الدراسي الذكي" };
+const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "english-school":"المدرسة الإنجليزية · المنهج الأكاديمي", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "study-assistant":"المساعد الدراسي الذكي" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -363,7 +363,7 @@ async function renderPhrases(){
  <div class="language-panels"><button class="language-panel" data-action="language-de"><b>Deutsch</b><span>Wortschatz · Sätze · Hören</span><small>المفردات والجمل والاستماع الألماني</small></button><button class="language-panel" data-action="language-en"><b>English</b><span>Vocabulary · Sentences · Listening</span><small>المفردات والجمل والاستماع الإنجليزي</small></button></div>`;
 }
 async function renderEnglishCourse(){
- setActive("language-en");
+ setActive("english-school");
  content.innerHTML='<div class="empty-state"><h2>جارٍ تحميل منهج الإنجليزية</h2><p>نجهز المستويات والوحدات التعليمية…</p></div>';
  try{
   const response=await fetch("./data/english_course.json?v=1",{cache:"no-store"});
@@ -498,7 +498,6 @@ async function renderEnglishCourse(){
  }catch(error){content.innerHTML='<div class="empty-state"><h2>تعذر تحميل منهج الإنجليزية</h2><p>'+escapeHtml(error.message)+'</p></div>';}
 }
 async function renderLanguage(lang){
- if(lang==="en"){renderEnglishCourse();return;}
  setActive(lang==="de" ? "language-de" : "language-en");
  const bank=await ensureLanguageBank(), d=bank[lang], code=lang==='de'?'de-DE':'en-GB', title=lang==='de'?'الألمانية':'الإنجليزية';
  content.innerHTML=`<div class="page-intro"><span class="eyebrow">${lang==='de'?'DEUTSCH':'ENGLISH'} · LANGUAGE WORKBOOK</span><h1>كتاب ${title} التفاعلي</h1><p>مفردات وجمل يومية بمستويات A1 إلى B2، ونصوص قراءة واستماع متدرجة مع ترجمة عربية. تظهر درجة كل كلمة وجملة، ويمكنك الاستماع إليها ومراجعة معناها.</p></div>
@@ -1069,6 +1068,7 @@ function navigate(view) {
  if(view==="zfa-simulation"){ zfaSimulationIndex=0; zfaSimulationScore=0; zfaSimulationAnswered=false; renderZfaSimulation(); return; }
  if(view==="language-de"){ renderLanguage("de"); return; }
  if(view==="language-en"){ renderLanguage("en"); return; }
+ if(view==="english-school"){ renderEnglishCourse(); return; }
  setActive(view);
  const pages={dashboard:renderDashboard,videos:renderVideoLibrary,library:renderLibrary,schedule:renderSchedule,assignments:renderAssignments,exams:renderExams,phrases:renderPhrases};
  if(pages[view]) pages[view]();
