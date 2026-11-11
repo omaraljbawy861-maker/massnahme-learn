@@ -561,3 +561,25 @@ html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
   .content{padding:18px 14px 35px!important}
   .topbar{padding-left:14px!important;padding-right:14px!important}
 }
+
+
+/* ROOT CAUSE FIX: the hidden sidebar was still taking 260px in the flex row.
+   Remove it from document layout on phones/tablets so main-area gets the full viewport. */
+@media screen and (max-width: 1100px){
+  html,body{margin:0!important;width:100%!important;min-width:0!important;max-width:100%!important}
+  .app-shell{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;overflow-x:clip!important}
+  .sidebar{position:fixed!important;inset-block:0!important;inset-inline-start:auto!important;inset-inline-end:0!important;
+    width:min(300px,84vw)!important;max-width:84vw!important;flex:none!important;flex-basis:0!important;
+    transform:translateX(105%)!important;z-index:100!important}
+  .sidebar.open{transform:translateX(0)!important}
+  .main-area{display:block!important;position:relative!important;float:none!important;
+    width:100%!important;min-width:0!important;max-width:100%!important;flex:none!important;
+    margin:0!important;padding:0!important}
+  .topbar{width:100%!important;min-width:0!important;max-width:100%!important}
+  #appContent,.content{width:100%!important;min-width:0!important;max-width:none!important;
+    margin-inline:0!important;box-sizing:border-box!important}
+}
+@media screen and (max-width: 600px){
+  .content{padding-inline:14px!important}
+  .topbar{padding-inline:12px!important}
+}
