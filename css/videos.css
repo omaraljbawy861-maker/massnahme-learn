@@ -4,3 +4,21 @@
 .video-open-source{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:9px 12px;border:1px solid #d8c69f;border-radius:8px;color:#795f31;background:#fbf8f1;font-size:11px;font-weight:700;text-decoration:none}.video-open-source:hover{background:#f3ead8}
 
 .external-video-launch{min-height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;color:#778397;gap:10px}.external-video-launch>span{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#f4efe4;color:#98783f;font-size:22px}.external-video-launch h3{color:#233650;margin:0;font-size:15px}.external-video-launch p{font-size:11px;line-height:1.8;max-width:280px}.external-video-launch a{display:inline-flex;text-decoration:none;align-items:center;justify-content:center}
+
+/* Video library professional polish */
+.video-results-status{margin:-7px 0 14px;color:var(--muted,#788397);font-size:11px;font-weight:700}
+.video-card-art{background-position:center;background-size:cover;min-height:145px}
+.video-card-art>span{box-shadow:0 6px 18px rgba(0,0,0,.2);transition:transform .2s ease}
+.video-resource-card:hover .video-card-art>span{transform:scale(1.08)}
+.video-resource-card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.video-resource-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,35,60,.09);border-color:#d7c49a}
+.video-card-body h3{line-height:1.6;min-height:44px}
+.video-card-body p{min-height:64px}
+.video-player-panel{overflow:hidden}
+.embedded-video-frame{aspect-ratio:16/9}
+.video-open-source{margin:11px 0 0;text-decoration:none}
+.video-no-results{padding:38px 18px;text-align:center;border:1px dashed #d8dce4;border-radius:15px;background:#fafbfc;color:#7b8798}
+.video-no-results>span{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#f2ede2;color:#9b7c45;font-size:25px}
+.video-no-results h3{margin:12px 0 5px;color:#233650;font-size:15px}
+.video-no-results p{font-size:11px}
+@media(max-width:560px){.video-card-art{min-height:165px}.video-card-body h3,.video-card-body p{min-height:0}.video-results-status{margin-top:0}}
