@@ -518,3 +518,27 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 .english-placement-question{min-width:0;margin:10px 0;padding:13px;border:1px solid #e9edf2;border-radius:11px;background:#fff}.english-placement-question legend{max-width:100%;padding:0 5px;color:#263a56;font-size:12px;font-weight:800;line-height:1.8}.english-placement-question legend span{display:block;color:#a17d40;font:800 9px Inter,sans-serif;letter-spacing:.5px}.english-placement-question>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.english-placement-question label{display:flex;align-items:center;gap:7px;min-width:0;padding:9px;border:1px solid #edf0f4;border-radius:8px;background:#fafbfc;cursor:pointer;font:11px Inter,Cairo,sans-serif}.english-placement-question label:has(input:checked){border-color:#c7a76b;background:#faf5e9}.english-placement-question input{accent-color:#a98545;flex:0 0 auto}.english-placement-feedback{display:block;margin-top:9px;padding:8px 10px;border-radius:7px;background:#fbf1ee;color:#9b5548;font:10px/1.8 Cairo,sans-serif}.english-placement-feedback.is-correct{background:#edf6f0;color:#39775b}.english-placement-question.needs-answer{border-color:#c77b67}.english-placement-submit{width:100%;margin-top:10px}.english-placement-submit:disabled{opacity:.55;cursor:not-allowed}
 .english-placement-result{margin-top:15px;padding:17px;border:1px solid #e4dac6;border-radius:12px;background:#fff}.english-placement-result h4{margin:7px 0;color:#263a56;font-size:13px}.english-placement-result>strong{display:block;color:#a17d40;font:800 38px Inter,sans-serif}.english-placement-result>p{font-size:11px;color:#657389}.english-placement-total{font-size:11px;font-weight:800;color:#304763}.english-placement-breakdown{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:13px 0}.english-placement-breakdown>div{display:grid;grid-template-columns:1fr auto;gap:5px;padding:9px;border:1px solid #edf0f4;border-radius:8px;font-size:10px;color:#657389}.english-placement-breakdown b{color:#263a56}.english-placement-breakdown i{grid-column:1/-1;height:5px;overflow:hidden;border-radius:9px;background:#edf0f4}.english-placement-breakdown em{display:block;height:100%;border-radius:9px;background:#c4a266}.english-placement-result>small{display:block;color:#7e8999;font-size:9px;line-height:1.9}.english-placement-result>button{margin-top:10px;border:1px solid #e7dfd0;border-radius:8px;padding:7px 12px;background:#faf7f0;color:#8b6c39;font:700 10px Cairo,sans-serif}.english-placement-saved{padding:11px;border-radius:9px;background:#f4f7f4;color:#3f765b;font-size:11px;font-weight:800}.english-placement-saved span{display:block;margin-top:4px;font-size:9px;font-weight:400;color:#778579}
 @media(max-width:650px){.english-placement-heading{align-items:flex-start}.english-placement-question>div{grid-template-columns:1fr}.english-placement-breakdown{grid-template-columns:repeat(2,minmax(0,1fr))}.english-placement-progress{flex-direction:column}}
+
+
+/* Responsive viewport correction — prevent the application from rendering narrower than the phone */
+html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
+.app-shell{width:100%;max-width:100%;min-width:0}
+.main-area{flex:1 1 0%;width:0;max-width:100%;min-width:0}
+#appContent,.content{width:100%;max-width:1450px;min-width:0;box-sizing:border-box}
+#appContent>*{min-width:0;max-width:100%}
+#appContent iframe{max-width:100%}
+@media(max-width:900px){
+  .sidebar{position:fixed;z-index:20;right:-270px;top:0;bottom:0;width:260px;max-width:85vw;transition:right .25s}
+  .sidebar.open{right:0;box-shadow:0 0 0 100vmax rgba(8,18,34,.4)}
+  .sidebar-backdrop{position:fixed;inset:0;z-index:19;display:none;background:rgba(8,18,34,.4);border:0}
+  .sidebar.open~.sidebar-backdrop{display:block}
+  .menu-toggle{display:block}
+  .main-area{width:100%;flex-basis:100%}
+  .topbar{padding-inline:16px}
+  .content{padding:18px 14px 35px}
+}
+@media(max-width:600px){
+  .english-hero,.english-academic-panel,.english-school-calendar,.english-school-books,.english-placement-card,.english-level-navigation{max-width:100%;min-width:0}
+  .english-school-workbook-frame{width:100%;max-width:100%;display:block}
+  .english-academic-grid,.english-semesters,.english-grammar-topics,.english-placement-breakdown{min-width:0}
+}
