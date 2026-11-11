@@ -44,7 +44,7 @@ async function sendMessage(e){
  typing.classList.add("typing");
  $("note").textContent="وصلت رسالتك، جارٍ تجهيز الرد…";
  // Save the user's message in parallel with the AI request; never make the UI wait for the database first.
- const saveUserPromise=save("user",text);
+ const saveUserPromise=save("user",text).then(()=>({ok:true}),error=>({ok:false,error}));
  try{
   const payload={messages:Array.from($("messages").querySelectorAll(".chat-bubble:not(.typing)")).map(n=>({role:n.classList.contains("user")?"user":"assistant",content:n.querySelector("p").textContent})),personaGender:gender,preferredLanguage:$("language").value};
   const {data,error}=await supabase.functions.invoke("free-chat",{body:payload});
@@ -54,12 +54,12 @@ async function sendMessage(e){
   addMessage("assistant",data.reply);
   $("note").textContent="وصل الرد. جارٍ حفظ الرسائل…";
   const saved=await Promise.allSettled([saveUserPromise,save("assistant",data.reply)]);
-  if(saved.some(x=>x.status==="rejected"))$("note").textContent="وصل الرد، لكن تعذر حفظ إحدى الرسائل. تحقق من الاتصال.";
+  if(saved.some(x=>x.status==="rejected")||saved.some(x=>x.value?.ok===false))$("note").textContent="وصل الرد، لكن تعذر حفظ إحدى الرسائل. تحقق من الاتصال.";
   else $("note").textContent="تم حفظ الرسائل تلقائياً.";
  }catch(err){
   typing.remove();
   $("note").textContent="تعذر إرسال الرسالة: "+(err.message||"تحقق من الاتصال");
-  saveUserPromise.catch(saveError=>console.error("message save failed",saveError));
+  const saveResult=await saveUserPromise;if(!saveResult.ok)console.error("message save failed",saveResult.error);
  }finally{btn.disabled=seconds<=0;$("message").disabled=seconds<=0;$("message").focus();}
 }
 document.querySelectorAll("[data-gender]").forEach(b=>b.addEventListener("click",()=>{gender=b.dataset.gender;document.querySelectorAll("[data-gender]").forEach(x=>x.classList.toggle("active",x===b));persona();}));
