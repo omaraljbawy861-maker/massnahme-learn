@@ -134,7 +134,10 @@ function toggleStudySpeech() {
 
 function getStudySpeechLanguage(text) {
   const selected = document.getElementById("studySpeechLanguage")?.value || "auto";
-  return selected === "auto" ? detectSpeechLanguage(text) : selected;
+  const chatLanguage = document.getElementById("studyChatLanguage")?.value || "auto";
+  if (selected !== "auto") return selected;
+  if (chatLanguage !== "auto" && chatLanguage !== "other") return chatLanguage;
+  return detectSpeechLanguage(text);
 }
 
 async function speakText(text, lang, voiceGender = "female") {
