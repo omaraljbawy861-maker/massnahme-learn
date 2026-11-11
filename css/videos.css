@@ -22,3 +22,4 @@
 .video-no-results h3{margin:12px 0 5px;color:#233650;font-size:15px}
 .video-no-results p{font-size:11px}
 @media(max-width:560px){.video-card-art{min-height:165px}.video-card-body h3,.video-card-body p{min-height:0}.video-results-status{margin-top:0}}
+.video-card-art{position:relative;isolation:isolate}.video-card-thumbnail{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}.video-card-art>span,.video-card-art>small{z-index:1}
