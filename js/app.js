@@ -770,35 +770,6 @@ async function sendStudyMessage(event){
     if(status)status.textContent=friendly;
   }finally{button.disabled=false;button.textContent="إرسال السؤال ←";}
 }
-async function sendStudyMessage(event){
-  event.preventDefault();
-  const input=document.getElementById("studyChatInput"),button=document.getElementById("studySendButton");
-  const message=input.value.trim();if(!message)return;
-  const status=document.getElementById("studyTutorStatus");
-  button.disabled=true;button.textContent="يفكر...";
-  if(status)status.textContent="جارٍ تجهيز الإجابة...";
-  try{
-    if(!activeStudyChatId) await startNewStudyChat();
-    if(!activeStudyChatId) throw new Error("تعذر بدء جلسة الدردشة.");
-    if(studyChatSecondsLeft<=0) throw new Error("انتهى وقت الجلسة. ابدأ محادثة جديدة للمتابعة.");
-    input.value="";
-    studyChatMessages.push({role:"user",content:message});
-    appendStudyMessage("user",message);
-    await saveStudyChatMessage("user",message);
-    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages}});
-    if(error)throw error;
-    if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
-    studyChatMessages.push({role:"assistant",content:data.reply});
-    appendStudyMessage("assistant",data.reply);
-    await saveStudyChatMessage("assistant",data.reply);
-    if(document.getElementById("studyVoiceReply")?.checked)speakText(data.reply,getStudySpeechLanguage(data.reply));
-    if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
-  }catch(error){
-    const friendly=String(error?.message||"").includes("انتهى وقت الجلسة")?error.message:"تعذر إرسال الرسالة أو حفظها. تحقق من الاتصال وحاول مرة أخرى.";
-    if(status)status.textContent=friendly;
-    notify(friendly);
-  }finally{button.disabled=false;button.textContent="إرسال السؤال ←";}
-}
 async function loadStudyChatHistory(selectedId=""){
   const select=document.getElementById("studyChatHistory");if(!select||!currentStudentId)return;
   const {data,error}=await supabase.from("study_chat_sessions").select("id,title,assistant_gender,language,duration_minutes,started_at,ended_at").eq("user_id",currentStudentId).order("started_at",{ascending:false}).limit(30);
