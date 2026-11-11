@@ -361,7 +361,40 @@ async function renderPhrases(){
  <div class="language-summary"><article><strong>${bank.de.vocabulary.length}</strong><span>مفردة ألمانية</span></article><article><strong>${bank.en.vocabulary.length}</strong><span>مفردة إنجليزية</span></article><article><strong>${bank.de.sentences.length}</strong><span>جملة ألمانية</span></article><article><strong>${bank.en.sentences.length}</strong><span>جملة إنجليزية</span></article></div>
  <div class="language-panels"><button class="language-panel" data-action="language-de"><b>Deutsch</b><span>Wortschatz · Sätze · Hören</span><small>المفردات والجمل والاستماع الألماني</small></button><button class="language-panel" data-action="language-en"><b>English</b><span>Vocabulary · Sentences · Listening</span><small>المفردات والجمل والاستماع الإنجليزي</small></button></div>`;
 }
+async function renderEnglishCourse(){
+ setActive("language-en");
+ content.innerHTML='<div class="empty-state"><h2>جارٍ تحميل منهج الإنجليزية</h2><p>نجهز المستويات والوحدات التعليمية…</p></div>';
+ try{
+  const response=await fetch("./data/english_course.json?v=1",{cache:"no-store"});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const course=await response.json();
+  let activeLevel=course.levels[0].code;
+  const draw=()=>{
+   const level=course.levels.find(x=>x.code===activeLevel);
+   const total=course.levels.reduce((n,x)=>n+x.units.length,0);
+   content.innerHTML=\`<div class="page-intro"><span class="eyebrow">ENGLISH MASTERCLASS · CEFR A1–C2</span><h1>منهج اللغة الإنجليزية من الصفر حتى C2</h1><p>مسار شامل من المبتدئ إلى الإتقان: شرح قواعد، أمثلة مترجمة، مفردات، قراءة، كتابة، محادثة وتدريبات تطبيقية.</p></div>
+   <div class="english-course-stats"><article><strong>6</strong><span>مستويات CEFR</span></article><article><strong>\${total}</strong><span>وحدة تعليمية</span></article><article><strong>4</strong><span>مهارات أساسية</span></article><article><strong>100%</strong><span>تدرج من A1 إلى C2</span></article></div>
+   <div class="english-level-tabs">\${course.levels.map(x=>\`<button type="button" class="english-level-tab \${x.code===activeLevel?"active":""}" data-english-level="\${x.code}"><b>\${x.code}</b><small>\${escapeHtml(x.name)}</small></button>\`).join("")}</div>
+   <section class="english-level-intro"><div><span class="eyebrow">CURRENT LEVEL · \${level.code}</span><h2>\${level.code} · \${escapeHtml(level.name)}</h2><p>\${escapeHtml(level.goal)}</p></div><span class="english-level-badge">\${level.units.length} وحدات</span></section>
+   <div class="english-learning-guide"><h3>كيف تدرس هذا المستوى؟</h3><p>ابدأ بالشرح، اقرأ الأمثلة الإنجليزية وترجمتها، استمع إلى الجمل باستخدام زر النطق، ثم نفّذ التدريب الكتابي والشفهي. افتح الحل بعد أن تحاول بنفسك.</p></div>
+   <div class="english-units">\${level.units.map((u,i)=>\`<details class="english-unit" \${i===0?"open":""}><summary><span class="english-unit-number">\${String(i+1).padStart(2,"0")}</span><span class="english-unit-heading"><b>\${escapeHtml(u.title)}</b><small>\${escapeHtml(u.englishTitle)}</small></span><span class="english-unit-chevron">＋</span></summary>
+   <div class="english-unit-content"><p class="english-overview">\${escapeHtml(u.overview)}</p>
+   <section class="english-lesson-block"><h4>1. القاعدة والشرح · Grammar</h4><p>\${escapeHtml(u.grammar)}</p><p class="english-grammar-note">\${escapeHtml(u.grammarNote)}</p></section>
+   <section class="english-lesson-block"><h4>2. أمثلة مترجمة · Examples</h4>\${u.examples.map(ex=>\`<div class="english-example"><p lang="en">\${escapeHtml(ex.en)}</p><span>\${escapeHtml(ex.ar)}</span><button type="button" class="listen-btn" data-speak="\${escapeHtml(ex.en)}" data-lang="en-GB">🔊 استمع</button></div>\`).join("")}</section>
+   <section class="english-lesson-block"><h4>3. المفردات الأساسية · Vocabulary</h4><ul class="english-vocab-list">\${u.vocabulary.map(w=>\`<li>\${escapeHtml(w)}</li>\`).join("")}</ul></section>
+   <section class="english-lesson-block"><h4>4. القراءة والفهم · Reading</h4><div class="english-reading"><p lang="en">\${escapeHtml(u.reading)}</p><button type="button" class="listen-btn" data-speak="\${escapeHtml(u.reading)}" data-lang="en-GB">▶ استمع إلى النص</button><details><summary>عرض الترجمة العربية</summary><p>\${escapeHtml(u.translation)}</p></details></div></section>
+   <section class="english-lesson-block"><h4>5. المحادثة · Speaking</h4><p>\${escapeHtml(u.speaking)}</p><div class="english-task-tip">سجّل إجابتك بصوتك، ثم أعد الاستماع وصحح النطق وترتيب الجمل.</div></section>
+   <section class="english-lesson-block"><h4>6. الكتابة · Writing</h4><p>\${escapeHtml(u.writing)}</p></section>
+   <section class="english-lesson-block"><h4>7. تمارين تطبيقية · Practice</h4>\${u.practice.map((p,j)=>\`<details class="english-exercise"><summary>تمرين \${j+1}: \${escapeHtml(p.question)}</summary><p>\${escapeHtml(p.answer)}</p></details>\`).join("")}</section>
+   <div class="english-assessment"><b>معيار إتقان الوحدة</b><p>\${escapeHtml(u.assessment)}</p></div></div></details>\`).join("")}</div>
+   <section class="english-study-plan"><h3>خطة مذاكرة مقترحة</h3><ol><li>اليوم الأول: فهم القاعدة وكتابة أمثلة من عندك.</li><li>اليوم الثاني: حفظ المفردات ضمن جمل، لا كقائمة منفصلة.</li><li>اليوم الثالث: قراءة النص والاستماع إليه وتلخيصه.</li><li>اليوم الرابع: محادثة قصيرة وتسجيل صوتي.</li><li>اليوم الخامس: كتابة المهمة ومراجعة الأخطاء.</li><li>اليوم السادس: حل التدريبات دون فتح الحلول.</li><li>اليوم السابع: مراجعة شاملة واختبار ذاتي قبل الانتقال.</li></ol></section>\`;
+   content.querySelectorAll("[data-english-level]").forEach(button=>button.addEventListener("click",()=>{activeLevel=button.dataset.englishLevel;draw();window.scrollTo({top:0,behavior:"smooth"});}));
+  };
+  draw();
+ }catch(error){content.innerHTML='<div class="empty-state"><h2>تعذر تحميل منهج الإنجليزية</h2><p>'+escapeHtml(error.message)+'</p></div>';}
+}
 async function renderLanguage(lang){
+ if(lang==="en"){renderEnglishCourse();return;}
  setActive(lang==="de" ? "language-de" : "language-en");
  const bank=await ensureLanguageBank(), d=bank[lang], code=lang==='de'?'de-DE':'en-GB', title=lang==='de'?'الألمانية':'الإنجليزية';
  content.innerHTML=`<div class="page-intro"><span class="eyebrow">${lang==='de'?'DEUTSCH':'ENGLISH'} · LANGUAGE WORKBOOK</span><h1>كتاب ${title} التفاعلي</h1><p>مفردات وجمل يومية بمستويات A1 إلى B2، ونصوص قراءة واستماع متدرجة مع ترجمة عربية. تظهر درجة كل كلمة وجملة، ويمكنك الاستماع إليها ومراجعة معناها.</p></div>
