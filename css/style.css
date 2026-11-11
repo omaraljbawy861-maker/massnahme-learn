@@ -603,3 +603,21 @@ html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
   .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:99!important;display:none!important}
   .sidebar-backdrop.visible{display:block!important}
 }
+
+
+/* Drawer visibility fix: never clip a fixed-position sidebar at the app-shell boundary */
+@media screen and (max-width:1100px){
+  .app-shell{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important}
+  .sidebar{
+    position:fixed!important;
+    top:0!important;right:0!important;bottom:0!important;left:auto!important;
+    width:min(320px,84vw)!important;max-width:84vw!important;
+    height:100vh!important;height:100dvh!important;
+    transform:translate3d(110%,0,0)!important;
+    flex:none!important;flex-basis:auto!important;
+    z-index:1000!important;
+  }
+  .sidebar.open{right:0!important;transform:translate3d(0,0,0)!important}
+  .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:999!important}
+  .main-area{width:100%!important;max-width:100%!important;min-width:0!important}
+}
