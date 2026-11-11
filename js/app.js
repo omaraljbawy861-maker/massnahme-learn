@@ -19,6 +19,11 @@ let studyTimerRemaining = 25 * 60;
 let studyTimerRunning = false;
 let studyTimerEndsAt = null;
 let studyChatMessages = [];
+let currentStudentId = null;
+let activeStudyChatId = null;
+let studyChatTimer = null;
+let studyChatExpiresAt = null;
+let studyChatSecondsLeft = 0;
 
 const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "study-assistant":"المساعد الدراسي الذكي" };
 
@@ -70,14 +75,16 @@ function waitForSpeechVoices(timeoutMs = 5000) {
   });
 }
 
-function findSpeechVoice(voices, languagePrefix) {
+function findSpeechVoice(voices, languagePrefix, voiceGender = "female") {
   const matches = voices.filter(v => {
     const lang = String(v.lang || "").toLowerCase().replace("_", "-");
     return lang === languagePrefix || lang.startsWith(languagePrefix + "-");
   });
   if (matches.length) {
-    // Prefer the system's default voice for that language, then a local voice.
-    return matches.find(v => v.default) || matches.find(v => v.localService) || matches[0];
+    const genderPattern = voiceGender === "male"
+      ? /male|man|mascul|david|mark|george|daniel|james|thomas|hans|stefan|yousef|mehdi/i
+      : /female|woman|fem|zira|susan|samantha|victoria|karen|anna|hedda|petra|sara|laila/i;
+    return matches.find(v => genderPattern.test(v.name || "")) || matches.find(v => v.default) || matches.find(v => v.localService) || matches[0];
   }
   if (languagePrefix === "ar") {
     // Some Windows/browser voice lists expose Arabic in the voice name
@@ -130,7 +137,7 @@ function getStudySpeechLanguage(text) {
   return selected === "auto" ? detectSpeechLanguage(text) : selected;
 }
 
-async function speakText(text, lang) {
+async function speakText(text, lang, voiceGender = "female") {
   if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
     notify("ميزة النطق غير مدعومة في هذا المتصفح.");
     return;
@@ -144,7 +151,7 @@ async function speakText(text, lang) {
   studySpeechPaused = false;
   updateStudySpeechButton("■ إيقاف الصوت");
   const voices = synth.getVoices().length ? synth.getVoices() : await waitForSpeechVoices(3000);
-  const voice = findSpeechVoice(voices, languagePrefix);
+  const voice = findSpeechVoice(voices, languagePrefix, voiceGender);
   if (!voice) {
     const languageName = languagePrefix === "ar" ? "العربية" : languagePrefix === "de" ? "الألمانية" : "الإنجليزية";
     notify("لا يوجد صوت " + languageName + " مثبت على الجهاز. أضف صوتاً لهذه اللغة من إعدادات النظام.");
@@ -703,6 +710,19 @@ function renderStudyAssistant(){
     </article>
     <article class="study-chat-card">
       <div class="study-card-heading"><span class="study-tool-icon">✦</span><div><h2>اسأل وناقش</h2><p>مساعد يشرح ويصحح ويعطيك أمثلة</p></div></div>
+      <div class="study-persona-panel">
+        <div class="study-persona-title"><b>اختر شخصية المساعد</b><small>يمكنك تغييرها متى شئت</small></div>
+        <div class="study-persona-options">
+          <button type="button" class="study-persona-option active" data-assistant-gender="female"><span class="study-persona-avatar female">♀</span><span><b>مساعدة ذكية</b><small>شخصية أنثوية</small></span><i>✓</i></button>
+          <button type="button" class="study-persona-option" data-assistant-gender="male"><span class="study-persona-avatar male">♂</span><span><b>مساعد ذكي</b><small>شخصية ذكورية</small></span><i>✓</i></button>
+        </div>
+        <div class="study-session-settings">
+          <label>لغة المحادثة<select id="studyChatLanguage"><option value="auto">اكتشاف اللغة تلقائياً</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="en">English</option><option value="fr">Français</option><option value="tr">Türkçe</option><option value="es">Español</option><option value="it">Italiano</option><option value="ur">اردو</option><option value="other">لغة أخرى / تلقائي</option></select></label>
+          <label>مدة الجلسة بالدقائق<input id="studyChatDuration" type="number" min="1" max="180" value="30"></label>
+          <div class="study-session-clock"><small>الوقت المتبقي</small><strong id="studyChatCountdown">30:00</strong></div>
+        </div>
+        <div class="study-session-actions"><button type="button" class="primary-btn" id="studyNewChat">＋ محادثة جديدة</button><label class="study-history-label">محادثاتي السابقة<select id="studyChatHistory"><option value="">تحميل المحادثات...</option></select></label></div>
+      </div>
       <div class="study-settings-simple">
         <div class="study-setting-field"><label for="studySubject">المادة</label><select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select></div>
         <div class="study-setting-field"><label for="studyAnswerStyle">أسلوب الشرح</label><select id="studyAnswerStyle"><option value="simple">سهل ومبسّط</option><option value="balanced" selected>متوازن</option><option value="detailed">تفصيلي خطوة بخطوة</option></select></div>
@@ -710,7 +730,7 @@ function renderStudyAssistant(){
       </div>
       <div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
       <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><button type="button" class="secondary-btn study-stop-audio" id="studyStopVoice">■ إيقاف الصوت</button><span id="studySpeechStatus" aria-live="polite">الصوت متوقف</span><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
-      <p class="study-tutor-note" id="studyTutorStatus">المحادثة الذكية تحتاج تفعيل خدمة المساعد على الخادم أولاً.</p>
+      <p class="study-tutor-note" id="studyTutorStatus">تُحفظ محادثاتك تلقائياً في حسابك ويمكنك الرجوع إليها من أي جهاز.</p>
     </article>
   </section>
   <div class="study-tips"><b>أمثلة لما يمكنك سؤاله:</b><span>اشرح لي الكسور بطريقة سهلة.</span><span>صحّح هذه الجملة الألمانية وناقشني بالسبب.</span><span>اختبرني بخمسة أسئلة عن الخلية.</span></div>`;
@@ -724,6 +744,16 @@ function renderStudyAssistant(){
     resetStudyTimer();
   }));
   document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
+  document.querySelectorAll("[data-assistant-gender]").forEach(button=>button.addEventListener("click",()=>{
+    document.querySelectorAll("[data-assistant-gender]").forEach(item=>item.classList.toggle("active",item===button));
+  }));
+  document.getElementById("studyNewChat").addEventListener("click",startNewStudyChat);
+  document.getElementById("studyChatHistory").addEventListener("change",event=>{if(event.target.value)openStudyChat(event.target.value);});
+  document.getElementById("studyChatDuration").addEventListener("input",()=>{
+    const value=Math.max(1,Math.min(180,Number(document.getElementById("studyChatDuration").value)||30));
+    document.getElementById("studyChatCountdown").textContent=String(value).padStart(2,"0")+":00";
+  });
+  loadStudyChatHistory();
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
   document.getElementById("studyStopVoice").addEventListener("click",toggleStudySpeech);
   document.getElementById("studyVoiceReply").addEventListener("change",event=>{
@@ -805,25 +835,108 @@ async function sendStudyMessage(event){
   const input=document.getElementById("studyChatInput"),button=document.getElementById("studySendButton");
   const message=input.value.trim();if(!message)return;
   const status=document.getElementById("studyTutorStatus");
-  appendStudyMessage("user",message);studyChatMessages.push({role:"user",content:message});input.value="";
   button.disabled=true;button.textContent="يفكر...";
   if(status)status.textContent="جارٍ تجهيز الإجابة...";
   try{
-    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages,subject:document.getElementById("studySubject").value,answerStyle:document.getElementById("studyAnswerStyle")?.value||"balanced"}});
+    if(!activeStudyChatId) await startNewStudyChat();
+    if(!activeStudyChatId) throw new Error("تعذر بدء جلسة الدردشة.");
+    if(studyChatSecondsLeft<=0) throw new Error("انتهى وقت الجلسة. ابدأ محادثة جديدة للمتابعة.");
+    input.value="";
+    studyChatMessages.push({role:"user",content:message});
+    appendStudyMessage("user",message);
+    await saveStudyChatMessage("user",message);
+    const gender=document.querySelector("[data-assistant-gender].active")?.dataset.assistantGender||"female";
+    const language=document.getElementById("studyChatLanguage")?.value||"auto";
+    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages,subject:document.getElementById("studySubject").value,answerStyle:document.getElementById("studyAnswerStyle")?.value||"balanced",assistantGender:gender,preferredLanguage:language}});
     if(error)throw error;
     if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
-    appendStudyMessage("assistant",data.reply);studyChatMessages.push({role:"assistant",content:data.reply});
-    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply,getStudySpeechLanguage(data.reply));
-    if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
+    studyChatMessages.push({role:"assistant",content:data.reply});
+    appendStudyMessage("assistant",data.reply);
+    await saveStudyChatMessage("assistant",data.reply);
+    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply,getStudySpeechLanguage(data.reply),gender);
+    if(status)status.textContent="تم حفظ المحادثة تلقائياً. يمكنك متابعة النقاش.";
+    await loadStudyChatHistory(activeStudyChatId);
   }catch(error){
-    const reason=String(error?.message||"");
-    const friendly= /Failed to fetch|FunctionsFetchError|404|not found/i.test(reason)
-      ?"خدمة المساعد لم تُفعّل بعد على Supabase. يلزم نشر study-tutor وإضافة GEMINI_API_KEY ضمن Secrets."
-      :"تعذر الاتصال بالمساعد حالياً. تأكد من إعداد الخدمة ثم حاول مرة أخرى.";
-    appendStudyMessage("assistant",friendly);
+    const friendly=String(error?.message||"").includes("انتهى وقت الجلسة")?error.message:"تعذر إرسال الرسالة أو حفظها. تحقق من الاتصال وحاول مرة أخرى.";
     if(status)status.textContent=friendly;
+    notify(friendly);
   }finally{button.disabled=false;button.textContent="إرسال السؤال ←";}
 }
+async function loadStudyChatHistory(selectedId=""){
+  const select=document.getElementById("studyChatHistory");if(!select||!currentStudentId)return;
+  const {data,error}=await supabase.from("study_chat_sessions").select("id,title,assistant_gender,language,duration_minutes,started_at,ended_at").eq("user_id",currentStudentId).order("started_at",{ascending:false}).limit(30);
+  if(error){select.innerHTML='<option value="">تعذر تحميل السجل</option>';return;}
+  select.innerHTML='<option value="">اختر محادثة سابقة</option>'+((data||[]).map(item=>'<option value="'+escapeHtml(item.id)+'">'+escapeHtml((item.title||"محادثة جديدة").slice(0,48))+' · '+new Date(item.started_at).toLocaleDateString()+'</option>').join(""));
+  if(selectedId)select.value=selectedId;
+}
+async function saveStudyChatMessage(role,body){
+  const {error}=await supabase.from("study_chat_messages").insert({session_id:activeStudyChatId,user_id:currentStudentId,role,content:body});
+  if(error)throw error;
+}
+function stopStudyChatTimer(){
+  if(studyChatTimer)clearInterval(studyChatTimer);
+  studyChatTimer=null;
+}
+function renderStudyChatCountdown(){
+  const clock=document.getElementById("studyChatCountdown");if(!clock)return;
+  const mins=Math.floor(Math.max(0,studyChatSecondsLeft)/60),secs=Math.max(0,studyChatSecondsLeft)%60;
+  clock.textContent=String(mins).padStart(2,"0")+":"+String(secs).padStart(2,"0");
+}
+function startStudyChatTimer(expiresAt){
+  stopStudyChatTimer();studyChatExpiresAt=new Date(expiresAt).getTime();
+  studyChatSecondsLeft=Math.max(0,Math.ceil((studyChatExpiresAt-Date.now())/1000));renderStudyChatCountdown();
+  studyChatTimer=setInterval(async()=>{
+    studyChatSecondsLeft=Math.max(0,Math.ceil((studyChatExpiresAt-Date.now())/1000));renderStudyChatCountdown();
+    if(studyChatSecondsLeft<=0){
+      stopStudyChatTimer();
+      if(activeStudyChatId)await supabase.from("study_chat_sessions").update({ended_at:new Date().toISOString()}).eq("id",activeStudyChatId).eq("user_id",currentStudentId);
+      const status=document.getElementById("studyTutorStatus");if(status)status.textContent="انتهى وقت المحادثة. محادثتك محفوظة بالكامل؛ ابدأ جلسة جديدة للمتابعة.";
+      const input=document.getElementById("studyChatInput");if(input)input.disabled=true;
+      const send=document.getElementById("studySendButton");if(send)send.disabled=true;
+      notify("انتهى وقت جلسة الدردشة. تم حفظ المحادثة.");
+    }
+  },1000);
+}
+async function startNewStudyChat(){
+  stopStudyChatTimer();activeStudyChatId=null;studyChatMessages=[];
+  const gender=document.querySelector("[data-assistant-gender].active")?.dataset.assistantGender||"female";
+  const language=document.getElementById("studyChatLanguage")?.value||"auto";
+  const duration=Math.max(1,Math.min(180,Number(document.getElementById("studyChatDuration")?.value)||30));
+  const title=gender==="female"?"محادثة مع المساعدة الذكية":"محادثة مع المساعد الذكي";
+  const startedAt=new Date(),expiresAt=new Date(startedAt.getTime()+duration*60000);
+  const {data,error}=await supabase.from("study_chat_sessions").insert({user_id:currentStudentId,title,assistant_gender:gender,language,duration_minutes:duration,started_at:startedAt.toISOString(),expires_at:expiresAt.toISOString()}).select("id,expires_at").single();
+  if(error){notify("تعذر إنشاء المحادثة. تأكد من تفعيل جداول الدردشة في قاعدة البيانات.");return null;}
+  activeStudyChatId=data.id;
+  const input=document.getElementById("studyChatInput"),send=document.getElementById("studySendButton"),box=document.getElementById("studyChatMessages");
+  if(input)input.disabled=false;if(send)send.disabled=false;
+  if(box)box.innerHTML="";
+  const greeting=gender==="female"?"مرحباً! أنا مساعدتك الدراسية. كيف يمكنني مساعدتك اليوم؟":"مرحباً! أنا مساعدك الدراسي. ما الموضوع الذي تريد أن نتعلمه اليوم؟";
+  studyChatMessages.push({role:"assistant",content:greeting});appendStudyMessage("assistant",greeting);
+  await saveStudyChatMessage("assistant",greeting);
+  startStudyChatTimer(data.expires_at);
+  await loadStudyChatHistory(activeStudyChatId);
+  const status=document.getElementById("studyTutorStatus");if(status)status.textContent="بدأت الجلسة لمدة "+duration+" دقيقة. تُحفظ الرسائل تلقائياً.";
+  return data.id;
+}
+async function openStudyChat(sessionId){
+  stopStudyChatTimer();activeStudyChatId=sessionId;studyChatMessages=[];
+  const {data:session,error}=await supabase.from("study_chat_sessions").select("*").eq("id",sessionId).eq("user_id",currentStudentId).single();
+  if(error||!session)return;
+  const gender=session.assistant_gender||"female";
+  document.querySelectorAll("[data-assistant-gender]").forEach(button=>button.classList.toggle("active",button.dataset.assistantGender===gender));
+  const lang=document.getElementById("studyChatLanguage");if(lang)lang.value=session.language||"auto";
+  const duration=document.getElementById("studyChatDuration");if(duration)duration.value=session.duration_minutes||30;
+  const {data:messages,error:messagesError}=await supabase.from("study_chat_messages").select("role,content,created_at").eq("session_id",sessionId).eq("user_id",currentStudentId).order("created_at",{ascending:true});
+  if(messagesError)return;
+  const box=document.getElementById("studyChatMessages");if(box)box.innerHTML="";
+  (messages||[]).forEach(message=>{studyChatMessages.push({role:message.role,content:message.content});appendStudyMessage(message.role,message.content);});
+  const ended=!!session.ended_at||new Date(session.expires_at).getTime()<=Date.now();
+  const input=document.getElementById("studyChatInput"),send=document.getElementById("studySendButton");
+  if(input)input.disabled=ended;if(send)send.disabled=ended;
+  if(!ended)startStudyChatTimer(session.expires_at);else{studyChatSecondsLeft=0;renderStudyChatCountdown();}
+  const status=document.getElementById("studyTutorStatus");if(status)status.textContent=ended?"هذه محادثة سابقة انتهى وقتها. ابدأ محادثة جديدة للمتابعة.":"تم استرجاع المحادثة. يمكنك المتابعة ضمن الوقت المتبقي.";
+}
+
 function startStudyDictation(){
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!Recognition){notify("الإملاء الصوتي غير مدعوم في هذا المتصفح. استخدم الكتابة.");return;}
@@ -973,6 +1086,7 @@ history.replaceState({maqamLearnRoute:{view:"dashboard",courseId:null,lessonId:n
 try {
   const student = await requireStudentSession(content);
   if (!student) throw new Error("يلزم تسجيل الدخول للمتابعة");
+  currentStudentId = student.id;
   await initializeStudentProgress(student.id);
   courses=await loadCourses();
   renderDashboard();
