@@ -1,8 +1,8 @@
 import { loadCourses } from "./data.js?v=20261110-1";
 import { supabase } from "./supabase.js";
-import { connectEnglishSchoolSync } from "./english_school_sync.js?v=20261111-1";
+import { connectEnglishSchoolSync } from "./english_school_sync.js?v=20261111-2";
 import { requireStudentSession } from "./auth.js?v=20261109-2";
-import { initializeStudentProgress, getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js?v=20261109-3";
+import { initializeStudentProgress, getProgress, isCompleted, markCompleted, saveScore, completionCount } from "./progress.js?v=20261111-4";
 
 const content = document.querySelector("#appContent");
 const pageTitle = document.querySelector("#pageTitle");
