@@ -26,7 +26,7 @@ let studyChatTimer = null;
 let studyChatExpiresAt = null;
 let studyChatSecondsLeft = 0;
 
-const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "english-school":"المدرسة الإنجليزية · المنهج الأكاديمي", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "study-assistant":"المساعد الدراسي الذكي" };
+const labels = { videos:"مكتبة الفيديوهات", dashboard:"لوحة الطالب", library:"مكتبة الكتب", schedule:"جدول الحصص", assignments:"الواجبات", exams:"الاختبارات", phrases:"مختبر اللغات", "language-de":"اللغة الألمانية", "language-en":"اللغة الإنجليزية", "english-school":"المدرسة الإنجليزية · المنهج الأكاديمي", "intensive-b1":"الألمانية المكثفة B1", "intensive-b2":"الألمانية المكثفة B2", "zfa-preparation":"التحضير لتدريب مساعدة طبيب الأسنان", "zfa-application":"ملف التقديم والمقابلة ZFA", "zfa-simulation":"محاكاة يوم في عيادة الأسنان", "study-assistant":"المساعد الدراسي الذكي", "study-timer":"مؤقّت التركيز" };
 
 const dailyPhrases = [
   ["Guten Morgen!","صباح الخير!"],["Wie geht es dir?","كيف حالك؟"],["Mir geht es gut, danke.","أنا بخير، شكراً."],
@@ -790,21 +790,26 @@ function renderExams() {
  document.querySelector("#examForm").addEventListener("submit",e=>{e.preventDefault();let score=0;qs.forEach((q,i)=>{const v=document.querySelector(`input[name="exam${i}"]:checked`);if(v&&Number(v.value)===q.correct)score++;});document.querySelector("#examResult").textContent=`نتيجتك: ${score} من ${qs.length} (${Math.round(score/qs.length*100)}%)`;});
 }
 
-function renderStudyAssistant(){
+function renderStandaloneTimer(){
+ content.innerHTML="<div class=\"page-intro\"><span class=\"eyebrow\">FOCUS TIMER · مؤقّت التركيز</span><h1>مؤقّت التركيز</h1><p>نظّم وقتك بجلسات تركيز واستراحات، واضبط المدة المناسبة لك.</p></div>\n<section class=\"study-timer-card study-timer-pro timer-standalone\">\n <div class=\"study-timer-top\"><div class=\"study-card-heading\"><span class=\"study-tool-icon\">◷</span><div><h2>جلسة التركيز</h2><p>وقتك للدراسة والإنجاز</p></div></div><span class=\"timer-live-pill\"><i></i> وضع التركيز</span></div>\n <div class=\"timer-ring\" id=\"studyTimerRing\" style=\"--timer-progress:100%\"><div class=\"timer-ring-inner\"><span class=\"timer-mode-label\" id=\"studyTimerMode\">وقت الدراسة</span><strong class=\"study-timer-display\" id=\"studyTimerDisplay\">25:00</strong><small id=\"studyTimerSub\">استعد وابدأ إنجازك</small></div></div>\n <div class=\"timer-presets\"><button type=\"button\" data-timer-preset=\"25\" class=\"active\">25 دقيقة</button><button type=\"button\" data-timer-preset=\"50\">50 دقيقة</button><button type=\"button\" data-timer-preset=\"90\">90 دقيقة</button></div>\n <div class=\"timer-custom\"><label class=\"study-timer-label\" for=\"studyTimerMinutes\">مدة مخصصة</label><div><input id=\"studyTimerMinutes\" type=\"number\" min=\"1\" max=\"180\" value=\"25\"><span>دقيقة</span></div></div>\n <div class=\"study-timer-actions\"><button class=\"primary-btn timer-start-btn\" id=\"studyTimerStart\">▶ ابدأ التركيز</button><button class=\"secondary-btn\" id=\"studyTimerPause\" disabled>Ⅱ إيقاف مؤقت</button><button class=\"secondary-btn timer-reset-btn\" id=\"studyTimerReset\" aria-label=\"إعادة ضبط المؤقت\">↻</button></div>\n <p class=\"study-timer-status\" id=\"studyTimerStatus\" aria-live=\"polite\">جاهز؟ اختر المدة وابدأ جلستك.</p><div class=\"timer-footer-note\"><span>✦</span> جلسة واحدة مركّزة تصنع فرقاً</div>\n</section>";
+ bindStudyTimerControls();
+ renderStudyTimer();
+}
+function bindStudyTimerControls(){
+ document.getElementById("studyTimerStart")?.addEventListener("click",startStudyTimer);
+ document.getElementById("studyTimerPause")?.addEventListener("click",pauseStudyTimer);
+ document.getElementById("studyTimerReset")?.addEventListener("click",resetStudyTimer);
+ document.getElementById("studyTimerMinutes")?.addEventListener("change",resetStudyTimer);
+ document.querySelectorAll("[data-timer-preset]").forEach(button=>button.addEventListener("click",()=>{
+  document.querySelectorAll("[data-timer-preset]").forEach(item=>item.classList.toggle("active",item===button));
+  const field=document.getElementById("studyTimerMinutes");if(field)field.value=button.dataset.timerPreset;
+  resetStudyTimer();
+ }));
+}
+\nfunction renderStudyAssistant(){
   content.innerHTML=`<div class="page-intro"><span class="eyebrow">YOUR STUDY COMPANION · رفيق دراستك</span><h1>المساعد الدراسي التفاعلي</h1><p>نظّم وقتك، اكتب سؤالك أو تحدث عبر الميكروفون، وناقش الدرس خطوة بخطوة.</p></div>
   <section class="study-tools-grid">
-    <article class="study-timer-card study-timer-pro">
-      <div class="study-timer-top"><div class="study-card-heading"><span class="study-tool-icon">◷</span><div><h2>مؤقّت التركيز</h2><p>أنجز أكثر مع جلسات دراسة منظمة</p></div></div><span class="timer-live-pill"><i></i> وضع التركيز</span></div>
-      <div class="timer-ring" id="studyTimerRing" style="--timer-progress:100%">
-        <div class="timer-ring-inner"><span class="timer-mode-label" id="studyTimerMode">وقت الدراسة</span><strong class="study-timer-display" id="studyTimerDisplay">25:00</strong><small id="studyTimerSub">استعد وابدأ إنجازك</small></div>
-      </div>
-      <div class="timer-presets"><button type="button" data-timer-preset="25" class="active">25 دقيقة</button><button type="button" data-timer-preset="50">50 دقيقة</button><button type="button" data-timer-preset="90">90 دقيقة</button></div>
-      <div class="timer-custom"><label class="study-timer-label" for="studyTimerMinutes">مدة مخصصة</label><div><input id="studyTimerMinutes" type="number" min="1" max="180" value="25"><span>دقيقة</span></div></div>
-      <div class="study-timer-actions"><button class="primary-btn timer-start-btn" id="studyTimerStart">▶ ابدأ التركيز</button><button class="secondary-btn" id="studyTimerPause" disabled>Ⅱ إيقاف مؤقت</button><button class="secondary-btn timer-reset-btn" id="studyTimerReset" aria-label="إعادة ضبط المؤقت">↻</button></div>
-      <p class="study-timer-status" id="studyTimerStatus" aria-live="polite">جاهز؟ اختر المدة وابدأ جلستك.</p>
-      <div class="timer-footer-note"><span>✦</span> جلسة واحدة مركّزة تصنع فرقاً</div>
-    </article>
-    <article class="study-chat-card">
+   <article class="study-chat-card">
       <div class="study-card-heading"><span class="study-tool-icon">✦</span><div><h2>اسأل وناقش</h2><p>مساعد يشرح ويصحح ويعطيك أمثلة</p></div></div>
       <div class="study-audio-setting-wrap">
         <label class="study-audio-setting" for="studyVoiceReply"><input type="checkbox" id="studyVoiceReply"> <span><b>تشغيل الردود الصوتية</b><small>اختياري — يمكنك إيقافه بأي وقت</small></span></label>
@@ -816,15 +821,6 @@ function renderStudyAssistant(){
     </article>
   </section>
   <div class="study-tips"><b>أمثلة لما يمكنك سؤاله:</b><span>اشرح لي الكسور بطريقة سهلة.</span><span>صحّح هذه الجملة الألمانية وناقشني بالسبب.</span><span>اختبرني بخمسة أسئلة عن الخلية.</span></div>`;
-  document.getElementById("studyTimerStart").addEventListener("click",startStudyTimer);
-  document.getElementById("studyTimerPause").addEventListener("click",pauseStudyTimer);
-  document.getElementById("studyTimerReset").addEventListener("click",resetStudyTimer);
-  document.getElementById("studyTimerMinutes").addEventListener("change",resetStudyTimer);
-  document.querySelectorAll("[data-timer-preset]").forEach(button=>button.addEventListener("click",()=>{
-    document.querySelectorAll("[data-timer-preset]").forEach(item=>item.classList.toggle("active",item===button));
-    const field=document.getElementById("studyTimerMinutes");if(field)field.value=button.dataset.timerPreset;
-    resetStudyTimer();
-  }));
   document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
   document.getElementById("studyStopVoice").addEventListener("click",stopStudySpeech);
@@ -1061,7 +1057,7 @@ window.addEventListener("popstate", event => {
 
 function navigate(view) {
  if(!restoringAppHistory) saveAppHistory();
- if(view==="study-assistant"){setActive(view);renderStudyAssistant();window.scrollTo({top:0,behavior:"smooth"});return;}
+ if(view==="study-assistant"){setActive(view);renderStudyAssistant();window.scrollTo({top:0,behavior:"smooth"});return;}\n if(view==="study-timer"){setActive(view);renderStandaloneTimer();window.scrollTo({top:0,behavior:"smooth"});return;}
  if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
  if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
