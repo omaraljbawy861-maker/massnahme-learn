@@ -17,7 +17,7 @@ serve(async req=>{
  if(!messages.length)return reply({error:"اكتب رسالتك أولاً."},400);
  try{
   let response:Response|null=null,data:any=null;
-  for(const model of ["gemini-2.5-flash","gemini-2.0-flash"]){
+  for(const model of ["gemini-3.8-flash","gemini-3.5-flash-lite"]){
    response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{method:"POST",headers:{"x-goog-api-key":key,"Content-Type":"application/json"},body:JSON.stringify({systemInstruction:{parts:[{text:system}]},contents:messages,generationConfig:{temperature:.8,maxOutputTokens:1000}}),signal:AbortSignal.timeout(30000)});
    data=await response.json().catch(()=>null);if(response.ok)break;if(response.status<500&&response.status!==429)break;
   }
