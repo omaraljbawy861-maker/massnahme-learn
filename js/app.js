@@ -97,6 +97,11 @@ function findSpeechVoice(voices, languagePrefix, voiceGender = "female") {
 let activeSpeechUtterance = null;
 let activeSpeechText = "";
 let activeSpeechLanguage = "auto";
+function getStudySpeechLanguage(text) {
+  const selected = document.getElementById("studySpeechLanguage")?.value || "auto";
+  return selected === "auto" ? detectSpeechLanguage(text) : selected;
+}
+
 async function speakText(text, lang, voiceGender = "female") {
   if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
     notify("ميزة النطق غير مدعومة في هذا المتصفح.");
