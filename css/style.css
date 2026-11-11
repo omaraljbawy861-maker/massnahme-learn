@@ -621,3 +621,17 @@ html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
   .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:999!important}
   .main-area{width:100%!important;max-width:100%!important;min-width:0!important}
 }
+
+
+/* FINAL MOBILE CANVAS RESET */
+@media (max-width:900px){
+ html,body{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
+ .app-shell{display:block!important;position:relative!important;width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;overflow:visible!important}
+ .main-area{display:block!important;position:relative!important;width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;float:none!important}
+ .topbar{display:flex!important;width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
+ #appContent,.content{display:block!important;width:auto!important;min-width:0!important;max-width:none!important;margin:0!important;box-sizing:border-box!important;overflow-wrap:anywhere}
+ .sidebar{position:fixed!important;top:0!important;right:0!important;bottom:0!important;left:auto!important;width:min(300px,84%)!important;max-width:84%!important;height:100vh!important;height:100dvh!important;transform:translate3d(110%,0,0)!important;visibility:hidden!important;flex:none!important;z-index:1000!important;transition:transform .25s ease,visibility .25s ease!important}
+ .sidebar.open{transform:translate3d(0,0,0)!important;visibility:visible!important}
+ .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:999!important}
+}
+@media(max-width:600px){.content{padding:18px 14px 35px!important}.topbar{padding-inline:12px!important}}
