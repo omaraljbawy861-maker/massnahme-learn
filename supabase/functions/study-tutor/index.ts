@@ -59,7 +59,7 @@ serve(async (req) => {
     );
   }
 
-  let body: { messages?: unknown; subject?: unknown; answerStyle?: unknown };
+  let body: { messages?: unknown; subject?: unknown; answerStyle?: unknown; assistantGender?: unknown; preferredLanguage?: unknown };
 
   try {
     body = await req.json();
@@ -74,12 +74,23 @@ serve(async (req) => {
 
   const subject = String(body.subject ?? "عام").trim().slice(0, 100) || "عام";
   const answerStyle = String(body.answerStyle ?? "balanced");
+  const assistantGender = body.assistantGender === "male" ? "male" : "female";
+  const preferredLanguage = String(body.preferredLanguage ?? "auto").slice(0, 20);
   const styleInstruction = answerStyle === "simple"
     ? "اجعل الشرح بسيطاً جداً وبجمل قصيرة وكلمات سهلة، وابدأ بالفكرة الأساسية ثم مثال واحد."
     : answerStyle === "detailed"
     ? "قدّم شرحاً مفصلاً ومنظماً خطوة بخطوة، مع أمثلة محلولة وتوضيح سبب كل خطوة عند الحاجة."
     : "قدّم شرحاً متوازناً: واضحاً ومختصراً بما يكفي، مع خطوات ومثال عند الحاجة.";
+  const personaInstruction = assistantGender === "male"
+    ? "أنت شخصية مساعد تعليمي بصيغة المذكر. استخدم صياغة المذكر عند الحديث عن نفسك."
+    : "أنت شخصية مساعدة تعليمية بصيغة المؤنث. استخدمي صياغة المؤنث عند الحديث عن نفسك.";
+  const languageInstruction = preferredLanguage === "auto" || preferredLanguage === "other"
+    ? "اكتشف لغة آخر رسالة من الطالب وأجب باللغة نفسها. ادعم اللغات التي تستطيعها، ولا تفرض العربية إذا كتب الطالب بلغة أخرى."
+    : `أجب بلغة الطالب المختارة ذات الرمز ${preferredLanguage}. افهم أي لغة يكتب بها الطالب، لكن استخدم اللغة المختارة في الرد ما لم يطلب خلاف ذلك.`;
   const systemInstruction = `أنت مساعد تعليمي ودود داخل منصة MAßNAHME LEARN.
+${personaInstruction}
+${languageInstruction}
+اشرح بوضوح وراعِ مستوى طالب الصف التاسع ومواد ESA.
 اشرح بالعربية الواضحة وراعِ مستوى طالب الصف التاسع ومواد ESA.
 ${styleInstruction}
 ساعد في الرياضيات والعلوم واللغة الألمانية والإنجليزية ومواد ZFA.
