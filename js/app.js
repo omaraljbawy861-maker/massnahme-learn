@@ -717,7 +717,7 @@ function renderStudyAssistant(){
           <button type="button" class="study-persona-option" data-assistant-gender="male"><span class="study-persona-avatar male">♂</span><span><b>مساعد ذكي</b><small>شخصية ذكورية</small></span><i>✓</i></button>
         </div>
         <div class="study-session-settings">
-          <label>لغة المحادثة<select id="studyChatLanguage"><option value="auto">اكتشاف اللغة تلقائياً</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="en">English</option><option value="fr">Français</option><option value="tr">Türkçe</option><option value="es">Español</option><option value="it">Italiano</option><option value="ur">اردو</option><option value="other">لغة أخرى / تلقائي</option></select></label>
+          <label>لغة المحادثة<select id="studyChatLanguage"><option value="auto">اكتشاف اللغة تلقائياً</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="en">English</option><option value="fr">Français</option><option value="tr">Türkçe</option><option value="es">Español</option><option value="it">Italiano</option><option value="ur">اردو</option><option value="ru">Русский</option><option value="pt">Português</option><option value="pl">Polski</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="zh">中文</option><option value="hi">हिन्दी</option><option value="other">لغة أخرى / تلقائي</option></select></label>
           <label>مدة الجلسة بالدقائق<input id="studyChatDuration" type="number" min="1" max="180" value="30"></label>
           <div class="study-session-clock"><small>الوقت المتبقي</small><strong id="studyChatCountdown">30:00</strong></div>
         </div>
@@ -940,7 +940,10 @@ async function openStudyChat(sessionId){
 function startStudyDictation(){
   const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!Recognition){notify("الإملاء الصوتي غير مدعوم في هذا المتصفح. استخدم الكتابة.");return;}
-  const recognition=new Recognition();recognition.lang="ar-SA";recognition.interimResults=false;recognition.maxAlternatives=1;
+  const recognition=new Recognition();
+  const selectedLanguage=document.getElementById("studyChatLanguage")?.value||"auto";
+  const speechLanguages={ar:"ar-SA",de:"de-DE",en:"en-GB",fr:"fr-FR",tr:"tr-TR",es:"es-ES",it:"it-IT",ur:"ur-PK",ru:"ru-RU",pt:"pt-PT",pl:"pl-PL",nl:"nl-NL",ja:"ja-JP",zh:"zh-CN",hi:"hi-IN"};
+  recognition.lang=speechLanguages[selectedLanguage]||(navigator.language||"ar-SA");recognition.interimResults=false;recognition.maxAlternatives=1;
   const button=document.getElementById("studyMicButton");button.disabled=true;button.textContent="🎙️ أستمع...";
   recognition.onresult=event=>{const value=event.results?.[0]?.[0]?.transcript||"";const input=document.getElementById("studyChatInput");if(input)input.value=(input.value+" "+value).trim();};
   recognition.onerror=()=>notify("لم أتمكن من التقاط الصوت. تحقق من إذن الميكروفون.");
