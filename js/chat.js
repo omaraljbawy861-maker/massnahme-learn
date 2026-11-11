@@ -3,7 +3,7 @@ const $=id=>document.getElementById(id);
 let userId=null,sessionId=null,gender="female",history=[],timer=null,expires=0,seconds=0;
 const escapeHtml=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 function persona(){ $("avatar").textContent=gender==="female"?"♀":"♂";$("persona").textContent=gender==="female"?"رفيقة الدردشة":"رفيق الدردشة"; }
-function addMessage(role,content){const box=$("messages");if(box.querySelector(".chat-empty"))box.innerHTML="";const el=document.createElement("article");el.className="chat-bubble "+role;const h=document.createElement("small");h.textContent=role==="user"?"أنت":(gender==="female"?"رفيقة الدردشة":"رفيق الدردشة");const p=document.createElement("p");p.textContent=content;el.append(h,p);box.append(el);box.scrollTop=box.scrollHeight;}
+function addMessage(role,content){const box=$("messages");if(box.querySelector(".chat-empty"))box.innerHTML="";const el=document.createElement("article");el.className="chat-bubble "+role;const h=document.createElement("small");h.textContent=role==="user"?"أنت":(gender==="female"?"رفيقة الدردشة":"رفيق الدردشة");const p=document.createElement("p");p.textContent=content;el.append(h,p);box.append(el);box.scrollTop=box.scrollHeight;return el;}
 async function loadHistory(selected=""){const {data,error}=await supabase.from("free_chat_sessions").select("id,title,started_at").eq("user_id",userId).order("started_at",{ascending:false}).limit(40);if(error){$("history").textContent="تعذر تحميل السجل";return;}history=data||[];$("history").innerHTML=history.length?history.map(x=>'<button class="chat-history-item '+(x.id===selected?"active":"")+'" data-id="'+escapeHtml(x.id)+'"><strong>'+escapeHtml(x.title)+'</strong><small>'+new Date(x.started_at).toLocaleString()+'</small></button>').join(""):"لا توجد محادثات سابقة";$("history").querySelectorAll("[data-id]").forEach(b=>b.addEventListener("click",()=>openChat(b.dataset.id)));}
 async function save(role,content){const {error}=await supabase.from("free_chat_messages").insert({session_id:sessionId,user_id:userId,role,content});if(error)throw error;}
 function stopTimer(){if(timer)clearInterval(timer);timer=null;}
@@ -34,7 +34,34 @@ async function newChat(){
  }finally{startButtons.forEach(b=>{b.dataset.busy="0";b.disabled=false;});}
 }
 async function openChat(id){stopTimer();const {data:s,error}=await supabase.from("free_chat_sessions").select("*").eq("id",id).eq("user_id",userId).single();if(error||!s)return;sessionId=id;gender=s.persona_gender;document.querySelectorAll("[data-gender]").forEach(b=>b.classList.toggle("active",b.dataset.gender===gender));persona();$("language").value=s.language||"auto";$("duration").value=String(s.duration_minutes||30);const {data:rows,error:e}=await supabase.from("free_chat_messages").select("role,content").eq("session_id",id).eq("user_id",userId).order("created_at");if(e)return;$("messages").innerHTML="";(rows||[]).forEach(m=>addMessage(m.role,m.content));if(new Date(s.expires_at)>new Date()&&!s.ended_at){$("message").disabled=false;$("send").disabled=false;runTimer(s.expires_at);$("status").textContent="المحادثة نشطة"}else{$("message").disabled=true;$("send").disabled=true;$("countdown").textContent="00:00";$("status").textContent="محادثة محفوظة ومنتهية"}await loadHistory(id);}
-async function sendMessage(e){e.preventDefault();const text=$("message").value.trim();if(!text||!sessionId||seconds<=0)return;const btn=$("send");btn.disabled=true;$("message").disabled=true;try{await save("user",text);addMessage("user",text);const payload={messages:[...Array.from($("messages").querySelectorAll(".chat-bubble")).map((n,i)=>({role:n.classList.contains("user")?"user":"assistant",content:n.querySelector("p").textContent}))],personaGender:gender,preferredLanguage:$("language").value};$("message").value="";const {data,error}=await supabase.functions.invoke("free-chat",{body:payload});if(error)throw error;if(!data?.reply)throw new Error(data?.error||"لم يصل الرد");await save("assistant",data.reply);addMessage("assistant",data.reply);$("note").textContent="تم حفظ الرسائل تلقائياً.";}catch(err){$("note").textContent="تعذر إرسال الرسالة: "+(err.message||"تحقق من الاتصال");}finally{btn.disabled=seconds<=0;$("message").disabled=seconds<=0;$("message").focus();}}
+async function sendMessage(e){
+ e.preventDefault();
+ const text=$("message").value.trim();
+ if(!text||!sessionId||seconds<=0)return;
+ const btn=$("send");btn.disabled=true;$("message").disabled=true;
+ addMessage("user",text);$("message").value="";
+ const typing=addMessage("assistant","...");
+ typing.classList.add("typing");
+ $("note").textContent="وصلت رسالتك، جارٍ تجهيز الرد…";
+ // Save the user's message in parallel with the AI request; never make the UI wait for the database first.
+ const saveUserPromise=save("user",text);
+ try{
+  const payload={messages:Array.from($("messages").querySelectorAll(".chat-bubble:not(.typing)")).map(n=>({role:n.classList.contains("user")?"user":"assistant",content:n.querySelector("p").textContent})),personaGender:gender,preferredLanguage:$("language").value};
+  const {data,error}=await supabase.functions.invoke("free-chat",{body:payload});
+  if(error)throw error;
+  if(!data?.reply)throw new Error(data?.error||"لم يصل الرد");
+  typing.remove();
+  addMessage("assistant",data.reply);
+  $("note").textContent="وصل الرد. جارٍ حفظ الرسائل…";
+  const saved=await Promise.allSettled([saveUserPromise,save("assistant",data.reply)]);
+  if(saved.some(x=>x.status==="rejected"))$("note").textContent="وصل الرد، لكن تعذر حفظ إحدى الرسائل. تحقق من الاتصال.";
+  else $("note").textContent="تم حفظ الرسائل تلقائياً.";
+ }catch(err){
+  typing.remove();
+  $("note").textContent="تعذر إرسال الرسالة: "+(err.message||"تحقق من الاتصال");
+  saveUserPromise.catch(saveError=>console.error("message save failed",saveError));
+ }finally{btn.disabled=seconds<=0;$("message").disabled=seconds<=0;$("message").focus();}
+}
 document.querySelectorAll("[data-gender]").forEach(b=>b.addEventListener("click",()=>{gender=b.dataset.gender;document.querySelectorAll("[data-gender]").forEach(x=>x.classList.toggle("active",x===b));persona();}));
 $("newChat").addEventListener("click",newChat);$("startFirst").addEventListener("click",newChat);$("chatForm").addEventListener("submit",sendMessage);
 const {data:{session}}=await supabase.auth.getSession();if(!session){$("messages").innerHTML='<div class="chat-empty"><h2>يلزم تسجيل الدخول</h2><p>سجّل الدخول إلى حساب الطالب لاستخدام الدردشة وحفظ محادثاتك.</p><a href="./index.html">العودة لتسجيل الدخول</a></div>';}else{userId=session.user.id;await loadHistory();}
