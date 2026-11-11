@@ -17,9 +17,14 @@ export async function initializeStudentProgress(id){
  if(error){console.error("Progress load failed:",error.message);return;}
  if(data?.progress){
   const cloud=data.progress;
-  const merged={completed:[...new Set([...(cloud.completed||[]),...(local.completed||[])])],scores:{...(cloud.scores||{}),...(local.scores||{})}};
+  const merged={completed:[...new Set([...(cloud.completed||[]),...(local.completed||[])])],scores:{...(local.scores||{}),...(cloud.scores||{})}};
   writeLocal(merged);await writeCloud(merged);
- }else if(local.completed.length||Object.keys(local.scores||{}).length){await writeCloud(local);}
+  const channel=supabase.channel("student-progress-"+id).on("postgres_changes",{event:"*",schema:"public",table:"student_progress",filter:"student_id=eq."+id},payload=>{if(payload.new?.progress){const current=read();const incoming=payload.new.progress;const mergedRealtime={completed:[...new Set([...(current.completed||[]),...(incoming.completed||[])])],scores:{...(current.scores||{}),...(incoming.scores||{})}};writeLocal(mergedRealtime);window.dispatchEvent(new CustomEvent("student-progress-cloud-updated"));}}).subscribe();
+  window.addEventListener("beforeunload",()=>supabase.removeChannel(channel),{once:true});
+
+ }else if(local.completed.length||Object.keys(local.scores||{}).length){await writeCloud(local);
+  const channel=supabase.channel("student-progress-"+id).on("postgres_changes",{event:"*",schema:"public",table:"student_progress",filter:"student_id=eq."+id},payload=>{if(payload.new?.progress){const current=read(),incoming=payload.new.progress;const mergedRealtime={completed:[...new Set([...(current.completed||[]),...(incoming.completed||[])])],scores:{...(current.scores||{}),...(incoming.scores||{})}};writeLocal(mergedRealtime);window.dispatchEvent(new CustomEvent("student-progress-cloud-updated"));}}).subscribe();window.addEventListener("beforeunload",()=>supabase.removeChannel(channel),{once:true});
+ }
 }
 export function getProgress(){return read();}
 export function isCompleted(id){return read().completed.includes(id);}
