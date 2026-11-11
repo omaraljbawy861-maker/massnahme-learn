@@ -4,6 +4,7 @@ const localKey = userId => `massnahme_english_school_v1:${userId}`;
 const clone = value => JSON.parse(JSON.stringify(value ?? {}));
 const localRead = key => { try { return JSON.parse(localStorage.getItem(key) || "{}"); } catch { return {}; } };
 const localWrite = (key,value) => localStorage.setItem(key, JSON.stringify(value));
+let activeSchoolChannel = null;
 function mergeLists(remote = [], local = [], keyOf) {
  const map = new Map();
  for (const item of [...local, ...remote]) { const key=keyOf(item),old=map.get(key); map.set(key,old?{...old,...item,done:Boolean(old.done||item.done)}:item); }
@@ -14,6 +15,7 @@ function mergeSchool(remote = {}, local = {}) {
 }
 export async function connectEnglishSchoolSync(userId,onRemoteChange=()=>{}) {
  if(!userId)throw new Error("يلزم تسجيل الدخول لمزامنة السجل الدراسي.");
+ if(activeSchoolChannel){await supabase.removeChannel(activeSchoolChannel);activeSchoolChannel=null;}
  const key=localKey(userId);
  let local=localRead(key);
  if(!Object.keys(local).length){const legacy=localRead(LEGACY_KEY);if(Object.keys(legacy).length){local=legacy;localWrite(key,legacy);localStorage.removeItem(LEGACY_KEY);}}
@@ -27,9 +29,10 @@ export async function connectEnglishSchoolSync(userId,onRemoteChange=()=>{}) {
   window.dispatchEvent(new CustomEvent("english-school-sync-saved"));
  };
  if(Object.keys(local).length)await persist(state);
- const channel=supabase.channel("english-school-record-"+userId).on("postgres_changes",{event:"*",schema:"public",table:"english_school_records",filter:"user_id=eq."+userId},payload=>{
+ const channel=supabase.channel("english-school-record-"+userId+"-"+Date.now()).on("postgres_changes",{event:"*",schema:"public",table:"english_school_records",filter:"user_id=eq."+userId},payload=>{
   if(!payload.new?.school_data)return;state=mergeSchool(payload.new.school_data,{});localWrite(key,state);onRemoteChange(clone(state));
  }).subscribe();
- window.addEventListener("beforeunload",()=>{supabase.removeChannel(channel);},{once:true});
- return {get state(){return clone(state);},save:persist,close:()=>supabase.removeChannel(channel)};
+ activeSchoolChannel=channel;
+ window.addEventListener("beforeunload",()=>{if(activeSchoolChannel===channel)activeSchoolChannel=null;supabase.removeChannel(channel);},{once:true});
+ return {get state(){return clone(state);},save:persist,close:async()=>{if(activeSchoolChannel===channel)activeSchoolChannel=null;await supabase.removeChannel(channel);}};
 }
