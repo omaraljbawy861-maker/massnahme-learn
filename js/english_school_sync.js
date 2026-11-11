@@ -23,7 +23,7 @@ export async function connectEnglishSchoolSync(userId,onRemoteChange=()=>{}) {
   if(saveError){window.dispatchEvent(new CustomEvent("english-school-sync-error",{detail:saveError.message}));throw saveError;}
   window.dispatchEvent(new CustomEvent("english-school-sync-saved"));
  };
- if(!data&&Object.keys(local).length)await persist(state);
+ if(Object.keys(local).length)await persist(state);
  const channel=supabase.channel("english-school-record-"+userId).on("postgres_changes",{event:"*",schema:"public",table:"english_school_records",filter:"user_id=eq."+userId},payload=>{
   if(!payload.new?.school_data)return;state=mergeSchool(payload.new.school_data,{});localWrite(state);onRemoteChange(clone(state));
  }).subscribe();
