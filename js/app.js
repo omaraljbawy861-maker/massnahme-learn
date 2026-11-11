@@ -825,7 +825,6 @@ function bindStudyTimerControls(){
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
   document.getElementById("studyStopVoice").addEventListener("click",stopStudySpeech);
 
-  renderStudyTimer();
 }
 function renderStudyTimer(){
   const display=document.getElementById("studyTimerDisplay");if(!display)return;
