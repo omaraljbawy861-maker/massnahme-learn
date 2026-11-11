@@ -8,7 +8,31 @@ async function loadHistory(selected=""){const {data,error}=await supabase.from("
 async function save(role,content){const {error}=await supabase.from("free_chat_messages").insert({session_id:sessionId,user_id:userId,role,content});if(error)throw error;}
 function stopTimer(){if(timer)clearInterval(timer);timer=null;}
 function runTimer(until){stopTimer();expires=new Date(until).getTime();const tick=async()=>{seconds=Math.max(0,Math.ceil((expires-Date.now())/1000));$("countdown").textContent=String(Math.floor(seconds/60)).padStart(2,"0")+":"+String(seconds%60).padStart(2,"0");if(!seconds){stopTimer();await supabase.from("free_chat_sessions").update({ended_at:new Date().toISOString()}).eq("id",sessionId).eq("user_id",userId);$("message").disabled=true;$("send").disabled=true;$("status").textContent="انتهى الوقت — المحادثة محفوظة";$("note").textContent="انتهى وقت المحادثة. جميع رسائلك محفوظة."}};tick();timer=setInterval(tick,1000);}
-async function newChat(){stopTimer();sessionId=null;const duration=Number($("duration").value),start=new Date(),end=new Date(start.getTime()+duration*60000);const title=gender==="female"?"دردشة جديدة · أنثى":"دردشة جديدة · ذكر";const {data,error}=await supabase.from("free_chat_sessions").insert({user_id:userId,title,persona_gender:gender,language:$("language").value,duration_minutes:duration,started_at:start.toISOString(),expires_at:end.toISOString()}).select("id,expires_at").single();if(error){$("note").textContent="تعذر بدء الدردشة. تحقق من إعداد قاعدة البيانات.";return;}sessionId=data.id;$("messages").innerHTML="";$("message").disabled=false;$("send").disabled=false;const greeting=gender==="female"?"أهلاً بك! أنا رفيقتك في الدردشة. يسعدني الحديث معك، ما الذي تحب أن نتحدث عنه؟":"أهلاً بك! أنا رفيقك في الدردشة. يسعدني الحديث معك، ما الذي تحب أن نتحدث عنه؟";await save("assistant",greeting);addMessage("assistant",greeting);runTimer(data.expires_at);$("status").textContent="المحادثة نشطة";$("note").textContent="تم إنشاء محادثة جديدة. تُحفظ رسائلك تلقائياً.";await loadHistory(sessionId);}
+async function newChat(){
+ const startButtons=[$("newChat"),$("startFirst")].filter(Boolean);
+ if(!userId){$("note").textContent="سجّل الدخول أولاً لبدء المحادثة.";return;}
+ if(startButtons.some(b=>b.dataset.busy==="1"))return;
+ startButtons.forEach(b=>{b.dataset.busy="1";b.disabled=true;});
+ $("note").textContent="جارٍ إنشاء المحادثة…";
+ try{
+  stopTimer();sessionId=null;
+  const duration=Math.max(1,Number($("duration").value)||30),start=new Date(),end=new Date(start.getTime()+duration*60000);
+  const title=gender==="female"?"دردشة جديدة · أنثى":"دردشة جديدة · ذكر";
+  const {data,error}=await supabase.from("free_chat_sessions").insert({user_id:userId,title,persona_gender:gender,language:$("language").value,duration_minutes:duration,started_at:start.toISOString(),expires_at:end.toISOString()}).select("id,expires_at").single();
+  if(error)throw error;
+  if(!data?.id||!data?.expires_at)throw new Error("لم يتم إنشاء جلسة المحادثة.");
+  sessionId=data.id;$("messages").innerHTML="";$("message").disabled=false;$("send").disabled=false;
+  const greeting=gender==="female"?"أهلاً بك! أنا رفيقتك في الدردشة. يسعدني الحديث معك، ما الذي تحب أن نتحدث عنه؟":"أهلاً بك! أنا رفيقك في الدردشة. يسعدني الحديث معك، ما الذي تحب أن نتحدث عنه؟";
+  addMessage("assistant",greeting);
+  runTimer(data.expires_at);$("status").textContent="المحادثة نشطة";$("note").textContent="تم إنشاء محادثة جديدة. تُحفظ رسائلك تلقائياً.";
+  try{await save("assistant",greeting);}catch(saveError){$("note").textContent="بدأت المحادثة، لكن تعذر حفظ رسالة الترحيب: "+(saveError.message||"");}
+  await loadHistory(sessionId);
+ }catch(err){
+  console.error("new chat failed",err);
+  $("note").textContent="تعذر بدء المحادثة: "+(err?.message||"تحقق من الاتصال والصلاحيات");
+  $("status").textContent="لم تبدأ المحادثة";
+ }finally{startButtons.forEach(b=>{b.dataset.busy="0";b.disabled=false;});}
+}
 async function openChat(id){stopTimer();const {data:s,error}=await supabase.from("free_chat_sessions").select("*").eq("id",id).eq("user_id",userId).single();if(error||!s)return;sessionId=id;gender=s.persona_gender;document.querySelectorAll("[data-gender]").forEach(b=>b.classList.toggle("active",b.dataset.gender===gender));persona();$("language").value=s.language||"auto";$("duration").value=String(s.duration_minutes||30);const {data:rows,error:e}=await supabase.from("free_chat_messages").select("role,content").eq("session_id",id).eq("user_id",userId).order("created_at");if(e)return;$("messages").innerHTML="";(rows||[]).forEach(m=>addMessage(m.role,m.content));if(new Date(s.expires_at)>new Date()&&!s.ended_at){$("message").disabled=false;$("send").disabled=false;runTimer(s.expires_at);$("status").textContent="المحادثة نشطة"}else{$("message").disabled=true;$("send").disabled=true;$("countdown").textContent="00:00";$("status").textContent="محادثة محفوظة ومنتهية"}await loadHistory(id);}
 async function sendMessage(e){e.preventDefault();const text=$("message").value.trim();if(!text||!sessionId||seconds<=0)return;const btn=$("send");btn.disabled=true;$("message").disabled=true;try{await save("user",text);addMessage("user",text);const payload={messages:[...Array.from($("messages").querySelectorAll(".chat-bubble")).map((n,i)=>({role:n.classList.contains("user")?"user":"assistant",content:n.querySelector("p").textContent}))],personaGender:gender,preferredLanguage:$("language").value};$("message").value="";const {data,error}=await supabase.functions.invoke("free-chat",{body:payload});if(error)throw error;if(!data?.reply)throw new Error(data?.error||"لم يصل الرد");await save("assistant",data.reply);addMessage("assistant",data.reply);$("note").textContent="تم حفظ الرسائل تلقائياً.";}catch(err){$("note").textContent="تعذر إرسال الرسالة: "+(err.message||"تحقق من الاتصال");}finally{btn.disabled=seconds<=0;$("message").disabled=seconds<=0;$("message").focus();}}
 document.querySelectorAll("[data-gender]").forEach(b=>b.addEventListener("click",()=>{gender=b.dataset.gender;document.querySelectorAll("[data-gender]").forEach(x=>x.classList.toggle("active",x===b));persona();}));
