@@ -380,6 +380,7 @@ async function renderEnglishCourse(){
    <section class="english-academic-panel"><span class="eyebrow">LEVEL STUDY PLAN · ${level.code}</span><h3>الخطة الدراسية الأكاديمية للمستوى</h3><div class="english-academic-grid"><article><b>${level.academic?.estimatedHours||0}</b><span>ساعة تعلم تقديرية</span></article><article><b>${level.academic?.contactHoursPerWeek||0}</b><span>ساعات أسبوعية بإشراف</span></article><article><b>${level.academic?.independentStudyHoursPerWeek||0}</b><span>ساعات تعلم ذاتي أسبوعياً</span></article><article><b>70%</b><span>درجة النجاح المطلوبة</span></article></div><div class="english-semesters">${(level.academic?.semesters||[]).map(term=>`<article class="english-example"><b>${escapeHtml(term.name)}</b><p>المقررات: ${term.units.map(id=>{const u=level.units.find(x=>x.id===id);return u?escapeHtml(u.title):"";}).join(" · ")}</p><small>المشروع الفصلي: ${escapeHtml(term.capstone)}</small></article>`).join("")}</div><h4>مخرجات التعلم للمستوى</h4><ul class="english-vocab-list">${(level.academic?.learningOutcomes||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul></section>
    <section class="english-level-intro"><div><span class="eyebrow">CEFR CAN-DO · ${level.code}</span><h3>ماذا ستتقن في نهاية المستوى؟</h3><p>${escapeHtml(level.cefrCanDo||"")}</p></div></section>
    <section class="english-lesson-block"><h4>اختبار الانتقال إلى المستوى التالي · Exit assessment</h4><ul class="english-vocab-list">${Object.entries(level.exitAssessment||{}).map(([k,v])=>`<li><b>${escapeHtml(k)}:</b> ${escapeHtml(v)}</li>`).join("")}</ul></section>
+   <section class="english-placement-card" id="englishPlacement"><div class="english-placement-heading"><div><span class="english-kicker">ACADEMIC ENTRY ASSESSMENT</span><h3>اختبار تحديد المستوى الأكاديمي</h3><p>اختبار تشخيصي من 24 سؤالاً يغطي المستويات A1 إلى C2. يساعدك على اختيار نقطة البداية المناسبة قبل متابعة المنهج.</p></div><div class="english-placement-count"><b>24</b><span>سؤالاً</span></div></div><div class="english-placement-actions"><button type="button" class="english-placement-start" id="englishPlacementStart">ابدأ اختبار تحديد المستوى</button><span>الوقت المقترح: 20–30 دقيقة · اختر إجابة واحدة لكل سؤال</span></div><div id="englishPlacementBody" hidden></div><div id="englishPlacementResult" aria-live="polite"></div></section>
    <div class="english-learning-guide"><h3>كيف تدرس هذا المستوى؟</h3><p>ابدأ بالشرح، اقرأ الأمثلة الإنجليزية وترجمتها، استمع إلى الجمل باستخدام زر النطق، ثم نفّذ التدريب الكتابي والشفهي. افتح الحل بعد أن تحاول بنفسك.</p></div>
    <div class="english-unit-tools"><label for="englishUnitSearch">ابحث داخل وحدات ${level.code}</label><input id="englishUnitSearch" type="search" placeholder="اكتب اسم الوحدة أو موضوعها..." autocomplete="off"><span id="englishUnitCount">${level.units.length} وحدات دراسية</span></div><div class="english-units">${level.units.map((u,i)=>`<details class="english-unit" data-unit-search="${escapeHtml((u.title+" "+u.englishTitle+" "+u.overview).toLowerCase())}" ${i===0?"open":""}><summary><span class="english-unit-number">${String(i+1).padStart(2,"0")}</span><span class="english-unit-heading"><b>${escapeHtml(u.title)}</b><small>${escapeHtml(u.englishTitle)}</small></span><span class="english-unit-chevron">＋</span></summary>
    <div class="english-unit-content"><div class="english-academic-module"><b>${escapeHtml(u.academicModule?.moduleCode||"")}</b><span>مقرر أكاديمي · ${u.academicModule?.contactHours||0} ساعة بإشراف · ${u.academicModule?.independentHours||0} ساعة تعلم ذاتي</span><p>المتطلبات السابقة: ${escapeHtml(u.academicModule?.prerequisites||"")}</p><h4>مخرجات المقرر</h4><ul class="english-vocab-list">${(u.academicModule?.outcomes||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join("")}</ul><h4>التقييم التكويني والختامي</h4><ul class="english-vocab-list">${(u.academicModule?.formativeAssessment||[]).map(x=>`<li>${escapeHtml(x)}</li>`).join("")}<li>${escapeHtml(u.academicModule?.summativeAssessment||"")}</li></ul><p><b>التكليف المستقل:</b> ${escapeHtml(u.academicModule?.independentAssignment||"")}</p></div><p class="english-overview">${escapeHtml(u.overview)}</p>
@@ -402,6 +403,61 @@ async function renderEnglishCourse(){
    <div class="english-assessment"><b>معيار إتقان الوحدة</b><p>${escapeHtml(u.assessment)}</p></div></div></details>`).join("")}</div>
    <section class="english-study-plan"><h3>خطة مذاكرة مقترحة</h3><ol><li>اليوم الأول: فهم القاعدة وكتابة أمثلة من عندك.</li><li>اليوم الثاني: حفظ المفردات ضمن جمل، لا كقائمة منفصلة.</li><li>اليوم الثالث: قراءة النص والاستماع إليه وتلخيصه.</li><li>اليوم الرابع: محادثة قصيرة وتسجيل صوتي.</li><li>اليوم الخامس: كتابة المهمة ومراجعة الأخطاء.</li><li>اليوم السادس: حل التدريبات دون فتح الحلول.</li><li>اليوم السابع: مراجعة شاملة واختبار ذاتي قبل الانتقال.</li></ol></section>`;
    content.querySelectorAll("[data-english-level]").forEach(button=>button.addEventListener("click",()=>{activeLevel=button.dataset.englishLevel;draw();window.scrollTo({top:0,behavior:"smooth"});}));
+   const placementQuestions=[
+    {level:"A1",q:"Choose the correct sentence.",o:["She are a teacher.","She is a teacher.","She be a teacher."],a:1,e:"نستخدم is مع she."},
+    {level:"A1",q:"I ___ from Syria.",o:["am","is","are"],a:0,e:"مع I نستخدم am."},
+    {level:"A1",q:"What is the plural of “book”?",o:["bookes","books","bookies"],a:1,e:"غالباً نضيف s لجمع الاسم."},
+    {level:"A1",q:"Choose the correct question.",o:["Where you live?","Where does you live?","Where do you live?"],a:2,e:"مع you نستخدم do في السؤال بالمضارع البسيط."},
+    {level:"A2",q:"Yesterday, we ___ to the cinema.",o:["go","went","gone"],a:1,e:"الماضي من go هو went."},
+    {level:"A2",q:"There isn't ___ milk in the fridge.",o:["some","many","any"],a:2,e:"تستخدم any غالباً في النفي."},
+    {level:"A2",q:"This book is ___ than that one.",o:["interesting","more interesting","most interesting"],a:1,e:"المقارنة للصفة الطويلة تكون more + adjective."},
+    {level:"A2",q:"I've lived here ___ 2022.",o:["for","since","during"],a:1,e:"since تأتي مع نقطة بداية زمنية."},
+    {level:"B1",q:"If it rains, we ___ at home.",o:["stay","will stay","would stayed"],a:1,e:"الشرط الأول: If + present, will + base verb."},
+    {level:"B1",q:"The email ___ yesterday.",o:["sent","was sent","has send"],a:1,e:"المبني للمجهول بالماضي: was/were + past participle."},
+    {level:"B1",q:"She asked me where I ___.",o:["live","lived","do live"],a:1,e:"في الكلام المنقول نرجع الزمن عادة خطوة إلى الوراء."},
+    {level:"B1",q:"I look forward to ___ from you.",o:["hear","hearing","heard"],a:1,e:"بعد look forward to نستخدم gerund."},
+    {level:"B2",q:"By the time we arrived, the film ___.",o:["started","has started","had started"],a:2,e:"الماضي التام يصف حدثاً سبق حدثاً آخر في الماضي."},
+    {level:"B2",q:"Were I you, I ___ the offer.",o:["would accept","will accept","accepted"],a:0,e:"هذا قلب في الشرط الثاني: Were I you = If I were you."},
+    {level:"B2",q:"The report, ___ was published last week, caused debate.",o:["who","which","where"],a:1,e:"which يعود على الأشياء في الجملة الوصفية."},
+    {level:"B2",q:"You ___ have told me; I already knew.",o:["mustn't","needn't","couldn't"],a:1,e:"needn't have + past participle تعني أن الفعل لم يكن ضرورياً."},
+    {level:"C1",q:"Hardly ___ the meeting begun when the power failed.",o:["had","has","did"],a:0,e:"بعد Hardly في بداية الجملة يحدث قلب: Hardly had..." },
+    {level:"C1",q:"The proposal was rejected, ___ its apparent merits.",o:["although","despite","whereas"],a:1,e:"despite يتبعها اسم أو gerund."},
+    {level:"C1",q:"Her argument is persuasive, but it rests on a ___ assumption.",o:["flimsy","flimsily","flimsiness"],a:0,e:"نحتاج صفة قبل assumption؛ flimsy تعني ضعيفاً أو واهياً."},
+    {level:"C1",q:"No sooner ___ the announcement made than markets reacted.",o:["was","had","has"],a:0,e:"No sooner was the announcement made than... صيغة المبني للمجهول مع القلب."},
+    {level:"C2",q:"Choose the most precise meaning of “to obviate”.",o:["To make unnecessary","To exaggerate","To postpone indefinitely"],a:0,e:"obviate تعني إزالة الحاجة إلى شيء أو تجنبه."},
+    {level:"C2",q:"Were it not for her intervention, the deal ___ through.",o:["would not have gone","will not go","had not gone"],a:0,e:"شرط مختلط/افتراضي للماضي: would not have + past participle."},
+    {level:"C2",q:"His account was so ___ that even experts struggled to follow it.",o:["opaque","transparent","unequivocal"],a:0,e:"opaque مجازياً تعني غامضاً أو صعب الفهم."},
+    {level:"C2",q:"The findings are compelling; ___, they do not establish causation.",o:["moreover","nevertheless","consequently"],a:1,e:"nevertheless تقدم تناقضاً أو تحفظاً مع الفكرة السابقة."}
+   ];
+   const placementBody=content.querySelector("#englishPlacementBody");
+   const placementResult=content.querySelector("#englishPlacementResult");
+   content.querySelector("#englishPlacementStart")?.addEventListener("click",()=>{
+    placementResult.innerHTML="";
+    placementBody.hidden=false;
+    placementBody.innerHTML=`<form id="englishPlacementForm"><div class="english-placement-progress"><span>أجب عن جميع الأسئلة ثم أرسل الاختبار</span><b>24 سؤالاً · 6 مستويات</b></div>${placementQuestions.map((q,i)=>`<fieldset class="english-placement-question"><legend><span>${q.level} · ${i+1}/24</span>${q.q}</legend><div>${q.o.map((option,j)=>`<label><input type="radio" name="placement-${i}" value="${j}"><span>${option}</span></label>`).join("")}</div><small class="english-placement-feedback" id="placement-feedback-${i}" hidden></small></fieldset>`).join("")}<button class="english-placement-submit" type="submit">تصحيح الاختبار وإظهار النتيجة</button></form>`;
+    placementBody.scrollIntoView({behavior:"smooth",block:"start"});
+    content.querySelector("#englishPlacementForm").addEventListener("submit",event=>{
+     event.preventDefault();
+     const form=event.currentTarget;
+     const missing=placementQuestions.findIndex((q,i)=>!form.querySelector(`input[name="placement-${i}"]:checked`));
+     if(missing!==-1){const target=form.querySelectorAll(".english-placement-question")[missing];target.scrollIntoView({behavior:"smooth",block:"center"});target.classList.add("needs-answer");return;}
+     const scores={A1:0,A2:0,B1:0,B2:0,C1:0,C2:0};
+     placementQuestions.forEach((q,i)=>{const selected=Number(form.querySelector(`input[name="placement-${i}"]:checked`).value);const correct=selected===q.a;if(correct)scores[q.level]++;const feedback=form.querySelector(`#placement-feedback-${i}`);feedback.hidden=false;feedback.textContent=(correct?"صحيح ✓ ":"الإجابة الصحيحة: "+q.o[q.a]+" — ")+q.e;feedback.classList.toggle("is-correct",correct);});
+     Object.entries(scores).forEach(([level,score])=>saveScore("english-placement-"+level,score));
+     const order=["A1","A2","B1","B2","C1","C2"];let placed="A1",passed=true;
+     for(const level of order){if(passed&&scores[level]>=3)placed=level;else if(scores[level]<3)passed=false;}
+     const total=Object.values(scores).reduce((n,v)=>n+v,0);
+     const percentage=Math.round(total/24*100);
+     const advice=placed==="A1"?"ابدأ من A1 لبناء الأساس خطوة بخطوة.":`ابدأ من ${placed}، وراجع موضوعات المستوى السابق عند الحاجة.`;
+     placementResult.innerHTML=`<div class="english-placement-result"><span class="english-kicker">YOUR DIAGNOSTIC RESULT</span><h4>مستوى البداية المقترح</h4><strong>${placed}</strong><p>${advice}</p><div class="english-placement-total">${total} من 24 إجابة صحيحة · ${percentage}%</div><div class="english-placement-breakdown">${order.map(level=>`<div><span>${level}</span><b>${scores[level]}/4</b><i><em style="width:${scores[level]*25}%"></em></i></div>`).join("")}</div><small>هذا اختبار تشخيصي داخلي لتوجيه نقطة البداية، وليس اختبار CEFR رسمياً أو شهادة معتمدة. احفظت درجات المستويات في سجل تقدم حسابك.</small><button type="button" id="englishPlacementReview">مراجعة الإجابات</button></div>`;
+     form.querySelectorAll("input").forEach(input=>input.disabled=true);
+     form.querySelector(".english-placement-submit").disabled=true;
+     content.querySelector("#englishPlacementReview")?.addEventListener("click",()=>{placementBody.scrollIntoView({behavior:"smooth",block:"start"});});
+     placementResult.scrollIntoView({behavior:"smooth",block:"center"});
+    });
+   });
+   const savedPlacement=Object.fromEntries(["A1","A2","B1","B2","C1","C2"].map(level=>[level,getProgress().scores["english-placement-"+level]]).filter(([,score])=>Number.isFinite(score)));
+   if(Object.keys(savedPlacement).length===6){const total=Object.values(savedPlacement).reduce((n,v)=>n+v,0);placementResult.innerHTML=`<div class="english-placement-saved">آخر نتيجة محفوظة: ${total}/24 · ${Math.round(total/24*100)}% <span>يمكنك إعادة الاختبار في أي وقت.</span></div>`;}
    const unitSearch=content.querySelector("#englishUnitSearch");
    unitSearch?.addEventListener("input",()=>{const query=unitSearch.value.trim().toLocaleLowerCase();let visible=0;content.querySelectorAll(".english-unit").forEach(unit=>{const match=unit.dataset.unitSearch.includes(query);unit.hidden=!match;if(match)visible++;});const count=content.querySelector("#englishUnitCount");if(count)count.textContent=`${visible} من ${level.units.length} وحدات`;});
   };
