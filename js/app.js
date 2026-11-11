@@ -806,7 +806,8 @@ function bindStudyTimerControls(){
   resetStudyTimer();
  }));
 }
-\nfunction renderStudyAssistant(){
+
+function renderStudyAssistant(){
   content.innerHTML=`<div class="page-intro"><span class="eyebrow">YOUR STUDY COMPANION · رفيق دراستك</span><h1>المساعد الدراسي التفاعلي</h1><p>نظّم وقتك، اكتب سؤالك أو تحدث عبر الميكروفون، وناقش الدرس خطوة بخطوة.</p></div>
   <section class="study-tools-grid">
    <article class="study-chat-card">
