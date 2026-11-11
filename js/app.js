@@ -654,25 +654,12 @@ function renderStudyAssistant(){
     </article>
     <article class="study-chat-card">
       <div class="study-card-heading"><span class="study-tool-icon">✦</span><div><h2>اسأل وناقش</h2><p>مساعد يشرح ويصحح ويعطيك أمثلة</p></div></div>
-      <div class="study-persona-panel">
-        <div class="study-persona-title"><b>اختر شخصية المساعد</b><small>يمكنك تغييرها متى شئت</small></div>
-        <div class="study-persona-options">
-          <button type="button" class="study-persona-option active" data-assistant-gender="female"><span class="study-persona-avatar female">♀</span><span><b>مساعدة ذكية</b><small>شخصية أنثوية</small></span><i>✓</i></button>
-          <button type="button" class="study-persona-option" data-assistant-gender="male"><span class="study-persona-avatar male">♂</span><span><b>مساعد ذكي</b><small>شخصية ذكورية</small></span><i>✓</i></button>
-        </div>
-        <div class="study-session-settings">
-          <label>لغة المحادثة<select id="studyChatLanguage"><option value="auto">اكتشاف اللغة تلقائياً</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="en">English</option><option value="fr">Français</option><option value="tr">Türkçe</option><option value="es">Español</option><option value="it">Italiano</option><option value="ur">اردو</option><option value="ru">Русский</option><option value="pt">Português</option><option value="pl">Polski</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="zh">中文</option><option value="hi">हिन्दी</option><option value="other">لغة أخرى / تلقائي</option></select></label>
-          <label>مدة الجلسة بالدقائق<input id="studyChatDuration" type="number" min="1" max="180" value="30"></label>
-          <div class="study-session-clock"><small>الوقت المتبقي</small><strong id="studyChatCountdown">30:00</strong></div>
-        </div>
-        <div class="study-session-actions"><button type="button" class="primary-btn" id="studyNewChat">＋ محادثة جديدة</button><label class="study-history-label">محادثاتي السابقة<select id="studyChatHistory"><option value="">تحميل المحادثات...</option></select></label></div>
+      <div class="study-audio-setting-wrap">
+        <label class="study-audio-setting" for="studyVoiceReply"><input type="checkbox" id="studyVoiceReply"> <span><b>تشغيل الردود الصوتية</b><small>اختياري — يمكنك إيقافه بأي وقت</small></span></label>
+        <label class="study-setting-field study-speech-language"><span>لغة القراءة</span><select id="studySpeechLanguage"><option value="auto">تلقائي</option><option value="ar">العربية</option><option value="en">English</option><option value="de">Deutsch</option></select></label>
       </div>
-      <div class="study-settings-simple">
-        <div class="study-setting-field"><label for="studySubject">المادة</label><select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select></div>
-        <div class="study-setting-field"><label for="studyAnswerStyle">أسلوب الشرح</label><select id="studyAnswerStyle"><option value="simple">سهل ومبسّط</option><option value="balanced" selected>متوازن</option><option value="detailed">تفصيلي خطوة بخطوة</option></select></div>
-        </div>
       <div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
-      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
+      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><button type="button" class="secondary-btn study-stop-audio" id="studyStopVoice">■ إيقاف الصوت</button><span id="studySpeechStatus" aria-live="polite">الصوت متوقف</span><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
       <p class="study-tutor-note" id="studyTutorStatus">تُحفظ محادثاتك تلقائياً في حسابك ويمكنك الرجوع إليها من أي جهاز.</p>
     </article>
   </section>
@@ -687,17 +674,9 @@ function renderStudyAssistant(){
     resetStudyTimer();
   }));
   document.getElementById("studyChatForm").addEventListener("submit",sendStudyMessage);
-  document.querySelectorAll("[data-assistant-gender]").forEach(button=>button.addEventListener("click",()=>{
-    document.querySelectorAll("[data-assistant-gender]").forEach(item=>item.classList.toggle("active",item===button));
-  }));
-  document.getElementById("studyNewChat").addEventListener("click",startNewStudyChat);
-  document.getElementById("studyChatHistory").addEventListener("change",event=>{if(event.target.value)openStudyChat(event.target.value);});
-  document.getElementById("studyChatDuration").addEventListener("input",()=>{
-    const value=Math.max(1,Math.min(180,Number(document.getElementById("studyChatDuration").value)||30));
-    document.getElementById("studyChatCountdown").textContent=String(value).padStart(2,"0")+":00";
-  });
-  loadStudyChatHistory();
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
+  document.getElementById("studyStopVoice").addEventListener("click",stopStudySpeech);
+
   renderStudyTimer();
 }
 function renderStudyTimer(){
@@ -759,7 +738,37 @@ function appendStudyMessage(role,text){
   const heading=document.createElement("b");heading.textContent=role==="user"?"أنت":"المساعد الدراسي";
   const paragraph=document.createElement("p");paragraph.textContent=text;
   item.append(heading,paragraph);
+  if(role==="assistant"){
+    const actions=document.createElement("div");actions.className="study-message-audio-actions";
+    const play=document.createElement("button");play.type="button";play.className="secondary-btn";play.textContent="▶ استمع مجدداً";play.dataset.studySpeak=text;
+    const stop=document.createElement("button");stop.type="button";stop.className="secondary-btn";stop.textContent="■ إيقاف";stop.dataset.studyStop="1";
+    actions.append(play,stop);item.append(actions);
+  }
   box.append(item);box.scrollTop=box.scrollHeight;
+}
+async function sendStudyMessage(event){
+  event.preventDefault();
+  const input=document.getElementById("studyChatInput"),button=document.getElementById("studySendButton");
+  const message=input.value.trim();if(!message)return;
+  const status=document.getElementById("studyTutorStatus");
+  appendStudyMessage("user",message);studyChatMessages.push({role:"user",content:message});input.value="";
+  button.disabled=true;button.textContent="يفكر...";
+  if(status)status.textContent="جارٍ تجهيز الإجابة...";
+  try{
+    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages,subject:document.getElementById("studySubject").value,answerStyle:document.getElementById("studyAnswerStyle")?.value||"balanced"}});
+    if(error)throw error;
+    if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
+    appendStudyMessage("assistant",data.reply);studyChatMessages.push({role:"assistant",content:data.reply});
+    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply,getStudySpeechLanguage(data.reply));
+    if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
+  }catch(error){
+    const reason=String(error?.message||"");
+    const friendly= /Failed to fetch|FunctionsFetchError|404|not found/i.test(reason)
+      ?"خدمة المساعد لم تُفعّل بعد على Supabase. يلزم نشر study-tutor وإضافة GEMINI_API_KEY ضمن Secrets."
+      :"تعذر الاتصال بالمساعد حالياً. تأكد من إعداد الخدمة ثم حاول مرة أخرى.";
+    appendStudyMessage("assistant",friendly);
+    if(status)status.textContent=friendly;
+  }finally{button.disabled=false;button.textContent="إرسال السؤال ←";}
 }
 async function sendStudyMessage(event){
   event.preventDefault();
@@ -776,16 +785,14 @@ async function sendStudyMessage(event){
     studyChatMessages.push({role:"user",content:message});
     appendStudyMessage("user",message);
     await saveStudyChatMessage("user",message);
-    const gender=document.querySelector("[data-assistant-gender].active")?.dataset.assistantGender||"female";
-    const language=document.getElementById("studyChatLanguage")?.value||"auto";
-    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages,subject:document.getElementById("studySubject").value,answerStyle:document.getElementById("studyAnswerStyle")?.value||"balanced",assistantGender:gender,preferredLanguage:language}});
+    const {data,error}=await supabase.functions.invoke("study-tutor",{body:{messages:studyChatMessages}});
     if(error)throw error;
     if(!data?.reply)throw new Error(data?.error||"لم يصل رد من المساعد.");
     studyChatMessages.push({role:"assistant",content:data.reply});
     appendStudyMessage("assistant",data.reply);
     await saveStudyChatMessage("assistant",data.reply);
-    if(status)status.textContent="تم حفظ المحادثة تلقائياً. يمكنك متابعة النقاش.";
-    await loadStudyChatHistory(activeStudyChatId);
+    if(document.getElementById("studyVoiceReply")?.checked)speakText(data.reply,getStudySpeechLanguage(data.reply));
+    if(status)status.textContent="تقدر تتابع النقاش بسؤال آخر.";
   }catch(error){
     const friendly=String(error?.message||"").includes("انتهى وقت الجلسة")?error.message:"تعذر إرسال الرسالة أو حفظها. تحقق من الاتصال وحاول مرة أخرى.";
     if(status)status.textContent=friendly;
