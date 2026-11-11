@@ -216,7 +216,7 @@ function playVideo(id){
  }else{
    player=`<div class="video-player-empty"><span>!</span><h3>رابط الفيديو غير مكتمل</h3><p>هذا العنصر لا يحتوي على ملف أو رابط تشغيل صالح حتى الآن.</p></div>`;
  }
- const sourceUrl=v.type==="youtube"?"https://www.youtube.com/watch?v="+encodeURIComponent(v.videoId):v.type==="vimeo"?"https://vimeo.com/"+encodeURIComponent(v.videoId):v.url;
+ const sourceUrl=v.type==="youtube"?"https://www.youtube.com/watch?v="+encodeURIComponent(v.videoId):v.type==="vimeo"?"https://vimeo.com/"+encodeURIComponent(v.videoId):"";
  const sourceLabel=v.type==="youtube"?"فتح الفيديو على YouTube":v.type==="vimeo"?"فتح الفيديو على Vimeo":"مشاهدة الفيديو من المصدر الرسمي";
  panel.innerHTML=`<div class="video-player-heading"><span class="eyebrow">MAßNAHME · VIDEO PLAYER</span><h2>${escapeHtml(v.title)}</h2><p>${escapeHtml(v.subjectName)} · ${escapeHtml(v.level)}</p></div><div class="embedded-video-frame">${player}</div>${sourceUrl?`<a class="video-open-source" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer">↗ ${sourceLabel}</a>`:""}<div class="video-player-description"><h3>عن الدرس</h3><p>${escapeHtml(v.description)}</p><p class="video-note">إذا لم يعمل العرض داخل الصفحة بسبب قيود المصدر، استخدم رابط المشاهدة الرسمية أعلاه.</p></div>`;
  panel.scrollIntoView({behavior:"smooth",block:"start"});
