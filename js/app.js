@@ -188,8 +188,9 @@ async function renderVideoLibrary(){
   filterVideos();
 }
 function videoCard(v){
- return `<article class="video-resource-card" data-video-card="${v.id}" data-subject="${v.subject}" data-search="${escapeHtml((v.title+" "+v.provider+" "+v.subjectName+" "+v.description).toLowerCase())}">
- <div class="video-card-art"><span>▶</span><small>MAßNAHME VIDEO CAMPUS</small></div><div class="video-card-body"><span class="video-chip">${escapeHtml(v.subjectName)}</span><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.description)}</p><div class="video-card-meta"><span>${escapeHtml(v.provider)}</span><small>${escapeHtml(v.level)}</small></div><button class="primary-btn" data-play-video="${v.id}">${v.type==="external"?"↗ مشاهدة من المصدر الرسمي":"▶ تشغيل الدرس هنا"}</button></div></article>`;
+ const thumbnail=v.type==="youtube"&&v.videoId?`<img class="video-card-thumbnail" src="https://i.ytimg.com/vi/${encodeURIComponent(v.videoId)}/hqdefault.jpg" alt="" loading="lazy" onerror="this.hidden=true">`:"";
+ return `<article class="video-resource-card" data-video-card="${escapeHtml(v.id)}" data-subject="${escapeHtml(v.subject)}" data-search="${escapeHtml((v.title+" "+v.provider+" "+v.subjectName+" "+v.description).toLowerCase())}">
+ <div class="video-card-art">${thumbnail}<span>▶</span><small>MAßNAHME VIDEO CAMPUS</small></div><div class="video-card-body"><span class="video-chip">${escapeHtml(v.subjectName)}</span><h3>${escapeHtml(v.title)}</h3><p>${escapeHtml(v.description)}</p><div class="video-card-meta"><span>${escapeHtml(v.provider)}</span><small>${escapeHtml(v.level)}</small></div><button class="primary-btn" data-play-video="${escapeHtml(v.id)}">${v.type==="external"?"↗ مشاهدة من المصدر الرسمي":"▶ تشغيل الدرس هنا"}</button></div></article>`;
 }
 function filterVideos(){
  const q=document.querySelector("#videoSearch").value.trim().toLowerCase(),subject=document.querySelector("#videoSubjectFilter").value;
