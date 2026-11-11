@@ -210,7 +210,9 @@ function playVideo(id){
    const src=v.type==="vimeo"?`https://player.vimeo.com/video/${encodeURIComponent(v.videoId)}`:`https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.videoId)}?rel=0`;
    player=`<iframe src="${src}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
  }else if(v.type==="external" && v.url){
-   player=`<div class="video-player-empty"><span>▶</span><h3>الفيديو متاح من المصدر الرسمي</h3><p>هذا المصدر لا يوفّر تضميناً مؤكداً داخل المنصة. افتح المشاهدة الرسمية من الزر أدناه.</p><a class="primary-btn" href="${escapeHtml(v.url)}" target="_blank" rel="noopener noreferrer">▶ مشاهدة الفيديو من المصدر الرسمي</a></div>`;
+   const ardId=v.url.split("/").filter(Boolean).pop();
+   const ardEmbed=ardId?"https://www.ardmediathek.de/player/"+encodeURIComponent(ardId):"";
+   player=ardEmbed?`<iframe class="ard-embedded-player" src="${ardEmbed}" title="${escapeHtml(v.title)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`:`<div class="video-player-empty"><span>!</span><h3>تعذر تجهيز مشغل هذا الفيديو</h3><p>رابط المصدر غير مكتمل.</p></div>`;
  }else{
    player=`<div class="video-player-empty"><span>!</span><h3>رابط الفيديو غير مكتمل</h3><p>هذا العنصر لا يحتوي على ملف أو رابط تشغيل صالح حتى الآن.</p></div>`;
  }
