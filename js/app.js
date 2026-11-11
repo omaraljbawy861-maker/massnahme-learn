@@ -1056,7 +1056,8 @@ window.addEventListener("popstate", event => {
 
 function navigate(view) {
  if(!restoringAppHistory) saveAppHistory();
- if(view==="study-assistant"){setActive(view);renderStudyAssistant();window.scrollTo({top:0,behavior:"smooth"});return;}\n if(view==="study-timer"){setActive(view);renderStandaloneTimer();window.scrollTo({top:0,behavior:"smooth"});return;}
+ if(view==="study-assistant"){setActive(view);renderStudyAssistant();window.scrollTo({top:0,behavior:"smooth"});return;}
+ if(view==="study-timer"){setActive(view);renderStandaloneTimer();window.scrollTo({top:0,behavior:"smooth"});return;}
  if(view==="intensive-b1"){ renderIntensiveLevel("B1"); return; }
  if(view==="intensive-b2"){ renderIntensiveLevel("B2"); return; }
  if(view==="zfa-preparation"){ renderZfaPreparation(); return; }
