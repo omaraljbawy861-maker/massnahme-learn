@@ -82,7 +82,7 @@ function findSpeechVoice(voices, languagePrefix, voiceGender = "female") {
   });
   if (matches.length) {
     const genderPattern = voiceGender === "male"
-      ? /\\bmale\\b|mascul|david|mark|george|daniel|james|thomas|hans|stefan|yousef|mehdi|guy|ryan/i
+      ? /(?:^|[^a-z])male(?:$|[^a-z])|mascul|david|mark|george|daniel|james|thomas|hans|stefan|yousef|mehdi|guy|ryan/i
       : /female|fem|zira|susan|samantha|victoria|karen|anna|hedda|petra|sara|laila|aria|jenny|ava|emma/i;
     return matches.find(v => genderPattern.test(v.name || "")) || matches.find(v => v.default) || matches.find(v => v.localService) || matches[0];
   }
