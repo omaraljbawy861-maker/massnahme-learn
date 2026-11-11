@@ -97,49 +97,6 @@ function findSpeechVoice(voices, languagePrefix, voiceGender = "female") {
 let activeSpeechUtterance = null;
 let activeSpeechText = "";
 let activeSpeechLanguage = "auto";
-let studySpeechPaused = false;
-
-function updateStudySpeechButton(label) {
-  const button = document.getElementById("studyStopVoice");
-  if (button) button.textContent = label || (studySpeechPaused ? "▶ تشغيل الصوت" : "■ إيقاف الصوت");
-}
-
-function toggleStudySpeech() {
-  if (!("speechSynthesis" in window)) return;
-  const synth = window.speechSynthesis;
-  if (synth.speaking && !synth.paused) {
-    synth.pause();
-    studySpeechPaused = true;
-    updateStudySpeechButton("▶ تشغيل الصوت");
-    const status = document.getElementById("studySpeechStatus");
-    if (status) status.textContent = "الصوت متوقف مؤقتاً. اضغط تشغيل للمتابعة.";
-    return;
-  }
-  if (synth.paused) {
-    synth.resume();
-    studySpeechPaused = false;
-    updateStudySpeechButton("■ إيقاف الصوت");
-    const status = document.getElementById("studySpeechStatus");
-    studySpeechPaused = false;
-    updateStudySpeechButton("■ إيقاف الصوت");
-    if (status) status.textContent = "يتم تشغيل الصوت…";
-    return;
-  }
-  if (activeSpeechText) speakText(activeSpeechText, activeSpeechLanguage);
-  else {
-    const status = document.getElementById("studySpeechStatus");
-    if (status) status.textContent = "لا يوجد صوت لتشغيله. شغّل قراءة أحد الردود أولاً.";
-  }
-}
-
-function getStudySpeechLanguage(text) {
-  const selected = document.getElementById("studySpeechLanguage")?.value || "auto";
-  const chatLanguage = document.getElementById("studyChatLanguage")?.value || "auto";
-  if (selected !== "auto") return selected;
-  if (chatLanguage !== "auto" && chatLanguage !== "other") return chatLanguage;
-  return detectSpeechLanguage(text);
-}
-
 async function speakText(text, lang, voiceGender = "female") {
   if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
     notify("ميزة النطق غير مدعومة في هذا المتصفح.");
@@ -147,12 +104,10 @@ async function speakText(text, lang, voiceGender = "female") {
   }
   const value = String(text || "").trim();
   if (!value) return;
-  const languagePrefix = String(lang || getStudySpeechLanguage(value)).split("-")[0].toLowerCase();
+  const languagePrefix = String(lang || detectSpeechLanguage(value)).split("-")[0].toLowerCase();
   const synth = window.speechSynthesis;
   activeSpeechText = value;
   activeSpeechLanguage = languagePrefix;
-  studySpeechPaused = false;
-  updateStudySpeechButton("■ إيقاف الصوت");
   const voices = synth.getVoices().length ? synth.getVoices() : await waitForSpeechVoices(3000);
   const voice = findSpeechVoice(voices, languagePrefix, voiceGender);
   if (!voice) {
@@ -169,15 +124,9 @@ async function speakText(text, lang, voiceGender = "female") {
   utterance.rate = Math.max(0.75, Math.min(1.15, rateControl));
   utterance.pitch = 1;
   utterance.onstart = () => {
-    const status = document.getElementById("studySpeechStatus");
-    if (status) status.textContent = "يتم تشغيل الصوت…";
   };
   utterance.onend = () => {
     if (activeSpeechUtterance === utterance) activeSpeechUtterance = null;
-    studySpeechPaused = false;
-    updateStudySpeechButton("■ إيقاف الصوت");
-    const status = document.getElementById("studySpeechStatus");
-    if (status) status.textContent = "انتهت القراءة.";
   };
   utterance.onerror = event => {
     if (activeSpeechUtterance === utterance) activeSpeechUtterance = null;
@@ -193,16 +142,8 @@ async function speakText(text, lang, voiceGender = "female") {
 }
 
 function stopStudySpeech() {
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-    window.speechSynthesis.pause();
-    window.speechSynthesis.cancel();
-  }
+  if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   activeSpeechUtterance = null;
-  studySpeechPaused = false;
-  updateStudySpeechButton("▶ تشغيل الصوت");
-  const status = document.getElementById("studySpeechStatus");
-  if (status) status.textContent = "تم إيقاف الصوت. اضغط تشغيل لاستئنافه من البداية.";
 }
 
 const allLessons = () => courses.flatMap(c => c.lessons.map(l => ({...l, courseId:c.id, courseName:c.name, courseGerman:c.german})));
@@ -729,10 +670,9 @@ function renderStudyAssistant(){
       <div class="study-settings-simple">
         <div class="study-setting-field"><label for="studySubject">المادة</label><select id="studySubject"><option>عام</option><option>الرياضيات</option><option>الألمانية</option><option>الإنجليزية</option><option>الأحياء والعلوم</option><option>التاريخ والجغرافيا</option><option>السياسة والعمل</option><option>مساعدة طبيب الأسنان ZFA</option></select></div>
         <div class="study-setting-field"><label for="studyAnswerStyle">أسلوب الشرح</label><select id="studyAnswerStyle"><option value="simple">سهل ومبسّط</option><option value="balanced" selected>متوازن</option><option value="detailed">تفصيلي خطوة بخطوة</option></select></div>
-        <div class="study-audio-setting-wrap"><label class="study-audio-setting" for="studyVoiceReply"><input type="checkbox" id="studyVoiceReply"> <span><b>تشغيل الردود الصوتية</b><small>اختياري — يمكنك إيقافه بأي وقت</small></span></label><label class="study-setting-field study-speech-language"><span>لغة القراءة</span><select id="studySpeechLanguage"><option value="auto">تلقائي</option><option value="ar">العربية</option><option value="en">English</option><option value="de">Deutsch</option></select></label></div>
-      </div>
+        </div>
       <div class="study-chat-messages" id="studyChatMessages" aria-live="polite"><div class="study-message assistant"><b>المساعد الدراسي</b><p>أهلاً بك! اكتب سؤالك أو جملة تريد تصحيحها. فيك تطلب مني أشرح بطريقة أبسط أو أعطيك تمريناً.</p></div></div>
-      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><button type="button" class="secondary-btn study-stop-audio" id="studyStopVoice">■ إيقاف الصوت</button><span id="studySpeechStatus" aria-live="polite">الصوت متوقف</span><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
+      <form id="studyChatForm" class="study-chat-form"><textarea id="studyChatInput" rows="2" maxlength="3000" placeholder="اكتب سؤالك أو الجملة التي تريد مناقشتها..." required></textarea><div class="study-chat-controls"><button type="button" class="secondary-btn" id="studyMicButton">🎙️ تحدث</button><button class="primary-btn" id="studySendButton" type="submit">إرسال السؤال ←</button></div></form>
       <p class="study-tutor-note" id="studyTutorStatus">تُحفظ محادثاتك تلقائياً في حسابك ويمكنك الرجوع إليها من أي جهاز.</p>
     </article>
   </section>
@@ -758,12 +698,6 @@ function renderStudyAssistant(){
   });
   loadStudyChatHistory();
   document.getElementById("studyMicButton").addEventListener("click",startStudyDictation);
-  document.getElementById("studyStopVoice").addEventListener("click",toggleStudySpeech);
-  document.getElementById("studyVoiceReply").addEventListener("change",event=>{
-    if(!event.target.checked){stopStudySpeech();return;}
-    const status=document.getElementById("studySpeechStatus");
-    if(status)status.textContent="القراءة الصوتية مفعّلة للردود الجديدة.";
-  });
   renderStudyTimer();
 }
 function renderStudyTimer(){
@@ -825,12 +759,6 @@ function appendStudyMessage(role,text){
   const heading=document.createElement("b");heading.textContent=role==="user"?"أنت":"المساعد الدراسي";
   const paragraph=document.createElement("p");paragraph.textContent=text;
   item.append(heading,paragraph);
-  if(role==="assistant"){
-    const actions=document.createElement("div");actions.className="study-message-audio-actions";
-    const play=document.createElement("button");play.type="button";play.className="secondary-btn";play.textContent="▶ استمع مجدداً";play.dataset.studySpeak=text;
-    const stop=document.createElement("button");stop.type="button";stop.className="secondary-btn";stop.textContent="■ إيقاف";stop.dataset.studyStop="1";
-    actions.append(play,stop);item.append(actions);
-  }
   box.append(item);box.scrollTop=box.scrollHeight;
 }
 async function sendStudyMessage(event){
@@ -856,7 +784,6 @@ async function sendStudyMessage(event){
     studyChatMessages.push({role:"assistant",content:data.reply});
     appendStudyMessage("assistant",data.reply);
     await saveStudyChatMessage("assistant",data.reply);
-    if(document.getElementById("studyVoiceReply").checked)speakText(data.reply,getStudySpeechLanguage(data.reply),gender);
     if(status)status.textContent="تم حفظ المحادثة تلقائياً. يمكنك متابعة النقاش.";
     await loadStudyChatHistory(activeStudyChatId);
   }catch(error){
@@ -1046,8 +973,6 @@ document.addEventListener("click",e=>{
  if(action==="language-en")navigate("language-en");
  if(action==="toggle-translation"){const el=document.getElementById(e.target.closest("[data-target]").dataset.target);if(el)el.hidden=!el.hidden;}
  if(action==="stop-audio")stopStudySpeech();
- const studySpeak=e.target.closest("[data-study-speak]");
- if(studySpeak){speakText(studySpeak.dataset.studySpeak,getStudySpeechLanguage(studySpeak.dataset.studySpeak));return;}
  const studyStop=e.target.closest("[data-study-stop]");
  if(studyStop){stopStudySpeech();return;}
  if(action==="complete-lesson"&&currentLesson){markCompleted(currentLesson.id);notify("تم تسجيل إكمال الدرس بنجاح");openLesson(currentLesson.id);}
