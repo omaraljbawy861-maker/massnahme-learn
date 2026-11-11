@@ -1,4 +1,3 @@
--- English school records are private to each authenticated student.
 create table if not exists public.english_school_records (
  user_id uuid primary key references auth.users(id) on delete cascade,
  school_data jsonb not null default '{}'::jsonb,
@@ -11,3 +10,9 @@ create policy "Students read own English school record" on public.english_school
 create policy "Students insert own English school record" on public.english_school_records for insert to authenticated with check ((select auth.uid()) = user_id);
 create policy "Students update own English school record" on public.english_school_records for update to authenticated using ((select auth.uid()) = user_id) with check ((select auth.uid()) = user_id);
 create policy "Students delete own English school record" on public.english_school_records for delete to authenticated using ((select auth.uid()) = user_id);
+create index if not exists english_school_records_updated_at_idx on public.english_school_records(updated_at desc);
+do $$ begin
+ if not exists(select 1 from pg_publication_tables where pubname='supabase_realtime' and schemaname='public' and tablename='english_school_records') then
+  alter publication supabase_realtime add table public.english_school_records;
+ end if;
+end $$;
