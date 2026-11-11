@@ -542,3 +542,22 @@ html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
   .english-school-workbook-frame{width:100%;max-width:100%;display:block}
   .english-academic-grid,.english-semesters,.english-grammar-topics,.english-placement-breakdown{min-width:0}
 }
+
+
+/* Hard fix: phone layout must use the complete device viewport, not a flex remainder */
+@media screen and (max-width: 900px){
+  html,body{width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
+  .app-shell{display:block!important;width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important;padding:0!important}
+  .sidebar{position:fixed!important;right:-270px!important;top:0!important;bottom:0!important;width:min(260px,85vw)!important;z-index:100!important}
+  .sidebar.open{right:0!important}
+  .main-area{display:block!important;position:relative!important;float:none!important;flex:none!important;width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important;padding:0!important;left:auto!important;right:auto!important}
+  .topbar{width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important}
+  #appContent,.content{display:block!important;width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin-inline:0!important;box-sizing:border-box!important}
+  #appContent>*{max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
+  .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:99!important;display:none;background:rgba(8,18,34,.4)!important;border:0!important}
+  .sidebar.open~.sidebar-backdrop{display:block!important}
+}
+@media screen and (max-width: 600px){
+  .content{padding:18px 14px 35px!important}
+  .topbar{padding-left:14px!important;padding-right:14px!important}
+}
