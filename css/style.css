@@ -898,3 +898,24 @@ body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#435
   body:not(.study-workspace) #appContent{background:#152943!important}
   body:not(.study-workspace) .topbar{background:#12243c!important}
 }
+
+
+/* Rich midnight-navy page background with deeper card surfaces */
+@media(max-width:700px){
+  body:not(.study-workspace),
+  body:not(.study-workspace) .main-area,
+  body:not(.study-workspace) #appContent{background:#10223b!important}
+  body:not(.study-workspace) .topbar{background:#0b192d!important}
+  body:not(.study-workspace) .home-progress-row .home-stat-card,
+  body:not(.study-workspace) .home-quick-card,
+  body:not(.study-workspace) .home-subject-panel,
+  body:not(.study-workspace) .home-start-panel,
+  body:not(.study-workspace) .panel,
+  body:not(.study-workspace) .library-card,
+  body:not(.study-workspace) .subject-card,
+  body:not(.study-workspace) .lesson-main,
+  body:not(.study-workspace) .lesson-sidebar{
+    background:linear-gradient(145deg,#091629,#071222)!important;
+    border-color:rgba(220,190,128,.18)!important;
+  }
+}
