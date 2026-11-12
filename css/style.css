@@ -520,118 +520,45 @@ html.native-app input,html.native-app textarea,html.native-app select{font-size:
 @media(max-width:650px){.english-placement-heading{align-items:flex-start}.english-placement-question>div{grid-template-columns:1fr}.english-placement-breakdown{grid-template-columns:repeat(2,minmax(0,1fr))}.english-placement-progress{flex-direction:column}}
 
 
-/* Responsive viewport correction — prevent the application from rendering narrower than the phone */
-html,body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
-.app-shell{width:100%;max-width:100%;min-width:0}
-.main-area{flex:1 1 0%;width:0;max-width:100%;min-width:0}
-#appContent,.content{width:100%;max-width:1450px;min-width:0;box-sizing:border-box}
-#appContent>*{min-width:0;max-width:100%}
-#appContent iframe{max-width:100%}
-@media(max-width:900px){
-  .sidebar{position:fixed;z-index:20;right:-270px;top:0;bottom:0;width:260px;max-width:85vw;transition:right .25s}
-  .sidebar.open{right:0;box-shadow:0 0 0 100vmax rgba(8,18,34,.4)}
-  .sidebar-backdrop{position:fixed;inset:0;z-index:19;display:none;background:rgba(8,18,34,.4);border:0}
-  .sidebar.open~.sidebar-backdrop{display:block}
-  .menu-toggle{display:block}
-  .main-area{width:100%;flex-basis:100%}
-  .topbar{padding-inline:16px}
-  .content{padding:18px 14px 35px}
+
+/* Unified responsive layout — single source of truth */
+html,body{max-width:100%;min-width:0;overflow-x:hidden}
+.app-shell{min-width:0;max-width:100%}
+.main-area{min-width:0;max-width:100%}
+#appContent,.content{min-width:0;max-width:100%;box-sizing:border-box}
+#appContent>*{min-width:0;max-width:100%;box-sizing:border-box}
+img,video,iframe,canvas,svg{max-width:100%}
+@media (max-width:1100px){
+  .app-shell{display:block!important;position:relative;width:100%;overflow:visible}
+  .main-area{display:block;width:100%;min-width:0;max-width:100%;margin:0;padding:0}
+  .sidebar{position:fixed!important;top:0!important;right:0!important;left:auto!important;bottom:0!important;
+    width:min(320px,86vw)!important;max-width:86vw!important;height:100vh;height:100dvh;
+    overflow-y:auto;z-index:1000;flex:none!important;transform:translate3d(105%,0,0);
+    visibility:hidden;transition:transform .24s ease,visibility .24s ease}
+  .sidebar.open{transform:translate3d(0,0,0);visibility:visible}
+  .sidebar-backdrop{position:fixed;inset:0;z-index:999;display:none;background:rgba(8,18,34,.48);border:0}
+  .sidebar-backdrop.visible{display:block}
+  .menu-toggle{display:inline-flex}
+  .topbar{width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+  #appContent,.content{width:100%;max-width:100%;min-width:0;margin:0;box-sizing:border-box}
+  body.menu-open{overflow:hidden}
 }
-@media(max-width:600px){
-  .english-hero,.english-academic-panel,.english-school-calendar,.english-school-books,.english-placement-card,.english-level-navigation{max-width:100%;min-width:0}
-  .english-school-workbook-frame{width:100%;max-width:100%;display:block}
-  .english-academic-grid,.english-semesters,.english-grammar-topics,.english-placement-breakdown{min-width:0}
+@media (max-width:700px){
+  .topbar{padding-inline:12px;gap:9px}
+  .content{padding:16px 13px 32px}
+  #appContent{padding-inline:0}
+  .home-hero{grid-template-columns:minmax(0,1fr);gap:18px}
+  .home-hero-art{min-height:180px}
+  .stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .subject-grid{grid-template-columns:repeat(1,minmax(0,1fr))}
+  .bottom-grid{grid-template-columns:minmax(0,1fr)}
+  .video-campus-layout{grid-template-columns:minmax(0,1fr)}
+  .video-grid{grid-template-columns:repeat(1,minmax(0,1fr))}
+  .english-placement-question>div{grid-template-columns:minmax(0,1fr)}
+  .english-placement-breakdown{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .top-actions>span:not(.status-dot){display:none}
 }
-
-
-/* Hard fix: phone layout must use the complete device viewport, not a flex remainder */
-@media screen and (max-width: 900px){
-  html,body{width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
-  .app-shell{display:block!important;width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important;padding:0!important}
-  .sidebar{position:fixed!important;right:-270px!important;top:0!important;bottom:0!important;width:min(260px,85vw)!important;z-index:100!important}
-  .sidebar.open{right:0!important}
-  .main-area{display:block!important;position:relative!important;float:none!important;flex:none!important;width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important;padding:0!important;left:auto!important;right:auto!important}
-  .topbar{width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin:0!important}
-  #appContent,.content{display:block!important;width:100vw!important;min-width:100vw!important;max-width:100vw!important;margin-inline:0!important;box-sizing:border-box!important}
-  #appContent>*{max-width:100%!important;min-width:0!important;box-sizing:border-box!important}
-  .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:99!important;display:none;background:rgba(8,18,34,.4)!important;border:0!important}
-  .sidebar.open~.sidebar-backdrop{display:block!important}
+@media (min-width:520px) and (max-width:1100px){
+  .subject-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-@media screen and (max-width: 600px){
-  .content{padding:18px 14px 35px!important}
-  .topbar{padding-left:14px!important;padding-right:14px!important}
-}
-
-
-/* ROOT CAUSE FIX: the hidden sidebar was still taking 260px in the flex row.
-   Remove it from document layout on phones/tablets so main-area gets the full viewport. */
-@media screen and (max-width: 1100px){
-  html,body{margin:0!important;width:100%!important;min-width:0!important;max-width:100%!important}
-  .app-shell{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;overflow-x:clip!important}
-  .sidebar{position:fixed!important;inset-block:0!important;inset-inline-start:auto!important;inset-inline-end:0!important;
-    width:min(300px,84vw)!important;max-width:84vw!important;flex:none!important;flex-basis:0!important;
-    transform:translateX(105%)!important;z-index:100!important}
-  .sidebar.open{transform:translateX(0)!important}
-  .main-area{display:block!important;position:relative!important;float:none!important;
-    width:100%!important;min-width:0!important;max-width:100%!important;flex:none!important;
-    margin:0!important;padding:0!important}
-  .topbar{width:100%!important;min-width:0!important;max-width:100%!important}
-  #appContent,.content{width:100%!important;min-width:0!important;max-width:none!important;
-    margin-inline:0!important;box-sizing:border-box!important}
-}
-@media screen and (max-width: 600px){
-  .content{padding-inline:14px!important}
-  .topbar{padding-inline:12px!important}
-}
-
-
-/* Correct RTL mobile drawer anchoring: use physical right/left properties explicitly.
-   Logical inline-end combined with legacy right offsets caused a narrow clipped drawer. */
-@media screen and (max-width:1100px){
-  .sidebar{
-    position:fixed!important;
-    top:0!important;right:0!important;left:auto!important;bottom:0!important;
-    inset-inline-start:auto!important;inset-inline-end:auto!important;
-    width:min(320px,84vw)!important;max-width:84vw!important;
-    flex:none!important;flex-basis:auto!important;
-    transform:translate3d(110%,0,0)!important;
-    z-index:100!important;
-    overflow-y:auto!important;
-    transition:transform .25s ease!important;
-  }
-  .sidebar.open{right:0!important;left:auto!important;transform:translate3d(0,0,0)!important}
-  .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:99!important;display:none!important}
-  .sidebar-backdrop.visible{display:block!important}
-}
-
-
-/* Drawer visibility fix: never clip a fixed-position sidebar at the app-shell boundary */
-@media screen and (max-width:1100px){
-  .app-shell{overflow:visible!important;overflow-x:visible!important;overflow-y:visible!important}
-  .sidebar{
-    position:fixed!important;
-    top:0!important;right:0!important;bottom:0!important;left:auto!important;
-    width:min(320px,84vw)!important;max-width:84vw!important;
-    height:100vh!important;height:100dvh!important;
-    transform:translate3d(110%,0,0)!important;
-    flex:none!important;flex-basis:auto!important;
-    z-index:1000!important;
-  }
-  .sidebar.open{right:0!important;transform:translate3d(0,0,0)!important}
-  .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:999!important}
-  .main-area{width:100%!important;max-width:100%!important;min-width:0!important}
-}
-
-
-/* FINAL MOBILE CANVAS RESET */
-@media (max-width:900px){
- html,body{display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;overflow-x:hidden!important}
- .app-shell{display:block!important;position:relative!important;width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;overflow:visible!important}
- .main-area{display:block!important;position:relative!important;width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important;padding:0!important;float:none!important}
- .topbar{display:flex!important;width:100%!important;min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
- #appContent,.content{display:block!important;width:auto!important;min-width:0!important;max-width:none!important;margin:0!important;box-sizing:border-box!important;overflow-wrap:anywhere}
- .sidebar{position:fixed!important;top:0!important;right:0!important;bottom:0!important;left:auto!important;width:min(300px,84%)!important;max-width:84%!important;height:100vh!important;height:100dvh!important;transform:translate3d(110%,0,0)!important;visibility:hidden!important;flex:none!important;z-index:1000!important;transition:transform .25s ease,visibility .25s ease!important}
- .sidebar.open{transform:translate3d(0,0,0)!important;visibility:visible!important}
- .sidebar-backdrop{position:fixed!important;inset:0!important;z-index:999!important}
-}
-@media(max-width:600px){.content{padding:18px 14px 35px!important}.topbar{padding-inline:12px!important}}
