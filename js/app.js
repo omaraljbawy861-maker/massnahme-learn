@@ -295,39 +295,7 @@ function renderLibrary() {
       <div class="book-info"><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.bookDescription || c.description)}</p><div class="book-meta"><span>${c.lessons.length} فصول</span><span>${Math.round(c.lessons.filter(l=>isCompleted(l.id)).length/Math.max(1,c.lessons.length)*100)}% مكتمل</span></div><button class="primary-btn book-open">فتح الكتاب والفهرس ←</button></div>
     </article>`).join("")}</div>`;
 }
-function renderAllangoEnglishBook() {
-  content.innerHTML = `
-    <div class="page-intro">
-      <span class="eyebrow">ENGLISH · ESA KLASSE 9 · NRW</span>
-      <h1>كتاب اللغة الإنجليزية الرقمي</h1>
-      <p>تم استبدال الكتاب المحلي ببوابة ALLANGO الرسمية للوصول إلى النسخة الرقمية والمواد التعليمية المرخّصة.</p>
-    </div>
-    <section class="allango-access-page">
-      <div class="allango-access-card">
-        <div class="allango-access-brand"><span class="allango-access-mark">a</span><div><strong>ALLANGO</strong><small>Digitales Lernen · English</small></div></div>
-        <span class="allango-access-tag">DIGITAL BOOKS & EXERCISES</span>
-        <h2>الكتاب والتمارين والمواد الصوتية</h2>
-        <p>هذا هو العنوان المطابق للكتاب الظاهر في صورتك: Kursbuch A1–B2 مع Audios، ويحتوي على 33 وحدة قصيرة. النسخة الرقمية تحتاج إلى مفتاح ترخيص أو شراء.</p>
-        <a class="allango-access-primary" href="https://www.klett-sprachen.de/great-survival-english-a1-b2-2nd-edition-digitale-ausgabe-allango/t-1/NP10050176600" target="_blank" rel="noopener noreferrer">فتح النسخة الرقمية الرسمية للكتاب <span>↗</span></a>
-        <a class="allango-access-secondary" href="https://www.klett-sprachen.de/great-survival-english-a1-b2-2nd-edition-hybride-ausgabe-allango/t-1/9783125017788" target="_blank" rel="noopener noreferrer">شراء النسخة الورقية مع مفتاح ALLANGO</a>
-        <div class="allango-access-note"><b>ملاحظة:</b> النسخة الرقمية المستقلة متاحة من الناشر بمفتاح ترخيص لمدة 24 شهراً. بعد تفعيل المفتاح يمكن فتح محتوى الكتاب ومواده الرقمية في ALLANGO. لا يمكن تضمين صفحات الكتاب المحمية في الأكاديمية دون ترخيص نشر مناسب.</div>
-      </div>
-      <div class="allango-access-features">
-        <article><span>▤</span><div><b>النسخة الرقمية</b><small>قراءة الكتاب من حسابك الرسمي</small></div></article>
-        <article><span>✓</span><div><b>التمارين التفاعلية</b><small>بحسب مكوّنات الكتاب المرخّص</small></div></article>
-        <article><span>♫</span><div><b>الصوت والوسائط</b><small>المواد الصوتية المرفقة بالعنوان</small></div></article>
-      </div>
-    </section>`;
-}
 function openCourse(id) {
-  if (id === "english") {
-    currentCourse = courses.find(c=>c.id===id);
-    if (!currentCourse) return;
-    setActive("library");
-    pageTitle.textContent = "اللغة الإنجليزية · ALLANGO";
-    renderAllangoEnglishBook();
-    return;
-  }
   currentCourse = courses.find(c=>c.id===id);
   if (!currentCourse) return;
   setActive("library");
@@ -352,6 +320,19 @@ function renderCourseLessons() {
       </div>
       <div class="book-overview"><span class="eyebrow">LEHRBUCH · الكتاب الدراسي</span><h1>${escapeHtml(currentCourse.name)}</h1><div class="book-german-title">${escapeHtml(currentCourse.bookTitle || currentCourse.german)}</div><p>${escapeHtml(currentCourse.bookDescription || currentCourse.description)}</p><h3>أهداف الكتاب</h3><ul>${(currentCourse.learningGoals||[]).map(g=>`<li>${escapeHtml(g)}</li>`).join("")}</ul><div class="book-progress"><div class="progress-meta"><span>إنجاز الكتاب</span><strong>${courseProgress(currentCourse)}%</strong></div><div class="progress-track"><div class="progress-fill" style="width:${courseProgress(currentCourse)}%"></div></div></div></div>
     </div>
+    ${currentCourse.id === "english" ? `
+    <section class="allango-secondary-book">
+      <div class="allango-secondary-cover"><span>KLETT</span><b>Great!</b><strong>Survival<br>English</strong><small>2nd edition · A1–B2</small><em>33 MODULES · AUDIOS</em></div>
+      <div class="allango-secondary-info">
+        <span class="eyebrow">الكتاب الثاني · SECOND BOOK</span>
+        <h2>Great! 2nd Edition – Survival English</h2>
+        <p>كتاب إضافي لتعلّم الإنجليزية اليومية، من A1 إلى B2، يضم 33 وحدة قصيرة وحوارات ومواد صوتية.</p>
+        <div class="allango-secondary-meta"><span>33 وحدة</span><span>A1–B2</span><span>Audio</span></div>
+        <a class="allango-access-primary" href="https://www.klett-sprachen.de/great-survival-english-a1-b2-2nd-edition-digitale-ausgabe-allango/t-1/NP10050176600" target="_blank" rel="noopener noreferrer">فتح النسخة الرقمية الرسمية ↗</a>
+        <a class="allango-access-secondary" href="https://www.klett-sprachen.de/great-survival-english-a1-b2-2nd-edition-hybride-ausgabe-allango/t-1/9783125017788" target="_blank" rel="noopener noreferrer">تفاصيل النسخة الورقية والرقمية</a>
+        <small>محتوى الكتاب الرقمي الكامل يتطلب ترخيصاً من الناشر. الكتاب الأصلي الموجود أعلاه بقي كما هو.</small>
+      </div>
+    </section>` : ""}
     <div class="book-toc-head"><div><span class="eyebrow">INHALTSVERZEICHNIS</span><h2>فهرس الكتاب والوحدات</h2></div><span class="subtle-tag">${currentCourse.lessons.length} فصول تعليمية</span></div>
     <div class="book-units">${grouped.map((group, gi)=>`<section class="book-unit"><div class="unit-heading"><span class="unit-number">${String(gi+1).padStart(2,"0")}</span><div><small>LEKTIONSEINHEIT ${gi+1}</small><h3>${escapeHtml(group.name)}</h3></div><span class="unit-count">${group.items.length} ${group.items.length===1?"درس":"دروس"}</span></div><div class="unit-chapters">${group.items.map(l=>`<button class="chapter-row" data-lesson="${l.id}"><span class="chapter-no">${String(l.chapterNumber).padStart(2,"0")}</span><span class="chapter-title"><strong>${escapeHtml(l.title)}</strong><small>${escapeHtml(l.germanTitle)} · ${escapeHtml(l.duration)}</small></span><span class="chapter-status">${isCompleted(l.id)?"✓ مكتمل":"فتح الفصل ←"}</span></button>`).join("")}</div></section>`).join("")}</div>`;
 }
