@@ -814,3 +814,19 @@ body.study-workspace .timer-footer-note{color:#907849}
   body:not(.study-workspace) .library-card p,
   body:not(.study-workspace) .lesson-main p{color:#b2bfd0}
 }
+
+
+/* Study assistant: same soft-navy canvas and gold controls as the platform */
+body.study-workspace,body.study-workspace .main-area,body.study-workspace #appContent{background:#c7d5e6!important;color:#192d48!important}
+body.study-workspace .page-intro h1,body.study-workspace .study-card-heading h2{color:#142844!important}
+body.study-workspace .page-intro p,body.study-workspace .study-card-heading p{color:#60748d!important}
+body.study-workspace .study-chat-card{background:linear-gradient(155deg,#edf3fa,#dfe8f2)!important;border:1px solid #b8c9dc!important;box-shadow:0 14px 34px rgba(17,37,63,.1)!important}
+body.study-workspace .study-chat-messages{background:linear-gradient(180deg,#d9e4f0,#cbd9e8)!important;border:1px solid #b8c9dc!important}
+body.study-workspace .study-message.assistant{background:#edf3fa!important;color:#192d48!important;border:1px solid #bdcde0!important}
+body.study-workspace .study-message.user{background:linear-gradient(145deg,#203b5b,#142844)!important;color:#f8f4e9!important;border:1px solid #b99452!important}
+body.study-workspace .study-message.user b{color:#e5cc94!important}
+body.study-workspace .study-chat-form textarea,body.study-workspace .study-setting-field select{background:#f5f8fc!important;border:1px solid #bdcde0!important;color:#192d48!important}
+body.study-workspace .study-chat-form .primary-btn,body.study-workspace .study-chat-controls .primary-btn{background:linear-gradient(135deg,#e2c98f,#c6a45f)!important;color:#172b46!important;border-color:#c5a15b!important}
+body.study-workspace .study-chat-form .secondary-btn,body.study-workspace .study-chat-controls .secondary-btn{background:#203b5b!important;color:#f3ead5!important;border-color:#c5a15b!important}
+body.study-workspace .study-tips{background:transparent!important;color:#203b5b!important}
+body.study-workspace .study-tips span{background:#e5edf6!important;border:1px solid #b8c9dc!important;color:#203b5b!important}
