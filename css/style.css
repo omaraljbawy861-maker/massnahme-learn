@@ -864,3 +864,19 @@ body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#879
 /* Darken ONLY the study assistant canvas, not text or message bubbles */
 body.study-workspace,body.study-workspace .main-area,body.study-workspace #appContent{background:#344b68!important}
 body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#435b78,#394f6b)!important}
+
+
+/* Overall page canvas: navy, intentionally lighter than the navy cards */
+@media(max-width:700px){
+  body:not(.study-workspace),
+  body:not(.study-workspace) .main-area,
+  body:not(.study-workspace) #appContent{
+    background:#203653!important;
+  }
+  body:not(.study-workspace) .topbar{
+    background:#1b304b!important;
+  }
+  body:not(.study-workspace) .home-hero{
+    background:linear-gradient(145deg,#142844 0%,#0e1d33 100%)!important;
+  }
+}
