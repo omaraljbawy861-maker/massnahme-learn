@@ -295,7 +295,39 @@ function renderLibrary() {
       <div class="book-info"><h3>${escapeHtml(c.name)}</h3><p>${escapeHtml(c.bookDescription || c.description)}</p><div class="book-meta"><span>${c.lessons.length} فصول</span><span>${Math.round(c.lessons.filter(l=>isCompleted(l.id)).length/Math.max(1,c.lessons.length)*100)}% مكتمل</span></div><button class="primary-btn book-open">فتح الكتاب والفهرس ←</button></div>
     </article>`).join("")}</div>`;
 }
+function renderAllangoEnglishBook() {
+  content.innerHTML = `
+    <div class="page-intro">
+      <span class="eyebrow">ENGLISH · ESA KLASSE 9 · NRW</span>
+      <h1>كتاب اللغة الإنجليزية الرقمي</h1>
+      <p>تم استبدال الكتاب المحلي ببوابة ALLANGO الرسمية للوصول إلى النسخة الرقمية والمواد التعليمية المرخّصة.</p>
+    </div>
+    <section class="allango-access-page">
+      <div class="allango-access-card">
+        <div class="allango-access-brand"><span class="allango-access-mark">a</span><div><strong>ALLANGO</strong><small>Digitales Lernen · English</small></div></div>
+        <span class="allango-access-tag">DIGITAL BOOKS & EXERCISES</span>
+        <h2>الكتاب والتمارين والمواد الصوتية</h2>
+        <p>افتح مكتبتك الرقمية في ALLANGO، وسجّل الدخول للوصول إلى كتاب الإنجليزية الذي تملكه أو فعّلت ترخيصه، مع مكوّناته الرقمية والتمارين التفاعلية المتاحة.</p>
+        <a class="allango-access-primary" href="https://www.allango.net/" target="_blank" rel="noopener noreferrer">فتح كتاب الإنجليزية في ALLANGO <span>↗</span></a>
+        <a class="allango-access-secondary" href="https://subscription.allango.net/lernpaket-allango" target="_blank" rel="noopener noreferrer">التعرّف على الكتب الرقمية والتمارين المتاحة</a>
+        <div class="allango-access-note"><b>ملاحظة:</b> يتطلب عرض محتوى الكتاب تسجيل الدخول وتفعيل ترخيصه في حساب ALLANGO. لا يمكن نسخ صفحات الكتب أو تشغيل محتواها المحمي مباشرة داخل موقعنا دون ترخيص من الناشر.</div>
+      </div>
+      <div class="allango-access-features">
+        <article><span>▤</span><div><b>النسخة الرقمية</b><small>قراءة الكتاب من حسابك الرسمي</small></div></article>
+        <article><span>✓</span><div><b>التمارين التفاعلية</b><small>بحسب مكوّنات الكتاب المرخّص</small></div></article>
+        <article><span>♫</span><div><b>الصوت والوسائط</b><small>المواد الصوتية المرفقة بالعنوان</small></div></article>
+      </div>
+    </section>`;
+}
 function openCourse(id) {
+  if (id === "english") {
+    currentCourse = courses.find(c=>c.id===id);
+    if (!currentCourse) return;
+    setActive("library");
+    pageTitle.textContent = "اللغة الإنجليزية · ALLANGO";
+    renderAllangoEnglishBook();
+    return;
+  }
   currentCourse = courses.find(c=>c.id===id);
   if (!currentCourse) return;
   setActive("library");
