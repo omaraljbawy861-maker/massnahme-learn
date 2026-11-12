@@ -764,3 +764,53 @@ body.study-workspace .timer-footer-note{color:#907849}
  body.study-workspace .timer-standalone{padding:18px 14px;border-radius:18px}
 }
 @media(prefers-reduced-motion:reduce){.nav-link,.subject-card,.library-card,.primary-btn{transition:none}}
+
+
+/* ── Mobile dashboard: match the dark navy + gold reference ── */
+@media(max-width:700px){
+  body:not(.study-workspace){background:#091426!important;color:#edf2f8}
+  body:not(.study-workspace) .main-area{background:#091426!important}
+  body:not(.study-workspace) .topbar{background:#0d1b30!important;border-bottom:1px solid rgba(220,190,128,.13)!important;box-shadow:none!important;color:#f4f0e7}
+  body:not(.study-workspace) .breadcrumb,
+  body:not(.study-workspace) .breadcrumb strong{color:#f2ead8!important}
+  body:not(.study-workspace) .app-back-button{background:#152740!important;border-color:rgba(220,190,128,.25)!important;color:#e3c98e!important}
+  body:not(.study-workspace) #appContent{background:#091426!important}
+  body:not(.study-workspace) .home-hero{background:linear-gradient(145deg,#142844 0%,#0e1d33 100%)!important;border:1px solid rgba(218,190,132,.15);box-shadow:0 16px 36px rgba(0,0,0,.2)!important}
+  body:not(.study-workspace) .home-progress-row .home-stat-card,
+  body:not(.study-workspace) .home-quick-card,
+  body:not(.study-workspace) .home-subject-panel,
+  body:not(.study-workspace) .home-start-panel{background:linear-gradient(145deg,#172942,#112139)!important;border:1px solid rgba(210,190,150,.13)!important;color:#f2f4f7!important;box-shadow:0 10px 26px rgba(0,0,0,.16)!important}
+  body:not(.study-workspace) .home-stat-card small,
+  body:not(.study-workspace) .home-stat-card em,
+  body:not(.study-workspace) .home-quick-card small,
+  body:not(.study-workspace) .home-section-heading p,
+  body:not(.study-workspace) .home-start-panel p{color:#aab8ca!important}
+  body:not(.study-workspace) .home-stat-card strong,
+  body:not(.study-workspace) .home-quick-card strong,
+  body:not(.study-workspace) .home-section-heading h2,
+  body:not(.study-workspace) .home-start-panel h2{color:#f4f0e7!important}
+  body:not(.study-workspace) .home-quick-icon{background:rgba(216,187,126,.12)!important;color:#dfc58f!important}
+  body:not(.study-workspace) .home-section-kicker{color:#d9bb7c!important}
+  body:not(.study-workspace) .home-recommended-item{border-color:rgba(255,255,255,.1)!important;color:#eef2f7}
+  body:not(.study-workspace) .home-recommended-item small{color:#aab8ca!important}
+  body:not(.study-workspace) .home-text-link,
+  body:not(.study-workspace) .home-start-link{color:#e2c68c!important}
+  body:not(.study-workspace) .home-footer{border-color:rgba(255,255,255,.12)!important;color:#aab8ca!important}
+  body:not(.study-workspace) .home-footer strong{color:#e0c58d!important}
+  body:not(.study-workspace) .page-intro h1,
+  body:not(.study-workspace) .section-heading h2{color:#f3f0e9!important}
+  body:not(.study-workspace) .page-intro p{color:#aab8ca!important}
+  body:not(.study-workspace) .panel,
+  body:not(.study-workspace) .library-card,
+  body:not(.study-workspace) .subject-card,
+  body:not(.study-workspace) .lesson-main,
+  body:not(.study-workspace) .lesson-sidebar{background:#14253c!important;border-color:rgba(220,190,128,.13)!important;color:#eef2f7}
+  body:not(.study-workspace) .subject-card h3,
+  body:not(.study-workspace) .library-card h3,
+  body:not(.study-workspace) .lesson-main h1,
+  body:not(.study-workspace) .lesson-main h2,
+  body:not(.study-workspace) .lesson-main h3{color:#f3f0e9!important}
+  body:not(.study-workspace) .subject-card p,
+  body:not(.study-workspace) .library-card p,
+  body:not(.study-workspace) .lesson-main p{color:#b2bfd0}
+}
