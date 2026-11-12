@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261112-7">
-  <link rel="stylesheet" href="css/videos.css?v=20261112-7">
+  <link rel="stylesheet" href="css/style.css?v=20261112-8">
+  <link rel="stylesheet" href="css/videos.css?v=20261112-8">
   <style>
 
   /* Reference-video layout: compact mobile dashboard, dark learning cards, white workspaces */
@@ -182,6 +182,19 @@
     .menu-toggle { position:relative!important; z-index:1310!important; display:inline-flex!important; }
   }
 
+  
+  /* Light navy page canvas requested by user */
+  @media (max-width:700px) {
+    html, body:not(.study-workspace),
+    body:not(.study-workspace) .app-shell,
+    body:not(.study-workspace) .main-area,
+    body:not(.study-workspace) #appContent {
+      background-color:#c7d5e6 !important;
+    }
+    body:not(.study-workspace) .topbar { background:#e1e9f3 !important; }
+    body:not(.study-workspace) .home-section { background:transparent !important; }
+  }
+
   </style>
   <script>try{if(window.Capacitor?.isNativePlatform?.())document.documentElement.classList.add("native-app")}catch(e){}</script>
   <link rel="stylesheet" href="css/english-school.css?v=20261111-4">
@@ -280,6 +293,6 @@
     </main>
   </div>
  <div class="toast" id="toast" role="status"></div>
-  <script type="module" src="js/app.js?v=20261112-7"></script>
+  <script type="module" src="js/app.js?v=20261112-8"></script>
 </body>
 </html>
