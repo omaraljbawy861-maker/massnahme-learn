@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261112-5">
-  <link rel="stylesheet" href="css/videos.css?v=20261112-5">
+  <link rel="stylesheet" href="css/style.css?v=20261112-6">
+  <link rel="stylesheet" href="css/videos.css?v=20261112-6">
   <style>
 
   /* Reference-video layout: compact mobile dashboard, dark learning cards, white workspaces */
@@ -138,6 +138,19 @@
   
     /* Hide the mobile bottom navigation in every display mode */
     #appBottomNav,.app-bottom-nav,.bottom-nav-item{display:none!important;visibility:hidden!important;pointer-events:none!important}
+  
+  /* Sidebar reliability fix for phones/tablets */
+  @media (max-width:1100px) {
+    .sidebar { display:block!important; position:fixed!important; z-index:1300!important;
+      visibility:hidden!important; pointer-events:none!important;
+      transform:translate3d(105%,0,0)!important; transition:transform .24s ease,visibility .24s ease!important; }
+    .sidebar.open { display:block!important; visibility:visible!important;
+      pointer-events:auto!important; transform:translate3d(0,0,0)!important; }
+    .sidebar-backdrop { z-index:1290!important; }
+    .sidebar-backdrop.visible { display:block!important; }
+    .menu-toggle { position:relative!important; z-index:1310!important; display:inline-flex!important; }
+  }
+
   </style>
   <script>try{if(window.Capacitor?.isNativePlatform?.())document.documentElement.classList.add("native-app")}catch(e){}</script>
   <link rel="stylesheet" href="css/english-school.css?v=20261111-4">
@@ -236,6 +249,6 @@
     </main>
   </div>
  <div class="toast" id="toast" role="status"></div>
-  <script type="module" src="js/app.js?v=20261112-5"></script>
+  <script type="module" src="js/app.js?v=20261112-6"></script>
 </body>
 </html>
