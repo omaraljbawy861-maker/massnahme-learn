@@ -2426,9 +2426,9 @@
       ]
     }
   ],
-  "bookTitle": "English – Communication and Grammar",
-  "bookSubtitle": "Lehr- und Arbeitsbuch · ESA Vorbereitung",
-  "bookDescription": "كتاب تدريبي لتأسيس التواصل باللغة الإنجليزية وفهم القواعد الأساسية واستخدامها. | Erweiterte Lernmodule mit Erklärungen, Beispielen, Übungen und Hausaufgaben.",
+  "bookTitle": "English – ALLANGO Digital Edition",
+  "bookSubtitle": "Digitale Ausgabe · Übungen · Audio",
+  "bookDescription": "الكتاب الرقمي الرسمي للغة الإنجليزية عبر ALLANGO. افتح حسابك للوصول إلى العنوان الذي تملك ترخيصه والتمارين والمواد الصوتية المرفقة.",
   "learningGoals": [
     "تقديم النفس والمعلومات الشخصية",
     "استخدام المضارع البسيط بصورة صحيحة",
@@ -2436,7 +2436,7 @@
     "التحدث عن أحداث ماضية",
     "استخدام حروف الجر الشائعة"
   ],
-  "bookLevel": "ESA · Klasse 9 · NRW (Lernmaterial zur Vorbereitung)",
+  "bookLevel": "ESA · Klasse 9 · NRW — ALLANGO Zugang",
   "bookUnits": [
     {
       "title": "الوحدة 2: بناء الجملة والأزمنة",
