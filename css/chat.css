@@ -142,3 +142,11 @@
 .chat-compose textarea:focus{border-color:#c7a568!important;box-shadow:0 0 0 3px rgba(199,165,104,.14)!important}
 .chat-compose button{border-radius:11px!important}
 @media(max-width:680px){.chat-page{padding:8px!important;background:#e5ebf2!important}.chat-main{min-height:calc(100dvh - 16px)!important}.chat-side{margin-bottom:4px}.chat-messages{background:#f4f7fa!important}}
+
+
+/* Slightly deeper light-navy surfaces */
+:root{--chat-bg:#aebfd3;--chat-surface:#f5f7fa}
+.chat-page{background:linear-gradient(145deg,#bac9da,#a5b8ce)!important}
+.chat-messages{background:linear-gradient(155deg,#c3d1e0,#b3c4d8)!important}
+.chat-side,.chat-main{background:#f2f5f9!important}
+@media(max-width:680px){.chat-page{background:#aebfd3!important}.chat-messages{background:linear-gradient(155deg,#c3d1e0,#b3c4d8)!important}}
