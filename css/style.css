@@ -859,3 +859,8 @@ body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#a9b
 /* Further deepen study assistant navy canvas */
 body.study-workspace,body.study-workspace .main-area,body.study-workspace #appContent{background:#647b99!important}
 body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#879db8,#748ba7)!important}
+
+
+/* Darken ONLY the study assistant canvas, not text or message bubbles */
+body.study-workspace,body.study-workspace .main-area,body.study-workspace #appContent{background:#344b68!important}
+body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#435b78,#394f6b)!important}
