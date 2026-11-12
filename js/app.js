@@ -307,10 +307,10 @@ function renderAllangoEnglishBook() {
         <div class="allango-access-brand"><span class="allango-access-mark">a</span><div><strong>ALLANGO</strong><small>Digitales Lernen · English</small></div></div>
         <span class="allango-access-tag">DIGITAL BOOKS & EXERCISES</span>
         <h2>الكتاب والتمارين والمواد الصوتية</h2>
-        <p>افتح مكتبتك الرقمية في ALLANGO، وسجّل الدخول للوصول إلى كتاب الإنجليزية الذي تملكه أو فعّلت ترخيصه، مع مكوّناته الرقمية والتمارين التفاعلية المتاحة.</p>
-        <a class="allango-access-primary" href="https://www.allango.net/" target="_blank" rel="noopener noreferrer">فتح كتاب الإنجليزية في ALLANGO <span>↗</span></a>
-        <a class="allango-access-secondary" href="https://subscription.allango.net/lernpaket-allango" target="_blank" rel="noopener noreferrer">التعرّف على الكتب الرقمية والتمارين المتاحة</a>
-        <div class="allango-access-note"><b>ملاحظة:</b> يتطلب عرض محتوى الكتاب تسجيل الدخول وتفعيل ترخيصه في حساب ALLANGO. لا يمكن نسخ صفحات الكتب أو تشغيل محتواها المحمي مباشرة داخل موقعنا دون ترخيص من الناشر.</div>
+        <p>هذا هو العنوان المطابق للكتاب الظاهر في صورتك: Kursbuch A1–B2 مع Audios، ويحتوي على 33 وحدة قصيرة. النسخة الرقمية تحتاج إلى مفتاح ترخيص أو شراء.</p>
+        <a class="allango-access-primary" href="https://www.klett-sprachen.de/great-survival-english-a1-b2-2nd-edition-digitale-ausgabe-allango/t-1/NP10050176600" target="_blank" rel="noopener noreferrer">فتح النسخة الرقمية الرسمية للكتاب <span>↗</span></a>
+        <a class="allango-access-secondary" href="https://www.klett-sprachen.de/great-survival-english-a1-b2-2nd-edition-hybride-ausgabe-allango/t-1/9783125017788" target="_blank" rel="noopener noreferrer">شراء النسخة الورقية مع مفتاح ALLANGO</a>
+        <div class="allango-access-note"><b>ملاحظة:</b> النسخة الرقمية المستقلة متاحة من الناشر بمفتاح ترخيص لمدة 24 شهراً. بعد تفعيل المفتاح يمكن فتح محتوى الكتاب ومواده الرقمية في ALLANGO. لا يمكن تضمين صفحات الكتاب المحمية في الأكاديمية دون ترخيص نشر مناسب.</div>
       </div>
       <div class="allango-access-features">
         <article><span>▤</span><div><b>النسخة الرقمية</b><small>قراءة الكتاب من حسابك الرسمي</small></div></article>
