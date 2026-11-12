@@ -1056,6 +1056,7 @@ window.addEventListener("popstate", event => {
 });
 
 function navigate(view) {
+ closeSidebar();
  document.body.classList.toggle("study-workspace", view==="study-assistant" || view==="study-timer");
  if(!restoringAppHistory) saveAppHistory();
  if(view==="study-assistant"){setActive(view);renderStudyAssistant();window.scrollTo({top:0,behavior:"smooth"});return;}
