@@ -845,3 +845,9 @@ body.study-workspace .study-chat-form textarea:focus{border-color:#c7a568!import
 body.study-workspace .study-chat-form .primary-btn,body.study-workspace .study-chat-controls .primary-btn{background:#c7a568!important;color:#17283e!important;border-color:#b99759!important}
 body.study-workspace .study-chat-form .secondary-btn,body.study-workspace .study-chat-controls .secondary-btn{background:#f4f6f9!important;color:#243951!important;border:1px solid #dfe6ee!important}
 body.study-workspace .study-tips span{background:#fff!important;border:1px solid #e1e7ee!important;color:#344963!important}
+
+/* Deeper light-navy tone for study assistant */
+body.study-workspace,body.study-workspace .main-area,body.study-workspace #appContent{background:#aebfd3!important}
+body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#c3d1e0,#b3c4d8)!important}
+body.study-workspace .study-chat-card{background:#f2f5f9!important}
+body.study-workspace .study-tips span{background:#f2f5f9!important}
