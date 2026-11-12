@@ -164,3 +164,9 @@
 .chat-page{background:linear-gradient(145deg,#7188a5,#5e7593)!important}
 .chat-messages{background:linear-gradient(155deg,#879db8,#748ba7)!important}
 @media(max-width:680px){.chat-page{background:#647b99!important}.chat-messages{background:linear-gradient(155deg,#879db8,#748ba7)!important}}
+
+
+/* Darken ONLY the chat backgrounds; preserve all message/text colors */
+.chat-page{background:linear-gradient(145deg,#344b68,#293f5b)!important}
+.chat-messages{background:linear-gradient(155deg,#435b78,#394f6b)!important}
+@media(max-width:680px){.chat-page{background:#344b68!important}.chat-messages{background:linear-gradient(155deg,#435b78,#394f6b)!important}}
