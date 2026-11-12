@@ -880,3 +880,12 @@ body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#435
     background:linear-gradient(145deg,#142844 0%,#0e1d33 100%)!important;
   }
 }
+
+
+/* Slightly darker navy page background; keep cards distinctly darker */
+@media(max-width:700px){
+  body:not(.study-workspace),
+  body:not(.study-workspace) .main-area,
+  body:not(.study-workspace) #appContent{background:#1b304b!important}
+  body:not(.study-workspace) .topbar{background:#172b45!important}
+}
