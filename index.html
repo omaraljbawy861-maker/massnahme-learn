@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261112-6">
-  <link rel="stylesheet" href="css/videos.css?v=20261112-6">
+  <link rel="stylesheet" href="css/style.css?v=20261112-7">
+  <link rel="stylesheet" href="css/videos.css?v=20261112-7">
   <style>
 
   /* Reference-video layout: compact mobile dashboard, dark learning cards, white workspaces */
@@ -139,6 +139,37 @@
     /* Hide the mobile bottom navigation in every display mode */
     #appBottomNav,.app-bottom-nav,.bottom-nav-item{display:none!important;visibility:hidden!important;pointer-events:none!important}
   
+  
+  /* Soft navy canvas — replace plain white page background */
+  @media (max-width:700px) {
+    body:not(.study-workspace),
+    body:not(.study-workspace) .main-area,
+    body:not(.study-workspace) #appContent {
+      background:#dce5f0 !important;
+    }
+    body:not(.study-workspace) .topbar {
+      background:#e8eef6 !important;
+      border-bottom-color:#cbd7e5 !important;
+    }
+    body:not(.study-workspace) .home-section-heading h2,
+    body:not(.study-workspace) .page-intro h1,
+    body:not(.study-workspace) .section-heading h2 {
+      color:#172b47 !important;
+    }
+    body:not(.study-workspace) .home-section-heading p,
+    body:not(.study-workspace) .page-intro p {
+      color:#60738d !important;
+    }
+    body:not(.study-workspace) .home-stat-card,
+    body:not(.study-workspace) .home-quick-card,
+    body:not(.study-workspace) .home-subject-panel,
+    body:not(.study-workspace) .home-start-panel {
+      background:linear-gradient(145deg,#243e5e,#1b304c) !important;
+      border-color:rgba(201,164,92,.24) !important;
+      color:#f5f0e5 !important;
+    }
+  }
+
   /* Sidebar reliability fix for phones/tablets */
   @media (max-width:1100px) {
     .sidebar { display:block!important; position:fixed!important; z-index:1300!important;
@@ -249,6 +280,6 @@
     </main>
   </div>
  <div class="toast" id="toast" role="status"></div>
-  <script type="module" src="js/app.js?v=20261112-6"></script>
+  <script type="module" src="js/app.js?v=20261112-7"></script>
 </body>
 </html>
