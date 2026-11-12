@@ -919,3 +919,23 @@ body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#435
     border-color:rgba(220,190,128,.18)!important;
   }
 }
+
+
+/* User-requested stronger midnight navy page background */
+@media(max-width:700px){
+  body:not(.study-workspace),
+  body:not(.study-workspace) .main-area,
+  body:not(.study-workspace) #appContent{background:#080f20!important}
+  body:not(.study-workspace) .topbar{background:#060c19!important}
+  body:not(.study-workspace) .home-progress-row .home-stat-card,
+  body:not(.study-workspace) .home-quick-card,
+  body:not(.study-workspace) .home-subject-panel,
+  body:not(.study-workspace) .home-start-panel,
+  body:not(.study-workspace) .panel,
+  body:not(.study-workspace) .library-card,
+  body:not(.study-workspace) .subject-card,
+  body:not(.study-workspace) .lesson-main,
+  body:not(.study-workspace) .lesson-sidebar{
+    background:linear-gradient(145deg,#050a14,#030711)!important;
+  }
+}
