@@ -851,3 +851,7 @@ body.study-workspace,body.study-workspace .main-area,body.study-workspace #appCo
 body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#c3d1e0,#b3c4d8)!important}
 body.study-workspace .study-chat-card{background:#f2f5f9!important}
 body.study-workspace .study-tips span{background:#f2f5f9!important}
+
+/* Deeper blue-navy canvas for study assistant */
+body.study-workspace,body.study-workspace .main-area,body.study-workspace #appContent{background:#879bb5!important}
+body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#a9bbcf,#96abc3)!important}
