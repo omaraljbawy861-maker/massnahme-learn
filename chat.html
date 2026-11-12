@@ -173,3 +173,32 @@
 
 </style></head>
 <body class="chat-page"><main class="chat-shell"><aside class="chat-side"><div class="chat-brand">MAßNAHME LEARN<small>مساحة الدردشة الخاصة</small></div><button class="chat-primary" id="newChat">＋ محادثة جديدة</button><section class="chat-history"><h3>محادثاتي السابقة</h3><div class="chat-history-list" id="history">جارٍ التحميل…</div></section><a href="./index.html" style="color:#9b7b43;font-size:11px;text-decoration:none">← العودة إلى المنصة</a></aside><section class="chat-main"><section class="chat-config"><h3>إعدادات المحادثة</h3><label>شخصية الدردشة</label><div class="chat-genders"><button class="active" data-gender="female">♀ أنثى</button><button data-gender="male">♂ ذكر</button></div><label for="language">لغة المحادثة</label><select id="language"><option value="auto">اكتشاف تلقائي — جميع اللغات</option><option value="ar">العربية</option><option value="de">Deutsch</option><option value="en">English</option><option value="fr">Français</option><option value="tr">Türkçe</option><option value="es">Español</option><option value="it">Italiano</option><option value="ur">اردو</option><option value="ru">Русский</option><option value="pt">Português</option><option value="pl">Polski</option><option value="nl">Nederlands</option><option value="ja">日本語</option><option value="zh">中文</option><option value="hi">हिन्दी</option></select><label for="duration">مدة المحادثة</label><select id="duration"><option value="15">15 دقيقة</option><option value="30" selected>30 دقيقة</option><option value="45">45 دقيقة</option><option value="60">60 دقيقة</option><option value="90">90 دقيقة</option><option value="120">120 دقيقة</option></select><div class="chat-time"><small>الوقت المتبقي</small><strong id="countdown">30:00</strong></div></section><header class="chat-head"><span class="chat-avatar" id="avatar">♀</span><div><strong id="persona">رفيقة الدردشة</strong><small id="status">ابدأ محادثة جديدة</small></div><span class="chat-live">● متاحة</span></header><div class="chat-messages" id="messages"><div class="chat-empty"><span>✦</span><h2>أهلاً بك في دردشة الموقع</h2><p>ابدأ محادثة جديدة، واختر الشخصية واللغة والوقت المناسب لك.</p><button class="chat-primary" id="startFirst">ابدأ الآن</button></div></div><form class="chat-compose" id="chatForm"><textarea id="message" rows="2" maxlength="4000" placeholder="اكتب رسالتك هنا…" disabled required></textarea><button class="chat-primary" id="send" disabled>إرسال ←</button></form><p class="chat-note" id="note">تُحفظ الرسائل تلقائياً في حسابك ويمكنك الرجوع إليها من أي جهاز.</p></section></main><script type="module" src="./js/chat.js?v=20261111-2"></script></body></html>
+
+/* Signature chat UI — restrained navy, pearl and champagne gold */
+:root{--chat-navy:#14243d;--chat-navy-2:#203653;--chat-gold:#c7a568;--chat-gold-soft:#f5efe3;--chat-bg:#e5ebf2;--chat-surface:#fff;--chat-line:#e3e8ef;--chat-ink:#1d2d43;--chat-muted:#748196;--chat-shadow:0 18px 48px rgba(18,35,57,.09)}
+.chat-page{padding:clamp(12px,2vw,24px)!important;background:#e5ebf2!important}
+.chat-shell{gap:16px!important}
+.chat-side,.chat-main{background:#fff!important;border:1px solid #e1e7ee!important;border-radius:18px!important;box-shadow:0 12px 34px rgba(18,35,57,.075)!important}
+.chat-side{padding:20px!important}
+.chat-brand{color:#14243d!important}
+.chat-brand small{color:#a1844e!important}
+.chat-primary{background:#c7a568!important;color:#17283e!important;border:1px solid #b99759!important;box-shadow:0 5px 12px rgba(167,132,68,.16)!important}
+.chat-config{background:#f7f9fc!important;border:1px solid #e6ebf1!important}
+.chat-config select,.chat-genders button,.chat-history-item{background:#fff!important;border-color:#dfe6ee!important;color:#263951!important}
+.chat-genders button.active,.chat-history-item.active{background:#f6f0e4!important;border-color:#c7a568!important;color:#765b2d!important}
+.chat-time{background:#f7f2e8!important;border-color:#eadfc9!important}
+.chat-head{background:#fff!important;border-bottom:1px solid #e6ebf1!important}
+.chat-avatar{background:#f3ecde!important;border:1px solid #e8dcc4!important;color:#987a45!important}
+.chat-live{background:#edf6f0!important;border-color:#d9eadf!important;color:#438064!important}
+.chat-messages{background:#f4f7fa!important}
+.chat-empty span{background:#f3ecde!important;color:#a08046!important}
+.chat-bubble{box-shadow:0 3px 10px rgba(20,36,60,.045)!important;border-radius:15px!important}
+.chat-bubble.assistant{background:#fff!important;border:1px solid #e4e9ef!important;color:#24364d!important}
+.chat-bubble.user{background:#1b304b!important;border:1px solid #263f5e!important;color:#fff!important}
+.chat-bubble.user small{color:#dfc58e!important}
+.chat-bubble.assistant small{color:#9a8357!important}
+.chat-compose,.chat-note{background:#fff!important;border-color:#e6ebf1!important}
+.chat-compose textarea{background:#f8fafc!important;border:1px solid #dfe6ee!important;border-radius:12px!important;color:#1d2d43!important}
+.chat-compose textarea:focus{border-color:#c7a568!important;box-shadow:0 0 0 3px rgba(199,165,104,.14)!important}
+.chat-compose button{border-radius:11px!important}
+@media(max-width:680px){.chat-page{padding:8px!important;background:#e5ebf2!important}.chat-main{min-height:calc(100dvh - 16px)!important}.chat-side{margin-bottom:4px}.chat-messages{background:#f4f7fa!important}}
