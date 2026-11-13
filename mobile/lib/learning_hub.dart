@@ -64,7 +64,31 @@ class ExamsPage extends StatelessWidget {
  @override Widget build(BuildContext c)=>Scaffold(appBar:AppBar(title:const Text('الاختبارات')),body:FutureBuilder<List<Map<String,dynamic>>>(future:loadBooks(),builder:(c,s){
  if(!s.hasData)return const Center(child:CircularProgressIndicator(color:hg));final items=<Map<String,dynamic>>[];
  for(final b in s.data!){for(final raw in b['lessons']){final l=Map<String,dynamic>.from(raw);final q=l['questions']??l['quiz']??l['practice'];if(q is List&&q.isNotEmpty)items.add({'title':val(l['title']),'questions':q});}}
- return ListView(padding:const EdgeInsets.all(12),children:[if(items.isEmpty)const Text('لا توجد اختبارات مستقلة في ملفات المناهج؛ راجع تدريبات كل درس من مكتبة الكتب.'),...items.map((x)=>Card(color:hp,child:ListTile(title:Text(x['title']),subtitle:Text((x['questions'] as List).length.toString()+' سؤال'),leading:const Icon(Icons.quiz,color:hg),onTap:()=>Navigator.push(c,MaterialPageRoute(builder:(_)=>QuizPage(title:x['title'],questions:List<dynamic>.from(x['questions']))))))]);
+ return ListView(
+   padding: const EdgeInsets.all(12),
+   children: [
+     if (items.isEmpty)
+       const Text('لا توجد اختبارات مستقلة في ملفات المناهج؛ راجع تدريبات كل درس من مكتبة الكتب.'),
+     ...items.map((x) {
+       final questions = List<dynamic>.from(x['questions'] as List);
+       final title = val(x['title']);
+       return Card(
+         color: hp,
+         child: ListTile(
+           title: Text(title),
+           subtitle: Text('${questions.length} سؤال'),
+           leading: const Icon(Icons.quiz, color: hg),
+           onTap: () => Navigator.push(
+             c,
+             MaterialPageRoute(
+               builder: (_) => QuizPage(title: title, questions: questions),
+             ),
+           ),
+         ),
+       );
+     }),
+   ],
+ );
  }));
 }
 class QuizPage extends StatefulWidget {final String title;final List<dynamic> questions;const QuizPage({super.key,required this.title,required this.questions});@override State<QuizPage> createState()=>_QuizPageState();}
