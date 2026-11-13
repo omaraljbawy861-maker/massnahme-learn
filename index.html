@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#101e37">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="dark">
   <meta name="description" content="MAßNAHME LEARN – Bildung für alle">
   <title>MAßNAHME LEARN | التعليم للجميع</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261113-1">
+  <link rel="stylesheet" href="css/style.css?v=20261113-2">
   <link rel="stylesheet" href="css/videos.css?v=20261112-8">
   <style>
 
@@ -193,6 +193,131 @@
     }
     body:not(.study-workspace) .topbar { background:#e1e9f3 !important; }
     body:not(.study-workspace) .home-section { background:transparent !important; }
+  }
+
+  
+  /* MAßNAHME LEARN — unified midnight navy & gold visual system */
+  :root{
+    color-scheme:dark;
+    --navy:#071426;--navy2:#0b1b30;--gold:#d8b66f;--gold2:#ecd49a;
+    --ink:#f4f1e9;--muted:#aab8ca;--line:rgba(207,178,112,.22);
+    --bg:#08172a;--white:#10243b;
+  }
+  html,body{background:#08172a!important;color:#f4f1e9!important}
+  body:not(.study-workspace),body:not(.study-workspace) .app-shell,
+  body:not(.study-workspace) .main-area,body:not(.study-workspace) #appContent,
+  body:not(.study-workspace) .content{
+    background:radial-gradient(ellipse at 50% -18%,#18314e 0%,#0b1b30 43%,#071426 100%)!important;
+    color:#f4f1e9!important;
+  }
+  body:not(.study-workspace) .topbar{
+    background:rgba(6,18,33,.96)!important;color:#f4f1e9!important;
+    border-bottom:1px solid rgba(216,182,111,.2)!important;
+    box-shadow:0 8px 24px rgba(0,0,0,.18)!important;backdrop-filter:blur(14px);
+  }
+  body:not(.study-workspace) .breadcrumb,
+  body:not(.study-workspace) .breadcrumb strong,
+  body:not(.study-workspace) .top-actions{color:#e9edf3!important}
+  body:not(.study-workspace) .breadcrumb span,
+  body:not(.study-workspace) .breadcrumb b{color:#9eacc0!important}
+  body:not(.study-workspace) .app-back-button{
+    background:#10243b!important;color:#e4c783!important;
+    border:1px solid rgba(216,182,111,.35)!important;
+  }
+  body:not(.study-workspace) .sidebar{
+    background:linear-gradient(180deg,#071426,#091a2e 65%,#061222)!important;
+    color:#f4f1e9!important;border-left:1px solid rgba(216,182,111,.18)!important;
+  }
+  body:not(.study-workspace) .brand-mark{border-color:#d8b66f!important;color:#ecd49a!important}
+  body:not(.study-workspace) .brand strong,
+  body:not(.study-workspace) .nav-link.active{color:#f0cf83!important}
+  body:not(.study-workspace) .nav-link{color:#c0cada!important}
+  body:not(.study-workspace) .nav-link:hover,
+  body:not(.study-workspace) .nav-link.active{background:rgba(216,182,111,.11)!important}
+  body:not(.study-workspace) .nav-group-title,
+  body:not(.study-workspace) .sidebar-label,
+  body:not(.study-workspace) .sidebar-foot{color:#8293aa!important}
+  body:not(.study-workspace) .welcome-banner,
+  body:not(.study-workspace) .home-hero{
+    background:linear-gradient(125deg,#0b1b30 0%,#102844 58%,#17304d 100%)!important;
+    color:#f7f3e9!important;border:1px solid rgba(216,182,111,.26)!important;
+    box-shadow:0 18px 45px rgba(0,0,0,.24)!important;
+  }
+  body:not(.study-workspace) .welcome-banner h1,
+  body:not(.study-workspace) .home-hero h1,
+  body:not(.study-workspace) .section-heading h2,
+  body:not(.study-workspace) .home-section-heading h2,
+  body:not(.study-workspace) .page-intro h1{color:#f5f2eb!important}
+  body:not(.study-workspace) .welcome-banner p,
+  body:not(.study-workspace) .home-hero-copy>p,
+  body:not(.study-workspace) .section-heading p,
+  body:not(.study-workspace) .home-section-heading p,
+  body:not(.study-workspace) .page-intro p{color:#b8c5d5!important}
+  body:not(.study-workspace) .eyebrow,
+  body:not(.study-workspace) .home-kicker,
+  body:not(.study-workspace) .home-section-kicker{color:#d8b66f!important}
+  body:not(.study-workspace) .stat-card,
+  body:not(.study-workspace) .home-stat-card,
+  body:not(.study-workspace) .home-quick-card,
+  body:not(.study-workspace) .subject-card,
+  body:not(.study-workspace) .panel,
+  body:not(.study-workspace) .home-subject-panel,
+  body:not(.study-workspace) .home-start-panel,
+  body:not(.study-workspace) .library-card,
+  body:not(.study-workspace) .lesson-main,
+  body:not(.study-workspace) .lesson-sidebar,
+  body:not(.study-workspace) .course-card,
+  body:not(.study-workspace) .video-card{
+    background:linear-gradient(145deg,#10243b,#0b1b30)!important;
+    color:#f3f0e8!important;border:1px solid rgba(216,182,111,.2)!important;
+    box-shadow:0 12px 30px rgba(0,0,0,.18)!important;
+  }
+  body:not(.study-workspace) .stat-card small,
+  body:not(.study-workspace) .home-stat-card small,
+  body:not(.study-workspace) .home-stat-card em,
+  body:not(.study-workspace) .home-quick-card small,
+  body:not(.study-workspace) .panel p,
+  body:not(.study-workspace) .subtle,
+  body:not(.study-workspace) .muted{color:#aebbd0!important}
+  body:not(.study-workspace) .stat-card strong,
+  body:not(.study-workspace) .home-stat-card strong,
+  body:not(.study-workspace) .home-quick-card strong,
+  body:not(.study-workspace) .panel h3,
+  body:not(.study-workspace) .subject-card h3{color:#f5f2eb!important}
+  body:not(.study-workspace) .stat-icon,
+  body:not(.study-workspace) .home-stat-icon,
+  body:not(.study-workspace) .home-quick-icon{
+    background:rgba(216,182,111,.13)!important;color:#e6c77f!important;
+  }
+  body:not(.study-workspace) button.primary-btn,
+  body:not(.study-workspace) .home-primary-action{
+    background:linear-gradient(135deg,#e5c77f,#caa65e)!important;
+    border-color:#e5c77f!important;color:#102039!important;
+  }
+  body:not(.study-workspace) .home-secondary-action,
+  body:not(.study-workspace) .text-btn{color:#e6c77f!important}
+  body:not(.study-workspace) input,
+  body:not(.study-workspace) textarea,
+  body:not(.study-workspace) select{
+    background:#0c1e33!important;color:#f4f1e9!important;
+    border:1px solid #30445e!important;
+  }
+  body:not(.study-workspace) input::placeholder,
+  body:not(.study-workspace) textarea::placeholder{color:#8293aa!important}
+  body:not(.study-workspace) .home-progress-track,
+  body:not(.study-workspace) .progress-track{background:#26384f!important}
+  body.study-workspace,body.study-workspace .main-area,
+  body.study-workspace #appContent{background:#08172a!important;color:#f4f1e9!important}
+  @media(max-width:700px){
+    body:not(.study-workspace),body:not(.study-workspace) .app-shell,
+    body:not(.study-workspace) .main-area,body:not(.study-workspace) #appContent,
+    body:not(.study-workspace) .content{background:#08172a!important}
+    body:not(.study-workspace) .topbar{background:#061221!important}
+    body:not(.study-workspace) .home-section-heading h2,
+    body:not(.study-workspace) .page-intro h1,
+    body:not(.study-workspace) .section-heading h2{color:#f5f2eb!important}
+    body:not(.study-workspace) .home-section-heading p,
+    body:not(.study-workspace) .page-intro p{color:#aebbd0!important}
   }
 
   </style>
