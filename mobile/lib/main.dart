@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const supabaseUrl = 'https://edzuhinhxhoxxocfjvbu.supabase.co';
 const supabasePublishableKey = 'sb_publishable_PVmHT2QwKiWtWYEgb-nYkw_dd2VtQiO';
@@ -72,9 +73,9 @@ class BrandHeader extends StatelessWidget {
 class MainShell extends StatefulWidget { const MainShell({super.key}); @override State<MainShell> createState()=>_MainShellState(); }
 class _MainShellState extends State<MainShell> {
   int index=0;
-  late final pages=[DashboardPage(onNavigate:(v)=>setState(()=>index=v)),const SubjectsPage(),const ZfaPage(),const AssistantPage(),const ProfilePage()];
-  final labels=const['الرئيسية','المواد','أكاديمية ZFA','المساعد','حسابي'];
-  final icons=const[Icons.home_rounded,Icons.menu_book_rounded,Icons.medical_services_rounded,Icons.auto_awesome,Icons.person_rounded];
+  late final pages=[DashboardPage(onNavigate:(v)=>setState(()=>index=v)),const SubjectsPage(),const ZfaPage(),const AssistantPage(),const MorePage()];
+  final labels=const['الرئيسية','المواد','أكاديمية ZFA','المساعد','المزيد'];
+  final icons=const[Icons.home_rounded,Icons.menu_book_rounded,Icons.medical_services_rounded,Icons.auto_awesome,Icons.grid_view_rounded];
   @override Widget build(BuildContext context)=>Scaffold(
     appBar:AppBar(title:const BrandHeader(),toolbarHeight:72),
     body:IndexedStack(index:index,children:pages),
@@ -211,6 +212,71 @@ class _AssistantPageState extends State<AssistantPage> {
     ])))
   ]);
 }
+
+class MorePage extends StatelessWidget {
+ const MorePage({super.key});
+ @override Widget build(BuildContext context)=>ListView(padding:const EdgeInsets.all(16),children:[
+ const Text('مركز التعلّم',style:TextStyle(fontSize:24,fontWeight:FontWeight.bold)),
+ _Feature(icon:Icons.play_circle_outline,title:'مكتبة الفيديوهات',subtitle:'فيديوهات مصنفة حسب المادة والمستوى',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const VideoLibraryPage()))),
+ _Feature(icon:Icons.language,title:'المنهج الإنجليزي A1–C2',subtitle:'الوحدات والقواعد والقراءة والتدريبات',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const EnglishCurriculumPage()))),
+ _Feature(icon:Icons.record_voice_over,title:'الألمانية المكثفة B1 وB2',subtitle:'نصوص ومفردات وجمل وقواعد',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const IntensiveGermanPage()))),
+ _Feature(icon:Icons.person_outline,title:'حساب الطالب',subtitle:'بيانات الحساب وتسجيل الخروج',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const ProfilePage())))
+ ]);
+}
+class VideoLibraryPage extends StatefulWidget {const VideoLibraryPage({super.key});@override State<VideoLibraryPage> createState()=>_VideoLibraryPageState();}
+class _VideoLibraryPageState extends State<VideoLibraryPage>{
+ String filter='الكل';
+ Future<List<Map<String,dynamic>>> load() async {final raw=jsonDecode(await rootBundle.loadString('assets/courses/video-library.json')) as Map<String,dynamic>;return List<Map<String,dynamic>>.from((raw['items'] as List).map((e)=>Map<String,dynamic>.from(e)));}
+ @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('مكتبة الفيديوهات')),body:FutureBuilder<List<Map<String,dynamic>>>(future:load(),builder:(context,s){
+ if(s.hasError)return const Center(child:Text('تعذر تحميل الفيديوهات'));if(!s.hasData)return const Center(child:CircularProgressIndicator(color:gold));
+ final categories=['الكل',...{for(final v in s.data!)'\u0024{v['subjectName']??v['subject']??'أخرى'}'}];
+ final shown=s.data!.where((v)=>filter=='الكل'||'\u0024{v['subjectName']??v['subject']}'==filter).toList();
+ return Column(children:[SizedBox(height:52,child:ListView(scrollDirection:Axis.horizontal,children:categories.map((c)=>Padding(padding:const EdgeInsets.all(5),child:ChoiceChip(label:Text(c),selected:filter==c,onSelected:(_)=>setState(()=>filter=c)))).toList())),
+ Expanded(child:ListView.builder(padding:const EdgeInsets.all(12),itemCount:shown.length,itemBuilder:(context,i){final v=shown[i];final id='\u0024{v['videoId']??''}';final url='\u0024{v['type']=='vimeo'?'https://vimeo.com/':'https://www.youtube.com/watch?v='}\u0024id';return Card(color:panel,child:ListTile(leading:const Icon(Icons.play_circle,color:gold,size:34),title:Text('\u0024{v['title']??'فيديو'}'),subtitle:Text('\u0024{v['provider']??''} • \u0024{v['level']??''}\n\u0024{v['description']??''}',maxLines:3,overflow:TextOverflow.ellipsis),onTap:()=>launchUrl(Uri.parse(url),mode:LaunchMode.externalApplication)));} ))]);
+ }));
+}
+class EnglishCurriculumPage extends StatelessWidget {
+ const EnglishCurriculumPage({super.key});
+ @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('المنهج الإنجليزي A1–C2')),body:FutureBuilder<Map<String,dynamic>>(future:rootBundle.loadString('assets/courses/english_course.json').then((s)=>jsonDecode(s) as Map<String,dynamic>),builder:(context,s){
+ if(!s.hasData)return const Center(child:CircularProgressIndicator(color:gold));
+ final levels=List<Map<String,dynamic>>.from((s.data!['levels'] as List).map((e)=>Map<String,dynamic>.from(e)));
+ return ListView(padding:const EdgeInsets.all(14),children:levels.map((l){final units=List<Map<String,dynamic>>.from((l['units'] as List? ?? []).map((e)=>Map<String,dynamic>.from(e)));return Card(color:panel,child:ExpansionTile(title:Text('\u0024{l['code']} • \u0024{l['name']}'),subtitle:Text('\u0024{units.length} وحدة'),children:units.map((u)=>ListTile(title:Text('\u0024{u['title']??''}'),subtitle:Text('\u0024{u['englishTitle']??''}'),onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>EnglishUnitPage(unit:u))))).toList());}).toList());
+ }));
+ }
+}
+class EnglishUnitPage extends StatelessWidget {
+ final Map<String,dynamic> unit;const EnglishUnitPage({super.key,required this.unit});
+ @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:Text('\u0024{unit['title']??'الوحدة'}')),body:ListView(padding:const EdgeInsets.all(16),children:[
+ Text('\u0024{unit['englishTitle']??''}',style:const TextStyle(color:gold,fontSize:20,fontWeight:FontWeight.bold)),
+ _LessonSection(title:'نظرة عامة',body:'\u0024{unit['overview']??''}'),
+ _LessonSection(title:'القواعد',body:'\u0024{unit['grammar']??''}\n\u0024{unit['grammarNote']??''}'),
+ _LessonSection(title:'المفردات',body:(unit['vocabulary'] as List? ?? []).join('\n')),
+ _LessonSection(title:'القراءة والترجمة',body:'\u0024{unit['reading']??''}\n\n\u0024{unit['translation']??''}'),
+ _LessonSection(title:'المحادثة',body:'\u0024{unit['speaking']??''}'),_LessonSection(title:'الكتابة',body:'\u0024{unit['writing']??''}'),
+ if(unit['practice'] is List)_LessonSection(title:'التدريبات',body:(unit['practice'] as List).map((e)=>'\u0024{e['question']??''}\n\u0024{e['answer']??''}').join('\n\n')),
+ _LessonSection(title:'معيار الإتقان',body:'\u0024{unit['assessment']??''}')
+ ]));
+}
+class IntensiveGermanPage extends StatelessWidget {
+ const IntensiveGermanPage({super.key});
+ @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('الألمانية المكثفة B1 وB2')),body:FutureBuilder<Map<String,dynamic>>(future:rootBundle.loadString('assets/courses/intensive_german.json').then((s)=>jsonDecode(s) as Map<String,dynamic>),builder:(context,s){
+ if(!s.hasData)return const Center(child:CircularProgressIndicator(color:gold));
+ return ListView(padding:const EdgeInsets.all(14),children:['B1','B2'].map((level){final lessons=List<Map<String,dynamic>>.from((s.data![level] as List).map((e)=>Map<String,dynamic>.from(e)));return Card(color:panel,child:ExpansionTile(title:Text('Deutsch '+level,style:const TextStyle(color:gold)),subtitle:Text('\u0024{lessons.length} درس'),children:lessons.map((l)=>ListTile(title:Text('\u0024{l['title']??''}'),subtitle:Text('\u0024{l['de']??''}'),onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>GermanLessonPage(lesson:l))))).toList());}).toList());
+ }));
+ }
+}
+class GermanLessonPage extends StatelessWidget {
+ final Map<String,dynamic> lesson;const GermanLessonPage({super.key,required this.lesson});
+ @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:Text('\u0024{lesson['title']??'درس'}')),body:ListView(padding:const EdgeInsets.all(16),children:[
+ Text('\u0024{lesson['de']??''}',style:const TextStyle(color:gold,fontSize:20,fontWeight:FontWeight.bold)),
+ _LessonSection(title:'نص القراءة',body:'\u0024{lesson['text']??''}'),_LessonSection(title:'الترجمة',body:'\u0024{lesson['translation']??lesson['ar']??''}'),
+ _LessonSection(title:'المفردات',body:(lesson['v'] as List? ?? lesson['vocab'] as List? ?? []).map((v)=>'\u0024{v[0]} — \u0024{v[1]}').join('\n')),
+ _LessonSection(title:'الجمل العملية',body:(lesson['s'] as List? ?? lesson['sentences'] as List? ?? []).map((v)=>'\u0024{v[0]}\n\u0024{v[1]}').join('\n\n')),
+ _LessonSection(title:'القواعد',body:'\u0024{lesson['g']??lesson['grammar']??''}'),
+ if(lesson['q']!=null)_LessonSection(title:'فهم النص',body:'\u0024{lesson['q']}\n\u0024{lesson['a']??''}')
+ ]));
+}
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
   @override Widget build(BuildContext context){
