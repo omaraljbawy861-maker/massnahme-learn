@@ -70,7 +70,7 @@ class BrandHeader extends StatelessWidget {
 class MainShell extends StatefulWidget { const MainShell({super.key}); @override State<MainShell> createState()=>_MainShellState(); }
 class _MainShellState extends State<MainShell> {
   int index=0;
-  final pages=const[DashboardPage(),SubjectsPage(),ZfaPage(),AssistantPage(),ProfilePage()];
+  late final pages=[DashboardPage(onNavigate:(v)=>setState(()=>index=v)),const SubjectsPage(),const ZfaPage(),const AssistantPage(),const ProfilePage()];
   final labels=const['الرئيسية','المواد','أكاديمية ZFA','المساعد','حسابي'];
   final icons=const[Icons.home_rounded,Icons.menu_book_rounded,Icons.medical_services_rounded,Icons.auto_awesome,Icons.person_rounded];
   @override Widget build(BuildContext context)=>Scaffold(
@@ -80,7 +80,8 @@ class _MainShellState extends State<MainShell> {
       destinations:List.generate(labels.length,(i)=>NavigationDestination(icon:Icon(icons[i]),label:labels[i]))));
 }
 class DashboardPage extends StatelessWidget {
-  const DashboardPage({super.key});
+  final ValueChanged<int> onNavigate;
+  const DashboardPage({super.key,required this.onNavigate});
   @override Widget build(BuildContext context)=>ListView(padding:const EdgeInsets.all(18),children:[
     Container(padding:const EdgeInsets.all(22),decoration:BoxDecoration(gradient:const LinearGradient(colors:[Color(0xFF1B3150),panel]),borderRadius:BorderRadius.circular(24),border:Border.all(color:gold.withValues(alpha:.3))),child:const Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
       Text('مساحة تعلّمك الخاصة',style:TextStyle(color:gold,fontWeight:FontWeight.bold)),SizedBox(height:10),
@@ -88,11 +89,10 @@ class DashboardPage extends StatelessWidget {
       Text('تابع دروسك، اختبر معلوماتك، وارجع لتقدّمك من أي جهاز.',style:TextStyle(color:muted,height:1.6))
     ]),
     const SizedBox(height:22),const Text('ابدأ التعلّم',style:TextStyle(fontSize:21,fontWeight:FontWeight.bold)),const SizedBox(height:10),
-    _Feature(icon:Icons.menu_book,title:'المناهج المدرسية',subtitle:'مواد الصف التاسع والدروس والتمارين',onTap:()=>_go(context,1)),
-    _Feature(icon:Icons.medical_services,title:'أكاديمية مساعد طبيب الأسنان',subtitle:'13 مجالاً وفق إطار ZFA الألماني',onTap:()=>_go(context,2)),
-    _Feature(icon:Icons.auto_awesome,title:'المساعد الدراسي الذكي',subtitle:'اسأل عن الدروس واحصل على شرح',onTap:()=>_go(context,3))
+    _Feature(icon:Icons.menu_book,title:'المناهج المدرسية',subtitle:'مواد الصف التاسع والدروس والتمارين',onTap:()=>onNavigate(1)),
+    _Feature(icon:Icons.medical_services,title:'أكاديمية مساعد طبيب الأسنان',subtitle:'13 مجالاً وفق إطار ZFA الألماني',onTap:()=>onNavigate(2)),
+    _Feature(icon:Icons.auto_awesome,title:'المساعد الدراسي الذكي',subtitle:'اسأل عن الدروس واحصل على شرح',onTap:()=>onNavigate(3))
   ]);
-  void _go(BuildContext c,int i){final s=c.findAncestorStateOfType<_MainShellState>();s?.setState(()=>s.index=i);}
 }
 class _Feature extends StatelessWidget {
   final IconData icon;final String title,subtitle;final VoidCallback onTap;
