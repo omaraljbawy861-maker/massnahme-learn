@@ -991,3 +991,48 @@ body.study-workspace .study-tips span{
 }
 body.study-workspace .timer-ring-inner{background:#10223b!important;color:#f5f2eb!important}
 body.study-workspace .timer-footer-note{color:#d9bd7b!important}
+
+
+/* English Academy — align every academy panel with the site's midnight navy theme */
+.language-choice button,.language-toolbar,.language-summary article,
+.language-section,.language-panel,.topic-card,.vocab-card,.sentence-card,
+.listening-card,.phrase-card,.phrase-tools,.plural-table,
+.language-section .empty-state,.language-section .question,
+.language-section .task-card,.language-section .worked-card{
+ background:linear-gradient(145deg,#10243b,#0b1b30)!important;
+ color:#f4f1e9!important;
+ border-color:rgba(216,182,111,.22)!important;
+ box-shadow:0 10px 26px rgba(0,0,0,.16)!important;
+}
+.language-section h2,.language-section h3,.topic-card h3,
+.language-panel b,.vocab-card strong,.sentence-card p,
+.listening-head h3,.phrase-de,.language-summary strong{
+ color:#f4f1e9!important;
+}
+.language-section p,.topic-card p,.topic-card li,.language-panel small,
+.language-toolbar span,.language-summary span,.phrase-ar,
+.vocab-card span,.sentence-card span,.listening-card p{
+ color:#b8c5d5!important;
+}
+.language-panel span,.language-section small,.topic-card small,
+.phrase-number,.vocab-card small{color:#d8b66f!important}
+.language-toolbar input,.language-search,.language-section input,
+.language-section select{
+ background:#0c1e33!important;color:#f4f1e9!important;
+ border:1px solid #38516e!important;
+}
+.language-toolbar button,.language-choice button,.listen-btn,.listen-small{
+ background:linear-gradient(135deg,#e5c77f,#caa65e)!important;
+ color:#102039!important;border-color:#e5c77f!important;
+}
+.language-panel{background:linear-gradient(145deg,#10243b,#0b1b30)!important}
+.language-panels .language-panel{color:#f4f1e9!important}
+.language-panel:hover,.topic-card:hover{border-color:#d8b66f!important}
+.plural-table th{background:#172d49!important;color:#e6c77f!important}
+.plural-table td{border-color:rgba(216,182,111,.16)!important;color:#e6edf5!important}
+@media(max-width:760px){
+ .language-section,.language-summary article,.language-panel,.topic-card,
+ .vocab-card,.sentence-card,.listening-card,.phrase-card{
+  background:linear-gradient(145deg,#10243b,#0b1b30)!important;
+ }
+}
