@@ -1,0 +1,41 @@
+name: Build native Flutter Android app
+on:
+  workflow_dispatch:
+  push:
+    branches: [native-flutter-app]
+    paths:
+      - 'mobile/**'
+      - '.github/workflows/build-native-flutter-apk.yml'
+      - 'data/**'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - name: Bundle the full existing curriculum
+        run: bash mobile/tool/sync_curriculum.sh
+      - name: Generate Android project
+        working-directory: mobile
+        run: flutter create --platforms=android --org de.massnahme.learn .
+      - name: Install packages
+        working-directory: mobile
+        run: flutter pub get
+      - name: Static analysis
+        working-directory: mobile
+        run: flutter analyze --no-pub
+      - name: Widget tests
+        working-directory: mobile
+        run: flutter test
+      - name: Build release APK
+        working-directory: mobile
+        run: flutter build apk --release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: massnahme-learn-native-android
+          path: mobile/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
