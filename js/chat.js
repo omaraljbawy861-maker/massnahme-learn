@@ -47,7 +47,9 @@ async function sendMessage(e){
  const saveUserPromise=save("user",text).then(()=>({ok:true}),error=>({ok:false,error}));
  try{
   const payload={messages:Array.from($("messages").querySelectorAll(".chat-bubble:not(.typing)")).map(n=>({role:n.classList.contains("user")?"user":"assistant",content:n.querySelector("p").textContent})),personaGender:gender,preferredLanguage:$("language").value};
-  const {data,error}=await supabase.functions.invoke("free-chat",{body:payload});
+  const requestPromise=supabase.functions.invoke("free-chat",{body:payload});
+  const timeoutPromise=new Promise((_,reject)=>setTimeout(()=>reject(new Error("تأخر الرد أكثر من اللازم. حاول مجدداً؛ لم تُحذف رسالتك.")),26000));
+  const {data,error}=await Promise.race([requestPromise,timeoutPromise]);
   if(error)throw error;
   if(!data?.reply)throw new Error(data?.error||"لم يصل الرد");
   typing.remove();
@@ -59,7 +61,7 @@ async function sendMessage(e){
  }catch(err){
   typing.remove();
   $("note").textContent="تعذر إرسال الرسالة: "+(err.message||"تحقق من الاتصال");
-  const saveResult=await saveUserPromise;if(!saveResult.ok)console.error("message save failed",saveResult.error);
+  saveUserPromise.then(result=>{if(!result.ok)console.error("message save failed",result.error)});
  }finally{btn.disabled=seconds<=0;$("message").disabled=seconds<=0;$("message").focus();}
 }
 document.querySelectorAll("[data-gender]").forEach(b=>b.addEventListener("click",()=>{gender=b.dataset.gender;document.querySelectorAll("[data-gender]").forEach(x=>x.classList.toggle("active",x===b));persona();}));
