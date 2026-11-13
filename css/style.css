@@ -939,3 +939,55 @@ body.study-workspace .study-chat-messages{background:linear-gradient(155deg,#435
     background:linear-gradient(145deg,#050a14,#030711)!important;
   }
 }
+
+
+/* FINAL CONSISTENT NAVY THEME — study assistant and timer, desktop + mobile */
+body.study-workspace,
+body.study-workspace .main-area,
+body.study-workspace #appContent{
+  background:#10223b!important;
+  color:#f5f2eb!important;
+}
+body.study-workspace .topbar{background:#0b192d!important}
+body.study-workspace .page-intro h1,
+body.study-workspace .study-card-heading h2{color:#f5f2eb!important}
+body.study-workspace .page-intro p,
+body.study-workspace .study-card-heading p{color:#c1ccda!important}
+body.study-workspace .page-intro .eyebrow,
+body.study-workspace .study-card-heading .eyebrow{color:#d9bd7b!important}
+body.study-workspace .study-chat-card,
+body.study-workspace .timer-standalone{
+  background:linear-gradient(145deg,#091629,#071222)!important;
+  border:1px solid rgba(220,190,128,.22)!important;
+  color:#f5f2eb!important;
+  box-shadow:0 18px 44px rgba(0,0,0,.24)!important;
+}
+body.study-workspace .study-chat-messages{
+  background:linear-gradient(155deg,#142b47,#10243d)!important;
+  border:1px solid rgba(220,190,128,.18)!important;
+}
+body.study-workspace .study-message.assistant{
+  background:#1b3554!important;color:#f5f2eb!important;
+  border:1px solid #304968!important;
+}
+body.study-workspace .study-message.user{
+  background:linear-gradient(145deg,#d9bd7b,#c4a45f)!important;
+  color:#10223b!important;border:1px solid #e7d19c!important;
+}
+body.study-workspace .study-message.user b{color:#10223b!important}
+body.study-workspace .study-chat-form textarea,
+body.study-workspace .study-setting-field select,
+body.study-workspace .study-speech-language select{
+  background:#142b47!important;color:#f5f2eb!important;
+  border:1px solid #38516e!important;
+}
+body.study-workspace .study-setting-field label,
+body.study-workspace .study-speech-language>span,
+body.study-workspace .study-timer-status,
+body.study-workspace .study-tips{color:#c1ccda!important}
+body.study-workspace .study-tips span{
+  background:#142b47!important;color:#f5f2eb!important;
+  border:1px solid #38516e!important;
+}
+body.study-workspace .timer-ring-inner{background:#10223b!important;color:#f5f2eb!important}
+body.study-workspace .timer-footer-note{color:#d9bd7b!important}
