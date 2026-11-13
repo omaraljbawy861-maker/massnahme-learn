@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261113-2">
+  <link rel="stylesheet" href="css/style.css?v=20261113-3">
   <link rel="stylesheet" href="css/videos.css?v=20261112-8">
   <style>
 
@@ -320,7 +320,28 @@
     body:not(.study-workspace) .page-intro p{color:#aebbd0!important}
   }
 
-  </style>
+  
+  /* Restore the sidebar menu control above the unified navy theme */
+  .topbar .menu-toggle,
+  header.topbar button#menuToggle{
+    display:inline-flex!important;
+    align-items:center!important;justify-content:center!important;
+    visibility:visible!important;opacity:1!important;pointer-events:auto!important;
+    position:relative!important;z-index:1500!important;
+    flex:0 0 48px!important;width:48px!important;height:48px!important;
+    min-width:48px!important;padding:0!important;margin:0 12px!important;
+    border:1px solid rgba(216,182,111,.42)!important;border-radius:13px!important;
+    background:#10243b!important;color:#e6c77f!important;
+    font-size:27px!important;line-height:1!important;cursor:pointer!important;
+  }
+  .topbar .menu-toggle:hover{background:#18314e!important}
+  @media(max-width:1100px){
+    .topbar .menu-toggle,header.topbar button#menuToggle{
+      display:inline-flex!important;visibility:visible!important;
+    }
+  }
+
+</style>
   <script>try{if(window.Capacitor?.isNativePlatform?.())document.documentElement.classList.add("native-app")}catch(e){}</script>
   <link rel="stylesheet" href="css/english-school.css?v=20261112-2">
 </head>
