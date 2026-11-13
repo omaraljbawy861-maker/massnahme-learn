@@ -170,3 +170,25 @@
 .chat-page{background:linear-gradient(145deg,#344b68,#293f5b)!important}
 .chat-messages{background:linear-gradient(155deg,#435b78,#394f6b)!important}
 @media(max-width:680px){.chat-page{background:#344b68!important}.chat-messages{background:linear-gradient(155deg,#435b78,#394f6b)!important}}
+
+
+/* Unified MAßNAHME LEARN midnight navy + gold chat theme */
+:root{--chat-bg:#08172a;--chat-surface:#0b1b30;--chat-ink:#f4f1e9;--chat-muted:#aab8ca;--chat-line:rgba(216,182,111,.22)}
+.chat-page{background:radial-gradient(ellipse at 50% -18%,#18314e 0%,#0b1b30 43%,#071426 100%)!important;color:#f4f1e9!important}
+.chat-shell,.chat-side,.chat-main,.chat-head,.chat-compose,.chat-note{background:#0b1b30!important;color:#f4f1e9!important;border-color:rgba(216,182,111,.2)!important}
+.chat-side,.chat-main{border:1px solid rgba(216,182,111,.2)!important;box-shadow:0 14px 36px rgba(0,0,0,.22)!important}
+.chat-messages{background:linear-gradient(155deg,#142b47,#0c1e33)!important}
+.chat-brand,.chat-head h1,.chat-head h2,.chat-side h2,.chat-side h3{color:#f4f1e9!important}
+.chat-brand small,.chat-side small,.chat-note,.chat-empty p{color:#aab8ca!important}
+.chat-config{background:#10243b!important;border-color:#30445e!important;color:#f4f1e9!important}
+.chat-config label,.chat-config span{color:#c3ccda!important}
+.chat-config select,.chat-genders button,.chat-history-item,.chat-compose textarea{background:#0c1e33!important;color:#f4f1e9!important;border:1px solid #30445e!important}
+.chat-genders button.active,.chat-history-item.active{background:rgba(216,182,111,.14)!important;border-color:#d8b66f!important;color:#f0cf83!important}
+.chat-time,.chat-avatar,.chat-empty span{background:rgba(216,182,111,.13)!important;border-color:rgba(216,182,111,.3)!important;color:#e6c77f!important}
+.chat-live{background:#173b35!important;color:#a8dfc5!important;border-color:#28604e!important}
+.chat-bubble.assistant{background:#1b3554!important;border:1px solid #304968!important;color:#f4f1e9!important}
+.chat-bubble.user{background:linear-gradient(135deg,#e5c77f,#caa65e)!important;border:1px solid #e5c77f!important;color:#102039!important}
+.chat-bubble.user small,.chat-bubble.assistant small{color:#d8b66f!important}
+.chat-primary,.chat-compose button{background:linear-gradient(135deg,#e5c77f,#caa65e)!important;color:#102039!important;border:1px solid #e5c77f!important}
+.chat-compose textarea::placeholder{color:#8293aa!important}
+@media(max-width:680px){.chat-page{background:#08172a!important;padding:8px!important}.chat-main,.chat-side{background:#0b1b30!important}.chat-messages{background:linear-gradient(155deg,#142b47,#0c1e33)!important}}
