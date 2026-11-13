@@ -60,7 +60,9 @@ async function sendMessage(e){
   else $("note").textContent="تم حفظ الرسائل تلقائياً.";
  }catch(err){
   typing.remove();
-  $("note").textContent="تعذر إرسال الرسالة: "+(err.message||"تحقق من الاتصال");
+  const errorText=err.message||"تحقق من الاتصال";
+  addMessage("assistant","تعذّر إكمال الرد: "+errorText);
+  $("note").textContent="لم يصل الرد. يمكنك إعادة المحاولة الآن.";
   saveUserPromise.then(result=>{if(!result.ok)console.error("message save failed",result.error)});
  }finally{btn.disabled=seconds<=0;$("message").disabled=seconds<=0;$("message").focus();}
 }
