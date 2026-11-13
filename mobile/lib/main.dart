@@ -146,13 +146,10 @@ class LessonPage extends StatelessWidget {
       _LessonSection(title:'أهداف التعلّم',body:(lesson['objectives'] as List? ?? []).join('\\n')),
       _LessonSection(title:'شرح باللغة الألمانية',body:'${lesson['german']??''}'),
       _LessonSection(title:'الشرح بالعربية',body:'${lesson['explanation']??lesson['lessonText']??''}'),
-      if(vocab.isNotEmpty)_LessonSection(title:'المفردات',body:vocab.map((v)=>'${v[0]} — ${v[1]}').join('
-')),
+      if(vocab.isNotEmpty)_LessonSection(title:'المفردات',body:vocab.map((v)=>'${v[0]} — ${v[1]}').join('\\n')),
       if(lesson['example']!=null)_LessonSection(title:'مثال تطبيقي',body:'${lesson['example']}'),
-      if(lesson['practice'] is List)_LessonSection(title:'تدريبات',body:(lesson['practice'] as List).map((v)=>'• ${v['q']}').join('
-')),
-      if(lesson['homework'] is List)_LessonSection(title:'واجب منزلي',body:(lesson['homework'] as List).map((v)=>'• ${v['q']}').join('
-'))
+      if(lesson['practice'] is List)_LessonSection(title:'تدريبات',body:(lesson['practice'] as List).map((v)=>'• ${v['q']}').join('\\n')),
+      if(lesson['homework'] is List)_LessonSection(title:'واجب منزلي',body:(lesson['homework'] as List).map((v)=>'• ${v['q']}').join('\\n'))
     ]));
   }
 }
@@ -183,10 +180,8 @@ class ZfaFieldPage extends StatelessWidget {
   @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:Text('Lernfeld ${field['n']}')),body:ListView(padding:const EdgeInsets.all(18),children:[
     Text('${field['title']}',style:const TextStyle(fontSize:22,fontWeight:FontWeight.bold,color:gold)),Text('${field['ar']}',style:const TextStyle(color:muted)),
     _LessonSection(title:'الكفاءة المهنية',body:'${field['competence']}'),
-    _LessonSection(title:'الموضوعات',body:(field['topics'] as List? ?? []).map((x)=>'• $x').join('
-')),
-    _LessonSection(title:'مهام تطبيقية',body:(field['tasks'] as List? ?? []).map((x)=>'• $x').join('
-')),
+    _LessonSection(title:'الموضوعات',body:(field['topics'] as List? ?? []).map((x)=>'• $x').join('\\n')),
+    _LessonSection(title:'مهام تطبيقية',body:(field['tasks'] as List? ?? []).map((x)=>'• $x').join('\\n')),
     _LessonSection(title:'التقييم',body:'${field['assessment']}')
   ]));
 }
