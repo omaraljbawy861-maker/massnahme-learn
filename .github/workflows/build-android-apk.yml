@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - "index.html"
-      - "levels.html"
+      - "*.html"
       - "css/**"
       - "js/**"
       - "data/**"
+      - "assets/**"
       - "package.json"
+      - "package-lock.json"
       - "capacitor.config.json"
       - ".github/workflows/build-android-apk.yml"
 
@@ -34,19 +35,23 @@ jobs:
           distribution: temurin
           java-version: "21"
 
-      - name: Prepare web assets
+      - name: Prepare complete web app
         run: |
           mkdir -p www
-          cp index.html levels.html www/
-          cp -R css js data www/
+          find . -maxdepth 1 -type f -name "*.html" -exec cp {} www/ \;
+          for dir in css js data assets; do
+            if [ -d "$dir" ]; then cp -R "$dir" www/; fi
+          done
+          test -f www/index.html
+          test -f www/chat.html
 
-      - name: Install Capacitor
+      - name: Install Capacitor dependencies
         run: npm install
 
       - name: Generate Android project
         run: npx cap add android
 
-      - name: Sync web assets
+      - name: Sync all web assets
         run: npx cap sync android
 
       - name: Build debug APK
