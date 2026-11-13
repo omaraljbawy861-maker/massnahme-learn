@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'learning_hub.dart';
 
 const supabaseUrl = 'https://edzuhinhxhoxxocfjvbu.supabase.co';
 const supabasePublishableKey = 'sb_publishable_PVmHT2QwKiWtWYEgb-nYkw_dd2VtQiO';
@@ -215,66 +215,7 @@ class _AssistantPageState extends State<AssistantPage> {
 
 class MorePage extends StatelessWidget {
  const MorePage({super.key});
- @override Widget build(BuildContext context)=>ListView(padding:const EdgeInsets.all(16),children:[
- const Text('مركز التعلّم',style:TextStyle(fontSize:24,fontWeight:FontWeight.bold)),
- _Feature(icon:Icons.play_circle_outline,title:'مكتبة الفيديوهات',subtitle:'فيديوهات مصنفة حسب المادة والمستوى',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const VideoLibraryPage()))),
- _Feature(icon:Icons.language,title:'المنهج الإنجليزي A1–C2',subtitle:'الوحدات والقواعد والقراءة والتدريبات',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const EnglishCurriculumPage()))),
- _Feature(icon:Icons.record_voice_over,title:'الألمانية المكثفة B1 وB2',subtitle:'نصوص ومفردات وجمل وقواعد',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const IntensiveGermanPage()))),
- _Feature(icon:Icons.person_outline,title:'حساب الطالب',subtitle:'بيانات الحساب وتسجيل الخروج',onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>const ProfilePage())))
- ]);
-}
-class VideoLibraryPage extends StatefulWidget {const VideoLibraryPage({super.key});@override State<VideoLibraryPage> createState()=>_VideoLibraryPageState();}
-class _VideoLibraryPageState extends State<VideoLibraryPage>{
- String filter='الكل';
- Future<List<Map<String,dynamic>>> load() async {final raw=jsonDecode(await rootBundle.loadString('assets/courses/video-library.json')) as Map<String,dynamic>;return List<Map<String,dynamic>>.from((raw['items'] as List).map((e)=>Map<String,dynamic>.from(e)));}
- @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('مكتبة الفيديوهات')),body:FutureBuilder<List<Map<String,dynamic>>>(future:load(),builder:(context,s){
- if(s.hasError)return const Center(child:Text('تعذر تحميل الفيديوهات'));if(!s.hasData)return const Center(child:CircularProgressIndicator(color:gold));
- final categories=['الكل',...{for(final v in s.data!)'${v['subjectName']??v['subject']??'أخرى'}'}];
- final shown=s.data!.where((v)=>filter=='الكل'||'${v['subjectName']??v['subject']}'==filter).toList();
- return Column(children:[SizedBox(height:52,child:ListView(scrollDirection:Axis.horizontal,children:categories.map((c)=>Padding(padding:const EdgeInsets.all(5),child:ChoiceChip(label:Text(c),selected:filter==c,onSelected:(_)=>setState(()=>filter=c)))).toList())),
- Expanded(child:ListView.builder(padding:const EdgeInsets.all(12),itemCount:shown.length,itemBuilder:(context,i){final v=shown[i];final id='${v['videoId']??''}';final url='${v['type']=='vimeo'?'https://vimeo.com/':'https://www.youtube.com/watch?v='}$id';return Card(color:panel,child:ListTile(leading:const Icon(Icons.play_circle,color:gold,size:34),title:Text('${v['title']??'فيديو'}'),subtitle:Text('${v['provider']??''} • ${v['level']??''}\n${v['description']??''}',maxLines:3,overflow:TextOverflow.ellipsis),onTap:()=>launchUrl(Uri.parse(url),mode:LaunchMode.externalApplication)));} ))]);
- }));
-}
-class EnglishCurriculumPage extends StatelessWidget {
- const EnglishCurriculumPage({super.key});
- @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('المنهج الإنجليزي A1–C2')),body:FutureBuilder<Map<String,dynamic>>(future:rootBundle.loadString('assets/courses/english_course.json').then((s)=>jsonDecode(s) as Map<String,dynamic>),builder:(context,s){
- if(!s.hasData)return const Center(child:CircularProgressIndicator(color:gold));
- final levels=List<Map<String,dynamic>>.from((s.data!['levels'] as List).map((e)=>Map<String,dynamic>.from(e)));
- return ListView(padding:const EdgeInsets.all(14),children:levels.map((l){final units=List<Map<String,dynamic>>.from((l['units'] as List? ?? []).map((e)=>Map<String,dynamic>.from(e)));return Card(color:panel,child:ExpansionTile(title:Text('${l['code']} • ${l['name']}'),subtitle:Text('${units.length} وحدة'),children:units.map((u)=>ListTile(title:Text('${u['title']??''}'),subtitle:Text('${u['englishTitle']??''}'),onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>EnglishUnitPage(unit:u))))).toList());}).toList());
- }));
- }
-}
-class EnglishUnitPage extends StatelessWidget {
- final Map<String,dynamic> unit;const EnglishUnitPage({super.key,required this.unit});
- @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:Text('${unit['title']??'الوحدة'}')),body:ListView(padding:const EdgeInsets.all(16),children:[
- Text('${unit['englishTitle']??''}',style:const TextStyle(color:gold,fontSize:20,fontWeight:FontWeight.bold)),
- _LessonSection(title:'نظرة عامة',body:'${unit['overview']??''}'),
- _LessonSection(title:'القواعد',body:'${unit['grammar']??''}\n${unit['grammarNote']??''}'),
- _LessonSection(title:'المفردات',body:(unit['vocabulary'] as List? ?? []).join('\n')),
- _LessonSection(title:'القراءة والترجمة',body:'${unit['reading']??''}\n\n${unit['translation']??''}'),
- _LessonSection(title:'المحادثة',body:'${unit['speaking']??''}'),_LessonSection(title:'الكتابة',body:'${unit['writing']??''}'),
- if(unit['practice'] is List)_LessonSection(title:'التدريبات',body:(unit['practice'] as List).map((e)=>'${e['question']??''}\n${e['answer']??''}').join('\n\n')),
- _LessonSection(title:'معيار الإتقان',body:'${unit['assessment']??''}')
- ]));
-}
-class IntensiveGermanPage extends StatelessWidget {
- const IntensiveGermanPage({super.key});
- @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:const Text('الألمانية المكثفة B1 وB2')),body:FutureBuilder<Map<String,dynamic>>(future:rootBundle.loadString('assets/courses/intensive_german.json').then((s)=>jsonDecode(s) as Map<String,dynamic>),builder:(context,s){
- if(!s.hasData)return const Center(child:CircularProgressIndicator(color:gold));
- return ListView(padding:const EdgeInsets.all(14),children:['B1','B2'].map((level){final lessons=List<Map<String,dynamic>>.from((s.data![level] as List).map((e)=>Map<String,dynamic>.from(e)));return Card(color:panel,child:ExpansionTile(title:Text('Deutsch '+level,style:const TextStyle(color:gold)),subtitle:Text('${lessons.length} درس'),children:lessons.map((l)=>ListTile(title:Text('${l['title']??''}'),subtitle:Text('${l['de']??''}'),onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>GermanLessonPage(lesson:l))))).toList());}).toList());
- }));
- }
-}
-class GermanLessonPage extends StatelessWidget {
- final Map<String,dynamic> lesson;const GermanLessonPage({super.key,required this.lesson});
- @override Widget build(BuildContext context)=>Scaffold(appBar:AppBar(title:Text('${lesson['title']??'درس'}')),body:ListView(padding:const EdgeInsets.all(16),children:[
- Text('${lesson['de']??''}',style:const TextStyle(color:gold,fontSize:20,fontWeight:FontWeight.bold)),
- _LessonSection(title:'نص القراءة',body:'${lesson['text']??''}'),_LessonSection(title:'الترجمة',body:'${lesson['translation']??lesson['ar']??''}'),
- _LessonSection(title:'المفردات',body:(lesson['v'] as List? ?? lesson['vocab'] as List? ?? []).map((v)=>'${v[0]} — ${v[1]}').join('\n')),
- _LessonSection(title:'الجمل العملية',body:(lesson['s'] as List? ?? lesson['sentences'] as List? ?? []).map((v)=>'${v[0]}\n${v[1]}').join('\n\n')),
- _LessonSection(title:'القواعد',body:'${lesson['g']??lesson['grammar']??''}'),
- if(lesson['q']!=null)_LessonSection(title:'فهم النص',body:'${lesson['q']}\n${lesson['a']??''}')
- ]));
+ @override Widget build(BuildContext context)=>const LearningHubPage();
 }
 
 class ProfilePage extends StatelessWidget {
