@@ -5,7 +5,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 const supabaseUrl = 'https://edzuhinhxhoxxocfjvbu.supabase.co';
 const supabasePublishableKey = 'sb_publishable_PVmHT2QwKiWtWYEgb-nYkw_dd2VtQiO';
-bool get supabaseReady => supabasePublishableKey.isNotEmpty;
+bool get supabaseReady => supabasePublishableKey.isNotEmpty;\nbool get supabaseInitialized { try { Supabase.instance.client; return true; } catch (_) { return false; } }
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try { if (supabaseReady) await Supabase.initialize(url: supabaseUrl, publishableKey: supabasePublishableKey); } catch (_) {}
@@ -23,7 +23,7 @@ class MassnahmeApp extends StatelessWidget {
 class AuthGate extends StatelessWidget {
   const AuthGate({super.key});
   @override Widget build(BuildContext context) {
-    if(!supabaseReady)return const MainShell();
+    if(!supabaseReady || !supabaseInitialized)return const MainShell();
     return StreamBuilder<AuthState>(stream:Supabase.instance.client.auth.onAuthStateChange,builder:(context,snapshot)=>
       Supabase.instance.client.auth.currentUser==null?const LoginScreen():const MainShell());
   }
@@ -212,7 +212,7 @@ class _AssistantPageState extends State<AssistantPage> {
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
   @override Widget build(BuildContext context){
-    final user=supabaseReady?Supabase.instance.client.auth.currentUser:null;
+    final user=supabaseInitialized?Supabase.instance.client.auth.currentUser:null;
     return ListView(padding:const EdgeInsets.all(20),children:[
       const Icon(Icons.account_circle_outlined,color:gold,size:72),const SizedBox(height:12),
       const Center(child:Text('حساب الطالب',style:TextStyle(fontSize:23,fontWeight:FontWeight.bold))),
