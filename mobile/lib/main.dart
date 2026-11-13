@@ -143,8 +143,7 @@ class LessonPage extends StatelessWidget {
     final vocab=lesson['vocab'] as List? ?? [];
     return Scaffold(appBar:AppBar(title:Text('${lesson['title']??'الدرس'}')),body:ListView(padding:const EdgeInsets.all(18),children:[
       Text('${lesson['germanTitle']??''}',style:const TextStyle(fontSize:22,color:gold,fontWeight:FontWeight.bold)),
-      _LessonSection(title:'أهداف التعلّم',body:(lesson['objectives'] as List? ?? []).join('
-')),
+      _LessonSection(title:'أهداف التعلّم',body:(lesson['objectives'] as List? ?? []).join('\\n')),
       _LessonSection(title:'شرح باللغة الألمانية',body:'${lesson['german']??''}'),
       _LessonSection(title:'الشرح بالعربية',body:'${lesson['explanation']??lesson['lessonText']??''}'),
       if(vocab.isNotEmpty)_LessonSection(title:'المفردات',body:vocab.map((v)=>'${v[0]} — ${v[1]}').join('
@@ -169,14 +168,12 @@ class _ZfaPageState extends State<ZfaPage> {
     final meta=Map<String,dynamic>.from(s.data!['meta']);final fields=List<Map<String,dynamic>>.from((s.data!['fields'] as List).map((e)=>Map<String,dynamic>.from(e)));
     return ListView(padding:const EdgeInsets.all(18),children:[
       const Text('أكاديمية ZFA',style:TextStyle(fontSize:25,fontWeight:FontWeight.bold)),
-      Text('${meta['title']}
-${meta['decision']} • ${meta['regulation']}',style:const TextStyle(color:muted,height:1.6)),
+      Text('${meta['title']}\\n${meta['decision']} • ${meta['regulation']}',style:const TextStyle(color:muted,height:1.6)),
       Card(color:panel,child:Padding(padding:const EdgeInsets.all(16),child:Text('13 مجالاً تعليمياً • ${meta['totalHours']} ساعة تدريبية',style:const TextStyle(color:gold,fontWeight:FontWeight.bold)))),
       ...fields.map((f)=>Card(color:panel,child:ListTile(
         leading:CircleAvatar(backgroundColor:gold.withValues(alpha:.15),child:Text('${f['n']}',style:const TextStyle(color:gold))),
         title:Text('${f['title']}',style:const TextStyle(fontWeight:FontWeight.bold)),
-        subtitle:Text('${f['ar']}
-${f['hours']} ساعة • السنة ${f['year']}',style:const TextStyle(color:muted,height:1.5)),isThreeLine:true,
+        subtitle:Text('${f['ar']}\\n${f['hours']} ساعة • السنة ${f['year']}',style:const TextStyle(color:muted,height:1.5)),isThreeLine:true,
         onTap:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>ZfaFieldPage(field:f)))))),
     ]);
   });
